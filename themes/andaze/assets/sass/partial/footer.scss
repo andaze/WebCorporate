@@ -1,0 +1,43 @@
+.footer {
+  background-color: $FOOTER_BG_COLOR;
+
+  &-wrapper {
+    padding: 8rem 12rem;
+  }
+  &-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-info {
+    p {
+      padding: 1rem 0 0 0.5rem;
+      @include font-size($FS6);
+      color: $FOOTER_COLOR;
+    }
+  }
+  nav {
+    h3 {
+      margin-top: 2rem;
+      color: $FOOTER_COLOR;
+      @include font-size($FS6);
+      font-weight: normal;
+    }
+    a {
+      @include font-size($FS6);
+      color: $FOOTER_COLOR;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .child {
+      text-decoration: none;
+    }
+  }
+
+  &-copyright {
+    color: $FOOTER_COLOR;
+    @include font-size($FS6);
+    text-align: center;
+  }
+}

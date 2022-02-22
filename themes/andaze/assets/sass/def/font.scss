@@ -1,0 +1,13 @@
+@mixin font-size($font-size: $FS1) {
+  // margin-bottom: $font-size * 0.5;
+  font-size: $font-size;
+  line-height: $font-size * 1.75;
+}
+
+$FS1: 4.8rem;
+$FS2: 3.6rem;
+$FS3: 2.4rem;
+$FS4: 2.0rem;
+$FS5: 1.6rem;
+$FS6: 1.4rem;
+$FS7: 1.2rem;

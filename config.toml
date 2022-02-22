@@ -1,0 +1,18 @@
+baseURL = "http://example.org/"
+languageCode = "ja"
+title = "My New Hugo Site"
+theme = "andaze"
+disableKinds = ["taxonomy", "term"]
+assetDir = "/assets"
+
+[params]
+	JS = "/js/main.js"
+	headerLogo = "img/yoko_c2.png"
+	footerLogo = "img/yoko_2w.png"
+
+	companyName = "アンダーズ株式会社"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

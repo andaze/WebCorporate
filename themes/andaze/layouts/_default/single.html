@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+  <h2>{{ .Title }}</h2>
+  <p>
+    <a href="{{ .Site.Home.Permalink | absURL }}">トップ</a>
+    >
+    <a href="{{ .CurrentSection.Permalink | absURL }}">{{ .CurrentSection.Title }}</a>
+    >
+    <a href="{{ .Permalink | absURL }}">{{ .Title }}</a>
+  </p>
+
+  <p>this is an article page</p>
+  {{ .Content }}
+</main>
+{{- partial "footer.html" . -}}
+
+{{ end }}

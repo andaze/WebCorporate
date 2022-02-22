@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="footer-wrapper">
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="{{ .Site.Params.footerLogo | absURL }}" alt="andaze" height="35">
+        <p>{{ .Site.Params.companyName}}</p>
+      </div>
+
+      <nav>
+        <ul>
+          {{ range .Site.Home.Sections }}
+
+          {{ if .Params.menu.footer.show }}
+          <li>
+            <a href="{{ .Permalink | absURL }}">
+              <h3>
+                {{ with .Params.menu.footer.name }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+              </h3>
+            </a>
+            <ul>
+              {{ range .Pages }}
+              {{ if .Params.menu.footer.show }}
+              <li>
+                <a href="{{ .Permalink | absURL }}" class="child">
+                  - {{ with .Params.menu.footer.name }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+                </a>
+              </li>
+              {{ end }}
+              {{ end }}
+            </ul>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-copyright">©️2021 ANDAZE</p>
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+{{ $tag := .Get "tag" }}
+{{ $class := .Get "class" }}
+
+{{ if eq $tag "article" }}
+
+<article class="{{ $class }}">
+  {{ .Inner }}
+</article>
+
+{{ else if eq $tag "section" }}
+
+<section class="{{ $class }}">
+  {{ .Inner }}
+</section>
+
+{{ else }}
+
+<div class="{{ $class }}">
+  {{ .Inner }}
+</div>
+
+{{ end }}

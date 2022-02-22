@@ -1,0 +1,4 @@
+{{ $class := .Get "class" }}
+{{ $link := .Get "link" }}
+
+<a href="{{ $link }}" class="button {{ $class }}">{{ .Inner}}</a>
