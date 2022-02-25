@@ -209,15 +209,15 @@ class Particle {
     this.stage.scene.add(this.mesh);
   }
 
-  _setDiffusion() {
-    gsap.to(this.mesh.material.uniforms.u_ratio, {
-      value: 1.0,
-      duration: 1.8,
-      ease: "power1.inOut",
-      repeat: 1,
-      yoyo: true
-    });
-  }
+    _setDiffusion() {
+      gsap.to(this.mesh.material.uniforms.u_ratio, {
+        value: 1.0,
+        duration: 1.8,
+        ease: "power1.inOut",
+        repeat: 1,
+        yoyo: true
+      });
+    }
 
   _setAutoPlay() {
     this._setDiffusion();
