@@ -1,4 +1,4 @@
-# baseURL = "http://example.org/"
+baseURL = " https://andaze.github.io/WebCorporate/"
 languageCode = "ja"
 title = "My New Hugo Site"
 theme = "andaze"
