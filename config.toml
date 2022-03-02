@@ -5,6 +5,7 @@ theme = "andaze"
 disableKinds = ["taxonomy", "term"]
 assetDir = "/assets"
 publishDir = "docs"
+canonifyurls = true
 
 [params]
 	JS = "/js/main.js"
