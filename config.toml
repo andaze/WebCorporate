@@ -1,4 +1,4 @@
-baseURL = " https://andaze.github.io/WebCorporate/"
+baseURL = "https://andaze.github.io/WebCorporate/"
 languageCode = "ja"
 title = "My New Hugo Site"
 theme = "andaze"
