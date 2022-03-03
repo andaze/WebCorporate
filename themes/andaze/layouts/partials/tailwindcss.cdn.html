@@ -6,9 +6,7 @@
     }
 </script>
 <style type="text/tailwindcss">
-{{/*  @layer utilities {
-    .content-auto {
-    content-visibility: auto;
-    }
-}  */}}
+    {{ with resources.Get "css/tailwind.css" }}
+    {{ .Content | safeCSS }}
+    {{ end }}
 </style>
