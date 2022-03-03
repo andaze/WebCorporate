@@ -142,22 +142,20 @@ img.addEventListener("load", () => {
   const material = new THREE.RawShaderMaterial({
 
     // シェーダーの設定
+    // top.htmlからvertexShaderとfragmentShaderを取得
     vertexShader: document.querySelector("#js-vertex-shader").textContent,
     fragmentShader: document.querySelector("#js-fragment-shader").textContent,
     uniforms: {
       u_ratio: { type: "f", value: 0.0 },
       u_time: { type: "f", value: 0.0 },
     },
+    // 画像背景を透過
     transparent: true
   });
 
   
   // オブジェクトの作成
   var mesh = new THREE.Points(geometry, material);
-  
-
-  // オブジェクトの位置調整
-  mesh.position.x = 2.0;
   
 
   // オブジェクトをシーンに追加
@@ -174,9 +172,9 @@ img.addEventListener("load", () => {
   
     // レンダラーにシーンとカメラを追加
     renderer.render( scene, camera );
-    
   }
   
+
   // アニメーションの実行
   animate();
 });
