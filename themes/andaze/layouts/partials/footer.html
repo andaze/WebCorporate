@@ -5,7 +5,7 @@
         <img src="{{ .Site.Params.footerLogo | absURL }}" alt="andaze" height="35">
         <p>{{ .Site.Params.companyName}}</p>
       </div>
-
+      {{ partial "footer-list.html" . }}
       <nav>
         <ul>
           {{ range .Site.Home.Sections }}
