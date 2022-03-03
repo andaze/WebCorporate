@@ -8,6 +8,7 @@ text.docx
 ### Hugo ###
 # Generated files by hugo
 /public/
+/docs/
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json

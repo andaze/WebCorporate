@@ -38,7 +38,7 @@
 
     finalPosition += distortion;
     finalPosition += diffuse;
-    finalPosition += noise;
+    <!-- finalPosition +=/ noise; -->
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
     gl_PointSize = finalRadius * 0.8;

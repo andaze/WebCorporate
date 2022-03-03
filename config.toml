@@ -1,9 +1,11 @@
-baseURL = "http://example.org/"
+baseURL = "https://andaze.github.io/WebCorporate/"
 languageCode = "ja"
 title = "My New Hugo Site"
 theme = "andaze"
 disableKinds = ["taxonomy", "term"]
 assetDir = "/assets"
+publishDir = "docs"
+canonifyurls = true
 
 [params]
 	JS = "/js/main.js"
@@ -13,6 +15,8 @@ assetDir = "/assets"
 	companyName = "アンダーズ株式会社"
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+
+[markup.goldmark]
+
+[markup.goldmark.renderer]
+unsafe = true
