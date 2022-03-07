@@ -2,7 +2,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="ie=edge">
-<title>ホーム | アンダーズ株式会社</title><meta name=generator content="Hugo 0.93.1"><script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<title>ホーム | アンダーズ株式会社</title><meta name=generator content="Hugo 0.93.2"><script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 <script>tailwind.config={theme:{}}</script>
 <style type=text/tailwindcss>
     
@@ -35,7 +35,7 @@
 </a></li></ul></nav><div class=header-lang>
 <span>JP</span>
 </div></div></header><div class=l-top-animation>
-<div id=webgl class=canvas-wrapper></div><script id=js-vertex-shader type=x-shader/x-vertex>
+<div id=webgl class=canvas-wrapper></div><div id=webgl></div><script id=js-vertex-shader type=x-shader/x-vertex>
   attribute vec3 position;
   attribute vec3 color;
   attribute float alpha;
@@ -48,61 +48,46 @@
   varying float v_alpla;
 
   void main() {
-    v_color = color;
-    v_alpla = alpha;
+      v_color = color;
+      v_alpla = alpha;
 
-    // radius
-    float radiusRange = 5.0;
-    float radiusRandX = radiusRange * sin(u_time * rand.x + rand.y * 5.0);
-    float radiusRandY = radiusRange * cos(u_time * rand.x + rand.y * 5.0);
-    float radiusRandAll = radiusRandX + radiusRandY;
-    float finalRadius = 5.0 + radiusRandAll;
+      vec3 finalPosition = position;
 
-    float moveRange = 8.0;
-    float moveRandX = moveRange * sin(u_time + rand.x * rand.y * 50.0);
-    float moveRandY = moveRange * cos(u_time + rand.x * rand.y * 50.0);
-    vec3 finalPosition = position + vec3(moveRandX, moveRandY, 0);
-
-    // position
-    float power = 300.0;
-    vec3 vertexDirection = vec3(normalize(position.xy), 0.0) + vec3(sin(u_time));
-    vec3 distortion = vertexDirection * power * u_ratio;
-    vec3 diffuse = vertexDirection * 500.0 * u_ratio * rand.x;
-    vec3 noise = position * 10.0 * u_ratio * rand.y;
-
-    finalPosition += distortion;
-    finalPosition += diffuse;
-    
-
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
-    gl_PointSize = finalRadius * 0.8;
+      // position
+      float power = 1000.0;
+      vec3 vertexDirection = vec3(normalize(position.xy), 0.0);
+      
+      vec3 diffuse = -vertexDirection * 1000.0 * u_ratio * rand.x;
+      vec3 noise = position * 1000.0 * u_ratio * rand.y;
+     
+      finalPosition += diffuse;    
+  
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
+      gl_PointSize =  3.0;
   }
 </script>
 <script id=js-fragment-shader type=x-shader/x-fragment>
   precision mediump float;
+
   varying vec3 v_color;
   varying float v_alpla;
 
   void main() {
-    vec2 temp = gl_PointCoord - vec2(0.5);
-    float f = dot(temp, temp);
-    // 表示を円にする
-    if (f > 0.25) {
-      discard;
-    }
-    
-    if (true) {
+      vec2 temp = gl_PointCoord - vec2(0.5);
+      float f = dot(temp, temp);
+      if (f > 0.25 ) {
+          discard;
+      }
+
       gl_FragColor = vec4(v_color, v_alpla);
-    } else {
-      gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
-    }
   }
-</script><canvas id=myCanvas></canvas>
+</script>
+<canvas id=myCanvas></canvas>
 </div><div class=l-top-content>
 <main>
 <div class="l-top-copy top-copy">
 <h1>
-<span>経営視点で</span><span>DXを</span><span>加速</span><span>プロ集団。</span>
+<span>経営視点で</span><span>DXを</span><span>加速させる</span><span>プロ集団。</span>
 </h1></div><div class=l-top-container>
 <section class="top-appeal top-appeal-who">
 <h2 id=who-we-are>Who We Are</h2><div class=top-appeal-gist>
