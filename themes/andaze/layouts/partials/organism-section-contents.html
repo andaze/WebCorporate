@@ -1,4 +1,5 @@
 <div>
+    {{ if eq (.Scratch.Get "section") "news" }}
     <div class="flex gap-5">
         {{ range where .Site.RegularPages "Section" "news" }}
         {{ with . }}
@@ -6,4 +7,5 @@
         {{ end }}
         {{ end }}
     </div>
+    {{ end }}
 </div>
