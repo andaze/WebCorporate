@@ -5,7 +5,7 @@
 </div>
 
 <main>
-  {{ .Content }}
+  {{ partial "template-section.html" . }}
   {{ range first 10 .Data.Pages }}
   {{ .Render "summary" }}
   {{ end }}
