@@ -2,7 +2,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="ie=edge">
-<title>Home | アンダーズ株式会社</title><meta name=generator content="Hugo 0.93.2"><script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<title>Sample | アンダーズ株式会社</title><meta name=generator content="Hugo 0.93.2"><script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 <script>tailwind.config={theme:{}}</script>
 <style type=text/tailwindcss>
     
@@ -15,88 +15,22 @@
 <script defer src=https://unpkg.com/three@0.131.3/examples/js/controls/OrbitControls.js></script>
 <script defer src=https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js></script>
 </head><body>
-<div><div id=webgl class=canvas-wrapper></div><div id=webgl></div><script id=js-vertex-shader type=x-shader/x-vertex>
-  attribute vec3 position;
-  attribute vec3 color;
-  attribute float alpha;
-  attribute vec2 rand;
-  uniform mat4 modelViewMatrix;
-  uniform mat4 projectionMatrix;
-  uniform float u_ratio;
-  uniform float u_time;
-  varying vec3 v_color;
-  varying float v_alpla;
-
-  void main() {
-      v_color = color;
-      v_alpla = alpha;
-
-      vec3 finalPosition = position;
-
-      // position
-      float power = 1000.0;
-      vec3 vertexDirection = vec3(normalize(position.xy), 0.0);
-      
-      vec3 diffuse = -vertexDirection * 1000.0 * u_ratio * rand.x;
-      vec3 noise = position * 1000.0 * u_ratio * rand.y;
-     
-      finalPosition += diffuse;    
-  
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
-      gl_PointSize =  3.0;
-  }
-</script>
-<script id=js-fragment-shader type=x-shader/x-fragment>
-  precision mediump float;
-
-  varying vec3 v_color;
-  varying float v_alpla;
-
-  void main() {
-      vec2 temp = gl_PointCoord - vec2(0.5);
-      float f = dot(temp, temp);
-      if (f > 0.25 ) {
-          discard;
-      }
-
-      gl_FragColor = vec4(v_color, v_alpla);
-  }
-</script>
-<canvas id=myCanvas></canvas>
-</div><main>
-<div class="pl-8 md:pl-36">
-<div class=flex>
-<div class="w-1/3 max-w-[280px]">
-<div class="flex flex-col">
-<h2 class="text-3xl font-extrabold uppercase">
-news
-<h2 class="text-3xl font-extrabold">
-</h2><nav>
-<div class=mb-5>
-<div class="flex gap-5">
-<button class="border inline-block rounded-full relative w-16 h-16">
-</button>
-<button class="border inline-block rounded-full relative w-16 h-16">
-</button>
-</div></div><ol>
-<li>
-<a class="border p-5 inline-block" href=#>
-</a>
-</li></ol></nav></div></div><div class=w-2/3>
-<div>
-<div class="flex gap-5">
-<article>
-<header>
-Sample Normal
-</header><footer>
-2022-03-08 17:42:10 +0900 +0900
-</footer></article><article>
-<header>
-Sample
-</header><footer>
-2022-03-08 17:40:44 +0900 +0900
-</footer></article></div></div></div></div></div></main><script defer src=https://andaze.github.io/WebCorporate/js/top.min.js></script>
-<footer class=footer>
+<main>
+<h2>Sample</h2><p>
+<a href=https://andaze.github.io/WebCorporate/>トップ</a>
+>
+<a href=https://andaze.github.io/WebCorporate/news/>archive page</a>
+>
+<a href=https://andaze.github.io/WebCorporate/news/sample/>Sample</a>
+</p><p>this is an article page</p></main><footer class=footer>
+<div class=footer-wrapper>
+<div class=footer-content>
+<div class=footer-info>
+<img src=https://andaze.github.io/WebCorporate/img/yoko_2w.png alt=andaze height=35>
+<p>アンダーズ株式会社</p></div><nav>
+<ul>
+</li></li></li></li></ul></nav></div><p class=footer-copyright>©️2021 ANDAZE</p></div></footer><ul>
+<li><a href=https://andaze.github.io/WebCorporate/news/sample-normal/>Sample Normal</a></li><li><a href=https://andaze.github.io/WebCorporate/news/sample/>Sample</a></li><li><a href=https://andaze.github.io/WebCorporate/news/>Archive Page</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/f/>A社（ Dynamics 365）</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/>Casestudy</a></li><li><a href=https://andaze.github.io/WebCorporate/company/>Company</a></li><li><a href=https://andaze.github.io/WebCorporate/>Home</a></li><li><a href=https://andaze.github.io/WebCorporate/reason/>Reason</a></li><li><a href=https://andaze.github.io/WebCorporate/service/>Service</a></li><li><a href=https://andaze.github.io/WebCorporate/solution/>Solution</a></li><li><a href=https://andaze.github.io/WebCorporate/company/message/>トップメッセージ</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/d/_indes/>伊勢湾海運様 デバン管理</a></li><li><a href=https://andaze.github.io/WebCorporate/company/about/>会社概要</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/c/>大塚倉庫様 クールなデザインの「障害モニター」で秘密組織の一員を体験。</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/b/>大塚倉庫様「問い合わせマルチチャット機能」で多彩な場から手軽に連絡</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/a/>大塚倉庫様「配送みえる化」で物流の健康状態を見せる</a></li><li><a href=https://andaze.github.io/WebCorporate/casestudy/e/>日綜産業様 Power Bi</a></li><li><a href=https://andaze.github.io/WebCorporate/company/history/>沿革</a></li><li><a href=https://andaze.github.io/WebCorporate/company/philosophy/>経営理念</a></li></ul><footer class=footer>
 <div class=footer-wrapper>
 <div class=footer-content>
 <div class=footer-info>
