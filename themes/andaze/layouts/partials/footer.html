@@ -37,3 +37,8 @@
     <p class="footer-copyright">©️2021 ANDAZE</p>
   </div>
 </footer>
+<ul>
+  {{ range .Site.Pages }}
+  <li><a href="{{ .Permalink }}">{{ .Params.title | humanize | title }}</a></li>
+  {{ end }}
+</ul>
