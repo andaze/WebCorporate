@@ -1,8 +1,18 @@
 {{ define "main" }}
+<div>
+  {{- partial "top.html" . -}}
+  <canvas id="myCanvas"></canvas>
+</div>
 
-      {{ .Content }}
-      {{ range first 10 .Data.Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
+<main>
+  {{ .Content }}
+  {{ range first 10 .Data.Pages }}
+  {{ .Render "summary" }}
+  {{ end }}
+</main>
+
+{{ $js := resources.Get "js/top.js" | resources.Minify }}
+<script defer
+        src="{{ $js.Permalink }}"></script>
 
 {{ end }}
