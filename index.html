@@ -14,17 +14,57 @@
 </style><script defer src=https://unpkg.com/three@0.131.3/build/three.min.js></script>
 <script defer src=https://unpkg.com/three@0.131.3/examples/js/controls/OrbitControls.js></script>
 <script defer src=https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js></script>
-</head><body><header class="l-header header">
-<div class=header-wrapper>
-<div class=header-logo>
-<a href=https://andaze.github.io/WebCorporate/>
-<img src=https://andaze.github.io/WebCorporate/img/yoko_c2.png alt=andaze height=40>
-</a>
-</div><nav class=header-nav>
-<ul>
-</ul></nav><div class=header-lang>
-<span>JP</span>
-</div></div></header><h1> 経営視点でDXを加速させるプロ集団。</h1>＜代案＞常識を覆すサービスを、DXで叶える／未来を一変させる、DXが待っている／進もう。価値あるビジネスの、その先へ／新事業も、ビジネス拡張も、期待を超える／従来比●％増の開発スピード、●％減のコストでDXを実現。
+</head><body>
+<div><div id=webgl class=canvas-wrapper></div><div id=webgl></div><script id=js-vertex-shader type=x-shader/x-vertex>
+  attribute vec3 position;
+  attribute vec3 color;
+  attribute float alpha;
+  attribute vec2 rand;
+  uniform mat4 modelViewMatrix;
+  uniform mat4 projectionMatrix;
+  uniform float u_ratio;
+  uniform float u_time;
+  varying vec3 v_color;
+  varying float v_alpla;
+
+  void main() {
+      v_color = color;
+      v_alpla = alpha;
+
+      vec3 finalPosition = position;
+
+      // position
+      float power = 1000.0;
+      vec3 vertexDirection = vec3(normalize(position.xy), 0.0);
+      
+      vec3 diffuse = -vertexDirection * 1000.0 * u_ratio * rand.x;
+      vec3 noise = position * 1000.0 * u_ratio * rand.y;
+     
+      finalPosition += diffuse;    
+  
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
+      gl_PointSize =  3.0;
+  }
+</script>
+<script id=js-fragment-shader type=x-shader/x-fragment>
+  precision mediump float;
+
+  varying vec3 v_color;
+  varying float v_alpla;
+
+  void main() {
+      vec2 temp = gl_PointCoord - vec2(0.5);
+      float f = dot(temp, temp);
+      if (f > 0.25 ) {
+          discard;
+      }
+
+      gl_FragColor = vec4(v_color, v_alpla);
+  }
+</script>
+<canvas id=myCanvas></canvas>
+</div><main>
+<h1> 経営視点でDXを加速させるプロ集団。</h1>＜代案＞常識を覆すサービスを、DXで叶える／未来を一変させる、DXが待っている／進もう。価値あるビジネスの、その先へ／新事業も、ビジネス拡張も、期待を超える／従来比●％増の開発スピード、●％減のコストでDXを実現。
 ※DX（デジタルトランスフォーメーション）…ITの浸透が、人々の生活をあらゆる面でより良い方向に変化させる
 １.１ ビジネスを成功に導く、テクノロジーのプロチーム（Who We Are）
 お客様の成長に寄り添い、企業の成長を加速
@@ -46,6 +86,7 @@
 培ったノウハウをもとに、優れた技術を取り入れたDX戦略を立案。さまざまな業界で求められている先進的なデジタルシフトを支援します。
 １.２.５ AI（人工知能）
 企業が抱える経営課題を解決し、ビジネスの価値をさらに高める精度の高いAIソリューションを提供します。
+</main><script defer src=https://andaze.github.io/WebCorporate/js/top.min.js></script>
 <footer class=footer>
 <div class=footer-wrapper>
 <div class=footer-content>
