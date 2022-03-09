@@ -8,7 +8,21 @@
   {{ .Scratch.Set "section" "news" }}
   {{ partial "template-section.html" . }}
   {{ .Scratch.Delete "section" }}
+
+  {{ .Scratch.Set "section" "ir news" }}
+  {{ partial "template-section.html" . }}
+  {{ .Scratch.Delete "section" }}
+
+  {{ .Scratch.Set "section" "services" }}
+  {{ partial "template-section.html" . }}
+  {{ .Scratch.Delete "section" }}
+
+  {{ .Scratch.Set "section" "sustainability news" }}
+  {{ partial "template-section.html" . }}
+  {{ .Scratch.Delete "section" }}
+
   {{ range first 10 .Data.Pages }}
+  {{ .Content }}
   {{ .Render "summary" }}
   {{ end }}
 </main>

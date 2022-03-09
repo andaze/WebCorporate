@@ -1,6 +1,14 @@
 <div class="flex flex-col">
     <h2 class="text-3xl font-extrabold uppercase">
-        news
+        {{ if eq (.Scratch.Get "section") "news" }}
+        NEWS
+        {{ else if eq (.Scratch.Get "section") "ir news" }}
+        ir news
+        {{ else if eq (.Scratch.Get "section") "services" }}
+        services
+        {{ else if eq (.Scratch.Get "section") "sustainability news" }}
+        sustainability<br>news
+        {{ end }}
         <h2 class="text-3xl font-extrabold">
         </h2>
         <nav>
