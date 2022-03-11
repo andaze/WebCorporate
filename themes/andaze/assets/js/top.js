@@ -162,14 +162,6 @@ img.addEventListener("load", () => {
   scene.add( mesh );
 
 
-  // gsapによるアニメーションの設定
-  gsap.from(mesh.material.uniforms.u_ratio, {
-    value: 1000.0,
-    duration: 3,
-    ease: "power4.out",
-  });
-
-
   // ---------------------------------------------------------------------------------------------
   //アニメーションの設定
   // ---------------------------------------------------------------------------------------------
@@ -180,6 +172,10 @@ img.addEventListener("load", () => {
   
     // レンダラーにシーンとカメラを追加
     renderer.render( scene, camera );
+
+    // パーティクル移動速度
+    mesh.material.uniforms.u_time.value += 0.1 ;
+    
   }
   
 
