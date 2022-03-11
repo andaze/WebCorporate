@@ -107,9 +107,15 @@ img.addEventListener("load", () => {
   scene.add( mesh );
   
   
+  // 画像の透明度配列
+  const particleAlpha =mesh.geometry.attributes.alpha.array;
+
+  // フェードイン
+  FadeIn(3);
+
+
   // アニメーションの実行
   animate();
-  
 
   // ---------------------------------------------------------------------------------------------
   // 関数定義① webglでデータを扱いやすいように変換
@@ -163,9 +169,50 @@ img.addEventListener("load", () => {
 
     return { position, color, alpha };
   }
+
+  // 透明度前処理（異なる透明度の値を割り振ってパーティクルをグループ化）
+  function PreProcessing(sampling_times) {
+    // 透明ではないパーティクルの透明度を下げて見えなくする
+    for (var i=0; i < vertces; i++) {
+      if(particleAlpha[i] > 0) {
+        particleAlpha[i] = 0.5 ** 6;
+      }
+    }
+    // 透過させたパーティクルをランダムに複数回サンプリングして透明度を下げていく
+    for (var i=0; i < sampling_times; i++) {
+      for (var j=0; j < vertces; j++) {
+        random = (j + Math.floor(Math.random() * 2) + 1);
+        if(particleAlpha[random] > 0) {
+          particleAlpha[random] = 0.5 ** (i + 7);
+        }
+      }
+    }
+  }
+
+  // 透明度の低いパーティクルから順番に出現させる
+  function PostProcessing(sampling_times) {
+    for (let i = 0; i < vertces; i++) {
+      var vertex_alpha = {x: particleAlpha[i]};
+      var tween = new TWEEN.Tween(vertex_alpha);
+      tween.to({x: 1}, 3000);
+      for (j = 0; j < sampling_times; j++) {
+        if (particleAlpha[i] === 0.5 **  (j + 6)) {
+          tween.delay(j * 2000);
+          tween.start();
+        }
+      }
+      tween.onUpdate(function(object) {
+          particleAlpha[i] = object.x;
+      })
+    }
+  }
+
+  function FadeIn(sampling_time) {
+    PreProcessing(sampling_time);
+    PostProcessing(sampling_time + 1);
+  }
+
       
-  
-  
   function animate() {
     // 画面の描画毎にanimate関数を呼び出す
     requestAnimationFrame( animate );
@@ -174,6 +221,12 @@ img.addEventListener("load", () => {
     renderer.render( scene, camera );
     
     // パーティクル移動速度
-    mesh.material.uniforms.u_time.value += 0.1 ;
+    mesh.material.uniforms.u_time.value += 0.1;
+
+    // Tween.jsアニメーションの実行
+    TWEEN.update();
+    
+    // 透明度の更新を許可
+    mesh.geometry.attributes.alpha.needsUpdate = true;
   }
 });
