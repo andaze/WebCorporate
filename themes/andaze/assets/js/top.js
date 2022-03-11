@@ -39,7 +39,7 @@ const geometry = new THREE.BufferGeometry();
 const img = new Image();
 
 // 表示させる画像のパスを指定
-img.src = "img/yoko_c_min.png";
+img.src = "img/yoko_2k_min.png";
 img.crossOrigin = "anonymous";
 
 // 画像が読み込まれた後に処理を実行
@@ -147,10 +147,13 @@ img.addEventListener("load", () => {
         const pY = -(y - height / 2);
         const pZ = 0;
 
-        // webglでは色・透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
-        const r = data[index] / 255;
-        const g = data[index + 1] / 255;
-        const b = data[index + 2] / 255;
+        // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
+        var rgb_val = [0, 255]
+        const r = rgb_val[Math.floor(Math.random() * rgb_val.length)];
+        const g = rgb_val[Math.floor(Math.random() * rgb_val.length)];
+        const b = rgb_val[Math.floor(Math.random() * rgb_val.length)];
+
+        // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
         const a = data[index + 3] / 255;
         
         // 座標、色、透明度の値を配列に追加
