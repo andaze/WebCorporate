@@ -110,15 +110,17 @@ img.addEventListener("load", () => {
   // 画像の透明度配列
   const particleAlpha =mesh.geometry.attributes.alpha.array;
 
-  // フェードイン
+  // フェードイン実行（FadeIn関数）
   FadeIn(3);
 
 
-  // アニメーションの実行
+  // アニメーションの実行（animate関数）
   animate();
 
+
+
   // ---------------------------------------------------------------------------------------------
-  // 関数定義① webglでデータを扱いやすいように変換
+  // 関数定義1 webglでがデータを扱いやすいように画像データを変換
   // ---------------------------------------------------------------------------------------------
 
   function ImagePixel(path, w, h, ratio) {
@@ -170,14 +172,20 @@ img.addEventListener("load", () => {
     return { position, color, alpha };
   }
 
-  // 透明度前処理（異なる透明度の値を割り振ってパーティクルをグループ化）
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義2 透明度前処理（異なる透明度の値を割り振ってパーティクルをグループ化）
+  // ---------------------------------------------------------------------------------------------
+
   function PreProcessing(sampling_times) {
+
     // 透明ではないパーティクルの透明度を下げて見えなくする
     for (var i=0; i < vertces; i++) {
       if(particleAlpha[i] > 0) {
         particleAlpha[i] = 0.5 ** 6;
       }
     }
+
     // 透過させたパーティクルをランダムに複数回サンプリングして透明度を下げていく
     for (var i=0; i < sampling_times; i++) {
       for (var j=0; j < vertces; j++) {
@@ -189,30 +197,48 @@ img.addEventListener("load", () => {
     }
   }
 
-  // 透明度の低いパーティクルから順番に出現させる
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義3 フェードインアニメーション設定
+  // ---------------------------------------------------------------------------------------------
+
   function PostProcessing(sampling_times) {
+
+    // パーティクルの全頂点をTween.jsによりアニメーションさせる
     for (let i = 0; i < vertces; i++) {
       var vertex_alpha = {x: particleAlpha[i]};
       var tween = new TWEEN.Tween(vertex_alpha);
       tween.to({x: 1}, 3000);
+
+      // 透明度の低いパーティクルから順番に出現させる
       for (j = 0; j < sampling_times; j++) {
         if (particleAlpha[i] === 0.5 **  (j + 6)) {
           tween.delay(j * 2000);
           tween.start();
         }
       }
+
       tween.onUpdate(function(object) {
           particleAlpha[i] = object.x;
       })
     }
   }
 
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義4 フェードインアニメーション実行
+  // ---------------------------------------------------------------------------------------------
+
   function FadeIn(sampling_time) {
     PreProcessing(sampling_time);
     PostProcessing(sampling_time + 1);
   }
 
-      
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義5 Three.jsのアニメーション関数
+  // ---------------------------------------------------------------------------------------------
+
   function animate() {
     // 画面の描画毎にanimate関数を呼び出す
     requestAnimationFrame( animate );
@@ -229,4 +255,5 @@ img.addEventListener("load", () => {
     // 透明度の更新を許可
     mesh.geometry.attributes.alpha.needsUpdate = true;
   }
+
 });
