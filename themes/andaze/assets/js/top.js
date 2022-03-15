@@ -138,32 +138,44 @@ img.addEventListener("load", () => {
         
         mouse.x = event.clientX - (window.innerWidth / 2);
         mouse.y = - (event.clientY - (window.innerHeight / 2));
-        x = attribute.getX(i)*(500/350);
-        y = attribute.getY(i)*(500/350);
-
-
-        var distance = Math.sqrt( Math.pow( x - mouse.x, 2 ) + Math.pow( y - mouse.y, 2 ) );
-
-        var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+        x = attribute.getX(i)*(500/360);
+        y = attribute.getY(i)*(500/360);
         
         var random = Math.floor( Math.random() * 10 ) + 10;
 
+        var distance = Math.sqrt( Math.pow( x - mouse.x, 2 ) + Math.pow( y - mouse.y, 2 ) ) ;
+
+        var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+        
+        
         if (distance < 10) {
+          pos_x = particlePositions[3*i]+10;
+          pos_y = particlePositions[3*i+1]+random*5
 
           var tw1 = new TWEEN.Tween(vertex_position);
-          tw1.to({x: particlePositions[3*i]+10, y: particlePositions[3*i+1]+random*5}, 5000);
+          tw1.to({x:pos_x, y: pos_y}, 5000);
+          tw1.easing( TWEEN.Easing.Quadratic.Out );
           tw1.onUpdate(function (object) {
             particlePositions[3*i] = object.x;
             particlePositions[3*i+1] = object.y;
           });
 
           var tw2 = new TWEEN.Tween(vertex_position);
-          tw2.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
+          tw2.to({x: pos_x + random*5, y: pos_y+random*5}, 5000);
+          tw2.easing( TWEEN.Easing.Quadratic.Out );
           tw2.onUpdate(function (object) {
             particlePositions[3*i] = object.x;
             particlePositions[3*i+1] = object.y;
           });
 
+          var tw3 = new TWEEN.Tween(vertex_position);
+          tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
+          tw3.onUpdate(function (object) {
+            particlePositions[3*i] = object.x;
+            particlePositions[3*i+1] = object.y;
+          });
+
+          tw2.chain(tw3);
           tw1.chain(tw2);
 
           tw1.start();
