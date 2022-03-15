@@ -111,7 +111,7 @@ img.addEventListener("load", () => {
   const particleAlpha =mesh.geometry.attributes.alpha.array;
 
   // フェードイン実行（FadeIn関数）
-  FadeIn(3);
+  // FadeIn(3);
 
 
   // アニメーションの実行（animate関数）
