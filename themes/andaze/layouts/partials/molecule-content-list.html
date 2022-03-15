@@ -1,8 +1,8 @@
 <div class="p-8">
-    <h2 class="mb-3"><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></h2>
+    <h2 class="mb-3 text-2xl font-bold"><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></h2>
     <ul>
         {{ range .Pages }}
-        <li class="pl-6 relative before:absolute before:w-1 before:h-1 before:block before:bg-black before:left-0 before:top-3"><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
+        <li class="pl-6 text-xs relative before:absolute before:w-1 before:h-1 before:block before:bg-black before:left-0 before:top-3"><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
         {{ end }}
     </ul>
 </div>
