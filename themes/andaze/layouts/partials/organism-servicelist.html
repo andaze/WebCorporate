@@ -1,0 +1,14 @@
+<div>
+    <ul class="grid grid-cols-2 md:grid-cols-5">
+        {{ range .Site.Pages }}
+        {{ if eq .Section "service" }}
+        <li class="border">
+            <a class="block p-5 text-center" href="{{ .Permalink | absURL }}">
+                <div><img src="" alt=""></div>
+                <p class="text-center">{{ .Title }}</p>
+            </a>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+</div>
