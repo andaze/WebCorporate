@@ -111,7 +111,89 @@ img.addEventListener("load", () => {
   const particleAlpha =mesh.geometry.attributes.alpha.array;
 
   // フェードイン実行（FadeIn関数）
-  FadeIn(3);
+  // FadeIn(3);
+
+
+  // ジオメトリの頂点座標の配列
+  var attribute = mesh.geometry.attributes.position;
+
+  // マウスの定義
+  var mouse = new THREE.Vector2();
+
+  // クリックフラグ
+  var click_frag = false;
+
+  window.setTimeout(reverse_flag, 500);
+
+  renderer.domElement.addEventListener('mousedown', vibration);
+
+
+  function vibration(event) {
+    event.preventDefault();
+    
+    const particlePositions = mesh.geometry.attributes.position.array;
+
+    if (click_frag==true) {
+      for (let i = 0; i < vertces; i++) {
+        
+        mouse.x = event.clientX - (window.innerWidth / 2);
+        mouse.y = - (event.clientY - (window.innerHeight / 2));
+        x = attribute.getX(i)*(500/360);
+        y = attribute.getY(i)*(500/360);
+        
+        var random = Math.floor( Math.random() * 10 ) + 10;
+
+        var distance = Math.sqrt( Math.pow( x - mouse.x, 2 ) + Math.pow( y - mouse.y, 2 ) ) ;
+
+        var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+        
+        
+        if (distance < 10) {
+          pos_x = particlePositions[3*i]+10;
+          pos_y = particlePositions[3*i+1]+random*5
+
+          var tw1 = new TWEEN.Tween(vertex_position);
+          tw1.to({x:pos_x, y: pos_y}, 5000);
+          tw1.easing( TWEEN.Easing.Quadratic.Out );
+          tw1.onUpdate(function (object) {
+            particlePositions[3*i] = object.x;
+            particlePositions[3*i+1] = object.y;
+          });
+
+          var tw2 = new TWEEN.Tween(vertex_position);
+          tw2.to({x: pos_x + random*5, y: pos_y+random*5}, 5000);
+          tw2.easing( TWEEN.Easing.Quadratic.Out );
+          tw2.onUpdate(function (object) {
+            particlePositions[3*i] = object.x;
+            particlePositions[3*i+1] = object.y;
+          });
+
+          var tw3 = new TWEEN.Tween(vertex_position);
+          tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
+          tw3.onUpdate(function (object) {
+            particlePositions[3*i] = object.x;
+            particlePositions[3*i+1] = object.y;
+          });
+
+          tw2.chain(tw3);
+          tw1.chain(tw2);
+
+          tw1.start();
+        }
+      }
+      window.setTimeout(reverse_flag, 500);
+    }
+    click_frag = false;
+  }
+ 
+  function reverse_flag() {
+      if (click_frag == false) {
+        click_frag = true;
+      } else {
+        click_frag = false;
+      }
+    }
+
 
 
   // アニメーションの実行（animate関数）
@@ -254,6 +336,8 @@ img.addEventListener("load", () => {
     
     // 透明度の更新を許可
     mesh.geometry.attributes.alpha.needsUpdate = true;
+
+    mesh.geometry.attributes.position.needsUpdate = true;
   }
 
 });
