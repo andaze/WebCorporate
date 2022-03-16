@@ -24,11 +24,11 @@ const wrapper = document.querySelector("#webgl");
 wrapper.appendChild(renderer.domElement);
 
 
-// OrbitControlsインスタンス作成
-var controls = new THREE.OrbitControls( camera, renderer.domElement );
+// // OrbitControlsインスタンス作成
+// var controls = new THREE.OrbitControls( camera, renderer.domElement );
 
-// ズーム設定解除
-controls.enableZoom = false;
+// // ズーム設定解除
+// controls.enableZoom = false;
 
 
 // ジオメトリーの作成
@@ -118,57 +118,80 @@ img.addEventListener("load", () => {
   var attribute = mesh.geometry.attributes.position;
 
   // マウスの定義
-  var mouse = new THREE.Vector2();
+  var released_pos = new THREE.Vector2();
+  var pushed_pos= new THREE.Vector2();
+  var drag_distance = new THREE.Vector2();
 
   // クリックフラグ
   var click_frag = false;
 
 
-  // プッシュフラグ
-  var push_flag = false;
-
   window.setTimeout(reverse_flag, 500);
 
   renderer.domElement.addEventListener('mousedown', pushJudge);
   renderer.domElement.addEventListener('mouseup', vibration);
-  renderer.domElement.addEventListener('mouseup', vibration);
 
-  function pushJudge() {
-    push_flag = true;
+
+
+  function pushJudge(event) {
+    pushed_pos.x = event.clientX - (window.innerWidth / 2);
+    pushed_pos.y = - (event.clientY - (window.innerHeight / 2));
   }
 
   function vibration(event) {
     event.preventDefault();
 
-    const marks_x = [1, -1];
-    var random_mark_x = marks_x[Math.floor(Math.random() * marks_x.length)];
-    const marks_y = [1, -1];
-    var random_mark_y = marks_y[Math.floor(Math.random() * marks_y.length)];
+    // var mark_x = 1;
+    // var mark_y = 1;
     
     const particlePositions = mesh.geometry.attributes.position.array;
+
+    released_pos.x = event.clientX - (window.innerWidth / 2);
+    released_pos.y = - (event.clientY - (window.innerHeight / 2));
+
+    drag_distance.x = released_pos.x - pushed_pos.x;
+    drag_distance.y = released_pos.y - pushed_pos.y;
+
+    
+    console.log(drag_distance.x)
+    console.log(Math.abs(drag_distance.y) )
+
 
     if (click_frag==true) {
       for (let i = 0; i < vertces; i++) {
         
-        mouse.x = event.clientX - (window.innerWidth / 2);
-        mouse.y = - (event.clientY - (window.innerHeight / 2));
         x = attribute.getX(i)*(500/360) - 8;
         y = attribute.getY(i)*(500/360) +8;
         
 
-        var distance = Math.sqrt( Math.pow( x - mouse.x, 2 ) + Math.pow( y - mouse.y, 2 ) ) ;
+        var distance = Math.sqrt( Math.pow( x - released_pos.x, 2 ) + Math.pow( y - released_pos.y, 2 ) ) ;
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
         
-        
         if (distance < 10) {
-          var random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
           
-          
-          var random_value_x = random_numbers * random_mark_x;
-          var random_value_y = random_numbers * random_mark_y;
+          if (drag_distance.x > 0 & Math.abs(drag_distance.y) < 20) {
+            mark_x = 1;
+            mark_y = 0;
+            var random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+          } else if (drag_distance.x < 0 & Math.abs(drag_distance.y) < 20) {
+            mark_x = -1;
+            mark_y = 0;
+            var random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+          }
 
-          pos_x = particlePositions[3*i]+random_value_x*5;
+          if (drag_distance.y > 0 & Math.abs(drag_distance.y) >= 20) {
+            mark_y = 1;
+            var random_numbers = Math.floor( Math.random() * 50 + 1 -10 ) + 10;
+          } else if (drag_distance.y < 0 & Math.abs(drag_distance.y) >= 20) {
+            mark_y = -1;
+            var random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
+          }
+          
+          var random_value_x = random_numbers * mark_x;
+          var random_value_y = random_numbers * mark_y;
+
+          pos_x = particlePositions[3*i]+random_value_x;
           pos_y = particlePositions[3*i+1]+random_value_y*5;
 
           var tw1 = new TWEEN.Tween(vertex_position);
@@ -209,7 +232,6 @@ img.addEventListener("load", () => {
       window.setTimeout(reverse_flag, 500);
     }
     click_frag = false;
-    push_flag = false;
   }
  
   function reverse_flag() {
