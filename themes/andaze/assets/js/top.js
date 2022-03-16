@@ -6,9 +6,9 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 350;
+camera.position.z = 360;
 camera.position.x = 0;
-camera.position.y = 10;
+camera.position.y = 0;
 
 
 // レンダラーの作成
@@ -138,8 +138,8 @@ img.addEventListener("load", () => {
         
         mouse.x = event.clientX - (window.innerWidth / 2);
         mouse.y = - (event.clientY - (window.innerHeight / 2));
-        x = attribute.getX(i)*(500/360);
-        y = attribute.getY(i)*(500/360);
+        x = attribute.getX(i)*(500/360) - 8;
+        y = attribute.getY(i)*(500/360) +8;
         
         var random = Math.floor( Math.random() * 10 ) + 10;
 
