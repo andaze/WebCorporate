@@ -123,13 +123,27 @@ img.addEventListener("load", () => {
   // クリックフラグ
   var click_frag = false;
 
+
+  // プッシュフラグ
+  var push_flag = false;
+
   window.setTimeout(reverse_flag, 500);
 
-  renderer.domElement.addEventListener('mousedown', vibration);
+  renderer.domElement.addEventListener('mousedown', pushJudge);
+  renderer.domElement.addEventListener('mouseup', vibration);
+  renderer.domElement.addEventListener('mouseup', vibration);
 
+  function pushJudge() {
+    push_flag = true;
+  }
 
   function vibration(event) {
     event.preventDefault();
+
+    const marks_x = [1, -1];
+    var random_mark_x = marks_x[Math.floor(Math.random() * marks_x.length)];
+    const marks_y = [1, -1];
+    var random_mark_y = marks_y[Math.floor(Math.random() * marks_y.length)];
     
     const particlePositions = mesh.geometry.attributes.position.array;
 
@@ -141,7 +155,6 @@ img.addEventListener("load", () => {
         x = attribute.getX(i)*(500/360) - 8;
         y = attribute.getY(i)*(500/360) +8;
         
-        var random = Math.floor( Math.random() * 10 ) + 10;
 
         var distance = Math.sqrt( Math.pow( x - mouse.x, 2 ) + Math.pow( y - mouse.y, 2 ) ) ;
 
@@ -149,34 +162,46 @@ img.addEventListener("load", () => {
         
         
         if (distance < 10) {
-          pos_x = particlePositions[3*i]+10;
-          pos_y = particlePositions[3*i+1]+random*5
+          var random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
+          
+          
+          var random_value_x = random_numbers * random_mark_x;
+          var random_value_y = random_numbers * random_mark_y;
+
+          pos_x = particlePositions[3*i]+random_value_x*5;
+          pos_y = particlePositions[3*i+1]+random_value_y*5;
 
           var tw1 = new TWEEN.Tween(vertex_position);
           tw1.to({x:pos_x, y: pos_y}, 5000);
+          // tw1.easing( TWEEN.Easing.Quartic.InOut );
+          // tw1.easing( TWEEN.Easing.Quadratic.InOut );
           tw1.easing( TWEEN.Easing.Quadratic.Out );
+          tw1.repeat(1);
+          tw1.yoyo(true);
           tw1.onUpdate(function (object) {
             particlePositions[3*i] = object.x;
             particlePositions[3*i+1] = object.y;
           });
 
-          var tw2 = new TWEEN.Tween(vertex_position);
-          tw2.to({x: pos_x + random*5, y: pos_y+random*5}, 5000);
-          tw2.easing( TWEEN.Easing.Quadratic.Out );
-          tw2.onUpdate(function (object) {
-            particlePositions[3*i] = object.x;
-            particlePositions[3*i+1] = object.y;
-          });
+          // var tw2 = new TWEEN.Tween(vertex_position);
+          // tw2.to({x:  random_value*5, y: random_value*5}, 5000);
+          // // tw1.easing( TWEEN.Easing.Quartic.InOut );
+          // // tw1.easing( TWEEN.Easing.Quadratic.InOut );
+          // tw2.easing( TWEEN.Easing.Quadratic.Out );
+          // tw2.onUpdate(function (object) {
+          //   particlePositions[3*i] = object.x;
+          //   particlePositions[3*i+1] = object.y;
+          // });
 
-          var tw3 = new TWEEN.Tween(vertex_position);
-          tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
-          tw3.onUpdate(function (object) {
-            particlePositions[3*i] = object.x;
-            particlePositions[3*i+1] = object.y;
-          });
+          // var tw3 = new TWEEN.Tween(vertex_position);
+          // tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
+          // tw3.onUpdate(function (object) {
+          //   particlePositions[3*i] = object.x;
+          //   particlePositions[3*i+1] = object.y;
+          // });
 
-          tw2.chain(tw3);
-          tw1.chain(tw2);
+          // tw2.chain(tw3);
+          // tw1.chain(tw2);
 
           tw1.start();
         }
@@ -184,6 +209,7 @@ img.addEventListener("load", () => {
       window.setTimeout(reverse_flag, 500);
     }
     click_frag = false;
+    push_flag = false;
   }
  
   function reverse_flag() {
