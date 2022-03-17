@@ -121,6 +121,7 @@ img.addEventListener("load", () => {
   var released_pos = new THREE.Vector2();
   var pushed_pos= new THREE.Vector2();
   var slide_distance = new THREE.Vector2();
+  var slide_distance_abs = new THREE.Vector2();
 
   // クリックフラグ
   var click_frag = false;
@@ -131,6 +132,46 @@ img.addEventListener("load", () => {
   renderer.domElement.addEventListener('mousedown', pushJudge);
   renderer.domElement.addEventListener('mouseup', vibration);
 
+  // ---------------------------------------------------------------------------------------------
+  //タイマー処理関係　start
+  // ---------------------------------------------------------------------------------------------
+
+  //クリック時の時間を保持するための変数定義
+  var startTime;
+
+  //経過時刻を更新するための変数。 初めはだから0で初期化
+  var elapsedTime = 0;
+
+  //タイマーを止めるにはclearTimeoutを使う必要があり、そのためにはclearTimeoutの引数に渡すためのタイマーのidが必要
+  var timerId;
+
+  //タイマーをストップ -> 再開させたら0になってしまうのを避けるための変数。
+  var timeToadd = 0;
+
+  var slide_time;
+
+  //再帰的に使える用の関数
+  function countUp(){
+
+    //timerId変数はsetTimeoutの返り値になるので代入する
+    timerId = setTimeout(function(){
+
+        //経過時刻は現在時刻をミリ秒で示すDate.now()からstartを押した時の時刻(startTime)を引く
+        elapsedTime = Date.now() - startTime + timeToadd;
+
+        //countUp関数自身を呼ぶことで10ミリ秒毎に以下の計算を始める
+        countUp();
+
+        //1秒以下の時間を表示するために10ミリ秒後に始めるよう宣言
+      },10);
+
+      slide_time = elapsedTime / 1000
+  }
+
+  // ---------------------------------------------------------------------------------------------
+  //タイマー処理関係　end
+  // ---------------------------------------------------------------------------------------------
+
 
 
   function pushJudge(event) {
@@ -140,6 +181,13 @@ img.addEventListener("load", () => {
     // マウスを押し込んだ位置の座標を記憶
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
     pushed_pos.y = - (event.clientY - (window.innerHeight / 2));
+
+    // タイマーカウントアップ処理
+    //在時刻を示すDate.nowを代入
+    startTime = Date.now();
+
+    //再帰的に使えるように関数を作る
+    countUp();
 
   }
 
@@ -156,6 +204,8 @@ img.addEventListener("load", () => {
     // マウスを押し込んでスライドした距離
     slide_distance.x = released_pos.x - pushed_pos.x;
     slide_distance.y = released_pos.y - pushed_pos.y;
+    slide_distance_abs.x = Math.abs(slide_distance.x);
+    slide_distance_abs.y = Math.abs(slide_distance.y);
 
     if (click_frag==true) {
       for (let i = 0; i < vertces; i++) {
@@ -168,59 +218,71 @@ img.addEventListener("load", () => {
         // スライド開始座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - pushed_pos.x, 2 ) + Math.pow( y - pushed_pos.y, 2 ) ) ;
 
+        var mark_x;
+        var mark_y;
+
+        var random_numbers;
 
         // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-        if (distance < 10) {
+        if (distance < (10 / (slide_time * 3))) {
           
           // スライド方向がx軸の正の方向、かつy軸のスライド量の絶対値が20より小さい場合
-          if (slide_distance.x > 0 & Math.abs(slide_distance.y) < 20) {
+          if (slide_distance.x > 0 & slide_distance_abs.y < 20) {
 
             // 画面右方向に拡散させる
             mark_x = 1;
             mark_y = 0;
-            random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+            random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
 
           } 
           // スライド方向がx軸の負の方向、かつy軸のスライド量の絶対値が20より小さい場合
-          else if (slide_distance.x < 0 & Math.abs(slide_distance.y) < 20) {
+          else if (slide_distance.x < 0 & slide_distance_abs.y < 20) {
 
              // 画面左方向に拡散させる
             mark_x = -1;
             mark_y = 0;
-            random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+            random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
 
           }
 
           // スライド方向がy軸の正の方向、かつy軸のスライド量の絶対値が20より大きい場合
-          else if (slide_distance.y > 0 & Math.abs(slide_distance.y) >= 20) {
+          else if (slide_distance.y > 0 & slide_distance_abs.y >= 20) {
 
             // 画面上方向に拡散させる
+            mark_x = 0;
             mark_y = 1;
-            random_numbers = Math.floor( Math.random() * 50 + 1 -10 ) + 10;
+            random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
 
           } 
           // スライド方向がy軸の負の方向、かつy軸のスライド量の絶対値が20より大きい場合
-          else if (slide_distance.y < 0 & Math.abs(slide_distance.y) >= 20) {
+          else if (slide_distance.y < 0 & slide_distance_abs.y >= 20) {
 
             // 画面下方向に拡散させる
+            mark_x = 0;
             mark_y = -1;
-            random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
-
+            random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
+            
           }
+           // スライドではなくクリックの場合は拡散させない
+          else if (slide_distance_abs.x < 3 | slide_distance_abs.y < 3) {
+            return;
+          }
+          console.log(slide_distance)
           
           var random_value_x = random_numbers * mark_x;
           var random_value_y = random_numbers * mark_y;
 
-          pos_x = particlePositions[3*i] + random_value_x;
-          pos_y = particlePositions[3*i+1] + random_value_y*5;
+          // パーティクルの飛距離
+          pos_x = particlePositions[3*i] + random_value_x / slide_time;
+          pos_y = particlePositions[3*i+1] + random_value_y / slide_time;
 
           var tw1 = new TWEEN.Tween(vertex_position);
-          tw1.to({x:pos_x, y: pos_y}, 5000);
+          tw1.to({x:pos_x, y: pos_y}, (slide_time*10000));
           // tw1.easing( TWEEN.Easing.Quartic.InOut );
           // tw1.easing( TWEEN.Easing.Quadratic.InOut );
           tw1.easing( TWEEN.Easing.Quadratic.Out );
-          tw1.repeat(1);
-          tw1.yoyo(true);
+          // tw1.repeat(1);
+          // tw1.yoyo(true);
           tw1.onUpdate(function (object) {
             particlePositions[3*i] = object.x;
             particlePositions[3*i+1] = object.y;
@@ -236,21 +298,37 @@ img.addEventListener("load", () => {
           //   particlePositions[3*i+1] = object.y;
           // });
 
-          // var tw3 = new TWEEN.Tween(vertex_position);
-          // tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
-          // tw3.onUpdate(function (object) {
-          //   particlePositions[3*i] = object.x;
-          //   particlePositions[3*i+1] = object.y;
-          // });
+          var tw3 = new TWEEN.Tween(vertex_position);
+          tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1]}, 5000);
+          tw3.easing( TWEEN.Easing.Quadratic.Out );
+          tw3.delay(500);
+          tw3.onUpdate(function (object) {
+            particlePositions[3*i] = object.x;
+            particlePositions[3*i+1] = object.y;
+          });
 
           // tw2.chain(tw3);
-          // tw1.chain(tw2);
+          tw1.chain(tw3);
 
           tw1.start();
         }
       }
       window.setTimeout(reverse_flag, 500);
     }
+    //タイマーを止めるにはclearTimeoutを使う必要があり、そのためにはclearTimeoutの引数に渡すためのタイマーのidが必要
+    clearTimeout(timerId);
+
+
+    //タイマーに表示される時間elapsedTimeが現在時刻かたスタートボタンを押した時刻を引いたものなので、
+    //タイマーを再開させたら0になってしまう。elapsedTime = Date.now - startTime
+    //それを回避するためには過去のスタート時間からストップ時間までの経過時間を足してあげなければならない。elapsedTime = Date.now - startTime + timeToadd (timeToadd = ストップを押した時刻(Date.now)から直近のスタート時刻(startTime)を引く)
+    timeToadd += Date.now() - startTime;
+    //経過時刻を更新するための変数elapsedTimeを0にしてあげつつ、updateTimetTextで0になったタイムを表示。
+    elapsedTime = 0;
+
+    //リセット時に0に初期化したいのでリセットを押した際に0を代入してあげる
+    timeToadd = 0;
+
     click_frag = false;
   }
  
