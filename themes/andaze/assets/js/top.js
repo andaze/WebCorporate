@@ -120,7 +120,7 @@ img.addEventListener("load", () => {
   // マウスの定義
   var released_pos = new THREE.Vector2();
   var pushed_pos= new THREE.Vector2();
-  var drag_distance = new THREE.Vector2();
+  var slide_distance = new THREE.Vector2();
 
   // クリックフラグ
   var click_frag = false;
@@ -134,65 +134,85 @@ img.addEventListener("load", () => {
 
 
   function pushJudge(event) {
+
+    event.preventDefault();
+
+    // マウスを押し込んだ位置の座標を記憶
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
     pushed_pos.y = - (event.clientY - (window.innerHeight / 2));
+
   }
 
   function vibration(event) {
-    event.preventDefault();
 
-    // var mark_x = 1;
-    // var mark_y = 1;
+    event.preventDefault();
     
     const particlePositions = mesh.geometry.attributes.position.array;
 
+    // マウスを放した位置の座標を記憶
     released_pos.x = event.clientX - (window.innerWidth / 2);
     released_pos.y = - (event.clientY - (window.innerHeight / 2));
 
-    drag_distance.x = released_pos.x - pushed_pos.x;
-    drag_distance.y = released_pos.y - pushed_pos.y;
-
-    
-    console.log(drag_distance.x)
-    console.log(Math.abs(drag_distance.y) )
-
+    // マウスを押し込んでスライドした距離
+    slide_distance.x = released_pos.x - pushed_pos.x;
+    slide_distance.y = released_pos.y - pushed_pos.y;
 
     if (click_frag==true) {
       for (let i = 0; i < vertces; i++) {
         
+        // パーティクルの座標
         x = attribute.getX(i)*(500/360) - 8;
-        y = attribute.getY(i)*(500/360) +8;
-        
-
-        var distance = Math.sqrt( Math.pow( x - released_pos.x, 2 ) + Math.pow( y - released_pos.y, 2 ) ) ;
-
+        y = attribute.getY(i)*(500/360) + 8;
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
         
+        // スライド開始座標からパーティクルまでの距離
+        var distance = Math.sqrt( Math.pow( x - pushed_pos.x, 2 ) + Math.pow( y - pushed_pos.y, 2 ) ) ;
+
+
+        // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
         if (distance < 10) {
           
-          if (drag_distance.x > 0 & Math.abs(drag_distance.y) < 20) {
+          // スライド方向がx軸の正の方向、かつy軸のスライド量の絶対値が20より小さい場合
+          if (slide_distance.x > 0 & Math.abs(slide_distance.y) < 20) {
+
+            // 画面右方向に拡散させる
             mark_x = 1;
             mark_y = 0;
-            var random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
-          } else if (drag_distance.x < 0 & Math.abs(drag_distance.y) < 20) {
+            random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+
+          } 
+          // スライド方向がx軸の負の方向、かつy軸のスライド量の絶対値が20より小さい場合
+          else if (slide_distance.x < 0 & Math.abs(slide_distance.y) < 20) {
+
+             // 画面左方向に拡散させる
             mark_x = -1;
             mark_y = 0;
-            var random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+            random_numbers = Math.floor( Math.random() * 100 + 1 -90 ) + 90;
+
           }
 
-          if (drag_distance.y > 0 & Math.abs(drag_distance.y) >= 20) {
+          // スライド方向がy軸の正の方向、かつy軸のスライド量の絶対値が20より大きい場合
+          else if (slide_distance.y > 0 & Math.abs(slide_distance.y) >= 20) {
+
+            // 画面上方向に拡散させる
             mark_y = 1;
-            var random_numbers = Math.floor( Math.random() * 50 + 1 -10 ) + 10;
-          } else if (drag_distance.y < 0 & Math.abs(drag_distance.y) >= 20) {
+            random_numbers = Math.floor( Math.random() * 50 + 1 -10 ) + 10;
+
+          } 
+          // スライド方向がy軸の負の方向、かつy軸のスライド量の絶対値が20より大きい場合
+          else if (slide_distance.y < 0 & Math.abs(slide_distance.y) >= 20) {
+
+            // 画面下方向に拡散させる
             mark_y = -1;
-            var random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
+            random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
+
           }
           
           var random_value_x = random_numbers * mark_x;
           var random_value_y = random_numbers * mark_y;
 
-          pos_x = particlePositions[3*i]+random_value_x;
-          pos_y = particlePositions[3*i+1]+random_value_y*5;
+          pos_x = particlePositions[3*i] + random_value_x;
+          pos_y = particlePositions[3*i+1] + random_value_y*5;
 
           var tw1 = new TWEEN.Tween(vertex_position);
           tw1.to({x:pos_x, y: pos_y}, 5000);
