@@ -116,18 +116,22 @@ img.addEventListener("load", () => {
   // オブジェクトをシーンに追加
   scene.add( mesh );
   
+  // クリックフラグ
+  var click_frag = false;
+
+  var camera_flag = false;
   
   // 画像の透明度配列
   const particleAlpha =mesh.geometry.attributes.alpha.array;
   const particleFlag = mesh.geometry.attributes.flag.array;
 
   // // フェードイン実行（FadeIn関数）
-  // FadeIn(3);
+  FadeIn(3);
 
-  // window.setTimeout(reverse_flag, 4*2000);
-  // window.setTimeout(reverse_camera_flag, 4*2000)
-  window.setTimeout(reverse_flag, 100);
-  window.setTimeout(reverse_camera_flag, 100)
+  window.setTimeout(reverse_flag, 4*2000);
+  window.setTimeout(reverse_camera_flag, 4*2000);
+  // window.setTimeout(reverse_flag, 100);
+  // window.setTimeout(reverse_camera_flag, 100)
 
   // ジオメトリの頂点座標の配列
   var attribute = mesh.geometry.attributes.position;
@@ -138,10 +142,6 @@ img.addEventListener("load", () => {
   var slide_distance = new THREE.Vector2();
   var slide_distance_abs = new THREE.Vector2();
 
-  // クリックフラグ
-  var click_frag = false;
-
-  var camera_flag = false;
 
   function reverse_camera_flag() {
     if (camera_flag === false) {
@@ -476,9 +476,9 @@ img.addEventListener("load", () => {
 
     // パーティクルの全頂点をTween.jsによりアニメーションさせる
     for (let i = 0; i < vertces; i++) {
-      var vertex_alpha = {x: particleAlpha[i]};
-      var tween = new TWEEN.Tween(vertex_alpha);
-      tween.to({x: 1}, 3000);
+      var vertex = {x: particleAlpha[i], y:particleFlag[i]};
+      var tween = new TWEEN.Tween(vertex);
+      tween.to({x: 1, y: 1}, 3000);
 
       // 透明度の低いパーティクルから順番に出現させる
       for (j = 0; j < sampling_times; j++) {
