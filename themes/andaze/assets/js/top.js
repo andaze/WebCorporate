@@ -119,10 +119,11 @@ img.addEventListener("load", () => {
   const particleAlpha =mesh.geometry.attributes.alpha.array;
   const particleFlag = mesh.geometry.attributes.flag.array;
 
-  // フェードイン実行（FadeIn関数）
-  FadeIn(3);
+  // // フェードイン実行（FadeIn関数）
+  // FadeIn(3);
 
-  window.setTimeout(reverse_flag, 4*2000);
+  // window.setTimeout(reverse_flag, 4*2000);
+  window.setTimeout(reverse_flag, 100);
 
   // ジオメトリの頂点座標の配列
   var attribute = mesh.geometry.attributes.position;
@@ -245,34 +246,34 @@ img.addEventListener("load", () => {
               mark_x = 1;
               mark_y = 0;
               random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
-  
+              
             } 
             // スライド方向がx軸の負の方向、かつy軸のスライド量の絶対値が20より小さい場合
             else if (slide_distance.x < 0 & slide_distance_abs.y < 20) {
-  
-               // 画面左方向に拡散させる
+              
+              // 画面左方向に拡散させる
               mark_x = -1;
               mark_y = 0;
               random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
-  
+              
             }
-  
+            
             // スライド方向がy軸の正の方向、かつy軸のスライド量の絶対値が20より大きい場合
             else if (slide_distance.y > 0 & slide_distance_abs.y >= 20) {
-  
+              
               // 画面上方向に拡散させる
               mark_x = 0;
               mark_y = 1;
               random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
-  
+              
             } 
             // スライド方向がy軸の負の方向、かつy軸のスライド量の絶対値が20より大きい場合
             else if (slide_distance.y < 0 & slide_distance_abs.y >= 20) {
-  
+              
               // 画面下方向に拡散させる
               mark_x = 0;
               mark_y = -1;
-              random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
+              random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
               
             }
              // スライドではなくクリックの場合は拡散させない
@@ -286,33 +287,17 @@ img.addEventListener("load", () => {
             var random_value_y = random_numbers * mark_y;
   
             // パーティクルの飛距離
-            var pos_x = particlePositions[3*i] + random_value_x / slide_time;
-            var pos_y = particlePositions[3*i+1] + random_value_y / slide_time;
+            var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
+            var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
   
             var tw1 = new TWEEN.Tween(vertex_position);
             tw1.to({x:pos_x, y: pos_y, z: particleFlag[i]}, (slide_time*10000));
-            // tw1.easing( TWEEN.Easing.Quartic.InOut );
-            // tw1.easing( TWEEN.Easing.Quadratic.InOut );
             tw1.easing( TWEEN.Easing.Quadratic.Out );
-            // tw1.repeat(1);
-            // tw1.yoyo(true);
             tw1.onUpdate(function (object) {
               particlePositions[3*i] = object.x;
               particlePositions[3*i+1] = object.y;
               particleFlag[i] = 0;
             });
-  
-  
-  
-            // var tw2 = new TWEEN.Tween(vertex_position);
-            // tw2.to({x:  random_value*5, y: random_value*5}, 5000);
-            // // tw1.easing( TWEEN.Easing.Quartic.InOut );
-            // // tw1.easing( TWEEN.Easing.Quadratic.InOut );
-            // tw2.easing( TWEEN.Easing.Quadratic.Out );
-            // tw2.onUpdate(function (object) {
-            //   particlePositions[3*i] = object.x;
-            //   particlePositions[3*i+1] = object.y;
-            // });
   
             var tw3 = new TWEEN.Tween(vertex_position);
             tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1], z: particleFlag[i]}, 5000);
@@ -324,7 +309,6 @@ img.addEventListener("load", () => {
               particleFlag[i] = 1;
             });
   
-            // tw2.chain(tw3);
             tw1.chain(tw3);
   
             tw1.start();
@@ -503,8 +487,6 @@ img.addEventListener("load", () => {
     mesh.geometry.attributes.position.needsUpdate = true;
 
     mesh.geometry.attributes.flag.needsUpdate = true;
-
-    console.log(click_frag)
   }
 
 });
