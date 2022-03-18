@@ -30,6 +30,8 @@ wrapper.appendChild(renderer.domElement);
 // // ズーム設定解除
 // controls.enableZoom = false;
 
+// controls.enabled = false;
+
 
 // ジオメトリーの作成
 const geometry = new THREE.BufferGeometry();
@@ -123,7 +125,9 @@ img.addEventListener("load", () => {
   // FadeIn(3);
 
   // window.setTimeout(reverse_flag, 4*2000);
+  // window.setTimeout(reverse_camera_flag, 4*2000)
   window.setTimeout(reverse_flag, 100);
+  window.setTimeout(reverse_camera_flag, 100)
 
   // ジオメトリの頂点座標の配列
   var attribute = mesh.geometry.attributes.position;
@@ -137,10 +141,18 @@ img.addEventListener("load", () => {
   // クリックフラグ
   var click_frag = false;
 
+  var camera_flag = false;
 
+  function reverse_camera_flag() {
+    if (camera_flag === false) {
+      camera_flag = true;
+    } else if (camera_flag === true) {
+      camera_flag = false;
+    }
+  }
 
   renderer.domElement.addEventListener('mousedown', pushJudge);
-  renderer.domElement.addEventListener('mouseup', vibration);
+  renderer.domElement.addEventListener('mouseup', diffusion);
 
   // ---------------------------------------------------------------------------------------------
   //タイマー処理関係　start
@@ -201,7 +213,7 @@ img.addEventListener("load", () => {
 
   }
 
-  function vibration(event) {
+  function diffusion(event) {
 
     event.preventDefault();
     
@@ -224,6 +236,9 @@ img.addEventListener("load", () => {
         x = attribute.getX(i)*(500/360) - 8;
         y = attribute.getY(i)*(500/360) + 8;
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+
+        // カメラの座標
+        var camera_position = {x1: camera.position.x, y1: camera.position.y, z1: camera.position.z, x2: camera.rotation.x, y2: camera.rotation.y};
         
         // スライド開始座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - pushed_pos.x, 2 ) + Math.pow( y - pushed_pos.y, 2 ) ) ;
@@ -278,11 +293,9 @@ img.addEventListener("load", () => {
             }
              // スライドではなくクリックの場合は拡散させない
             else if (slide_distance_abs.x < 3 | slide_distance_abs.y < 3) {
-              return;
+              return
             }
             
-           
-  
             var random_value_x = random_numbers * mark_x;
             var random_value_y = random_numbers * mark_y;
   
@@ -290,33 +303,61 @@ img.addEventListener("load", () => {
             var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
             var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
   
-            var tw1 = new TWEEN.Tween(vertex_position);
-            tw1.to({x:pos_x, y: pos_y, z: particleFlag[i]}, (slide_time*10000));
-            tw1.easing( TWEEN.Easing.Quadratic.Out );
-            tw1.onUpdate(function (object) {
+            var diffusion = new TWEEN.Tween(vertex_position);
+            diffusion.to({x:pos_x, y: pos_y, z: particleFlag[i]}, (slide_time*10000));
+            diffusion.easing( TWEEN.Easing.Quadratic.Out );
+            diffusion.onUpdate(function (object) {
               particlePositions[3*i] = object.x;
               particlePositions[3*i+1] = object.y;
               particleFlag[i] = 0;
             });
   
-            var tw3 = new TWEEN.Tween(vertex_position);
-            tw3.to({x: particlePositions[3*i], y: particlePositions[3*i+1], z: particleFlag[i]}, 5000);
-            tw3.easing( TWEEN.Easing.Quadratic.Out );
-            tw3.delay(500);
-            tw3.onUpdate(function (object) {
+            var back = new TWEEN.Tween(vertex_position);
+            back.to({x: particlePositions[3*i], y: particlePositions[3*i+1], z: particleFlag[i]}, 5000);
+            back.easing( TWEEN.Easing.Quadratic.Out );
+            back.delay(500);
+            back.onUpdate(function (object) {
               particlePositions[3*i] = object.x;
               particlePositions[3*i+1] = object.y;
               particleFlag[i] = 1;
             });
-  
-            tw1.chain(tw3);
-  
-            tw1.start();
-  
+
+            var camera_move = new TWEEN.Tween(camera_position);
+            camera_move.to({x1: 80*mark_x, y1: 100*(-1*mark_y), z1: 300, x2: 0.3*mark_y, y2: 0.1*mark_x}, 5000);
+            camera_move.delay(2000);
+            camera_move.onUpdate(function (object) {
+              camera.position.x = object.x1;
+              camera.position.y = object.y1;
+              camera.position.z = object.z1;
+              camera.rotation.x = object.x2;
+              camera.rotation.y = object.y2;
+            });
+
+            var camera_back = new TWEEN.Tween(camera_position);
+            camera_back.to({x1: 0, y1: 0, z1: 350, x2: 0, y2: 0}, 5000);
+            camera_back.delay(2000);
+            camera_back.onUpdate(function (object) {
+              camera.position.x = object.x1;
+              camera.position.y = object.y1;
+              camera.position.z = object.z1;
+              camera.rotation.x = object.x2;
+              camera.rotation.y = object.y2;
+            });
+           
+            diffusion.chain(back);
+            camera_move.chain(camera_back);
+
+            diffusion.start();
+
+            if (camera_flag === true) {
+              camera_move.start();
+              reverse_camera_flag();
+            }
           }
         }
-
+        
       }
+      window.setTimeout(reverse_camera_flag, 5000+5000)
     }
     //タイマーを止めるにはclearTimeoutを使う必要があり、そのためにはclearTimeoutの引数に渡すためのタイマーのidが必要
     clearTimeout(timerId);
@@ -449,6 +490,7 @@ img.addEventListener("load", () => {
 
       tween.onUpdate(function(object) {
           particleAlpha[i] = object.x;
+          particleFlag[i] = object.y;
       })
     }
   }
