@@ -198,6 +198,13 @@ img.addEventListener("load", () => {
   animate();
 
 
+  // 初期化のために実行
+  onResize();
+
+  // リサイズイベント発生時に実行
+  window.addEventListener('resize', onResize);
+
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 start
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -420,7 +427,7 @@ img.addEventListener("load", () => {
         // パーティクルの座標
         var x = attribute.getX(i)*(500/360) - 8;
         var y = attribute.getY(i)*(500/360) + 8;
-        
+
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
 
         // カメラの座標
@@ -566,6 +573,25 @@ img.addEventListener("load", () => {
     mesh.geometry.attributes.position.needsUpdate = true;
 
     mesh.geometry.attributes.flag.needsUpdate = true;
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義11　リサイズ対応
+  // ---------------------------------------------------------------------------------------------
+
+  function onResize() {
+    // サイズを取得
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // レンダラーのサイズを調整する
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // カメラのアスペクト比を正す
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
   }
 
   
