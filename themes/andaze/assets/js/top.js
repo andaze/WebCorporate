@@ -428,7 +428,7 @@ img.addEventListener("load", () => {
         var x = attribute.getX(i)*(500/360) - 8;
         var y = attribute.getY(i)*(500/360) + 8;
 
-        var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+        var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
         // カメラの座標
         var camera_position = {x1: camera.position.x, y1: camera.position.y, z1: camera.position.z, x2: camera.rotation.x, y2: camera.rotation.y};
@@ -485,7 +485,7 @@ img.addEventListener("load", () => {
               
             }
              // スライドではなくクリックの場合は拡散させない
-            else if (slide_distance_abs.x < 3 | slide_distance_abs.y < 3) {
+            else if (slide_distance_abs.x < 5 | slide_distance_abs.y < 5) {
               return
             }
             
@@ -497,28 +497,19 @@ img.addEventListener("load", () => {
             var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
 
             var diffusion = new TWEEN.Tween(vertex_position);
-            diffusion.to({x:pos_x, y: pos_y, z: particleFlag[i]}, (slide_time*10000));
+            diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*10000));
             diffusion.easing( TWEEN.Easing.Quadratic.Out );
             diffusion.onUpdate(function (object) {
               particlePositions[3*i] = object.x;
               particlePositions[3*i+1] = object.y;
-              particleFlag[i] = 0;
+              particleFlag[i] = object.z;
             });
-
-            var back = new TWEEN.Tween(vertex_position);
-            back.to({x: particlePositions[3*i], y: particlePositions[3*i+1], z: particleFlag[i]}, 5000);
-            back.easing( TWEEN.Easing.Quadratic.Out );
-            back.delay(500);
-            back.onUpdate(function (object) {
-              particlePositions[3*i] = object.x;
-              particlePositions[3*i+1] = object.y;
-              particleFlag[i] = 1;
-            });
+            diffusion.repeat(1);
+            diffusion.yoyo(true);
 
             var camera_move = new TWEEN.Tween(camera_position);
-            // camera_move.to({x1: 80*mark_x, y1: 100*(-1*mark_y), z1: 300, x2: 0.3*mark_y, y2: 0.1*mark_x}, 5000);
-            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: 350 - (1000 / (slide_time*100)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*10000);
-            camera_move.delay(slide_time*10000);
+            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: 350 - (2000 / (slide_time*100)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
+            camera_move.delay(2000);
             camera_move.onUpdate(function (object) {
               camera.position.x = object.x1;
               camera.position.y = object.y1;
@@ -529,14 +520,14 @@ img.addEventListener("load", () => {
             camera_move.repeat(1);
             camera_move.yoyo(true);
 
-            diffusion.chain(back);
             diffusion.start();
 
-            if (camera_flag === true) {
-              camera_move.start();
-              reverse_camera_flag();
-              window.setTimeout(reverse_camera_flag, slide_time*10000*4)
-            }
+
+            // if (camera_flag === true) {
+            //   camera_move.start();
+            //   reverse_camera_flag();
+            //   window.setTimeout(reverse_camera_flag, slide_time*100000*2 + 4000)
+            // }
           }
         }
         
