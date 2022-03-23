@@ -522,12 +522,11 @@ img.addEventListener("load", () => {
 
             diffusion.start();
 
-
-            // if (camera_flag === true) {
-            //   camera_move.start();
-            //   reverse_camera_flag();
-            //   window.setTimeout(reverse_camera_flag, slide_time*100000*2 + 4000)
-            // }
+            if (camera_flag === true) {
+              camera_move.start();
+              reverse_camera_flag();
+              window.setTimeout(reverse_camera_flag, slide_time*100000*2 + 4000)
+            }
           }
         }
         
