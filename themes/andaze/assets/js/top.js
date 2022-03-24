@@ -443,7 +443,7 @@ img.addEventListener("load", () => {
 
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-          if (distance < (10 / (slide_time * 3))) {
+          if (distance < (10 / (slide_time * 6))) {
 
             particleFlag[i] = 0;
             
@@ -508,7 +508,7 @@ img.addEventListener("load", () => {
             diffusion.yoyo(true);
 
             var camera_move = new TWEEN.Tween(camera_position);
-            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: 350 - (2000 / (slide_time*100)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
+            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: 350 - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
             camera_move.delay(2000);
             camera_move.onUpdate(function (object) {
               camera.position.x = object.x1;
