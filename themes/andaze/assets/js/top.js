@@ -443,7 +443,7 @@ img.addEventListener("load", () => {
 
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-          if (distance < (10 / (slide_time * 6))) {
+          if (distance < (10 / (slide_time * 6)) & slide_time > 0.01) {
 
             particleFlag[i] = 0;
             
@@ -497,7 +497,7 @@ img.addEventListener("load", () => {
             var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
 
             var diffusion = new TWEEN.Tween(vertex_position);
-            diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*10000));
+            diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*30000));
             diffusion.easing( TWEEN.Easing.Quadratic.Out );
             diffusion.onUpdate(function (object) {
               particlePositions[3*i] = object.x;
