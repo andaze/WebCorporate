@@ -10,9 +10,9 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 360;
+camera.position.z = 260;
 camera.position.x = 0;
-camera.position.y = 0;
+camera.position.y = 20;
 
 
 // レンダラーの作成
@@ -36,7 +36,7 @@ const geometry = new THREE.BufferGeometry();
 const img = new Image();
 
 // 表示させる画像のパスを指定
-img.src = "img/yoko_2k_min.png";
+img.src = "img/logo_2_min.png";
 img.crossOrigin = "anonymous";
 
 // 画像が読み込まれた後に処理を実行
@@ -185,14 +185,29 @@ img.addEventListener("load", () => {
   // オブジェクトをシーンに追加
   scene.add( mesh );
 
+
+  // // 座標軸を表示
+  // var axes = new THREE.AxisHelper(125);
+  // scene.add(axes);
+
+
   // // フェードイン実行（FadeIn関数）
   FadeIn(3);
 
   window.setTimeout(reverse_click_flag, 4*2000);
   window.setTimeout(reverse_camera_flag, 4*2000);
 
-  renderer.domElement.addEventListener('mousedown', pushJudge);
-  renderer.domElement.addEventListener('mouseup', diffusion);
+  // デバイスがPCかスマホか判別し処理を分ける
+  if (typeof window.ontouchstart === "undefined") {
+    // PCの処理
+    renderer.domElement.addEventListener('mousedown', pushJudge);
+    renderer.domElement.addEventListener('mouseup', diffusion);
+  } else {
+    // スマホの処理
+    renderer.domElement.addEventListener('touchstart', pushJudge);
+    renderer.domElement.addEventListener('touchend', diffusion);
+  }
+
 
   // アニメーションの実行（animate関数）
   animate();
@@ -386,10 +401,16 @@ img.addEventListener("load", () => {
   function pushJudge(event) {
 
     event.preventDefault();
-
-    // マウスを押し込んだ位置の座標を記憶
+    
+    // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
-    pushed_pos.y = - (event.clientY - (window.innerHeight / 2));
+    pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
+
+    // タップした位置の座標を記憶（スマホ）
+    if (typeof window.ontouchstart != "undefined") {
+      pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
+      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+    }
 
     // タイマーカウントアップ処理
     //在時刻を示すDate.nowを代入
@@ -411,9 +432,15 @@ img.addEventListener("load", () => {
     
     const particlePositions = mesh.geometry.attributes.position.array;
 
-    // マウスを放した位置の座標を記憶
+    // マウスを放した位置の座標を記憶（PC）
     released_pos.x = event.clientX - (window.innerWidth / 2);
-    released_pos.y = - (event.clientY - (window.innerHeight / 2));
+    released_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
+
+    // タップを放したした位置の座標を記憶（スマホ）
+    if (typeof window.ontouchstart != "undefined") {
+      released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
+      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+    }
 
     // マウスを押し込んでスライドした距離
     slide_distance.x = released_pos.x - pushed_pos.x;
@@ -425,8 +452,8 @@ img.addEventListener("load", () => {
       for (let i = 0; i < vertces; i++) {
         
         // パーティクルの座標
-        var x = attribute.getX(i)*(500/360) - 8;
-        var y = attribute.getY(i)*(500/360) + 8;
+        var x = attribute.getX(i)*(500/camera.position.z) - 8;
+        var y = attribute.getY(i)*(500/camera.position.z) + 8;
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
@@ -508,7 +535,7 @@ img.addEventListener("load", () => {
             diffusion.yoyo(true);
 
             var camera_move = new TWEEN.Tween(camera_position);
-            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: 350 - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
+            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: camera.position.z - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
             camera_move.delay(2000);
             camera_move.onUpdate(function (object) {
               camera.position.x = object.x1;
@@ -584,6 +611,17 @@ img.addEventListener("load", () => {
     // サイズを取得
     const width = window.innerWidth;
     const height = window.innerHeight;
+
+    const break_point_first = 780;
+    const break_point_second = 585;
+
+    if (width >= break_point_first) {
+      camera.position.z = 260;
+    } else if (width < break_point_first & width >= break_point_second) {
+      camera.position.z = 360;
+    } else {
+      camera.position.z = 480;
+    }
 
     // レンダラーのサイズを調整する
     renderer.setPixelRatio(window.devicePixelRatio);
