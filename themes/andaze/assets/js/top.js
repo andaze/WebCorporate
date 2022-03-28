@@ -186,9 +186,9 @@ img.addEventListener("load", () => {
   scene.add( mesh );
 
 
-  // 座標軸を表示
-  var axes = new THREE.AxisHelper(125);
-  scene.add(axes);
+  // // 座標軸を表示
+  // var axes = new THREE.AxisHelper(125);
+  // scene.add(axes);
 
 
   // // フェードイン実行（FadeIn関数）
