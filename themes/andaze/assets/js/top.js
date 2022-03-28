@@ -191,8 +191,15 @@ img.addEventListener("load", () => {
   window.setTimeout(reverse_click_flag, 4*2000);
   window.setTimeout(reverse_camera_flag, 4*2000);
 
-  renderer.domElement.addEventListener('mousedown', pushJudge);
-  renderer.domElement.addEventListener('mouseup', diffusion);
+  // デバイスがPCかスマホか判別し処理を分ける
+  if(typeof window.ontouchstart === "undefined") {
+    // PCの処理
+    renderer.domElement.addEventListener('mousedown', pushJudge);
+    renderer.domElement.addEventListener('mouseup', diffusion);
+  } else {
+    // スマホの処理
+    console.log("OK");
+  }
 
   // アニメーションの実行（animate関数）
   animate();
@@ -590,7 +597,6 @@ img.addEventListener("load", () => {
     } else {
       camera.position.z = 460;
     }
-    console.log(camera.position.z)
 
     // レンダラーのサイズを調整する
     renderer.setPixelRatio(window.devicePixelRatio);
