@@ -36,7 +36,7 @@ const geometry = new THREE.BufferGeometry();
 const img = new Image();
 
 // 表示させる画像のパスを指定
-img.src = "img/yoko_2k_min.png";
+img.src = "img/logo_2_min.png";
 img.crossOrigin = "anonymous";
 
 // 画像が読み込まれた後に処理を実行
@@ -425,8 +425,8 @@ img.addEventListener("load", () => {
       for (let i = 0; i < vertces; i++) {
         
         // パーティクルの座標
-        var x = attribute.getX(i)*(500/360) - 8;
-        var y = attribute.getY(i)*(500/360) + 8;
+        var x = attribute.getX(i)*(500/camera.position.z) - 8;
+        var y = attribute.getY(i)*(500/camera.position.z) + 8;
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
@@ -584,6 +584,13 @@ img.addEventListener("load", () => {
     // サイズを取得
     const width = window.innerWidth;
     const height = window.innerHeight;
+
+    if (width >= 585) {
+      camera.position.z = 360;
+    } else {
+      camera.position.z = 460;
+    }
+    console.log(camera.position.z)
 
     // レンダラーのサイズを調整する
     renderer.setPixelRatio(window.devicePixelRatio);
