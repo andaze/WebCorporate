@@ -185,6 +185,12 @@ img.addEventListener("load", () => {
   // オブジェクトをシーンに追加
   scene.add( mesh );
 
+
+  // 座標軸を表示
+  var axes = new THREE.AxisHelper(125);
+  scene.add(axes);
+
+
   // // フェードイン実行（FadeIn関数）
   FadeIn(3);
 
@@ -192,14 +198,16 @@ img.addEventListener("load", () => {
   window.setTimeout(reverse_camera_flag, 4*2000);
 
   // デバイスがPCかスマホか判別し処理を分ける
-  if(typeof window.ontouchstart === "undefined") {
+  if (typeof window.ontouchstart === "undefined") {
     // PCの処理
     renderer.domElement.addEventListener('mousedown', pushJudge);
     renderer.domElement.addEventListener('mouseup', diffusion);
   } else {
     // スマホの処理
-    console.log("OK");
+    renderer.domElement.addEventListener('touchstart', pushJudge);
+    renderer.domElement.addEventListener('touchend', diffusion);
   }
+
 
   // アニメーションの実行（animate関数）
   animate();
@@ -393,10 +401,16 @@ img.addEventListener("load", () => {
   function pushJudge(event) {
 
     event.preventDefault();
-
-    // マウスを押し込んだ位置の座標を記憶
+    
+    // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
     pushed_pos.y = - (event.clientY - (window.innerHeight / 2));
+
+    // タップした位置の座標を記憶（スマホ）
+    if (typeof window.ontouchstart != "undefined") {
+      pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
+      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2));
+    }
 
     // タイマーカウントアップ処理
     //在時刻を示すDate.nowを代入
@@ -418,9 +432,16 @@ img.addEventListener("load", () => {
     
     const particlePositions = mesh.geometry.attributes.position.array;
 
-    // マウスを放した位置の座標を記憶
+    // マウスを放した位置の座標を記憶（PC）
     released_pos.x = event.clientX - (window.innerWidth / 2);
     released_pos.y = - (event.clientY - (window.innerHeight / 2));
+
+    // タップを放したした位置の座標を記憶（スマホ）
+    if (typeof window.ontouchstart != "undefined") {
+      released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
+      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2));
+      console.log(released_pos);
+    }
 
     // マウスを押し込んでスライドした距離
     slide_distance.x = released_pos.x - pushed_pos.x;
