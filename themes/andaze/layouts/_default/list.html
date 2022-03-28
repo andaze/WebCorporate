@@ -1,10 +1,15 @@
 {{ define "main" }}
+{{ partial "molecule-link.html" . }}
 <main>
   <div class="bg-box">
     {{ with .Params.headingImg }}
-    <img src="../img/{{ . }}" alt="" class="l-list wrapper-img">
+    <img src="../img/{{ . }}"
+         alt=""
+         class="l-list wrapper-img">
     {{ else }}
-    <img src="../img/top-01.jpg" alt="" class="l-list wrapper-img">
+    <img src="../img/top-01.jpg"
+         alt=""
+         class="l-list wrapper-img">
     {{ end }}
   </div>
 
@@ -20,14 +25,11 @@
 
     {{ range .Sections }}
     <section class="list-section">
-
       <h2>{{ .Title }}</h2>
       {{ .Content }}
     </section>
     {{ end }}
   </div>
 </main>
-
-{{- partial "footer.html" . -}}
 
 {{ end }}
