@@ -186,9 +186,9 @@ img.addEventListener("load", () => {
   scene.add( mesh );
 
 
-  // 座標軸を表示
-  var axes = new THREE.AxisHelper(125);
-  scene.add(axes);
+  // // 座標軸を表示
+  // var axes = new THREE.AxisHelper(125);
+  // scene.add(axes);
 
 
   // // フェードイン実行（FadeIn関数）
@@ -408,8 +408,8 @@ img.addEventListener("load", () => {
 
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
-      pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
-      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2));
+      pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
+      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20;
     }
 
     // タイマーカウントアップ処理
@@ -438,9 +438,8 @@ img.addEventListener("load", () => {
 
     // タップを放したした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
-      released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
-      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2));
-      console.log(released_pos);
+      released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
+      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20;
     }
 
     // マウスを押し込んでスライドした距離
@@ -536,7 +535,7 @@ img.addEventListener("load", () => {
             diffusion.yoyo(true);
 
             var camera_move = new TWEEN.Tween(camera_position);
-            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: 350 - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
+            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: camera.position.z - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
             camera_move.delay(2000);
             camera_move.onUpdate(function (object) {
               camera.position.x = object.x1;
@@ -616,7 +615,7 @@ img.addEventListener("load", () => {
     if (width >= 585) {
       camera.position.z = 360;
     } else {
-      camera.position.z = 460;
+      camera.position.z = 480;
     }
 
     // レンダラーのサイズを調整する
