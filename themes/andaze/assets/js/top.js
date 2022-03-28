@@ -470,9 +470,18 @@ img.addEventListener("load", () => {
 
         var random_numbers;
 
+        var power;
+
+        // スマホの場合はパーティクルが吹き飛びやすくする
+        if (typeof window.ontouchstart != "undefined") {
+          power = 3;
+        } else {
+          power = 1;
+        }
+
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-          if (distance < (10 / (slide_time * 6)) & slide_time > 0.01) {
+          if (distance < (10 / (slide_time * 6)) * power & slide_time > 0.01) {
 
             particleFlag[i] = 0;
             
@@ -520,10 +529,12 @@ img.addEventListener("load", () => {
             
             var random_value_x = random_numbers * mark_x;
             var random_value_y = random_numbers * mark_y;
+
+            
   
             // パーティクルの飛距離
-            var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
-            var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
+            var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20)) * power;
+            var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20)) * power;
 
             var diffusion = new TWEEN.Tween(vertex_position);
             diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*30000));
