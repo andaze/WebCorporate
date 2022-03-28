@@ -10,9 +10,9 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 360;
+camera.position.z = 260;
 camera.position.x = 0;
-camera.position.y = 0;
+camera.position.y = 20;
 
 
 // レンダラーの作成
@@ -186,9 +186,9 @@ img.addEventListener("load", () => {
   scene.add( mesh );
 
 
-  // // 座標軸を表示
-  // var axes = new THREE.AxisHelper(125);
-  // scene.add(axes);
+  // 座標軸を表示
+  var axes = new THREE.AxisHelper(125);
+  scene.add(axes);
 
 
   // // フェードイン実行（FadeIn関数）
@@ -404,12 +404,12 @@ img.addEventListener("load", () => {
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
-    pushed_pos.y = - (event.clientY - (window.innerHeight / 2));
+    pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
 
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
       pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
-      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20;
+      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
     }
 
     // タイマーカウントアップ処理
@@ -434,12 +434,12 @@ img.addEventListener("load", () => {
 
     // マウスを放した位置の座標を記憶（PC）
     released_pos.x = event.clientX - (window.innerWidth / 2);
-    released_pos.y = - (event.clientY - (window.innerHeight / 2));
+    released_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
 
     // タップを放したした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
       released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
-      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20;
+      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
     }
 
     // マウスを押し込んでスライドした距離
@@ -612,7 +612,12 @@ img.addEventListener("load", () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    if (width >= 585) {
+    const break_point_first = 780;
+    const break_point_second = 585;
+
+    if (width >= break_point_first) {
+      camera.position.z = 260;
+    } else if (width < break_point_first & width >= break_point_second) {
       camera.position.z = 360;
     } else {
       camera.position.z = 480;
