@@ -270,7 +270,9 @@ img.addEventListener("load", () => {
         const a = data[index + 3] / 255;
         
         // 座標、色、透明度の値を配列に追加
-        position.push(pX, pY, pZ), color.push(r, g, b), alpha.push(a);
+        if (a > 0) {
+          position.push(pX, pY, pZ), color.push(r, g, b), alpha.push(a);
+        }
       }
     }
 
