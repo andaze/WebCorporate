@@ -149,6 +149,19 @@ img.addEventListener("load", () => {
   var slide_time;
 
 
+  // ---------------------------------------------------------------------------------------------
+  //　raycaster関係変数定義
+  // ---------------------------------------------------------------------------------------------
+
+  // オブジェクトを格納する配列
+  var objects = [];
+
+  // raycaster定義
+  var raycaster = new THREE.Raycaster();
+
+  // raycaster用マウス座標
+  var mouse_pos = new THREE.Vector2(-2, -2);
+
 
   // ---------------------------------------------------------------------------------------------
   //　マウススライド処理関係変数定義
@@ -174,9 +187,11 @@ img.addEventListener("load", () => {
   // クリック許可フラグ
   var click_frag = false;
   
-  // カメラ移動許可フラグ
-  var camera_flag = false;
+  // オブジェクト移動許可フラグ
+  var moving_flag = false;
 
+  // raycaster検知フラグ
+  var detection = false;
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　変数定義 end
@@ -184,6 +199,10 @@ img.addEventListener("load", () => {
 
   // オブジェクトをシーンに追加
   scene.add( mesh );
+
+
+  // オブジェクトを配列（raycaster用）に追加
+  objects.push( mesh );
 
 
   // // 座標軸を表示
@@ -195,7 +214,7 @@ img.addEventListener("load", () => {
   FadeIn(3);
 
   window.setTimeout(reverse_click_flag, 4*2000);
-  window.setTimeout(reverse_camera_flag, 4*2000);
+  window.setTimeout(reverse_moving_flag, 4*2000);
 
   // デバイスがPCかスマホか判別し処理を分ける
   if (typeof window.ontouchstart === "undefined") {
@@ -270,7 +289,9 @@ img.addEventListener("load", () => {
         const a = data[index + 3] / 255;
         
         // 座標、色、透明度の値を配列に追加
-        position.push(pX, pY, pZ), color.push(r, g, b), alpha.push(a);
+        if (a > 0) {
+          position.push(pX, pY, pZ), color.push(r, g, b), alpha.push(a);
+        }
       }
     }
 
@@ -360,14 +381,14 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義6 カメラ移動フラグの反転
+  // 関数定義6 オブジェクト移動フラグの反転
   // ---------------------------------------------------------------------------------------------
 
-  function reverse_camera_flag() {
-    if (camera_flag === false) {
-      camera_flag = true;
-    } else if (camera_flag === true) {
-      camera_flag = false;
+  function reverse_moving_flag() {
+    if (moving_flag === false) {
+      moving_flag = true;
+    } else if (moving_flag === true) {
+      moving_flag = false;
     }
   }
   
@@ -399,17 +420,38 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
-
-    event.preventDefault();
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
     pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
+    
+    // raycaster用マウス座標取得
+    mouse_pos.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse_pos.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
       pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
       pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+
+       // raycaster用マウス座標取得
+      mouse_pos.x = ( event.changedTouches[0].pageX / window.innerWidth ) * 2 - 1;
+      mouse_pos.y = - ( event.changedTouches[0].pageY / window.innerHeight ) * 2 + 1;
+    }
+
+    // raycasterセット
+    raycaster.setFromCamera( mouse_pos, camera );
+
+    // raycasterがオブジェクトと接触しているか検知
+    var intersects = raycaster.intersectObjects( objects );
+
+    // raycasterがオブジェクトと接触していれば以降の処理を行う
+    if ( intersects.length > 0 ) {
+
+      event.preventDefault();
+
+      // raycaster検知フラグ反転
+      detection = true;
     }
 
     // タイマーカウントアップ処理
@@ -428,7 +470,10 @@ img.addEventListener("load", () => {
 
   function diffusion(event) {
 
-    event.preventDefault();
+    // raycasterがオブジェクトを検知していれば以降の処理を行う
+    if (detection === true) {
+      event.preventDefault();
+    }
     
     const particlePositions = mesh.geometry.attributes.position.array;
 
@@ -457,8 +502,10 @@ img.addEventListener("load", () => {
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
-        // カメラの座標
-        var camera_position = {x1: camera.position.x, y1: camera.position.y, z1: camera.position.z, x2: camera.rotation.x, y2: camera.rotation.y};
+        var mesh_position = {
+          x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
+          x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
+        };
         
         // スライド開始座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - pushed_pos.x, 2 ) + Math.pow( y - pushed_pos.y, 2 ) ) ;
@@ -468,9 +515,18 @@ img.addEventListener("load", () => {
 
         var random_numbers;
 
+        var power;
+
+        // スマホの場合はパーティクルが吹き飛びやすくする
+        if (typeof window.ontouchstart != "undefined") {
+          power = 3;
+        } else {
+          power = 2;
+        }
+
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-          if (distance < (10 / (slide_time * 6)) & slide_time > 0.01) {
+          if (distance < (10 / (slide_time * 6)) * power & slide_time > 0.01) {
 
             particleFlag[i] = 0;
             
@@ -534,25 +590,28 @@ img.addEventListener("load", () => {
             diffusion.repeat(1);
             diffusion.yoyo(true);
 
-            var camera_move = new TWEEN.Tween(camera_position);
-            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: camera.position.z - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
-            camera_move.delay(2000);
-            camera_move.onUpdate(function (object) {
-              camera.position.x = object.x1;
-              camera.position.y = object.y1;
-              camera.position.z = object.z1;
-              camera.rotation.x = object.x2;
-              camera.rotation.y = object.y2;
+            var mesh_move = new TWEEN.Tween(mesh_position);
+            mesh_move.to({
+                x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: mesh.position.z + (2000 / (slide_time*300)), 
+                x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1,
+            }, slide_time*100000);
+            mesh_move.delay(2000);
+            mesh_move.onUpdate(function (object) {
+              mesh.position.x = object.x1;
+              mesh.position.y = object.y1;
+              mesh.position.z = object.z1;
+              mesh.rotation.x = object.x2;
+              mesh.rotation.y = object.y2;
             });
-            camera_move.repeat(1);
-            camera_move.yoyo(true);
+            mesh_move.repeat(1);
+            mesh_move.yoyo(true);
 
             diffusion.start();
 
-            if (camera_flag === true) {
-              camera_move.start();
-              reverse_camera_flag();
-              window.setTimeout(reverse_camera_flag, slide_time*100000*2 + 4000)
+            if (moving_flag === true) {
+              mesh_move.start();
+              reverse_moving_flag();
+              window.setTimeout(reverse_moving_flag, slide_time*100000*2 + 4000)
             }
           }
         }
@@ -572,6 +631,9 @@ img.addEventListener("load", () => {
 
     //リセット時に0に初期化したいのでリセットを押した際に0を代入してあげる
     timeToadd = 0;
+
+    // raycaster検知フラグをリセット
+    detection = false;
   }
 
 
