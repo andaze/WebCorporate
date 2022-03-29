@@ -188,7 +188,7 @@ img.addEventListener("load", () => {
   var click_frag = false;
   
   // カメラ移動許可フラグ
-  var camera_flag = false;
+  var moving_flag = false;
 
   // raycaster検知フラグ
   var detection = false;
@@ -214,7 +214,7 @@ img.addEventListener("load", () => {
   FadeIn(3);
 
   window.setTimeout(reverse_click_flag, 4*2000);
-  window.setTimeout(reverse_camera_flag, 4*2000);
+  window.setTimeout(reverse_moving_flag, 4*2000);
 
   // デバイスがPCかスマホか判別し処理を分ける
   if (typeof window.ontouchstart === "undefined") {
@@ -384,11 +384,11 @@ img.addEventListener("load", () => {
   // 関数定義6 カメラ移動フラグの反転
   // ---------------------------------------------------------------------------------------------
 
-  function reverse_camera_flag() {
-    if (camera_flag === false) {
-      camera_flag = true;
-    } else if (camera_flag === true) {
-      camera_flag = false;
+  function reverse_moving_flag() {
+    if (moving_flag === false) {
+      moving_flag = true;
+    } else if (moving_flag === true) {
+      moving_flag = false;
     }
   }
   
@@ -502,8 +502,13 @@ img.addEventListener("load", () => {
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
-        // カメラの座標
-        var camera_position = {x1: camera.position.x, y1: camera.position.y, z1: camera.position.z, x2: camera.rotation.x, y2: camera.rotation.y};
+        // // カメラの座標
+        // var camera_position = {x1: camera.position.x, y1: camera.position.y, z1: camera.position.z, x2: camera.rotation.x, y2: camera.rotation.y};
+
+        var mesh_position = {
+          x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
+          x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
+        };
         
         // スライド開始座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - pushed_pos.x, 2 ) + Math.pow( y - pushed_pos.y, 2 ) ) ;
@@ -590,25 +595,41 @@ img.addEventListener("load", () => {
             diffusion.repeat(1);
             diffusion.yoyo(true);
 
-            var camera_move = new TWEEN.Tween(camera_position);
-            camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: camera.position.z - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
-            camera_move.delay(2000);
-            camera_move.onUpdate(function (object) {
-              camera.position.x = object.x1;
-              camera.position.y = object.y1;
-              camera.position.z = object.z1;
-              camera.rotation.x = object.x2;
-              camera.rotation.y = object.y2;
+            // var camera_move = new TWEEN.Tween(camera_position);
+            // camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: camera.position.z - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
+            // camera_move.delay(2000);
+            // camera_move.onUpdate(function (object) {
+            //   camera.position.x = object.x1;
+            //   camera.position.y = object.y1;
+            //   camera.position.z = object.z1;
+            //   camera.rotation.x = object.x2;
+            //   camera.rotation.y = object.y2;
+            // });
+            // camera_move.repeat(1);
+            // camera_move.yoyo(true);
+
+            var mesh_move = new TWEEN.Tween(mesh_position);
+            mesh_move.to({
+                x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: mesh.position.z + (2000 / (slide_time*300)), 
+                x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1,
+            }, slide_time*100000);
+            mesh_move.delay(2000);
+            mesh_move.onUpdate(function (object) {
+              mesh.position.x = object.x1;
+              mesh.position.y = object.y1;
+              mesh.position.z = object.z1;
+              mesh.rotation.x = object.x2;
+              mesh.rotation.y = object.y2;
             });
-            camera_move.repeat(1);
-            camera_move.yoyo(true);
+            mesh_move.repeat(1);
+            mesh_move.yoyo(true);
 
             diffusion.start();
 
-            if (camera_flag === true) {
-              camera_move.start();
-              reverse_camera_flag();
-              window.setTimeout(reverse_camera_flag, slide_time*100000*2 + 4000)
+            if (moving_flag === true) {
+              mesh_move.start();
+              reverse_moving_flag();
+              window.setTimeout(reverse_moving_flag, slide_time*100000*2 + 4000)
             }
           }
         }
