@@ -1,11 +1,25 @@
 <div>
     {{ if eq (.Scratch.Get "section") "news" }}
+
     <div class="flex gap-5">
-        {{ range where .Site.RegularPages "Section" "news" }}
+        {{ range where .Site.RegularPages "Section" (.Scratch.Get "section") }}
         {{ with . }}
         {{ partial "molecule-article-card.html" . }}
         {{ end }}
         {{ end }}
     </div>
+
+    {{ else if eq (.Scratch.Get "section") "services" }}
+
+    {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+    {{ range .Pages }}
+    <div class="my-5">
+        <p>
+            {{ .Title }}
+        </p>
+    </div>
+    {{ end }}
+    {{ end }}
+
     {{ end }}
 </div>
