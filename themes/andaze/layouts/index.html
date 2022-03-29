@@ -5,12 +5,19 @@
 </div>
 
 <main>
+  
   {{ .Scratch.Set "section" "news" }}
   {{ partial "template-section.html" . }}
   {{ .Scratch.Delete "section" }}
+
+  {{ .Scratch.Set "section" "services" }}
+  {{ partial "template-section.html" . }}
+  {{ .Scratch.Delete "section" }}
+
   {{ range first 10 .Data.Pages }}
   {{ .Render "summary" }}
   {{ end }}
+
 </main>
 
 {{ $js := resources.Get "js/top.js" | resources.Minify }}
