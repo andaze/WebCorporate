@@ -1,0 +1,11 @@
+<!-- sidebar start -->
+<ul>
+    {{ $currentPage := . }}
+    {{ range .CurrentSection.Pages }}
+    <li class="{{ if (eq $currentPage . ) }}active{{ end }}">
+        <a href="{{ .RelPermalink }}">
+            <span>{{ .Name }}</span>
+        </a>
+    </li>
+    {{ end }}
+</ul>
