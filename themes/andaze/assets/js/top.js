@@ -187,7 +187,7 @@ img.addEventListener("load", () => {
   // クリック許可フラグ
   var click_frag = false;
   
-  // カメラ移動許可フラグ
+  // オブジェクト移動許可フラグ
   var moving_flag = false;
 
   // raycaster検知フラグ
@@ -381,7 +381,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義6 カメラ移動フラグの反転
+  // 関数定義6 オブジェクト移動フラグの反転
   // ---------------------------------------------------------------------------------------------
 
   function reverse_moving_flag() {
@@ -502,9 +502,6 @@ img.addEventListener("load", () => {
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
-        // // カメラの座標
-        // var camera_position = {x1: camera.position.x, y1: camera.position.y, z1: camera.position.z, x2: camera.rotation.x, y2: camera.rotation.y};
-
         var mesh_position = {
           x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
           x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
@@ -577,8 +574,6 @@ img.addEventListener("load", () => {
             
             var random_value_x = random_numbers * mark_x;
             var random_value_y = random_numbers * mark_y;
-
-            
   
             // パーティクルの飛距離
             var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
@@ -594,19 +589,6 @@ img.addEventListener("load", () => {
             });
             diffusion.repeat(1);
             diffusion.yoyo(true);
-
-            // var camera_move = new TWEEN.Tween(camera_position);
-            // camera_move.to({x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: camera.position.z - (2000 / (slide_time*300)), x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1}, slide_time*100000);
-            // camera_move.delay(2000);
-            // camera_move.onUpdate(function (object) {
-            //   camera.position.x = object.x1;
-            //   camera.position.y = object.y1;
-            //   camera.position.z = object.z1;
-            //   camera.rotation.x = object.x2;
-            //   camera.rotation.y = object.y2;
-            // });
-            // camera_move.repeat(1);
-            // camera_move.yoyo(true);
 
             var mesh_move = new TWEEN.Tween(mesh_position);
             mesh_move.to({
