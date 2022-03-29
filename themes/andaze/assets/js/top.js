@@ -519,7 +519,7 @@ img.addEventListener("load", () => {
         if (typeof window.ontouchstart != "undefined") {
           power = 3;
         } else {
-          power = 1;
+          power = 2;
         }
 
         if (particleFlag[i] === 1) {
@@ -576,8 +576,8 @@ img.addEventListener("load", () => {
             
   
             // パーティクルの飛距離
-            var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20)) * power;
-            var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20)) * power;
+            var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
+            var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
 
             var diffusion = new TWEEN.Tween(vertex_position);
             diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*30000));
