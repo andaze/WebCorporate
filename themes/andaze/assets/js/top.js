@@ -149,6 +149,19 @@ img.addEventListener("load", () => {
   var slide_time;
 
 
+  // ---------------------------------------------------------------------------------------------
+  //　raycaster関係変数定義
+  // ---------------------------------------------------------------------------------------------
+
+  // オブジェクトを格納する配列
+  var objects = [];
+
+  // raycaster定義
+  var raycaster = new THREE.Raycaster();
+
+  // raycaster用マウス座標
+  var mouse_pos = new THREE.Vector2(-2, -2);
+
 
   // ---------------------------------------------------------------------------------------------
   //　マウススライド処理関係変数定義
@@ -177,6 +190,8 @@ img.addEventListener("load", () => {
   // カメラ移動許可フラグ
   var camera_flag = false;
 
+  // raycaster検知フラグ
+  var detection = false;
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　変数定義 end
@@ -184,6 +199,10 @@ img.addEventListener("load", () => {
 
   // オブジェクトをシーンに追加
   scene.add( mesh );
+
+
+  // オブジェクトを配列（raycaster用）に追加
+  objects.push( mesh );
 
 
   // // 座標軸を表示
@@ -401,17 +420,38 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
-
-    event.preventDefault();
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
     pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
+    
+    // raycaster用マウス座標取得
+    mouse_pos.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse_pos.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
       pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
       pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+
+       // raycaster用マウス座標取得
+      mouse_pos.x = ( event.changedTouches[0].pageX / window.innerWidth ) * 2 - 1;
+      mouse_pos.y = - ( event.changedTouches[0].pageY / window.innerHeight ) * 2 + 1;
+    }
+
+    // raycasterセット
+    raycaster.setFromCamera( mouse_pos, camera );
+
+    // raycasterがオブジェクトと接触しているか検知
+    var intersects = raycaster.intersectObjects( objects );
+
+    // raycasterがオブジェクトと接触していれば以降の処理を行う
+    if ( intersects.length > 0 ) {
+
+      event.preventDefault();
+
+      // raycaster検知フラグ反転
+      detection = true;
     }
 
     // タイマーカウントアップ処理
@@ -430,7 +470,10 @@ img.addEventListener("load", () => {
 
   function diffusion(event) {
 
-    event.preventDefault();
+    // raycasterがオブジェクトを検知していれば以降の処理を行う
+    if (detection === true) {
+      event.preventDefault();
+    }
     
     const particlePositions = mesh.geometry.attributes.position.array;
 
@@ -585,6 +628,9 @@ img.addEventListener("load", () => {
 
     //リセット時に0に初期化したいのでリセットを押した際に0を代入してあげる
     timeToadd = 0;
+
+    // raycaster検知フラグをリセット
+    detection = false;
   }
 
 
