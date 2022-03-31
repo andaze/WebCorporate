@@ -94,7 +94,7 @@ img.addEventListener("load", () => {
     uniforms: {
       u_ratio: { type: "f", value: 0.0 },
       u_time: { type: "f", value: 0.0 },
-      move_param: { type: "i", value: 0 }
+      pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
     },
     transparent: true,
   });

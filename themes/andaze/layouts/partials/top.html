@@ -29,13 +29,15 @@
       finalPosition = position + vec3(moveRandX, moveRandY, 0);   
   
       gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
-      gl_PointSize =  3.0;
+      gl_PointSize =  8.0;
   }
 </script>
 
 <!-- fragmentShader -->
 <script id="js-fragment-shader" type="x-shader/x-fragment">
   precision mediump float;
+
+  uniform sampler2D pointTexture;
 
   varying vec3 v_color;
   varying float v_alpla;
@@ -48,6 +50,7 @@
       }
 
       gl_FragColor = vec4(v_color, v_alpla);
+      gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
   }
 </script>
 
