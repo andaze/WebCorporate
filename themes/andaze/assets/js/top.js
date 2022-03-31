@@ -97,6 +97,8 @@ img.addEventListener("load", () => {
       pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
     },
     transparent: true,
+    blending: THREE.AdditiveBlending,
+		depthTest: false
   });
 
   
