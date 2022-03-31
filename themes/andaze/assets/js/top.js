@@ -93,8 +93,7 @@ img.addEventListener("load", () => {
     fragmentShader: document.querySelector("#js-fragment-shader").textContent,
     uniforms: {
       u_ratio: { type: "f", value: 0.0 },
-      u_time: { type: "f", value: 0.0 },
-      move_param: { type: "i", value: 0 }
+      u_time: { type: "f", value: 0.0 }
     },
     transparent: true,
   });
