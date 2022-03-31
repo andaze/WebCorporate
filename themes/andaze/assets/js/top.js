@@ -96,6 +96,8 @@ img.addEventListener("load", () => {
       u_time: { type: "f", value: 0.0 }
     },
     transparent: true,
+    blending: THREE.AdditiveBlending,
+		depthTest: false
   });
 
   
