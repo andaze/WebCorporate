@@ -10,7 +10,7 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 260;
+camera.position.z = 350;
 camera.position.x = 0;
 camera.position.y = 20;
 
@@ -36,7 +36,7 @@ const geometry = new THREE.BufferGeometry();
 const img = new Image();
 
 // 表示させる画像のパスを指定
-img.src = "img/logo_2_min.png";
+img.src = "img/logo_2_mid.png";
 img.crossOrigin = "anonymous";
 
 // 画像が読み込まれた後に処理を実行
@@ -680,7 +680,7 @@ img.addEventListener("load", () => {
     const break_point_second = 585;
 
     if (width >= break_point_first) {
-      camera.position.z = 260;
+      camera.position.z = 350;
     } else if (width < break_point_first & width >= break_point_second) {
       camera.position.z = 360;
     } else {
