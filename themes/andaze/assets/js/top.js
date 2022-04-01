@@ -10,7 +10,7 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 250;
+camera.position.z = 260;
 camera.position.x = 0;
 camera.position.y = 20;
 
@@ -679,7 +679,7 @@ img.addEventListener("load", () => {
     const break_point_second = 585;
 
     if (width >= break_point_first) {
-      camera.position.z = 250;
+      camera.position.z = 260;
     } else if (width < break_point_first & width >= break_point_second) {
       camera.position.z = 360;
     } else {
