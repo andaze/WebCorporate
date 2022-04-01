@@ -36,7 +36,11 @@ const geometry = new THREE.BufferGeometry();
 const img = new Image();
 
 // 表示させる画像のパスを指定
-img.src = "img/logo_2_mid.png";
+if (typeof window.ontouchstart === "undefined") {
+  img.src = "img/logo_pc.png";
+} else {
+  img.src = "img/logo_mobile.png";
+}
 img.crossOrigin = "anonymous";
 
 // 画像が読み込まれた後に処理を実行
@@ -94,6 +98,7 @@ img.addEventListener("load", () => {
     uniforms: {
       u_ratio: { type: "f", value: 0.0 },
       u_time: { type: "f", value: 0.0 },
+      u_value: { type: "f", value: 0.0 },
       pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
     },
     transparent: true,
@@ -678,9 +683,9 @@ img.addEventListener("load", () => {
     
     var break_point_first;
     var break_point_second;
-    var break_point_third;
 
     if (typeof window.ontouchstart === "undefined") {
+
       // PCの処理
       break_point_first = 855;
       break_point_second = 650;
@@ -693,16 +698,23 @@ img.addEventListener("load", () => {
         camera.position.z = 600;
       } 
     } else {
+
       // スマホの処理
       break_point_first = 960;
       break_point_second = 540;
 
       if (width >= break_point_first) {
-        camera.position.z = 350;
+        camera.position.z = 220;
+        // パーティクルサイズ調節
+        mesh.material.uniforms.u_value.value = 10;
       } else if (width < break_point_first & width >= break_point_second) {
-        camera.position.z = 480;
+        // パーティクルサイズ調節
+        mesh.material.uniforms.u_value.value = 3;
+        camera.position.z = 330;
       } else {
-        camera.position.z = 740;
+        camera.position.z = 480;
+        // パーティクルサイズ調節
+        mesh.material.uniforms.u_value.value = 2;
       }
     }
 
