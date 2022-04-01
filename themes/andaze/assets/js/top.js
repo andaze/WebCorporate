@@ -675,17 +675,37 @@ img.addEventListener("load", () => {
     // サイズを取得
     const width = window.innerWidth;
     const height = window.innerHeight;
+    
+    var break_point_first;
+    var break_point_second;
+    var break_point_third;
 
-    const break_point_first = 780;
-    const break_point_second = 585;
+    if (typeof window.ontouchstart === "undefined") {
+      // PCの処理
+      break_point_first = 855;
+      break_point_second = 650;
 
-    if (width >= break_point_first) {
-      camera.position.z = 350;
-    } else if (width < break_point_first & width >= break_point_second) {
-      camera.position.z = 360;
+      if (width >= break_point_first) {
+        camera.position.z = 350;
+      } else if (width < break_point_first & width >= break_point_second) {
+        camera.position.z = 450;
+      } else {
+        camera.position.z = 600;
+      } 
     } else {
-      camera.position.z = 480;
+      // スマホの処理
+      break_point_first = 960;
+      break_point_second = 540;
+
+      if (width >= break_point_first) {
+        camera.position.z = 350;
+      } else if (width < break_point_first & width >= break_point_second) {
+        camera.position.z = 480;
+      } else {
+        camera.position.z = 740;
+      }
     }
+
 
     // レンダラーのサイズを調整する
     renderer.setPixelRatio(window.devicePixelRatio);
