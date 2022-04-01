@@ -10,7 +10,7 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 260;
+camera.position.z = 250;
 camera.position.x = 0;
 camera.position.y = 20;
 
@@ -498,8 +498,8 @@ img.addEventListener("load", () => {
       for (let i = 0; i < vertces; i++) {
         
         // パーティクルの座標
-        var x = attribute.getX(i)*(500/camera.position.z) - 8;
-        var y = attribute.getY(i)*(500/camera.position.z) + 8;
+        var x = attribute.getX(i)*(500/camera.position.z) -900
+        var y = attribute.getY(i)*(500/camera.position.z) +900
 
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
 
@@ -679,7 +679,7 @@ img.addEventListener("load", () => {
     const break_point_second = 585;
 
     if (width >= break_point_first) {
-      camera.position.z = 260;
+      camera.position.z = 250;
     } else if (width < break_point_first & width >= break_point_second) {
       camera.position.z = 360;
     } else {
