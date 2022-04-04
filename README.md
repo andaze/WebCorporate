@@ -237,3 +237,45 @@
   - 画面をスクロール
 
     - イベントなし
+
+
+# イシューの運用方針
+
+* イシューの作成は、プロジェクトの完成に不足している課題や疑問点を見つけた時、または機能的なリクエストがある場合などに**個々人が能動的に行う**
+
+* イシューへのアサインは、実装開始時に実装する**個々人が能動的に行う**
+  * 自分自身での実装が難しい場合や役割分担している場合などは、任意に適切な作業者をアサインする
+
+* 1つのイシューは**概ね1人の人が1日以内に実装できる粒度**にする
+  * 課題を小さく分離し、たくさんのイシューとプルリクでプロジェクトを進める
+
+## イシューの基本的で具体的な作成方法
+
+1. [Home | アンダーズ株式会社](https://andaze.github.io/WebCorporate/) と [ディップ株式会社](https://www.dip-net.co.jp/) の各ページを比較して、**不足しているヴィジュアルパーツ**を見つける
+
+2. 見つけたヴィジュアルパーツをコンポーネントに分割し、[andaze – Figma](https://www.figma.com/file/uDqozBvQAiFg1PqQ9vjwnb/andaze) の図にマッピングする
+   1. コンポーネントの粒度はAtomic Design[^1][^2]の考えに基づいたものとする
+      * red ... atom
+      * yellow ... molecule
+      * green ... organism
+      * blue ... tempalte
+      * ...
+   2. コンポーネントの持つ機能や複雑性は多種多様であるため、正確に分割することを目的としない。あくまでも作業者が考えたコンポーネント粒度でマッピングする
+
+3. Figma にマッピングしたコンポーネント図に基づいてイシューを作成する
+   1. イシューのタイトルはそのコンポーネントを端的に表すものとする(または、タイトルが思いつかないときはFigma要素のリンクにする)
+      * 例: **listed/repeat contetn banners ** , **https://www.figma.com/file/uDqozBvQAiFg1PqQ9vjwnb/andaze?node-id=36%3A107**
+
+4. 作成されたイシューのURLをFigma要素のテキスト欄またはリンク欄に関連づける
+   * 例: [このFigma要素](https://www.figma.com/file/uDqozBvQAiFg1PqQ9vjwnb/andaze?node-id=36%3A107)
+   * 終わったイシューは罫線を入れるとわかりやすいと思うが必須ではない
+
+## まとめ
+
+* イシューとFigmaを使ってゆるくタスク管理を行う
+  * 締切日や作業者などの管理は行わない
+
+---
+
+[^1]: https://atomicdesign.bradfrost.com/chapter-2/#atomic-design-is-for-user-interfaces
+[^2]: https://uxdaystokyo.com/articles/glossary/atomic-design/
