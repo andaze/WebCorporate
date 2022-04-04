@@ -279,3 +279,7 @@
 
 [^1]: https://atomicdesign.bradfrost.com/chapter-2/#atomic-design-is-for-user-interfaces
 [^2]: https://uxdaystokyo.com/articles/glossary/atomic-design/
+
+# Git戦略・運用方法について
+
+* [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) を採用する
