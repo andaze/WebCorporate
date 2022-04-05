@@ -107,6 +107,7 @@ window.onload = function() {
         u_ratio: { type: "f", value: 0.0 },
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
+        u_range: { type: "f", value: 0.0 },
         pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
       },
       transparent: true,
@@ -670,7 +671,9 @@ window.onload = function() {
       renderer.render( scene, camera );
       
       // パーティクル移動速度
-      mesh.material.uniforms.u_time.value += 0.1;
+      window.setTimeout(() =>{
+        mesh.material.uniforms.u_time.value += 0.1;
+      }, fadein_times*interval_time-500)
   
       // controls.update();
   
