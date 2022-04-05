@@ -12,13 +12,11 @@
     {{ else if eq (.Scratch.Get "section") "services" }}
 
     {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-    {{ range .Pages }}
-    <div class="my-5">
-        <p>
-            {{ .Title }}
-        </p>
+    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4 ml-7">
+        {{ range .Pages }}
+            {{ partial "molecule-services-polaroid-card.html" . }}
+        {{ end }}
     </div>
-    {{ end }}
     {{ end }}
 
     {{ end }}
