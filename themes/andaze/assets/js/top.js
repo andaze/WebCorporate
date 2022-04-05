@@ -363,11 +363,6 @@ window.onload = function() {
           if (particleAlpha[i] === 0.5 **  (j + 6)) {
             tween.delay(j * (interval_time));
             tween.start();
-            // if (j === sampling_times - 2){
-            //   particleColor[3*i] = 255;
-            //   particleColor[3*i+1] = 255;
-            //   particleColor[3*i+2] = 255;
-            // }
           }
         }
   
@@ -453,8 +448,8 @@ window.onload = function() {
   
       // タップした位置の座標を記憶（スマホ）
       if (typeof window.ontouchstart != "undefined") {
-        pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
-        pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+        pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
+        pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + camera.position.y;
   
          // raycaster用マウス座標取得
         mouse_pos.x = ( event.changedTouches[0].pageX / window.innerWidth ) * 2 - 1;
@@ -505,8 +500,8 @@ window.onload = function() {
   
       // タップを放したした位置の座標を記憶（スマホ）
       if (typeof window.ontouchstart != "undefined") {
-        released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
-        released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+        released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
+        released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + camera.position.y;
       }
   
       // マウスを押し込んでスライドした距離
@@ -674,8 +669,6 @@ window.onload = function() {
       window.setTimeout(() =>{
         mesh.material.uniforms.u_time.value += 0.1;
       }, fadein_times*interval_time-500)
-  
-      // controls.update();
   
       // Tween.jsアニメーションの実行
       TWEEN.update();
