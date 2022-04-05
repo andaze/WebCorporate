@@ -143,6 +143,12 @@ window.onload = function() {
   
     // パーティクルの移動許可フラグの配列
     const particleFlag = mesh.geometry.attributes.flag.array;
+
+    // フェードインを何段階で実行するか（sampling_times + 1 回でフェードインが完了）
+    const fadein_times = 4;
+
+    // フェードインの速度
+    const interval_time = 3000;
   
   
     // ---------------------------------------------------------------------------------------------
@@ -225,11 +231,11 @@ window.onload = function() {
     // scene.add(axes);
   
   
-    // // フェードイン実行（FadeIn関数）
-    FadeIn(3);
+    // // フェードイン実行（FadeIn関数
+    FadeIn(fadein_times-1, interval_time);
   
-    window.setTimeout(reverse_click_flag, 4*2000);
-    window.setTimeout(reverse_moving_flag, 4*2000);
+    window.setTimeout(reverse_click_flag, fadein_times*2000);
+    window.setTimeout(reverse_moving_flag, fadein_times*2000);
   
     // デバイスがPCかスマホか判別し処理を分ける
     if (typeof window.ontouchstart === "undefined") {
@@ -343,18 +349,18 @@ window.onload = function() {
     // 関数定義3 フェードインアニメーション設定
     // ---------------------------------------------------------------------------------------------
   
-    function PostProcessing(sampling_times) {
+    function PostProcessing(sampling_times, interval_time) {
   
       // パーティクルの全頂点をTween.jsによりアニメーションさせる
       for (let i = 0; i < vertces; i++) {
         var vertex = {x: particleAlpha[i], y:particleFlag[i]};
         var tween = new TWEEN.Tween(vertex);
-        tween.to({x: 1, y: 1}, 3000);
+        tween.to({x: 1, y: 1}, interval_time);
   
         // 透明度の低いパーティクルから順番に出現させる
         for (j = 0; j < sampling_times; j++) {
           if (particleAlpha[i] === 0.5 **  (j + 6)) {
-            tween.delay(j * 2000);
+            tween.delay(j * (interval_time-1000));
             tween.start();
             // if (j === sampling_times - 2){
             //   particleColor[3*i] = 255;
@@ -376,9 +382,9 @@ window.onload = function() {
     // 関数定義4 フェードインアニメーション実行
     // ---------------------------------------------------------------------------------------------
   
-    function FadeIn(sampling_time) {
+    function FadeIn(sampling_time, interval_time) {
       PreProcessing(sampling_time);
-      PostProcessing(sampling_time + 1);
+      PostProcessing(sampling_time + 1, interval_time);
     }
   
   
