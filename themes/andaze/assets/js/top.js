@@ -144,11 +144,11 @@ window.onload = function() {
     // パーティクルの移動許可フラグの配列
     const particleFlag = mesh.geometry.attributes.flag.array;
 
-    // フェードインを何段階で実行するか（sampling_times + 1 回でフェードインが完了）
+    // フェードインを何段階で実行するか
     const fadein_times = 4;
 
-    // フェードインの速度
-    const interval_time = 3000;
+    // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
+    const interval_time = 500;
   
   
     // ---------------------------------------------------------------------------------------------
@@ -231,11 +231,11 @@ window.onload = function() {
     // scene.add(axes);
   
   
-    // // フェードイン実行（FadeIn関数
+    // // フェードイン実行（FadeIn関数）
     FadeIn(fadein_times-1, interval_time);
   
-    window.setTimeout(reverse_click_flag, fadein_times*2000);
-    window.setTimeout(reverse_moving_flag, fadein_times*2000);
+    window.setTimeout(reverse_click_flag, fadein_times*interval_time);
+    window.setTimeout(reverse_moving_flag, fadein_times*interval_time);
   
     // デバイスがPCかスマホか判別し処理を分ける
     if (typeof window.ontouchstart === "undefined") {
@@ -355,12 +355,12 @@ window.onload = function() {
       for (let i = 0; i < vertces; i++) {
         var vertex = {x: particleAlpha[i], y:particleFlag[i]};
         var tween = new TWEEN.Tween(vertex);
-        tween.to({x: 1, y: 1}, interval_time);
+        tween.to({x: 1, y: 1}, interval_time+1000);
   
         // 透明度の低いパーティクルから順番に出現させる
         for (j = 0; j < sampling_times; j++) {
           if (particleAlpha[i] === 0.5 **  (j + 6)) {
-            tween.delay(j * (interval_time-1000));
+            tween.delay(j * (interval_time));
             tween.start();
             // if (j === sampling_times - 2){
             //   particleColor[3*i] = 255;
