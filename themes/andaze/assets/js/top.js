@@ -107,6 +107,7 @@ window.onload = function() {
         u_ratio: { type: "f", value: 0.0 },
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
+        u_range: { type: "f", value: 0.0 },
         pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
       },
       transparent: true,
@@ -143,6 +144,12 @@ window.onload = function() {
   
     // パーティクルの移動許可フラグの配列
     const particleFlag = mesh.geometry.attributes.flag.array;
+
+    // フェードインを何段階で実行するか
+    const fadein_times = 4;
+
+    // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
+    const interval_time = 500;
   
   
     // ---------------------------------------------------------------------------------------------
@@ -226,10 +233,10 @@ window.onload = function() {
   
   
     // // フェードイン実行（FadeIn関数）
-    FadeIn(3);
+    FadeIn(fadein_times-1, interval_time);
   
-    window.setTimeout(reverse_click_flag, 4*2000);
-    window.setTimeout(reverse_moving_flag, 4*2000);
+    window.setTimeout(reverse_click_flag, fadein_times*interval_time);
+    window.setTimeout(reverse_moving_flag, fadein_times*interval_time);
   
     // デバイスがPCかスマホか判別し処理を分ける
     if (typeof window.ontouchstart === "undefined") {
@@ -343,24 +350,19 @@ window.onload = function() {
     // 関数定義3 フェードインアニメーション設定
     // ---------------------------------------------------------------------------------------------
   
-    function PostProcessing(sampling_times) {
+    function PostProcessing(sampling_times, interval_time) {
   
       // パーティクルの全頂点をTween.jsによりアニメーションさせる
       for (let i = 0; i < vertces; i++) {
         var vertex = {x: particleAlpha[i], y:particleFlag[i]};
         var tween = new TWEEN.Tween(vertex);
-        tween.to({x: 1, y: 1}, 3000);
+        tween.to({x: 1, y: 1}, interval_time+1000);
   
         // 透明度の低いパーティクルから順番に出現させる
         for (j = 0; j < sampling_times; j++) {
           if (particleAlpha[i] === 0.5 **  (j + 6)) {
-            tween.delay(j * 2000);
+            tween.delay(j * (interval_time));
             tween.start();
-            // if (j === sampling_times - 2){
-            //   particleColor[3*i] = 255;
-            //   particleColor[3*i+1] = 255;
-            //   particleColor[3*i+2] = 255;
-            // }
           }
         }
   
@@ -376,9 +378,9 @@ window.onload = function() {
     // 関数定義4 フェードインアニメーション実行
     // ---------------------------------------------------------------------------------------------
   
-    function FadeIn(sampling_time) {
+    function FadeIn(sampling_time, interval_time) {
       PreProcessing(sampling_time);
-      PostProcessing(sampling_time + 1);
+      PostProcessing(sampling_time + 1, interval_time);
     }
   
   
@@ -446,8 +448,8 @@ window.onload = function() {
   
       // タップした位置の座標を記憶（スマホ）
       if (typeof window.ontouchstart != "undefined") {
-        pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
-        pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+        pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
+        pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + camera.position.y;
   
          // raycaster用マウス座標取得
         mouse_pos.x = ( event.changedTouches[0].pageX / window.innerWidth ) * 2 - 1;
@@ -498,8 +500,8 @@ window.onload = function() {
   
       // タップを放したした位置の座標を記憶（スマホ）
       if (typeof window.ontouchstart != "undefined") {
-        released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2) - 20;
-        released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + 20 + camera.position.y;
+        released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
+        released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + camera.position.y;
       }
   
       // マウスを押し込んでスライドした距離
@@ -664,9 +666,9 @@ window.onload = function() {
       renderer.render( scene, camera );
       
       // パーティクル移動速度
-      mesh.material.uniforms.u_time.value += 0.1;
-  
-      // controls.update();
+      window.setTimeout(() =>{
+        mesh.material.uniforms.u_time.value += 0.1;
+      }, fadein_times*interval_time-500)
   
       // Tween.jsアニメーションの実行
       TWEEN.update();
