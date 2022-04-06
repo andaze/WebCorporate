@@ -1,17 +1,7 @@
 <nav class="bg-black">
     <div class="flex flex-wrap justify-between items-center mx-auto p-2">
-        <a href="{{ .Site.Params.baseURL }}" class="flex items-center">
-            <img src="{{ `img/headerLogo.png` | absURL }}" alt="Header Logo" class="w-40">
-        </a>
-        <div class="flex items-center md:order-2 mr-5">
-            <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24">
-            <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-            </svg>
-            {{ range $.Site.Languages }}
-                <span href="#" class="text-white pl-3"> JP / EN </span>
-            {{ end }}
-        </div>
+        {{ partial "atom-navbar-img.html" . }}
+        {{ partial "atom-navbar-language-search.html" . }}
         <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                 {{ range .Pages }}
