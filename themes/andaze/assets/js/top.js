@@ -34,12 +34,10 @@ const geometry = new THREE.BufferGeometry();
 // 画像要素を生成
 const img = new Image();
 
+
 // 表示させる画像のパスを指定
-if (typeof window.ontouchstart === "undefined") {
-  img.src = "img/logo_pc.png";
-} else {
-  img.src = "img/logo_mobile.png";
-}
+img.src = "img/logo.png";
+
 
 // 画面が読み込まれた後に処理を実行
 window.onload = function() {
@@ -107,7 +105,6 @@ window.onload = function() {
         u_ratio: { type: "f", value: 0.0 },
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
-        u_range: { type: "f", value: 0.0 },
         pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
       },
       transparent: true,
@@ -690,47 +687,76 @@ window.onload = function() {
       // サイズを取得
       const width = window.innerWidth;
       const height = window.innerHeight;
-      
-      var break_point_first;
-      var break_point_second;
-  
-      if (typeof window.ontouchstart === "undefined") {
-  
-        // PCの処理
-        break_point_first = 855;
-        break_point_second = 650;
-  
-        if (width >= break_point_first) {
-          camera.position.z = 350;
-        } else if (width < break_point_first & width >= break_point_second) {
-          camera.position.z = 450;
-        } else {
-          camera.position.z = 600;
-        } 
+
+
+      const break_point_1 = 2560;
+      const break_point_2 = 1920;
+      const break_point_3 = 1440;
+      const break_point_4 = 1280;
+      const break_point_5 = 768;
+      const break_point_6 = 650;
+
+      if (width >= break_point_1) {
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 14;
+      } else if (width < break_point_1 & width >= break_point_2) {
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 7;
+      } else if (width < break_point_2 & width >= break_point_3) {
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 3;
+      } else if (width < break_point_3 & width >= break_point_4) {
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 2;
+      } else if (width < break_point_4 & width >= break_point_5) {
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 0;
+      } else if (width < break_point_5 & width >= break_point_6) {
+        camera.position.z = 450;
+        mesh.material.uniforms.u_value.value = -2;
       } else {
-  
-        // スマホの処理
-        break_point_first = 960;
-        break_point_second = 540;
-  
-        if (width >= break_point_first) {
-          camera.position.z = 220;
-          // パーティクルサイズ調節
-          mesh.material.uniforms.u_value.value = 10;
-        } else if (width < break_point_first & width >= break_point_second) {
-          // パーティクルサイズ調節
-          mesh.material.uniforms.u_value.value = 3;
-          camera.position.z = 330;
-        } else {
-          camera.position.z = 480;
-          // パーティクルサイズ調節
-          mesh.material.uniforms.u_value.value = 2;
-        }
+        camera.position.z = 700;
+        mesh.material.uniforms.u_value.value = -5;
       }
+      
+  
+      // if (typeof window.ontouchstart === "undefined") {
+  
+      //   // PCの処理
+      //   break_point_first = 855;
+      //   break_point_second = 650;
+  
+      //   if (width >= break_point_first) {
+      //     camera.position.z = 350;
+      //   } else if (width < break_point_first & width >= break_point_second) {
+      //     camera.position.z = 450;
+      //   } else {
+      //     camera.position.z = 600;
+      //   } 
+      // } else {
+  
+      //   // スマホの処理
+      //   break_point_first = 960;
+      //   break_point_second = 540;
+  
+      //   if (width >= break_point_first) {
+      //     camera.position.z = 220;
+      //     // パーティクルサイズ調節
+      //     mesh.material.uniforms.u_value.value = 10;
+      //   } else if (width < break_point_first & width >= break_point_second) {
+      //     // パーティクルサイズ調節
+      //     mesh.material.uniforms.u_value.value = 3;
+      //     camera.position.z = 330;
+      //   } else {
+      //     camera.position.z = 480;
+      //     // パーティクルサイズ調節
+      //     mesh.material.uniforms.u_value.value = 2;
+      //   }
+      // }
   
   
       // レンダラーのサイズを調整する
-      renderer.setPixelRatio(window.devicePixelRatio);
+      // renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(width, height);
   
       // カメラのアスペクト比を正す
