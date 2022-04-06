@@ -107,7 +107,6 @@ window.onload = function() {
         u_ratio: { type: "f", value: 0.0 },
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
-        u_range: { type: "f", value: 0.0 },
         pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
       },
       transparent: true,
