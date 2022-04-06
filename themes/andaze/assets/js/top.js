@@ -167,6 +167,8 @@ window.onload = function() {
   
     var slide_time;
   
+    // アニメーション速度の調整用
+    const clock = new THREE.Clock();
   
     // ---------------------------------------------------------------------------------------------
     //　raycaster関係変数定義
@@ -656,6 +658,9 @@ window.onload = function() {
     // ---------------------------------------------------------------------------------------------
   
     function animate() {
+
+      var getDeltaTime = clock.getDelta();
+
       // 画面の描画毎にanimate関数を呼び出す
       requestAnimationFrame( animate );
     
@@ -664,7 +669,7 @@ window.onload = function() {
       
       // パーティクル移動速度
       window.setTimeout(() =>{
-        mesh.material.uniforms.u_time.value += 0.1;
+        mesh.material.uniforms.u_time.value += (2.0 * getDeltaTime);
       }, fadein_times*interval_time-500)
   
       // Tween.jsアニメーションの実行
