@@ -36,7 +36,7 @@ const img = new Image();
 
 
 // 表示させる画像のパスを指定
-img.src = "img/logo_pc.png";
+img.src = "img/logo.png";
 
 
 // 画面が読み込まれた後に処理を実行
