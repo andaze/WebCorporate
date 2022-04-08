@@ -1,9 +1,10 @@
-<!-- ローディング画面 -->
-<div id="loading" class="w-screen h-screen bg-black transition-all flex justify-center fixed inset-0 z-40">
-  <div class="animate-ping h-10 w-10 bg-white rounded-full inset-y-1/2 absolute"></div>
-</div>
 
-<div id="webgl" class="canvas-wrapper"></div>
+<div id="webgl" class="canvas-wrapper relative">
+  <!-- ローディング画面 -->
+  <div id="loading" class="w-full h-full bg-black transition-all flex justify-center absolute z-40">
+    <div class="animate-ping h-10 w-10 bg-white rounded-full inset-y-1/2 absolute"></div>
+  </div>
+</div>
 
 <!-- vertexShader -->
 <script id="js-vertex-shader" type="x-shader/x-vertex">
