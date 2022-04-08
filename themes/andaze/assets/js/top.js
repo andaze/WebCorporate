@@ -726,7 +726,7 @@ img.addEventListener("load", () => {
         camera.position.z = 450;
         mesh.material.uniforms.u_value.value = -1;
       } else {
-        camera.position.z = 700;
+        camera.position.z = 740;
         mesh.material.uniforms.u_value.value = -4;
       }
     } else {
@@ -755,7 +755,7 @@ img.addEventListener("load", () => {
         camera.position.z = 450;
         mesh.material.uniforms.u_value.value = -2;
       } else {
-        camera.position.z = 700;
+        camera.position.z = 740;
         mesh.material.uniforms.u_value.value = -5;
       }
     }
