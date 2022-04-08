@@ -1,0 +1,10 @@
+{{ $pageTitle := strings.TrimRight "\\//" .File.Dir }}
+<div class="mb-6 text-left">
+  {{ partial "atom-footer-page-title.html" (dict "pageTitle" $pageTitle) }}
+  <ul class="mb-0">
+      {{ $section := site.GetPage $pageTitle }}
+      {{ range $section.Pages }}
+        {{ partial "atom-footer-page-list.html" . }}
+      {{ end }}
+  </ul>
+</div>
