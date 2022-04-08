@@ -217,11 +217,6 @@ img.addEventListener("load", () => {
   objects.push( mesh );
 
 
-  // // 座標軸を表示
-  // var axes = new THREE.AxisHelper(125);
-  // scene.add(axes);
-
-
   // 画面が読み込まれた後にロード画面を非表示
   window.setTimeout(() => {
 
