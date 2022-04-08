@@ -36,8 +36,7 @@ const img = new Image();
 
 
 // 表示させる画像のパスを指定
-img.src = "img/logo.png";
-
+img.src = "../img/logo.png";
 
 // 画面が読み込まれた後に処理を実行
 window.onload = function() {
@@ -105,7 +104,7 @@ window.onload = function() {
         u_ratio: { type: "f", value: 0.0 },
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
-        pointTexture: { value: new THREE.TextureLoader().load( 'img/spark.png' ) }
+        pointTexture: { value: new THREE.TextureLoader().load( '../img/spark.png' ) }
       },
       transparent: true,
       blending: THREE.AdditiveBlending,

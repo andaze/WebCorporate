@@ -1,11 +1,26 @@
 baseURL = "https://andaze.github.io/WebCorporate/"
-languageCode = "ja"
+
+languageCode = "ja-JP"
+DefaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = true
+
 title = "My New Hugo Site"
 theme = "andaze"
 disableKinds = ["taxonomy", "term"]
 assetDir = "/assets"
 publishDir = "docs"
 canonifyurls = true
+
+[Languages]
+[Languages.ja]
+languageName = "JP"
+weight = 1
+languageCode = "ja-JP"
+
+[Languages.en]
+languageName = "EN"
+weight = 2
+languageCode = "en-us"
 
 [params]
 	JS = "/js/main.js"
