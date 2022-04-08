@@ -20,6 +20,7 @@ var renderer = new THREE.WebGLRenderer();
 
 
 // レンダラーが描画するキャンバスサイズの設定
+const canvas_wrapper = document.getElementById('canvas-wrapper');
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 
