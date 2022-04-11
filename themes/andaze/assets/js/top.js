@@ -18,10 +18,12 @@ camera.position.y = 20;
 // レンダラーの作成
 var renderer = new THREE.WebGLRenderer();
 
+// ヘッダーの高さ
+const header_height = 60;
 
 // レンダラーが描画するキャンバスサイズの設定
 const canvas_wrapper = document.getElementById('canvas-wrapper');
-renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
 
 
 // キャンバスをDOMツリーに追加
@@ -763,10 +765,10 @@ img.addEventListener("load", () => {
     
 
     // レンダラーのサイズを調整する
-    renderer.setSize(width, height);
+    renderer.setSize(width, height -  header_height);
 
     // カメラのアスペクト比を正す
-    camera.aspect = width / height;
+    camera.aspect = width / (height -  header_height);
     camera.updateProjectionMatrix();
   }
 
