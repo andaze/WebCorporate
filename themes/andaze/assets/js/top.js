@@ -693,28 +693,27 @@ img.addEventListener("load", () => {
     const height = window.innerHeight;
 
 
-    const break_point_1 = 7680;
-    const break_point_2 = 3840;
-    const break_point_3 = 2560;
-    const break_point_4 = 1920;
-    const break_point_5 = 1440;
-    const break_point_6 = 1280;
-    const break_point_7 = 840;
-    const break_point_8 = 650;
+    const break_point_1 = 3840;
+    const break_point_2 = 2560;
+    const break_point_3 = 1920;
+    const break_point_4 = 1440;
+    const break_point_5 = 1280;
+    const break_point_6 = 840;
+    const break_point_7 = 650;
 
     if (typeof window.ontouchstart === "undefined") {
       if (width >= break_point_1) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 50;
-      } else if (width < break_point_1 & width >= break_point_2) {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 18;
-      } else if (width < break_point_2 & width >= break_point_3) {
+      } else if (width < break_point_1 & width >= break_point_2) {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 10;
-      } else if (width < break_point_3 & width >= break_point_4) {
+      } else if (width < break_point_2 & width >= break_point_3) {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 4;
+      } else if (width < break_point_3 & width >= break_point_4) {
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 1;
       } else if (width < break_point_4 & width >= break_point_5) {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 1;
@@ -722,9 +721,6 @@ img.addEventListener("load", () => {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 1;
       } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_7 & width >= break_point_8) {
         camera.position.z = 450;
         mesh.material.uniforms.u_value.value = -1;
       } else {
@@ -733,27 +729,24 @@ img.addEventListener("load", () => {
       }
     } else {
       if (width >= break_point_1) {
-        camera.position.z = 380;
-        mesh.material.uniforms.u_value.value = 44;
+        camera.position.z = 350;
+        mesh.material.uniforms.u_value.value = 27;
       } else if (width < break_point_1 & width >= break_point_2) {
         camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 20;
+        mesh.material.uniforms.u_value.value = 16;
       } else if (width < break_point_2 & width >= break_point_3) {
         camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 14;
+        mesh.material.uniforms.u_value.value = 9;
       } else if (width < break_point_3 & width >= break_point_4) {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 5;
       } else if (width < break_point_4 & width >= break_point_5) {
         camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 1;
+        mesh.material.uniforms.u_value.value = 3;
       } else if (width < break_point_5 & width >= break_point_6) {
         camera.position.z = 350;
         mesh.material.uniforms.u_value.value = 0;
       } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 0;
-      } else if (width < break_point_7 & width >= break_point_8) {
         camera.position.z = 450;
         mesh.material.uniforms.u_value.value = -2;
       } else {
