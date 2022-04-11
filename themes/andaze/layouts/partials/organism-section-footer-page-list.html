@@ -1,0 +1,7 @@
+<div class="grid lg:grid-cols-4 md:grid-cols-2 p-5">
+    {{ with .Site.GetPage "/" }}
+        {{ range .Sections.ByWeight }}
+            {{ partial "molecule-section-footer-pagelist.html" . }}
+        {{ end }}
+    {{ end }}
+</div>
