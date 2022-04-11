@@ -438,7 +438,7 @@ img.addEventListener("load", () => {
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
-    pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
+    pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + header_height + camera.position.y;
     
     // raycaster用マウス座標取得
     mouse_pos.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -447,7 +447,7 @@ img.addEventListener("load", () => {
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
       pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
-      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + camera.position.y;
+      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + header_height + camera.position.y;
 
         // raycaster用マウス座標取得
       mouse_pos.x = ( event.changedTouches[0].pageX / window.innerWidth ) * 2 - 1;
@@ -494,12 +494,12 @@ img.addEventListener("load", () => {
 
     // マウスを放した位置の座標を記憶（PC）
     released_pos.x = event.clientX - (window.innerWidth / 2);
-    released_pos.y = - (event.clientY - (window.innerHeight / 2)) + camera.position.y;
+    released_pos.y = - (event.clientY - (window.innerHeight / 2)) + header_height + camera.position.y;
 
     // タップを放したした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
       released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
-      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + camera.position.y;
+      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + header_height + camera.position.y;
     }
 
     // マウスを押し込んでスライドした距離
