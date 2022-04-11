@@ -20,6 +20,7 @@ var renderer = new THREE.WebGLRenderer();
 
 
 // レンダラーが描画するキャンバスサイズの設定
+const canvas_wrapper = document.getElementById('canvas-wrapper');
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 
@@ -216,8 +217,10 @@ img.addEventListener("load", () => {
   objects.push( mesh );
 
 
-  // 画面が読み込まれた後にロード画面を非表示
+  // 画面が読み込まれた後にフェードイン開始
   window.setTimeout(() => {
+
+    // ロード画面を非表示
     const spinner = document.getElementById('loading');
     spinner.style.opacity = 0;
     spinner.style.visibility = "hidden";
@@ -723,7 +726,7 @@ img.addEventListener("load", () => {
         camera.position.z = 450;
         mesh.material.uniforms.u_value.value = -1;
       } else {
-        camera.position.z = 700;
+        camera.position.z = 740;
         mesh.material.uniforms.u_value.value = -4;
       }
     } else {
@@ -752,7 +755,7 @@ img.addEventListener("load", () => {
         camera.position.z = 450;
         mesh.material.uniforms.u_value.value = -2;
       } else {
-        camera.position.z = 700;
+        camera.position.z = 740;
         mesh.material.uniforms.u_value.value = -5;
       }
     }
