@@ -16,11 +16,19 @@ canonifyurls = true
 languageName = "JP"
 weight = 1
 languageCode = "ja-JP"
+footerFacebookTitle = "公式フェイスブック"
+footerPrivacyText = "プライバシーポリシー"
+footerSocialMediaPrivacyText = "ソーシャルメディアポリシー"
+footerSiteMapText = "サイトマップ"
 
 [Languages.en]
 languageName = "EN"
 weight = 2
 languageCode = "en-us"
+footerFacebookTitle = "Official Facebook"
+footerPrivacyText = "Privacy Policy"
+footerSocialMediaPrivacyText = "Social Media Policy"
+footerSiteMapText = "Site Map"
 
 [params]
 	JS = "/js/main.js"
