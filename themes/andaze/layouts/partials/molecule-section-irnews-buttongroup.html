@@ -1,0 +1,7 @@
+{{ with .Site.GetPage (.Scratch.Get "section") }}
+    <ul class="pt-2">
+        <li>
+            {{ partial "atom-irnews-button.html" .}}
+        </li>
+    </ul>
+{{ end }}
