@@ -20,10 +20,16 @@ var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
 const header_height = 60;
+const bar_width = 17;
 
 // レンダラーが描画するキャンバスサイズの設定
 const canvas_wrapper = document.getElementById('canvas-wrapper');
-renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
+
+if (typeof window.ontouchstart === "undefined") {
+  renderer.setSize( window.innerWidth - bar_width, window.innerHeight -  header_height);
+} else {
+  renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
+}
 
 
 // キャンバスをDOMツリーに追加
@@ -758,7 +764,11 @@ img.addEventListener("load", () => {
     
 
     // レンダラーのサイズを調整する
-    renderer.setSize(width, height -  header_height);
+    if (typeof window.ontouchstart === "undefined") {
+      renderer.setSize(width - bar_width, height -  header_height);
+    } else {
+      renderer.setSize(width, height -  header_height);
+    }
 
     // カメラのアスペクト比を正す
     camera.aspect = width / (height -  header_height);
