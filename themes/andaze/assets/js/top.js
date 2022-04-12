@@ -254,6 +254,21 @@ img.addEventListener("load", () => {
   }
 
 
+  // コンテンツ位置までスクロールしたら暗くする
+  const dark_cover = document.getElementById('hidden_cover')
+  const target = document.querySelector('main');
+  const offsets = target.getBoundingClientRect();
+  const target_pos = window.pageYOffset + (offsets.y * 0.2);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= target_pos) {
+      dark_cover.style.opacity = .5;
+    } else if (window.scrollY < target_pos) {
+      dark_cover.style.opacity = 0;
+    }
+  });
+
+
   // アニメーションの実行（animate関数）
   animate();
 
