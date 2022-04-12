@@ -1,9 +1,9 @@
 {{ define "main" }}
-<div>
+<div class="fixed z-[-1] h-full">
   {{- partial "top.html" . -}}
 </div>
 
-<main>
+<main class="mt-[1000px] bg-white">
   
   {{ .Scratch.Set "section" "news" }}
   {{ partial "template-section.html" . }}

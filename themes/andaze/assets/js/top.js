@@ -20,10 +20,16 @@ var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
 const header_height = 60;
+const bar_width = 17;
 
 // レンダラーが描画するキャンバスサイズの設定
 const canvas_wrapper = document.getElementById('canvas-wrapper');
-renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
+
+if (typeof window.ontouchstart === "undefined") {
+  renderer.setSize( window.innerWidth - bar_width, window.innerHeight -  header_height);
+} else {
+  renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
+}
 
 
 // キャンバスをDOMツリーに追加
@@ -246,6 +252,21 @@ img.addEventListener("load", () => {
     renderer.domElement.addEventListener('touchstart', pushJudge);
     renderer.domElement.addEventListener('touchend', diffusion);
   }
+
+
+  // コンテンツ位置までスクロールしたら暗くする
+  const dark_cover = document.getElementById('hidden_cover')
+  const target = document.querySelector('main');
+  const offsets = target.getBoundingClientRect();
+  const target_pos = window.pageYOffset + (offsets.y * 0.2);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= target_pos) {
+      dark_cover.style.opacity = .5;
+    } else if (window.scrollY < target_pos) {
+      dark_cover.style.opacity = 0;
+    }
+  });
 
 
   // アニメーションの実行（animate関数）
@@ -758,7 +779,11 @@ img.addEventListener("load", () => {
     
 
     // レンダラーのサイズを調整する
-    renderer.setSize(width, height -  header_height);
+    if (typeof window.ontouchstart === "undefined") {
+      renderer.setSize(width - bar_width, height -  header_height);
+    } else {
+      renderer.setSize(width, height -  header_height);
+    }
 
     // カメラのアスペクト比を正す
     camera.aspect = width / (height -  header_height);
