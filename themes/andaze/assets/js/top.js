@@ -458,6 +458,8 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
+
+    console.log('A')
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
