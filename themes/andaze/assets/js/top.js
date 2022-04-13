@@ -263,8 +263,10 @@ img.addEventListener("load", () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY >= target_pos) {
       dark_cover.style.opacity = .5;
+      dark_cover.style.visibility = "visible";
     } else if (window.scrollY < target_pos) {
       dark_cover.style.opacity = 0;
+      dark_cover.style.visibility = "hidden";
     }
   });
 
