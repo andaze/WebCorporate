@@ -19,7 +19,7 @@ camera.position.y = 20;
 var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
-const header_height = 60;
+const header_height = document.getElementById("header_nav").style.height;
 const bar_width = 17;
 
 // レンダラーが描画するキャンバスサイズの設定
