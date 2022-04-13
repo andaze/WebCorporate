@@ -19,8 +19,12 @@ camera.position.y = 20;
 var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
-const header_height = document.getElementById("header_nav").style.height;
+const header_height = document.getElementById("header_nav").clientHeight;
 const bar_width = 17;
+
+// トップページmainタグの高さを取得してfooterのmargin-topに設定
+const main_height = document.getElementById("top_main").clientHeight;
+document.querySelector("footer").style.marginTop = main_height + "px";
 
 // レンダラーが描画するキャンバスサイズの設定
 const canvas_wrapper = document.getElementById('canvas-wrapper');
