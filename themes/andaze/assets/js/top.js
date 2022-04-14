@@ -22,12 +22,14 @@ var renderer = new THREE.WebGLRenderer();
 const header_height = document.getElementById("header_nav").clientHeight;
 const bar_width = 17;
 
+
 // トップページmainタグの高さを取得してfooterのmargin-topに設定
 const main_height = document.getElementById("top_main").clientHeight;
 document.querySelector("footer").style.marginTop = main_height + "px";
 
-// レンダラーが描画するキャンバスサイズの設定
-const canvas_wrapper = document.getElementById('canvas-wrapper');
+// canvasのmargin-topにheaderの高さを設定
+const canvas = document.getElementById('webgl');
+canvas.style.marginTop = header_height + "px";
 
 if (typeof window.ontouchstart === "undefined") {
   renderer.setSize( window.innerWidth - bar_width, window.innerHeight -  header_height);
