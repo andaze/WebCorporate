@@ -216,6 +216,9 @@ img.addEventListener("load", () => {
   // オブジェクト移動許可フラグ
   var moving_flag = false;
 
+  // スライドフラグ
+  var slide_flag = false;
+
   // raycaster検知フラグ
   var detection = false;
 
@@ -280,6 +283,63 @@ img.addEventListener("load", () => {
 
   // リサイズイベント発生時に実行
   window.addEventListener('resize', onResize);
+
+  const nav_block = document.getElementById("nav_block");
+  const anime_nav = document.getElementById("anime_nav");
+  const hand = document.getElementById("hand");
+  const circle = document.getElementById("circle");
+  const animation_nav = gsap.timeline();
+  const animation_nav_sub = gsap.timeline();
+
+  animation_nav
+  .to(hand, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    y: 10,
+    opacity: 1,
+  })
+  .to(hand, {
+    duration: 0.3, // 右側に2秒かけて移動するモーションを指定する
+    x:  (anime_nav.clientWidth - hand.clientWidth)*0.8,
+    opacity: 0.6,
+  })
+  .to(hand, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    x:  anime_nav.clientWidth - hand.clientWidth,
+    y: -10,
+    opacity: 0,
+  })
+
+  animation_nav_sub
+  .to(circle, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    y: 10,
+  })
+  .set(circle, {
+    opacity: .7,
+  })
+  .to(circle, {
+    duration: 0.3, // 右側に2秒かけて移動するモーションを指定する
+    x:  (anime_nav.clientWidth - hand.clientWidth)*0.8,
+  })
+  .set(circle, {
+    opacity: 0,
+  })
+  .to(circle, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    x:  anime_nav.clientWidth - hand.clientWidth,
+    y: -10,
+  })
+
+  animation_nav.repeat(-1);
+  animation_nav_sub.repeat(-1);
+
+  window.setTimeout(() => {
+    if (slide_flag === false) {
+      nav_block.style.opacity = 1;
+      nav_block.style.visibility = "visible";
+    }
+  }, fadein_times*interval_time+5000)
+  
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -647,6 +707,11 @@ img.addEventListener("load", () => {
             mesh_move.yoyo(true);
 
             diffusion.start();
+
+            nav_block.style.opacity = 0;
+            nav_block.style.visibility = "hidden";
+
+            slide_flag = true;
 
             if (moving_flag === true) {
               mesh_move.start();
