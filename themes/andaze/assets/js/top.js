@@ -267,22 +267,8 @@ img.addEventListener("load", () => {
   const target_static = key_visual_bottom - (window.innerHeight * 0.88)
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY >= target_static) {
-      dark_cover.style.opacity = .5;
-      dark_cover.style.visibility = "visible";
-    } else if (window.scrollY < target_static) {
-      dark_cover.style.opacity = 0;
-      dark_cover.style.visibility = "hidden";
-    }
+    blackOut()
   });
-
-  if (window.scrollY >= target_static) {
-    dark_cover.style.opacity = .5;
-    dark_cover.style.visibility = "visible";
-  } else if (window.scrollY < target_static) {
-    dark_cover.style.opacity = 0;
-    dark_cover.style.visibility = "hidden";
-  }
 
 
   // アニメーションの実行（animate関数）
@@ -806,8 +792,25 @@ img.addEventListener("load", () => {
     // カメラのアスペクト比を正す
     camera.aspect = width / (height -  header_height);
     camera.updateProjectionMatrix();
+
+    blackOut();
+
   }
 
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義12　キービジュアルのブラックアウト
+  // ---------------------------------------------------------------------------------------------
+
+  function blackOut() {
+    if (window.scrollY >= target_static) {
+      dark_cover.style.opacity = .5;
+      dark_cover.style.visibility = "visible";
+    } else if (window.scrollY < target_static) {
+      dark_cover.style.opacity = 0;
+      dark_cover.style.visibility = "hidden";
+    }
+  }
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 end
