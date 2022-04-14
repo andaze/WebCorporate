@@ -264,7 +264,7 @@ img.addEventListener("load", () => {
   const dark_cover = document.getElementById('hidden_cover')
   const target = document.querySelector('main');
   const offsets = target.getBoundingClientRect();
-  const target_pos = window.pageYOffset + (offsets.y * 0.2);
+  const target_pos = window.pageYOffset + (offsets.y * 0.4);
 
   window.addEventListener('scroll', () => {
     if (window.scrollY >= target_pos) {
