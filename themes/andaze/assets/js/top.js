@@ -262,19 +262,27 @@ img.addEventListener("load", () => {
 
   // コンテンツ位置までスクロールしたら暗くする
   const dark_cover = document.getElementById('hidden_cover')
-  const target = document.querySelector('main');
-  const offsets = target.getBoundingClientRect();
-  const target_pos = window.pageYOffset + (offsets.y * 0.4);
+  const key_visual = document.getElementById("key-visual");
+  const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
+  const target_static = key_visual_bottom - (window.innerHeight * 0.88)
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY >= target_pos) {
+    if (window.scrollY >= target_static) {
       dark_cover.style.opacity = .5;
       dark_cover.style.visibility = "visible";
-    } else if (window.scrollY < target_pos) {
+    } else if (window.scrollY < target_static) {
       dark_cover.style.opacity = 0;
       dark_cover.style.visibility = "hidden";
     }
   });
+
+  if (window.scrollY >= target_static) {
+    dark_cover.style.opacity = .5;
+    dark_cover.style.visibility = "visible";
+  } else if (window.scrollY < target_static) {
+    dark_cover.style.opacity = 0;
+    dark_cover.style.visibility = "hidden";
+  }
 
 
   // アニメーションの実行（animate関数）
