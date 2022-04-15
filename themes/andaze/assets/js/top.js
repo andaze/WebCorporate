@@ -1,3 +1,9 @@
+const loading_icon = document.getElementById("loading_icon");
+window.setTimeout(() => {
+  loading_icon.style.visibility = "visible";
+}, 1)
+
+
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
@@ -283,6 +289,11 @@ img.addEventListener("load", () => {
 
   // リサイズイベント発生時に実行
   window.addEventListener('resize', onResize);
+
+
+  // ---------------------------------------------------------------------------------------------
+  //　インタラクションガイド
+  // ---------------------------------------------------------------------------------------------
 
   const nav_block = document.getElementById("nav_block");
   const anime_nav = document.getElementById("anime_nav");
