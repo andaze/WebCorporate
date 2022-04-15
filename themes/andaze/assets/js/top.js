@@ -637,7 +637,7 @@ img.addEventListener("load", () => {
 
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-          if (distance < (10 / (slide_time * 6)) * power & slide_time > 0.01) {
+          if (distance < (5 / (slide_time * 6)) * power & slide_time > 0.01) {
 
             particleFlag[i] = 0;
             
@@ -816,7 +816,7 @@ img.addEventListener("load", () => {
       mesh.material.uniforms.u_value.value = 2;
     } else if (width < break_point_4 & width >= break_point_5) {
       camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 2;
+      mesh.material.uniforms.u_value.value = 1;
     } else if (width < break_point_5 & width >= break_point_6) {
       camera.position.z = 400;
       mesh.material.uniforms.u_value.value = 0;
