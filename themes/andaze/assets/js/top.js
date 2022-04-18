@@ -801,32 +801,69 @@ img.addEventListener("load", () => {
     const break_point_5 = 1280;
     const break_point_6 = 840;
     const break_point_7 = 650;
+    const break_point_8 = 370;
 
+    // デバイスがPCかスマホか判別し処理を分ける
+  if (typeof window.ontouchstart === "undefined") {
     if (width >= break_point_1) {
       camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 14;
+      mesh.material.uniforms.u_value.value = 13;
     } else if (width < break_point_1 & width >= break_point_2) {
       camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 5;
+      mesh.material.uniforms.u_value.value = 8;
     } else if (width < break_point_2 & width >= break_point_3) {
       camera.position.z = 400;
       mesh.material.uniforms.u_value.value = 3;
     } else if (width < break_point_3 & width >= break_point_4) {
       camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 2;
+      mesh.material.uniforms.u_value.value = 1;
     } else if (width < break_point_4 & width >= break_point_5) {
       camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 1;
+      mesh.material.uniforms.u_value.value = 0;
     } else if (width < break_point_5 & width >= break_point_6) {
       camera.position.z = 400;
       mesh.material.uniforms.u_value.value = 0;
     } else if (width < break_point_6 & width >= break_point_7) {
-      camera.position.z = 450;
+      camera.position.z = 480;
       mesh.material.uniforms.u_value.value = -1;
+    } else if (width < break_point_7 & width >= break_point_8) {
+      camera.position.z = 880;
+      mesh.material.uniforms.u_value.value = -6;
     } else {
-      camera.position.z = 740;
-      mesh.material.uniforms.u_value.value = -4;
+      camera.position.z = 800;
+      mesh.material.uniforms.u_value.value = -6;
     }
+  } else {
+    if (width >= break_point_1) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 13;
+    } else if (width < break_point_1 & width >= break_point_2) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 6;
+    } else if (width < break_point_2 & width >= break_point_3) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 4;
+    } else if (width < break_point_3 & width >= break_point_4) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_4 & width >= break_point_5) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_5 & width >= break_point_6) {
+      camera.position.z = 600;
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_6 & width >= break_point_7) {
+      camera.position.z = 600;
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_7 & width >= break_point_8) {
+      camera.position.z = 880;
+      mesh.material.uniforms.u_value.value = -6;
+    } else {
+      camera.position.z = 800;
+      mesh.material.uniforms.u_value.value = -6;
+    }
+  }
+  
     
 
     // レンダラーのサイズを調整する
