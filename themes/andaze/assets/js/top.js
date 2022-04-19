@@ -212,6 +212,13 @@ img.addEventListener("load", () => {
   var slide_distance_abs = new THREE.Vector2();
 
 
+  var random_pos = new THREE.Vector2();
+
+  var random_mark = new THREE.Vector2();
+
+  var random_slide_distance = new THREE.Vector2();
+
+
   // ---------------------------------------------------------------------------------------------
   //　フラグ理関係変数定義
   // ---------------------------------------------------------------------------------------------
@@ -349,6 +356,13 @@ img.addEventListener("load", () => {
       nav_block.style.opacity = 1;
       nav_block.style.visibility = "visible";
     }
+  }, fadein_times*interval_time+5000)
+
+
+
+  // ロードから一定時間経過後、自動でパーティクルを拡散
+  window.setTimeout(() => {
+    window.setInterval(autoDiffusion, 1000)
   }, fadein_times*interval_time+5000)
   
 
@@ -891,6 +905,136 @@ img.addEventListener("load", () => {
     } else if (window.scrollY < target_static) {
       dark_cover.style.opacity = 0;
       dark_cover.style.visibility = "hidden";
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義13　パーティクルの自動アニメーション
+  // ---------------------------------------------------------------------------------------------
+
+  function autoDiffusion() {
+
+    const particlePositions = mesh.geometry.attributes.position.array;
+    
+    // ランダム値作成（パーティクルが存在する座標範囲内）
+    posX_val_plus = Math.floor( Math.random() * 375 + 1 - 0 ) + 0;
+    posX_val_minus = (-1) * (Math.floor( Math.random() * 400 + 1 - 0 ) + 0);
+    posY_val_plus = Math.floor( Math.random() * 410 + 1 - 0 ) + 0;
+    posY_val_minus = (-1) * (Math.floor( Math.random() * 230 + 1 - 0 ) + 0);
+
+    var posX_val = [posX_val_plus, posX_val_minus];
+    var posY_val = [posY_val_plus, posY_val_minus];
+    
+    random_pos.x = posX_val[Math.floor(Math.random() * posX_val.length)];
+    random_pos.y = posY_val[Math.floor(Math.random() * posY_val.length)];
+
+
+    // 疑似スライド距離の値を作成
+    // 距離の正負をランダムに決定
+    var marks_dis = [1, -1]
+    var mark_dis_x = marks_dis[Math.floor(Math.random() * marks_dis.length)];
+    var mark_dis_y = marks_dis[Math.floor(Math.random() * marks_dis.length)];
+
+    random_slide_distance.x = (Math.floor( Math.random() * 200 + 1 - 5 ) + 5) * mark_dis_x;
+    random_slide_distance.y = (Math.floor( Math.random() * 200 + 1 - 5 ) + 5) * mark_dis_y;
+    
+    
+    if (click_frag==true) {
+      for (let i = 0; i < vertces; i++) {
+        
+        // パーティクルの座標
+        var x = attribute.getX(i)*(500/camera.position.z) - 8;
+        var y = attribute.getY(i)*(500/camera.position.z) + 8;
+        
+        var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+        
+        var mesh_position = {
+          x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
+          x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
+        };
+        
+
+        // ランダム座標からパーティクルまでの距離
+        var distance = Math.sqrt( Math.pow( x - random_pos.x, 2 ) + Math.pow( y - random_pos.y, 2 ) ) ;
+        
+        // パーティクルの拡散方向（上下左右の4通り）
+        var marks = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+        var mark = marks[Math.floor(Math.random() * marks.length)];
+        
+        random_mark.x = mark[0];
+        random_mark.y = mark[1];
+        
+        var random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
+
+        // 疑似スライド時間の作成
+        var random_slide_time = (Math.floor( Math.random() * 110 + 1 - 80 ) + 80) * 0.001;
+
+        
+        // スマホの場合はパーティクルが吹き飛びやすくする
+        if (typeof window.ontouchstart != "undefined") {
+          var power = 3;
+        } else {
+          var power = 2;
+        }
+       
+        
+        if (particleFlag[i] === 1) {
+ 
+          // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
+          if (distance < 30) {
+
+            particleFlag[i] = 0;
+            
+            var random_value_x = random_numbers * random_mark.x;
+            var random_value_y = random_numbers * random_mark.y;
+
+            var attenuation_coefficient = Math.floor( Math.random() * 200 + 1 - 180 ) + 180;
+  
+            // パーティクルの飛距離
+            var pos_x = particlePositions[3*i] + random_value_x + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+            var pos_y = particlePositions[3*i+1] + random_value_y  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+
+            var auto_diffusion = new TWEEN.Tween(vertex_position);
+            auto_diffusion.to({x:pos_x, y: pos_y, z: 0}, (random_slide_time*attenuation_coefficient*500));
+            auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
+            auto_diffusion.onUpdate(function (object) {
+              particlePositions[3*i] = object.x;
+              particlePositions[3*i+1] = object.y;
+              particleFlag[i] = object.z;
+            });
+            auto_diffusion.repeat(1);
+            auto_diffusion.yoyo(true);
+
+            var mesh_move_a = new TWEEN.Tween(mesh_position);
+            mesh_move_a.to({
+                x1: pos_x / (random_slide_time*1000), y1: pos_y*(-1) / (random_slide_time*1000), z1: mesh.position.z + (2000 / (random_slide_time*500)), 
+                x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1,
+            },10000);
+            mesh_move_a.delay(2000);
+            mesh_move_a.onUpdate(function (object) {
+              mesh.position.x = object.x1;
+              mesh.position.y = object.y1;
+              mesh.position.z = object.z1;
+              mesh.rotation.x = object.x2;
+              mesh.rotation.y = object.y2;
+            });
+            mesh_move_a.repeat(1);
+            mesh_move_a.yoyo(true);
+
+            auto_diffusion.start();
+
+            slide_flag = true;
+
+            if (moving_flag === true & mesh.position.z + (2000 / (random_slide_time*500)) <= 500) {
+              mesh_move_a.start();
+              reverse_moving_flag();
+              window.setTimeout(reverse_moving_flag, 12000*2)
+            }
+          }
+        }
+        
+      }
     }
   }
   
