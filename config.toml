@@ -43,3 +43,62 @@ footerSiteMapText = "Site Map"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[[Languages.en.menu.main]]
+name    ="company"
+url     ="company"
+weight = 1
+[[Languages.en.menu.main]]
+name    = "service"
+url     = "service"
+weight  = 2
+[[Languages.en.menu.main]]
+name    = "ir"
+url     = "ir"
+weight  =  3
+[[Languages.en.menu.main]]
+name   = "esg"
+url    = "esg"
+weight = 4
+[[Languages.en.menu.main]]
+name   = "news"
+url    = "news"
+weight = 5
+[[Languages.en.menu.main]]
+name   = "recruit"
+url    = "recruit/top"
+weight = 6
+[[Languages.en.menu.main]]
+name   = "contact"
+url    = "contact"
+weight = 7
+
+
+[[Languages.ja.menu.main]]
+name    ="会社情報"
+url     ="company"
+weight = 1
+[[Languages.ja.menu.main]]
+name    = "サービス"
+url     = "services"
+weight  = 2
+[[Languages.ja.menu.main]]
+name    = "IR情報"
+url     = "ir"
+weight  =  3
+[[Languages.ja.menu.main]]
+name   = "サステナビリティ"
+url    = "esg"
+weight = 4
+[[Languages.ja.menu.main]]
+name   = "ニュース"
+url    = "news"
+weight = 5
+[[Languages.ja.menu.main]]
+name   = "採用情報"
+url    = "recruit/top"
+weight = 6
+[[Languages.ja.menu.main]]
+name   = "お問い合わせ"
+url    = "contact"
+weight = 7
