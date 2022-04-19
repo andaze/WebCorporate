@@ -1,3 +1,9 @@
+const loading_icon = document.getElementById("loading_icon");
+window.setTimeout(() => {
+  loading_icon.style.visibility = "visible";
+}, 1)
+
+
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
@@ -10,20 +16,26 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 
 // カメラ位置設定
-camera.position.z = 350;
+camera.position.z = 400;
 camera.position.x = 0;
-camera.position.y = 20;
+camera.position.y = 30;
 
-
+console.log(camera.position.z)
 // レンダラーの作成
 var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
-const header_height = 60;
+const header_height = document.getElementById("header_nav").clientHeight;
 const bar_width = 17;
 
-// レンダラーが描画するキャンバスサイズの設定
-const canvas_wrapper = document.getElementById('canvas-wrapper');
+
+// トップページmainタグの高さを取得してfooterのmargin-topに設定
+const main_height = document.getElementById("top_main").clientHeight;
+document.querySelector("footer").style.marginTop = main_height + "px";
+
+// canvasのmargin-topにheaderの高さを設定
+const canvas = document.getElementById('webgl');
+canvas.style.marginTop = header_height + "px";
 
 if (typeof window.ontouchstart === "undefined") {
   renderer.setSize( window.innerWidth - bar_width, window.innerHeight -  header_height);
@@ -210,6 +222,9 @@ img.addEventListener("load", () => {
   // オブジェクト移動許可フラグ
   var moving_flag = false;
 
+  // スライドフラグ
+  var slide_flag = false;
+
   // raycaster検知フラグ
   var detection = false;
 
@@ -256,16 +271,12 @@ img.addEventListener("load", () => {
 
   // コンテンツ位置までスクロールしたら暗くする
   const dark_cover = document.getElementById('hidden_cover')
-  const target = document.querySelector('main');
-  const offsets = target.getBoundingClientRect();
-  const target_pos = window.pageYOffset + (offsets.y * 0.2);
+  const key_visual = document.getElementById("key-visual");
+  const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
+  const target_static = key_visual_bottom - (window.innerHeight * 0.88)
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY >= target_pos) {
-      dark_cover.style.opacity = .5;
-    } else if (window.scrollY < target_pos) {
-      dark_cover.style.opacity = 0;
-    }
+    blackOut()
   });
 
 
@@ -278,6 +289,68 @@ img.addEventListener("load", () => {
 
   // リサイズイベント発生時に実行
   window.addEventListener('resize', onResize);
+
+
+  // ---------------------------------------------------------------------------------------------
+  //　インタラクションガイド
+  // ---------------------------------------------------------------------------------------------
+
+  const nav_block = document.getElementById("nav_block");
+  const anime_nav = document.getElementById("anime_nav");
+  const hand = document.getElementById("hand");
+  const circle = document.getElementById("circle");
+  const animation_nav = gsap.timeline();
+  const animation_nav_sub = gsap.timeline();
+
+  animation_nav
+  .to(hand, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    y: 10,
+    opacity: 1,
+  })
+  .to(hand, {
+    duration: 0.3, // 右側に2秒かけて移動するモーションを指定する
+    x:  (anime_nav.clientWidth - hand.clientWidth)*0.8,
+    opacity: 0.6,
+  })
+  .to(hand, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    x:  anime_nav.clientWidth - hand.clientWidth,
+    y: -10,
+    opacity: 0,
+  })
+
+  animation_nav_sub
+  .to(circle, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    y: 10,
+  })
+  .set(circle, {
+    opacity: .7,
+  })
+  .to(circle, {
+    duration: 0.3, // 右側に2秒かけて移動するモーションを指定する
+    x:  (anime_nav.clientWidth - hand.clientWidth)*0.8,
+  })
+  .set(circle, {
+    opacity: 0,
+  })
+  .to(circle, {
+    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    x:  anime_nav.clientWidth - hand.clientWidth,
+    y: -10,
+  })
+
+  animation_nav.repeat(-1);
+  animation_nav_sub.repeat(-1);
+
+  window.setTimeout(() => {
+    if (slide_flag === false) {
+      nav_block.style.opacity = 1;
+      nav_block.style.visibility = "visible";
+    }
+  }, fadein_times*interval_time+5000)
+  
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -456,6 +529,8 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
+
+    console.log('A')
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
@@ -562,7 +637,7 @@ img.addEventListener("load", () => {
 
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
-          if (distance < (10 / (slide_time * 6)) * power & slide_time > 0.01) {
+          if (distance < (5 / (slide_time * 6)) * power & slide_time > 0.01) {
 
             particleFlag[i] = 0;
             
@@ -644,6 +719,11 @@ img.addEventListener("load", () => {
 
             diffusion.start();
 
+            nav_block.style.opacity = 0;
+            nav_block.style.visibility = "hidden";
+
+            slide_flag = true;
+
             if (moving_flag === true) {
               mesh_move.start();
               reverse_moving_flag();
@@ -721,61 +801,69 @@ img.addEventListener("load", () => {
     const break_point_5 = 1280;
     const break_point_6 = 840;
     const break_point_7 = 650;
+    const break_point_8 = 370;
 
-    if (typeof window.ontouchstart === "undefined") {
-      if (width >= break_point_1) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 18;
-      } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 10;
-      } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 4;
-      } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_5 & width >= break_point_6) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 450;
-        mesh.material.uniforms.u_value.value = -1;
-      } else {
-        camera.position.z = 740;
-        mesh.material.uniforms.u_value.value = -4;
-      }
+    // デバイスがPCかスマホか判別し処理を分ける
+  if (typeof window.ontouchstart === "undefined") {
+    if (width >= break_point_1) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 13;
+    } else if (width < break_point_1 & width >= break_point_2) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 8;
+    } else if (width < break_point_2 & width >= break_point_3) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 3;
+    } else if (width < break_point_3 & width >= break_point_4) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_4 & width >= break_point_5) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_5 & width >= break_point_6) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_6 & width >= break_point_7) {
+      camera.position.z = 480;
+      mesh.material.uniforms.u_value.value = -1;
+    } else if (width < break_point_7 & width >= break_point_8) {
+      camera.position.z = 880;
+      mesh.material.uniforms.u_value.value = -6;
     } else {
-      if (width >= break_point_1) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 27;
-      } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 16;
-      } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 9;
-      } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 5;
-      } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 3;
-      } else if (width < break_point_5 & width >= break_point_6) {
-        camera.position.z = 350;
-        mesh.material.uniforms.u_value.value = 0;
-      } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 450;
-        mesh.material.uniforms.u_value.value = -2;
-      } else {
-        camera.position.z = 740;
-        mesh.material.uniforms.u_value.value = -5;
-      }
+      camera.position.z = 800;
+      mesh.material.uniforms.u_value.value = -6;
     }
-
+  } else {
+    if (width >= break_point_1) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 13;
+    } else if (width < break_point_1 & width >= break_point_2) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 6;
+    } else if (width < break_point_2 & width >= break_point_3) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 4;
+    } else if (width < break_point_3 & width >= break_point_4) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_4 & width >= break_point_5) {
+      camera.position.z = 400;
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_5 & width >= break_point_6) {
+      camera.position.z = 600;
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_6 & width >= break_point_7) {
+      camera.position.z = 600;
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_7 & width >= break_point_8) {
+      camera.position.z = 880;
+      mesh.material.uniforms.u_value.value = -6;
+    } else {
+      camera.position.z = 800;
+      mesh.material.uniforms.u_value.value = -6;
+    }
+  }
+  
     
 
     // レンダラーのサイズを調整する
@@ -788,8 +876,25 @@ img.addEventListener("load", () => {
     // カメラのアスペクト比を正す
     camera.aspect = width / (height -  header_height);
     camera.updateProjectionMatrix();
+
+    blackOut();
+
   }
 
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義12　キービジュアルのブラックアウト
+  // ---------------------------------------------------------------------------------------------
+
+  function blackOut() {
+    if (window.scrollY >= target_static) {
+      dark_cover.style.opacity = .5;
+      dark_cover.style.visibility = "visible";
+    } else if (window.scrollY < target_static) {
+      dark_cover.style.opacity = 0;
+      dark_cover.style.visibility = "hidden";
+    }
+  }
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 end

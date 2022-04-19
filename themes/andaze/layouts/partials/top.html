@@ -1,12 +1,25 @@
 
-<div id="webgl" class="canvas-wrapper relative">
+<div id="webgl" class="canvas-wrapper fixed z-10 h-full w-full">
+  
   <!-- ローディング画面 -->
   <div id="loading" class="w-full h-full bg-black transition-all flex justify-center absolute z-40">
-    <div class="animate-ping h-10 w-10 bg-white rounded-full inset-y-1/2 absolute"></div>
+    <div class="animate-ping h-6 w-6 bg-white rounded-full inset-y-1/2 absolute z-10 invisible" id="loading_icon"></div>
   </div>
-</div>
 
-<div class="w-full h-full bg-black absolute inset-0 opacity-0 transition ease-in-out duration-300" id="hidden_cover"></div>
+  <!-- インタラクションガイド -->
+  <div class="absolute bottom-20 transition ease-in-out duration-[2000ms] h-12 w-screen opacity-0 invisible" id="nav_block">
+    <img src="../img/nav_char.png" alt="" class="h-4 w-32 object-cover mx-auto">
+    <div class="w-32 mx-auto relative" id="anime_nav">
+      <div class="h-6 w-6  bg-[url('../img/cursor_hand.svg')] bg-cover rotate-45" id="hand"></div>
+        <div class="h-3.5 w-3.5 bottom-3.5 left-3 bg-[url('../img/clicked.svg')] bg-cover absolute" id="circle"></div>
+      </div>
+    </div>
+    
+  </div>
+        
+          
+
+<div class="w-full h-full bg-black absolute inset-0 opacity-0 transition ease-in-out duration-300 invisible z-10" id="hidden_cover"></div>
 
 <!-- vertexShader -->
 <script id="js-vertex-shader" type="x-shader/x-vertex">
@@ -36,7 +49,7 @@
       finalPosition = position + vec3(moveRandX, moveRandY, 0);   
   
       gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPosition, 1.0);
-      gl_PointSize =  9.0 + u_value;
+      gl_PointSize =  8.0 + u_value;
   }
 </script>
 
