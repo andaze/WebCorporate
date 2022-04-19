@@ -20,7 +20,7 @@ camera.position.z = 400;
 camera.position.x = 0;
 camera.position.y = 30;
 
-console.log(camera.position.z)
+
 // レンダラーの作成
 var renderer = new THREE.WebGLRenderer();
 
@@ -529,8 +529,6 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
-
-    console.log('A')
     
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
