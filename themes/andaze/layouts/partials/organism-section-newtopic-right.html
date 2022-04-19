@@ -1,0 +1,9 @@
+<div #swiperRef="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        {{ with .Site.GetPage (.Scratch.Get "section") }}
+            {{ range (where .Pages "Params.tags" "intersect" (slice "press-release")) }}
+                {{ partial "molecule-section-newtopic-slide.html" . }}
+            {{ end }}
+      {{ end }}
+    </div>
+  </div>

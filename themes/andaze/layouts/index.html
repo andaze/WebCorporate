@@ -4,15 +4,20 @@
 </div>
 
 <main class="bg-white absolute z-10" id="top_main">
-  
-  {{ .Scratch.Set "section" "news" }}
-  {{ partial "template-section-irnews.html" . }}
-  {{ .Scratch.Delete "section" }}
+  <div class="py-5">
+    {{ .Scratch.Set "section" "news" }}
+    {{ partial "template-section-newtopic.html" . }}
+    {{ .Scratch.Delete "section" }}
+  </div>
+  <div class=" bg-black">
+    {{ .Scratch.Set "section" "news" }}
+    {{ partial "template-section-irnews.html" . }}
+    {{ .Scratch.Delete "section" }}
 
-  {{ .Scratch.Set "section" "services" }}
-  {{ partial "template-section.html" . }}
-  {{ .Scratch.Delete "section" }}
-
+    {{ .Scratch.Set "section" "services" }}
+    {{ partial "template-section.html" . }}
+    {{ .Scratch.Delete "section" }}
+  </div>
   {{ range first 10 .Data.Pages }}
   {{ .Render "summary" }}
   {{ end }}
