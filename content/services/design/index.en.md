@@ -3,13 +3,7 @@ title: "UI/UXデザイン"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 image: logo_pc.png
-menu:
-  header:
-    show: false
-    name: ""
-  footer:
-    show: false
-    name: ""
+ 
 ---
 
 ## UI/UXデザイン

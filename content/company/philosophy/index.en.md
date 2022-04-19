@@ -2,13 +2,7 @@
 title: "経営理念"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-menu:
-  header:
-    show: false
-    name: ""
-  footer:
-    show: false
-    name: ""
+ 
 ---
 ## 経営理念
 企業のDXをテクノロジーの最前線で支援。
