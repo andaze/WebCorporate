@@ -2,13 +2,6 @@
 title: "archive page"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-menu:
-  header:
-    show: false
-    name: ""
-  footer:
-    show: false
-    name: ""
 ---
 
 # 企業情報

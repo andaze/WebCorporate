@@ -6,11 +6,5 @@ newsimg: dummy1.jpg
 newstitle: "仕事と職場の魅力・リアルを伝える「dipさんからのメッセージ」を開始"
 tags:
     - press-release
-menu:
-  header:
-    show: false
-    name: ""
-  footer:
-    show: false
-    name: ""
+ 
 ---
