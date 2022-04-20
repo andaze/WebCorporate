@@ -156,6 +156,11 @@ img.addEventListener("load", () => {
   // パーティクルの移動許可フラグの配列
   const particleFlag = mesh.geometry.attributes.flag.array;
 
+
+  // ---------------------------------------------------------------------------------------------
+  //　フェードイン関係変数定義
+  // ---------------------------------------------------------------------------------------------
+
   // フェードインを何段階で実行するか
   const fadein_times = 4;
 
@@ -179,10 +184,12 @@ img.addEventListener("load", () => {
   //タイマーをストップ -> 再開させたら0になってしまうのを避けるための変数。
   var timeToadd = 0;
 
+  // スライド時間定義
   var slide_time;
 
   // アニメーション速度の調整用
   const clock = new THREE.Clock();
+
 
   // ---------------------------------------------------------------------------------------------
   //　raycaster関係変数定義
@@ -215,10 +222,38 @@ img.addEventListener("load", () => {
   var slide_distance_abs = new THREE.Vector2();
 
 
+  // ---------------------------------------------------------------------------------------------
+  //　パーティクル拡散関係変数定義
+  // ---------------------------------------------------------------------------------------------
+
+  // オブジェクト座標
+  var mesh_position = {
+    x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
+    x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
+  };
+
+  // パーティクルの頂点座標
+  var particle_pos = new THREE.Vector2();
+
+  // 乱数
+  var random_numbers;
+
+  // 正負符号
+  var mark = new THREE.Vector2();
+
+  // 乱数×正負符号
+  var random_value = new THREE.Vector2();
+
+  // パーティクル拡散時の到達座標
+  var destination = new THREE.Vector2();
+
+  // ランダム座標（自動拡散）
   var random_pos = new THREE.Vector2();
 
+  // 正負符号（自動拡散）
   var random_mark = new THREE.Vector2();
 
+  // 疑似スライド距離
   var random_slide_distance = new THREE.Vector2();
 
 
@@ -367,10 +402,6 @@ img.addEventListener("load", () => {
   window.setTimeout(() => {
     window.setInterval(autoDiffusion, 1000)
   }, fadein_times*interval_time+5000)
-
-  // window.setTimeout(autoDiffusion, fadein_times*interval_time+5000)
-
-  // window.addEventListener('click', autoDiffusion)
   
 
 
@@ -625,31 +656,21 @@ img.addEventListener("load", () => {
       for (let i = 0; i < vertces; i++) {
         
         // パーティクルの座標
-        var x = attribute.getX(i)*(500/camera.position.z) - 8;
-        var y = attribute.getY(i)*(500/camera.position.z) + 8;
+        particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+        particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
 
+        // オブジェクト頂点座標
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
-
-        var mesh_position = {
-          x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
-          x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
-        };
         
         // スライド開始座標からパーティクルまでの距離
-        var distance = Math.sqrt( Math.pow( x - pushed_pos.x, 2 ) + Math.pow( y - pushed_pos.y, 2 ) ) ;
+        var distance = Math.sqrt( Math.pow( particle_pos.x - pushed_pos.x, 2 ) + Math.pow( particle_pos.y - pushed_pos.y, 2 ) ) ;
 
-        var mark_x;
-        var mark_y;
-
-        var random_numbers;
-
-        var power;
 
         // スマホの場合はパーティクルが吹き飛びやすくする
         if (typeof window.ontouchstart != "undefined") {
-          power = 3;
+          var power = 3;
         } else {
-          power = 2;
+          var power = 2;
         }
 
         if (particleFlag[i] === 1) {
@@ -662,8 +683,8 @@ img.addEventListener("load", () => {
             if (slide_distance.x > 0 & slide_distance_abs.y < 20) {
   
               // 画面右方向に拡散させる
-              mark_x = 1;
-              mark_y = 0;
+              mark.x = 1;
+              mark.y = 0;
               random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
               
             } 
@@ -671,8 +692,8 @@ img.addEventListener("load", () => {
             else if (slide_distance.x < 0 & slide_distance_abs.y < 20) {
               
               // 画面左方向に拡散させる
-              mark_x = -1;
-              mark_y = 0;
+              mark.x = -1;
+              mark.y = 0;
               random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
               
             }
@@ -681,8 +702,8 @@ img.addEventListener("load", () => {
             else if (slide_distance.y > 0 & slide_distance_abs.y >= 20) {
               
               // 画面上方向に拡散させる
-              mark_x = 0;
-              mark_y = 1;
+              mark.x = 0;
+              mark.y = 1;
               random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
               
             } 
@@ -690,8 +711,8 @@ img.addEventListener("load", () => {
             else if (slide_distance.y < 0 & slide_distance_abs.y >= 20) {
               
               // 画面下方向に拡散させる
-              mark_x = 0;
-              mark_y = -1;
+              mark.x = 0;
+              mark.y = -1;
               random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
               
             }
@@ -700,15 +721,16 @@ img.addEventListener("load", () => {
               return
             }
             
-            var random_value_x = random_numbers * mark_x;
-            var random_value_y = random_numbers * mark_y;
+            random_value.x = random_numbers * mark.x;
+            random_value.y = random_numbers * mark.y;
   
-            // パーティクルの飛距離
-            var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
-            var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
+            // パーティクル拡散時の到達座標
+            destination.x = particlePositions[3*i] + random_value.x + (slide_distance.x / (slide_time * 20));
+            destination.y = particlePositions[3*i+1] + random_value.y + (slide_distance.y / (slide_time * 20));
 
+            // パーティクルのTweenアニメーション
             var diffusion = new TWEEN.Tween(vertex_position);
-            diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*30000));
+            diffusion.to({x:destination.x, y: destination.y, z: 0}, (slide_time*30000));
             diffusion.easing( TWEEN.Easing.Quadratic.Out );
             diffusion.onUpdate(function (object) {
               particlePositions[3*i] = object.x;
@@ -718,10 +740,11 @@ img.addEventListener("load", () => {
             diffusion.repeat(1);
             diffusion.yoyo(true);
 
+            // オブジェクトのTweenアニメーション
             var mesh_move = new TWEEN.Tween(mesh_position);
             mesh_move.to({
-                x1: pos_x / (slide_time*1000), y1: pos_y*(-1) / (slide_time*1000), z1: mesh.position.z + (2000 / (slide_time*300)), 
-                x2: pos_y / 1000 * (-1), y2: pos_x / 1000 * -1,
+                x1: destination.x / (slide_time*1000), y1: destination.y*(-1) / (slide_time*1000), z1: mesh.position.z + (2000 / (slide_time*300)), 
+                x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
             }, slide_time*100000);
             mesh_move.delay(2000);
             mesh_move.onUpdate(function (object) {
@@ -736,9 +759,11 @@ img.addEventListener("load", () => {
 
             diffusion.start();
 
+            // インタラクションガイドを非表示
             nav_block.style.opacity = 0;
             nav_block.style.visibility = "hidden";
 
+            // スライド可否フラグ反転
             slide_flag = true;
 
             if (moving_flag === true) {
@@ -926,8 +951,6 @@ img.addEventListener("load", () => {
     d1 = a * c[0];
     d2 = a * c[1];
 
-
-    
     // ランダム値作成（パーティクルが存在する座標範囲内）
     posX_val_plus = Math.floor( Math.random() * 375 + 1 - 0 ) + 0;
     posX_val_minus = (-1) * (Math.floor( Math.random() * 400 + 1 - 0 ) + 0);
@@ -960,17 +983,11 @@ img.addEventListener("load", () => {
         
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
         
-        var mesh_position = {
-          x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z,
-          x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
-        };
-        
         // ランダム座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - random_pos.x, 2 ) + Math.pow( y - random_pos.y, 2 ) ) ;
         
         // パーティクルの拡散方向（上下左右の4通り）
         var marks = [[1, 0], [-1, 0], [0, 1], [0, -1]];
-        // var marks = [[1, 0]];
         var mark = marks[Math.floor(Math.random() * marks.length)];
         
         random_mark.x = mark[0];
