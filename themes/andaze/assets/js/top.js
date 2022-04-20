@@ -150,6 +150,9 @@ img.addEventListener("load", () => {
   // パーティクルの色配列
   const particleColor =mesh.geometry.attributes.color.array;
 
+  // パーティクルの座標配列
+  const particlePositions = mesh.geometry.attributes.position.array;
+
   // パーティクルの移動許可フラグの配列
   const particleFlag = mesh.geometry.attributes.flag.array;
 
@@ -601,8 +604,6 @@ img.addEventListener("load", () => {
     if (detection === true) {
       event.preventDefault();
     }
-    
-    const particlePositions = mesh.geometry.attributes.position.array;
 
     // マウスを放した位置の座標を記憶（PC）
     released_pos.x = event.clientX - (window.innerWidth / 2);
@@ -701,14 +702,10 @@ img.addEventListener("load", () => {
             
             var random_value_x = random_numbers * mark_x;
             var random_value_y = random_numbers * mark_y;
-
-            // console.log(random_value_x, random_value_y)
   
             // パーティクルの飛距離
             var pos_x = particlePositions[3*i] + random_value_x + (slide_distance.x / (slide_time * 20));
             var pos_y = particlePositions[3*i+1] + random_value_y + (slide_distance.y / (slide_time * 20));
-
-            // console.log(pos_x)
 
             var diffusion = new TWEEN.Tween(vertex_position);
             diffusion.to({x:pos_x, y: pos_y, z: 0}, (slide_time*30000));
@@ -929,7 +926,7 @@ img.addEventListener("load", () => {
     d1 = a * c[0];
     d2 = a * c[1];
 
-    const particlePositions = mesh.geometry.attributes.position.array;
+
     
     // ランダム値作成（パーティクルが存在する座標範囲内）
     posX_val_plus = Math.floor( Math.random() * 375 + 1 - 0 ) + 0;
@@ -968,7 +965,6 @@ img.addEventListener("load", () => {
           x2: mesh.rotation.x, y2: mesh.rotation.y, z2: mesh.rotation.z
         };
         
-
         // ランダム座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - random_pos.x, 2 ) + Math.pow( y - random_pos.y, 2 ) ) ;
         
@@ -980,19 +976,9 @@ img.addEventListener("load", () => {
         random_mark.x = mark[0];
         random_mark.y = mark[1];
         
-        var random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
-        
         // 疑似スライド時間の作成
         var random_slide_time = (Math.floor( Math.random() * 110 + 1 - 80 ) + 80) * 0.001;
         var random_slide_time = 0.01
-
-        
-        // スマホの場合はパーティクルが吹き飛びやすくする
-        if (typeof window.ontouchstart != "undefined") {
-          var power = 3;
-        } else {
-          var power = 2;
-        }
         
         
         if (particleFlag[i] === 1) {
@@ -1000,35 +986,14 @@ img.addEventListener("load", () => {
           // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
           if (distance < 30) {
             
-            // console.log(distance)
             particleFlag[i] = 0;
             var mark = marks[Math.floor(Math.random() * marks.length)];
-            var random_value2_x = random_numbers * random_mark.x;
-            var random_value2_y = random_numbers * random_mark.y;
-
-            // console.log(random_value2_x, random_value2_y)
 
             var attenuation_coefficient = (Math.floor( Math.random() * 300 + 1 - 280 ) + 280) * (Math.floor( Math.random() * 1500 + 1 - 1000 ) + 1000);
-
-            
   
             // パーティクルの飛距離
-            // var pos_x = particlePositions[3*i] + (100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            // var pos_y = particlePositions[3*i+1] + (100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-            
-            // var pos_x = particlePositions[3*i] + (100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            // var pos_y = particlePositions[3*i+1] + (-100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-
-            // var pos_x = particlePositions[3*i] + (-100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            // var pos_y = particlePositions[3*i+1] + (100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-
-            // var pos_x = particlePositions[3*i] + (-100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            // var pos_y = particlePositions[3*i+1] + (-100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-
             var pos_x = particlePositions[3*i] + (d1) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
             var pos_y = particlePositions[3*i+1] + (d2)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-
-            // console.log(pos_x)
 
 
             var auto_diffusion = new TWEEN.Tween(vertex_position);
