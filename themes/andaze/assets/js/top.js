@@ -923,6 +923,12 @@ img.addEventListener("load", () => {
 
   function autoDiffusion() {
 
+    a = Math.floor( Math.random() * 200 + 1 - 50 ) + 50
+    b = [[1, 1], [-1, 1], [1, -1], [-1, -1]]
+    c = b[Math.floor(Math.random() * b.length)];
+    d1 = a * c[0];
+    d2 = a * c[1];
+
     const particlePositions = mesh.geometry.attributes.position.array;
     
     // ランダム値作成（パーティクルが存在する座標範囲内）
@@ -1004,10 +1010,7 @@ img.addEventListener("load", () => {
 
             var attenuation_coefficient = (Math.floor( Math.random() * 300 + 1 - 280 ) + 280) * (Math.floor( Math.random() * 1500 + 1 - 1000 ) + 1000);
 
-            a = Math.floor( Math.random() * 200 + 1 - 100 ) + 100
-            b = [1, -1]
-            c = b[Math.floor(Math.random() * b.length)];
-            console.log(c)
+            
   
             // パーティクルの飛距離
             // var pos_x = particlePositions[3*i] + (100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
@@ -1019,8 +1022,11 @@ img.addEventListener("load", () => {
             // var pos_x = particlePositions[3*i] + (-100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
             // var pos_y = particlePositions[3*i+1] + (100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
 
-            var pos_x = particlePositions[3*i] + (-100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            var pos_y = particlePositions[3*i+1] + (-100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+            // var pos_x = particlePositions[3*i] + (-100) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+            // var pos_y = particlePositions[3*i+1] + (-100)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+
+            var pos_x = particlePositions[3*i] + (d1) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+            var pos_y = particlePositions[3*i+1] + (d2)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
 
             // console.log(pos_x)
 
