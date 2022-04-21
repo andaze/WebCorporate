@@ -26,7 +26,6 @@ var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
 const header_height = document.getElementById("header_nav").clientHeight;
-const bar_width = 17;
 
 
 // トップページmainタグの高さを取得してfooterのmargin-topに設定
@@ -37,12 +36,7 @@ document.querySelector("footer").style.marginTop = main_height + "px";
 const canvas = document.getElementById('webgl');
 canvas.style.marginTop = header_height + "px";
 
-if (typeof window.ontouchstart === "undefined") {
-  renderer.setSize( window.innerWidth - bar_width, window.innerHeight -  header_height);
-} else {
-  renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
-}
-
+renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
 
 // キャンバスをDOMツリーに追加
 const wrapper = document.querySelector("#webgl");
@@ -406,9 +400,9 @@ img.addEventListener("load", () => {
 
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
-  window.setTimeout(() => {
-    window.setInterval(autoDiffusion, 1000)
-  }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
+  // window.setTimeout(() => {
+  //   window.setInterval(autoDiffusion, 1000)
+  // }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
   
 
 
