@@ -348,19 +348,18 @@ img.addEventListener("load", () => {
   animation_nav
   .to(circle, {
     duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
-  })
-  .set(circle, {
-    opacity: .7,
-  })
-  .to(circle, {
-    duration: 0.3, // 右側に2秒かけて移動するモーションを指定する
-    x:  (anime_nav.clientWidth)*0.8,
-  })
-  .set(circle, {
-    opacity: 0,
+    opacity: .9,
+    y: 5,
   })
   .to(circle, {
     duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+    x:  anime_nav.clientWidth*0.5,
+  })
+  .to(circle, {
+    duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
+    opacity: 0,
+    x:  anime_nav.clientWidth*0.8,
+    y: -5,
   });
 
   animation_nav.repeat(-1);
