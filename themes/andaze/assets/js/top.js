@@ -692,7 +692,7 @@ img.addEventListener("load", () => {
               // 画面右方向に拡散させる
               mark.x = 1;
               mark.y = 0;
-              random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
+              random_numbers = randomNumbers(50, 40);
               
             } 
             // スライド方向がx軸の負の方向、かつy軸のスライド量の絶対値が20より小さい場合
@@ -701,7 +701,7 @@ img.addEventListener("load", () => {
               // 画面左方向に拡散させる
               mark.x = -1;
               mark.y = 0;
-              random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
+              random_numbers = randomNumbers(50, 40);
               
             }
             
@@ -711,7 +711,7 @@ img.addEventListener("load", () => {
               // 画面上方向に拡散させる
               mark.x = 0;
               mark.y = 1;
-              random_numbers = Math.floor( Math.random() * 50 + 1 -40 ) + 40;
+              random_numbers = randomNumbers(50, 40);
               
             } 
             // スライド方向がy軸の負の方向、かつy軸のスライド量の絶対値が20より大きい場合
@@ -720,7 +720,7 @@ img.addEventListener("load", () => {
               // 画面下方向に拡散させる
               mark.x = 0;
               mark.y = -1;
-              random_numbers = Math.floor( Math.random() * 20 + 1 -10 ) + 10;
+              random_numbers = randomNumbers(50, 40);
               
             }
               // スライドではなくクリックの場合は拡散させない
@@ -838,11 +838,12 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function onResize() {
+
     // サイズを取得
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-
+    // ブレイクポイントの設定
     const break_point_1 = 3840;
     const break_point_2 = 2560;
     const break_point_3 = 1920;
@@ -853,66 +854,65 @@ img.addEventListener("load", () => {
     const break_point_8 = 370;
 
     // デバイスがPCかスマホか判別し処理を分ける
-  if (typeof window.ontouchstart === "undefined") {
-    if (width >= break_point_1) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 13;
-    } else if (width < break_point_1 & width >= break_point_2) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 8;
-    } else if (width < break_point_2 & width >= break_point_3) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 3;
-    } else if (width < break_point_3 & width >= break_point_4) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 1;
-    } else if (width < break_point_4 & width >= break_point_5) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 0;
-    } else if (width < break_point_5 & width >= break_point_6) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 0;
-    } else if (width < break_point_6 & width >= break_point_7) {
-      camera.position.z = 480;
-      mesh.material.uniforms.u_value.value = -1;
-    } else if (width < break_point_7 & width >= break_point_8) {
-      camera.position.z = 880;
-      mesh.material.uniforms.u_value.value = -6;
+    if (typeof window.ontouchstart === "undefined") {
+      if (width >= break_point_1) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 13;
+      } else if (width < break_point_1 & width >= break_point_2) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 8;
+      } else if (width < break_point_2 & width >= break_point_3) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 3;
+      } else if (width < break_point_3 & width >= break_point_4) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 1;
+      } else if (width < break_point_4 & width >= break_point_5) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 0;
+      } else if (width < break_point_5 & width >= break_point_6) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 0;
+      } else if (width < break_point_6 & width >= break_point_7) {
+        camera.position.z = 480;
+        mesh.material.uniforms.u_value.value = -1;
+      } else if (width < break_point_7 & width >= break_point_8) {
+        camera.position.z = 880;
+        mesh.material.uniforms.u_value.value = -6;
+      } else {
+        camera.position.z = 800;
+        mesh.material.uniforms.u_value.value = -6;
+      }
     } else {
-      camera.position.z = 800;
-      mesh.material.uniforms.u_value.value = -6;
+      if (width >= break_point_1) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 13;
+      } else if (width < break_point_1 & width >= break_point_2) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 6;
+      } else if (width < break_point_2 & width >= break_point_3) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 4;
+      } else if (width < break_point_3 & width >= break_point_4) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 1;
+      } else if (width < break_point_4 & width >= break_point_5) {
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 0;
+      } else if (width < break_point_5 & width >= break_point_6) {
+        camera.position.z = 600;
+        mesh.material.uniforms.u_value.value = 0;
+      } else if (width < break_point_6 & width >= break_point_7) {
+        camera.position.z = 600;
+        mesh.material.uniforms.u_value.value = 1;
+      } else if (width < break_point_7 & width >= break_point_8) {
+        camera.position.z = 880;
+        mesh.material.uniforms.u_value.value = -6;
+      } else {
+        camera.position.z = 800;
+        mesh.material.uniforms.u_value.value = -6;
+      }
     }
-  } else {
-    if (width >= break_point_1) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 13;
-    } else if (width < break_point_1 & width >= break_point_2) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 6;
-    } else if (width < break_point_2 & width >= break_point_3) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 4;
-    } else if (width < break_point_3 & width >= break_point_4) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 1;
-    } else if (width < break_point_4 & width >= break_point_5) {
-      camera.position.z = 400;
-      mesh.material.uniforms.u_value.value = 0;
-    } else if (width < break_point_5 & width >= break_point_6) {
-      camera.position.z = 600;
-      mesh.material.uniforms.u_value.value = 0;
-    } else if (width < break_point_6 & width >= break_point_7) {
-      camera.position.z = 600;
-      mesh.material.uniforms.u_value.value = 1;
-    } else if (width < break_point_7 & width >= break_point_8) {
-      camera.position.z = 880;
-      mesh.material.uniforms.u_value.value = -6;
-    } else {
-      camera.position.z = 800;
-      mesh.material.uniforms.u_value.value = -6;
-    }
-  }
-  
     
 
     // レンダラーのサイズを調整する
@@ -959,10 +959,10 @@ img.addEventListener("load", () => {
     d2 = a * c[1];
 
     // ランダム値作成（パーティクルが存在する座標範囲内）
-    pos_range_plus.x = Math.floor( Math.random() * 375 + 1 - 0 ) + 0;
-    pos_range_minus.x = (-1) * (Math.floor( Math.random() * 400 + 1 - 0 ) + 0);
-    pos_range_plus.y = Math.floor( Math.random() * 410 + 1 - 0 ) + 0;
-    pos_range_minus.y = (-1) * (Math.floor( Math.random() * 230 + 1 - 0 ) + 0);
+    pos_range_plus.x = randomNumbers(375, 0);
+    pos_range_minus.x = (-1) * randomNumbers(400, 0);
+    pos_range_plus.y = randomNumbers(410, 0);
+    pos_range_minus.y = (-1) * randomNumbers(230, 0);
 
     random_pos.x = [pos_range_plus.x, pos_range_minus.x];
     random_pos.y = [pos_range_plus.y, pos_range_minus.y];
@@ -977,8 +977,8 @@ img.addEventListener("load", () => {
     var mark_dis_x = marks_dis[Math.floor(Math.random() * marks_dis.length)];
     var mark_dis_y = marks_dis[Math.floor(Math.random() * marks_dis.length)];
 
-    random_slide_distance.x = (Math.floor( Math.random() * 200 + 1 - 5 ) + 5) * mark_dis_x;
-    random_slide_distance.y = (Math.floor( Math.random() * 200 + 1 - 5 ) + 5) * mark_dis_y;
+    random_slide_distance.x = randomNumbers(200, 5) * mark_dis_x;
+    random_slide_distance.y = randomNumbers(200, 5) * mark_dis_y;
     
     
     if (click_frag==true) {
@@ -1001,7 +1001,7 @@ img.addEventListener("load", () => {
         random_direction.y = direction[1];
         
         // 疑似スライド時間の作成
-        var random_slide_time = (Math.floor( Math.random() * 110 + 1 - 80 ) + 80) * 0.001;
+        var random_slide_time = randomNumbers(110, 80) * 0.001;
         var random_slide_time = 0.01
         
         
@@ -1012,7 +1012,7 @@ img.addEventListener("load", () => {
             
             particleFlag[i] = 0;
 
-            var attenuation_coefficient = (Math.floor( Math.random() * 300 + 1 - 280 ) + 280) * (Math.floor( Math.random() * 1500 + 1 - 1000 ) + 1000);
+            var attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
   
             // パーティクル拡散時の到達座標
             destination.x = particlePositions[3*i] + (d1) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
@@ -1060,6 +1060,18 @@ img.addEventListener("load", () => {
         
       }
     }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義14　乱数生成
+  // ---------------------------------------------------------------------------------------------
+
+  function randomNumbers(max, min) {
+
+    // 整数の乱数を生成する
+    return Math.floor( Math.random() * max + 1 - min ) + min;
+
   }
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
