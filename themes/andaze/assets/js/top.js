@@ -1043,18 +1043,32 @@ img.addEventListener("load", () => {
               mesh.rotation.x = object.x2;
               mesh.rotation.y = object.y2;
             });
-            auto_move.repeat(1);
-            auto_move.yoyo(true);
+
+            var auto_return = new TWEEN.Tween(mesh_position);
+            auto_return.to({
+                x1: mesh.position.x, y1: mesh.position.y, z1: mesh.position.z, 
+                x2: mesh.rotation.x, y2: mesh.rotation.y,
+            },10000);
+            auto_return.delay(2000);
+            auto_return.onUpdate(function (object) {
+              mesh.position.x = object.x1;
+              mesh.position.y = object.y1;
+              mesh.position.z = object.z1;
+              mesh.rotation.x = object.x2;
+              mesh.rotation.y = object.y2;
+            });
+
+            auto_move.chain(auto_return);
 
             auto_diffusion.start();
 
             slide_flag = true;
 
-            // if (moving_flag === true & mesh.position.z + (2000 / (random_slide_time*500)) <= 500) {
-            //   auto_move.start();
-            //   reverse_moving_flag();
-            //   window.setTimeout(reverse_moving_flag, 12000*2)
-            // }
+            if (moving_flag === true & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
+              auto_move.start();
+              reverse_moving_flag();
+              window.setTimeout(reverse_moving_flag, 12000*2)
+            }
           }
         }
         
