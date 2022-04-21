@@ -974,6 +974,14 @@ img.addEventListener("load", () => {
     // 疑似スライド距離の値を作成
     random_slide_distance.x = randomNumbers(200, 5) * plusMinus();
     random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
+
+
+    // スマホの場合はパーティクルが吹き飛びにくくする
+    if (typeof window.ontouchstart != "undefined") {
+      var diameter = 30;
+    } else {
+      var diameter = 20;
+    }
     
     
     if (click_frag==true) {
@@ -1005,7 +1013,7 @@ img.addEventListener("load", () => {
         if (particleFlag[i] === 1) {
           
           // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
-          if (distance < 30) {
+          if (distance < diameter) {
             
             particleFlag[i] = 0;
 
