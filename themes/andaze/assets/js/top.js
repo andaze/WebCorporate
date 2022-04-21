@@ -408,7 +408,7 @@ img.addEventListener("load", () => {
   // ロードから一定時間経過後、自動でパーティクルを拡散
   window.setTimeout(() => {
     window.setInterval(autoDiffusion, 1000)
-  }, fadein_times*interval_time+5000)
+  }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
   
 
 
@@ -588,7 +588,7 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
-    
+
     // マウスを押し込んだ位置の座標を記憶（PC）
     pushed_pos.x = event.clientX - (window.innerWidth / 2);
     pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + header_height + camera.position.y;
