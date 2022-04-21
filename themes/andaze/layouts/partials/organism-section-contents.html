@@ -1,23 +1,10 @@
 <div>
-    {{ if eq (.Scratch.Get "section") "news" }}
-
-    <div class="flex gap-5">
-        {{ range where .Site.RegularPages "Section" (.Scratch.Get "section") }}
-        {{ with . }}
-        {{ partial "molecule-article-card.html" . }}
-        {{ end }}
-        {{ end }}
-    </div>
-
-    {{ else if eq (.Scratch.Get "section") "services" }}
-
     {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-    <div class="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4 ml-7">
+    <div class="flex flex-row flex-wrap">
         {{ range .Pages }}
             {{ partial "molecule-services-polaroid-card.html" . }}
         {{ end }}
     </div>
     {{ end }}
 
-    {{ end }}
 </div>
