@@ -952,17 +952,18 @@ img.addEventListener("load", () => {
 
   function autoDiffusion() {
 
-    a = Math.floor( Math.random() * 200 + 1 - 50 ) + 50
-    b = [[1, 1], [-1, 1], [1, -1], [-1, -1]]
-    c = b[Math.floor(Math.random() * b.length)];
-    d1 = a * c[0];
-    d2 = a * c[1];
+    random_numbers = randomNumbers(200, 50);
+    var direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
+    var direction_coef = direction_coefs[Math.floor(Math.random() * direction_coefs.length)];
+    var direction_coef_first = random_numbers * direction_coef[0];
+    var direction_coef_second = random_numbers * direction_coef[1];
+
 
     // ランダム値作成（パーティクルが存在する座標範囲内）
     pos_range_plus.x = randomNumbers(375, 0);
-    pos_range_minus.x = (-1) * randomNumbers(400, 0);
+    pos_range_minus.x = -1 * randomNumbers(400, 0);
     pos_range_plus.y = randomNumbers(410, 0);
-    pos_range_minus.y = (-1) * randomNumbers(230, 0);
+    pos_range_minus.y = -1 * randomNumbers(230, 0);
 
     random_pos.x = [pos_range_plus.x, pos_range_minus.x];
     random_pos.y = [pos_range_plus.y, pos_range_minus.y];
@@ -970,15 +971,9 @@ img.addEventListener("load", () => {
     random_pushed_pos.x = random_pos.x[Math.floor(Math.random() * random_pos.x.length)];
     random_pushed_pos.y = random_pos.y[Math.floor(Math.random() * random_pos.y.length)];
 
-
     // 疑似スライド距離の値を作成
-    // 距離の正負をランダムに決定
-    var marks_dis = [1, -1]
-    var mark_dis_x = marks_dis[Math.floor(Math.random() * marks_dis.length)];
-    var mark_dis_y = marks_dis[Math.floor(Math.random() * marks_dis.length)];
-
-    random_slide_distance.x = randomNumbers(200, 5) * mark_dis_x;
-    random_slide_distance.y = randomNumbers(200, 5) * mark_dis_y;
+    random_slide_distance.x = randomNumbers(200, 5) * plusMinus();
+    random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
     
     
     if (click_frag==true) {
@@ -990,9 +985,11 @@ img.addEventListener("load", () => {
         
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
         
+
         // ランダム座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
         
+
         // パーティクルの拡散方向（上下左右の4通り）
         var directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
         var direction = directions[Math.floor(Math.random() * directions.length)];
@@ -1000,9 +997,9 @@ img.addEventListener("load", () => {
         random_direction.x = direction[0];
         random_direction.y = direction[1];
         
+
         // 疑似スライド時間の作成
         var random_slide_time = randomNumbers(110, 80) * 0.001;
-        var random_slide_time = 0.01
         
         
         if (particleFlag[i] === 1) {
@@ -1015,10 +1012,11 @@ img.addEventListener("load", () => {
             var attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
   
             // パーティクル拡散時の到達座標
-            destination.x = particlePositions[3*i] + (d1) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            destination.y = particlePositions[3*i+1] + (d2)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+            destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+            destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
 
 
+            // パーティクル拡散のTweenアニメーション
             var auto_diffusion = new TWEEN.Tween(vertex_position);
             auto_diffusion.to({x:destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
             auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
@@ -1030,28 +1028,30 @@ img.addEventListener("load", () => {
             auto_diffusion.repeat(1);
             auto_diffusion.yoyo(true);
 
-            var mesh_move_a = new TWEEN.Tween(mesh_position);
-            mesh_move_a.to({
+
+            // オブジェクト移動のTweenアニメーション
+            var auto_move = new TWEEN.Tween(mesh_position);
+            auto_move.to({
                 x1: destination.x / (random_slide_time*1000), y1: destination.y*(-1) / (random_slide_time*1000), z1: mesh.position.z + (2000 / (random_slide_time*500)), 
                 x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
             },10000);
-            mesh_move_a.delay(2000);
-            mesh_move_a.onUpdate(function (object) {
+            auto_move.delay(2000);
+            auto_move.onUpdate(function (object) {
               mesh.position.x = object.x1;
               mesh.position.y = object.y1;
               mesh.position.z = object.z1;
               mesh.rotation.x = object.x2;
               mesh.rotation.y = object.y2;
             });
-            mesh_move_a.repeat(1);
-            mesh_move_a.yoyo(true);
+            auto_move.repeat(1);
+            auto_move.yoyo(true);
 
             auto_diffusion.start();
 
             slide_flag = true;
 
             // if (moving_flag === true & mesh.position.z + (2000 / (random_slide_time*500)) <= 500) {
-            //   mesh_move_a.start();
+            //   auto_move.start();
             //   reverse_moving_flag();
             //   window.setTimeout(reverse_moving_flag, 12000*2)
             // }
@@ -1074,6 +1074,20 @@ img.addEventListener("load", () => {
 
   }
   
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義15　正負の符号決定
+  // ---------------------------------------------------------------------------------------------
+
+  function plusMinus() {
+
+    var plus_and_minus = [1, -1];
+
+    return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
+
+  }
+
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 end
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
