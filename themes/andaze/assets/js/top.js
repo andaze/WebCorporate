@@ -910,11 +910,7 @@ img.addEventListener("load", () => {
     
 
     // レンダラーのサイズを調整する
-    if (typeof window.ontouchstart === "undefined") {
-      renderer.setSize(width - bar_width, height -  header_height);
-    } else {
-      renderer.setSize(width, height -  header_height);
-    }
+    renderer.setSize(width, height -  header_height);
 
     // カメラのアスペクト比を正す
     camera.aspect = width / (height -  header_height);
