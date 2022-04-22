@@ -14,11 +14,52 @@ var scene = new THREE.Scene();
 // カメラの作成
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
+// ブレイクポイントの設定
+const break_point_1 = 3840;
+const break_point_2 = 2560;
+const break_point_3 = 1920;
+const break_point_4 = 1440;
+const break_point_5 = 1280;
+const break_point_6 = 840;
+const break_point_7 = 650;
+const break_point_8 = 370;
+
 
 // カメラ位置設定
-camera.position.z = 400;
 camera.position.x = 0;
 camera.position.y = 30;
+
+// デバイスがモバイルの場合
+if (typeof window.ontouchstart != "undefined") {
+  if (width >= break_point_1) {
+    camera.position.z = 400;
+    mesh.material.uniforms.u_value.value = 13;
+  } else if (width < break_point_1 & width >= break_point_2) {
+    camera.position.z = 400;
+    mesh.material.uniforms.u_value.value = 6;
+  } else if (width < break_point_2 & width >= break_point_3) {
+    camera.position.z = 400;
+    mesh.material.uniforms.u_value.value = 4;
+  } else if (width < break_point_3 & width >= break_point_4) {
+    camera.position.z = 400;
+    mesh.material.uniforms.u_value.value = 1;
+  } else if (width < break_point_4 & width >= break_point_5) {
+    camera.position.z = 400;
+    mesh.material.uniforms.u_value.value = 0;
+  } else if (width < break_point_5 & width >= break_point_6) {
+    camera.position.z = 600;
+    mesh.material.uniforms.u_value.value = 0;
+  } else if (width < break_point_6 & width >= break_point_7) {
+    camera.position.z = 600;
+    mesh.material.uniforms.u_value.value = 1;
+  } else if (width < break_point_7 & width >= break_point_8) {
+    camera.position.z = 880;
+    mesh.material.uniforms.u_value.value = -6;
+  } else {
+    camera.position.z = 800;
+    mesh.material.uniforms.u_value.value = -6;
+  }
+}
 
 
 // レンダラーの作成
@@ -811,17 +852,8 @@ img.addEventListener("load", () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    // ブレイクポイントの設定
-    const break_point_1 = 3840;
-    const break_point_2 = 2560;
-    const break_point_3 = 1920;
-    const break_point_4 = 1440;
-    const break_point_5 = 1280;
-    const break_point_6 = 840;
-    const break_point_7 = 650;
-    const break_point_8 = 370;
 
-    // デバイスがPCかスマホか判別し処理を分ける
+    // デバイスがPCの場合のみリサイズする
     if (typeof window.ontouchstart === "undefined") {
       if (width >= break_point_1) {
         camera.position.z = 400;
@@ -844,35 +876,6 @@ img.addEventListener("load", () => {
       } else if (width < break_point_6 & width >= break_point_7) {
         camera.position.z = 480;
         mesh.material.uniforms.u_value.value = -1;
-      } else if (width < break_point_7 & width >= break_point_8) {
-        camera.position.z = 880;
-        mesh.material.uniforms.u_value.value = -6;
-      } else {
-        camera.position.z = 800;
-        mesh.material.uniforms.u_value.value = -6;
-      }
-    } else {
-      if (width >= break_point_1) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 13;
-      } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 6;
-      } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 4;
-      } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 0;
-      } else if (width < break_point_5 & width >= break_point_6) {
-        camera.position.z = 600;
-        mesh.material.uniforms.u_value.value = 0;
-      } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 600;
-        mesh.material.uniforms.u_value.value = 1;
       } else if (width < break_point_7 & width >= break_point_8) {
         camera.position.z = 880;
         mesh.material.uniforms.u_value.value = -6;
