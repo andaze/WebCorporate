@@ -36,24 +36,28 @@ camera.position.x = 0;
 camera.position.y = 30;
 
 // デバイスがモバイルの場合
-if (width >= break_point_1) {
-  camera.position.z = 400;
-} else if (width < break_point_1 & width >= break_point_2) {
-  camera.position.z = 400;
-} else if (width < break_point_2 & width >= break_point_3) {
-  camera.position.z = 400;
-} else if (width < break_point_3 & width >= break_point_4) {
-  camera.position.z = 400;
-} else if (width < break_point_4 & width >= break_point_5) {
-  camera.position.z = 400;
-} else if (width < break_point_5 & width >= break_point_6) {
-  camera.position.z = 600;
-} else if (width < break_point_6 & width >= break_point_7) {
-  camera.position.z = 600;
-} else if (width < break_point_7 & width >= break_point_8) {
-  camera.position.z = 880;
-} else {
-  camera.position.z = 800;
+if (typeof window.ontouchstart != "undefined") {
+  if (width >= break_point_1) {
+    camera.position.z = 400;
+  } else if (width < break_point_1 & width >= break_point_2) {
+    camera.position.z = 400;
+  } else if (width < break_point_2 & width >= break_point_3) {
+    camera.position.z = 400;
+  } else if (width < break_point_3 & width >= break_point_4) {
+    camera.position.z = 400;
+  } else if (width < break_point_4 & width >= break_point_5) {
+    camera.position.z = 400;
+  } else if (width < break_point_5 & width >= break_point_6) {
+    camera.position.z = 600;
+  } else if (width < break_point_6 & width >= break_point_7) {
+    camera.position.z = 600;
+  } else if (width < break_point_7 & width >= break_point_8 & height < 800) {
+    camera.position.z = 660;
+  } else if (width < break_point_7 & width >= break_point_8 & height >= 800) {
+    camera.position.z = 780;
+  } else {
+    camera.position.z = 660;
+  }
 }
 
 
@@ -163,24 +167,28 @@ img.addEventListener("load", () => {
 
 
   // デバイスがモバイルの場合のパーティクルサイズ
-  if (width >= break_point_1) {
-    mesh.material.uniforms.u_value.value = 13;
-  } else if (width < break_point_1 & width >= break_point_2) {
-    mesh.material.uniforms.u_value.value = 6;
-  } else if (width < break_point_2 & width >= break_point_3) {
-    mesh.material.uniforms.u_value.value = 4;
-  } else if (width < break_point_3 & width >= break_point_4) {
-    mesh.material.uniforms.u_value.value = 1;
-  } else if (width < break_point_4 & width >= break_point_5) {
-    mesh.material.uniforms.u_value.value = 0;
-  } else if (width < break_point_5 & width >= break_point_6) {
-    mesh.material.uniforms.u_value.value = 0;
-  } else if (width < break_point_6 & width >= break_point_7) {
-    mesh.material.uniforms.u_value.value = 1;
-  } else if (width < break_point_7 & width >= break_point_8) {
-    mesh.material.uniforms.u_value.value = -6;
-  } else {
-    mesh.material.uniforms.u_value.value = -6;
+  if (typeof window.ontouchstart != "undefined") {
+    if (width >= break_point_1) {
+      mesh.material.uniforms.u_value.value = 13;
+    } else if (width < break_point_1 & width >= break_point_2) {
+      mesh.material.uniforms.u_value.value = 6;
+    } else if (width < break_point_2 & width >= break_point_3) {
+      mesh.material.uniforms.u_value.value = 4;
+    } else if (width < break_point_3 & width >= break_point_4) {
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_4 & width >= break_point_5) {
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_5 & width >= break_point_6) {
+      mesh.material.uniforms.u_value.value = 0;
+    } else if (width < break_point_6 & width >= break_point_7) {
+      mesh.material.uniforms.u_value.value = 1;
+    } else if (width < break_point_7 & width >= break_point_8 & height < 800) {
+      mesh.material.uniforms.u_value.value = -6;
+    } else if (width < break_point_7 & width >= break_point_8 & height >= 800) {
+      mesh.material.uniforms.u_value.value = -4;
+    } else {
+      mesh.material.uniforms.u_value.value = -6;
+    }
   }
   
   
