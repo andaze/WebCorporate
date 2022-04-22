@@ -358,7 +358,7 @@ img.addEventListener("load", () => {
   .to(circle, {
     duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
     opacity: 0,
-    x:  anime_nav.clientWidth*0.8,
+    x:  anime_nav.clientWidth*0.7,
     y: -5,
   });
 
@@ -374,9 +374,9 @@ img.addEventListener("load", () => {
 
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
-  // window.setTimeout(() => {
-  //   window.setInterval(autoDiffusion, 1000)
-  // }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
+  window.setTimeout(() => {
+    window.setInterval(autoDiffusion, 1000)
+  }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
   
 
 
