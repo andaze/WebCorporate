@@ -11,8 +11,15 @@ window.setTimeout(() => {
 // シーンの作成
 var scene = new THREE.Scene();
 
+
+// ウィンドウサイズを取得
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+
 // カメラの作成
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
+
 
 // ブレイクポイントの設定
 const break_point_1 = 3840;
@@ -24,41 +31,29 @@ const break_point_6 = 840;
 const break_point_7 = 650;
 const break_point_8 = 370;
 
-
 // カメラ位置設定
 camera.position.x = 0;
 camera.position.y = 30;
 
 // デバイスがモバイルの場合
-if (typeof window.ontouchstart != "undefined") {
-  if (width >= break_point_1) {
-    camera.position.z = 400;
-    mesh.material.uniforms.u_value.value = 13;
-  } else if (width < break_point_1 & width >= break_point_2) {
-    camera.position.z = 400;
-    mesh.material.uniforms.u_value.value = 6;
-  } else if (width < break_point_2 & width >= break_point_3) {
-    camera.position.z = 400;
-    mesh.material.uniforms.u_value.value = 4;
-  } else if (width < break_point_3 & width >= break_point_4) {
-    camera.position.z = 400;
-    mesh.material.uniforms.u_value.value = 1;
-  } else if (width < break_point_4 & width >= break_point_5) {
-    camera.position.z = 400;
-    mesh.material.uniforms.u_value.value = 0;
-  } else if (width < break_point_5 & width >= break_point_6) {
-    camera.position.z = 600;
-    mesh.material.uniforms.u_value.value = 0;
-  } else if (width < break_point_6 & width >= break_point_7) {
-    camera.position.z = 600;
-    mesh.material.uniforms.u_value.value = 1;
-  } else if (width < break_point_7 & width >= break_point_8) {
-    camera.position.z = 880;
-    mesh.material.uniforms.u_value.value = -6;
-  } else {
-    camera.position.z = 800;
-    mesh.material.uniforms.u_value.value = -6;
-  }
+if (width >= break_point_1) {
+  camera.position.z = 400;
+} else if (width < break_point_1 & width >= break_point_2) {
+  camera.position.z = 400;
+} else if (width < break_point_2 & width >= break_point_3) {
+  camera.position.z = 400;
+} else if (width < break_point_3 & width >= break_point_4) {
+  camera.position.z = 400;
+} else if (width < break_point_4 & width >= break_point_5) {
+  camera.position.z = 400;
+} else if (width < break_point_5 & width >= break_point_6) {
+  camera.position.z = 600;
+} else if (width < break_point_6 & width >= break_point_7) {
+  camera.position.z = 600;
+} else if (width < break_point_7 & width >= break_point_8) {
+  camera.position.z = 880;
+} else {
+  camera.position.z = 800;
 }
 
 
@@ -77,7 +72,7 @@ document.querySelector("footer").style.marginTop = main_height + "px";
 const canvas = document.getElementById('webgl');
 canvas.style.marginTop = header_height + "px";
 
-renderer.setSize( window.innerWidth, window.innerHeight -  header_height);
+renderer.setSize( width, height -  header_height);
 
 // キャンバスをDOMツリーに追加
 const wrapper = document.querySelector("#webgl");
@@ -165,6 +160,29 @@ img.addEventListener("load", () => {
   
   // オブジェクトの位置調整
   mesh.position.x = 0.0;
+
+
+  // デバイスがモバイルの場合のパーティクルサイズ
+  if (width >= break_point_1) {
+    mesh.material.uniforms.u_value.value = 13;
+  } else if (width < break_point_1 & width >= break_point_2) {
+    mesh.material.uniforms.u_value.value = 6;
+  } else if (width < break_point_2 & width >= break_point_3) {
+    mesh.material.uniforms.u_value.value = 4;
+  } else if (width < break_point_3 & width >= break_point_4) {
+    mesh.material.uniforms.u_value.value = 1;
+  } else if (width < break_point_4 & width >= break_point_5) {
+    mesh.material.uniforms.u_value.value = 0;
+  } else if (width < break_point_5 & width >= break_point_6) {
+    mesh.material.uniforms.u_value.value = 0;
+  } else if (width < break_point_6 & width >= break_point_7) {
+    mesh.material.uniforms.u_value.value = 1;
+  } else if (width < break_point_7 & width >= break_point_8) {
+    mesh.material.uniforms.u_value.value = -6;
+  } else {
+    mesh.material.uniforms.u_value.value = -6;
+  }
+  
   
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -360,7 +378,7 @@ img.addEventListener("load", () => {
   const dark_cover = document.getElementById('hidden_cover')
   const key_visual = document.getElementById("key-visual");
   const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-  const target_static = key_visual_bottom - (window.innerHeight * 0.88)
+  const target_static = key_visual_bottom - (height * 0.88)
 
   window.addEventListener('scroll', () => {
     blackOut()
@@ -389,7 +407,7 @@ img.addEventListener("load", () => {
   animation_nav
   .to(circle, {
     duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
-    opacity: .9,
+    opacity: .7,
     y: 5,
   })
   .to(circle, {
@@ -399,7 +417,7 @@ img.addEventListener("load", () => {
   .to(circle, {
     duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
     opacity: 0,
-    x:  anime_nav.clientWidth*0.7,
+    x:  anime_nav.clientWidth*0.8,
     y: -5,
   });
 
@@ -434,14 +452,14 @@ img.addEventListener("load", () => {
     // canvasの設定
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-    const width = w;
-    const height = h;
-    canvas.width = width;
-    canvas.height = height;
+    const canvas_width = w;
+    const canvas_height = h;
+    canvas.width = canvas_width;
+    canvas.height = canvas_height;
 
     // 画像データの描画
     ctx.drawImage(path, 0, 0);
-    const data = ctx.getImageData(0, 0, width, height).data;
+    const data = ctx.getImageData(0, 0, canvas_width, canvas_height).data;
 
     // 座標情報
     const position = [];
@@ -450,15 +468,15 @@ img.addEventListener("load", () => {
     // 透明度
     const alpha = [];
 
-    for (let y = 0; y < height; y += ratio) {
-      for (let x = 0; x < width; x += ratio) {
+    for (let y = 0; y < canvas_height; y += ratio) {
+      for (let x = 0; x < canvas_width; x += ratio) {
 
         // 配列内の任意の[x、y]ピクセルの位置を取得
-        const index = (y * width + x) * 4;
+        const index = (y * canvas_width + x) * 4;
 
         // webglは原点が中心となり、xは右がプラス左がマイナス。yは上がプラス下がマイナス。
-        const pX = x - width / 2;
-        const pY = -(y - height / 2);
+        const pX = x - canvas_width / 2;
+        const pY = -(y - canvas_height / 2);
         const pZ = 0;
 
         // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
@@ -599,21 +617,21 @@ img.addEventListener("load", () => {
   function pushJudge(event) {
 
     // マウスを押し込んだ位置の座標を記憶（PC）
-    pushed_pos.x = event.clientX - (window.innerWidth / 2);
-    pushed_pos.y = - (event.clientY - (window.innerHeight / 2)) + header_height + camera.position.y;
+    pushed_pos.x = event.clientX - (width / 2);
+    pushed_pos.y = - (event.clientY - (height / 2)) + header_height + camera.position.y;
     
     // raycaster用マウス座標取得
-    mouse_pos.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-    mouse_pos.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    mouse_pos.x = ( event.clientX / width ) * 2 - 1;
+    mouse_pos.y = - ( event.clientY / height ) * 2 + 1;
 
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
-      pushed_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
-      pushed_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + header_height + camera.position.y;
+      pushed_pos.x = event.changedTouches[0].pageX - (width / 2);
+      pushed_pos.y = - (event.changedTouches[0].pageY - (height / 2)) + header_height + camera.position.y;
 
         // raycaster用マウス座標取得
-      mouse_pos.x = ( event.changedTouches[0].pageX / window.innerWidth ) * 2 - 1;
-      mouse_pos.y = - ( event.changedTouches[0].pageY / window.innerHeight ) * 2 + 1;
+      mouse_pos.x = ( event.changedTouches[0].pageX / width ) * 2 - 1;
+      mouse_pos.y = - ( event.changedTouches[0].pageY / height ) * 2 + 1;
     }
 
     // raycasterセット
@@ -653,13 +671,13 @@ img.addEventListener("load", () => {
     }
 
     // マウスを放した位置の座標を記憶（PC）
-    released_pos.x = event.clientX - (window.innerWidth / 2);
-    released_pos.y = - (event.clientY - (window.innerHeight / 2)) + header_height + camera.position.y;
+    released_pos.x = event.clientX - (width / 2);
+    released_pos.y = - (event.clientY - (height / 2)) + header_height + camera.position.y;
 
     // タップを放したした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
-      released_pos.x = event.changedTouches[0].pageX - (window.innerWidth / 2);
-      released_pos.y = - (event.changedTouches[0].pageY - (window.innerHeight / 2)) + header_height + camera.position.y;
+      released_pos.x = event.changedTouches[0].pageX - (width / 2);
+      released_pos.y = - (event.changedTouches[0].pageY - (height / 2)) + header_height + camera.position.y;
     }
 
     // マウスを押し込んでスライドした距離
@@ -848,12 +866,7 @@ img.addEventListener("load", () => {
 
   function onResize() {
 
-    // サイズを取得
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-
-    // デバイスがPCの場合のみリサイズする
+    // デバイスがPCの場合のリサイズ
     if (typeof window.ontouchstart === "undefined") {
       if (width >= break_point_1) {
         camera.position.z = 400;
