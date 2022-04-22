@@ -49,29 +49,33 @@ name    ="company"
 url     ="company"
 weight = 1
 [[Languages.en.menu.main]]
-name    = "service"
-url     = "service"
+name    = "services"
+url     = "services"
 weight  = 2
 [[Languages.en.menu.main]]
-name    = "ir"
-url     = "ir"
+name    = "reason"
+url     = "reason"
 weight  =  3
 [[Languages.en.menu.main]]
-name   = "esg"
-url    = "esg"
+name   = "casestudy"
+url    = "casestudy"
 weight = 4
+[[Languages.en.menu.main]]
+name   = "solution"
+url    = "solution"
+weight = 5
 [[Languages.en.menu.main]]
 name   = "news"
 url    = "news"
-weight = 5
+weight = 6
 [[Languages.en.menu.main]]
 name   = "recruit"
 url    = "recruit/top"
-weight = 6
+weight = 7
 [[Languages.en.menu.main]]
 name   = "contact"
 url    = "contact"
-weight = 7
+weight = 8
 
 
 [[Languages.ja.menu.main]]
@@ -83,22 +87,26 @@ name    = "サービス"
 url     = "services"
 weight  = 2
 [[Languages.ja.menu.main]]
-name    = "IR情報"
-url     = "ir"
+name    = "理由"
+url     = "reason"
 weight  =  3
 [[Languages.ja.menu.main]]
-name   = "サステナビリティ"
-url    = "esg"
+name   = "ケーススタディ"
+url    = "casestudy"
 weight = 4
+[[Languages.ja.menu.main]]
+name   = "解決方法"
+url    = "solution"
+weight = 5
 [[Languages.ja.menu.main]]
 name   = "ニュース"
 url    = "news"
-weight = 5
+weight = 6
 [[Languages.ja.menu.main]]
 name   = "採用情報"
 url    = "recruit/top"
-weight = 6
+weight = 7
 [[Languages.ja.menu.main]]
 name   = "お問い合わせ"
 url    = "contact"
-weight = 7
+weight = 8
