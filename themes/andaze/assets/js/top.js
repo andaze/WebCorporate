@@ -880,9 +880,12 @@ img.addEventListener("load", () => {
         } else if (height > 780  & height <= 800) {
           camera.position.z = 600;
           mesh.material.uniforms.u_value.value = 0;
+        } else if (height > 700  & height <= 780) {
+          camera.position.z = 430;
+          mesh.material.uniforms.u_value.value = -1;
         } else {
           camera.position.z = 430;
-          mesh.material.uniforms.u_value.value = 0;
+          mesh.material.uniforms.u_value.value = -6;
         }    
       } else if (width < break_point_6 & width >= break_point_7) {
         if (height > 1000) {
@@ -897,8 +900,8 @@ img.addEventListener("load", () => {
         }    
       } else if (width < break_point_7 & width >= break_point_8 & height < 800) {
         if (height > 568) {
-          camera.position.z = 660;
-          mesh.material.uniforms.u_value.value = -6;
+          camera.position.z = 700;
+          mesh.material.uniforms.u_value.value = -5;
         } else {
           camera.position.z = 500;
           mesh.material.uniforms.u_value.value = -6.5;
@@ -911,8 +914,6 @@ img.addEventListener("load", () => {
         mesh.material.uniforms.u_value.value = -6;
       }
     }
-
-    console.log(mesh.material.uniforms.u_value.value)
     
 
     // レンダラーのサイズを調整する
