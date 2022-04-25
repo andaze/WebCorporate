@@ -1,0 +1,7 @@
+<div class="bg-black flex text-white">
+
+    {{ .Scratch.Set "section" "services" }}
+        {{ partial "atom-irnews-heading.html" . }}
+    {{.Scratch.Delete "section" }}
+    
+</div>
