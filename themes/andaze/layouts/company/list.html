@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <div class="container mx-auto mt-16">
+        <img src="{{ `img/logo.png` | absURL }}" alt="Image Not Available">
+    </div>
+    <div class="container mx-auto px-5 py-5">
+        {{ partial "breadcrumbs.html" . }}
+    </div>
+    <div class="container mx-auto px-5 py-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {{ partial "molecule-section-company-detailpage-buttonlist.html" . }}
+        </div>
+    </div>
+{{ end }}
