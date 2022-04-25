@@ -344,7 +344,7 @@ img.addEventListener("load", () => {
   
   window.addEventListener("resize", function() {
 
-    if (currentWidth == window.innerWidth) {
+    if (currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
         // ウインドウ横幅が変わっていないため処理をキャンセル。
         return;
     }
