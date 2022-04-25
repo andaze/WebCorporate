@@ -871,23 +871,24 @@ img.addEventListener("load", () => {
         camera.position.z = 440;
         mesh.material.uniforms.u_value.value = 3;
       } else if (width < break_point_5 & width >= break_point_6) {
-        if (height > 800) {
+        if (height > 1000) {
           camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = -2;
-        }
-        else if (height > 780  & height <= 800) {
+          mesh.material.uniforms.u_value.value = 1;
+        } else if (height > 800 & height <= 1000) {
+          camera.position.z = 440;
+          mesh.material.uniforms.u_value.value = -1;
+        } else if (height > 780  & height <= 800) {
           camera.position.z = 600;
           mesh.material.uniforms.u_value.value = 0;
         } else {
-          camera.position.z = 500;
-          mesh.material.uniforms.u_value.value = -3;
+          camera.position.z = 430;
+          mesh.material.uniforms.u_value.value = 0;
         }    
       } else if (width < break_point_6 & width >= break_point_7) {
         if (height > 1000) {
-          camera.position.z = 600;
+          camera.position.z = 580;
           mesh.material.uniforms.u_value.value = -1;
-        }
-        else if (height > 667 & height <= 1000) {
+        } else if (height > 667 & height <= 1000) {
           camera.position.z = 600;
           mesh.material.uniforms.u_value.value = 0;
         } else {
