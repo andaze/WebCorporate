@@ -15,7 +15,6 @@ var scene = new THREE.Scene();
 // ウィンドウサイズを取得
 const width = window.innerWidth;
 const height = window.innerHeight;
-console.log(width)
 
 
 // カメラの作成
@@ -857,22 +856,26 @@ img.addEventListener("load", () => {
       // デバイスがモバイルの場合
     } else {
       if (width >= break_point_1) {
-        camera.position.z = 400;
+        camera.position.z = 440;
         mesh.material.uniforms.u_value.value = 13;
       } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 400;
+        camera.position.z = 440;
         mesh.material.uniforms.u_value.value = 6;
       } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 400;
+        camera.position.z = 440;
         mesh.material.uniforms.u_value.value = 4;
       } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 400;
+        camera.position.z = 440;
         mesh.material.uniforms.u_value.value = 1;
       } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 0;
+        camera.position.z = 440;
+        mesh.material.uniforms.u_value.value = 3;
       } else if (width < break_point_5 & width >= break_point_6) {
-        if (height > 780) {
+        if (height > 800) {
+          camera.position.z = 600;
+          mesh.material.uniforms.u_value.value = -2;
+        }
+        else if (height > 780  & height <= 800) {
           camera.position.z = 600;
           mesh.material.uniforms.u_value.value = 0;
         } else {
@@ -880,9 +883,13 @@ img.addEventListener("load", () => {
           mesh.material.uniforms.u_value.value = -3;
         }    
       } else if (width < break_point_6 & width >= break_point_7) {
-        if (height > 667) {
+        if (height > 1000) {
           camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 1;
+          mesh.material.uniforms.u_value.value = -1;
+        }
+        else if (height > 667 & height <= 1000) {
+          camera.position.z = 600;
+          mesh.material.uniforms.u_value.value = 0;
         } else {
           camera.position.z = 500;
           mesh.material.uniforms.u_value.value = -6.5;
@@ -903,6 +910,8 @@ img.addEventListener("load", () => {
         mesh.material.uniforms.u_value.value = -6;
       }
     }
+
+    console.log(mesh.material.uniforms.u_value.value)
     
 
     // レンダラーのサイズを調整する
