@@ -1,0 +1,4 @@
+{{$title:= .Get "title"}}
+{{$link:= .Get "link"}}
+
+{{ partial "atom-detailpage-linkbutton.html" (dict "link" $link "title" $title) }}
