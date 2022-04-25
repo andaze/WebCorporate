@@ -3,7 +3,8 @@
   {{- partial "top.html" . -}}
 </div>
 
-<main class="bg-white absolute z-10" id="top_main">
+<!-- <main class="bg-white absolute z-10" id="top_main"> -->
+<main class="bg-white absolute z-10 w-full" id="top_main">
   <div class="py-5">
     {{ .Scratch.Set "section" "news" }}
     {{ partial "template-section-newtopic.html" . }}

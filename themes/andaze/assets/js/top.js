@@ -15,6 +15,7 @@ var scene = new THREE.Scene();
 // ウィンドウサイズを取得
 const width = window.innerWidth;
 const height = window.innerHeight;
+console.log(width)
 
 
 // カメラの作成
