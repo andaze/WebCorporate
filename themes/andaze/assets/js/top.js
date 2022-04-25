@@ -342,6 +342,15 @@ img.addEventListener("load", () => {
   // リサイズイベント発生時に実行
   window.addEventListener('resize', onResize);
 
+  var ua = navigator.userAgent;
+  if ((ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0) {
+    return false;
+  }
+
+  window.addEventListener('orientationchange', function() {
+    onResize();
+  }, false );
+
 
   // ---------------------------------------------------------------------------------------------
   //　インタラクションガイド
