@@ -340,17 +340,20 @@ img.addEventListener("load", () => {
   onResize();
 
   // リサイズイベント発生時に実行
-  window.addEventListener('resize', onResize);
+  var currentWidth = window.innerWidth;
+  
+  window.addEventListener("resize", function() {
 
-  var ua = navigator.userAgent;
-  if ((ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0) {
-    return false;
-  }
+    if (currentWidth == window.innerWidth) {
+        // ウインドウ横幅が変わっていないため処理をキャンセル。
+        return;
+    }
 
-  window.addEventListener('orientationchange', function() {
+    // ウインドウ横幅が変わったのでリサイズと見なす。
+    // 横幅を更新
+    currentWidth = window.innerWidth;
     onResize();
-  }, false );
-
+});
 
   // ---------------------------------------------------------------------------------------------
   //　インタラクションガイド
@@ -941,6 +944,7 @@ img.addEventListener("load", () => {
     camera.updateProjectionMatrix();
 
     blackOut();
+    console.log('A')
 
   }
 
