@@ -5,9 +5,7 @@
             {{ partial "organism-section-news-left.html" . }}
         </div>
         <div class="w-2/3 bg-white">
-            {{ range .Pages }}
-            <h1>{{ .Title }}</h1>
-            {{ end }}
+            {{ partial "organism-section-news-right.html" . }}
         </div>
     </div>
 </div>
