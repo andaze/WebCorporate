@@ -397,17 +397,43 @@ img.addEventListener("load", () => {
   }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
   
   // サイト表示後、拡散したパーティクルが集合する
-  gsap.set(mesh.material.uniforms.u_ratio, {
-    value: 10000.0,
-  });
+  // gsap.set(mesh.material.uniforms.u_ratio, {
+  //   value: 10000.0,
+  // });
   
-  window.setTimeout(() => {
-    gsap.to(mesh.material.uniforms.u_ratio, {
-      value: 0.0,
-      duration: 5,
-      ease: "power4.out",
-    });
-  }, 5000)
+  // window.setTimeout(() => {
+  //   gsap.to(mesh.material.uniforms.u_ratio, {
+  //     value: 0.0,
+  //     duration: 5,
+  //     ease: "power4.out",
+  //   });
+  // }, 5000)
+
+  gather()
+
+  function gather() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+  
+      var gathering = new TWEEN.Tween(vertex_position);
+      gathering.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
+      gathering.easing( TWEEN.Easing.Quadratic.Out );
+      gathering.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+      });
+      gathering.start();
+    }
+  }
+
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
