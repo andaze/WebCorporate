@@ -1,0 +1,7 @@
+{{ with .Site.GetPage "section" (.Section) }}
+{{ range .Pages }}
+    {{ .Scratch.Set "backgroundTheme" "white" }}
+    {{ partial "molecule-section-irnews-pdf-listing.html" . }}
+    {{ .Scratch.Delete "backgroundTheme" }}
+{{ end }}
+{{ end }}
