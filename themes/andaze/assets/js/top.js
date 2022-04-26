@@ -396,6 +396,18 @@ img.addEventListener("load", () => {
     window.setInterval(autoDiffusion, 1000)
   }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
   
+  // サイト表示後、拡散したパーティクルが集合する
+  gsap.set(mesh.material.uniforms.u_ratio, {
+    value: 10000.0,
+  });
+  
+  window.setTimeout(() => {
+    gsap.to(mesh.material.uniforms.u_ratio, {
+      value: 0.0,
+      duration: 5,
+      ease: "power4.out",
+    });
+  }, 5000)
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
