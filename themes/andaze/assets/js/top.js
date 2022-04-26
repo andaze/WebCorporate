@@ -407,7 +407,7 @@ img.addEventListener("load", () => {
   //     duration: 5,
   //     ease: "power4.out",
   //   });
-  // }, 5000)
+  // }, 0)
 
   gather()
 
@@ -415,20 +415,23 @@ img.addEventListener("load", () => {
     for (let i = 0; i < vertces; i++) {
       particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
       particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+2] = 1000;
   
        // パーティクルの座標
        particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
        particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
+       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
   
        // オブジェクト頂点座標
-       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
   
       var gathering = new TWEEN.Tween(vertex_position);
-      gathering.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
+      gathering.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
       gathering.easing( TWEEN.Easing.Quadratic.Out );
       gathering.onUpdate(function (object) {
         particlePositions[3*i] = object.x;
         particlePositions[3*i+1] = object.y;
+        particlePositions[3*i+2] = object.z;
       });
       gathering.start();
     }
