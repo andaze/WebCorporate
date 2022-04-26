@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tabFill" role="tablist">
+<ul class="nav nav-tabs flex flex-col md:flex-row list-none border-b-0 pl-0 mb-4 overflow-x-scroll whitespace-nowrap" id="tabs-tabFill" role="tablist">
     {{ $slice := slice }}
     {{ range .Pages }}
         {{ range $tag := .Page.Params.tags }}
