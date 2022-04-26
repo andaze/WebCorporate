@@ -1,6 +1,6 @@
 {{ if eq (.Scratch.Get "backgroundTheme") ("white") }}
-<span class="bg-black text-lg font-bold text-center text-white w-36">{{.Params.Tags}}</span>
+<span class="bg-black text-lg font-bold text-center text-white w-36">{{delimit .Params.tags ", "}}</span>
 {{ end }}
 {{ if eq (.Scratch.Get "backgroundTheme") ("black") }}
-<span class="bg-white text-lg font-bold text-center w-36">{{.Params.Tags}}</span>
+<span class="bg-white text-lg font-bold text-center w-36">{{ if .IsHome }} Home {{ else }} {{delimit .Params.tags ", "}} {{ end }}</span>
 {{ end }}
