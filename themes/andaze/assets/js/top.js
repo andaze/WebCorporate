@@ -309,6 +309,20 @@ img.addEventListener("load", () => {
   }, 500);
 
 
+    // 初期アニメーション　パターン1
+    // サイト表示後、拡散したパーティクルが集合する
+    // gatherFromFar();
+
+    // 初期アニメーション　パターン2
+    // サイト表示後、拡散したパーティクルが集合する
+    gather2D();
+
+
+    // 初期アニメーション　パターン3
+    // サイト表示後、拡散したパーティクルが集合する
+    // gather3D();
+
+
   // デバイスがPCかスマホか判別し処理を分ける
   if (typeof window.ontouchstart === "undefined") {
     // PCの処理
@@ -389,82 +403,6 @@ img.addEventListener("load", () => {
       nav_block.style.visibility = "visible";
     }
   }, fadein_times*interval_time+5000);
-
-
-  // 初期アニメーション　パターン1
-  // サイト表示後、拡散したパーティクルが集合する
-  // gsap.set(mesh.material.uniforms.u_ratio, {
-  //   value: 10000.0,
-  // });
-  
-  // window.setTimeout(() => {
-  //   gsap.to(mesh.material.uniforms.u_ratio, {
-  //     value: 0.0,
-  //     duration: 5,
-  //     ease: "power4.out",
-  //   });
-  // }, 0)
-
-
-  // 初期アニメーション　パターン2
-  // サイト表示後、拡散したパーティクルが集合する
-  // gather2D();
-
-
-  // 初期アニメーション　パターン3
-  // サイト表示後、拡散したパーティクルが集合する
-  gather3D();
-
-
-  function gather2D() {
-    for (let i = 0; i < vertces; i++) {
-      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-  
-       // パーティクルの座標
-       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
-       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8
-  
-       // オブジェクト頂点座標
-       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
-  
-      var gathering2d = new TWEEN.Tween(vertex_position);
-      gathering2d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
-      gathering2d.easing( TWEEN.Easing.Quadratic.Out );
-      gathering2d.onUpdate(function (object) {
-        particlePositions[3*i] = object.x;
-        particlePositions[3*i+1] = object.y;
-      });
-      gathering2d.start();
-    }
-  }
-
-
-  function gather3D() {
-    for (let i = 0; i < vertces; i++) {
-      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-      particlePositions[3*i+2] = 1000;
-  
-       // パーティクルの座標
-       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
-       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
-       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
-  
-       // オブジェクト頂点座標
-       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
-  
-      var gathering3d = new TWEEN.Tween(vertex_position);
-      gathering3d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
-      gathering3d.easing( TWEEN.Easing.Quadratic.Out );
-      gathering3d.onUpdate(function (object) {
-        particlePositions[3*i] = object.x;
-        particlePositions[3*i+1] = object.y;
-        particlePositions[3*i+2] = object.z;
-      });
-      gathering3d.start();
-    }
-  }
 
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
@@ -1203,6 +1141,83 @@ img.addEventListener("load", () => {
 
   }
 
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義16　初期アニメーション　パターン1
+  // ---------------------------------------------------------------------------------------------
+
+  function gatherFromFar() {
+    gsap.set(mesh.material.uniforms.u_ratio, {
+      value: 10000.0,
+    });
+    
+    window.setTimeout(() => {
+      gsap.to(mesh.material.uniforms.u_ratio, {
+        value: 0.0,
+        duration: 5,
+        ease: "power4.out",
+      })
+    }, 0);
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義17　初期アニメーション　パターン2
+  // ---------------------------------------------------------------------------------------------
+
+  function gather2D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+  
+      var gathering2d = new TWEEN.Tween(vertex_position);
+      gathering2d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
+      gathering2d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering2d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+      });
+      gathering2d.start();
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義18　初期アニメーション　パターン3
+  // ---------------------------------------------------------------------------------------------
+
+  function gather3D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+2] = 1000;
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
+       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
+  
+      var gathering3d = new TWEEN.Tween(vertex_position);
+      gathering3d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
+      gathering3d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering3d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+        particlePositions[3*i+2] = object.z;
+      });
+      gathering3d.start();
+    }
+  }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 end
