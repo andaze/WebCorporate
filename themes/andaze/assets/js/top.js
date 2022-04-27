@@ -370,45 +370,14 @@ img.addEventListener("load", () => {
 });
 
 
-  // ---------------------------------------------------------------------------------------------
-  //　インタラクションガイド
-  // ---------------------------------------------------------------------------------------------
-
-  const nav_block = document.getElementById("nav_block");
-  const circle = document.getElementById("circle");
-  const animation_nav = gsap.timeline();
-
-  animation_nav
-  .to(circle, {
-    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
-    opacity: .7,
-    y: 5,
-  })
-  .to(circle, {
-    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
-    x:  anime_nav.clientWidth*0.5,
-  })
-  .to(circle, {
-    duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
-    opacity: 0,
-    x:  anime_nav.clientWidth*0.8,
-    y: -5,
-  });
-
-  animation_nav.repeat(-1);
-
-  window.setTimeout(() => {
-    if (slide_flag === false) {
-      nav_block.style.opacity = 1;
-      nav_block.style.visibility = "visible";
-    }
-  }, fadein_times*interval_time+5000);
+  //　インタラクションガイド セットアップ
+  interactionGuide();
 
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
   window.setTimeout(() => {
     window.setInterval(autoDiffusion, 1000)
-  }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
+  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000))
   
 
 
@@ -1217,6 +1186,42 @@ img.addEventListener("load", () => {
       });
       gathering3d.start();
     }
+  }
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義19　インタラクションガイド セットアップ
+  // ---------------------------------------------------------------------------------------------
+
+  function interactionGuide() {
+    const nav_block = document.getElementById("nav_block");
+    const circle = document.getElementById("circle");
+    const animation_nav = gsap.timeline();
+  
+    animation_nav
+    .to(circle, {
+      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      opacity: .7,
+      y: 5,
+    })
+    .to(circle, {
+      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      x:  anime_nav.clientWidth*0.5,
+    })
+    .to(circle, {
+      duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
+      opacity: 0,
+      x:  anime_nav.clientWidth*0.8,
+      y: -5,
+    });
+  
+    animation_nav.repeat(-1);
+  
+    window.setTimeout(() => {
+      if (slide_flag === false) {
+        nav_block.style.opacity = 1;
+        nav_block.style.visibility = "visible";
+      }
+    }, fadein_times*interval_time+5000);
   }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
