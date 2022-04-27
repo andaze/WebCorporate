@@ -1,1 +1,6 @@
-<span class="bg-white text-lg font-bold text-center w-36">IRニュース</span>
+{{ if eq (.Scratch.Get "backgroundTheme") ("white") }}
+<span class="bg-black text-lg font-bold text-center text-white w-36">{{.Params.Tags}}</span>
+{{ end }}
+{{ if eq (.Scratch.Get "backgroundTheme") ("black") }}
+<span class="bg-white text-lg font-bold text-center w-36">{{.Params.Tags}}</span>
+{{ end }}
