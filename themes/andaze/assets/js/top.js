@@ -405,9 +405,16 @@ img.addEventListener("load", () => {
   //   });
   // }, 0)
 
+
   // 初期アニメーション　パターン2
   // サイト表示後、拡散したパーティクルが集合する
-  gather2D()
+  // gather2D();
+
+
+  // 初期アニメーション　パターン3
+  // サイト表示後、拡散したパーティクルが集合する
+  gather3D();
+
 
   function gather2D() {
     for (let i = 0; i < vertces; i++) {
@@ -429,6 +436,33 @@ img.addEventListener("load", () => {
         particlePositions[3*i+1] = object.y;
       });
       gathering2d.start();
+    }
+  }
+
+
+  function gather3D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+2] = 1000;
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
+       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
+  
+      var gathering3d = new TWEEN.Tween(vertex_position);
+      gathering3d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
+      gathering3d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering3d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+        particlePositions[3*i+2] = object.z;
+      });
+      gathering3d.start();
     }
   }
 
