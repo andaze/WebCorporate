@@ -367,7 +367,7 @@ img.addEventListener("load", () => {
     // 横幅を更新
     currentWidth = window.innerWidth;
     onResize();
-});
+  });
 
 
   //　インタラクションガイド セットアップ
@@ -811,6 +811,12 @@ img.addEventListener("load", () => {
     // ウィンドウサイズを取得
     const width = window.innerWidth;
     const height = window.innerHeight;
+
+    // ヘッダーの高さ
+    const header_height = document.getElementById("header_nav").clientHeight;
+
+    // canvasのmargin-topにheaderの高さを設定
+    canvas.style.marginTop = header_height + "px";
 
     // ブレイクポイントの設定
     const break_point_1 = 3840;
