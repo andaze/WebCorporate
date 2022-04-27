@@ -946,7 +946,7 @@ img.addEventListener("load", () => {
           mesh.material.uniforms.u_value.value = -5;
         }    
       } else if (width < break_point_6 & width >= break_point_7) {
-        if (height > 1100) {
+        if (height > 1100) 
           camera.position.z = 580;
           mesh.material.uniforms.u_value.value = 1;
         } else if (height > 1000 & height <= 1100) {
