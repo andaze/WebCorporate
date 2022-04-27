@@ -355,6 +355,7 @@ img.addEventListener("load", () => {
     onResize();
 });
 
+
   // ---------------------------------------------------------------------------------------------
   //　インタラクションガイド
   // ---------------------------------------------------------------------------------------------
@@ -387,7 +388,22 @@ img.addEventListener("load", () => {
       nav_block.style.opacity = 1;
       nav_block.style.visibility = "visible";
     }
-  }, fadein_times*interval_time+5000)
+  }, fadein_times*interval_time+5000);
+
+
+  // 初期アニメーション　パターン1
+  // サイト表示後、拡散したパーティクルが集合する
+  gsap.set(mesh.material.uniforms.u_ratio, {
+    value: 10000.0,
+  });
+  
+  window.setTimeout(() => {
+    gsap.to(mesh.material.uniforms.u_ratio, {
+      value: 0.0,
+      duration: 5,
+      ease: "power4.out",
+    });
+  }, 0)
 
 
 
