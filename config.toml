@@ -11,6 +11,8 @@ assetDir = "/assets"
 publishDir = "docs"
 canonifyurls = true
 
+paginate = 2
+
 [Languages]
 [Languages.ja]
 languageName = "JP"
