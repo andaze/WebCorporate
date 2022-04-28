@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="container mx-auto mt-16">
+    <img src="{{ `img/logo.png` | absURL }}" alt="Image Not Available">
+</div>
+
+<div class="container mx-auto px-5 py-5">
+    {{ partial "breadcrumbs.html" . }}
+</div>
+<div class="container mx-auto px-5 py-5">
+    <div class="prose">
+        {{.Content}}
+    </div>
+</div>
+
+{{ end }}
