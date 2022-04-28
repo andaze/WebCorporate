@@ -247,9 +247,9 @@ img.addEventListener("load", () => {
   // パーティクル拡散時の到達座標
   var destination = new THREE.Vector2();
 
-   // ランダム座標（自動拡散）
-   var pos_range_plus = new THREE.Vector2();
-   var pos_range_minus = new THREE.Vector2();
+  // ランダム座標（自動拡散）
+  var pos_range_plus = new THREE.Vector2();
+  var pos_range_minus = new THREE.Vector2();
 
   // ランダム座標（自動拡散）
   var random_pos = new THREE.Vector2();
@@ -279,6 +279,9 @@ img.addEventListener("load", () => {
 
   // raycaster検知フラグ
   var detection = false;
+
+  // 自動アニメーション停止フラグ
+  var stopDiffusion = false;
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　変数定義 end
@@ -376,9 +379,20 @@ img.addEventListener("load", () => {
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
   window.setTimeout(() => {
+    
     window.setInterval(autoDiffusion, 1000)
-  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000))
+
+    // ウィンドウが非アクティブの場合、アニメーション停止
+    window.addEventListener('blur', () => {
+      stopDiffusion = true;
+    });
   
+    // ウィンドウがアクティブの場合、アニメーション再開
+    window.addEventListener('focus', () => {
+      stopDiffusion = false;
+    });  
+
+  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -957,6 +971,10 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function autoDiffusion() {
+
+    if (stopDiffusion === true) {
+      return;
+    }
 
     random_numbers = randomNumbers(200, 50);
     var direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
