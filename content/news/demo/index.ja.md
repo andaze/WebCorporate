@@ -7,3 +7,5 @@ newstitle: "「FTSE Blossom Japan Sector Relative Index」の構成銘柄に選�
 tags:
     - announcement
 ---
+
+ニュース詳細ページのコンテンツはこちら
