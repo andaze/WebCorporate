@@ -876,29 +876,77 @@ img.addEventListener("load", () => {
       // デバイスがモバイルの場合
     } else {
       if (width >= break_point_1) {
-        camera.position.z = 750;
-        mesh.material.uniforms.u_value.value = 17;
+        if (height > 1644) {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 12;
+        } else {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 10;
+        }
       } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 750;
-        mesh.material.uniforms.u_value.value = 17;
+        if (height > 1440) {
+          camera.position.z = 700;
+          mesh.material.uniforms.u_value.value = 10;
+        } else {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 4;
+        }
       } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 750;
-        mesh.material.uniforms.u_value.value = 17;
+        if (height > 1170) {
+          camera.position.z = 750;
+          mesh.material.uniforms.u_value.value = 17;
+        } else {
+          camera.position.z = 400;
+          mesh.material.uniforms.u_value.value = 4;
+        }
       } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 750;
-        mesh.material.uniforms.u_value.value = 10;
+        if (height > 2880) {
+          camera.position.z = 980;
+          mesh.material.uniforms.u_value.value = 10;
+        } else {
+          camera.position.z = 800;
+          mesh.material.uniforms.u_value.value = 10;
+        }
       } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 840;
-        mesh.material.uniforms.u_value.value = 7;
+        if (height > 750) {
+          camera.position.z = 860;
+          mesh.material.uniforms.u_value.value = 7;
+        } else {
+          camera.position.z = 440;
+          mesh.material.uniforms.u_value.value = -1;
+        }
       } else if (width < break_point_5 & width >= break_point_6) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 0;
+        if (height > 2530) {
+          camera.position.z = 880;
+          mesh.material.uniforms.u_value.value = 5;
+        } else if (height > 1920 & height <= 2530) {
+          camera.position.z = 880;
+          mesh.material.uniforms.u_value.value = 3;
+        } else if (height > 640 & height <= 1920) { 
+          camera.position.z = 740;
+          mesh.material.uniforms.u_value.value = 3;
+        } else {
+          camera.position.z = 460;
+          mesh.material.uniforms.u_value.value = -2;
+        }
       } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 480;
-        mesh.material.uniforms.u_value.value = -1;
+        if (height > 1790) {
+          camera.position.z = 860;
+          mesh.material.uniforms.u_value.value = 0;
+        }
+        else if (height > 1270 & height <= 1790) {
+          camera.position.z = 720;
+          mesh.material.uniforms.u_value.value = 0;
+        } else if (height > 1140 & height <= 1270) {
+          camera.position.z = 840;
+          mesh.material.uniforms.u_value.value = 1;
+        } else {
+          camera.position.z = 640;
+          mesh.material.uniforms.u_value.value = -1;
+        }
       } else if (width < break_point_7 & width >= break_point_8) {
-        camera.position.z = 880;
-        mesh.material.uniforms.u_value.value = -6;
+        camera.position.z = 700;
+        mesh.material.uniforms.u_value.value = -2;
       } else {
         camera.position.z = 800;
         mesh.material.uniforms.u_value.value = -6;
