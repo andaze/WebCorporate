@@ -876,68 +876,35 @@ img.addEventListener("load", () => {
       // デバイスがモバイルの場合
     } else {
       if (width >= break_point_1) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 13;
+        camera.position.z = 750;
+        mesh.material.uniforms.u_value.value = 17;
       } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 6;
+        camera.position.z = 750;
+        mesh.material.uniforms.u_value.value = 17;
       } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 4;
+        camera.position.z = 750;
+        mesh.material.uniforms.u_value.value = 17;
       } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 1;
+        camera.position.z = 750;
+        mesh.material.uniforms.u_value.value = 10;
       } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 3;
+        camera.position.z = 840;
+        mesh.material.uniforms.u_value.value = 7;
       } else if (width < break_point_5 & width >= break_point_6) {
-        if (height > 1000) {
-          camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 2;
-        } else if (height > 800 & height <= 1000) {
-          camera.position.z = 440;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 780  & height <= 800) {
-          camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 700  & height <= 780) {
-          camera.position.z = 430;
-          mesh.material.uniforms.u_value.value = 0;
-        } else {
-          camera.position.z = 430;
-          mesh.material.uniforms.u_value.value = -3;
-        }    
+        camera.position.z = 400;
+        mesh.material.uniforms.u_value.value = 0;
       } else if (width < break_point_6 & width >= break_point_7) {
-        if (height > 1100) {
-          camera.position.z = 580;
-          mesh.material.uniforms.u_value.value = 1;
-        } else if (height > 1000 & height <= 1100) {
-          camera.position.z = 580;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 667 & height <= 1000) {
-          camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 0;
-        } else {
-          camera.position.z = 500;
-          mesh.material.uniforms.u_value.value = -5.5;
-        }    
-      } else if (width < break_point_7 & width >= break_point_8 & height < 800) {
-        if (height > 568) {
-          camera.position.z = 700;
-          mesh.material.uniforms.u_value.value = -4;
-        } else {
-          camera.position.z = 500;
-          mesh.material.uniforms.u_value.value = -4.5;
-        }
-      } else if (width < break_point_7 & width >= break_point_8 & height >= 800) {
-        camera.position.z = 800;
-        mesh.material.uniforms.u_value.value = -4;
+        camera.position.z = 480;
+        mesh.material.uniforms.u_value.value = -1;
+      } else if (width < break_point_7 & width >= break_point_8) {
+        camera.position.z = 880;
+        mesh.material.uniforms.u_value.value = -6;
       } else {
-        camera.position.z = 660;
-        mesh.material.uniforms.u_value.value = -4.5;
+        camera.position.z = 800;
+        mesh.material.uniforms.u_value.value = -6;
       }
     }
-    
+    console.log(mesh.material.uniforms.u_value.value)
 
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
