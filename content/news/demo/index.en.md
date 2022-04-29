@@ -5,6 +5,6 @@ weight: 0
 newsimg: dummy.jpg
 newstitle: "「FTSE Blossom Japan Sector Relative Index」の構成銘柄に選定"
 tags:
-    - press-release
+    - announcement
  
 ---

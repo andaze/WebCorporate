@@ -1,7 +1,16 @@
-{{ with .Site.GetPage "section" (.Section) }}
-{{ range .Pages }}
-    {{ .Scratch.Set "backgroundTheme" "white" }}
-    {{ partial "molecule-section-irnews-pdf-listing.html" . }}
-    {{ .Scratch.Delete "backgroundTheme" }}
-{{ end }}
+{{ $tabname:= .tabName }}
+{{ with .context.Site.GetPage "section" (.context.Section) }}
+    {{ if eq ($tabname) ("all") }}
+        {{ range .Pages }}
+            {{ .Scratch.Set "backgroundTheme" "white" }}
+            {{ partial "molecule-section-irnews-pdf-listing.html" . }}
+            {{ .Scratch.Delete "backgroundTheme" }}
+        {{ end }}
+    {{ else }}
+        {{ range (where .Pages "Params.tags" "intersect" (slice $tabname)) }}
+            {{ .Scratch.Set "backgroundTheme" "white" }}
+            {{ partial "molecule-section-irnews-pdf-listing.html" . }}
+            {{ .Scratch.Delete "backgroundTheme" }}
+        {{ end }}
+    {{ end }}
 {{ end }}
