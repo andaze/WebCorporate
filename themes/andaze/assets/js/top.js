@@ -884,7 +884,10 @@ img.addEventListener("load", () => {
           mesh.material.uniforms.u_value.value = 10;
         }
       } else if (width < break_point_1 & width >= break_point_2) {
-        if (height > 1440) {
+        if (height > 2040) {
+          camera.position.z = 500;
+          mesh.material.uniforms.u_value.value = 9;
+        } else if (height > 1440 & height <=2040) {
           camera.position.z = 700;
           mesh.material.uniforms.u_value.value = 10;
         } else {
@@ -892,9 +895,18 @@ img.addEventListener("load", () => {
           mesh.material.uniforms.u_value.value = 4;
         }
       } else if (width < break_point_2 & width >= break_point_3) {
-        if (height > 1170) {
+        if (height > 2730) {
+          camera.position.z = 650;
+          mesh.material.uniforms.u_value.value = 10;
+        } else if (height > 1530 & height <= 2730) {
+          camera.position.z = 550;
+          mesh.material.uniforms.u_value.value = 4;
+        } else if (height > 1488 & height <= 1530) {
           camera.position.z = 750;
           mesh.material.uniforms.u_value.value = 17;
+        } else if (height > 1170 & height <= 1488) {
+          camera.position.z = 550;
+          mesh.material.uniforms.u_value.value = 5;
         } else {
           camera.position.z = 400;
           mesh.material.uniforms.u_value.value = 4;
@@ -903,9 +915,12 @@ img.addEventListener("load", () => {
         if (height > 2880) {
           camera.position.z = 980;
           mesh.material.uniforms.u_value.value = 10;
-        } else {
+        } else if (height > 2388 & height <= 2880) {
           camera.position.z = 800;
           mesh.material.uniforms.u_value.value = 10;
+        } else {
+          camera.position.z = 680;
+          mesh.material.uniforms.u_value.value = 6;
         }
       } else if (width < break_point_4 & width >= break_point_5) {
         if (height > 750) {
@@ -922,9 +937,12 @@ img.addEventListener("load", () => {
         } else if (height > 1920 & height <= 2530) {
           camera.position.z = 880;
           mesh.material.uniforms.u_value.value = 3;
-        } else if (height > 640 & height <= 1920) { 
+        } else if (height > 768 & height <= 1920) { 
           camera.position.z = 740;
           mesh.material.uniforms.u_value.value = 3;
+        } else if (height > 640 & height <= 768) { 
+          camera.position.z = 540;
+          mesh.material.uniforms.u_value.value = -2;
         } else {
           camera.position.z = 460;
           mesh.material.uniforms.u_value.value = -2;
