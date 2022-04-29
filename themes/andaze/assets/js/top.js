@@ -247,9 +247,9 @@ img.addEventListener("load", () => {
   // パーティクル拡散時の到達座標
   var destination = new THREE.Vector2();
 
-   // ランダム座標（自動拡散）
-   var pos_range_plus = new THREE.Vector2();
-   var pos_range_minus = new THREE.Vector2();
+  // ランダム座標（自動拡散）
+  var pos_range_plus = new THREE.Vector2();
+  var pos_range_minus = new THREE.Vector2();
 
   // ランダム座標（自動拡散）
   var random_pos = new THREE.Vector2();
@@ -280,6 +280,9 @@ img.addEventListener("load", () => {
   // raycaster検知フラグ
   var detection = false;
 
+  // 自動アニメーション停止フラグ
+  var stopDiffusion = false;
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　変数定義 end
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -307,6 +310,20 @@ img.addEventListener("load", () => {
     window.setTimeout(reverse_click_flag, fadein_times*interval_time);
     window.setTimeout(reverse_moving_flag, fadein_times*interval_time);
   }, 500);
+
+
+    // 初期アニメーション　パターン1
+    // サイト表示後、拡散したパーティクルが集合する
+    // gatherFromFar();
+
+    // 初期アニメーション　パターン2
+    // サイト表示後、拡散したパーティクルが集合する
+    gather2D();
+
+
+    // 初期アニメーション　パターン3
+    // サイト表示後、拡散したパーティクルが集合する
+    // gather3D();
 
 
   // デバイスがPCかスマホか判別し処理を分ける
@@ -353,49 +370,29 @@ img.addEventListener("load", () => {
     // 横幅を更新
     currentWidth = window.innerWidth;
     onResize();
-});
-
-  // ---------------------------------------------------------------------------------------------
-  //　インタラクションガイド
-  // ---------------------------------------------------------------------------------------------
-
-  const nav_block = document.getElementById("nav_block");
-  const circle = document.getElementById("circle");
-  const animation_nav = gsap.timeline();
-
-  animation_nav
-  .to(circle, {
-    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
-    opacity: .7,
-    y: 5,
-  })
-  .to(circle, {
-    duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
-    x:  anime_nav.clientWidth*0.5,
-  })
-  .to(circle, {
-    duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
-    opacity: 0,
-    x:  anime_nav.clientWidth*0.8,
-    y: -5,
   });
 
-  animation_nav.repeat(-1);
 
-  window.setTimeout(() => {
-    if (slide_flag === false) {
-      nav_block.style.opacity = 1;
-      nav_block.style.visibility = "visible";
-    }
-  }, fadein_times*interval_time+5000)
-
+  //　インタラクションガイド セットアップ
+  interactionGuide();
 
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
   window.setTimeout(() => {
+    
     window.setInterval(autoDiffusion, 1000)
-  }, fadein_times*interval_time+5000 + (randomNumbers(10, 5)*1000))
+
+    // ウィンドウが非アクティブの場合、アニメーション停止
+    window.addEventListener('blur', () => {
+      stopDiffusion = true;
+    });
   
+    // ウィンドウがアクティブの場合、アニメーション再開
+    window.addEventListener('focus', () => {
+      stopDiffusion = false;
+    });  
+
+  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -829,6 +826,12 @@ img.addEventListener("load", () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
+    // ヘッダーの高さ
+    const header_height = document.getElementById("header_nav").clientHeight;
+
+    // canvasのmargin-topにheaderの高さを設定
+    canvas.style.marginTop = header_height + "px";
+
     // ブレイクポイントの設定
     const break_point_1 = 3840;
     const break_point_2 = 2560;
@@ -873,68 +876,107 @@ img.addEventListener("load", () => {
       // デバイスがモバイルの場合
     } else {
       if (width >= break_point_1) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 13;
-      } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 6;
-      } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 4;
-      } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 440;
-        mesh.material.uniforms.u_value.value = 3;
-      } else if (width < break_point_5 & width >= break_point_6) {
-        if (height > 1000) {
-          camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 2;
-        } else if (height > 800 & height <= 1000) {
-          camera.position.z = 440;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 780  & height <= 800) {
-          camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 700  & height <= 780) {
-          camera.position.z = 430;
-          mesh.material.uniforms.u_value.value = 0;
+        if (height > 1644) {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 12;
         } else {
-          camera.position.z = 430;
-          mesh.material.uniforms.u_value.value = -5;
-        }    
-      } else if (width < break_point_6 & width >= break_point_7) {
-        if (height > 1100) {
-          camera.position.z = 580;
-          mesh.material.uniforms.u_value.value = 1;
-        } else if (height > 1000 & height <= 1100) {
-          camera.position.z = 580;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 667 & height <= 1000) {
-          camera.position.z = 600;
-          mesh.material.uniforms.u_value.value = 0;
-        } else {
-          camera.position.z = 500;
-          mesh.material.uniforms.u_value.value = -5.5;
-        }    
-      } else if (width < break_point_7 & width >= break_point_8 & height < 800) {
-        if (height > 568) {
-          camera.position.z = 700;
-          mesh.material.uniforms.u_value.value = -4;
-        } else {
-          camera.position.z = 500;
-          mesh.material.uniforms.u_value.value = -6.5;
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 10;
         }
-      } else if (width < break_point_7 & width >= break_point_8 & height >= 800) {
-        camera.position.z = 800;
-        mesh.material.uniforms.u_value.value = -4;
+      } else if (width < break_point_1 & width >= break_point_2) {
+        if (height > 2040) {
+          camera.position.z = 500;
+          mesh.material.uniforms.u_value.value = 9;
+        } else if (height > 1440 & height <=2040) {
+          camera.position.z = 700;
+          mesh.material.uniforms.u_value.value = 10;
+        } else {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 4;
+        }
+      } else if (width < break_point_2 & width >= break_point_3) {
+        if (height > 3800) {
+          camera.position.z = 750;
+          mesh.material.uniforms.u_value.value = 12;
+        } else if (height > 2730 & height <= 3800) {
+          camera.position.z = 650;
+          mesh.material.uniforms.u_value.value = 10;
+        } else if (height > 1530 & height <= 2730) {
+          camera.position.z = 550;
+          mesh.material.uniforms.u_value.value = 4;
+        } else if (height > 1488 & height <= 1530) {
+          camera.position.z = 750;
+          mesh.material.uniforms.u_value.value = 17;
+        } else if (height > 1170 & height <= 1488) {
+          camera.position.z = 550;
+          mesh.material.uniforms.u_value.value = 5;
+        } else {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 3;
+        }
+      } else if (width < break_point_3 & width >= break_point_4) {
+        if (height > 2880) {
+          camera.position.z = 980;
+          mesh.material.uniforms.u_value.value = 10;
+        } else if (height > 2388 & height <= 2880) {
+          camera.position.z = 800;
+          mesh.material.uniforms.u_value.value = 10;
+        } else if (height > 828 & height <= 2388) {
+          camera.position.z = 680;
+          mesh.material.uniforms.u_value.value = 6;
+        } else {
+          camera.position.z = 480;
+          mesh.material.uniforms.u_value.value = 0;
+        }
+      } else if (width < break_point_4 & width >= break_point_5) {
+        if (height > 750) {
+          camera.position.z = 860;
+          mesh.material.uniforms.u_value.value = 7;
+        } else {
+          camera.position.z = 440;
+          mesh.material.uniforms.u_value.value = -1;
+        }
+      } else if (width < break_point_5 & width >= break_point_6) {
+        if (height > 2530) {
+          camera.position.z = 880;
+          mesh.material.uniforms.u_value.value = 5;
+        } else if (height > 1920 & height <= 2530) {
+          camera.position.z = 880;
+          mesh.material.uniforms.u_value.value = 3;
+        } else if (height > 768 & height <= 1920) { 
+          camera.position.z = 740;
+          mesh.material.uniforms.u_value.value = 3;
+        } else if (height > 640 & height <= 768) { 
+          camera.position.z = 540;
+          mesh.material.uniforms.u_value.value = -2;
+        } else {
+          camera.position.z = 460;
+          mesh.material.uniforms.u_value.value = -2;
+        }
+      } else if (width < break_point_6 & width >= break_point_7) {
+        if (height > 1790) {
+          camera.position.z = 860;
+          mesh.material.uniforms.u_value.value = 0;
+        }
+        else if (height > 1270 & height <= 1790) {
+          camera.position.z = 720;
+          mesh.material.uniforms.u_value.value = 0;
+        } else if (height > 1140 & height <= 1270) {
+          camera.position.z = 840;
+          mesh.material.uniforms.u_value.value = 1;
+        } else {
+          camera.position.z = 640;
+          mesh.material.uniforms.u_value.value = -1;
+        }
+      } else if (width < break_point_7 & width >= break_point_8) {
+        camera.position.z = 700;
+        mesh.material.uniforms.u_value.value = -2;
       } else {
-        camera.position.z = 660;
-        mesh.material.uniforms.u_value.value = -4.5;
+        camera.position.z = 800;
+        mesh.material.uniforms.u_value.value = -6;
       }
     }
-    
+    console.log(mesh.material.uniforms.u_value.value)
 
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
@@ -944,7 +986,6 @@ img.addEventListener("load", () => {
     camera.updateProjectionMatrix();
 
     blackOut();
-    console.log('A')
 
   }
 
@@ -969,6 +1010,10 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function autoDiffusion() {
+
+    if (stopDiffusion === true) {
+      return;
+    }
 
     random_numbers = randomNumbers(200, 50);
     var direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
@@ -1127,6 +1172,119 @@ img.addEventListener("load", () => {
 
   }
 
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義16　初期アニメーション　パターン1
+  // ---------------------------------------------------------------------------------------------
+
+  function gatherFromFar() {
+    gsap.set(mesh.material.uniforms.u_ratio, {
+      value: 10000.0,
+    });
+    
+    window.setTimeout(() => {
+      gsap.to(mesh.material.uniforms.u_ratio, {
+        value: 0.0,
+        duration: 5,
+        ease: "power4.out",
+      })
+    }, 0);
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義17　初期アニメーション　パターン2
+  // ---------------------------------------------------------------------------------------------
+
+  function gather2D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+  
+      var gathering2d = new TWEEN.Tween(vertex_position);
+      gathering2d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
+      gathering2d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering2d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+      });
+      gathering2d.start();
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義18　初期アニメーション　パターン3
+  // ---------------------------------------------------------------------------------------------
+
+  function gather3D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+2] = 1000;
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
+       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
+  
+      var gathering3d = new TWEEN.Tween(vertex_position);
+      gathering3d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
+      gathering3d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering3d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+        particlePositions[3*i+2] = object.z;
+      });
+      gathering3d.start();
+    }
+  }
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義19　インタラクションガイド セットアップ
+  // ---------------------------------------------------------------------------------------------
+
+  function interactionGuide() {
+    const nav_block = document.getElementById("nav_block");
+    const circle = document.getElementById("circle");
+    const animation_nav = gsap.timeline();
+  
+    animation_nav
+    .to(circle, {
+      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      opacity: .7,
+      y: 5,
+    })
+    .to(circle, {
+      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      x:  anime_nav.clientWidth*0.5,
+    })
+    .to(circle, {
+      duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
+      opacity: 0,
+      x:  anime_nav.clientWidth*0.8,
+      y: -5,
+    });
+  
+    animation_nav.repeat(-1);
+  
+    window.setTimeout(() => {
+      if (slide_flag === false) {
+        nav_block.style.opacity = 1;
+        nav_block.style.visibility = "visible";
+      }
+    }, fadein_times*interval_time+5000);
+  }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 end
