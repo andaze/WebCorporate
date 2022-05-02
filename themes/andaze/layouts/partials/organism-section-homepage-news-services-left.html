@@ -1,0 +1,11 @@
+<div>
+    {{ partial "atom-irnews-heading.html" . }}
+    {{ if eq (.Scratch.Get "section") "news" }}
+    <div class="flex flex-row">
+        {{ partial "atom-newtopic-sliderbutton.html" . }}
+    </div>
+    {{ end }}
+    <div>
+        {{ partial "molecule-section-irnews-buttongroup.html" . }}
+    </div>
+</div>
