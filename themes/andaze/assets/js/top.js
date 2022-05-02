@@ -838,6 +838,11 @@ img.addEventListener("load", () => {
 
     const width_break_point_sp = 1440;
 
+
+    // カメラのアスペクト比を正す
+    camera.aspect = width / (height -  header_height);
+    camera.updateProjectionMatrix();
+
     // デバイスがPCの場合
     if (typeof window.ontouchstart === "undefined") {
       if (width >= width_break_point) {
@@ -855,21 +860,40 @@ img.addEventListener("load", () => {
       // デバイスがモバイルの場合
     } else {
       if (width >= width_break_point_sp) {
-        camera.position.z = height / width * 500;
+        if (width < height) {
+          camera.position.z = height / width * 500;
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+        } else {
+          if  (camera.aspect > 1.8) {
+            camera.position.z = width / height * 250;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          } else {
+            camera.position.z = width / height * 350;
+            mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((2800 + height) / width);
+          }
+        }
       } else {
-        camera.position.z = height / width * 400;
+        if (width < height) {
+          camera.position.z = height / width * 400;
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+        } else {
+          if (camera.aspect > 1.8) {
+            camera.position.z = width / height * 250;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          } else {
+          camera.position.z = width / height * 350;
+          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          }
+        }
       }
-      mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
     }
     console.log(mesh.material.uniforms.u_value.value)
     console.log(camera.position.z)
+    console.log(camera.aspect)
 
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
-
-    // カメラのアスペクト比を正す
-    camera.aspect = width / (height -  header_height);
-    camera.updateProjectionMatrix();
+  
 
     blackOut();
 
