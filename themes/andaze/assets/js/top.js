@@ -18,7 +18,7 @@ const height = window.innerHeight;
 
 
 // カメラの作成
-var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1500 );
 
 
 // カメラ位置設定
@@ -864,7 +864,7 @@ img.addEventListener("load", () => {
           camera.position.z = height / width * 500;
           mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
         } else {
-          if  (camera.aspect > 1.8) {
+          if  (camera.aspect > 1.85) {
             camera.position.z = width / height * 250;
             mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
           } else {
@@ -887,9 +887,6 @@ img.addEventListener("load", () => {
         }
       }
     }
-    console.log(mesh.material.uniforms.u_value.value)
-    console.log(camera.position.z)
-    console.log(camera.aspect)
 
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
