@@ -13,7 +13,7 @@
     {{ end }}
   </div>
   <div class="bg-black p-1">
-    {{ if .Site.GetPage "services"}}
+    {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
       {{ partial "template-section-irnews.html" . }}
       {{ .Scratch.Delete "section" }}
