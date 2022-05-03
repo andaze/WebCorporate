@@ -10,14 +10,14 @@
     </div>
 {{ end }}
 
-{{ if eq (.Scratch.Get "section") "services" }}
-<div>
-    {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-    <div class="flex flex-row flex-wrap">
-        {{ range .Pages }}
-            {{ partial "molecule-services-polaroid-card.html" . }}
-        {{ end }}
+{{ if eq (.Scratch.Get "section") "ir" }}
+    <div class="mt-2">
+        {{ .Scratch.Set "backgroundTheme" "black" }}
+        {{ partial "molecule-section-irnews-pdf-listing.html" . }}
+        {{ .Scratch.Delete "backgroundTheme" }}
     </div>
-    {{ end }}
-</div>
+{{ end }}
+
+{{ if eq (.Scratch.Get "section") "services" }}
+    {{ partial "organism-section-contents.html" . }}
 {{ end }}
