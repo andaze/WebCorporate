@@ -5,29 +5,65 @@ weight: 0
 image: logo_pc.png
 ---
 
-## AZURE B2C　
-ハッカーから機密情報を守る、優れた主体認証サービス
+Why is "B2C development service" important? The awareness of social crisis has increased in response to the recent leak of customer information. Regarding future information leaks, it will be obligatory to report to the Personal Information Protection Committee and notify the person in question.
 
-### 概要　
-IDやパスワードなどの個人情報が外部に漏れてしまった、ハッキングや乗っ取り被害にあった――。開発したアプリケーションに、そのようなトラブルが発生すると、大きな社会問題にも発展しかねません。AZURE B2Cは、データの漏洩を防ぎ、高いセキュリティサービスを提供。個人情報の取り扱いを重視しながら、システム開発に取り組みます。
+In B2C development, the system is constructed with emphasis on subject authentication and handling of personal information.
 
-### 導入の効果
-(1)	1日あたり何百万ものユーザーと何十億もの認証をサポート
-1日何十億ものログインがあっても、企業にとって致命的な情報漏洩を防いで安全に処理。ハッカーが侵入した際は、サービス拒否、パスワードスプレー、ブルートフォース攻撃ができるなど、常に脅威を監視し、自動処理が行われます。
-(2)	ユーザーが指定するIDでシングルサインオンが可能
-最新のアプリケーションや既成のソフトウェアと統合。FacebookやTwitterなどのSNSやローカルアカウントIDからも、WEBやモバイルアプリケーションにシングルサインオンでアクセスが可能です。利用者を識別する「主体認証」で、安全にログインができ、サインイン動作とサインアップ変換に関する詳細な分析情報が取得できます。
+**B2C development benefits**
 
-### おすすめの業界・業種
-•	銀行
-•	証券
-•	　保険
-•	建設
-•	公共
-•	製造
-•	小売
-•	　流通
+- Provides user sign-up, sign-in and profile management
+- Compatible with iOS, Android, .NET and SPA applications
+- Login with Google, Microsoft, Facebook, Twitter accounts
+- Supports two-factor authentication
 
-### 製品イメージ
-どのシステムにも欠かせない「ログイン」。アンダーズでは、ホワイトラベルの認証ソリューションを使って、速やかに主体認証サービスを構築します。安心安全な「認証」にご興味のある企業さまは、お気軽にご相談ください。
+Our company will quickly build a subject authentication service using **Azure B2C service**. Please contact our professionals to understand your current situation and plan a plan.
 
-### 導入事例
+![ Image is not Available !](azure-b2c.webp)
+
+### Case
+
+**Industry**: Mid-level service industry
+
+**Number of licenses**: 700
+
+**Request**: We are using Salesforce, but the budget ratio of license fees is high and the cost to optimize CRM is insufficient.
+
+**Solution**: A company that was worried about license fees and governor restrictions. Since Office 365 E3 was already introduced, we have proposed Dynamics 365. For data migration, we set up a real-time data migration pipeline from Salesforce with a three month parallel uptime. In the meantime, data registration was performed from Salesforce, data reference was performed on Dynamics side, and two CRMs were operated in parallel using the same data. We asked the Dynamics side to confirm that there were no operational problems, set a switching date, and implemented the transition to Dynamics. We have achieved a smooth transition.
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+-Application design
+-Security design
+-Performance design
+
+**As your IT team**
+
+-B2C Service Consultant
+-B2C application engineer
+-C#/JavaScript programmer
+-Test engineer
+
+**Operation**
+
+-System usage analysis
+-Planning of improvement measures
+- Support Desk
+-Functional description for administrators
