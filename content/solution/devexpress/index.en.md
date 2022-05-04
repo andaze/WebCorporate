@@ -5,29 +5,58 @@ weight: 0
 image: logo_pc.png
 ---
 
-## DEVEXPRESS
-使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発」
+Why is the "user experience" getting so much attention? UX (user experience) is translated as "user experience" or "user experience", and is the collective term for experiences and emotions that users can experience when they contact or use a company, product or service.
 
-### 概要
-サービスや商品を通じて得られる満足感や喜び。そんなユーザーが体験して感じる価値を「UX（ユーザーエクスペリエンス）」と呼びます。ひと昔前は高機能であれば、人の興味や関心を惹くことができていたのですが、物質的な豊かさが得られている近年では、機能だけでなく「体験」にお金を出す人が増えてきました。
-そこで、UXに投資することで差別化につなげ、ビジネスの価値を高めるという取り組みが注目されています。アンダーズでは、UXの戦略立案からシステム開発までワンストップで対応。顧客体験を豊かにするDXをご提案します。
+Due to technological advances, the functions and features of products have become indistinguishable from other companies' products and services. Up until now, we have been able to attract people's attention by launching high-performance new products. However, in the modern era when things have spread sufficiently, people have stopped paying attention only to their functions, and have started paying for “experience”.
 
-### 導入の効果
-•	ユーザーの習慣や課題を的確に捉えられる
-•	これまでにない新しい体験が生まれる
-•	ユーザーの潜在的なニーズが引き出される
-•	サービスや製品の価値が向上
+Emphasizing "experience" such as "easy to use" and "easy to understand" will certainly enhance the value of the product. UX is the right investment, unless you are sure that you will be differentiated by features alone.
 
-### おすすめの業界・業種
-•	製造
-•	金融
-•	情報通信
-•	流通
+We utilize the **DevExpress framework** to accelerate UX development. Please contact our professionals to understand your current situation and plan a plan.
 
-### 製品イメージ
-アンダーズでは「DevExpressフレームワーク」を活用し、ハイスピードでUX開発を進めます。DevExpressは、これまで業界で数えきれないほどのアワードを獲得。2021年の「Visual Studio Magazine Reader's ChoiceAwards」でも、20の開発カテゴリでクラス最高に選ばれました。私たちはそんな輝かしい実績を持つDevExpressの開発ライセンスを受け、製品を提供しています。UX開発によるビジネス革新をお考えの企業様は、お気軽に当社のプロフェッショナルにご相談ください。
+![ Image is not Available !](devexpress.webp)
 
-### 導入事例
-業種：大手食品製造業
-課題：100 万件に近い社内データを、自由な条件で検索やグループ化でき、高い操作性とレスポンスを実現したい。
-ソリューション：DevExpress 社の UIキットを選定。バックグランドクエリーにて、0.2秒程度で必要なデータを選択、表示できるようにしました。それは、ユーザーにとって新鮮な体験となり、ご担当者にも高い評価をいただきました。
+## Case
+
+**Industry**: Major food manufacturing industry
+
+**Issues**: We want to realize close to 1 million internal data searches and groupings under free conditions with good operability and responsiveness.
+
+**Solution**: Select DevExpress UI kit. It was decided that the required data could be selected and displayed in about 0.2 seconds using the background query. It was a new experience for the users and was appreciated by the person in charge.
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- UX design
+- Security design
+- Performance design
+
+**As your IT team**
+
+- UX/UI consultant
+- DevExpress Specialist
+- C#/JavaScript programmer
+- HTML/CSS coder
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators
