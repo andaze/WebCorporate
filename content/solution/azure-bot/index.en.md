@@ -5,38 +5,66 @@ weight: 0
 image: logo_pc.png
 ---
 
-## AZURE BOT FRAMEWORK
-24時間自動応答で、顧客満足度アップに貢献する「チャットボット開発」
+Why are “chatbots” getting so much attention? A chatbot is a combination of chat and bot, which means "a robot that talks." It is not a physical robot but a communication tool for companies.
 
-### 概要
-チャットボットとは、「チャット」と「ロボット」を組み合わせた「自動会話システム」のこと。社内のヘルプデスクやカスタマーサポートなど、ユーザーからいただくことが多い問い合わせを、LINEなどのツールを使ってスタッフの代わりに返答することができます。アンダーズのチャットボット開発は、業務効率化や顧客満足度アップに貢献する精度の高さが特徴です。
+**User benefits**
 
-### 導入の効果
-(1)	ユーザー側
-•	24時間、気軽に問い合わせができる
-•	返答が速いので疑問点を短時間で解消できる
-•	商品やサービスに対する知識が増え、顧客満足度がアップ
-•	店頭に足を運ばなくても、オンラインで接客してもらえる
-(2)	企業側
-•	問い合わせ対応業務が効率化される
-•	カスタマーサポート部門の負担や人件費の削減
-•	問い合わせ記録が業務改善に役立つ
-•	チャットボットが学習するたびに、返答の精度が上がる
-•	顧客接点の増加による売上アップ
-５.１.３	おすすめの業界・業種
-•	流通
-•	証券
-•	ファッション、コスメ
-•	アパレル
-•	食品
-•	家電
-•	銀行
+- Feel free to contact us
+- Reduces call waiting time
 
-### 製品イメージ
-当社ではAzure Bot Frameworkを活用して、速やかにチャットボット開発を進めます。貴社の現状を理解させていただき、企画の立案をいたしますので、当社へご相談ください。
+**Corporate benefits**
 
-### 導入事例
-業種：証券
-要望：IT 部門への頻繁な社内問い合わせを削減したい
-ソリューション：
-すでにOffice 365 E3 が社内利用されていたため、Bot Framework および Q&A Maker による問い合わせボットを設置し、Microsoft Teamsから利用できるようにしました。非定型の質問には、Handoff 機能によって会話をボットから人間へ移行しています。ソリューションの適用後、電話による問い合わせ業務の大部分が削減されました。
+- Reduced man-hours for operators and reduced turnover rate
+- Repeat bot learning to improve service
+- Logs help improve business
+
+Even in work style reforms aimed at improving labor productivity, there is an urgent need to improve work efficiency, especially for small and medium-sized enterprises. Chatbots are IT tools that help improve operations together with RPA.
+
+We utilize **Azure Bot Framework** to quickly develop chatbots. Please contact our professionals to understand your current situation and plan a plan.
+
+![ Image is not Available !](azure-bot.webp)
+
+### Case
+
+**Industry**: Securities
+
+**Request**: Reduced frequent internal inquiries to the IT department
+
+**Solution**: Since Office 365 E3 was already used by users, we set up an inquiry bot by Bot-Framework and Q&A Maker so that it could be used by company operators. For atypical questions, the Handoff feature transferred conversations from bots to humans. After applying the solution, we were able to reduce most of the telephone inquiries.
+
+
+## Contract
+- Planning and design: Semi-delegation ontract
+- Production: Contract contract
+
+
+## Deliverables
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- Chatbot design
+- Security design
+- Performance design
+
+**As your IT team**
+
+- Bot consultant
+- Azure Bot Service Specialist
+- C#/JavaScript programmer
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators
