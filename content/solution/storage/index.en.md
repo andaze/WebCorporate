@@ -5,31 +5,63 @@ weight: 0
 image: logo_pc.png
 ---
 
-## AZURE TABLE STORAGE
-指数関数的に増加するデータを安価でスピーディーに解析できる「ビッグデータ分析開発」
+Why is "Big Data" attracting attention? With the spread of smartphones, a large amount of data has started to appear. Even refrigerators and air conditioners are connected to the Internet and continue to generate new data. Corporate maintenance data is growing exponentially.
 
-### 概要
-近年のスマートフォンの普及によって、大量のデータが出現するようになりました。しかも冷蔵庫やエアコン、掃除機といった家電までがインターネットに接続され、新しいデータを生み出し続けています。企業の持つデータは指数関数的に増加しているのです。
-そんな大規模で多種多様なデータを保管したり処理したりするために、これまでは容量・コスト・速度などの問題が付きまとっていました。しかし、安価なテーブルストレージの登場により、正規化されていない情報を、生の情報のまま蓄積できるようになったのです。そのため、ユーザーにとって必要な情報を、レスポンス良く提供することができます。
+In the past, storage, storage, and processing of large-scale, diverse data have had issues of capacity, cost, speed, and so on. But with the advent of cheap table storage, it's possible to store unnormalized data as raw information. In combination with a denormalized database, we can provide the information users need in a responsive manner.
 
-### 導入の効果
-•	大容量データも安価に扱える
-•	非正規化データや重複するデータも格納できる上に、読み込み速度が向上
-•	正規化データとの組み合わせで、システム性能を最大化できる
+**Pros of table storage**
 
-### おすすめの業界・業種
-•	流通
-•	情報通信
-•	自動車
-•	広告
-•	家電
-•	金融
+- Large amount of data can be handled at low cost
+- Can store denormalized or duplicate data for faster loading
+- Maximize system performance in combination with normalized data
 
-### 製品イメージ
-アンダーズでは、大規模データストレージ Azure Table Storageにて、速やかにデータベースを構築します。ビッグデータの取り扱いにお悩みの企業様や経営課題を抱えている企業様は、お気軽に当社へご相談ください。
-（※旧サイトにあったイメージが入ります）
+**Cons**
 
-### 導入事例
-業種：人材サービス業
-課題：IoT端末から送られる膨大なデータから、必要な情報を取り出したい
-ソリューション：IoT 端末からの生データを、大容量データベース Azure Table Storage へ格納。Azure Function の定期起動によって、人材データの集計と加工を行い、表示形式に最適化された Json データを作成しました。そして柔軟なデータを格納できる AZURE COSMOS DATABASEへ保存。必要な情報が照会画面からスピーディーに参照できるようになりました。
+- Limited indexing capabilities
+
+We will build a database promptly with **Large-scale data storage Azure Table Storage**. Please contact our professionals to understand your current situation and plan a plan.
+
+![ Image is not Available !](table-storage.webp)
+
+### Case
+
+**Industry**: Human resource services
+
+**Overview**: Raw data from IoT devices is stored in a large-capacity database, Azure Table Storage. In order for the user to see the information, by regularly invoking Azure Function, data is aggregated and processed to create Json data optimized for display. By storing the display data in the Cosmos database whose performance is easy to tune, the query screen was displayed almost instantly.
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- Storage design
+- Security design
+- Performance design
+
+**As your IT team**
+
+- Big Data Consultant
+- Azure Table Storage Engineer
+- C#/JavaScript programmer
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators
