@@ -5,42 +5,80 @@ weight: 0
 image: logo_pc.png
 ---
 
-## AMP WEB
-WEBページが表示されるまでの待ち時間を短縮する「モバイルコンテンツ高速化」
+Why is “Google Content Delivery Network Support (AMP)” getting so much attention? AMP is a standard jointly launched by Google and Twitter to make it easier for mobile users to view homepages. Direct translation of AMP (Accelerated Mobile Pages) means to speed up mobile pages.
 
-### 概要
-AMP（ Accelerated Mobile Pages、通称アンプ）とは、モバイルユーザーが快適にホームページを見られるように Google と Twitter が共同で立ち上げた規格。直訳すると「モバイル用のページを早くする」という意味です。
-WEBページの情報を検索エンジンが先読みして、検索結果からのリンクをそちらに向けることで、都度ページに飛ぶことなくデータを表示させることができます。AMPに対応すると、ハイスピードでWEBページを表示することが可能です。ユーザーにとっては待ち時間が減り、印象が格段にアップするため、より長くサイトに滞在いただけようになります。
+In AMP, the search engine pre-reads the information on the page and directs the link from the search result to display the data without jumping to each page. If your site supports AMP, it will be displayed at high speed to users. The waiting time is short, the user's impression is improved, and the increase in the withdrawal rate can be suppressed.
 
-### 導入の効果
-•	ユーザーのページ表示待ち時間を減らせる
-•	サイト内の回遊率が高まり、収益率が向上
-•	記事を読まれる確率が向上
-•	サイト離脱率の情報を防ぐ
-•	ユーザーにとってストレスフリー
-(1)	サイト高速化のポイント
-表示速度とサイト直帰率の関係
-表示速度が1秒から3秒に落ちると、直帰率は32%上昇。 また表示速度が1秒から5秒に落ちると、直帰率は 90%上昇します。表示速度が1秒から6秒に落ちると、直帰率は 106%上昇。さらに表示速度が 1 秒から 10 秒に落ちると、直帰率は 123%上昇します。
-出展：『Google - Find out how you stack up to new industry benchmarks for mobile page speed』
+**Points for speeding up the site**
 
-表示速度は3秒以内が許容範囲
-WEBページの表示速度が3秒を過ぎると、57%のユーザーがしびれを切らし、訪問を諦めることがわかりました。
-出展：『マイナビ3秒が許容範囲 - Web サイトのパフォーマンスが重要な理由』
+>When the display speed drops from 1 to 3 seconds, the bounce rate increases by 32%. When the display speed drops from 1 second to 5 seconds, the bounce rate increases by 90%. When the display speed drops from 1 second to 6 seconds, the bounce rate increases by 106%. When the display speed drops from 1 to 10 seconds, the bounce rate increases by 123%.
+>  Exhibitor: Google-Find out how you stack up to new industry benchmarks for mobile page speed
 
-３．コンバージョン率にも影響
-モバイル経由のページアクセスでは、表示速度が3秒のときにコンバージョン率が最大化。表示時間が長くなるにつれてコンバージョン率が下がり、7秒で半減したといいます。
-■出展：『ネットショップ担当者フォーラム - EC サイトの業績に関わる"１秒"の価値。ユーザーの期待に応える表示速度を』
+>  After 3 seconds, 57% of users found that they were numb and gave up visiting.
+>  Exhibit: Mynavi 3 seconds is acceptable-why website performance matters
 
-### おすすめの業界・業種
-•	情報通信
-•	製造（ECサイトなど）
-•	広告のランディングページ（LP）
+>  With mobile access, the conversion rate maximized when the display speed was 3 seconds, and the conversion rate decreased as the display time increased, and it was halved in 7 seconds.
+>  Exhibit: Forum for online shop staff-Value of "1 second" related to the performance of EC site. Display speed that meets user expectations
 
-### 製品イメージ
-アンダーズでは、AMPフレームワークによって、速やかにAMP サイトを構築します。貴社のWEBサイトが抱えている課題がありましたら、お気軽に当社へご相談ください。
+**Pros**
 
-### 導入事例
-サイト：アンダーズコーポレートサイト
-課題： WordPressで構築した際に、モバイルからのアクセススピードに問題があった。
-ソリューション：デスクトップもモバイルも同一のAMP ページにて構成するスタンドアローンAMPにて構築することで、アクセススピードが向上しました。
-参考：AMP チェッカーにて、任意の当社コーポレートサイトのURLを入力すると、Google によるAMP有効判定を確認でき、当サイトの機能がスタンドアローンAMPで実現できたことを確認できます。
+- Reduces page waiting time for users
+- Increased site migration rate and improved site revenue
+- Increased chance of reading articles in carousel view
+
+**Cons**
+
+- There is a limit to the design that can be expressed due to the page size limitation
+
+If Google confirms your AMP, the following checker will turn green and the page will be treated specially.
+
+We will quickly build an AMP site with the **AMP Framework**. Please contact our professionals to understand your current situation and plan a plan.
+
+![ Image is not Available !](amp-validator.webp)
+
+## Case
+
+**Site**: Our corporate website [https://andaze.com/](https://andaze.com/)
+
+**Issue**: Originally built with Wordpress, there was a problem with access speed from mobile
+
+**Solution**: Built on the same AMP page for both desktop and mobile **Built on standalone AMP**.
+
+**Reference**: [AMP checker](https://search.google.com/test/amp) If you enter the URL of our company's corporate site, you can check the AMP validity judgment by Google. You can see that the function was realized with the standalone AMP
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- Content layout design
+- Navigation design
+- Performance design
+- Cache design
+
+**As your IT team**
+
+- AMP Specialist
+- HTML/CSS coder
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators
