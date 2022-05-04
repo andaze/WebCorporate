@@ -5,34 +5,66 @@ weight: 0
 image: logo_pc.png
 ---
 
-## AZURE AI
-高い予測精度で、ビジネス価値向上につながる「AI機械学習開発」
+Why is “Machine Learning” getting so much attention? With the spread of smartphones, a large amount of data has started to appear. As it is, it requires a great deal of cost and time to process complicated data, but now it is possible to realize by machine learning that "calculation of analysis results with speed and accuracy that cannot be achieved by humans". It was.
 
-### 概要
-近年、スマートフォンやIoTなどの普及によって、大量のデータが蓄積されるようになりました。これらを人間が分析しようとすると膨大な時間と手間がかかってしまいます。その一方で、AIの機械学習を活用すると、人間の力では見いだせない規則性を発見したり、分析作業を一瞬で終わらせたりできるようになります。アンダーズでは、プロフェッショナルが予測精度の高いAIを開発。企業のビジネス改革にテクノロジーで貢献します。
+**Pros of machine learning**
 
-### 導入の効果
-•	検品作業やピッキングの作業効率がアップ
-•	無人レジによって、ヒューマンエラーや混雑防止、人的リソースの有効活用
-•	売上予測で在庫過多を解消
-•	危険運転を回避し、交通事故の減少に貢献
-•	土地や物件の価格査定で利益率がアップ
-•	報告書など事務作業の自動作成でペーパーレスを実現
+-Prediction value is calculated by learning features
+-Select multiple reproducible models by applying multiple algorithms
+-Clustering classifies features to improve prediction accuracy
 
-### おすすめの業界・業種
-•	自動車
-•	物流
-•	金融
-•	不動産
-•	家電
-•	製造
-•	小売（食品スーパー）
+**Cons**
 
-### イメージ
-アンダーズでは、オープンソースの AI 開発フレームワーク ML.NETを用い、短期間で機械学習をモデリングします。貴社が抱える経営課題をテクノロジーで解決しませんか。
-（※イメージの絵が入ります）
+-A certain amount of teacher data is required (at least 100 data for each classification)
+-Retraining required to improve model accuracy
 
-### 導入事例
-業種：証券業
-要望：株価の独自フェアバリューの算定をしたい
-ソリューション：上場企業の財務情報を、過去分を含めEDINET より取得して、教師データにしました。そして基本統計量およびクラスタリングを適用し、特徴量と株価の相関について粗い粒度で解析し、机上のモデルを作成。重回帰および数量化による仮モデルを作成して、特徴量とその変換によって一次的な精度向上へ取り組みました。理論、精度の両面で、現場から一定の評価を得た上で、本番モデリングのためのアルゴリズム選定し、最終的にはクラスターごとにモデルを作成。フェアバリュー算定を独自の目線で行うことに成功され、投資判断に活用されています。
+
+
+We use an **open source AI development framework ML.NET** to quickly model machine learning. Please contact our professionals to understand your current situation and plan a plan.
+
+![ Image is not Available !](azure-ai.webp)
+
+### Case
+
+**Industry**: Securities industry
+
+**Request**: I want to calculate the original fair value of the stock price
+
+**Solution**: We decided to acquire financial information of listed companies including the past from EDINET and use them as teacher data. By applying basic statistics and clustering, we analyzed the correlation between feature quantity and stock price with a coarse granularity, and created a desk model. We created a temporary model by multiple regression and quantification, and worked on primary accuracy improvement by converting the feature quantity and its conversion. After obtaining a certain level of evaluation from the field in terms of both theory and accuracy, we selected an algorithm for production modeling and finally created a model for each cluster. They have succeeded in calculating the fair value from their own perspective and are using it for investment decisions.
+
+
+## Contract
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**design**
+
+- AI modeling
+- Precision and accuracy management
+
+**As your IT team**
+
+- AI consultant
+- SI consultant
+- ML.NET engineer
+- C#/JavaScript programmer
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators
