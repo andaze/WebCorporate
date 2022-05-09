@@ -1,0 +1,23 @@
+{{ if eq (.Scratch.Get "section") "news" }}
+    <div #swiperRef="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {{ with .Site.GetPage (.Scratch.Get "section") }}
+                {{ range (where .Pages "Params.tags" "intersect" (slice "press-release")) }}
+                    {{ partial "molecule-section-newtopic-slide.html" . }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+
+{{ if eq (.Scratch.Get "section") "ir" }}
+    <div class="mt-2">
+        {{ .Scratch.Set "backgroundTheme" "black" }}
+        {{ partial "molecule-section-irnews-pdf-listing.html" . }}
+        {{ .Scratch.Delete "backgroundTheme" }}
+    </div>
+{{ end }}
+
+{{ if eq (.Scratch.Get "section") "services" }}
+    {{ partial "organism-section-contents.html" . }}
+{{ end }}

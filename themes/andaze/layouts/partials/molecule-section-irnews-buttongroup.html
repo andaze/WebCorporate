@@ -1,7 +1,23 @@
-{{ with .Site.GetPage (.Scratch.Get "section") }}
+
+{{if eq (.Scratch.Get "section") ("news") }}
+    
+    {{ with .Site.GetPage (.Scratch.Get "section") }}
     <ul class="pt-2">
         <li>
+            {{ .Scratch.Set "backgroundTheme" "white" }}
             {{ partial "atom-irnews-button.html" .}}
+            {{ .Scratch.Delete "backgroundTheme"}}
         </li>
     </ul>
+    {{ end }}
+{{ else }}
+    {{ with .Site.GetPage (.Scratch.Get "section") }}
+    <ul class="pt-2">
+        <li>
+            {{ .Scratch.Set "backgroundTheme" "black" }}
+            {{ partial "atom-irnews-button.html" .}}
+            {{ .Scratch.Delete "backgroundTheme"}}
+        </li>
+    </ul>
+    {{ end }}
 {{ end }}
