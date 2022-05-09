@@ -18,7 +18,7 @@ const height = window.innerHeight;
 
 
 // カメラの作成
-var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1500 );
 
 
 // カメラ位置設定
@@ -833,157 +833,64 @@ img.addEventListener("load", () => {
     canvas.style.marginTop = header_height + "px";
 
     // ブレイクポイントの設定
-    const break_point_1 = 3840;
-    const break_point_2 = 2560;
-    const break_point_3 = 1920;
-    const break_point_4 = 1440;
-    const break_point_5 = 1280;
-    const break_point_6 = 840;
-    const break_point_7 = 650;
-    const break_point_8 = 370;
+    const width_break_point = 700;
+    const height_break_point = 864;
 
+    const width_break_point_sp = 1440;
 
-    // デバイスがPCの場合
-    if (typeof window.ontouchstart === "undefined") {
-      if (width >= break_point_1) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 13;
-      } else if (width < break_point_1 & width >= break_point_2) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 8;
-      } else if (width < break_point_2 & width >= break_point_3) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 3;
-      } else if (width < break_point_3 & width >= break_point_4) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 1;
-      } else if (width < break_point_4 & width >= break_point_5) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 0;
-      } else if (width < break_point_5 & width >= break_point_6) {
-        camera.position.z = 400;
-        mesh.material.uniforms.u_value.value = 0;
-      } else if (width < break_point_6 & width >= break_point_7) {
-        camera.position.z = 480;
-        mesh.material.uniforms.u_value.value = -1;
-      } else if (width < break_point_7 & width >= break_point_8) {
-        camera.position.z = 880;
-        mesh.material.uniforms.u_value.value = -6;
-      } else {
-        camera.position.z = 800;
-        mesh.material.uniforms.u_value.value = -6;
-      }
-      // デバイスがモバイルの場合
-    } else {
-      if (width >= break_point_1) {
-        if (height > 1644) {
-          camera.position.z = 480;
-          mesh.material.uniforms.u_value.value = 12;
-        } else {
-          camera.position.z = 480;
-          mesh.material.uniforms.u_value.value = 10;
-        }
-      } else if (width < break_point_1 & width >= break_point_2) {
-        if (height > 2040) {
-          camera.position.z = 500;
-          mesh.material.uniforms.u_value.value = 9;
-        } else if (height > 1440 & height <=2040) {
-          camera.position.z = 700;
-          mesh.material.uniforms.u_value.value = 10;
-        } else {
-          camera.position.z = 480;
-          mesh.material.uniforms.u_value.value = 4;
-        }
-      } else if (width < break_point_2 & width >= break_point_3) {
-        if (height > 3800) {
-          camera.position.z = 750;
-          mesh.material.uniforms.u_value.value = 12;
-        } else if (height > 2730 & height <= 3800) {
-          camera.position.z = 650;
-          mesh.material.uniforms.u_value.value = 10;
-        } else if (height > 1530 & height <= 2730) {
-          camera.position.z = 550;
-          mesh.material.uniforms.u_value.value = 4;
-        } else if (height > 1488 & height <= 1530) {
-          camera.position.z = 750;
-          mesh.material.uniforms.u_value.value = 17;
-        } else if (height > 1170 & height <= 1488) {
-          camera.position.z = 550;
-          mesh.material.uniforms.u_value.value = 5;
-        } else {
-          camera.position.z = 480;
-          mesh.material.uniforms.u_value.value = 3;
-        }
-      } else if (width < break_point_3 & width >= break_point_4) {
-        if (height > 2880) {
-          camera.position.z = 980;
-          mesh.material.uniforms.u_value.value = 10;
-        } else if (height > 2388 & height <= 2880) {
-          camera.position.z = 800;
-          mesh.material.uniforms.u_value.value = 10;
-        } else if (height > 828 & height <= 2388) {
-          camera.position.z = 680;
-          mesh.material.uniforms.u_value.value = 6;
-        } else {
-          camera.position.z = 480;
-          mesh.material.uniforms.u_value.value = 0;
-        }
-      } else if (width < break_point_4 & width >= break_point_5) {
-        if (height > 750) {
-          camera.position.z = 860;
-          mesh.material.uniforms.u_value.value = 7;
-        } else {
-          camera.position.z = 440;
-          mesh.material.uniforms.u_value.value = -1;
-        }
-      } else if (width < break_point_5 & width >= break_point_6) {
-        if (height > 2530) {
-          camera.position.z = 880;
-          mesh.material.uniforms.u_value.value = 5;
-        } else if (height > 1920 & height <= 2530) {
-          camera.position.z = 880;
-          mesh.material.uniforms.u_value.value = 3;
-        } else if (height > 768 & height <= 1920) { 
-          camera.position.z = 740;
-          mesh.material.uniforms.u_value.value = 3;
-        } else if (height > 640 & height <= 768) { 
-          camera.position.z = 540;
-          mesh.material.uniforms.u_value.value = -2;
-        } else {
-          camera.position.z = 460;
-          mesh.material.uniforms.u_value.value = -2;
-        }
-      } else if (width < break_point_6 & width >= break_point_7) {
-        if (height > 1790) {
-          camera.position.z = 860;
-          mesh.material.uniforms.u_value.value = 0;
-        }
-        else if (height > 1270 & height <= 1790) {
-          camera.position.z = 720;
-          mesh.material.uniforms.u_value.value = 0;
-        } else if (height > 1140 & height <= 1270) {
-          camera.position.z = 840;
-          mesh.material.uniforms.u_value.value = 1;
-        } else {
-          camera.position.z = 640;
-          mesh.material.uniforms.u_value.value = -1;
-        }
-      } else if (width < break_point_7 & width >= break_point_8) {
-        camera.position.z = 700;
-        mesh.material.uniforms.u_value.value = -2;
-      } else {
-        camera.position.z = 800;
-        mesh.material.uniforms.u_value.value = -6;
-      }
-    }
-    console.log(mesh.material.uniforms.u_value.value)
-
-    // レンダラーのサイズを調整する
-    renderer.setSize(width, height -  header_height);
 
     // カメラのアスペクト比を正す
     camera.aspect = width / (height -  header_height);
     camera.updateProjectionMatrix();
+
+    // デバイスがPCの場合
+    if (typeof window.ontouchstart === "undefined") {
+      if (width >= width_break_point) {
+        camera.position.z = 400;
+        if (height <= height_break_point) {
+          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
+        } else {
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+        }
+      } else {
+        camera.position.z = height / width * 400;
+        mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width);
+      }
+
+      // デバイスがモバイルの場合
+    } else {
+      if (width >= width_break_point_sp) {
+        if (width < height) {
+          camera.position.z = height / width * 500;
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+        } else {
+          if  (camera.aspect > 1.85) {
+            camera.position.z = width / height * 250;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          } else {
+            camera.position.z = width / height * 350;
+            mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((2800 + height) / width);
+          }
+        }
+      } else {
+        if (width < height) {
+          camera.position.z = height / width * 400;
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+        } else {
+          if (camera.aspect > 1.8) {
+            camera.position.z = width / height * 250;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          } else {
+          camera.position.z = width / height * 350;
+          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          }
+        }
+      }
+    }
+
+    // レンダラーのサイズを調整する
+    renderer.setSize(width, height -  header_height);
+  
 
     blackOut();
 
