@@ -875,14 +875,14 @@ img.addEventListener("load", () => {
       } else {
         if (width < height) {
           camera.position.z = height / width * 400;
-          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1600 + height) / width);
         } else {
           if (camera.aspect > 1.8) {
             camera.position.z = width / height * 250;
-            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((3400 + height) / width);
           } else {
-          camera.position.z = width / height * 350;
-          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+            camera.position.z = width / height * 350;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
           }
         }
       }
