@@ -5,31 +5,64 @@ weight: 0
 image: logo_pc.png
 ---
 
-## Dynamics365
-既存客の情報を正確に分析して販促につなげる「顧客管理CRM導入」
+Why is “Customer Relationship Management” getting so much attention? It is important to continue to cultivate new customers, but it is said to be an era in which we aim to increase sales as a whole by taking more care of our current customers. We need a system that manages information about customer relationships by keeping a history of contact with customers by the system.
 
-### 概要
-成功されている多くの企業で導入されているITツールがCRM（カスタマーリレーションシップマネジメント）です。今は新規顧客の開拓を大切する一方で、既存客のことを正しく理解し、一人ひとりに最適な戦略を打つことが功を奏する時代。アンダーズでは、優れたソリューションDynamics365で顧客情報の分析を可視化し、ユーザーにとって最適な働きかけができるようにサポートします。
+### Purpose of CRM
 
-### 導入の効果
-•	既存客に対する理解が深まる
-•	既存客のリピート率向上
-•	新規客の獲得
-•	客単価のアップ
+- Increase new customers
+- Increase repeat rate from existing customers
+- Increase service unit price
+- Lower costs
 
-### おすすめの業界・業種
-•	卸売、小売
-•	自動車
-•	情報通信
-•	不動産
-•	製造
+The customer relationship management system can centrally manage information about prospects, sales, and after-sales service. You can flexibly customize it to suit your business.
 
-### 製品イメージ
-顧客管理CRMは、既存客のデータ分析や見込み客からの問い合わせ、メール配信や的確な営業、アフターサービスまで大量の情報を一元管理。売上や利益アップにつながる効果が期待できます。アンダーズでは、顧客関係管理システム Dynamics 365によって、速やかにシステムを開発。貴社のご要望やビジネスに合わせて、臨機応変にカスタマイズすることも可能です。
+We will promptly launch the system with the **Customer Relationship Management System Dynamics 365**. Please contact our professionals to understand your current situation and plan a plan.
 
-### 導入事例
-業種：中堅サービス業
-ライセンス数：700
-要望：Salesforceを利用中。ライセンス料の予算比率が高くCRMを最適化するコストの不足が課題
-ソリューション：ライセンス料とガバナ制限にお悩みの企業様です。Office 365 E3 がすでに導入されていたため、Dynamics 365 をご提案。データ移行は、Salesforceからのリアルタイムデータ移行パイプラインを設置し、3カ月間の並行稼働期間を設定しました。その間、Salesforceからはデータ登録、Dynamics365側ではデータ参照ができ、同一データを使って 2 つの CRM を並行して運用。Dynamics365側にて業務上問題がないことを現場に確認いただき、切り替え日を設けてDynamics365への移行を実施。スムーズな移行を実現しています。
-（※Salesforceにも利点が多く、一概にDynamics365が優れているとは限りません）
+![ Image is not Available !](dynamics-365.webp)
+
+### Case
+
+**Industry**: Mid-level service industry
+
+**Number of licenses**: 700
+
+**Request**: We are using Salesforce, but the budget ratio of license fees is high and the cost to optimize CRM is insufficient.
+
+**Solution**: A company that was worried about license fees and governor restrictions. Since Office 365 E3 was already introduced, we have proposed Dynamics 365. For data migration, we set up a real-time data migration pipeline from Salesforce with a three month parallel uptime. In the meantime, data registration was performed from Salesforce, data reference was performed on Dynamics side, and two CRMs were operated in parallel using the same data. We asked the Dynamics side to confirm that there were no operational problems, set a switching date, and implemented the transition to Dynamics. We have achieved a smooth transition.
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- CRM design
+- Fit & gap
+- Security design
+
+**As your IT team**
+
+- CRM consultant
+- Dynamics 365 engineer
+- C#/JavaScript programmer
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support desk (phone/chat)
+- Functional description for administrators

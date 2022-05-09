@@ -5,35 +5,61 @@ weight: 0
 image: logo_pc.png
 ---
 
-## HUGO WEB
-安心のセキュリティでページの読み込みが早い「静的WEBサイト開発」
+Why is “Static Website Development” now attracting attention? There are three major reasons for operating a content management system (CMS) typified by Wordpress.
 
-### 概要
-WEBページの表示速度を高めたい、セキュリティ対策を盤石にしたい、リアルタイムで情報を更新するページではない…。そういった特徴を持つWEBサイトには「静的WEBサイト」の開発が有用です。今、静的WEBサイトが注目されている理由として、大きく3つが挙げられます。
+**Security**: Most CMSs are updated regularly. If the changes in the version upgrade are small, it will not cause a big problem, but if it is a major update, be careful. This may result in inconsistency with the installed plugins and extensions, which may lead to site malfunctions. For example, the page layout may suddenly collapse, or the contact form may behave strangely.
 
-### 導入の効果
-(1)	安心のセキュリティ
-CMS（コンテンツマネジメントシステム＝専門知識がなくてもWEBコンテンツを更新できるシステム）のほとんどは、定期的にバージョンアップされます。バージョンアップの変更点が小さければ、大きな問題にはなりませんが、大幅なアップデートであれば注意が必要です。時にインストールしたプラグインや拡張機能との整合性がとれなくなり、サイトに不具合が発生することがあるのです。突然ページのレイアウトが崩れたり、問い合わせフォームの動作がおかしくなったりするなどのトラブルが考えられます。
-(2)	高速なサイト制作を実現
-「ページの読み込みスピードが遅い」といった問題は、CMSが動的にページを生成するという仕組み上、なかなか避けることはできません。また、とりあえずWEBサイトを置くのであれば、ここは問題にはならないでしょう。しかし、WEBサイトを通じてブランディングやSEOを目指したい場合は、サイトの流入数や離脱率を少しでも良くするために、少しでも高速なサイト制作をおすすめします。
-(3)	メンテナンスがしやすい
-CMS を導入した場合「定期メンテナンス」の費用を見込む必要があります。CMS のバージョンアップに伴う互換性チェックや、不具合対応、バックアップ、サーバー側のアップデート対応が必要となるからです。「バージョンアップはしない」という乱暴な考え方もありますが、セキュリティホールが空きっぱなしになり、問題があります。静的サイトは、サーバー側の作りがシンプルになり、メンテナンスやシステムの拡張も比較的簡単です。
+**Performance**: Problems such as "Slow page load speed" cannot be avoided due to the mechanism that CMS dynamically generates pages. If you have a website for now, this is not a problem. However, if you are aiming for branding and SEO through the site, you should make the site as fast as possible in order to improve the number of inflows and exits of the site as much as possible.
 
-### おすすめの業界・業種
-•	各業種のコーポレートサイト
-•	各業種の求人WEBページ
-•	企業広告などのランディングページ（LP）
+**Maintenance**: If CMS is installed, please expect the cost of "regular maintenance". It is necessary to check compatibility with CMS version upgrades, trouble fixes, backups, and server side updates. There is also a violent notion that "we will not upgrade", but there is a problem because the security hole is left open.
 
-### 静的WEBサイトのメリット・デメリット
-（※旧サイトにあったメリットデメリットの絵が入ります）
+We will build a static website promptly with the **Static Site Generator HUGO**. Please contact our professionals for understanding the current situation of users and planning improvement measures.
 
-### 静的WEBサイトと動的CMSの違い
-（※旧サイトにありました表が入るイメージです）
-アンダーズでは、静的サイトジェネレーター HUGOにて、速やかに静的ウェブサイトを構築します。お客様の現状を深く理解し、改善策をご提案しますので、お気軽に当社へご相談ください。
+![ Image is not Available !](hugo-web.webp)
 
-### 導入事例
-サイト：アンダーズコーポレートサイト
-課題：当社はかつてFrontPageやIBMホームページビルダー、DreamWeaver など、様々なシステムを利用して、WEBサイトを構築してきました。その後、WordPressを採用したところ、本体とプラグインのバージョンアップによって不具合が発生。セキュリティ脆弱性の観点でも不安があり、頭を悩ませていました。
-ソリューション：
-データベースを必要としないサイトであれば、「静的サイトジェネレーター」で十分です。ただ、Azure Static Web Appsがリリースされたことを契機に、静的コードジェネレーターへ移行することを決定して「シンプルな開発環境」「早く構築できる」「管理が楽」なツールを慎重に探しました。そして Google Go 言語で開発された「Hugo」という静的サイトジェネレーターを発見し、選定。その結果、サイト運用担当の時間的・精神的な負担が減り、コンテンツ制作の生産性が高まりました。
-性能：PageSpeed Insightsにて、任意の当社コーポレートサイトの URL を入力すると、Google によってパフォーマンスが高いことが確認できます。
+## Case
+
+**Site**: Our corporate website
+
+**Problem**: It was created with Wordpress, but access is slow, maintenance cost for version upgrade is high, there is a limit to security enhancement
+
+**Solution**: To the static code generator triggered by the release of [Azure Static Web Apps](https://azure.microsoft.com/ja-jp/services/app-service/static/) Migration. Got a selection process, adopted HUGO, and managed the site on GitHub. The time and mental burden on the site manager has been reduced, and the productivity of content production has increased.
+
+**Reference**: In [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), enter the URL of any of our corporate sites and it will be confirmed by Google that the performance is high. I can do it.
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- Content layout design
+- Navigation design
+- Performance design
+- Cache design
+
+**As your IT team**
+
+- AMP Specialist
+- HTML/CSS coder
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators

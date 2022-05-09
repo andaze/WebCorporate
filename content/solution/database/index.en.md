@@ -5,31 +5,63 @@ weight: 0
 image: logo_pc.png
 ---
 
-## AZURE COSMOS DATABASE
-データの最適化で膨大なデータベースを格納する「NOSQLデータベース開発」
+Why is "database optimization" important? An increasing number of companies are using NOSQL to complement traditional RDBs to handle exponentially growing data, such as real-time analytics while holding large amounts of data.
 
-### 概要
-データベースのファイルサイズがどんどん大きくなってしまう。そんな大量のデータを保持しながら、リアルタイムに分析を行うなど、指数関数的に増加するデータを扱うためには「データの最適化」が必要です。そこで、従来の RDB（関係データベース管理システム / Relational DataBase Management System ）を補完する形で NOSQL（Not only SQLの略）を利用する企業が増えています。
-これまで使っていた RDBMSと呼ばれるデータベースは、内部のデータ構造が正規化されており、一つの画面を表示する際にいくつものマスターテーブルを参照する必要がありました。
-一方で、NOSQLと呼ばれるデータベースを使うと、必要な情報を一発で取り出せる設計ができるようになります。さらにサーバーの台数を追加すれば、データ量やトラフィックの増大にも柔軟に対応できるようになります。
+So far we have used a database called RDBMS. The internal data structure was normalized, and it was necessary to refer to several master tables to display one screen.
 
-### 導入の効果
-•	アプリケーションに最適化されたデータ格納形式をとれる
-•	データ型を定義せずデータを格納できる
-•	サーバーの台数追加で性能の向上が容易にできる
+A database called NOSQL, on the other hand, allows you to design the information you need in one shot. By adding the number of servers, you will be able to flexibly deal with the increase in data volume and traffic.
 
-### おすすめの業界・業種
-•	ゲーム
-•	流通
-•	情報通信
-•	自動車
-•	家電
-•	金融
+**Pros of NOSQL**
 
-### 製品イメージ
-アンダーズでは、AZURE COSMOS DATABASEを活用して、速やかにデータベース最適化を進めます。大規模データの格納にお困りの企業様は、お気軽に当社へご相談ください。
+- Can take the data storage format optimized for the application
+- Can store data without defining data type
+- Performance can be easily improved by adding more servers
 
-### 導入事例
-業種：自動車製造業
-課題：IoT端末から送られてくる膨大なデータの処理に困っている
-ソリューション：IoT 端末からの生データを、大容量データベース Azure Table Storage へ格納。システムから照会をするために、Azure Function の定期起動によって、データを集計と加工して、表示形式に最適化された Json データを作成。そして柔軟なデータを格納できるAZURE COSMOS DATABASEへ保存することで、ほぼ一瞬で照会画面から必要な情報を参照できるように改善しました。
+**Cons**
+
+- Data integrity needs to be considered in design
+
+![ Image is not Available !](cosmos-database.webp)
+
+### Case
+
+**Industry**: Automobile manufacturing
+
+**Overview**: Raw data from IoT devices is stored in a large-capacity database, Azure Table Storage. For inquiries from the system, data is aggregated and processed by the regular startup of Azure Function to create Json data optimized for the display format. By saving to the Cosmos database that can store flexible data, the inquiry screen has been improved so that the necessary information can be referenced almost in an instant.
+
+
+## Contract
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Conducting a review meeting
+
+
+
+**Design**
+
+- Content layout design
+- Navigation design
+- Performance design
+- Cache design
+
+**As your IT team**
+
+- AMP Specialist
+- HTML/CSS coder
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators

@@ -5,26 +5,64 @@ weight: 0
 image: logo_pc.png
 ---
 
-## SIGNALR
-ユーザーのサイト閲覧をより快適にする「双方向通信WEBサービス開発」
+Why is the "two-way communication web service" attracting attention? For information such as stock charts and chats, real-time properties are required as product value. In the old system, the information was updated with a mechanism such as periodic screen updates. It was not a good user experience because the amount of communication for that purpose increased and the screen flickered.
 
-### 概要
-たとえば株価チャートやチャットなどの情報は、リアルタイム性が製品の価値として求められています。ただ、従来のシステムでは「定期的な画面更新」によって情報を最新化しなくてはなりません。そのため、通信量が多くなったり、画面がチカチカしたりするなど、ユーザーと満足度としては低いものになることが課題でした。
-そこで、おすすめなのが「双方向WEBサービス」です。双方向WEBサービスは、ユーザーがシステムに格納されている情報をリアルタイムで参照できる仕組みのこと。双方向通信によって、更新ボタンを押さなくても、情報が新しくなるとリアルタイムでユーザーが見ている画面上に反映させることができます。
+A two-way web service is a mechanism that allows users to browse information stored in the system in real time. Two-way communication allows the server to send messages. Even if the screen is not updated regularly, when the information source becomes new, it will be possible to reflect it on the screen the user is looking at in real time.
 
-### 導入の効果　
-・ブラウザを開いているだけで、更新ボタンを押さなくても情報が更新される
-・画面が自動的に更新されるというユーザー体験が満足度を高め、製品の価値を向上
+**Pros of interactive web services**
 
-### おすすめの業界・業種
-•	流通
-•	証券
-•	金融
-•	製造
+- Real-time information is displayed just by opening the browser (no refresh button required)
+- Automatically updated screen user experience enhances product value
 
-### 製品イメージ
-アンダーズでは、双方向通信フレームワーク「SignalR」にて、スピード感を持って双方向通信のWEB開発を進めます。貴社の現状を理解したうえで、企画を立案しますので、お気軽に当社のプロフェッショナルへご相談ください。
+**Cons**
 
-### 導入事例
-業種：大手流通業課題：WEB上の電子メール機能を運用しており、新着メールを確認する際にブラウザの「更新」ボタンを押さなければならないことが課題。
-概要：SignalRの導入によって、新着メールがあることをサーバー側からプッシュ。「Azure Signal R Service」 を併用して、技術の品質を保つとともに、開発費用を削減しました。
+- Need advanced design compared to unidirectional
+
+We will proceed with the web development of bidirectional communication promptly with the **bidirectional communication framework SignalR**. Please contact our professionals to understand your current situation and plan a plan.
+
+![ Image is not Available !](signalr.webp)
+
+### Case
+
+**Industry**: Major distribution industry
+
+**Issues**: I am operating the e-mail function on the web, but I am operating it while pressing the "Refresh" button of the browser to check for new mail.
+
+**Solution overview**: SignalR pushes that there is new mail from the server side. Use Azure Signal R Service together to maintain the quality of technology and reduce development costs.
+
+## Contract
+
+- Planning and design: Semi-delegation contract
+- Production: Contract contract
+
+## Deliverables
+
+**Basic set**
+
+- Understanding the current situation and understanding your solution
+- Goal design, milestone formulation
+- Requirements definition document
+- Basic design document creation
+- Prototype/POC creation
+- Review meeting
+
+
+
+**Design**
+
+- Application design
+- Communication design
+- Security design
+- Performance design
+
+**As your IT team**
+
+- Two-way communication specialist
+- C#/JavaScript programmer
+
+**Operation**
+
+- System usage analysis
+- Planning of improvement measures
+- Support Desk
+- Functional description for administrators
