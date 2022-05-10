@@ -10,6 +10,7 @@ document.querySelector("footer").style.marginTop = main_height + "px";
 const canvas = document.getElementById('webgl');
 canvas.style.marginTop = header_height + "px";
 
+
 // ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
@@ -28,3 +29,32 @@ window.setTimeout(() => {
     spinner.style.visibility = "hidden";
 
 }, 500);
+
+
+// ---------------------------------------------------------------------------------------------
+// キービジュアルブラックアウト
+// ---------------------------------------------------------------------------------------------
+
+// コンテンツ位置までスクロールしたら暗くする
+const dark_cover = document.getElementById('hidden_cover')
+const key_visual = document.getElementById("key-visual");
+const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
+const target_static = key_visual_bottom - (height * 0.88)
+
+window.addEventListener('scroll', () => {
+  blackOut()
+});
+
+window.addEventListener("resize", blackOut);
+
+window.onload = blackOut()
+
+function blackOut() {
+    if (window.scrollY >= target_static) {
+        dark_cover.style.opacity = .5;
+        dark_cover.style.visibility = "visible";
+    } else if (window.scrollY < target_static) {
+        dark_cover.style.opacity = 0;
+        dark_cover.style.visibility = "hidden";
+    }
+}
