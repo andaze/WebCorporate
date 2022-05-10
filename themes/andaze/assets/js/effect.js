@@ -1,4 +1,16 @@
 // ---------------------------------------------------------------------------------------------
+// キービジュアル周りのレイアウト調整
+// ---------------------------------------------------------------------------------------------
+
+// トップページmainタグの高さを取得してfooterのmargin-topに設定
+const main_height = document.getElementById("top_main").clientHeight;
+document.querySelector("footer").style.marginTop = main_height + "px";
+
+// canvasのmargin-topにheaderの高さを設定
+const canvas = document.getElementById('webgl');
+canvas.style.marginTop = header_height + "px";
+
+// ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
 
