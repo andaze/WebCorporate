@@ -299,11 +299,6 @@ img.addEventListener("load", () => {
   // 画面が読み込まれた後にフェードイン開始
   window.setTimeout(() => {
 
-    // ロード画面を非表示
-    const spinner = document.getElementById('loading');
-    spinner.style.opacity = 0;
-    spinner.style.visibility = "hidden";
-
     // // フェードイン実行（FadeIn関数）
     FadeIn(fadein_times-1, interval_time);
   
