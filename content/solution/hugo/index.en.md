@@ -2,7 +2,7 @@
 title: "HUGO WEB"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: logo_pc.png
+image: hugo.png
 ---
 
 Why is “Static Website Development” now attracting attention? There are three major reasons for operating a content management system (CMS) typified by Wordpress.

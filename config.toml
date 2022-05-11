@@ -72,7 +72,7 @@ url    = "news"
 weight = 6
 [[Languages.en.menu.main]]
 name   = "recruit"
-url    = "recruit/top"
+url    = "https://www.andaze.com/en/job/"
 weight = 7
 [[Languages.en.menu.main]]
 name   = "contact"
@@ -106,8 +106,9 @@ url    = "news"
 weight = 6
 [[Languages.ja.menu.main]]
 name   = "採用情報"
-url    = "recruit/top"
+url    = "https://www.andaze.com/ja/job/"
 weight = 7
+target = "_blank"
 [[Languages.ja.menu.main]]
 name   = "お問い合わせ"
 url    = "contact"
