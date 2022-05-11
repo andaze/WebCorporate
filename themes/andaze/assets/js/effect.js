@@ -20,14 +20,19 @@ window.setTimeout(() => {
   loading_icon.style.visibility = "visible";
 }, 0.1)
 
-window.setTimeout(() => {
+window.addEventListener('load', () => {
 
-    // ロード画面を非表示
-    const spinner = document.getElementById('loading');
-    spinner.style.opacity = 0;
-    spinner.style.visibility = "hidden";
+  window.setTimeout(() => {
 
-}, 1000);
+      // ロード画面を非表示
+      const spinner = document.getElementById('loading');
+      spinner.style.opacity = 0;
+      spinner.style.visibility = "hidden";
+
+  }, 500);
+
+})
+
 
 
 // ---------------------------------------------------------------------------------------------
