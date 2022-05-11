@@ -32,7 +32,8 @@
 </main>
 
 {{ $js := resources.Get "js/top.js" | resources.Minify }}
-<script defer
-        src="{{ $js.Permalink }}"></script>
+<script defer src="{{ $js.Permalink }}"></script>
+{{ $js := resources.Get "js/effect.js" | resources.Minify }}
+<script defer src="{{ $js.Permalink }}"></script>
 
 {{ end }}

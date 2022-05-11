@@ -1,9 +1,3 @@
-const loading_icon = document.getElementById("loading_icon");
-window.setTimeout(() => {
-  loading_icon.style.visibility = "visible";
-}, 1)
-
-
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
@@ -31,17 +25,8 @@ var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
 const header_height = document.getElementById("header_nav").clientHeight;
-
-
-// トップページmainタグの高さを取得してfooterのmargin-topに設定
-const main_height = document.getElementById("top_main").clientHeight;
-document.querySelector("footer").style.marginTop = main_height + "px";
-
-// canvasのmargin-topにheaderの高さを設定
-const canvas = document.getElementById('webgl');
-canvas.style.marginTop = header_height + "px";
-
 renderer.setSize( width, height -  header_height);
+
 
 // キャンバスをDOMツリーに追加
 const wrapper = document.querySelector("#webgl");
@@ -115,7 +100,8 @@ img.addEventListener("load", () => {
       u_ratio: { type: "f", value: 0.0 },
       u_time: { type: "f", value: 0.0 },
       u_value: { type: "f", value: 0.0 },
-      pointTexture: { value: new THREE.TextureLoader().load( '../img/spark.png' ) }
+      // pointTexture: { value: new THREE.TextureLoader().load( '../img/spark.png' ) }
+      pointTexture: { value: new THREE.TextureLoader().load( '../img/triangle.png' ) }
     },
     transparent: true,
     blending: THREE.AdditiveBlending,
@@ -298,11 +284,6 @@ img.addEventListener("load", () => {
   // 画面が読み込まれた後にフェードイン開始
   window.setTimeout(() => {
 
-    // ロード画面を非表示
-    const spinner = document.getElementById('loading');
-    spinner.style.opacity = 0;
-    spinner.style.visibility = "hidden";
-
     // // フェードイン実行（FadeIn関数）
     FadeIn(fadein_times-1, interval_time);
   
@@ -336,17 +317,6 @@ img.addEventListener("load", () => {
     renderer.domElement.addEventListener('touchstart', pushJudge);
     renderer.domElement.addEventListener('touchend', diffusion);
   }
-
-
-  // コンテンツ位置までスクロールしたら暗くする
-  const dark_cover = document.getElementById('hidden_cover')
-  const key_visual = document.getElementById("key-visual");
-  const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-  const target_static = key_visual_bottom - (height * 0.88)
-
-  window.addEventListener('scroll', () => {
-    blackOut()
-  });
 
 
   // アニメーションの実行（animate関数）
@@ -890,30 +860,12 @@ img.addEventListener("load", () => {
 
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
-  
-
-    blackOut();
 
   }
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義12　キービジュアルのブラックアウト
-  // ---------------------------------------------------------------------------------------------
-
-  function blackOut() {
-    if (window.scrollY >= target_static) {
-      dark_cover.style.opacity = .5;
-      dark_cover.style.visibility = "visible";
-    } else if (window.scrollY < target_static) {
-      dark_cover.style.opacity = 0;
-      dark_cover.style.visibility = "hidden";
-    }
-  }
-
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義13　パーティクルの自動アニメーション
+  // 関数定義12　パーティクルの自動アニメーション
   // ---------------------------------------------------------------------------------------------
 
   function autoDiffusion() {
@@ -1056,7 +1008,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義14　乱数生成
+  // 関数定義13　乱数生成
   // ---------------------------------------------------------------------------------------------
 
   function randomNumbers(max, min) {
@@ -1068,7 +1020,7 @@ img.addEventListener("load", () => {
   
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義15　正負の符号決定
+  // 関数定義14　正負の符号決定
   // ---------------------------------------------------------------------------------------------
 
   function plusMinus() {
@@ -1081,7 +1033,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義16　初期アニメーション　パターン1
+  // 関数定義15　初期アニメーション　パターン1
   // ---------------------------------------------------------------------------------------------
 
   function gatherFromFar() {
@@ -1100,7 +1052,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義17　初期アニメーション　パターン2
+  // 関数定義16　初期アニメーション　パターン2
   // ---------------------------------------------------------------------------------------------
 
   function gather2D() {
@@ -1128,7 +1080,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義18　初期アニメーション　パターン3
+  // 関数定義17　初期アニメーション　パターン3
   // ---------------------------------------------------------------------------------------------
 
   function gather3D() {
@@ -1158,7 +1110,7 @@ img.addEventListener("load", () => {
   }
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義19　インタラクションガイド セットアップ
+  // 関数定義18　インタラクションガイド セットアップ
   // ---------------------------------------------------------------------------------------------
 
   function interactionGuide() {
