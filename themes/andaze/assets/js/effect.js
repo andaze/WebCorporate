@@ -18,9 +18,8 @@ canvas.style.marginTop = header_height + "px";
 const loading_icon = document.getElementById("loading_icon");
 window.setTimeout(() => {
   loading_icon.style.visibility = "visible";
-}, 1)
+}, 0.1)
 
-// 画面が読み込まれた後にフェードイン開始
 window.setTimeout(() => {
 
     // ロード画面を非表示
@@ -28,7 +27,7 @@ window.setTimeout(() => {
     spinner.style.opacity = 0;
     spinner.style.visibility = "hidden";
 
-}, 500);
+}, 1000);
 
 
 // ---------------------------------------------------------------------------------------------
