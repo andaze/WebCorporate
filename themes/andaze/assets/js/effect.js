@@ -51,7 +51,7 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener("resize", blackOut);
 
-window.addEventListener('load', blackOut)
+window.addEventListener('load', blackOut);
 
 function blackOut() {
     if (window.scrollY >= target_static) {
