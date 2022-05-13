@@ -107,6 +107,7 @@ img.addEventListener("load", () => {
     blending: THREE.AdditiveBlending,
     depthTest: false
   });
+  
 
   
   // オブジェクトの作成
@@ -114,7 +115,7 @@ img.addEventListener("load", () => {
   
   
   // オブジェクトの位置調整
-  mesh.position.x = 0.0;
+  // mesh.position.x = 0.0;
   
   
 
@@ -406,7 +407,8 @@ img.addEventListener("load", () => {
         const pZ = 0;
 
         // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
-        var rgb_val = [0, 255]
+        var rgb_val = [0, 1]
+
         const r = rgb_val[Math.floor(Math.random() * rgb_val.length)];
         const g = rgb_val[Math.floor(Math.random() * rgb_val.length)];
         const b = rgb_val[Math.floor(Math.random() * rgb_val.length)];
@@ -818,13 +820,15 @@ img.addEventListener("load", () => {
       if (width >= width_break_point) {
         camera.position.z = 400;
         if (height <= height_break_point) {
-          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
+          // mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
+          mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width)
         } else {
-          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+          // mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+          mesh.material.uniforms.u_value.value = ((width + height) / 700) - ((1200 + height) / width);
         }
       } else {
         camera.position.z = height / width * 400;
-        mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width);
+        mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width);
       }
 
       // デバイスがモバイルの場合
@@ -1120,16 +1124,16 @@ img.addEventListener("load", () => {
   
     animation_nav
     .to(circle, {
-      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      duration: 0.5,
       opacity: .7,
       y: 5,
     })
     .to(circle, {
-      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      duration: 0.5,
       x:  anime_nav.clientWidth*0.5,
     })
     .to(circle, {
-      duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
+      duration: 0.8,
       opacity: 0,
       x:  anime_nav.clientWidth*0.8,
       y: -5,

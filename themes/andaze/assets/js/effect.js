@@ -18,17 +18,21 @@ canvas.style.marginTop = header_height + "px";
 const loading_icon = document.getElementById("loading_icon");
 window.setTimeout(() => {
   loading_icon.style.visibility = "visible";
-}, 1)
+}, 0.1)
 
-// 画面が読み込まれた後にフェードイン開始
-window.setTimeout(() => {
+window.addEventListener('load', () => {
 
-    // ロード画面を非表示
-    const spinner = document.getElementById('loading');
-    spinner.style.opacity = 0;
-    spinner.style.visibility = "hidden";
+  window.setTimeout(() => {
 
-}, 500);
+      // ロード画面を非表示
+      const spinner = document.getElementById('loading');
+      spinner.style.opacity = 0;
+      spinner.style.visibility = "hidden";
+
+  }, 500);
+
+})
+
 
 
 // ---------------------------------------------------------------------------------------------
@@ -47,7 +51,7 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener("resize", blackOut);
 
-window.onload = blackOut()
+window.addEventListener('load', blackOut);
 
 function blackOut() {
     if (window.scrollY >= target_static) {
