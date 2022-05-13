@@ -408,21 +408,10 @@ img.addEventListener("load", () => {
 
         // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
         var rgb_val = [0, 1]
-        // var rgb_val = [Math.random(), Math.random(), Math.random()]
-        var r_val = [0, 1]
-        var g_val = [0, 1]
-        var b_val = [0, 1]
+
         const r = rgb_val[Math.floor(Math.random() * rgb_val.length)];
         const g = rgb_val[Math.floor(Math.random() * rgb_val.length)];
         const b = rgb_val[Math.floor(Math.random() * rgb_val.length)];
-        // const r = r_val[Math.floor(Math.random() * r_val.length)];
-        // const g = g_val[Math.floor(Math.random() * g_val.length)];
-        // const b = b_val[Math.floor(Math.random() * b_val.length)];
-        // const r = data[index] / 255;
-        // const g = data[index + 1] / 255;
-        // const b = data[index + 2] / 255;
-
-        // console.log(r, g, b)
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
         const a = data[index + 3] / 255;
@@ -840,7 +829,6 @@ img.addEventListener("load", () => {
       } else {
         camera.position.z = height / width * 400;
         mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width);
-        console.log('A')
       }
 
       // デバイスがモバイルの場合
