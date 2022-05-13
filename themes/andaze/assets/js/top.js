@@ -107,6 +107,7 @@ img.addEventListener("load", () => {
     blending: THREE.AdditiveBlending,
     depthTest: false
   });
+  
 
   
   // オブジェクトの作成
@@ -114,7 +115,7 @@ img.addEventListener("load", () => {
   
   
   // オブジェクトの位置調整
-  mesh.position.x = 0.0;
+  // mesh.position.x = 0.0;
   
   
 
@@ -406,10 +407,22 @@ img.addEventListener("load", () => {
         const pZ = 0;
 
         // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
-        var rgb_val = [0, 255]
+        var rgb_val = [0, 1]
+        // var rgb_val = [Math.random(), Math.random(), Math.random()]
+        var r_val = [0, 1]
+        var g_val = [0, 1]
+        var b_val = [0, 1]
         const r = rgb_val[Math.floor(Math.random() * rgb_val.length)];
         const g = rgb_val[Math.floor(Math.random() * rgb_val.length)];
         const b = rgb_val[Math.floor(Math.random() * rgb_val.length)];
+        // const r = r_val[Math.floor(Math.random() * r_val.length)];
+        // const g = g_val[Math.floor(Math.random() * g_val.length)];
+        // const b = b_val[Math.floor(Math.random() * b_val.length)];
+        // const r = data[index] / 255;
+        // const g = data[index + 1] / 255;
+        // const b = data[index + 2] / 255;
+
+        // console.log(r, g, b)
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
         const a = data[index + 3] / 255;
@@ -1123,16 +1136,16 @@ img.addEventListener("load", () => {
   
     animation_nav
     .to(circle, {
-      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      duration: 0.5,
       opacity: .7,
       y: 5,
     })
     .to(circle, {
-      duration: 0.5, // 右側に2秒かけて移動するモーションを指定する
+      duration: 0.5,
       x:  anime_nav.clientWidth*0.5,
     })
     .to(circle, {
-      duration: 0.8, // 右側に2秒かけて移動するモーションを指定する
+      duration: 0.8,
       opacity: 0,
       x:  anime_nav.clientWidth*0.8,
       y: -5,
