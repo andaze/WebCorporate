@@ -78,6 +78,10 @@ weight = 7
 name   = "contact"
 url    = "contact"
 weight = 8
+[[Languages.en.menu.main]]
+name   = "WORK LIFE BALANCE"
+url    = "work-life-balance"
+weight = 9
 
 
 [[Languages.ja.menu.main]]
@@ -113,3 +117,7 @@ target = "_blank"
 name   = "お問い合わせ"
 url    = "contact"
 weight = 8
+[[Languages.ja.menu.main]]
+name   = "お問い合わせ"
+url    = "work-life-balance"
+weight = 9
