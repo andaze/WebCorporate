@@ -81,6 +81,13 @@ img.addEventListener("load", () => {
   }
   const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
 
+  // 変色検知フラグの生成
+  const colorChangeFlag = [];
+  for (let i = 0; i < vertces; i++) {
+    colorChangeFlag.push(0);
+  }
+  const colorChangeFlags = new THREE.BufferAttribute(new Float32Array(colorChangeFlag), 1);
+
   
   // 各パラメータをジオメトリーに登録
   geometry.setAttribute("position", position);
@@ -88,6 +95,7 @@ img.addEventListener("load", () => {
   geometry.setAttribute("alpha", alpha);
   geometry.setAttribute("rand", rands);
   geometry.setAttribute("flag", flags);
+  geometry.setAttribute("colorChangeFlag", colorChangeFlags);
   
   
   // マテリアルの作成
@@ -114,11 +122,6 @@ img.addEventListener("load", () => {
   var mesh = new THREE.Points(geometry, material);
   
   
-  // オブジェクトの位置調整
-  // mesh.position.x = 0.0;
-  
-  
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　変数定義 start
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -142,6 +145,9 @@ img.addEventListener("load", () => {
 
   // パーティクルの移動許可フラグの配列
   const particleFlag = mesh.geometry.attributes.flag.array;
+
+  // パーティクルの変色検知フラグの配列
+  const particleColorChangeFlag = mesh.geometry.attributes.colorChangeFlag.array;
 
 
   // ---------------------------------------------------------------------------------------------
@@ -797,12 +803,17 @@ img.addEventListener("load", () => {
     // Tween.jsアニメーションの実行
     TWEEN.update();
     
-    // 透明度の更新を許可
+    // 頂点の透明度の更新を許可
     mesh.geometry.attributes.alpha.needsUpdate = true;
 
+    // 頂点の座標の更新を許可
     mesh.geometry.attributes.position.needsUpdate = true;
 
+    // 頂点の移動検知フラグの更新を許可
     mesh.geometry.attributes.flag.needsUpdate = true;
+
+    // 頂点の変色検知フラグの更新を許可
+    mesh.geometry.attributes.colorChangeFlag.needsUpdate = true;
   }
 
 
