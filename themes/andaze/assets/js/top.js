@@ -415,12 +415,21 @@ img.addEventListener("load", () => {
         const pY = -(y - canvas_height / 2);
         const pZ = 0;
 
-        // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
-        var rgb_val = [0, 1]
+        // カラージェネレーターで選定した色を出現させる（出現し得る色は5種類 rgb値で指定）
+        var rgb_vals = [
+          [(88/255).toFixed(2), (0/255).toFixed(2), (219/255).toFixed(2)],
+          [(219/255).toFixed(2), (47/255).toFixed(2), (7/255).toFixed(2)],
+          [(0/255).toFixed(2), (102/255).toFixed(2), (219/255).toFixed(2)],
+          [(219/255).toFixed(2), (212/255).toFixed(2), (0/255).toFixed(2)],
+          [(0/255).toFixed(2), (219/255).toFixed(2), (144/255).toFixed(2)]
+        ];
 
-        const r = rgb_val[Math.floor(Math.random() * rgb_val.length)];
-        const g = rgb_val[Math.floor(Math.random() * rgb_val.length)];
-        const b = rgb_val[Math.floor(Math.random() * rgb_val.length)];
+        const rgb_val =rgb_vals[Math.floor(Math.random() * rgb_vals.length)]
+
+        const r = rgb_val[0];
+        const g = rgb_val[1];
+        const b = rgb_val[2];
+
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
         const a = data[index + 3] / 255;
