@@ -1,6 +1,6 @@
 {{ $videoName:= printf "%s%s" (.Page.Params.headerVideo.videoName) ".mp4" }}
 {{ $video:= .Page.Resources.GetMatch  $videoName }}
-<video class="absolute z-10 w-auto min-w-full min-h-full max-w-none" playsinline muted autoplay loop >
+<video playsinline muted autoplay loop >
     <source src="{{ $video }}">
 </video>
 
