@@ -329,17 +329,26 @@ img.addEventListener("load", () => {
 
   // リサイズイベント発生時に実行
   var currentWidth = window.innerWidth;
+  var currentHeight = window.innerHeight;
   
   window.addEventListener("resize", function() {
 
     if (currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
-        // ウインドウ横幅が変わっていないため処理をキャンセル。
-        return;
-    }
 
+      // インタラクションガイドの位置を変更。
+      if (currentHeight < window.innerHeight) {
+        nav_block.style.bottom = (height*0.15 + 100) + 'px';
+      } else {
+        nav_block.style.bottom = height*0.15 + 'px';
+      }
+
+      // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
+      return;
+    }
+    
     // ウインドウ横幅が変わったのでリサイズと見なす。
     // 横幅を更新
-    currentWidth = window.innerWidth;
+    currentHeight = window.innerHeight;
     onResize();
   });
 
@@ -798,11 +807,13 @@ img.addEventListener("load", () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
+
     // ヘッダーの高さ
     const header_height = document.getElementById("header_nav").clientHeight;
 
     // canvasのmargin-topにheaderの高さを設定
     canvas.style.marginTop = header_height + "px";
+
 
     // ブレイクポイントの設定
     const width_break_point = 700;
@@ -830,7 +841,7 @@ img.addEventListener("load", () => {
         camera.position.z = height / width * 400;
         mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width);
       }
-
+      
       // デバイスがモバイルの場合
     } else {
       if (width >= width_break_point_sp) {
@@ -850,13 +861,16 @@ img.addEventListener("load", () => {
         if (width < height) {
           camera.position.z = height / width * 400;
           mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1600 + height) / width);
+          nav_block.style.bottom = height*0.15 + 'px';
         } else {
           if (camera.aspect > 1.8) {
             camera.position.z = width / height * 250;
             mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((3400 + height) / width);
+            nav_block.style.display = 'none'
           } else {
             camera.position.z = width / height * 350;
             mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+            nav_block.style.bottom = height*0.15 + 'px';
           }
         }
       }
@@ -864,7 +878,7 @@ img.addEventListener("load", () => {
 
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
-
+    
   }
 
 
