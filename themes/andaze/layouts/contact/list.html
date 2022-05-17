@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <div class="container mx-auto px-5 py-5 mt-16">
+        {{ partial "breadcrumbs.html" . }}
+    </div>
+    <div class="container mx-auto max-w-none prose px-5 py-5">
+        <h1 class="text-center">{{ .Title }}</h1>
+        {{ partial "contact-form.html" . }}
+    </div>
+{{ end }}

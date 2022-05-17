@@ -1,0 +1,73 @@
+<div class="max-w-screen-xl mt-24 px-8 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 ">
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Full Name</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text" placeholder="" name="full_name">
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Last Name</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text" placeholder="" name="last_name">
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Company Name</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text" placeholder="" name="company_name">
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="email" name="email" >
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Contact Number</span>
+        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text" name="contact_number">
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Department</span>
+        <br>
+        <select name="department" required>
+            <option value>--please select--</option>
+            <option value="business_management">Business management</option>
+            <option value="sales">Sales</option>
+            <option value="marketing">Marketing</option>
+            <option value="it">IT</option>
+            <option value="genral_administration">General administration</option>
+            <option value="other">Others</option>
+          </select>
+        
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Job Title</span>
+        <br>
+        <select name="job_title" required>
+            <option value>--please select--</option>
+            <option value="director">Director</option>
+            <option value="general_manager">General Manager</option>
+            <option value="manager">Manager</option>
+            <option value="employee">Employee / Staff</option>
+            <option value="self_employe">Self-employed</option>
+            <option value="student">Student</option>
+            <option value="other">Others</option>
+          </select>
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">Inquiry content</span>
+        <textarea
+          class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" name="inquiry_content"></textarea>
+      </div>
+      <div>
+        <span class="uppercase text-sm text-gray-600 font-bold">About privacy policy</span>
+        <textarea
+          class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+      </div>
+    </div>
+    <div class="text-center">
+        <button
+          class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg text-centerfocus:outline-none focus:shadow-outline">
+          Send Message
+        </button>
+      </div>
+</div>
