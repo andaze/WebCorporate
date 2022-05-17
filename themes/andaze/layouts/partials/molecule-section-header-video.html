@@ -1,0 +1,6 @@
+    {{ if  .Page.Params.headerVideo.videoTitle }}
+        {{ partial "atom-video-header-title.html" . }}
+    {{ end }}
+    {{ if  .Page.Params.headerVideo.videoName }}
+        {{ partial "atom-header-video.html" . }}
+    {{ end }}
