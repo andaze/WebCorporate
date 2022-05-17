@@ -1,27 +1,27 @@
 ---
-title: "沿革"
+title: "History"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 3
  
 ---
 
-## 沿革
-· 2011年 代表・新井が渡印
+## History
+· 2011 Representative Arai came to India
 
-· 2015年 インドから帰国。会社設立の準備を始める
+· 2015 Returned from India. Started preparing to establish a company.
 
-· 2016年 アンダーズ株式会社を設立
+· 2016 Founding of Andaze Co.
 
-· 2017年 マイクロソフトネットワークパートナー認定取得
+· 2017 Microsoft Network Partner Certification
 
-· 2018年 マイクロソフトシルバーパートナー認定取得
+· Certified as a Microsoft Silver Partner in 2018
 
-· 2019年 本社を虎ノ門から麹町へ移転
+· 2019 Head office relocated from Toranomon to Kojimachi
 
-· 2019年 増資 （500万→1000万）
+· 2019 Capital Increase (5 million → 10 million)
 
-· 2020年 開発拠点をWeWork半蔵門へ設置
+· 2020 Establish development base at WeWork Hanzomon
 
-· 2020年 マイクロソフトゴールドパートナー認定取得
+· 2020 Microsoft Gold Partner Certification
 
-· 2021年 ISO9001およびISO27001を取得
+· 2021 Obtained ISO 9001 and ISO 27001 certification
