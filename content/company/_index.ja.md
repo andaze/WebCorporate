@@ -5,7 +5,7 @@ weight: 1
 headerVideo: 
     videoName: "company_profile"
     videoTitle: "会社概要"
-    imageDescription: ""
+    videoDescription: ""
  
 ---
 
