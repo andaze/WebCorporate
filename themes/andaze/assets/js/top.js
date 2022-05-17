@@ -385,9 +385,12 @@ img.addEventListener("load", () => {
   // パーティクルを変色させる
   window.setTimeout(() => {
     colorChangeStart();
-  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 10000)
+  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000)
   
-  window.setInterval(colorChangeLoop, 15000); 
+  window.setTimeout(() => {
+    colorChangeLoop();
+    window.setInterval(colorChangeLoop, 40000); 
+  }, 5000)
 
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -1239,7 +1242,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 20000)
+    }, 0)
   
     window.setTimeout(() => {
   
@@ -1256,7 +1259,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 30000)
+    }, 15000)
 
     window.setTimeout(() => {
   
@@ -1273,7 +1276,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 40000)
+    }, 25000)
   }
 
 
