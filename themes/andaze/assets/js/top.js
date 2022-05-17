@@ -343,7 +343,7 @@ img.addEventListener("load", () => {
 
       // インタラクションガイドの位置を変更。
       if (currentHeight < window.innerHeight) {
-        nav_block.style.bottom = (height*0.15 + 100) + 'px';
+        nav_block.style.bottom = (height*0.15 + 80) + 'px';
       } else {
         nav_block.style.bottom = height*0.15 + 'px';
       }
@@ -354,7 +354,7 @@ img.addEventListener("load", () => {
     
     // ウインドウ横幅が変わったのでリサイズと見なす。
     // 横幅を更新
-    currentHeight = window.innerHeight;
+    currentWidth = window.innerWidth;
     onResize();
   });
 
