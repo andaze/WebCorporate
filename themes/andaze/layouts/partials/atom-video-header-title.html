@@ -1,7 +1,10 @@
 <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
-    <div class="pl-12 md:pl-24 flex justify-left items-center h-full">
+    <div class="pl-8 md:pl-44 pt-16 md:pt-64 text-xl text-justify h-full">
         <h2 class="font-bold text-white text-2xl md:text-5xl mb-4">
-          {{ .Title }}
+          {{ .Page.Params.headerVideo.videoTitle }}
         </h2>
+        {{ if .Page.Params.headerVideo.videoDescription }}
+        <h6 class="font-500 text-white text-xs md:text-xl md:pl-6 mb-4">{{ .Page.Params.headerVideo.videoDescription | markdownify }}</h6>
+        {{ end }}
     </div>
 </div>

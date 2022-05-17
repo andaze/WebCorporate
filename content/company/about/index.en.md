@@ -1,57 +1,66 @@
 ---
-title: "会社概要"
+title: "About Us"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 2
  
 ---
 
-## 会社概要
-会社名 アンダーズ株式会社
+# About Us
 
-英文社名 Andaze Ltd
+## What is Andaze ?
 
-所在地 〒 102-0083
+Leveraging IT Tech from Around the World
+We create the best products by communicating with users.
+and communicate with users to create the best products.
+We are a next-generation development company that creates optimal products by communicating with users.
 
-東京都千代田区麹町 2-10-3 エキスパートオフィス 1F
+Andaze creates products that change common sense.
+"Andaze", which creates products that change the way we think about the world.
 
-設立 2016 年 4 月 決算期:3 月
+## About Us
 
-資本金 10,000,000 円
+**Company Name**: Andaze Corporation
 
-代表者 新井 美奈
+**Location**: ＜head office＞
+10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo
 
-取引銀行
+＜development base＞
+5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo
+WeWork Hanzomon PREXSouth 2F
 
-三井住友銀行 日比谷支店
+**Established**: April 2016 Fiscal year: March
 
-ジャパンネット銀行 本店営業部
+**Capital**: 20,000,000 Yen
 
-認定規格
+**Representative**:  Mina Arai
 
-情報セキュリティマネジメントシステム（ISO27001）
+**Bank**: Mitsui Sumitomo Bank, Hibiya Branch
+Japan Net Bank, Head Office Sales Department
 
-品質マネジメントシステム（ISO9001）
+**Approved Standards**: Information Security Management System（ISO27001）
 
-電話番号 03-3230-0401
+Quality Management System（ISO9001）
 
-ウェブサイト https://andaze.com
+**Phone number**: 03-3230-0401
 
-事業内容
+**Website**: https://andaze.com
 
-各種企業に対する経営情報システムの診断、指導並びにコンサルティング
+**Business**:
 
-業務改善及びIT戦略に関するコンサルティング
+(1) Diagnosis, guidance, and consulting of management information systems for various companies
 
-情報通信事業への投資並びにこれらの企業の合併、提携、営業権の譲渡に関するコンサルティング
+(2) Consulting on business improvement and IT strategy
 
-コンピュータソフトウェアの企画、開発、並びに輸出入
+(3) Investment in information and telecommunications businesses and consulting on mergers, alliances, and transfers of business rights of these companies
 
-出版物及び電子コンテンツの制作および販売
+(4) Planning, development, import and export of computer software
 
-各種企業の従業員採用に関するコンサルティング及び広告代理業
+(5) Production and sale of publications and electronic content
 
-人事制度、教育プログラムの開発並びに教育研修の企画及び実施
+(6) Consulting and advertising agency services related to employee recruitment for various companies
 
-有価証券の売買、保有及び運用
+(7) Development of personnel systems and educational programs, and planning and implementation of education and training
 
-有価証券に関する投資顧問業務上記各号に付帯関連する一切の事業
+(8) Buying, selling, holding and managing securities
+
+(9) Investment advisory services related to securities, and all businesses incidental and related to the above

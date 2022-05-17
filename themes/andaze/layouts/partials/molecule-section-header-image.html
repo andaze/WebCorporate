@@ -1,0 +1,6 @@
+    {{ if  .Page.Params.headerImage.imageTitle }}
+        {{ partial "atom-image-header-title.html" . }}
+    {{ end }}
+    {{ if  .Page.Params.headerImage.imageName }}
+        {{ partial "atom-header-image.html" . }}
+    {{ end }}
