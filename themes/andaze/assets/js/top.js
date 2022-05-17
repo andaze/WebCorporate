@@ -866,11 +866,9 @@ img.addEventListener("load", () => {
       if (width >= width_break_point) {
         camera.position.z = 400;
         if (height <= height_break_point) {
-          // mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
-          mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width)
+          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
         } else {
-          // mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
-          mesh.material.uniforms.u_value.value = ((width + height) / 700) - ((1200 + height) / width);
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
         }
       } else {
         camera.position.z = height / width * 400;
