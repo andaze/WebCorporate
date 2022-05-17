@@ -81,6 +81,13 @@ img.addEventListener("load", () => {
   }
   const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
 
+  // 変色検知フラグの生成
+  const colorChangeFlag = [];
+  for (let i = 0; i < vertces; i++) {
+    colorChangeFlag.push(0);
+  }
+  const colorChangeFlags = new THREE.BufferAttribute(new Float32Array(colorChangeFlag), 1);
+
   
   // 各パラメータをジオメトリーに登録
   geometry.setAttribute("position", position);
@@ -88,6 +95,7 @@ img.addEventListener("load", () => {
   geometry.setAttribute("alpha", alpha);
   geometry.setAttribute("rand", rands);
   geometry.setAttribute("flag", flags);
+  geometry.setAttribute("colorChangeFlag", colorChangeFlags);
   
   
   // マテリアルの作成
@@ -114,11 +122,6 @@ img.addEventListener("load", () => {
   var mesh = new THREE.Points(geometry, material);
   
   
-  // オブジェクトの位置調整
-  // mesh.position.x = 0.0;
-  
-  
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　変数定義 start
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -142,6 +145,9 @@ img.addEventListener("load", () => {
 
   // パーティクルの移動許可フラグの配列
   const particleFlag = mesh.geometry.attributes.flag.array;
+
+  // パーティクルの変色検知フラグの配列
+  const particleColorChangeFlag = mesh.geometry.attributes.colorChangeFlag.array;
 
 
   // ---------------------------------------------------------------------------------------------
@@ -337,7 +343,7 @@ img.addEventListener("load", () => {
 
       // インタラクションガイドの位置を変更。
       if (currentHeight < window.innerHeight) {
-        nav_block.style.bottom = (height*0.15 + 100) + 'px';
+        nav_block.style.bottom = (height*0.15 + 80) + 'px';
       } else {
         nav_block.style.bottom = height*0.15 + 'px';
       }
@@ -348,7 +354,7 @@ img.addEventListener("load", () => {
     
     // ウインドウ横幅が変わったのでリサイズと見なす。
     // 横幅を更新
-    currentHeight = window.innerHeight;
+    currentWidth = window.innerWidth;
     onResize();
   });
 
@@ -375,6 +381,18 @@ img.addEventListener("load", () => {
   }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
 
 
+
+  // パーティクルを変色させる
+  window.setTimeout(() => {
+    colorChangeStart();
+  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000)
+  
+  window.setTimeout(() => {
+    colorChangeLoop();
+    window.setInterval(colorChangeLoop, 40000); 
+  }, 5000)
+
+  
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 start
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -415,12 +433,21 @@ img.addEventListener("load", () => {
         const pY = -(y - canvas_height / 2);
         const pZ = 0;
 
-        // 画像のrgb値を「0 or 255」となるようにランダムに変換（出現し得る色は8種類）
-        var rgb_val = [0, 1]
+        // カラージェネレーターで選定した色を出現させる（出現し得る色は5種類 rgb値で指定）
+        var rgb_vals = [
+          [(88/255).toFixed(2), (0/255).toFixed(2), (219/255).toFixed(2)],
+          [(219/255).toFixed(2), (47/255).toFixed(2), (7/255).toFixed(2)],
+          [(0/255).toFixed(2), (102/255).toFixed(2), (219/255).toFixed(2)],
+          [(219/255).toFixed(2), (212/255).toFixed(2), (0/255).toFixed(2)],
+          [(0/255).toFixed(2), (219/255).toFixed(2), (144/255).toFixed(2)]
+        ];
 
-        const r = rgb_val[Math.floor(Math.random() * rgb_val.length)];
-        const g = rgb_val[Math.floor(Math.random() * rgb_val.length)];
-        const b = rgb_val[Math.floor(Math.random() * rgb_val.length)];
+        const rgb_val =rgb_vals[Math.floor(Math.random() * rgb_vals.length)]
+
+        const r = rgb_val[0];
+        const g = rgb_val[1];
+        const b = rgb_val[2];
+
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
         const a = data[index + 3] / 255;
@@ -788,12 +815,20 @@ img.addEventListener("load", () => {
     // Tween.jsアニメーションの実行
     TWEEN.update();
     
-    // 透明度の更新を許可
+    // 頂点の透明度の更新を許可
     mesh.geometry.attributes.alpha.needsUpdate = true;
 
+    // 頂点の座標の更新を許可
     mesh.geometry.attributes.position.needsUpdate = true;
 
+    // 頂点の色の更新を許可
+    mesh.geometry.attributes.color.needsUpdate = true;
+
+    // 頂点の移動検知フラグの更新を許可
     mesh.geometry.attributes.flag.needsUpdate = true;
+
+    // 頂点の変色検知フラグの更新を許可
+    mesh.geometry.attributes.colorChangeFlag.needsUpdate = true;
   }
 
 
@@ -831,11 +866,9 @@ img.addEventListener("load", () => {
       if (width >= width_break_point) {
         camera.position.z = 400;
         if (height <= height_break_point) {
-          // mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
-          mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width)
+          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
         } else {
-          // mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
-          mesh.material.uniforms.u_value.value = ((width + height) / 700) - ((1200 + height) / width);
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
         }
       } else {
         camera.position.z = height / width * 400;
@@ -1162,6 +1195,88 @@ img.addEventListener("load", () => {
       }
     }, fadein_times*interval_time+5000);
   }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義19　変色スタート
+  // ---------------------------------------------------------------------------------------------
+
+  function colorChangeStart() {
+    for (let i=0; i < vertces; i++) {
+      if (particleColor[3*i].toFixed(2) === (88/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (0/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (219/255).toFixed(2)) {
+        var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2], f: particleColorChangeFlag[i]};
+        var coloration = new TWEEN.Tween(vertex_color);
+        coloration.to({r: (219/255).toFixed(2), g: (212/255).toFixed(2), b: (0/255).toFixed(2), f: 1}, 5000);
+        coloration.onUpdate(function (object) {
+          particleColor[3*i] = object.r;
+          particleColor[3*i+1] = object.g;
+          particleColor[3*i+2] = object.b;
+          particleColorChangeFlag[i] = object.f;
+        });
+        coloration.start();
+      }
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義20　変色ループ
+  // ---------------------------------------------------------------------------------------------
+
+  function colorChangeLoop() {
+
+    window.setTimeout(() => {
+  
+      for (let i=0; i < vertces; i++) {
+        if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (219/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (212/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (0/255).toFixed(2))) {
+          var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2]};
+          var coloration = new TWEEN.Tween(vertex_color);
+          coloration.to({r: (88/255).toFixed(2), g: (0/255).toFixed(2), b: (219/255).toFixed(2)}, 5000);
+          coloration.onUpdate(function (object) {
+            particleColor[3*i] = object.r;
+            particleColor[3*i+1] = object.g;
+            particleColor[3*i+2] = object.b;
+          });
+          coloration.start();
+        }
+      }
+    }, 0)
+  
+    window.setTimeout(() => {
+  
+      for (let i=0; i < vertces; i++) {
+        if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (88/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (0/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (219/255).toFixed(2))) {
+          var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2], f: particleColorChangeFlag[i]};
+          var coloration = new TWEEN.Tween(vertex_color);
+          coloration.to({r: (0/255).toFixed(2), g: (102/255).toFixed(2), b: (219/255).toFixed(2)}, 5000);
+          coloration.onUpdate(function (object) {
+            particleColor[3*i] = object.r;
+            particleColor[3*i+1] = object.g;
+            particleColor[3*i+2] = object.b;
+          });
+          coloration.start();
+        }
+      }
+    }, 15000)
+
+    window.setTimeout(() => {
+  
+      for (let i=0; i < vertces; i++) {
+        if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (0/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (102/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (219/255).toFixed(2))) {
+          var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2], f: particleColorChangeFlag[i]};
+          var coloration = new TWEEN.Tween(vertex_color);
+          coloration.to({r: (219/255).toFixed(2), g: (212/255).toFixed(2), b: (0/255).toFixed(2)}, 5000);
+          coloration.onUpdate(function (object) {
+            particleColor[3*i] = object.r;
+            particleColor[3*i+1] = object.g;
+            particleColor[3*i+2] = object.b;
+          });
+          coloration.start();
+        }
+      }
+    }, 25000)
+  }
+
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //　関数定義 end
