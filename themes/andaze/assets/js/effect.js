@@ -3,8 +3,21 @@
 // ---------------------------------------------------------------------------------------------
 
 // トップページmainタグの高さを取得してfooterのmargin-topに設定
-const main_height = document.getElementById("top_main").clientHeight;
+var main_height = document.getElementById("top_main").clientHeight;
 document.querySelector("footer").style.marginTop = main_height + "px";
+
+// トップページmainタグの高さを取得してfooterのmargin-topに設定
+if (window.innerWidth <= 2185) {
+  window.addEventListener('resize', () => {
+    main_height = document.getElementById("top_main").clientHeight;
+    document.querySelector("footer").style.marginTop = main_height + "px";
+  })
+} else {
+  window.addEventListener('resize', () => {
+    main_height = document.getElementById("top_main").clientHeight;
+    document.querySelector("footer").style.marginTop = main_height*0.99 + "px";
+  })
+}
 
 // canvasのmargin-topにheaderの高さを設定
 const canvas = document.getElementById('webgl');
