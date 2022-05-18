@@ -1180,7 +1180,7 @@ img.addEventListener("load", () => {
       x:  anime_nav.clientWidth*0.5,
     })
     .to(circle, {
-      duration: 0.8,
+      duration: 0.4,
       opacity: 0,
       x:  anime_nav.clientWidth*0.8,
       y: -5,
