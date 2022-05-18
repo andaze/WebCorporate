@@ -387,10 +387,8 @@ img.addEventListener("load", () => {
     colorChangeStart();
   }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000)
   
-  window.setTimeout(() => {
-    colorChangeLoop();
-    window.setInterval(colorChangeLoop, 40000); 
-  }, 5000)
+  colorChangeLoop();
+  window.setInterval(colorChangeLoop, 25000); 
 
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -1242,7 +1240,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 0)
+    }, 15000)
   
     window.setTimeout(() => {
   
@@ -1259,7 +1257,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 15000)
+    }, 30000)
 
     window.setTimeout(() => {
   
@@ -1276,7 +1274,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 25000)
+    }, 45000)
   }
 
 
