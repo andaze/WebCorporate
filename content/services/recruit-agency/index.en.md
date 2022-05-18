@@ -1,77 +1,99 @@
 ---
-title: "採用代行サービス"
+title: "Recruitment agency services"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: logo_pc.png
+image: recruit.jpg
+headerImage:
+    imageName: "recruit.jpg"
+    imageTitle: ""
+    imageDescription: ""
  
 ---
 
-## 採用代行サービス
-人材紹介から採用活動、教育までトータルサポート
-アンダーズはAIを駆使し、多様化する採用手法の中で、もっとも効果的な媒体や手法を選定します。またコンサルティングから採用計画の立案、求人票の作成、日程調整、採用後の研修といった人材育成まで、一連の人事領域を代行。200社以上の採用支援で培った専門的な知見と、各エージェントやパートナー企業との連携によって得た情報、市場動向を分析し、戦略的な採用活動をサポートします。
-【企業が採用でお持ちの課題】
-•	募集を出しても応募が少ない、ターゲットが集まらない
-•	採用業務に時間がかかり、他の業務に集中できない
-•	遠隔で採用活動を進めたい
-•	採用にかかるコストを抑制したい
-•	複数の職種で人を採用したい
-•	即戦力となる経験者が欲しい
+## Recruitment agency services
+Total support from recruiting to hiring and education     
+Andaze utilizes AI to select the most effective media and methods among diversifying recruitment methods. We also provide a full range of HR services on behalf of our clients, from consulting to recruitment planning, job posting, scheduling, post-hire training, and more, using our expert knowledge gained from supporting more than 200 companies in their recruitment activities, as well as analyzing market trends and information obtained through collaboration with various agencies and partner companies. We support your strategic recruitment activities.    
 
-### アンダーズが選ばれる理由
-(1)	人材紹介会社や代理店が入る前段階からコンサルティング
-「こんな人材を」「いつまでに」「何名」「予算内で」といったご要望に合わせて、採用計画を立案。各種求人メディアや人材エージェント、SNS、ダイレクトリクルーティングなどの多様な採用手法から最適なご提案をします。IT業界のSESはもちろん、多彩な業種の新卒から中途、派遣、アルバイトまで柔軟に対応。全国のお客様にご活用いただけます。
-(2)	人事領域まで手が回らない企業をワンストップで支援
-たとえば年間100名規模の採用が必要な大手企業であっても、人事部門の担当者は2～3名。少ないマンパワーで、求人広告を作ったり面接の日程調整をしたり、スカウトメールを配信したりと、膨大な採用業務を担当されている現場も多いのではないでしょうか。また、企業によっては人事と他の業務を兼任されているご担当者もいらっしゃるようです。アンダーズは、そんな手間と時間を費やす人事領域をアウトソースできる専門チームをご用意しています。
-(3)	新技術「POWER BI」で、採用活動の成果を「見える化」
-人事の方々がいくら頑張っても効果が出ない場合など、どの工程で問題があったのかを「見える化」するツール「POWER BI」をご提供。POWER BIは、企業側の手ごたえと採用の実態のギャップを「数値」で埋めるサービスです。応募から内定までの日数から、面接を後回しにしている部署名まで一目瞭然。責任の所在が分かり、よりスピーディーな採用活動につながります。また、採用後は数字で振り返りができるため、課題を見つけて改善することも可能です。
+【Challenges companies have in recruiting】
+* Not enough applications even if we put out a call for applications, we can't attract our target audience.
+* Recruitment work is time consuming, making it difficult to concentrate on other tasks.
+* I want to promote recruitment remotely.
+* Want to control the cost of recruitment
+* I want to hire people for multiple positions.
+* We need experienced people who can work immediately.
 
-### アンダーズの採用代行サービス
-(1)	求人広告作成
-採用サイトに掲載する求人広告を作成します。WEB上で情報が公開されるため、在職中でありながら転職を考えている潜在的な層にもアプローチが可能です。また、採用した人数によって広告掲載料が左右されないので、募集人数が多い場合におすすめ。さらに、未経験者がターゲットとなる場合や、募集職種が限られる求人にも向いています。
-(2)	人材紹介
-採用を考えているお客様に適した転職希望者を仲介するマッチングサービスです。私たちの目でふさわしい方を厳選してご紹介するため、効率よく採用活動ができる点も特徴。また、採用が決まるまで費用が発生しないため、ご納得いただけるまでじっくりと採用活動に取り組むことができます。
-(3)	ダイレクトリクルーティング
-近年注目されている採用方法です。簡単にお伝えすると欲しい人材の「1本釣り」。膨大な人材データベースから、ターゲットに近い人材を選んで直接オファーをかけることができます。費用はデータベースの使用料を払うスタイル。一人ひとりの職務経歴や情報が分かるので、即戦力の採用や多彩な職種の人材を同時に採用できる点もメリットです。
-(4)	採用業務アウトソーシング
-最短翌日からスタートでき、安定して稼働します。時間単位でご利用いただけるため、タスクを切り出すことなく一連の採用業務に対応可能です。自社で派遣スタッフを採用したり、一時的にエージェントへ依頼したりする場合と比べても、アンダーズの専門チームは教育不要で安全かつスピーディー。属人化させないことを徹底するチーム体制で、急な退職や欠勤のリスクもありません。
-【ご利用例】
-•	採用計画の立案
-•	求人広告の作成
-•	人材データベースの共有
-•	採用ノウハウの提供
-•	スカウトメール配信代行
-•	面接日程の調整
-•	自社採用サイトの求人原稿の更新
-•	合否連絡などの求職者とのやり取り
-(5)	採用コンサルティング
-知名度や会社規模、業種によって、どんなに優れた会社でも、魅力が伝わらないことで応募が集まりにくいというケースがあります。そこで戦略的なアプローチから採用活動をデザイン。より効果的な採用計画をご提案します。
-(6)	採用後の人材教育
-採用活動が成功した後は、一員となった社員の育成に着手します。アンダーズでは、大手広告代理店で人事領域に30年以上携わっている教育のプロフェッショナルが新人研修やマナー研修、スキルアップ研修を担当。これから教育部門を立ち上げるお客様や、育成まで手が回らないというお客様からのご依頼が多いです。
-(7)	その他、以下についても承ります。
-•	採用ウェブサイトの制作
-•	動画や広告、マンガの製作
-•	イベント出展サポート
-•	ノベルティグッズの制作
+### Why Choose Andaze ?
+(1)	Consulting from the stage before recruitment agencies and agencies enter the market.        
+We develop a recruiting plan according to your needs such as "what kind of people", "by when", "how many", and "within budget". We offer the most suitable recruitment plan from a variety of recruitment methods such as various job media, recruiting agents, SNS, and direct recruiting, etc. We flexibly handle new graduates, mid-career, temporary staffing, and part-time jobs in various industries as well as SES in the IT industry. Our services are available to clients throughout Japan.
 
-### 導入の効果
-•	希望する人材の確保
-•	採用コストの抑制
-•	安心かつスピーディーに採用活動ができる
-•	人事部門の負担軽減
-•	採用後のスキルアップ
+(2)	One-stop support for companies that are not able to handle the human resource area       
+For example, even in a large company that needs to hire 100 people a year, there are only two or three people in charge of the human resources department. With such a small amount of manpower, many companies may be handling a huge amount of recruiting work, such as creating job advertisements, scheduling interviews, and sending out scout e-mails. In addition, some companies may have personnel in charge of both human resources and other tasks. Andaze provides a specialized team that can outsource such time-consuming and time-consuming HR tasks.
 
-### おすすめの業界・業種
-•	人材不足に悩まれている全業種
-•	求人サイト構築を予定されている全業種
-•	人事部門を強化したい全業種
-など
+(3)	"visualization" the results of your recruitment activities with the new "POWER BI" technology       
+We provide "POWER BI", a tool to "visualize" which process is the problem, such as when HR is not getting results no matter how hard they try. From the number of days it takes from application to job offer, to the names of departments that are putting off interviews, it all becomes clear at a glance. This helps to speed up the hiring process. Also, after hiring, you can look back at the numbers to find issues and make improvements.
 
-### 導入事例
-(1)	事例 1
-業種：製造
-要望：全国・多職種の採用コストを圧縮させたい
-ソリューション：各部署からのスポットでの欠員や増員への対応として、都度広告や紹介を利用し、時間と手間がかかっていた。募集しているポジションは常にあることから、インディードや Google しごと検索へ最適化した自社採用サイトを設けることで、即時に募集自体を始められるようにした。そうすることで、社内ニーズに合わせて柔軟な募集が可能となり、伝えたい情報を集約することでミスマッチも低減。紹介や広告の費用を抑え、サイト自体も自社の資産化することが出来た。
-(2)	事例 2
-業種：アウトソーシング（建設）
-要望：採用業務のマンパワー不足を解消したい
-ソリューション：未経験から有資格者までの広いターゲットを全国で募集をすることから、大手媒体への募集を常時出稿していた。各媒体の機能であるスカウトメールやレコメンド機能をうまく使うところまで手が回らなく、応募者の対応や日程調整で手いっぱいになっていた。スカウトメールの代理送信業務を行うことで応募者数を約 18％増加させた。また、日程調整や原稿の修正など都度業務の一部を担うようになった。
+### Andaze Recruitment Agency Services
+(1)	Job Advertisement Creation       
+We create job ads to be posted on recruitment websites, and since the information is published on the web, you can reach out to potential job seekers who are still employed but considering a career change. In addition, since the advertising fee is not affected by the number of recruits, it is recommended when the number of recruits is large. Furthermore, it is also suitable for jobs that target inexperienced candidates or have a limited number of open positions.
+
+(2)	placement      
+This is a matching service that acts as an intermediary between clients who are considering employment and suitable job applicants. We carefully select and introduce suitable candidates so that we can conduct recruiting activities efficiently. In addition, since no fees are incurred until the job is filled, you can take your time until you are satisfied with the results of your recruiting activities.
+
+(3)	direct recruiting     
+This is a recruiting method that has been attracting attention in recent years. Simply put, it is a "one-stop-shop" for the talent you want. From a huge database of human resources, you can directly make an offer to a candidate who is close to your target. The cost is based on the style of paying for the use of the database. The advantage of this method is that you can know each person's work history and information, so you can hire people who are ready to work immediately and people with various types of jobs at the same time.
+
+(4)	Recruitment outsourcing       
+It can start as early as the next day and operates stably. Available on an hourly basis, we can handle a series of recruiting tasks without having to cut out tasks. Compared to hiring temporary staff in-house or temporarily hiring an agency, Andaze's professional team is safe and speedy with no training required. Our team structure ensures that no one is assigned to a specific position, so there is no risk of sudden resignations or absences.
+
+【Usage Example】
+* Recruitment planning
+* Create job ads
+* Sharing of human resources database
+* Providing Recruitment Know-How
+* Scout e-mail distribution service
+* Arrangement of interview schedule
+* Updating job postings on the company's recruitment website
+* Communication with job seekers, including acceptance/rejection correspondence
+
+(5)	Recruitment Consulting    
+Depending on name recognition, company size, and industry, even the best companies can have difficulty attracting applicants because they do not convey their appeal. Therefore, we design recruitment activities from a strategic approach. We will propose a more effective recruitment plan.
+
+(6)	Post-employment human resources training    
+After successful recruiting activities, we begin training the employees who become a part of the team. At Andaze, education professionals with more than 30 years of experience in the human resource field at major advertising agencies are in charge of new employee training, manner training, and skill development training. We receive many requests from clients who are about to set up an education department or who are not able to handle training.
+
+(7)	In addition, we can also provide the following
+
+* Recruitment website development
+* Production of videos, advertisements and cartoons
+* Event Exhibit Support
+* Production of novelty goods
+
+### Effects of Introduction
+* Securing the desired human resources
+* Controlling recruitment costs
+* Safe and speedy recruitment
+* Reduce the burden on the human resources department
+* Post-employment skill development
+
+### Recommended Industry/Industry
+* All industries suffering from a shortage of human resources
+* All industries planning to build a job site
+* All industries that want to strengthen their HR departments
+(lessening the significance or value of the previous word) the likes of
+
+### Case Studies
+(1)	Case 1   
+
+**Type of industry**：Manufacturing  
+
+**To see**：We want to compress the cost of national and multi-professional recruitment.     
+
+**Solutions**： In response to spot vacancies and increases in staff from various departments, advertisements and referrals were used on a case-by-case basis, which was time-consuming and labor-intensive. Since there are always positions available, we set up an in-house recruiting site optimized for Indeed and Google Job Search so that recruiting itself can begin immediately. By doing so, it became possible to flexibly recruit according to internal needs and reduce mismatches by consolidating the information to be conveyed. The cost of introductions and advertisements was reduced, and the site itself became an asset to the company.
+
+(2)	Case 2
+
+**Type of industry**：Outsourcing (Construction)   
+
+**To see**：To solve manpower shortage in recruiting operations 
+
+**Solutions**： Because we were recruiting nationwide for a wide range of targets from inexperienced to qualified candidates, we were constantly submitting applications to major media outlets. The company had not been able to use the scout mail and recommendation functions of each media, and had its hands full with responding to applicants and coordinating schedules. By providing proxy services for sending scout e-mails, the number of applicants was increased by approximately 18%. In addition, the company began to take on some of the tasks such as schedule adjustment and revision of drafts on a case-by-case basis.
