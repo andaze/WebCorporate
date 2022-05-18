@@ -2,7 +2,8 @@
 title: "DEVEXPRESS"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: devexpress.jpg
+cardImage: devexpress.jpg
+
 ---
 
 Why is the "user experience" getting so much attention? UX (user experience) is translated as "user experience" or "user experience", and is the collective term for experiences and emotions that users can experience when they contact or use a company, product or service.
