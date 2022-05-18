@@ -2,7 +2,7 @@
 title: "AI（人工知能）"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: logo_pc.png
+cardImage: logo_pc.png
  
 ---
 
