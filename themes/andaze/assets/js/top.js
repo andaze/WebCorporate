@@ -388,7 +388,7 @@ img.addEventListener("load", () => {
   }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000)
   
   colorChangeLoop();
-  window.setInterval(colorChangeLoop, 25000); 
+  window.setInterval(colorChangeLoop, 25500); 
 
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
