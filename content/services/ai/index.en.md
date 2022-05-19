@@ -1,9 +1,8 @@
 ---
 title: "AI（Artificial Intelligence）"
 date: 2022-02-23T17:03:34+09:00
-cardImage: logo_pc.png
 weight: 1
-image: ai.jpg
+cardImage: ai.jpg
 headerImage:
     imageName: "ai.jpg"
     imageTitle: ""
@@ -35,14 +34,14 @@ Why is “Machine Learning” getting so much attention? With the spread of smar
 
 **Pros of machine learning**
 
--Prediction value is calculated by learning features
--Select multiple reproducible models by applying multiple algorithms
--Clustering classifies features to improve prediction accuracy
+- Prediction value is calculated by learning features
+- Select multiple reproducible models by applying multiple algorithms
+- Clustering classifies features to improve prediction accuracy
 
 **Cons**
 
--A certain amount of teacher data is required (at least 100 data for each classification)
--Retraining required to improve model accuracy
+- A certain amount of teacher data is required (at least 100 data for each classification)
+- Retraining required to improve model accuracy
 
 
 
