@@ -1,0 +1,11 @@
+{{ $.Scratch.Set "index" 1 }}
+{{ with .Site.GetPage "/"}}
+{{ range .Pages}}
+  {{ $id:= $.Scratch.Get "index" }}
+  {{ if or (eq (.Title) ("Site Map")) (eq (.Title) ("サイトマップ")) }}
+  {{ else }}
+   {{ partial "molecule-section-mobile-footer-pagelist.html" (dict "context" . "id" $id) }}
+   {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+  {{ end }}
+{{ end }}
+{{ end }}
