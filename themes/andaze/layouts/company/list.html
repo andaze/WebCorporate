@@ -1,11 +1,11 @@
 {{ define "main" }}
     {{ if .Page.Params.headerImage }}
-    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover lg:h-screen">
+    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover">
         {{partial "molecule-section-header-image.html" . }}
     </div>
     {{ else }}
         {{ if .Page.Params.headerVideo }}
-        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover lg:h-screen">
+        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover">
             {{partial "molecule-section-header-video.html" . }}
         </div>
         {{ end }}
