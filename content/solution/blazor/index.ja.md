@@ -3,7 +3,10 @@ title: "BLAZOR WEB"
 date: 2022-02-23T17:03:34+09:00
 weight: 5
 cardImage: blazor.jpg
-
+headerImage:
+    imageName: "blazor.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「シングルページアプリケーション (SPA)」が注目されているのでしょうか。ブラウザーからページごとに内容を読み込む代わりに、必要なデータだけを読み替えて、機能やコンテンツを切り替えることができるからです。SPA により、アプリケーションに対するユーザーの印象は大きく向上します。見た目や使い勝手の向上はもちろん、サクサク感のある動きを実現できます。Slack や Google Map の Web ページは、SPA を用いた有名な事例です。

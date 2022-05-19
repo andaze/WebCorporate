@@ -3,7 +3,10 @@ title: "Dynamics365"
 date: 2022-02-23T17:03:34+09:00
 weight: 3
 cardImage: dynamics365.jpg
-
+headerImage:
+    imageName: "dynamics365.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 Why is “Customer Relationship Management” getting so much attention? It is important to continue to cultivate new customers, but it is said to be an era in which we aim to increase sales as a whole by taking more care of our current customers. We need a system that manages information about customer relationships by keeping a history of contact with customers by the system.

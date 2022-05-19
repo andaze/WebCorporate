@@ -3,7 +3,10 @@ title: "HUGO WEB"
 date: 2022-02-23T17:03:34+09:00
 weight: 9
 cardImage: hugo.png
-
+headerImage:
+    imageName: "hugo.png"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜいま「静的ウェブサイト開発」が注目されているのでしょうか。 大きな理由として、Wordpress に代表されるコンテンツ・マネジメント・システム（CMS）を運用するうえで、3 つの課題があるからです。

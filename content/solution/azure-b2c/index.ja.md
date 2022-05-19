@@ -3,7 +3,10 @@ title: "AZURE B2C"
 date: 2022-02-23T17:03:34+09:00
 weight: 4
 cardImage: b2c.jpg
-
+headerImage:
+    imageName: "b2c.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「B2C 開発サービス」が重要なのでしょうか。近年の顧客情報の流出事件に対して、社会的な危機意識が高まっていることもその理由のひとつです。これからの情報漏洩については、個人情報保護委員会への報告と、本人への通知が義務付けられることになります。
