@@ -387,10 +387,8 @@ img.addEventListener("load", () => {
     colorChangeStart();
   }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000)
   
-  window.setTimeout(() => {
-    colorChangeLoop();
-    window.setInterval(colorChangeLoop, 40000); 
-  }, 5000)
+  colorChangeLoop();
+  window.setInterval(colorChangeLoop, 25500); 
 
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -866,9 +864,11 @@ img.addEventListener("load", () => {
       if (width >= width_break_point) {
         camera.position.z = 400;
         if (height <= height_break_point) {
-          mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
+           // mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
+           mesh.material.uniforms.u_value.value = ((width + height) / 1000) - ((1200 + height) / width);
         } else {
-          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+          // mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+          mesh.material.uniforms.u_value.value = ((width + height) / 600) - ((1200 + height) / width);
         }
       } else {
         camera.position.z = height / width * 400;
@@ -1180,7 +1180,7 @@ img.addEventListener("load", () => {
       x:  anime_nav.clientWidth*0.5,
     })
     .to(circle, {
-      duration: 0.8,
+      duration: 0.4,
       opacity: 0,
       x:  anime_nav.clientWidth*0.8,
       y: -5,
@@ -1240,7 +1240,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 0)
+    }, 15000)
   
     window.setTimeout(() => {
   
@@ -1257,7 +1257,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 15000)
+    }, 30000)
 
     window.setTimeout(() => {
   
@@ -1274,7 +1274,7 @@ img.addEventListener("load", () => {
           coloration.start();
         }
       }
-    }, 25000)
+    }, 45000)
   }
 
 
