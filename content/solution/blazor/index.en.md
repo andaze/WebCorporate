@@ -2,7 +2,8 @@
 title: "BLAZOR WEB"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: blazor.jpg
+cardImage: blazor.jpg
+
 ---
 
 Why is “single page application (SPA)” getting so much attention? This is because, instead of reading the contents for each page from the browser, you can change the functions and contents by replacing only the necessary data. SPAs can greatly improve the user's impression of your application. It not only improves appearance and usability, but also provides a crisp movement. Slack and Google Map web pages are well known examples of using SPA.

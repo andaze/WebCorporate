@@ -2,7 +2,8 @@
 title: "DEVEXPRESS"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: devexpress.jpg
+cardImage: devexpress.jpg
+
 ---
 
 なぜ「ユーザー体験」が注目されているのでしょうか。UX (user experience)は「ユーザー経験」「ユーザー体験」などと訳され、ユーザーが、会社や製品・サービスと接触・利用した際に得られる体験や感情の総称を言います。

@@ -2,7 +2,8 @@
 title: "AMP WEB"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: amp.jpg
+cardImage: amp.jpg
+
 ---
 
 Why is “Google Content Delivery Network Support (AMP)” getting so much attention? AMP is a standard jointly launched by Google and Twitter to make it easier for mobile users to view homepages. Direct translation of AMP (Accelerated Mobile Pages) means to speed up mobile pages.

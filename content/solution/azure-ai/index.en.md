@@ -2,7 +2,8 @@
 title: "AZURE AI"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: ai.jpg
+cardImage: ai.jpg
+
 ---
 
 Why is “Machine Learning” getting so much attention? With the spread of smartphones, a large amount of data has started to appear. As it is, it requires a great deal of cost and time to process complicated data, but now it is possible to realize by machine learning that "calculation of analysis results with speed and accuracy that cannot be achieved by humans". It was.

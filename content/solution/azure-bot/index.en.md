@@ -2,7 +2,8 @@
 title: "AZURE BOT FRAMEWORK"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-image: bot.jpg
+cardImage: bot.jpg
+
 ---
 
 Why are “chatbots” getting so much attention? A chatbot is a combination of chat and bot, which means "a robot that talks." It is not a physical robot but a communication tool for companies.
