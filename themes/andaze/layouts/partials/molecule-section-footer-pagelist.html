@@ -1,6 +1,6 @@
 {{ $pageTitle := strings.TrimRight "\\//" .File.Dir }}
 <div class="mr-8 mb-6 text-left">
-  {{ partial "atom-footer-page-title.html" (dict "pageTitle" $pageTitle) }}
+  {{ partial "atom-footer-page-title.html" (dict "pageTitle" .Title ) }}
   <ul class="list-none mb-0">
       {{ $section := site.GetPage $pageTitle }}
       {{ range $section.Pages }}
