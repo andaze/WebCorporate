@@ -3,8 +3,14 @@
 // ---------------------------------------------------------------------------------------------
 
 // トップページmainタグの高さを取得してfooterのmargin-topに設定
-const main_height = document.getElementById("top_main").clientHeight;
+var main_height = document.getElementById("top_main").clientHeight;
 document.querySelector("footer").style.marginTop = main_height + "px";
+
+// リサイズ時に再調整
+window.addEventListener('resize', () => {
+  main_height = document.getElementById("top_main").clientHeight;
+  document.querySelector("footer").style.marginTop = main_height + "px";
+});
 
 // canvasのmargin-topにheaderの高さを設定
 const canvas = document.getElementById('webgl');
