@@ -6,3 +6,31 @@
         {{ partial "atom-newtopic-slide-date.html" . }}
     </a>
 </div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    window.addEventListener('resize', function () { 
+        "use strict";
+        window.location.reload(); 
+    });
+    var sliderView;
+    if(screen.width > 320 && screen.width < 412)
+    {
+        sliderView = 1;
+    }
+    else if(screen.width > 413 && screen.width < 851)
+    {
+        sliderView = 2;
+    }
+    else
+    {
+        sliderView = 3; 
+    }
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: sliderView,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".next",
+            prevEl: ".previous",
+        },
+    });
+</script>
