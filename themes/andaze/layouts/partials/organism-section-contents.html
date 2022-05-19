@@ -1,4 +1,3 @@
-<div>
     {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
     <div class="flex flex-row flex-wrap">
         {{ range .Pages }}
@@ -6,5 +5,3 @@
         {{ end }}
     </div>
     {{ end }}
-
-</div>
