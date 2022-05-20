@@ -737,7 +737,7 @@ img.addEventListener("load", () => {
             if (moving_flag) {
               mesh_move.start();
               moving_flag = !moving_flag
-              window.setTimeout(sunction(){moving_flag = !moving_flag}, slide_time*100000*2 + 4000)
+              window.setTimeout(function() {moving_flag = !moving_flag}, slide_time*100000*2 + 4000)
             }
           }
         }
