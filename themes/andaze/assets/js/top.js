@@ -44,6 +44,11 @@ const img = new Image();
 img.src = "../img/logo.png";
 img.crossOrigin = "anonymous";
 
+// グローバル変数として定義
+window.slide_flag = false;
+window.fadein_times = 4;
+window.interval_time = 500;
+
 // 画像が読み込まれた後に処理を実行
 img.addEventListener("load", () => {
 
@@ -159,7 +164,7 @@ img.addEventListener("load", () => {
 
   // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
   const interval_time = 500;
-
+  
 
   // ---------------------------------------------------------------------------------------------
   //　タイマー処理関係変数定義
@@ -267,9 +272,6 @@ img.addEventListener("load", () => {
   // オブジェクト移動許可フラグ
   var moving_flag = false;
 
-  // スライドフラグ
-  var slide_flag = false;
-
   // raycaster検知フラグ
   var detection = false;
 
@@ -357,10 +359,6 @@ img.addEventListener("load", () => {
     currentWidth = window.innerWidth;
     onResize();
   });
-
-
-  //　インタラクションガイド セットアップ
-  interactionGuide();
 
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
@@ -755,7 +753,7 @@ img.addEventListener("load", () => {
 
             diffusion.start();
 
-            // インタラクションガイドを非表示
+            // インタラクションガイド(top_sub.jsで定義)を非表示
             nav_block.style.opacity = 0;
             nav_block.style.visibility = "hidden";
 
@@ -1159,43 +1157,6 @@ img.addEventListener("load", () => {
       gathering3d.start();
     }
   }
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義18　インタラクションガイド セットアップ
-  // ---------------------------------------------------------------------------------------------
-
-  function interactionGuide() {
-    const nav_block = document.getElementById("nav_block");
-    const circle = document.getElementById("circle");
-    const animation_nav = gsap.timeline();
-  
-    animation_nav
-    .to(circle, {
-      duration: 0.5,
-      opacity: .7,
-      y: 5,
-    })
-    .to(circle, {
-      duration: 0.5,
-      x:  anime_nav.clientWidth*0.5,
-    })
-    .to(circle, {
-      duration: 0.4,
-      opacity: 0,
-      x:  anime_nav.clientWidth*0.8,
-      y: -5,
-    });
-  
-    animation_nav.repeat(-1);
-  
-    window.setTimeout(() => {
-      if (slide_flag === false) {
-        nav_block.style.opacity = 1;
-        nav_block.style.visibility = "visible";
-      }
-    }, fadein_times*interval_time+5000);
-  }
-
 
   // ---------------------------------------------------------------------------------------------
   // 関数定義19　変色スタート
