@@ -1,5 +1,5 @@
 {{ if eq (.Scratch.Get "section") ("news") }}
-<h2 class="text-2x md:text-3xl text-black font-extrabold uppercase">{{ .Scratch.Get "section" }}</h2>
+<h2 class="text-2x md:text-3xl text-black font-bold uppercase">{{ .Scratch.Get "section" }}</h2>
 {{ else }}
-<h2 class="text-2x md:text-3xl text-white font-extrabold uppercase">{{ .Scratch.Get "section" }}</h2>
+<h2 class="text-2x md:text-3xl text-white font-bold uppercase">{{ .Scratch.Get "section" }}</h2>
 {{ end }}
