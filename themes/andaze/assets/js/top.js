@@ -297,8 +297,8 @@ img.addEventListener("load", () => {
     FadeIn(fadein_times-1, interval_time);
   
     // フラグ反転
-    window.setTimeout(reverse_click_flag, fadein_times*interval_time);
-    window.setTimeout(reverse_moving_flag, fadein_times*interval_time);
+    window.setTimeout(function(){click_flag = !click_flag}, fadein_times*interval_time);
+    window.setTimeout(function(){moving_flag = !moving_flag}, fadein_times*interval_time);
   }, 500);
 
 
@@ -368,12 +368,12 @@ img.addEventListener("load", () => {
 
     // ウィンドウが非アクティブの場合、アニメーション停止
     window.addEventListener('blur', () => {
-      stopDiffusion = true;
+      stopDiffusion = !stopDiffusion;
     });
   
     // ウィンドウがアクティブの場合、アニメーション再開
     window.addEventListener('focus', () => {
-      stopDiffusion = false;
+      stopDiffusion = !stopDiffusion;
     });  
 
   }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
@@ -523,24 +523,6 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義5 クリックフラグの反転
-  // ---------------------------------------------------------------------------------------------
-
-  function reverse_click_flag() {
-    click_flag = (click_flag === true) ? false : true;
-  }
-
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義6 オブジェクト移動フラグの反転
-  // ---------------------------------------------------------------------------------------------
-
-  function reverse_moving_flag() {
-    moving_flag = (moving_flag === true) ? false : true;
-  }
-  
-
-  // ---------------------------------------------------------------------------------------------
   // 関数定義7 タイマー関数（スライド時間の取得）
   // ---------------------------------------------------------------------------------------------
 
@@ -598,7 +580,7 @@ img.addEventListener("load", () => {
       event.preventDefault();
 
       // raycaster検知フラグ反転
-      detection = true;
+      detection = !detection
     }
 
     // タイマーカウントアップ処理
@@ -750,12 +732,12 @@ img.addEventListener("load", () => {
             nav_block.style.visibility = "hidden";
 
             // スライド可否フラグ反転
-            slide_flag = true;
+            slide_flag = !slide_flag
 
             if (moving_flag) {
               mesh_move.start();
-              reverse_moving_flag();
-              window.setTimeout(reverse_moving_flag, slide_time*100000*2 + 4000)
+              moving_flag = !moving_flag
+              window.setTimeout(sunction(){moving_flag = !moving_flag}, slide_time*100000*2 + 4000)
             }
           }
         }
@@ -777,7 +759,7 @@ img.addEventListener("load", () => {
     timeToadd = 0;
 
     // raycaster検知フラグをリセット
-    detection = false;
+    detection = !detection;
   }
 
 
@@ -911,7 +893,7 @@ img.addEventListener("load", () => {
 
   function autoDiffusion() {
 
-    if (stopDiffusion === true) {
+    if (stopDiffusion) {
       return;
     }
 
@@ -1033,12 +1015,12 @@ img.addEventListener("load", () => {
 
             auto_diffusion.start();
 
-            slide_flag = true;
+            slide_flag = !slide_flag
 
             if (moving_flag & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
               auto_move.start();
-              reverse_moving_flag();
-              window.setTimeout(reverse_moving_flag, 12000*2)
+              moving_flag = !moving_flag
+              window.setTimeout(function(){moving_flag = !moving_flag}, 12000*2)
             }
           }
         }
