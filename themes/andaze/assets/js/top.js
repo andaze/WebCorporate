@@ -267,7 +267,7 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   // クリック許可フラグ
-  var click_frag = false;
+  var click_flag = false;
   
   // オブジェクト移動許可フラグ
   var moving_flag = false;
@@ -527,11 +527,7 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function reverse_click_flag() {
-    if (click_frag == false) {
-      click_frag = true;
-    } else {
-      click_frag = false;
-    }
+    click_flag = (click_flag === true) ? false : true;
   }
 
 
@@ -540,11 +536,7 @@ img.addEventListener("load", () => {
   // ---------------------------------------------------------------------------------------------
 
   function reverse_moving_flag() {
-    if (moving_flag === false) {
-      moving_flag = true;
-    } else if (moving_flag === true) {
-      moving_flag = false;
-    }
+    moving_flag = (moving_flag === true) ? false : true;
   }
   
 
@@ -626,7 +618,7 @@ img.addEventListener("load", () => {
   function diffusion(event) {
 
     // raycasterがオブジェクトを検知していれば以降の処理を行う
-    if (detection === true) {
+    if (detection) {
       event.preventDefault();
     }
 
@@ -646,7 +638,7 @@ img.addEventListener("load", () => {
     slide_distance_abs.x = Math.abs(slide_distance.x);
     slide_distance_abs.y = Math.abs(slide_distance.y);
 
-    if (click_frag==true) {
+    if (click_flag) {
       for (let i = 0; i < vertces; i++) {
         
         // パーティクルの座標
@@ -760,7 +752,7 @@ img.addEventListener("load", () => {
             // スライド可否フラグ反転
             slide_flag = true;
 
-            if (moving_flag === true) {
+            if (moving_flag) {
               mesh_move.start();
               reverse_moving_flag();
               window.setTimeout(reverse_moving_flag, slide_time*100000*2 + 4000)
@@ -955,7 +947,7 @@ img.addEventListener("load", () => {
     }
     
     
-    if (click_frag==true) {
+    if (click_flag) {
       for (let i = 0; i < vertces; i++) {
         
         // パーティクルの座標
@@ -1043,7 +1035,7 @@ img.addEventListener("load", () => {
 
             slide_flag = true;
 
-            if (moving_flag === true & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
+            if (moving_flag & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
               auto_move.start();
               reverse_moving_flag();
               window.setTimeout(reverse_moving_flag, 12000*2)
