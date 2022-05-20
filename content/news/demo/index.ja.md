@@ -1,11 +1,11 @@
 ---
-title: "demo"
-date: 2022-03-08T17:42:10+09:00
-weight: 0
+title: "News1"
+date: 2022-05-20T17:42:10+09:00
+weight: 1
 newsimg: dummy.jpg
-newstitle: "「FTSE Blossom Japan Sector Relative Index」の構成銘柄に選定"
+newsDescription: "「バイトルPRO」1年で求人件数は50万件超、医療・介護等領域でNo.1に"
 tags:
-    - announcement
+    - アナウンスメント
 ---
 
 ニュース詳細ページのコンテンツはこちら

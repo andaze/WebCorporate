@@ -1,5 +1,5 @@
 ---
-title: "archive page"
+title: "News"
 date: 2022-02-23T17:03:34+09:00
 weight: 6
 ---
