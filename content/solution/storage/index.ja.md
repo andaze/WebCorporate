@@ -1,9 +1,12 @@
 ---
 title: "AZURE TABLE STORAGE"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 11
 cardImage: storage.jpg
-
+headerImage:
+    imageName: "storage.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「ビッグデータ」が注目されているのでしょうか。スマホの普及などに伴い、大量のデータが出現するようになりました。冷蔵庫やエアコンまでが、インターネットに接続され、新しいデータを生成し続けることで、企業の保守データは指数関数的に増加しています。

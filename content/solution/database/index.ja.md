@@ -1,9 +1,12 @@
 ---
 title: "AZURE COSMOS DATABASE"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 10
 cardImage: database.jpg
-
+headerImage:
+    imageName: "database.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「データベース最適化」が重要なのでしょうか。大量のデータを保持しながら、リアルタイムに分析を行うなど、指数関数的に増加するデータを扱うために、従来の RDB を補完する形で NOSQL を利用する企業が増えています。

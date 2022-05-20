@@ -1,9 +1,12 @@
 ---
 title: "SIGNALR"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 6
 cardImage: signalr.jpg
-
+headerImage:
+    imageName: "signalr.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 Why is the "two-way communication web service" attracting attention? For information such as stock charts and chats, real-time properties are required as product value. In the old system, the information was updated with a mechanism such as periodic screen updates. It was not a good user experience because the amount of communication for that purpose increased and the screen flickered.

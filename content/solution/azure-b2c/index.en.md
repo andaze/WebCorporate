@@ -1,9 +1,12 @@
 ---
 title: "AZURE B2C"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 4
 cardImage: b2c.jpg
-
+headerImage:
+    imageName: "b2c.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 Why is "B2C development service" important? The awareness of social crisis has increased in response to the recent leak of customer information. Regarding future information leaks, it will be obligatory to report to the Personal Information Protection Committee and notify the person in question.

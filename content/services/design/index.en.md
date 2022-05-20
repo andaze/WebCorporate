@@ -1,30 +1,32 @@
 ---
 title: "UI/UXデザイン"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 4
 cardImage: logo_pc.png
 
  
 ---
 
-## UI/UXデザイン
-心地よく快適で、使いやすいプロダクト開発をサポート
-美しいデザイン、使いやすい機能、そして直感的に理解できる色やテイスト。アンダーズは、豊富な実績と知見を元にUIやUXを最高の形で表現します。高い専門性を活かし、お客様のご要望に沿いながら、顧客体験を最重視した開発を支援。一つひとつに意味と価値を持つ、最良のUI/UXデザインをご体感ください。
+## UI/UX Design
+Supporting the development of products that are comfortable, pleasant, and easy to use   
+Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaz expresses UI and UX in the best possible way based on our extensive experience and knowledge. We leverage our high level of expertise to support development that places the highest priority on the customer experience while adhering to the client's requirements. Experience the best UI/UX design with meaning and value in every single piece.
 
-### アンダーズが選ばれる理由　
-(1)	課題解決とユーザーの使い心地を兼ね備えた設計
-•	貴社の現状と業界を深く理解し、ビジネスの価値をより高めるUIやUXを提案します。
-•	「機能」だけでなく、使いやすい・分かりやすいといった「体験」も重視します。
-•	これまで幅広い業界で私たちの製品が採用されています。
-(2)	機能性とビジュアルを理想的な形で両立
-•	革新的なフレームワークを活用し、スピード感を持って開発を進めます。
-•	設計図に忠実に作るよりも、試作品を作って改良を重ねるプロセスを重視。高いユーザビリティを追求します。
-•	培った知見と経験をもとに、客観的かつ中立的な立場からユーザーが使いやすい機能的なビジュアルに導きます。
-(3)	ワンストップでサービスを提供
-•	要件定義からデザイン、設計、運用まですべて自社で完結。専門のシェアード・チームがワンストップでサービスを提供します。
-•	導入後も、開発に携わったエキスパートがサービスの改善や強化を継続的に提案します。
-•	戦略面から運用後まで、あらゆることを相談できる強力なパートナーシップを築きます。
+### Why choose Andaz?　
+(1) Design that combines problem solving and user comfort
+* We gain a deep understanding of your company's current situation and industry, and propose UI and UX that will enhance the value of your business.
+* We focus not only on "functionality" but also on "experience" such as ease of use and understanding.
+* Our products have been used in a wide range of industries.
 
-### 事例紹介
+(2) Ideal combination of functionality and visuals
+* We utilize innovative frameworks and proceed with development with a sense of speed.
+* We emphasize the process of prototyping and making improvements rather than adhering to blueprints. Pursue high usability.
+* Based on our accumulated knowledge and experience, we guide our clients to functional visuals that are easy for users to use from an objective and neutral standpoint.
 
-### アンダーズが擁するプロフェッショナル
+(3) One-stop service
+* We complete everything in-house, from requirement definition to design, design, and operation. Our specialized shared team provides one-stop service.
+* Even after implementation, experts involved in the development of the service will continuously propose improvements and enhancements to the service.
+* We build a strong partnership where you can consult with us on everything from strategic aspects to post-implementation.
+
+### Case Studies
+
+### Professionals with Andaz

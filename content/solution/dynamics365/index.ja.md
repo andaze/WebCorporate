@@ -1,9 +1,12 @@
 ---
 title: "Dynamics365"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 3
 cardImage: dynamics365.jpg
-
+headerImage:
+    imageName: "dynamics365.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「顧客関係管理」が注目されているのでしょうか。新規開拓をし続けることも重要ですが、現在の顧客をさらに手厚くケアして、全体かつ長期的な売り上げアップを目指す時代といわれています。そのためには、接触履歴を残し、顧客との関係を情報管理するシステムが必要だからです。

@@ -1,9 +1,12 @@
 ---
 title: "AZURE BOT FRAMEWORK"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 1
 cardImage: bot.jpg
-
+headerImage:
+    imageName: "bot.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「チャットボット」が注目されているのでしょうか。チャットボットは、chat と bot を組み合わせた言葉で、「会話するロボット」という意味です。物体的なロボットではなく、企業にとってはコミュニケーションを行う重要なツールとなります。

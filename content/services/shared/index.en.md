@@ -1,19 +1,22 @@
 ---
 title: "シェアードチーム"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 7
 cardImage: logo_pc.png
 
  
 ---
 
-## シェアードチーム
+## Shared Team
 
-### アンダーズが選ばれる理由
+### Why Choose Andaz?
 
-### アンダーズが擁するプロフェッショナル
+### Andaz professionals
 
-### プロジェクト成功を支える“シェアード・チーム”（提供するサービスから移動）
-多彩なメンバーの高いスキルを投入
-シェアード・チームとは、各分野のプロフェッショナルで構成された集合体。コンサルタント、PM、エンジニアそれぞれが、目標達成に向けて主体的にプロジェクトの舵を取ります。構成メンバーを固定しないことで、案件の大小にかかわらず、アンダーズのスタッフ全員がお客さまの技術情報を自然に把握。必要に応じて知見を提供することが可能です。また業務範囲を限定することなく、戦略立案から設計、運用、ヘルプデスクまで、貴社の状況に合わせて臨機応変に動ける「準委任契約」と呼ばれるスタイルも特徴。一人ひとりの活躍の場が広いため、培ったノウハウをお客様のプロジェクトに活かせる点も強みのひとつです。もちろん、企業秘密は口外いたしません。
-昨今の進化するテクノロジー環境は、変化することが当たり前。私たちは、そんな成長プロセスに寄り添いながら積極的に挑戦する労力を惜しみません。そんな各部門のプロフェッショナルが、多様なリーダーシップを発揮してチームを動かす。新時代のマネジメントスタイル「シェアード・チーム」が、個々の高いパフォーマンスを結集させることで、プロジェクトの成功を適正価格で支えます。
+### Shared Teams" (move from the services we provide) to support the success of your project.
+
+A diverse team of highly skilled professionals   
+
+Shared Team is a group of professionals from various fields. Each consultant, PM, and engineer takes the initiative in steering the project to achieve the goals. By not having a fixed number of team members, all Andaz staff naturally understand the client's technical information, regardless of the size of the project. We are able to provide our knowledge as needed. We do not limit the scope of work, but rather offer a flexible "quasi-contract" style that allows us to work flexibly according to your company's situation, from strategic planning to design, operation, and helpdesk services. One of our strengths is that we can utilize the know-how we have cultivated for our clients' projects because each individual has a wide range of activities. Of course, we do not divulge trade secrets.
+
+In today's evolving technology environment, change is the norm. We spare no effort to proactively take on challenges while staying close to such a growth process. Professionals in each department exercise diverse leadership skills to drive the team. The "Shared Team," a new-age management style, brings together the high performance of each individual to support the success of projects at a reasonable price.

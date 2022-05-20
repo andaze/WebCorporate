@@ -1,8 +1,12 @@
 ---
 title: "AMP WEB"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 8
 cardImage: amp.jpg
+headerImage:
+    imageName: "amp.jpg"
+    imageTitle: ""
+    imageDescription: ""
 
 ---
 なぜ「Google コンテンツ配信ネットワーク対応（AMP）」が注目されているのでしょうか。AMP は、モバイルユーザーが快適にホームページを見られるように Google と Twitter が共同で立ち上げた規格です。AMP（Accelerated Mobile Pages）を直訳すると、「モバイル用のページを早くする」という意味です

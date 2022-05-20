@@ -1,9 +1,12 @@
 ---
 title: "SIGNALR"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 6
 cardImage: signalr.jpg
-
+headerImage:
+    imageName: "signalr.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 なぜ「双方向通信ウェブサービス」が注目されているのでしょうか。株価チャートやチャットなどの情報は、製品の価値としてリアルタイム性が求められています。古いシステムでは、定期的な画面更新といった仕組みで、情報を最新化していました。そのための通信量が多くなり、画面がチカチカするなど、決して良いユーザー体験ではありませんでした。

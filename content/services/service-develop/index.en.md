@@ -1,30 +1,34 @@
 ---
 title: "新規事業サービス開発"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 6
 cardImage: logo_pc.png
 
  
 ---
 
-## 新規事業サービス開発　
-新規事業から既存システムを使った拡張まで支援
-書類のようなアナログ情報のデジタル化や、一からビジネスモデルを生み出す新規事業まで、DXの可能性は無限大です。アンダーズは、優れた技術を活用したサービスの戦略立案から実装、運用保守まで20年以上の経験を持つシェアード・チームがワンストップで手がけます。より客観的に、より中立的に。実現可能なコストの範囲で、お客様のデジタル改革をサポートします。
+## New Business Service Development　
 
-### アンダーズが選ばれる理由
-(1)	トレンドをおさえたサービスデザイン力
-•	市場のトレンドをいち早く押さえ、その先端を走る新規サービス開発を支援します。
-•	既存事業との相乗効果が期待できるビジネスモデルを提案します。
-•	単なる作業者として手を動かすのではなく、提案型でプロジェクトをリードすることを大切にしています。
-(2)	専門のエキスパートによる業務設計サポート
-•	事業ごとに専門のエキスパートが、業務設計を支援します。
-•	業務監査等のサポートもお任せください。
-•	新規事業から事業拡張まで、すべてを相談できる戦略的パートナーです。
-(3)	新規事業に参入できるシステム開発力
-•	システム化する内容をビジネスの視点から明らかにし、基本設計を行います。
-•	共同利用型のクラウドやライブラリを使うことで、短期間での新規立ち上げが可能です。
-•	最終的に目指したいのは事業の収益化。そのため運用後の改善提案や品質強化も私たちの強みです。
+Support from new business to expansion using existing systems   
+From the digitization of analog information such as documents to new businesses that create business models from scratch, the possibilities for DX are endless. Andaz's one-stop shared team with over 20 years of experience handles everything from strategic planning to implementation, operation, and maintenance of services utilizing superior technology. More objective and neutral. We support your digital innovation within the feasible cost range.
 
-### 事例紹介
+### Why choose Andaz?
 
-### アンダーズが擁するプロフェッショナル
+(1) Trend-setting service design capabilities
+* We are quick to identify market trends and support the development of new services that are at the forefront of these trends.
+* We propose business models that can be synergistic with existing businesses.
+* We place importance on leading projects in a proposal-oriented manner, rather than simply being a hands-on worker.
+
+(2) Business design support by specialized experts
+* Specialized experts for each business will provide support for business design.
+* We can also provide support for business audits, etc.
+* A strategic partner with whom you can consult on everything from new business to business expansion.
+
+(3) System development capabilities to enter new businesses
+* We clarify the contents to be systematized from a business perspective and perform basic design.
+* By using shared use cloud and libraries, we can launch a new business in a short period of time.
+* The ultimate goal is to make the business profitable. Therefore, post-operational improvement proposals and quality enhancement are also our strengths.
+
+### Case Studies
+
+### Professionals at Andaz

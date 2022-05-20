@@ -1,9 +1,12 @@
 ---
 title: "AZURE COSMOS DATABASE"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 10
 cardImage: database.jpg
-
+headerImage:
+    imageName: "database.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 Why is "database optimization" important? An increasing number of companies are using NOSQL to complement traditional RDBs to handle exponentially growing data, such as real-time analytics while holding large amounts of data.

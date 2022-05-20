@@ -1,9 +1,12 @@
 ---
 title: "AZURE TABLE STORAGE"
 date: 2022-02-23T17:03:34+09:00
-weight: 0
+weight: 11
 cardImage: storage.jpg
-
+headerImage:
+    imageName: "storage.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 Why is "Big Data" attracting attention? With the spread of smartphones, a large amount of data has started to appear. Even refrigerators and air conditioners are connected to the Internet and continue to generate new data. Corporate maintenance data is growing exponentially.
