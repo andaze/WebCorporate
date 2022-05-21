@@ -1,11 +1,23 @@
-<div class="px-10 md:px-20 mt-20">
+
+{{ if .Page.Params.headerImage }}
+    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover">
+        {{partial "molecule-section-header-image.html" . }}
+    </div>
+{{ else }}
+    {{ if .Page.Params.headerVideo }}
+        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover">
+            {{partial "molecule-section-header-video.html" . }}
+        </div>
+    {{ end }}
+{{ end }}
+<div class="container mx-auto px-5 lg:px-44 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
     {{ partial "breadcrumbs.html" . }}
-    <div class="md:flex mt-5">
-        <div class="w-full md:w-1/3">
-            {{ partial "organism-section-news-left.html" . }}
-        </div>
-        <div class="w-full md:w-2/3 bg-white">
+</div>
+<div class="p-5 container lg:px-44 mx-auto flex">
+    <div class="w-full hidden md:block md:w-1/4 ">
+        {{ partial "organism-section-news-left.html" . }}
+    </div>
+    <div class="w-full md:w-3/4 bg-white">
         {{ partial "organism-section-news-right.html" . }}
-        </div>
     </div>
 </div>

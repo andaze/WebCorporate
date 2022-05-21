@@ -1,40 +1,116 @@
-    {{ $paginator := .Paginator }}
-    {{ if gt $paginator.TotalPages 1 }}        
-    <nav aria-label="Page navigation example">
-        <ul class="inline-flex -space-x-px">
-            <li>
-                {{ if ne $paginator.PageNumber 1 }} 
-                    <a href="{{ $paginator.First.URL }} " class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">First</a>
-                {{ else }}
-                    <a href="javascript:;" class="opacity-50 cursor-not-allowed py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">First</a>
-                {{ end }}
-            </li>
-            <li>
-                {{ if $paginator.HasPrev }}
-                <a href="{{ $paginator.Prev.URL }}" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                {{ else }}
-                <a href="javascript:;" class="opacity-50 cursor-not-allowed py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                {{ end }}
-            </li>
-            {{ range $paginator.Pagers }}
-            <li>
-                <a href="{{ .URL }}" class="{{ if eq ($paginator.PageNumber) (.PageNumber) }} bg-indigo-50 border-indigo-500 {{ end }}py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ .PageNumber }}</a>
-            </li>
-            {{ end }}
-            <li>
-                {{ if $paginator.HasNext }}
-                <a href="{{ $paginator.Next.URL }} " class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                {{ else }}
-                <a href="javascript:;" class="opacity-50 cursor-not-allowed py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                {{ end }}
-            </li>
-            <li>
-                {{ if ne $paginator.PageNumber $paginator.TotalPages }} 
-                <a href="{{ $paginator.Last.URL }}" class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Last</a>
-                {{ else }}
-                <a href="javascript;;" class="opacity-50 cursor-not-allowed py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Last</a>
-                {{ end }}
-            </li>
-        </ul>
-    </nav>
-    {{ end }}
+{{- $validFormats := slice "default" "terse" }}
+
+{{- $msg1 := "When passing a map to the internal pagination template, one of the elements must be named 'page', and it must be set to the context of the current page." }}
+{{- $msg2 := "The 'format' specified in the map passed to the internal pagination template is invalid. Valid choices are: %s." }}
+
+{{- $page := . }}
+{{- $format := "default" }}
+
+{{- if reflect.IsMap . }}
+  {{- with .page }}
+    {{- $page = . }}
+  {{- else }}
+    {{- errorf $msg1 }}
+  {{- end }}
+  {{- with .format }}
+    {{- $format = lower . }}
+  {{- end }}
+{{- end }}
+
+{{- if in $validFormats $format }}
+  {{- if gt $page.Paginator.TotalPages 1 }}
+    <ul class="inline-flex -space-x-px pagination pagination-{{ $format }}">
+      {{- partial (printf "partials/inline/pagination/%s" $format) $page }}
+    </ul>
+  {{- end }}
+{{- else }}
+  {{- errorf $msg2 (delimit $validFormats ", ") }}
+{{- end -}}
+
+{{/* Format: default
+{{/* --------------------------------------------------------------------- */}}
+{{- define "partials/inline/pagination/default" }}
+  {{- with .Paginator }}
+    {{- $currentPageNumber := .PageNumber }}
+
+    <!-- {{- with .First }}
+      {{- if ne $currentPageNumber .PageNumber }}
+      <li class="page-item">
+        <a href="{{ .URL }}" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      {{- else }}
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      {{- end }}
+    {{- end }} -->
+
+    {{- with .Prev }}
+      <li class="page-item bg-transparent hover:bg-black font-normal text-black hover:text-white py-2 px-5 border hover:border-transparent rounded">
+        <a href="{{ .URL }}" aria-label="Previous" class="page-link" role="button">
+            <svg class="h-6 w-4"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+        </a>
+      </li>
+    {{- else }}
+      <li class="page-item opacity-50 cursor-not-allowed hover:bg-black font-normal text-black hover:text-white py-2 px-5 border hover:border-transparent rounded">
+        <a aria-disabled="true" aria-label="Previous" class="page-link hover:bg-black" role="button" tabindex="-1">
+            <svg class="h-6 w-4"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+        </a>
+      </li>
+    {{- end }}
+
+    {{- $slots := 10 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+      {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- range $k := seq $start $end }}
+      {{- if eq $.Paginator.PageNumber $k }}
+      <li class='page-item {{ if "active" }} text-black underline underline-offset-4{{ end }} py-2 px-4 text-gray-400 font-normal'>
+        <a aria-current="page" aria-label="Page {{ $k }}" class="page-link" role="button">{{ $k }}</a>
+      </li>
+      {{- else }}
+      <li class="page-item py-2 px-4 text-gray-400 font-normal">
+        <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" aria-label="Page {{ $k }}" class="page-link" role="button">{{ $k }}</a>
+      </li>
+      {{- end }}
+    {{- end }}
+
+    {{- with .Next }}
+      <li class="page-item py-2 px-5 bg-transparent hover:bg-black font-normal text-black hover:text-white border hover:border-transparent rounded">
+        <a href="{{ .URL }}" aria-label="Next" class="page-link" role="button">
+            <svg class="h-6 w-4"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+      </li>
+    {{- else }}
+      <li class="page-item disabled py-2 px-5 opacity-50 cursor-not-allowed bg-transparent hover:bg-black font-normal text-black hover:text-white border hover:border-transparent rounded">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">
+            <svg class="h-6 w-4"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+      </li>
+    {{- end }}
+
+    <!-- {{- with .Last }}
+      {{- if ne $currentPageNumber .PageNumber }}
+      <li class="page-item">
+        <a href="{{ .URL }}" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+      {{- else }}
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+      {{- end }}
+    {{- end }} -->
+
+  {{- end }}
+{{- end -}}
