@@ -531,9 +531,11 @@ img.addEventListener("load", () => {
     pushed_pos.x = event.clientX - (width / 2);
     pushed_pos.y = - (event.clientY - (height / 2)) + header_height + camera.position.y;
     
+    
     // raycaster用マウス座標取得
     mouse_pos.x = ( event.clientX / width ) * 2 - 1;
     mouse_pos.y = - ( event.clientY / height ) * 2 + 1;
+
 
     // タップした位置の座標を記憶（スマホ）
     if (typeof window.ontouchstart != "undefined") {
@@ -545,11 +547,14 @@ img.addEventListener("load", () => {
       mouse_pos.y = - ( event.changedTouches[0].pageY / height ) * 2 + 1;
     }
 
+
     // raycasterセット
     raycaster.setFromCamera( mouse_pos, camera );
 
+
     // raycasterがオブジェクトと接触しているか検知
     var intersects = raycaster.intersectObjects( objects );
+
 
     // raycasterがオブジェクトと接触していれば以降の処理を行う
     if ( intersects.length > 0 ) {
@@ -559,6 +564,7 @@ img.addEventListener("load", () => {
       // raycaster検知フラグ反転
       detection = !detection
     }
+
 
     // タイマーカウントアップ処理
     //在時刻を示すDate.nowを代入
@@ -581,6 +587,7 @@ img.addEventListener("load", () => {
       event.preventDefault();
     }
 
+
     // マウスを放した位置の座標を記憶（PC）
     released_pos.x = event.clientX - (width / 2);
     released_pos.y = - (event.clientY - (height / 2)) + header_height + camera.position.y;
@@ -591,11 +598,13 @@ img.addEventListener("load", () => {
       released_pos.y = - (event.changedTouches[0].pageY - (height / 2)) + header_height + camera.position.y;
     }
 
+
     // マウスを押し込んでスライドした距離
     slide_distance.x = released_pos.x - pushed_pos.x;
     slide_distance.y = released_pos.y - pushed_pos.y;
     slide_distance_abs.x = Math.abs(slide_distance.x);
     slide_distance_abs.y = Math.abs(slide_distance.y);
+
 
     if (click_flag) {
       for (let i = 0; i < vertces; i++) {
@@ -604,9 +613,11 @@ img.addEventListener("load", () => {
         particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
         particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
 
+
         // オブジェクト頂点座標
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
         
+
         // スライド開始座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( particle_pos.x - pushed_pos.x, 2 ) + Math.pow( particle_pos.y - pushed_pos.y, 2 ) ) ;
 
@@ -617,6 +628,7 @@ img.addEventListener("load", () => {
         } else {
           var power = 2;
         }
+
 
         if (particleFlag[i] === 1) {
           // スライド開始座標からパーティクルまでの距離が10より小さい場合、拡散対象に設定
@@ -666,12 +678,15 @@ img.addEventListener("load", () => {
               return
             }
             
+            // 拡散方向・距離の決定
             random_value.x = random_numbers * mark.x;
             random_value.y = random_numbers * mark.y;
   
+
             // パーティクル拡散時の到達座標
             destination.x = particlePositions[3*i] + random_value.x + (slide_distance.x / (slide_time * 20));
             destination.y = particlePositions[3*i+1] + random_value.y + (slide_distance.y / (slide_time * 20));
+
 
             // パーティクルのTweenアニメーション
             var diffusion = new TWEEN.Tween(vertex_position);
@@ -684,6 +699,7 @@ img.addEventListener("load", () => {
             });
             diffusion.repeat(1);
             diffusion.yoyo(true);
+
 
             // オブジェクトのTweenアニメーション
             var mesh_move = new TWEEN.Tween(mesh_position);
@@ -702,15 +718,21 @@ img.addEventListener("load", () => {
             mesh_move.repeat(1);
             mesh_move.yoyo(true);
 
+
+            // パーティクル拡散
             diffusion.start();
+
 
             // インタラクションガイド(top_sub.jsで定義)を非表示
             nav_block.style.opacity = 0;
             nav_block.style.visibility = "hidden";
 
+
             // スライド可否フラグ反転
             slide_flag = !slide_flag
 
+
+            // オブジェクト移動
             if (moving_flag) {
               mesh_move.start();
               moving_flag = !moving_flag
@@ -901,24 +923,20 @@ img.addEventListener("load", () => {
       return;
     }
 
-    random_numbers = randomNumbers(200, 50);
-    var direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
-    var direction_coef = direction_coefs[Math.floor(Math.random() * direction_coefs.length)];
-    var direction_coef_first = random_numbers * direction_coef[0];
-    var direction_coef_second = random_numbers * direction_coef[1];
-
-
-    // ランダム値作成（パーティクルが存在する座標範囲内）
+    // パーティクルが存在する座標範囲内を決定するための乱数生成
     pos_range_plus.x = randomNumbers(375, 0);
     pos_range_minus.x = -1 * randomNumbers(400, 0);
     pos_range_plus.y = randomNumbers(410, 0);
     pos_range_minus.y = -1 * randomNumbers(230, 0);
 
+
+    // 疑似クリック・タップ座標値の生成
     random_pos.x = [pos_range_plus.x, pos_range_minus.x];
     random_pos.y = [pos_range_plus.y, pos_range_minus.y];
     
     random_pushed_pos.x = random_pos.x[Math.floor(Math.random() * random_pos.x.length)];
     random_pushed_pos.y = random_pos.y[Math.floor(Math.random() * random_pos.y.length)];
+
 
     // 疑似スライド距離の値を作成
     random_slide_distance.x = randomNumbers(200, 5) * plusMinus();
@@ -931,6 +949,16 @@ img.addEventListener("load", () => {
     } else {
       var diameter = 20;
     }
+
+    
+    // パーティクル拡散距離方向を決定するための乱数生成
+    random_numbers = randomNumbers(200, 50);
+    var direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
+    var direction_coef = direction_coefs[Math.floor(Math.random() * direction_coefs.length)];
+
+    // x, y方向のために2種類生成
+    var direction_coef_first = random_numbers * direction_coef[0];
+    var direction_coef_second = random_numbers * direction_coef[1];
     
     
     if (click_flag) {
@@ -943,7 +971,7 @@ img.addEventListener("load", () => {
         var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
         
 
-        // ランダム座標からパーティクルまでの距離
+        // 疑似クリック・タップ座標からパーティクルまでの距離
         var distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
         
 
@@ -966,8 +994,10 @@ img.addEventListener("load", () => {
             
             particleFlag[i] = 0;
 
+            // 減衰係数
             var attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
   
+
             // パーティクル拡散時の到達座標
             destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
             destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
@@ -1017,10 +1047,15 @@ img.addEventListener("load", () => {
 
             auto_move.chain(auto_return);
 
+            // パーティクル拡散
             auto_diffusion.start();
 
+
+            // スライドフラグ反転
             slide_flag = !slide_flag
 
+
+            // オブジェクト移動
             if (moving_flag & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
               auto_move.start();
               moving_flag = !moving_flag
