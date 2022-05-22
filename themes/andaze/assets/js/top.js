@@ -333,33 +333,10 @@ img.addEventListener("load", () => {
 
 
   // 初期化のために実行
-  onResize();
+  setResize();
 
   // リサイズイベント発生時に実行
-  var currentWidth = window.innerWidth;
-  var currentHeight = window.innerHeight;
-  
-  window.addEventListener("resize", function() {
-
-    if (currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
-
-      // インタラクションガイドの位置を変更。
-      if (currentHeight < window.innerHeight) {
-        nav_block.style.bottom = (height*0.15 + 80) + 'px';
-      } else {
-        nav_block.style.bottom = height*0.15 + 'px';
-      }
-
-      // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
-      return;
-    }
-    
-    // ウインドウ横幅が変わったのでリサイズと見なす。
-    // 横幅を更新
-    currentWidth = window.innerWidth;
-    onResize();
-  });
-
+  onResize();
 
   // ロードから一定時間経過後、自動でパーティクルを拡散
   window.setTimeout(() => {
@@ -806,7 +783,7 @@ img.addEventListener("load", () => {
   // 関数定義11　リサイズ対応
   // ---------------------------------------------------------------------------------------------
 
-  function onResize() {
+  function setResize() {
 
     // ウィンドウサイズを取得
     const width = window.innerWidth;
@@ -884,6 +861,33 @@ img.addEventListener("load", () => {
     // レンダラーのサイズを調整する
     renderer.setSize(width, height -  header_height);
     
+  }
+
+  function onResize() {
+    var currentWidth = window.innerWidth;
+    var currentHeight = window.innerHeight;
+    
+    window.addEventListener("resize", function() {
+  
+      if (currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
+  
+        // インタラクションガイドの位置を変更。
+        if (currentHeight < window.innerHeight) {
+          nav_block.style.bottom = (height*0.15 + 80) + 'px';
+        } else {
+          nav_block.style.bottom = height*0.15 + 'px';
+        }
+  
+        // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
+        return;
+      }
+      
+      // ウインドウ横幅が変わったのでリサイズと見なす。
+      // 横幅を更新
+      currentWidth = window.innerWidth;
+      setResize();
+    });
+  
   }
 
 
