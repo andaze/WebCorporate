@@ -424,7 +424,6 @@ img.addEventListener("load", () => {
 
   function setResize() {
 
-    console.log(resized_width)
     // ウィンドウサイズを取得
     const width = window.innerWidth;
     const height = window.innerHeight;
