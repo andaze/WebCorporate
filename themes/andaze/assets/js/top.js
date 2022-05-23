@@ -360,8 +360,8 @@ img.addEventListener("load", () => {
   // パーティクルを変色させる
   window.setTimeout(() => {
     colorChangeStart(88, 0, 219, 219, 212, 0);
-  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000)
-  
+  }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000);
+
   colorChangeLoop();
   window.setInterval(colorChangeLoop, 25500); 
 
@@ -1213,60 +1213,42 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義19　変色ループ
+  // 関数定義19　変色アニメーション（初回後）
+  // ---------------------------------------------------------------------------------------------
+
+  function colorChange(from_r, from_g, from_b, to_r, to_g, to_b) {
+    for (let i=0; i < vertces; i++) {
+      if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (from_r/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (from_g/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (from_b/255).toFixed(2))) {
+        var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2], f: particleColorChangeFlag[i]};
+        var coloration = new TWEEN.Tween(vertex_color);
+        coloration.to({r: (to_r/255).toFixed(2), g: (to_g/255).toFixed(2), b: (to_b/255).toFixed(2)}, 5000);
+        coloration.onUpdate(function (object) {
+          particleColor[3*i] = object.r;
+          particleColor[3*i+1] = object.g;
+          particleColor[3*i+2] = object.b;
+        });
+        coloration.start();
+      }
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義20　変色ループ
   // ---------------------------------------------------------------------------------------------
 
   function colorChangeLoop() {
 
     window.setTimeout(() => {
-  
-      for (let i=0; i < vertces; i++) {
-        if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (219/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (212/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (0/255).toFixed(2))) {
-          var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2]};
-          var coloration = new TWEEN.Tween(vertex_color);
-          coloration.to({r: (88/255).toFixed(2), g: (0/255).toFixed(2), b: (219/255).toFixed(2)}, 5000);
-          coloration.onUpdate(function (object) {
-            particleColor[3*i] = object.r;
-            particleColor[3*i+1] = object.g;
-            particleColor[3*i+2] = object.b;
-          });
-          coloration.start();
-        }
-      }
+      colorChange(219, 212, 0, 88, 0, 219);
     }, 15000)
   
     window.setTimeout(() => {
-  
-      for (let i=0; i < vertces; i++) {
-        if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (88/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (0/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (219/255).toFixed(2))) {
-          var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2], f: particleColorChangeFlag[i]};
-          var coloration = new TWEEN.Tween(vertex_color);
-          coloration.to({r: (0/255).toFixed(2), g: (102/255).toFixed(2), b: (219/255).toFixed(2)}, 5000);
-          coloration.onUpdate(function (object) {
-            particleColor[3*i] = object.r;
-            particleColor[3*i+1] = object.g;
-            particleColor[3*i+2] = object.b;
-          });
-          coloration.start();
-        }
-      }
+      colorChange(88, 0, 219, 0, 102, 219);
     }, 30000)
 
     window.setTimeout(() => {
-  
-      for (let i=0; i < vertces; i++) {
-        if (particleColorChangeFlag[i] === 1 & (particleColor[3*i].toFixed(2) === (0/255).toFixed(2) | particleColor[3*i+1].toFixed(2) === (102/255).toFixed(2) | particleColor[3*i+2].toFixed(2) === (219/255).toFixed(2))) {
-          var vertex_color = {r: particleColor[3*i], g: particleColor[3*i+1], b: particleColor[3*i+2], f: particleColorChangeFlag[i]};
-          var coloration = new TWEEN.Tween(vertex_color);
-          coloration.to({r: (219/255).toFixed(2), g: (212/255).toFixed(2), b: (0/255).toFixed(2)}, 5000);
-          coloration.onUpdate(function (object) {
-            particleColor[3*i] = object.r;
-            particleColor[3*i+1] = object.g;
-            particleColor[3*i+2] = object.b;
-          });
-          coloration.start();
-        }
-      }
+      colorChange(0, 102, 219, 219, 212, 0);
     }, 45000)
   }
 
