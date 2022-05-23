@@ -1,9 +1,14 @@
 {{ define "main" }}
-    <div class="container mx-auto px-5 py-5 mt-16">
+    <div class="container mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
         {{ partial "breadcrumbs.html" . }}
     </div>
-    <div class="container mx-auto max-w-none prose px-5 py-5">
-        <h1 class="text-center">{{ .Title }}</h1>
-        {{ partial "contact-form.html" . }}
+    <div class="container mx-auto px-5 lg:px-28 ">
+        <h1 class="text-center font-bold text-3xl">CONTACT US</h1>
+        <h6 class="text-center font-bold text-gray-500 text-sm pt-2">お問い合わせ</h6>
+        {{ if eq (.Lang) ("ja")}}
+            {{ partial "contact-form-ja.html" . }}
+        {{ else }}
+            {{ partial "contact-form-en.html" . }}
+        {{ end }}
     </div>
 {{ end }}
