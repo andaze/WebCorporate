@@ -1,4 +1,4 @@
 {{ $class := .Get "class" }}
 {{ $link := .Get "link" }}
-
-<a href="{{ $link }}" class="button {{ $class }}">{{ .Inner}}</a>
+{{ $btnName:= .Get "btnName" }}
+<a href="{{ $link }}" class="{{ $class }}">{{ $btnName | safeHTML }}</a>
