@@ -497,7 +497,6 @@ img.addEventListener("load", () => {
     }
 
     // レンダラーのサイズを調整する
-    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height -  header_height);
 
     // ウィンドウサイズ更新
