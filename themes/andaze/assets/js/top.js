@@ -371,7 +371,164 @@ img.addEventListener("load", () => {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義1 webglでがデータを扱いやすいように画像データを変換
+  // 関数定義1 Three.jsのアニメーション関数
+  // ---------------------------------------------------------------------------------------------
+
+  function animate() {
+
+    var getDeltaTime = clock.getDelta();
+
+    // 画面の描画毎にanimate関数を呼び出す
+    requestAnimationFrame( animate );
+  
+    // レンダラーにシーンとカメラを追加
+    renderer.render( scene, camera );
+    
+    // パーティクル移動速度
+    window.setTimeout(() =>{
+      mesh.material.uniforms.u_time.value += (2.0 * getDeltaTime);
+    }, fadein_times*interval_time-500)
+
+    // Tween.jsアニメーションの実行
+    TWEEN.update();
+    
+    // 頂点の透明度の更新を許可
+    mesh.geometry.attributes.alpha.needsUpdate = true;
+
+    // 頂点の座標の更新を許可
+    mesh.geometry.attributes.position.needsUpdate = true;
+
+    // 頂点の色の更新を許可
+    mesh.geometry.attributes.color.needsUpdate = true;
+
+    // 頂点の移動検知フラグの更新を許可
+    mesh.geometry.attributes.flag.needsUpdate = true;
+
+    // 頂点の変色検知フラグの更新を許可
+    mesh.geometry.attributes.colorChangeFlag.needsUpdate = true;
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義2　リサイズ対応
+  // ---------------------------------------------------------------------------------------------
+
+  function setResize() {
+
+    // ウィンドウサイズを取得
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+
+    // ヘッダーの高さ
+    const header_height = document.getElementById("header_nav").clientHeight;
+
+    // canvasのmargin-topにheaderの高さを設定
+    canvas.style.marginTop = header_height + "px";
+
+
+    // ブレイクポイントの設定
+    const width_break_point = 700;
+    const height_break_point = 864;
+
+    const width_break_point_sp = 1440;
+
+
+    // カメラのアスペクト比を正す
+    camera.aspect = width / (height -  header_height);
+    camera.updateProjectionMatrix();
+
+    // デバイスがPCの場合
+    if (typeof window.ontouchstart === "undefined") {
+      if (width >= width_break_point) {
+        camera.position.z = 400;
+        if (height <= height_break_point) {
+           // mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
+           mesh.material.uniforms.u_value.value = ((width + height) / 1000) - ((1200 + height) / width);
+        } else {
+          // mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+          mesh.material.uniforms.u_value.value = ((width + height) / 600) - ((1200 + height) / width);
+        }
+      } else {
+        camera.position.z = height / width * 400;
+        mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width);
+      }
+      
+      // デバイスがモバイルの場合
+    } else {
+      if (width >= width_break_point_sp) {
+        if (width < height) {
+          camera.position.z = height / width * 500;
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+        } else {
+          if  (camera.aspect > 1.85) {
+            camera.position.z = width / height * 250;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+          } else {
+            camera.position.z = width / height * 350;
+            mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((2800 + height) / width);
+          }
+        }
+      } else {
+        if (width < height) {
+          camera.position.z = height / width * 400;
+          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1600 + height) / width);
+          nav_block.style.bottom = height*0.15 + 'px';
+        } else {
+          if (camera.aspect > 1.8) {
+            camera.position.z = width / height * 250;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((3400 + height) / width);
+            nav_block.style.display = 'none'
+          } else {
+            camera.position.z = width / height * 350;
+            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+            nav_block.style.bottom = height*0.15 + 'px';
+          }
+        }
+      }
+    }
+
+    // レンダラーのサイズを調整する
+    renderer.setSize(width, height -  header_height);
+    
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義3　リサイズ対応
+  // ---------------------------------------------------------------------------------------------
+
+  function onResize() {
+    var currentWidth = window.innerWidth;
+    var currentHeight = window.innerHeight;
+    
+    window.addEventListener("resize", function() {
+  
+      if (currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
+  
+        // インタラクションガイドの位置を変更。
+        if (currentHeight < window.innerHeight) {
+          nav_block.style.bottom = (height*0.15 + 80) + 'px';
+        } else {
+          nav_block.style.bottom = height*0.15 + 'px';
+        }
+  
+        // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
+        return;
+      }
+      
+      // ウインドウ横幅が変わったのでリサイズと見なす。
+      // 横幅を更新
+      currentWidth = window.innerWidth;
+      setResize();
+    });
+  
+  }
+
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義4 webglでがデータを扱いやすいように画像データを変換
   // ---------------------------------------------------------------------------------------------
 
   function ImagePixel(path, w, h, ratio) {
@@ -437,7 +594,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義2 透明度前処理（異なる透明度の値を割り振ってパーティクルをグループ化）
+  // 関数定義5 透明度前処理（異なる透明度の値を割り振ってパーティクルをグループ化）
   // ---------------------------------------------------------------------------------------------
 
   function PreProcessing(sampling_times) {
@@ -462,7 +619,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義3 フェードインアニメーション設定
+  // 関数定義6 フェードインアニメーション設定
   // ---------------------------------------------------------------------------------------------
 
   function PostProcessing(sampling_times, interval_time) {
@@ -490,7 +647,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義4 フェードインアニメーション実行
+  // 関数定義7 フェードインアニメーション実行
   // ---------------------------------------------------------------------------------------------
 
   function FadeIn(sampling_time, interval_time) {
@@ -500,7 +657,86 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義7 タイマー関数（スライド時間の取得）
+  // 関数定義8　初期アニメーション　パターン1
+  // ---------------------------------------------------------------------------------------------
+
+  function gatherFromFar() {
+    gsap.set(mesh.material.uniforms.u_ratio, {
+      value: 10000.0,
+    });
+    
+    window.setTimeout(() => {
+      gsap.to(mesh.material.uniforms.u_ratio, {
+        value: 0.0,
+        duration: 5,
+        ease: "power4.out",
+      })
+    }, 0);
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義9　初期アニメーション　パターン2
+  // ---------------------------------------------------------------------------------------------
+
+  function gather2D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+  
+      var gathering2d = new TWEEN.Tween(vertex_position);
+      gathering2d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
+      gathering2d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering2d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+      });
+      gathering2d.start();
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義10　初期アニメーション　パターン3
+  // ---------------------------------------------------------------------------------------------
+
+  function gather3D() {
+    for (let i = 0; i < vertces; i++) {
+      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+      particlePositions[3*i+2] = 1000;
+  
+       // パーティクルの座標
+       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
+       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
+       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
+  
+       // オブジェクト頂点座標
+       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
+  
+      var gathering3d = new TWEEN.Tween(vertex_position);
+      gathering3d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
+      gathering3d.easing( TWEEN.Easing.Quadratic.Out );
+      gathering3d.onUpdate(function (object) {
+        particlePositions[3*i] = object.x;
+        particlePositions[3*i+1] = object.y;
+        particlePositions[3*i+2] = object.z;
+      });
+      gathering3d.start();
+    }
+  }
+
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義11 タイマー関数（スライド時間の取得）
   // ---------------------------------------------------------------------------------------------
 
   function countUp(){
@@ -522,7 +758,29 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義8 マウス押し込み判定
+  // 関数定義12 タイマーリセット関数
+  // ---------------------------------------------------------------------------------------------
+
+  function resetTimer() {
+
+    //タイマーを止めるにはclearTimeoutを使う必要があり、そのためにはclearTimeoutの引数に渡すためのタイマーのidが必要
+    clearTimeout(timerId);
+
+
+    //タイマーに表示される時間elapsedTimeが現在時刻かたスタートボタンを押した時刻を引いたものなので、
+    //タイマーを再開させたら0になってしまう。elapsedTime = Date.now - startTime
+    //それを回避するためには過去のスタート時間からストップ時間までの経過時間を足してあげなければならない。elapsedTime = Date.now - startTime + timeToadd (timeToadd = ストップを押した時刻(Date.now)から直近のスタート時刻(startTime)を引く)
+    timeToadd += Date.now() - startTime;
+    //経過時刻を更新するための変数elapsedTimeを0にしてあげつつ、updateTimetTextで0になったタイムを表示。
+    elapsedTime = 0;
+
+    //リセット時に0に初期化したいのでリセットを押した際に0を代入してあげる
+    timeToadd = 0;
+  }
+
+
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義13 マウス押し込み判定
   // ---------------------------------------------------------------------------------------------
 
   function pushJudge(event) {
@@ -577,7 +835,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義9 マウススライド後のパーティクル拡散
+  // 関数定義14 マウススライド後のパーティクル拡散
   // ---------------------------------------------------------------------------------------------
 
   function diffusion(event) {
@@ -743,19 +1001,9 @@ img.addEventListener("load", () => {
         
       }
     }
-    //タイマーを止めるにはclearTimeoutを使う必要があり、そのためにはclearTimeoutの引数に渡すためのタイマーのidが必要
-    clearTimeout(timerId);
+    
 
-
-    //タイマーに表示される時間elapsedTimeが現在時刻かたスタートボタンを押した時刻を引いたものなので、
-    //タイマーを再開させたら0になってしまう。elapsedTime = Date.now - startTime
-    //それを回避するためには過去のスタート時間からストップ時間までの経過時間を足してあげなければならない。elapsedTime = Date.now - startTime + timeToadd (timeToadd = ストップを押した時刻(Date.now)から直近のスタート時刻(startTime)を引く)
-    timeToadd += Date.now() - startTime;
-    //経過時刻を更新するための変数elapsedTimeを0にしてあげつつ、updateTimetTextで0になったタイムを表示。
-    elapsedTime = 0;
-
-    //リセット時に0に初期化したいのでリセットを押した際に0を代入してあげる
-    timeToadd = 0;
+    resetTimer();
 
     // raycaster検知フラグをリセット
     detection = !detection;
@@ -763,158 +1011,32 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義10 Three.jsのアニメーション関数
+  // 関数定義15　乱数生成
   // ---------------------------------------------------------------------------------------------
 
-  function animate() {
+  function randomNumbers(max, min) {
 
-    var getDeltaTime = clock.getDelta();
+    // 整数の乱数を生成する
+    return Math.floor( Math.random() * max + 1 - min ) + min;
 
-    // 画面の描画毎にanimate関数を呼び出す
-    requestAnimationFrame( animate );
+  }
   
-    // レンダラーにシーンとカメラを追加
-    renderer.render( scene, camera );
-    
-    // パーティクル移動速度
-    window.setTimeout(() =>{
-      mesh.material.uniforms.u_time.value += (2.0 * getDeltaTime);
-    }, fadein_times*interval_time-500)
 
-    // Tween.jsアニメーションの実行
-    TWEEN.update();
-    
-    // 頂点の透明度の更新を許可
-    mesh.geometry.attributes.alpha.needsUpdate = true;
+  // ---------------------------------------------------------------------------------------------
+  // 関数定義16　正負の符号決定
+  // ---------------------------------------------------------------------------------------------
 
-    // 頂点の座標の更新を許可
-    mesh.geometry.attributes.position.needsUpdate = true;
+  function plusMinus() {
 
-    // 頂点の色の更新を許可
-    mesh.geometry.attributes.color.needsUpdate = true;
+    var plus_and_minus = [1, -1];
 
-    // 頂点の移動検知フラグの更新を許可
-    mesh.geometry.attributes.flag.needsUpdate = true;
+    return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
 
-    // 頂点の変色検知フラグの更新を許可
-    mesh.geometry.attributes.colorChangeFlag.needsUpdate = true;
   }
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義11　リサイズ対応
-  // ---------------------------------------------------------------------------------------------
-
-  function setResize() {
-
-    // ウィンドウサイズを取得
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-
-    // ヘッダーの高さ
-    const header_height = document.getElementById("header_nav").clientHeight;
-
-    // canvasのmargin-topにheaderの高さを設定
-    canvas.style.marginTop = header_height + "px";
-
-
-    // ブレイクポイントの設定
-    const width_break_point = 700;
-    const height_break_point = 864;
-
-    const width_break_point_sp = 1440;
-
-
-    // カメラのアスペクト比を正す
-    camera.aspect = width / (height -  header_height);
-    camera.updateProjectionMatrix();
-
-    // デバイスがPCの場合
-    if (typeof window.ontouchstart === "undefined") {
-      if (width >= width_break_point) {
-        camera.position.z = 400;
-        if (height <= height_break_point) {
-           // mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((1200 + height) / width)
-           mesh.material.uniforms.u_value.value = ((width + height) / 1000) - ((1200 + height) / width);
-        } else {
-          // mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
-          mesh.material.uniforms.u_value.value = ((width + height) / 600) - ((1200 + height) / width);
-        }
-      } else {
-        camera.position.z = height / width * 400;
-        mesh.material.uniforms.u_value.value = ((width + height) / 1800) - ((1200 + height) / width);
-      }
-      
-      // デバイスがモバイルの場合
-    } else {
-      if (width >= width_break_point_sp) {
-        if (width < height) {
-          camera.position.z = height / width * 500;
-          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
-        } else {
-          if  (camera.aspect > 1.85) {
-            camera.position.z = width / height * 250;
-            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
-          } else {
-            camera.position.z = width / height * 350;
-            mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((2800 + height) / width);
-          }
-        }
-      } else {
-        if (width < height) {
-          camera.position.z = height / width * 400;
-          mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1600 + height) / width);
-          nav_block.style.bottom = height*0.15 + 'px';
-        } else {
-          if (camera.aspect > 1.8) {
-            camera.position.z = width / height * 250;
-            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((3400 + height) / width);
-            nav_block.style.display = 'none'
-          } else {
-            camera.position.z = width / height * 350;
-            mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
-            nav_block.style.bottom = height*0.15 + 'px';
-          }
-        }
-      }
-    }
-
-    // レンダラーのサイズを調整する
-    renderer.setSize(width, height -  header_height);
-    
-  }
-
-  function onResize() {
-    var currentWidth = window.innerWidth;
-    var currentHeight = window.innerHeight;
-    
-    window.addEventListener("resize", function() {
-  
-      if (currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
-  
-        // インタラクションガイドの位置を変更。
-        if (currentHeight < window.innerHeight) {
-          nav_block.style.bottom = (height*0.15 + 80) + 'px';
-        } else {
-          nav_block.style.bottom = height*0.15 + 'px';
-        }
-  
-        // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
-        return;
-      }
-      
-      // ウインドウ横幅が変わったのでリサイズと見なす。
-      // 横幅を更新
-      currentWidth = window.innerWidth;
-      setResize();
-    });
-  
-  }
-
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義12　パーティクルの自動アニメーション
+  // 関数定義17　パーティクルの自動アニメーション
   // ---------------------------------------------------------------------------------------------
 
   function autoDiffusion() {
@@ -1055,124 +1177,21 @@ img.addEventListener("load", () => {
             slide_flag = !slide_flag
 
 
-            // オブジェクト移動
-            if (moving_flag) {
+            // オブジェクト移動（視点が極端に近づかないように制限）
+            if (moving_flag & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
               auto_move.start();
               moving_flag = !moving_flag
               window.setTimeout(function(){moving_flag = !moving_flag}, 12000*2)
             }
           }
         }
-        
       }
     }
   }
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義13　乱数生成
-  // ---------------------------------------------------------------------------------------------
-
-  function randomNumbers(max, min) {
-
-    // 整数の乱数を生成する
-    return Math.floor( Math.random() * max + 1 - min ) + min;
-
-  }
-  
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義14　正負の符号決定
-  // ---------------------------------------------------------------------------------------------
-
-  function plusMinus() {
-
-    var plus_and_minus = [1, -1];
-
-    return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
-
-  }
-
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義15　初期アニメーション　パターン1
-  // ---------------------------------------------------------------------------------------------
-
-  function gatherFromFar() {
-    gsap.set(mesh.material.uniforms.u_ratio, {
-      value: 10000.0,
-    });
-    
-    window.setTimeout(() => {
-      gsap.to(mesh.material.uniforms.u_ratio, {
-        value: 0.0,
-        duration: 5,
-        ease: "power4.out",
-      })
-    }, 0);
-  }
-
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義16　初期アニメーション　パターン2
-  // ---------------------------------------------------------------------------------------------
-
-  function gather2D() {
-    for (let i = 0; i < vertces; i++) {
-      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-  
-       // パーティクルの座標
-       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
-       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8
-  
-       // オブジェクト頂点座標
-       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
-  
-      var gathering2d = new TWEEN.Tween(vertex_position);
-      gathering2d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1]},3000);
-      gathering2d.easing( TWEEN.Easing.Quadratic.Out );
-      gathering2d.onUpdate(function (object) {
-        particlePositions[3*i] = object.x;
-        particlePositions[3*i+1] = object.y;
-      });
-      gathering2d.start();
-    }
-  }
-
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義17　初期アニメーション　パターン3
-  // ---------------------------------------------------------------------------------------------
-
-  function gather3D() {
-    for (let i = 0; i < vertces; i++) {
-      particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-      particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-      particlePositions[3*i+2] = 1000;
-  
-       // パーティクルの座標
-       particle_pos.x = attribute.getX(i)*(500/camera.position.z) - 8;
-       particle_pos.y = attribute.getY(i)*(500/camera.position.z) + 8;
-       particle_pos.z = attribute.getZ(i)*(500/camera.position.z);
-  
-       // オブジェクト頂点座標
-       var vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
-  
-      var gathering3d = new TWEEN.Tween(vertex_position);
-      gathering3d.to({x:pixcel_img.position[3*i], y: pixcel_img.position[3*i+1], z: pixcel_img.position[3*i+2]},3000);
-      gathering3d.easing( TWEEN.Easing.Quadratic.Out );
-      gathering3d.onUpdate(function (object) {
-        particlePositions[3*i] = object.x;
-        particlePositions[3*i+1] = object.y;
-        particlePositions[3*i+2] = object.z;
-      });
-      gathering3d.start();
-    }
-  }
-
-  // ---------------------------------------------------------------------------------------------
-  // 関数定義19　変色スタート
+  // 関数定義18　変色スタート
   // ---------------------------------------------------------------------------------------------
 
   function colorChangeStart() {
@@ -1194,7 +1213,7 @@ img.addEventListener("load", () => {
 
 
   // ---------------------------------------------------------------------------------------------
-  // 関数定義20　変色ループ
+  // 関数定義19　変色ループ
   // ---------------------------------------------------------------------------------------------
 
   function colorChangeLoop() {
