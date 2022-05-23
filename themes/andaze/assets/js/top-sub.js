@@ -1,3 +1,6 @@
+// ロゴ以外の処理についてこのファイルで記述します
+// 混ぜるとわかりにくいと思ったため
+
 // ---------------------------------------------------------------------------------------------
 // キービジュアル周りのレイアウト調整
 // ---------------------------------------------------------------------------------------------
@@ -40,7 +43,6 @@ window.addEventListener('load', () => {
 })
 
 
-
 // ---------------------------------------------------------------------------------------------
 // キービジュアルブラックアウト
 // ---------------------------------------------------------------------------------------------
@@ -68,3 +70,39 @@ function blackOut() {
         dark_cover.style.visibility = "hidden";
     }
 }
+
+
+// ---------------------------------------------------------------------------------------------
+// インタラクションガイド
+// ---------------------------------------------------------------------------------------------
+
+const nav_block = document.getElementById("nav_block");
+const circle = document.getElementById("circle");
+const animation_nav = gsap.timeline();
+
+animation_nav
+.to(circle, {
+  duration: 0.5,
+  opacity: .7,
+  y: 5,
+})
+.to(circle, {
+  duration: 0.5,
+  x:  anime_nav.clientWidth*0.5,
+})
+.to(circle, {
+  duration: 0.4,
+  opacity: 0,
+  x:  anime_nav.clientWidth*0.8,
+  y: -5,
+});
+
+animation_nav.repeat(-1);
+
+window.setTimeout(() => {
+  if (slide_flag === false) {
+    nav_block.style.opacity = 1;
+    nav_block.style.visibility = "visible";
+  }
+}, fadein_times*interval_time+5000);
+
