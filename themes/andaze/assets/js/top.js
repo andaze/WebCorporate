@@ -1056,7 +1056,7 @@ img.addEventListener("load", () => {
 
 
             // オブジェクト移動
-            if (moving_flag & mesh.position.z + (2000 / (random_slide_time*500)) <= (camera.position.z * 0.3)) {
+            if (moving_flag) {
               auto_move.start();
               moving_flag = !moving_flag
               window.setTimeout(function(){moving_flag = !moving_flag}, 12000*2)
