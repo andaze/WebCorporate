@@ -338,6 +338,7 @@ img.addEventListener("load", () => {
   // リサイズイベント発生時に実行
   onResize();
 
+  
   // ロードから一定時間経過後、自動でパーティクルを拡散
   window.setTimeout(() => {
     
