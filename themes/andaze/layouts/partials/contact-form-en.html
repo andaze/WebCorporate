@@ -119,21 +119,27 @@
     let post =  p.value;
     let inquiryDetials = document.getElementById('inquiry_content').value;
 
-    let body = `${fName} ${lName} Is filled Up Inquiry Form
-    Name:= ${fName} ${lName},
-    Company Name:= ${cName},
-    email:= ${email},
-    Contact Number:= ${contact_number},
-    department:= ${department},
-    post:= ${post},
-    Inquiry Detials:= ${inquiryDetials},
+    let body = `${fName} ${lName} Is filled Up Inquiry Form \n\n
+    Name:= ${fName} ${lName},\n
+    Company Name:= ${cName},\n
+    email:= ${email},\n
+    Contact Number:= ${contact_number},\n
+    department:= ${department},\n
+    post:= ${post},\n
+    Inquiry Detials:= ${inquiryDetials},\n
     `
+    let host = {{ .Site.Params.emailCredential.host }};
+    let userName = {{ .Site.Params.emailCredential.userName }};
+    let password = {{ .Site.Params.emailCredential.password }};
+    let toMail = {{ .Site.Params.emailCredential.toMail }};
+    let fromMail = {{ .Site.Params.emailCredential.fromMail }};
+
     Email.send({
-      Host : "smtp.yourisp.com",
-      Username : "username",
-      Password : "password",
-      To : 'them@website.com',
-      From : "you@isp.com",
+      Host : host,
+      Username : userName,
+      Password : password,
+      To : toMail,
+      From : fromMail,
       Subject : `Inquiry Form Fill Up By ${fName} ${lName}`,
       Body : body
     }).then(
