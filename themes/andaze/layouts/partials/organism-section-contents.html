@@ -1,5 +1,5 @@
     {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-    <div class="flex flex-row flex-wrap">
+    <div class="flex flex-row flex-wrap divide-x divide-y">
         {{ range .Pages }}
             {{ partial "molecule-services-polaroid-card.html" . }}
         {{ end }}
