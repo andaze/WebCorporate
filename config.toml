@@ -37,6 +37,12 @@ footerSiteMapText = "Site Map"
 	footerLogo = "img/yoko_2w.png"
 
 	companyName = "アンダーズ株式会社"
+[params.emailCredential]
+	host = "smtp.yourisp.com"
+	userName = "userName"
+	password = "password"
+	toMail = "them@website.com"
+	fromMail = "you@isp.com"
 
 [markup]
 
