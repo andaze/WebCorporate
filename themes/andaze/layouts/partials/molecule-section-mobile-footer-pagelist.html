@@ -1,5 +1,5 @@
 {{ $detailPages:= .context.Pages }}
-<div class="flex container mx-auto max-w-none py-5">
+<div class="flex container mx-auto max-w-none py-5 border-b border-b-gray-600">
   <div class="w-2/3 text-left">
     {{ partial "atom-footer-page-title.html" (dict "pageLink" .context.Permalink "pageTitle" .context.Title ) }}
   </div>
@@ -11,7 +11,6 @@
     {{ end }}
   </div>
 </div>
-<hr class="opacity-25 ml-4">
 {{ if gt (len $detailPages) (0) }}
 <div class="collapse mt-4" id="collapseWithScrollbar_{{.id}}">
   <ul class="text-left pl-10">
