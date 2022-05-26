@@ -1,7 +1,9 @@
 <footer class="text-center bg-black text-white absolute z-10 w-full">
     <div class="hidden md:block container mx-auto pt-6 md:pt-28 lg:pt-52 md:px-12 lg:px-32"> 
       {{ partial "molecule-section-footer-logo.html" . }}
-      {{ partial "organism-section-footer-page-list.html" . }}
+      <div class="pt-8">
+        {{ partial "organism-section-footer-page-list.html" . }}
+      </div>
       <div class="flex justify-end pr-5 pb-4">
         {{ partial "atom-footer-facebook-icon.html" . }}
       </div>
@@ -13,7 +15,9 @@
     <!-- For Mobile Responsive -->
     <div class="block md:hidden container mx-auto pt-14 md:px-12 lg:px-32"> 
       {{ partial "molecule-section-footer-logo.html" . }}
-      {{ partial "organism-section-mobile-footer-page-list.html" . }}
+      <div class="mt-14 mx-6">
+        {{ partial "organism-section-mobile-footer-page-list.html" . }}
+      </div>
       <div class="flex justify-start pt-5 pl-5 pb-4">
         {{ partial "atom-footer-facebook-icon.html" . }}
       </div>
