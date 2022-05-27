@@ -1,7 +1,7 @@
 <div>
     {{ partial "atom-irnews-heading.html" . }}
     {{ if eq (.Scratch.Get "section") "news" }}
-    <div class="flex flex-row">
+    <div class="flex flex-row mt-5 mb-12">
         {{ partial "atom-newtopic-sliderbutton.html" . }}
     </div>
     {{ end }}
