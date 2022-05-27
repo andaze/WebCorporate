@@ -16,7 +16,7 @@
             {{ end }}
         </div>
     </div>
-    <div class="md:hidden lg:hidden mt-5">
+    <div class="flex justify-center md:hidden lg:hidden mt-5">
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
 {{ end }}
@@ -27,14 +27,14 @@
         {{ partial "molecule-section-irnews-pdf-listing.html" . }}
         {{ .Scratch.Delete "backgroundTheme" }}
     </div>
-    <div class="md:hidden lg:hidden mt-5">
+    <div class="flex justify-center md:hidden lg:hidden mt-5">
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
 {{ end }}
 
 {{ if eq (.Scratch.Get "section") "services" }}
     {{ partial "organism-section-contents.html" . }}
-    <div class="md:hidden lg:hidden mt-5">
+    <div class="flex justify-center md:hidden lg:hidden mt-5">
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
 {{ end }}
