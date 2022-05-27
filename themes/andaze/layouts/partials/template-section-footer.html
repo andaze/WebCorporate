@@ -1,6 +1,8 @@
 <footer class="text-center bg-black text-white absolute z-10 w-full">
-    <div class="hidden md:block container mx-auto pt-6 md:px-12 lg:px-32"> 
-      {{ partial "molecule-section-footer-logo.html" . }}
+    <div class="hidden md:block container mx-auto pt-6 md:px-12 lg:px-32">
+      <div class="w-40">
+        {{ partial "molecule-section-footer-logo.html" . }}
+      </div>
       {{ partial "organism-section-footer-page-list.html" . }}
       <div class="flex justify-end pr-5 pb-4">
         {{ partial "atom-footer-facebook-icon.html" . }}
