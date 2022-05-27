@@ -16,12 +16,9 @@
             {{ end }}
         </div>
     </div>
-    <div class="flex flex-row mt-5 md:mb-12 lg:mb-12 md:hidden lg:hidden">
-        {{ partial "atom-newtopic-sliderbutton.html" . }}
-    </div>
     <div class="md:hidden lg:hidden mt-5">
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
-     </div>
+    </div>
 {{ end }}
 
 {{ if eq (.Scratch.Get "section") "ir" }}
