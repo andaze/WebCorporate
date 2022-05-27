@@ -16,6 +16,12 @@
             {{ end }}
         </div>
     </div>
+    <div class="flex flex-row mt-5 mb-12 md:hidden lg:hidden">
+        {{ partial "atom-newtopic-sliderbutton.html" . }}
+    </div>
+    <div class="md:hidden lg:hidden">
+        {{ partial "molecule-section-irnews-buttongroup.html" . }}
+     </div>
 {{ end }}
 
 {{ if eq (.Scratch.Get "section") "ir" }}
@@ -28,4 +34,7 @@
 
 {{ if eq (.Scratch.Get "section") "services" }}
     {{ partial "organism-section-contents.html" . }}
+    <div class="md:hidden lg:hidden">
+        {{ partial "molecule-section-irnews-buttongroup.html" . }}
+     </div>
 {{ end }}
