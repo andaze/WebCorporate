@@ -17,13 +17,13 @@
     </div>
     <!-- Start Respinsive Menu List -->
     <div class="hidden mobile-menu overflow-y-scroll h-screen w-screen pb-14">
-        <ul>
+        <ul class="mt-6 mb-6">
             {{ range .Site.Menus.main }}
                 <li class="text-white p-3 pl-8"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a> </li>
             {{ end }}
         </ul>
         <hr>
-        <div class="text-white flex text-sm p-4">
+        <div class="text-white flex text-sm p-4 items-center">
             {{ partial "atom-footer-facebook-icon.html" . }}
         </div>
     </div>
