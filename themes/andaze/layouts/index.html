@@ -24,6 +24,13 @@
       {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
     {{ end }}
+
+    {{ if .Site.GetPage "recruit"}}
+      {{ .Scratch.Set "section" "recruit" }}
+      {{ partial "template-section-recruit.html" . }}
+      {{ .Scratch.Delete "section" }}
+    {{ end }}
+
   </div>
   {{ range first 10 .Data.Pages }}
   {{ .Render "summary" }}
