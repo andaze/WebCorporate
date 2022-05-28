@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@mashvp/swup-html-lang-plugin": "^1.1.0",
+    "@swup/body-class-plugin": "^1.0.2",
+    "@swup/head-plugin": "^1.2.0",
     "swup": "^2.0.14"
   }
 }
