@@ -1,69 +1,121 @@
-<div class="max-w-screen-xl mt-5 px-8 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900">
-    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 ">
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">姓 <sup class="text-red-400">*</sup></span>
-        <input class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" placeholder="" name="full_name" id="full_name">
+<form class="max-w-none pt-8">
+  <div class="flex flex-wrap mb-6">
+    <div class="md:flex w-full">
+      <div class="md:w-1/4 ">
+        <label class="text-gray-700 text-sm font-medium" for="full_name">
+          姓 <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">名 <sup class="text-red-400">*</sup></span>
-        <input class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" placeholder="" name="last_name" id="last_name">
+      <div class="md:w-3/4">
+        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="full_name" name="full_name" type="text" placeholder="Example : 新井">
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">会社名 <sup class="text-red-400">*</sup></span>
-        <input class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" placeholder="" name="company_name" id="company_name">
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="last_name">
+           名 <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">メールアドレス <sup class="text-red-400">*</sup></span>
-        <input class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="email" name="email" id="email" >
+      <div class="md:w-3/4">
+        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="last_name" name="last_name" type="text" placeholder="Example : ミナ">
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">電話番号</span>
-        <input class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          type="text" name="contact_number" id="contact_number">
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="company_name">
+          会社名  <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">部門 <sup class="text-red-400">*</sup></span>
-        <br>
-        <select name="department" class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" id="department" required>
-            <option value>--選択してください--</option>
-            <option value="経営全般">経営全般</option>
-            <option value="営業">営業</option>
-            <option value="マーケティング・広報・企画">マーケティング・広報・企画</option>
-            <option value="情報システム">情報システム</option>
-            <option value="人事・総務">人事・総務</option>
-            <option value="その他">その他</option>
-          </select>
-        
+      <div class="md:w-3/4">
+        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="company_name" name="company_name" type="text" placeholder="Example : アンダース">
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">役職 <sup class="text-red-400">*</sup></span>
-        <br>
-        <select name="job_title" class="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" id="post" required>
-            <option value>--選択してください--</option>
-            <option value="経営者・役員">経営者・役員</option>
-            <option value="部長クラス">部長クラス</option>
-            <option value="課長・係長・主任クラス">課長・係長・主任クラス</option>
-            <option value="一般社員">一般社員</option>
-            <option value="個人">個人</option>
-            <option value="学生">学生</option>
-            <option value="その他">その他</option>
-          </select>
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="email">
+          メールアドレス  <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
       </div>
-      <div>
-        <span class="uppercase text-sm text-gray-600 font-bold">お問い合わせ内容</span>
+      <div class="md:w-3/4">
+        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="email" name="email" type="text" placeholder="Example : andaze@example.com">
+      </div>
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="contact_number">
+          電話番号
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
+      </div>
+      <div class="md:w-3/4">
+        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="contact_number" name="contact_number" type="text" placeholder="Example : 1234567890">
+      </div>
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="department">
+          部門 <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
+      </div>
+      <div class="md:w-3/4">
+        <select name="department" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="department" >
+          <option class="bg-opacity-50 bg-gray-100 text-gray-500">--選択してください--</option>
+          <option value="経営全般">経営全般</option>
+          <option value="営業">営業</option>
+          <option value="マーケティング・広報・企画">マーケティング・広報・企画</option>
+          <option value="情報システム">情報システム</option>
+          <option value="人事・総務">人事・総務</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="post">
+          役職 <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
+      </div>
+      <div class="md:w-3/4">
+        <select name="post" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="post" >
+          <option class="bg-opacity-50 bg-gray-100 text-gray-500">--選択してください--</option>
+          <option value="経営者・役員">経営者・役員</option>
+          <option value="部長クラス">部長クラス</option>
+          <option value="課長・係長・主任クラス">課長・係長・主任クラス</option>
+          <option value="一般社員">一般社員</option>
+          <option value="個人">個人</option>
+          <option value="学生">学生</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+    </div>
+    <div class="md:flex w-full">
+      <div class="md:w-1/4">
+        <label class="text-gray-700 text-sm font-medium" for="post">
+          お問い合わせ内容 <sup class="text-xs text-red-500">*</sup>
+          <hr class="hidden md:block mr-28 mt-2">
+        </label>
+      </div>
+      <div class="md:w-3/4">
         <textarea
-          class="w-full h-32 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" name="inquiry_content" id="inquiry_content"></textarea>
+          class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" rows="6" name="inquiry_content" id="inquiry_content" placeholder="2,000字以内でお書きください。"></textarea>
       </div>
     </div>
     <div class="w-full">
-      <span class="uppercase text-sm text-gray-600 font-bold">個人情報利用について</span>
-      <textarea
-        class="w-full h-32 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline">
-1. 事業者の氏名又は名称
+      <div class="w-full pb-2">
+        <label class="text-gray-700 text-md">
+          個人情報利用について
+        </label>
+      </div>
+      <div class="w-full">
+        <textarea
+          class="bg-opacity-50 w-full bg-gray-100 border border-white text-gray-700  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" rows="10" name="inquiry_content" id="inquiry_content">
+          1. 事業者の氏名又は名称
 　 アンダーズ株式会社
 2. 個人情報保護管理者（若しくはその代理人）の氏名又は職名、
 　 所属及び連絡先
@@ -87,23 +139,23 @@ TEL：03-3230-0401
 　　（土・日曜日・祝日・年末年始は除く）
 7. 個人情報を提供されることの任意性について　
 　 ご本人様が当社に個人情報を提供されるかどうかは任意によるものです。 ただし、必要な項目をいただけない場合、適切な対応ができない場合があります。
-      </textarea>
-    </div>
-    <div class="text-center pt-5 pb-2">
-      <label class="text-center text-gray-500 font-bold">
-        <input class="mr-2 leading-tight" type="checkbox" id="privacy" onclick="btnEnableDisable()">
-        <a href="#" class="text-sm">
-          個人情報利用に同意します
-        </a>
-      </label>
-    </div>
-    <div class="text-center">
-        <button type="submit"
-          class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg text-centerfocus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" onclick="sendEmail()" disabled>
-          ▶︎　問い合わせる 
-        </button>
+        </textarea>
       </div>
-</div>
+    </div>
+  </div>
+  <div class="text-center pt-5 pb-2">
+    <label class="text-center text-gray-500 font-bold">
+      <input class="mr-2 leading-tight" type="checkbox" id="privacy" onclick="btnEnableDisable()">
+      <a href="#" class="text-sm no-underline">
+        個人情報利用に同意します
+      </a>
+    </label>
+  </div>
+  <div class="text-center">
+    <button type="submit" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" onclick="sendEmail()" disabled> ▶︎　同意の上、入力内容の確認
+    </button>
+  </div>
+</form>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
    function sendEmail()
