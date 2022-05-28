@@ -10,6 +10,12 @@
         </li>
     </ul>
     {{ end }}
+
+{{ else if eq (.Scratch.Get "section") ("recruit") }}
+    {{ with .Site.GetPage (.Scratch.Get "section") }}
+        {{ partial "atom-irnews-button.html" . }}
+    {{ end }}
+
 {{ else }}
     {{ with .Site.GetPage (.Scratch.Get "section") }}
     <ul class="pt-2">
