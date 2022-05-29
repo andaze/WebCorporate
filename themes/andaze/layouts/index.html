@@ -6,6 +6,12 @@
 <!-- <main class="bg-white absolute z-10" id="top_main"> -->
 <main class="bg-white absolute z-10 w-full" id="top_main">
   <div class="py-20 md:py-36 lg:py-36">
+    {{ if .Site.GetPage "company"}}
+      {{ .Scratch.Set "section" "company" }}
+      {{ partial "template-section-company.html" . }}
+      {{ .Scratch.Delete "section" }}
+    {{ end }}
+
     {{ if .Site.GetPage "news"}}
       {{ .Scratch.Set "section" "news" }}
       {{ partial "template-section-newtopic.html" . }}
