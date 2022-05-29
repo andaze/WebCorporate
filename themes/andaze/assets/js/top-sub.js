@@ -19,6 +19,10 @@ window.addEventListener('resize', () => {
 const canvas = document.getElementById('webgl');
 canvas.style.marginTop = header_height + "px";
 
+// 透過黒レイヤー（hidden_cover）の高さ調整
+var company_section_height = document.getElementById("company_section").clientHeight;
+var hidden_cover = document.getElementById("hidden_cover");
+hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
 
 // ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
