@@ -1,4 +1,4 @@
-<a {{ if .Page.Params.ExternalLink }} href="{{ .Page.Params.ExternalLink }}" target="_blank" {{ else }} href="{{ .Permalink }}"  {{ end }}>
+<a {{ if .Page.Params.ExternalLink }} href="{{ .Page.Params.ExternalLink }}"target="_blank" rel="noopener noreferrer" {{ else }} href="{{ .Permalink }}"  {{ end }}>
     <div class="md:flex p-6">
         <div class="flex-col md:w-1/4">
             {{ partial "atom-irnews-pdf-heading.html" . }}
