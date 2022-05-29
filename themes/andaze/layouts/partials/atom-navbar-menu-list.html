@@ -1,1 +1,1 @@
-<li class="text-white capitalize"><a href="{{ .URL | absLangURL }}" {{ if or (eq (.Name) ("採用情報")) (eq (.Name) ("recruit")) }} target="_blank" {{ end }}>{{ .Name }}</a> </li>
+<li class="text-white capitalize"><a href="{{ .URL | absLangURL }}" {{ if or (eq (.Name) ("採用情報")) (eq (.Name) ("recruit")) }}target="_blank" rel="noopener noreferrer" {{ end }}>{{ .Name }}</a> </li>
