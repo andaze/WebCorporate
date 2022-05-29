@@ -1,1 +1,15 @@
-<a href="{{.pageLink}}" class="font-normal text-xs uppercase mb-2.5">{{ .pageTitle }}</a>
+<a
+    {{if eq (.pageTitle) ("採用情報") }}
+        href="https://www.andaze.com/ja/job/"
+        target="_blank"
+    {{ else if eq (.pageTitle) ("Recruit") }}
+        href="https://www.andaze.com/en/job/"
+        target="_blank"
+    {{ else }}
+        href="{{.pageLink}}"
+    {{ end }}
+    
+    class="font-normal text-xs uppercase mb-2.5"
+>
+    {{ .pageTitle }}
+</a>
