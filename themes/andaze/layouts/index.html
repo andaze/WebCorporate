@@ -11,7 +11,8 @@
       {{ partial "template-section-company.html" . }}
       {{ .Scratch.Delete "section" }}
     {{ end }}
-
+  </div>
+  <div class="py-20 md:py-36 lg:py-36">
     {{ if .Site.GetPage "news"}}
       {{ .Scratch.Set "section" "news" }}
       {{ partial "template-section-newtopic.html" . }}
