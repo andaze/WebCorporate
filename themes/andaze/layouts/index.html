@@ -4,7 +4,7 @@
 </div>
 
 <main class="absolute z-10 w-full" id="top_main">
-  <div class="bg-black bg-opacity-0 py-20 md:py-36 lg:py-36">
+  <div class="bg-black bg-opacity-0 py-20 md:py-36 lg:py-36 md:my-60">
     {{ if .Site.GetPage "company"}}
       {{ .Scratch.Set "section" "company" }}
       {{ partial "template-section-company.html" . }}
