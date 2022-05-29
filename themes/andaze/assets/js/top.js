@@ -1,3 +1,7 @@
+import * as THREE from 'three';
+import * as TWEEN from '@tweenjs/tween.js';
+import gsap from 'gsap';
+
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
@@ -7,9 +11,10 @@ var scene = new THREE.Scene();
 
 
 // ウィンドウサイズを取得
-const width = window.innerWidth;
-const height = window.innerHeight;
-
+export const width = window.innerWidth;
+export const height = window.innerHeight;
+export const canvas = document.createElement("canvas");
+export const header_height = document.getElementById("header_nav").clientHeight;
 
 // カメラの作成
 var camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1500 );
@@ -24,13 +29,15 @@ camera.position.y = 30;
 var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
-const header_height = document.getElementById("header_nav").clientHeight;
 renderer.setSize( width, height -  header_height);
 
 
 // キャンバスをDOMツリーに追加
 const wrapper = document.querySelector("#webgl");
-wrapper.appendChild(renderer.domElement);
+if (wrapper) {
+    wrapper.appendChild(renderer.domElement);
+}
+
 
 
 // ジオメトリーの作成
@@ -48,6 +55,8 @@ img.crossOrigin = "anonymous";
 window.slide_flag = false;
 window.fadein_times = 4;
 window.interval_time = 500;
+
+export function kv_main() {
 
 // 画像が読み込まれた後に処理を実行
 img.addEventListener("load", () => {
@@ -546,7 +555,6 @@ img.addEventListener("load", () => {
   function ImagePixel(path, w, h, ratio) {
 
     // canvasの設定
-    const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     const canvas_width = w;
     const canvas_height = h;
@@ -1270,4 +1278,6 @@ img.addEventListener("load", () => {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   
 });
+
+}
 

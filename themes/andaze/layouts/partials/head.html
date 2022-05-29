@@ -10,13 +10,4 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  {{ if .IsHome }}
-    <script defer src="https://unpkg.com/three@0.131.3/build/three.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
-    {{ $js := resources.Get "js/top.js" }}
-    <script defer src="{{ $js.Permalink }}"></script>
-    {{ $js := resources.Get "js/top-sub.js" }}
-    <script defer src="{{ $js.Permalink }}"></script>
-  {{ end }}
 </head>

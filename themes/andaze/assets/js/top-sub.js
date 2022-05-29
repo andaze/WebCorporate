@@ -1,3 +1,15 @@
+import * as THREE from 'three';
+import gsap from 'gsap';
+import * as kvMain from './top.js';
+
+const canvas = document.getElementById('webgl');
+if (canvas) {
+  canvas.style.marginTop = kvMain.header_height + "px";
+}
+
+
+export function kv_sub() {
+
 // ロゴ以外の処理についてこのファイルで記述します
 // 混ぜるとわかりにくいと思ったため
 
@@ -16,8 +28,6 @@ window.addEventListener('resize', () => {
 });
 
 // canvasのmargin-topにheaderの高さを設定
-const canvas = document.getElementById('webgl');
-canvas.style.marginTop = header_height + "px";
 
 
 // ---------------------------------------------------------------------------------------------
@@ -51,7 +61,7 @@ window.addEventListener('load', () => {
 const dark_cover = document.getElementById('hidden_cover')
 const key_visual = document.getElementById("key-visual");
 const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-const target_static = key_visual_bottom - (height * 0.88)
+const target_static = key_visual_bottom - (kvMain.height * 0.88)
 
 window.addEventListener('scroll', () => {
   blackOut()
@@ -106,3 +116,4 @@ window.setTimeout(() => {
   }
 }, fadein_times*interval_time+5000);
 
+}
