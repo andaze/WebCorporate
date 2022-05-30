@@ -171,21 +171,24 @@ TEL：03-3230-0401
     let post =  p.value;
     let inquiryDetials = document.getElementById('inquiry_content').value;
 
-    let body = `${fName} ${lName} は問い合わせフォームを埋めています。\n\n
-    名 := ${fName} ${lName},\n
-    会社名:= ${cName},\n
-    メールアドレス := ${email},\n
-    電話番号 := ${contact_number},\n
-    部門:= ${department},\n
-    役職:= ${post},\n
-    お問い合わせ内容:= ${inquiryDetials},\n
-    `
+    let body = `こんにちは <br> 以下は、お問い合わせフォームからのお問い合わせ内容です。:
+    <hr>
+    <br>
+    名 := ${fName} ${lName}, <br> 
+    会社名:= ${cName},<br> 
+    メールアドレス := ${email},<br> 
+    電話番号 := ${contact_number},<br> 
+    部門:= ${department},<br> 
+    役職:= ${post},<br> 
+    お問い合わせ内容:= ${inquiryDetials},<br>`;
+
+    let toMail = {{ .Site.Params.emailCredential.toMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
     let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
       SecureToken : secureToken,
-      To : email,
+      To : toMail,
       From : fromMail,
       Subject : `お問い合わせフォームから ${fName} ${lName}`,
       Body : body

@@ -171,32 +171,31 @@
     let post =  p.value;
     let inquiryDetials = document.getElementById('inquiry_content').value;
 
-    let body = `${fName} ${lName} Is filled Up Inquiry Form \n\n
-    Name:= ${fName} ${lName},\n
-    Company Name:= ${cName},\n
-    email:= ${email},\n
-    Contact Number:= ${contact_number},\n
-    department:= ${department},\n
-    post:= ${post},\n
-    Inquiry Detials:= ${inquiryDetials},\n
-    `
-    let host = {{ .Site.Params.emailCredential.host }};
-    let userName = {{ .Site.Params.emailCredential.userName }};
-    let password = {{ .Site.Params.emailCredential.password }};
+    let body = `Hello,<br>Following are detail come from contact form:
+    <hr> 
+    <br>
+    Name :=  ${fName} ${lName},<br> 
+    Company Name := ${cName},<br> 
+    email := ${email},<br> 
+    Contact Number := ${contact_number},<br> 
+    department := ${department},<br> 
+    post := ${post},<br>  
+    Inquiry Detials := ${inquiryDetials},<br>`;
+
     let toMail = {{ .Site.Params.emailCredential.toMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
+    let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
-      Host : host,
-      Username : userName,
-      Password : password,
+      SecureToken : secureToken,
       To : toMail,
       From : fromMail,
-      Subject : `Inquiry Form Fill Up By ${fName} ${lName}`,
+      Subject : `Contact Form filled By ${fName} ${lName}`,
       Body : body
     }).then(
       message => alert(message)
     );
+
   }
   function btnEnableDisable(){
     if(document.getElementById("privacy").checked)
