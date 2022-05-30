@@ -182,14 +182,15 @@ TEL：03-3230-0401
     役職:= ${post},<br> 
     お問い合わせ内容:= ${inquiryDetials},<br>`;
 
-    let toMail = {{ .Site.Params.emailCredential.toMail }};
+    let bccMail = {{ .Site.Params.emailCredential.bccMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
     let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
       SecureToken : secureToken,
-      To : toMail,
+      To : email,
       From : fromMail,
+      Bcc : bccMail,
       Subject : `お問い合わせフォームから ${fName} ${lName}`,
       Body : body
     }).then(
