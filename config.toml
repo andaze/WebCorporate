@@ -39,8 +39,8 @@ footerSiteMapText = "Site Map"
 	companyName = "アンダーズ株式会社"
 [params.emailCredential]
 	secureToken = "0206bf43-4ee9-4f54-b1b0-a8c4a78b9bea"
-	toMail = ""
-	fromMail = ""
+	fromMail = "no-reply@andaze.com"
+	bccMail = "nishidai@andaze.com"
 
 [markup]
 
