@@ -38,11 +38,9 @@ footerSiteMapText = "Site Map"
 
 	companyName = "アンダーズ株式会社"
 [params.emailCredential]
-	host = "smtp.yourisp.com"
-	userName = "userName"
-	password = "password"
-	toMail = "them@website.com"
-	fromMail = "you@isp.com"
+	secureToken = "0206bf43-4ee9-4f54-b1b0-a8c4a78b9bea"
+	fromMail = "no-reply@andaze.com"
+	bccMail = "nishidai@andaze.com"
 
 [markup]
 
