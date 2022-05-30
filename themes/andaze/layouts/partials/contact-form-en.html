@@ -182,20 +182,35 @@
     post := ${post},<br>  
     Inquiry Detials := ${inquiryDetials},<br>`;
 
+    let host = {{ .Site.Params.emailCredential.host }};
+    let userName = {{ .Site.Params.emailCredential.userName }};
+    let password = {{ .Site.Params.emailCredential.password }};
     let bccMail = {{ .Site.Params.emailCredential.bccMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
-    let secureToken = {{ .Site.Params.emailCredential.secureToken }};
+    // let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
-      SecureToken : secureToken,
+      Host : host,
+      Username : userName,
+      Password : password,
       To : email,
       From : fromMail,
-      Bcc: bccMail,
+      Bcc : bccMail,
       Subject : `Contact Form filled By ${fName} ${lName}`,
       Body : body
     }).then(
       message => alert(message)
     );
+    // Email.send({
+    //   SecureToken : secureToken,
+    //   To : email,
+    //   From : fromMail,
+    //   Bcc: bccMail,
+    //   Subject : `Contact Form filled By ${fName} ${lName}`,
+    //   Body : body
+    // }).then(
+    //   message => alert(message)
+    // );
 
   }
   function btnEnableDisable(){
