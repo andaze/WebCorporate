@@ -180,17 +180,12 @@ TEL：03-3230-0401
     役職:= ${post},\n
     お問い合わせ内容:= ${inquiryDetials},\n
     `
-    let host = {{ .Site.Params.emailCredential.host }};
-    let userName = {{ .Site.Params.emailCredential.userName }};
-    let password = {{ .Site.Params.emailCredential.password }};
-    let toMail = {{ .Site.Params.emailCredential.toMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
+    let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
-      Host : host,
-      Username : userName,
-      Password : password,
-      To : toMail,
+      SecureToken : secureToken,
+      To : email,
       From : fromMail,
       Subject : `お問い合わせフォームから ${fName} ${lName}`,
       Body : body
