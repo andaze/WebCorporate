@@ -7,7 +7,7 @@ import gsap from 'gsap';
 // ---------------------------------------------------------------------------------------------
 
 // シーンの作成
-var scene = new THREE.Scene();
+window.scene = new THREE.Scene();
 
 
 // ウィンドウサイズを取得
@@ -41,7 +41,7 @@ if (wrapper) {
 
 
 // ジオメトリーの作成
-const geometry = new THREE.BufferGeometry();
+window.geometry = new THREE.BufferGeometry();
 
 // 画像要素を生成
 const img = new Image();
@@ -112,7 +112,7 @@ img.addEventListener("load", () => {
   
   
   // マテリアルの作成
-  const material = new THREE.RawShaderMaterial({
+  window.material = new THREE.RawShaderMaterial({
 
     // シェーダーの設定
     vertexShader: document.querySelector("#js-vertex-shader").textContent,
@@ -132,7 +132,7 @@ img.addEventListener("load", () => {
 
   
   // オブジェクトの作成
-  var mesh = new THREE.Points(geometry, material);
+  window.mesh = new THREE.Points(geometry, material);
   
   
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
