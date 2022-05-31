@@ -2,20 +2,21 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import * as kvMain from './top.js';
 
-const canvas = document.getElementById('webgl');
-if (canvas) {
-  canvas.style.marginTop = kvMain.header_height + "px";
-}
 
 
 export function kv_sub() {
-
-// ロゴ以外の処理についてこのファイルで記述します
+  
+  // ロゴ以外の処理についてこのファイルで記述します
 // 混ぜるとわかりにくいと思ったため
 
 // ---------------------------------------------------------------------------------------------
 // キービジュアル周りのレイアウト調整
 // ---------------------------------------------------------------------------------------------
+
+const canvas = document.getElementById('webgl');
+if (canvas) {
+  canvas.style.marginTop = kvMain.header_height + "px";
+}
 
 // トップページmainタグの高さを取得してfooterのmargin-topに設定
 var main_height = document.getElementById("top_main").clientHeight;
