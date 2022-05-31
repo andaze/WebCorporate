@@ -6,4 +6,7 @@
     html {
       font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", Meiryo, メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
     }
+    .nav-tabs .nav-link.active {
+      @apply border-b-4 border-black ;
+    }
   }
