@@ -31,6 +31,11 @@ async function init() {
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
+    } else {
+        // トップページ以外では3Dオブジェクトを削除
+        scene.remove( mesh );
+        geometry.dispose();
+        material.dispose();
     }
 }
 
