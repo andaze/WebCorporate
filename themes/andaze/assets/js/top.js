@@ -30,6 +30,16 @@ var renderer = new THREE.WebGLRenderer();
 
 // ヘッダーの高さ
 renderer.setSize( width, height -  header_height);
+
+export function kv_main() {
+  
+// キャンバスをDOMツリーに追加
+const wrapper = document.querySelector("#webgl");
+if (wrapper) {
+  wrapper.appendChild(renderer.domElement);
+}
+
+
 // ジオメトリーの作成
 const geometry = new THREE.BufferGeometry();
 
@@ -46,13 +56,6 @@ window.slide_flag = false;
 window.fadein_times = 4;
 window.interval_time = 500;
 
-export function kv_main() {
-
-// キャンバスをDOMツリーに追加
-const wrapper = document.querySelector("#webgl");
-if (wrapper) {
-    wrapper.appendChild(renderer.domElement);
-}
 
 // 画像が読み込まれた後に処理を実行
 img.addEventListener("load", () => {
