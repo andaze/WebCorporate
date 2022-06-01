@@ -4,6 +4,10 @@
 
 <body>
   {{- partial "header.html" . -}}
+  {{ if .IsHome }} 
+  <!-- ローディング画面 -->
+  <div class="animate-ping h-6 w-6 bg-white rounded-full inset-1/2 absolute z-10" id="loading_icon"></div>
+  {{ end }}
   <div id="swup" class="transition-fade">
     {{- block "main" . }}{{- end }}
   </div>
