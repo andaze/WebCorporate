@@ -31,6 +31,9 @@ async function init() {
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
+    } else {
+        loading_icon.style.opacity = 1;
+        loading_icon.style.visibility = "visible";
     }
 }
 
