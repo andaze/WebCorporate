@@ -3,10 +3,13 @@ import gsap from 'gsap';
 import * as kvMain from './top.js';
 
 
+// 初回訪問判定フラグ
+var first_visit = false;
+
 
 export function kv_sub() {
   
-  // ロゴ以外の処理についてこのファイルで記述します
+// ロゴ以外の処理についてこのファイルで記述します
 // 混ぜるとわかりにくいと思ったため
 
 // ---------------------------------------------------------------------------------------------
@@ -36,22 +39,37 @@ window.addEventListener('resize', () => {
 // ---------------------------------------------------------------------------------------------
 
   const loading_icon = document.getElementById("loading_icon");
-  window.setTimeout(() => {
-    loading_icon.style.visibility = "visible";
-  }, 0.1)
+  const spinner = document.getElementById('loading');
 
-  window.addEventListener('load', () => {
-
+  // 初回訪問時のみローディング画面を表示する
+  if (!first_visit) {
+    
     window.setTimeout(() => {
+      loading_icon.style.visibility = "visible";
+    }, 0.1)
+  
+    window.addEventListener('load', () => {
+  
+      window.setTimeout(() => {
+  
+          // ロード画面を非表示
+          spinner.style.opacity = 0;
+          spinner.style.visibility = "hidden";
+  
+      }, 500);
+  
+    })
 
-        // ロード画面を非表示
-        const spinner = document.getElementById('loading');
-        spinner.style.opacity = 0;
-        spinner.style.visibility = "hidden";
+    first_visit = !first_visit
 
-    }, 500);
+  } else {
 
-  })
+    // ロード画面を非表示
+    spinner.style.opacity = 0;
+    spinner.style.visibility = "hidden";
+
+  }
+
 
 
 // ---------------------------------------------------------------------------------------------
