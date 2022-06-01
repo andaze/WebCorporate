@@ -35,23 +35,23 @@ window.addEventListener('resize', () => {
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
 
-  // const loading_icon = document.getElementById("loading_icon");
-  // window.setTimeout(() => {
-  //   loading_icon.style.visibility = "visible";
-  // }, 0.1)
+  const loading_icon = document.getElementById("loading_icon");
+  window.setTimeout(() => {
+    loading_icon.style.visibility = "visible";
+  }, 0.1)
 
-  // window.addEventListener('load', () => {
+  window.addEventListener('load', () => {
 
-  //   window.setTimeout(() => {
+    window.setTimeout(() => {
 
-  //       // ロード画面を非表示
-  //       const spinner = document.getElementById('loading');
-  //       spinner.style.opacity = 0;
-  //       spinner.style.visibility = "hidden";
+        // ロード画面を非表示
+        const spinner = document.getElementById('loading');
+        spinner.style.opacity = 0;
+        spinner.style.visibility = "hidden";
 
-  //   }, 500);
+    }, 500);
 
-  // })
+  })
 
 
 // ---------------------------------------------------------------------------------------------
