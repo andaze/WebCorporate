@@ -4,7 +4,7 @@ import * as kvMain from './top.js';
 
 
 // 初回訪問判定フラグ
-var first_visit = false;
+var first_visit = true;
 
 
 export function kv_sub() {
@@ -41,7 +41,7 @@ window.addEventListener('resize', () => {
   const loading_background = document.getElementById('loading');
 
   // 初回訪問時のみローディング画面を表示する
-  if (!first_visit) {
+  if (first_visit) {
     
     window.setTimeout(() => {
       loading_icon.style.visibility = "visible";
