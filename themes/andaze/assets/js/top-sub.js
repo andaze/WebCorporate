@@ -16,6 +16,7 @@ export function kv_sub() {
 // キービジュアル周りのレイアウト調整
 // ---------------------------------------------------------------------------------------------
 
+// canvasのmargin-topにheaderの高さを設定
 const canvas = document.getElementById('webgl');
 if (canvas) {
   canvas.style.marginTop = kvMain.header_height + "px";
@@ -31,15 +32,13 @@ window.addEventListener('resize', () => {
   document.querySelector("footer").style.marginTop = main_height + "px";
 });
 
-// canvasのmargin-topにheaderの高さを設定
-
 
 // ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
 
   const loading_icon = document.getElementById("loading_icon");
-  const spinner = document.getElementById('loading');
+  const loading_background = document.getElementById('loading');
 
   // 初回訪問時のみローディング画面を表示する
   if (!first_visit) {
@@ -53,8 +52,8 @@ window.addEventListener('resize', () => {
       window.setTimeout(() => {
   
           // ロード画面を非表示
-          spinner.style.opacity = 0;
-          spinner.style.visibility = "hidden";
+          loading_background.style.opacity = 0;
+          loading_background.style.visibility = "hidden";
   
       }, 500);
   
@@ -65,8 +64,8 @@ window.addEventListener('resize', () => {
   } else {
 
     // ロード画面を非表示
-    spinner.style.opacity = 0;
-    spinner.style.visibility = "hidden";
+    loading_background.style.opacity = 0;
+    loading_background.style.visibility = "hidden";
 
   }
 
