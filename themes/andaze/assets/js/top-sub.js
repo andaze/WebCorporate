@@ -65,7 +65,7 @@ window.addEventListener('resize', () => {
 
     window.setTimeout(() => {
   
-    // ロード画面を非表示
+      // ロード画面を非表示
       loading_icon.style.opacity = 0;
       loading_icon.style.visibility = "hidden";
 

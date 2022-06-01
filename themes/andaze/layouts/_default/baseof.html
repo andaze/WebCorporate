@@ -2,7 +2,7 @@
 <html class="scroll-smooth">
 {{- partial "head.html" . -}}
 
-<body>
+<body {{ if .IsHome }} class="bg-black" {{ end }}>
   {{- partial "header.html" . -}}
   {{ if .IsHome }} 
   <!-- ローディング画面 -->
