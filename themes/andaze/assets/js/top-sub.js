@@ -1,3 +1,14 @@
+import * as THREE from 'three';
+import gsap from 'gsap';
+import * as kvMain from './top.js';
+
+
+// 初回訪問判定フラグ
+var first_visit = true;
+
+
+export function kv_sub() {
+  
 // ロゴ以外の処理についてこのファイルで記述します
 // 混ぜるとわかりにくいと思ったため
 
@@ -17,7 +28,9 @@ window.addEventListener('resize', () => {
 
 // canvasのmargin-topにheaderの高さを設定
 const canvas = document.getElementById('webgl');
-canvas.style.marginTop = header_height + "px";
+if (canvas) {
+  canvas.style.marginTop = kvMain.header_height + "px";
+}
 
 // 透過黒レイヤー（hidden_cover）の高さ調整
 var company_section_height = document.getElementById("company_section").clientHeight;
@@ -28,23 +41,46 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
 
-const loading_icon = document.getElementById("loading_icon");
-window.setTimeout(() => {
-  loading_icon.style.visibility = "visible";
-}, 0.1)
+  const loading_icon = document.getElementById("loading_icon");
+  const loading_background = document.getElementById("loading");
 
-window.addEventListener('load', () => {
+  // 初回訪問時のみローディング画面を表示する
+  if (first_visit) {
+    
+    window.setTimeout(() => {
+      loading_icon.style.visibility = "visible";
+    }, 0.1)
+  
+    window.addEventListener('load', () => {
+  
+      window.setTimeout(() => {
+  
+          // ロード画面を非表示
+          loading_background.style.opacity = 0;
+          loading_background.style.visibility = "hidden";
+  
+      }, 500);
+  
+    })
 
-  window.setTimeout(() => {
+    first_visit = !first_visit
 
+  } else {
+
+    // ロード画面を表示
+    loading_background.style.opacity = 1;
+    loading_background.style.visibility = "visible";
+
+    window.setTimeout(() => {
+  
       // ロード画面を非表示
-      const spinner = document.getElementById('loading');
-      spinner.style.opacity = 0;
-      spinner.style.visibility = "hidden";
+      loading_background.style.opacity = 0;
+      loading_background.style.visibility = "hidden";
 
-  }, 500);
+    }, 500);
 
-})
+  }
+
 
 
 // ---------------------------------------------------------------------------------------------
@@ -55,7 +91,7 @@ window.addEventListener('load', () => {
 const dark_cover = document.getElementById('hidden_cover')
 const key_visual = document.getElementById("key-visual");
 const key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-const target_static = key_visual_bottom - (height * 0.88)
+const target_static = key_visual_bottom - (kvMain.height * 0.88)
 
 window.addEventListener('scroll', () => {
   blackOut()
@@ -110,3 +146,4 @@ window.setTimeout(() => {
   }
 }, fadein_times*interval_time+5000);
 
+}

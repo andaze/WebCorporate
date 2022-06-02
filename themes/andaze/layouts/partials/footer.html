@@ -1,1 +1,5 @@
 {{ partial "template-section-footer.html" . }}
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+{{ $built := resources.Get "js/swup.js" | js.Build "swup.js" }}
+<script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
