@@ -37,8 +37,7 @@ window.addEventListener('resize', () => {
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
 
-  window.loading_icon = document.getElementById("loading_icon");
-  window.loading_background = document.getElementById('loading');
+  const loading_icon = document.getElementById("loading_icon");
 
   // 初回訪問時のみローディング画面を表示する
   if (first_visit) {
@@ -52,8 +51,8 @@ window.addEventListener('resize', () => {
       window.setTimeout(() => {
   
           // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "hidden";
+          loading_icon.style.opacity = 0;
+          loading_icon.style.visibility = "hidden";
   
       }, 500);
   
@@ -62,6 +61,10 @@ window.addEventListener('resize', () => {
     first_visit = !first_visit
 
   } else {
+
+    // ロード画面を表示
+    loading_icon.style.opacity = 1;
+    loading_icon.style.visibility = "visible";
 
     window.setTimeout(() => {
   
