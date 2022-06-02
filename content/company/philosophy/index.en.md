@@ -21,7 +21,7 @@ Andaze's shared team, which captures the business at the forefront of technology
 
 ### Corporate Slogan Corporate Philosophy
 Bringing innovation to Japan through global and superior technology.
-<Other ideas> Accompanying growth with superior technology. 2) Make innovation a common sense. (3) Make global innovations the Japanese standard. 4) Advance Japan with world-class innovations. / ⑥Transmitting global standard technologies to Japan. /⑦ Transform Japan with global innovations.
+
 
 ### 5DNA Code of Conduct
 (1)	dominate the market
