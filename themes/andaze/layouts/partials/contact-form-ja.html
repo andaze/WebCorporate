@@ -152,7 +152,7 @@ TEL：03-3230-0401
     </label>
   </div>
   <div class="text-center">
-    <button type="submit" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" onclick="sendEmail()" disabled> ▶︎　同意の上、入力内容の確認
+    <button type="button" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" onclick="sendEmail()" disabled> ▶︎　同意の上、入力内容の確認
     </button>
   </div>
 </form>
@@ -171,32 +171,47 @@ TEL：03-3230-0401
     let post =  p.value;
     let inquiryDetials = document.getElementById('inquiry_content').value;
 
-    let body = `${fName} ${lName} は問い合わせフォームを埋めています。\n\n
-    名 := ${fName} ${lName},\n
-    会社名:= ${cName},\n
-    メールアドレス := ${email},\n
-    電話番号 := ${contact_number},\n
-    部門:= ${department},\n
-    役職:= ${post},\n
-    お問い合わせ内容:= ${inquiryDetials},\n
-    `
+    let body = `こんにちは <br> 以下は、お問い合わせフォームからのお問い合わせ内容です。:
+    <hr>
+    <br>
+    名 := ${fName} ${lName}, <br> 
+    会社名:= ${cName},<br> 
+    メールアドレス := ${email},<br> 
+    電話番号 := ${contact_number},<br> 
+    部門:= ${department},<br> 
+    役職:= ${post},<br> 
+    お問い合わせ内容:= ${inquiryDetials},<br>`;
+
     let host = {{ .Site.Params.emailCredential.host }};
     let userName = {{ .Site.Params.emailCredential.userName }};
     let password = {{ .Site.Params.emailCredential.password }};
-    let toMail = {{ .Site.Params.emailCredential.toMail }};
+    let bccMail = {{ .Site.Params.emailCredential.bccMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
+    // let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
       Host : host,
       Username : userName,
       Password : password,
-      To : toMail,
+      To : email,
       From : fromMail,
+      Bcc : bccMail,
       Subject : `お問い合わせフォームから ${fName} ${lName}`,
       Body : body
     }).then(
       message => alert(message)
     );
+
+    // Email.send({
+    //   SecureToken : secureToken,
+    //   To : email,
+    //   From : fromMail,
+    //   Bcc : bccMail,
+    //   Subject : `お問い合わせフォームから ${fName} ${lName}`,
+    //   Body : body
+    // }).then(
+    //   message => alert(message)
+    // );
   }
   function btnEnableDisable(){
     if(document.getElementById("privacy").checked)

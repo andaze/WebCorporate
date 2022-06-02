@@ -1,10 +1,13 @@
 {{ $pageTitle := strings.TrimRight "\\//" .File.Dir }}
 <div class="mr-8 mb-6 text-left">
   {{ partial "atom-footer-page-title.html" (dict "pageLink" .Permalink "pageTitle" .Title ) }}
+  {{ if or (eq .Title "ニュース") (eq .Title "news") }}
+  {{ else }}
   <ul class="list-none mb-0">
       {{ $section := site.GetPage $pageTitle }}
       {{ range $section.Pages }}
         {{ partial "atom-footer-page-list.html" . }}
       {{ end }}
   </ul>
+  {{ end }}
 </div>

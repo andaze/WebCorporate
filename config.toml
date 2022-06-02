@@ -38,11 +38,12 @@ footerSiteMapText = "Site Map"
 
 	companyName = "アンダーズ株式会社"
 [params.emailCredential]
-	host = "smtp.yourisp.com"
-	userName = "userName"
-	password = "password"
-	toMail = "them@website.com"
-	fromMail = "you@isp.com"
+	host = "smtp.elasticemail.com"
+	userName = "nishidai@andaze.com"
+	password = "AFA8942399E3F398BC2A88AC8589D21AD176"
+	fromMail = "no-reply@andaze.com"
+	bccMail = "nishidai@andaze.com"
+	#secureToken = "27f56ad9-9d89-41d1-bc9d-41f72ebaf0a7"
 
 [markup]
 

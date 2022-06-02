@@ -1,4 +1,4 @@
 {{ $imageName:= .Page.Params.headerImage.imageName }}
 {{ $image:= .Page.Resources.GetMatch  $imageName }}
-<img src="{{ .Permalink }}{{ $image }}" alt="Image Not Available" class="w-[100vw]">
+<img src="{{ .Permalink }}{{ $image }}" alt="Image Not Available" class="w-screen h-full object-cover">
 

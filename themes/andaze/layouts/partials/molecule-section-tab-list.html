@@ -6,11 +6,11 @@
         {{ end }}
     {{ end }}
     <li class="nav-item flex-auto text-center" role="presentation">
-        <a href="#tabs-all" class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-gray px-4 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active" id="tabs-all-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-all" role="tab" aria-controls="tabs-all" aria-selected="true">All</a>
+        <a href="#tabs-all" class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-gray px-4 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active text-gray-200" id="tabs-all-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-all" role="tab" aria-controls="tabs-all" aria-selected="true">All</a>
     </li>
     {{ range $uniqueTags := $slice | uniq }}
     <li class="nav-item flex-auto text-center" role="presentation">
-        <a href="#tabs-{{$uniqueTags}}" class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-gray px-4 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent" id="tabs-{{ $uniqueTags }}-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-{{ $uniqueTags }}" role="tab" aria-controls="tabs-{{ $uniqueTags }}" aria-selected="true">{{ $uniqueTags }}</a>
+        <a href="#tabs-{{$uniqueTags}}" class="nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-gray px-4 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent text-gray-200" id="tabs-{{ $uniqueTags }}-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-{{ $uniqueTags }}" role="tab" aria-controls="tabs-{{ $uniqueTags }}" aria-selected="true">{{ $uniqueTags }}</a>
       </li>
     {{ end }}
 </ul>
