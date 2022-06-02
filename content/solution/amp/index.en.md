@@ -10,80 +10,56 @@ headerImage:
 
 ---
 
-Why is “Google Content Delivery Network Support (AMP)” getting so much attention? AMP is a standard jointly launched by Google and Twitter to make it easier for mobile users to view homepages. Direct translation of AMP (Accelerated Mobile Pages) means to speed up mobile pages.
+Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
 
-In AMP, the search engine pre-reads the information on the page and directs the link from the search result to display the data without jumping to each page. If your site supports AMP, it will be displayed at high speed to users. The waiting time is short, the user's impression is improved, and the increase in the withdrawal rate can be suppressed.
+**Overview**
 
-**Points for speeding up the site**
+AMP (Accelerated Mobile Pages, commonly known as amp) is a standard jointly launched by Google and Twitter to enable mobile users to comfortably view websites. The literal translation means "faster pages for mobile.
 
->When the display speed drops from 1 to 3 seconds, the bounce rate increases by 32%. When the display speed drops from 1 second to 5 seconds, the bounce rate increases by 90%. When the display speed drops from 1 second to 6 seconds, the bounce rate increases by 106%. When the display speed drops from 1 to 10 seconds, the bounce rate increases by 123%.
->  Exhibitor: Google-Find out how you stack up to new industry benchmarks for mobile page speed
+AMP enables search engines to read information on web pages ahead of time and direct links from search results to them, so that data can be displayed without having to jump to the page each time. Users will spend more time on the site because they will not have to wait as long and will get a much better impression of the site.
 
->  After 3 seconds, 57% of users found that they were numb and gave up visiting.
->  Exhibit: Mynavi 3 seconds is acceptable-why website performance matters
+**Effects of AMP
 
->  With mobile access, the conversion rate maximized when the display speed was 3 seconds, and the conversion rate decreased as the display time increased, and it was halved in 7 seconds.
->  Exhibit: Forum for online shop staff-Value of "1 second" related to the performance of EC site. Display speed that meets user expectations
-
-**Pros**
-
-- Reduces page waiting time for users
-- Increased site migration rate and improved site revenue
-- Increased chance of reading articles in carousel view
-
-**Cons**
-
-- There is a limit to the design that can be expressed due to the page size limitation
-
-If Google confirms your AMP, the following checker will turn green and the page will be treated specially.
-
-We will quickly build an AMP site with the **AMP Framework**. Please contact our professionals to understand your current situation and plan a plan.
-
-![ Image is not Available !](amp-validator.webp)
-
-## Case
-
-**Site**: Our corporate website [https://andaze.com/](https://andaze.com/)
-
-**Issue**: Originally built with Wordpress, there was a problem with access speed from mobile
-
-**Solution**: Built on the same AMP page for both desktop and mobile **Built on standalone AMP**.
-
-**Reference**: [AMP checker](https://search.google.com/test/amp) If you enter the URL of our company's corporate site, you can check the AMP validity judgment by Google. You can see that the function was realized with the standalone AMP
-
-## Contract
-
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
-
-## Deliverables
-
-**Basic set**
-
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
+- Reduce the time users spend waiting for pages to be displayed.
+- Increased site traffic and revenue
+- Increased probability of articles being read
+- Prevent site abandonment rate information
+- Stress-free for users
 
 
+> Relationship between display speed and site return rate
 
-**Design**
+> When the display speed drops from 1 second to 3 seconds, the rate of return visits increases by 32%. When the display speed drops from 1 second to 5 seconds, the rate of return visits increases by 90%. When the display speed drops from 1 second to 6 seconds, the direct return rate increases by 106%. When the display speed drops from 1 second to 10 seconds, the return rate rises by 123%.
 
-- Content layout design
-- Navigation design
-- Performance design
-- Cache design
+> Exhibit: "Google - Find out how you stack up to new industry benchmarks for mobile page speed"
 
-**As your IT team**
 
-- AMP Specialist
-- HTML/CSS coder
+> Display speed of 3 seconds or less is acceptable
 
-**Operation**
+> We found that 57% of users become numb and give up visiting if the display speed of a web page exceeds 3 seconds.
 
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+> Exhibit: "Mynavi 3 seconds is acceptable - Why website performance matters"
+
+
+> Also affects conversion rates
+
+> For page access via mobile, the conversion rate is maximized when the display speed is 3 seconds. As display time increased, the conversion rate decreased, and was halved at 7 seconds.
+
+> Exhibit: "NetShop Managers Forum - The value of "one second" in EC site performance. Display speed that meets user expectations.
+
+
+**Recommended industries** Information and telecommunications
+
+- Information and telecommunications
+- Manufacturing (e.g., EC sites)
+- Landing pages for advertisements (LP)
+
+**Product Image**
+
+Andaz will promptly build your AMP site with our AMP framework. If your website is facing any issues, please feel free to contact us.
+
+Example of **Introduction Example**
+
+Site: Andaz corporate site
+Problem: When the site was built with WordPress, there was a problem with access speed from mobile.
+Solution: By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.

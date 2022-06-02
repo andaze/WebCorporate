@@ -9,68 +9,43 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is “single page application (SPA)” getting so much attention? This is because, instead of reading the contents for each page from the browser, you can change the functions and contents by replacing only the necessary data. SPAs can greatly improve the user's impression of your application. It not only improves appearance and usability, but also provides a crisp movement. Slack and Google Map web pages are well known examples of using SPA.
+SPA application development" that can provide comfortable web expression
 
-**Pros of using SPA**
+**Overview**
 
-- You can realize things that you could not experience with ordinary web pages
-- High speed page display and function switching
-- Act as a replacement for native apps
+SPA (Single Page Application) is a system in which contents are switched one after another on a single web page. The next content can be displayed without having to click on a link and reload the page. Andaz provides comfortable web expressions that run crisply, not to mention improved visuals and usability. This leads to increased user satisfaction.
 
-**Cons**
+**Effects of Introduction**.
 
-- First access takes time to load
-- Doesn't work on older browsers
+(1) User side
 
-The trend is for native applications to replace SPAs. If you develop new applications in the future, you should include SPA as a candidate.
+- Users can have a fresh experience that they have not had with conventional web pages.
+- High-speed page display and function switching
+- Smartphone applications can be replaced.
+- Improved display speed and performance because parts of the page that do not need to be changed remain unchanged.
+- More advanced expression on web pages
 
-We will build SPA quickly with **SPA framework BLAZOR**. Please contact our professionals to understand your current situation and plan a plan.
+**Recommended industries** Banking
 
-![ Image is not Available !](blazor-web.webp)
+- Banking
+- Securities
+- Insurance
+- Construction
+- Public Sector
+- Construction Manufacturing
+- Retail
+- Retail Distribution
 
-### Case
+**Product Image**.
 
-**Industry**: Employment placement service
+In recent years, native applications have tended to be replaced by SPAs. Therefore, when developing new applications, we recommend including SPA as a candidate.
 
-**Issues**: The response of the personnel information system provided by B2B is poor, and users are requesting improvements.
+Andaz can build SPAs in a short period of time with our SPA framework "BLAZOR". We will contribute to the improvement of your business value. Please feel free to contact us if your company wants to solve management issues with IT tools.
 
-**Solution**: Regarding the aggregation of personnel data, it was required to change the search conditions freely and instantly display the data for comparison. When SPA architecture was selected and a prototype was created using the Blazor-Client model in WebAssembly, it became clear that there was a problem in development productivity during debugging. For the time being, it was decided to use the Blazor-Server model temporarily and switch to Blazor-Client after a while. While safely benefiting from the new technology, further performance improvements are expected at the next timing.
+*Native application...An application that is installed and used via an application store.
 
-## Contract
+**Introduction example**
 
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
-
-## Deliverables
-
-**Basic set**
-
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**design**
-
-- Application design
-- Security design
-- Performance design
-
-**As your IT team**
-
-- SPA consultant
-- Security specialist
-- BLAZOR engineer
-- C#/JavaScript programmer
-- HTML/CSS coder
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+Industry: Recruitment service industry
+Problem: The response time of the B2B human resource information system was poor, and users were requesting improvements.
+Solution: When aggregating personnel data, the company required instantaneous data display and comparison while freely changing search conditions. We selected an SPA architecture and created a prototype using the Blazor-Client model in WebAssembly, but found that there was a development productivity problem during debugging. We decided to operate with the Blazor-Server model for the time being and migrate to Blazor-Client when the time was right. While we are now safely enjoying the benefits of the new technology, we expect further performance improvements at the next time.

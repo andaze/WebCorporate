@@ -9,66 +9,37 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is “Machine Learning” getting so much attention? With the spread of smartphones, a large amount of data has started to appear. As it is, it requires a great deal of cost and time to process complicated data, but now it is possible to realize by machine learning that "calculation of analysis results with speed and accuracy that cannot be achieved by humans". It was.
+AI Machine Learning Development" for high prediction accuracy and improved business value
 
-**Pros of machine learning**
+**Overview**
 
--Prediction value is calculated by learning features
--Select multiple reproducible models by applying multiple algorithms
--Clustering classifies features to improve prediction accuracy
+In recent years, with the spread of smartphones and IoT, a large amount of data has been accumulated. Analyzing this data by humans takes an enormous amount of time and effort. On the other hand, AI machine learning makes it possible to discover regularities that cannot be found by human power and to finish the analysis work in an instant. At Andaz, our professionals develop AI with high prediction accuracy. Andaz professionals develop AI with high forecasting accuracy, contributing to corporate business innovation through technology.
 
-**Cons**
+**Effect of introduction**.
 
--A certain amount of teacher data is required (at least 100 data for each classification)
--Retraining required to improve model accuracy
+- Increased efficiency in inspection and picking operations
+- Unmanned cash registers prevent human error and congestion, and make effective use of human resources.
+- Eliminate overstock through sales forecasting
+- Avoid dangerous driving and contribute to the reduction of traffic accidents
+- Increased profit margins through land and property price assessments
+- Automated preparation of reports and other paperwork to achieve a paperless office.
 
+**Suggested Industries** Automotive
 
+- Automotive
+- Logistics
+- Finance
+- Real estate
+- Home Appliances
+- Manufacturing
+- Retail (food supermarket)
 
-We use an **open source AI development framework ML.NET** to quickly model machine learning. Please contact our professionals to understand your current situation and plan a plan.
+**image**
 
-![ Image is not Available !](azure-ai.webp)
+At Andaz, we use the open source AI development framework ML.NET to model machine learning in a short period of time. Why not use technology to solve your company's management issues?
 
-### Case
+**Case Study**
 
-**Industry**: Securities industry
-
-**Request**: I want to calculate the original fair value of the stock price
-
-**Solution**: We decided to acquire financial information of listed companies including the past from EDINET and use them as teacher data. By applying basic statistics and clustering, we analyzed the correlation between feature quantity and stock price with a coarse granularity, and created a desk model. We created a temporary model by multiple regression and quantification, and worked on primary accuracy improvement by converting the feature quantity and its conversion. After obtaining a certain level of evaluation from the field in terms of both theory and accuracy, we selected an algorithm for production modeling and finally created a model for each cluster. They have succeeded in calculating the fair value from their own perspective and are using it for investment decisions.
-
-
-## Contract
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
-
-## Deliverables
-
-**Basic set**
-
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**design**
-
-- AI modeling
-- Precision and accuracy management
-
-**As your IT team**
-
-- AI consultant
-- SI consultant
-- ML.NET engineer
-- C#/JavaScript programmer
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+Industry: Securities industry
+Requirement: To calculate an original fair value of stock price
+Solution: Financial information of listed companies, including past data, was obtained from EDINET and used as teacher data. Then, basic statistics and clustering were applied to analyze the correlation between characteristics and stock prices at a coarse granularity, and a desk model was created. We then created a provisional model based on multiple regression and quantification, and worked to improve the primary accuracy of the model through the use of features and their transformations. After receiving a certain evaluation from the field in terms of both theory and accuracy, we selected algorithms for production modeling, and finally created models for each cluster. We succeeded in creating a fair value calculation from a unique perspective, which is now being used for investment decisions.

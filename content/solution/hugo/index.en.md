@@ -9,61 +9,53 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is “Static Website Development” now attracting attention? There are three major reasons for operating a content management system (CMS) typified by Wordpress.
+Static Website Development" for fast page loading with secure security
 
-**Security**: Most CMSs are updated regularly. If the changes in the version upgrade are small, it will not cause a big problem, but if it is a major update, be careful. This may result in inconsistency with the installed plugins and extensions, which may lead to site malfunctions. For example, the page layout may suddenly collapse, or the contact form may behave strangely.
+**Overview**
 
-**Performance**: Problems such as "Slow page load speed" cannot be avoided due to the mechanism that CMS dynamically generates pages. If you have a website for now, this is not a problem. However, if you are aiming for branding and SEO through the site, you should make the site as fast as possible in order to improve the number of inflows and exits of the site as much as possible.
+You want to increase the display speed of your web pages, or you want to have a solid security measure, or you do not want to update information in real time.... Static website development is useful for websites with such characteristics. There are three main reasons why static websites are attracting attention today.
 
-**Maintenance**: If CMS is installed, please expect the cost of "regular maintenance". It is necessary to check compatibility with CMS version upgrades, trouble fixes, backups, and server side updates. There is also a violent notion that "we will not upgrade", but there is a problem because the security hole is left open.
+**Effects of Introduction**.
 
-We will build a static website promptly with the **Static Site Generator HUGO**. Please contact our professionals for understanding the current situation of users and planning improvement measures.
+(1) Security
 
-![ Image is not Available !](hugo-web.webp)
+Most CMS (Content Management System = a system that allows web content to be updated without specialized knowledge) are regularly upgraded. If the changes in version upgrades are small, it will not be a major problem, but if they are major updates, you need to be careful. Sometimes, the site may become inconsistent with the installed plug-ins and extensions, causing problems with the site. Problems such as a sudden collapse of the page layout or malfunctioning of the contact form are possible.
 
-## Case
+(2) Realization of high-speed site production
 
-**Site**: Our corporate website
+Problems such as "slow page loading speed" are difficult to avoid due to the mechanism of the CMS to dynamically generate pages. Also, if you are putting up a website for the time being, this will not be a problem. However, if you want to aim for branding and SEO through your website, we recommend that you create a site that is as fast as possible to improve the number of site visitors and the abandonment rate as much as possible.
 
-**Problem**: It was created with Wordpress, but access is slow, maintenance cost for version upgrade is high, there is a limit to security enhancement
+(3) Easy to maintain
 
-**Solution**: To the static code generator triggered by the release of [Azure Static Web Apps](https://azure.microsoft.com/ja-jp/services/app-service/static/) Migration. Got a selection process, adopted HUGO, and managed the site on GitHub. The time and mental burden on the site manager has been reduced, and the productivity of content production has increased.
+When a CMS is implemented, "regular maintenance" costs must be anticipated, as compatibility checks, bug fixes, backups, and server-side update support are required when CMS versions are upgraded. There is a wild notion of "no version upgrades," but this is problematic because it leaves security holes open. Static sites are simpler on the server side, and maintenance and system expansion are relatively easy.
 
-**Reference**: In [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), enter the URL of any of our corporate sites and it will be confirmed by Google that the performance is high. I can do it.
+**Recommended Industries**.
 
-## Contract
+- Corporate websites for various industries
+- Job posting web pages for various industries
+- Landing pages (LP) for corporate advertisements, etc.
 
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
+**Advantages and disadvantages of static websites** !
 
-## Deliverables
+! [ Image is not Available !!!] (hugo-web.webp) (hugo-web.webp)
 
-**Basic set**
+**Differences between a static website and a dynamic CMS** !
 
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
+| Item | Static | Dynamic CMS
+| ---------------- | ------------ | --------------
+Performance | Good | Medium to High | Security | Very Good | Medium to High
+| Security | Very Good | Medium to Low
+| Infrastructure | Simple | More Complex | Backup | Easier | More Complex
+| Simple | More Complex | Backup | Easy | More Difficult | Data Driven | Not Possible | Not Possible
+Data Driven | Cannot | Yes | Yes | Content Update | Per File | Record
+| Content Update | Per File | Per Record
+design | free | by theme | version up | optional | continuous
+| Andaz provides a simple and easy way to create a static site generator that is easy to use, easy to maintain, and easy to use.
+
+Andaz will quickly build a static website with our static site generator HUGO. Please feel free to contact us for a consultation so that we can gain a deeper understanding of your current situation and suggest ways to improve it.
 
 
+**Introduction example**
 
-**Design**
-
-- Content layout design
-- Navigation design
-- Performance design
-- Cache design
-
-**As your IT team**
-
-- AMP Specialist
-- HTML/CSS coder
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+Site: Andaz corporate site
+Problem: We used to build our website using various systems such as FrontPage, IBM Home Page Builder, DreamWeaver, and so on. Later, when we adopted WordPress, problems occurred due to version upgrades of the main body and plug-ins. We were also worried about the security vulnerability, which was worrying us. Solution:If the site does not require a database, "Static Site Generator" is sufficient. However, with the release of Azure Static Web Apps, we decided to move to a static code generator and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. We then discovered and selected a static site generator called "Hugo" developed in the Google Go language. As a result, the time and mental burden on the site management staff was reduced, and productivity in content creation increased. Performance: Entering the URL of any of our corporate sites in PageSpeed Insights, we can see that it is performing well by Google.

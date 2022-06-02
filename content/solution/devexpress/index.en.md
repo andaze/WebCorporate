@@ -9,58 +9,34 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is the "user experience" getting so much attention? UX (user experience) is translated as "user experience" or "user experience", and is the collective term for experiences and emotions that users can experience when they contact or use a company, product or service.
+UX-focused application development" that enhances the value of services through user satisfaction
 
-Due to technological advances, the functions and features of products have become indistinguishable from other companies' products and services. Up until now, we have been able to attract people's attention by launching high-performance new products. However, in the modern era when things have spread sufficiently, people have stopped paying attention only to their functions, and have started paying for “experience”.
+**Overview**
 
-Emphasizing "experience" such as "easy to use" and "easy to understand" will certainly enhance the value of the product. UX is the right investment, unless you are sure that you will be differentiated by features alone.
+Satisfaction and pleasure obtained through services and products. Such value that users experience and feel is called "UX (user experience). A decade ago, high functionality was enough to attract people's interest and attention, but in recent years, when material wealth has been achieved, more and more people are willing to pay for "experience" in addition to functionality.
 
-We utilize the **DevExpress framework** to accelerate UX development. Please contact our professionals to understand your current situation and plan a plan.
+Therefore, efforts to invest in UX are attracting attention as a means of differentiation and increasing business value. At Andaz, we offer one-stop services from UX strategy planning to system development. We propose DX that enriches the customer experience.
 
-![ Image is not Available !](devexpress.webp)
+Effects of **Implementation**.
 
-## Case
+- Accurate understanding of user habits and issues
+- Create new experiences that have never existed before
+- Potential needs of users are brought out.
+- Increased value of services and products
 
-**Industry**: Major food manufacturing industry
+**Recommended industries/industries** Manufacturing
 
-**Issues**: We want to realize close to 1 million internal data searches and groupings under free conditions with good operability and responsiveness.
+- Manufacturing
+- Financial Services
+- Information and telecommunications
+- Distribution
 
-**Solution**: Select DevExpress UI kit. It was decided that the required data could be selected and displayed in about 0.2 seconds using the background query. It was a new experience for the users and was appreciated by the person in charge.
+**Product Image**
 
-## Contract
+Andaz utilizes the DevExpress Framework to accelerate UX development. ChoiceAwards" in 2021, where we were named best in class in 20 development categories. If you are looking to innovate your business through UX development, please feel free to contact our professionals.
 
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
+**Case Study**
 
-## Deliverables
-
-**Basic set**
-
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**Design**
-
-- UX design
-- Security design
-- Performance design
-
-**As your IT team**
-
-- UX/UI consultant
-- DevExpress Specialist
-- C#/JavaScript programmer
-- HTML/CSS coder
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+Industry: Major food manufacturer
+Challenge: To achieve high usability and responsiveness while allowing users to search and group nearly 1 million internal data items by any criteria.
+Solution: Selected DevExpress UI kit. The system was designed to allow users to select and display the necessary data in about 0.2 seconds in a background query. This was a fresh experience for the user and was highly appreciated by the person in charge.
