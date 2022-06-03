@@ -38,6 +38,6 @@ Integrates with the latest applications and pre-existing software; single sign-o
 
 ### Product Image
 
-Login" is an essential part of any system. Andaz can quickly build a subject authentication service using our white label authentication solution. If your company is interested in safe and secure "authentication", please feel free to contact us.
+Login" is an essential part of any system. Andaze can quickly build a subject authentication service using our white label authentication solution. If your company is interested in safe and secure "authentication", please feel free to contact us.
 
 ### Case Study

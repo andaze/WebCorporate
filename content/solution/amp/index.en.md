@@ -58,10 +58,12 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 ### Product Image
 
-Andaz will promptly build your AMP site with our AMP framework. If your website is facing any issues, please feel free to contact us.
+Andaze will promptly build your AMP site with our AMP framework. If your website is facing any issues, please feel free to contact us.
 
 ### Case Study
 
-**Site**: Andaz corporate site  
+**Site**: Andaze corporate site  
+
 **Problem**: When the site was built with WordPress, there was a problem with access speed from mobile.  
+
 **Solution**: By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.

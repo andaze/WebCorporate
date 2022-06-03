@@ -51,7 +51,7 @@ We can quickly develop chatbots using the Azure Bot Framework. Please contact us
 ### Case Study
 
 **Industry**: Securities  
-**Ploblem**: Reduce frequent internal inquiries to the IT department  
-**Solution**: Since the company was already using Office 365 E3 internally, we set up an inquiry bot with Bot Framework and Q&A Maker and made it available through Microsoft Teams. For atypical questions, the conversation was shifted from bot to human with the Handoff feature. After applying the solution, the majority of telephone inquiries were eliminated.
 
-Translated with www.DeepL.com/Translator (free version)
+**Ploblem**: Reduce frequent internal inquiries to the IT department  
+
+**Solution**: Since the company was already using Office 365 E3 internally, we set up an inquiry bot with Bot Framework and Q&A Maker and made it available through Microsoft Teams. For atypical questions, the conversation was shifted from bot to human with the Handoff feature. After applying the solution, the majority of telephone inquiries were eliminated.

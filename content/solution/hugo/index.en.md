@@ -61,6 +61,8 @@ Andaze will quickly build a static website with our static site generator HUGO. 
 
 ### Case Study
 
-**Site**: Andaz corporate site  
+**Site**: Andaze corporate site  
+
 **Problem**: We used to build our website using various systems such as FrontPage, IBM Home Page Builder, DreamWeaver, and so on. Later, when we adopted WordPress, problems occurred due to version upgrades of the main body and plug-ins. We were also worried about the security vulnerability, which was worrying us.  
+
 **Solution**:If the site does not require a database, "Static Site Generator" is sufficient. However, with the release of Azure Static Web Apps, we decided to move to a static code generator and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. We then discovered and selected a static site generator called "Hugo" developed in the Google Go language. As a result, the time and mental burden on the site management staff was reduced, and productivity in content creation increased. Performance: Entering the URL of any of our corporate sites in PageSpeed Insights, we can see that it is performing well by Google.

@@ -33,9 +33,10 @@ Therefore, we recommend "interactive web services. An interactive web service is
 
 ### Product Image
 
-At Andaz, we use the SignalR interactive communication framework to speed up the development of interactive communication websites. Please feel free to contact our professionals to discuss your needs.
+At Andaze, we use the SignalR interactive communication framework to speed up the development of interactive communication websites. Please feel free to contact our professionals to discuss your needs.
 
 ### Case Study
 
-**Industry**: Major distribution company Problem: The company was operating a web-based e-mail function, and the problem was that the "refresh" button on the browser had to be pressed to check for new e-mails.  
+**Industry**: Major distribution company Problem: The company was operating a web-based e-mail function, and the problem was that the "refresh" button on the browser had to be pressed to check for new e-mails.
+  
 **Summary**: By deploying SignalR, the new mail is pushed from the server side. By using "Azure Signal R Service" together, the quality of the technology was maintained and development costs were reduced.
