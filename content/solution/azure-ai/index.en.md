@@ -9,13 +9,15 @@ headerImage:
     imageDescription: ""
 ---
 
+# AZURE AI
+
 AI Machine Learning Development" for high prediction accuracy and improved business value
 
-**Overview**
+### Overview
 
 In recent years, with the spread of smartphones and IoT, a large amount of data has been accumulated. Analyzing this data by humans takes an enormous amount of time and effort. On the other hand, AI machine learning makes it possible to discover regularities that cannot be found by human power and to finish the analysis work in an instant. At Andaz, our professionals develop AI with high prediction accuracy. Andaz professionals develop AI with high forecasting accuracy, contributing to corporate business innovation through technology.
 
-**Effect of introduction**.
+### Effect of introduction
 
 - Increased efficiency in inspection and picking operations
 - Unmanned cash registers prevent human error and congestion, and make effective use of human resources.
@@ -24,7 +26,7 @@ In recent years, with the spread of smartphones and IoT, a large amount of data 
 - Increased profit margins through land and property price assessments
 - Automated preparation of reports and other paperwork to achieve a paperless office.
 
-**Suggested Industries** Automotive
+### Suggested Industries
 
 - Automotive
 - Logistics
@@ -34,12 +36,12 @@ In recent years, with the spread of smartphones and IoT, a large amount of data 
 - Manufacturing
 - Retail (food supermarket)
 
-**image**
+### image
 
 At Andaz, we use the open source AI development framework ML.NET to model machine learning in a short period of time. Why not use technology to solve your company's management issues?
 
-**Case Study**
+### Case Study
 
-Industry: Securities industry
-Requirement: To calculate an original fair value of stock price
-Solution: Financial information of listed companies, including past data, was obtained from EDINET and used as teacher data. Then, basic statistics and clustering were applied to analyze the correlation between characteristics and stock prices at a coarse granularity, and a desk model was created. We then created a provisional model based on multiple regression and quantification, and worked to improve the primary accuracy of the model through the use of features and their transformations. After receiving a certain evaluation from the field in terms of both theory and accuracy, we selected algorithms for production modeling, and finally created models for each cluster. We succeeded in creating a fair value calculation from a unique perspective, which is now being used for investment decisions.
+**Industry**: Securities industry
+**Ploblem**: To calculate an original fair value of stock price
+**Solution**: Financial information of listed companies, including past data, was obtained from EDINET and used as teacher data. Then, basic statistics and clustering were applied to analyze the correlation between characteristics and stock prices at a coarse granularity, and a desk model was created. We then created a provisional model based on multiple regression and quantification, and worked to improve the primary accuracy of the model through the use of features and their transformations. After receiving a certain evaluation from the field in terms of both theory and accuracy, we selected algorithms for production modeling, and finally created models for each cluster. We succeeded in creating a fair value calculation from a unique perspective, which is now being used for investment decisions.

@@ -104,13 +104,13 @@ etc.
 
 **Industry**: Manufacturing
 
-**Requirement**: To reduce the cost of recruiting nationwide and for multiple positions
+**Ploblem**: To reduce the cost of recruiting nationwide and for multiple positions
 
 **Solution**: To respond to spot vacancies and increases in staff from various departments, we used advertisements and referrals on a case-by-case basis, which was time-consuming and labor-intensive. Since there are always positions available, we set up an in-house recruiting site optimized for Indeed and Google Job Search so that we could immediately begin recruiting. By doing so, it became possible to flexibly recruit according to internal needs and reduce mismatches by consolidating the information to be conveyed. The company was able to reduce the cost of introductions and advertisements, and the site itself became an asset to the company.
 ### (2) Case Study 2
 
 **Industry**: Outsourcing (construction)
 
-**Requirement**: To solve manpower shortage in recruiting
+**Ploblem**: To solve manpower shortage in recruiting
 
 **Solution**: Because the company recruits nationwide for a wide range of targets, from inexperienced to qualified candidates, it was constantly posting job openings on major media outlets. The company was unable to make effective use of the scout mail and recommendation functions of each media outlet, and had its hands full with responding to applicants and coordinating schedules. By providing proxy services for sending scout e-mails, the number of applicants was increased by approximately 18%. In addition, the company began to take on some of the tasks such as schedule adjustment and revision of drafts on a case-by-case basis.

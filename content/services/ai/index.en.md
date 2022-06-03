@@ -58,7 +58,7 @@ We quickly model machine learning in **ML.NET**, an open source AI development f
 
 **Industry**: Securities Industry
 
-**Requirement**: To calculate a unique fair value of stock price
+**Ploblem**: To calculate a unique fair value of stock price
 
 **Solution**: We decided to obtain financial information of listed companies from EDINET, including historical data, and use it as our teacher data. Basic statistics and clustering were applied to create a desk model by analyzing the correlation between characteristics and stock prices at a coarse granularity. A provisional model was created through multiple regression and quantification, and features and their transformations were used to improve first-order accuracy. After receiving a certain level of evaluation from the field in terms of both theory and accuracy, we selected algorithms for production modeling and eventually created models for each cluster. As a result, we were able to successfully perform fair value calculations from a unique perspective, and realized their use in investment decisions.
 

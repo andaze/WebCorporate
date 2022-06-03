@@ -10,15 +10,17 @@ headerImage:
 
 ---
 
-Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
+# AMP WEB
 
-**Overview**
+## Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
+
+### Overview
 
 AMP (Accelerated Mobile Pages, commonly known as amp) is a standard jointly launched by Google and Twitter to enable mobile users to comfortably view websites. The literal translation means "faster pages for mobile.
 
 AMP enables search engines to read information on web pages ahead of time and direct links from search results to them, so that data can be displayed without having to jump to the page each time. Users will spend more time on the site because they will not have to wait as long and will get a much better impression of the site.
 
-**Effects of AMP
+### Effect of introduction
 
 - Reduce the time users spend waiting for pages to be displayed.
 - Increased site traffic and revenue
@@ -48,18 +50,18 @@ AMP enables search engines to read information on web pages ahead of time and di
 > Exhibit: "NetShop Managers Forum - The value of "one second" in EC site performance. Display speed that meets user expectations.
 
 
-**Recommended industries** Information and telecommunications
+### Suggested Industries
 
 - Information and telecommunications
 - Manufacturing (e.g., EC sites)
 - Landing pages for advertisements (LP)
 
-**Product Image**
+### Product Image
 
 Andaz will promptly build your AMP site with our AMP framework. If your website is facing any issues, please feel free to contact us.
 
-Example of **Introduction Example**
+### Case Study
 
-Site: Andaz corporate site
-Problem: When the site was built with WordPress, there was a problem with access speed from mobile.
-Solution: By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.
+**Site**: Andaz corporate site  
+**Problem**: When the site was built with WordPress, there was a problem with access speed from mobile.  
+**Solution**: By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.
