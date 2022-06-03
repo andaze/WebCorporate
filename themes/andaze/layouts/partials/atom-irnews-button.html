@@ -4,9 +4,8 @@
 <a href="{{ .Permalink }}" type="button" class="w-30 md:w-44 text-white hover:text-black border border-gray-800 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-6 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
 {{ else }}
     {{if eq (.Lang) ("ja")}}
-    <a href="https://www.andaze.com/ja/job/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-20 lg:px-20 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
-    {{ end }}
-    {{if eq (.Lang) ("en")}}
-    <a href="https://www.andaze.com/en/job/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-20 lg:px-20 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
+    <a href="https://www.andaze.com/job/ja/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-20 lg:px-20 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
+    {{ else }}
+    <a href="https://www.andaze.com/job/en/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-20 lg:px-20 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
     {{ end }}
 {{ end }}
