@@ -7,7 +7,7 @@ weight: 2
 
 # About Us
 
-## What is Andaze ?
+<!-- ## What is Andaze ?
 
 Leveraging IT Tech from Around the World
 We create the best products by communicating with users.
@@ -15,14 +15,16 @@ and communicate with users to create the best products.
 We are a next-generation development company that creates optimal products by communicating with users.
 
 Andaze creates products that change common sense.
-"Andaze", which creates products that change the way we think about the world.
+"Andaze", which creates products that change the way we think about the world. -->
 
-## About Us
+<!-- ## About Us -->
 
 **Company Name**: Andaze Corporation
 
-**Location**: ＜head office＞
-10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo
+**Location**:  
+
+ ＜head office＞
+10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo  
 
 ＜development base＞
 5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo
@@ -34,10 +36,15 @@ WeWork Hanzomon PREXSouth 2F
 
 **Representative**:  Mina Arai
 
-**Bank**: Mitsui Sumitomo Bank, Hibiya Branch
+**Bank**:  
+
+Mitsui Sumitomo Bank, Hibiya Branch  
+
 Japan Net Bank, Head Office Sales Department
 
-**Approved Standards**: Information Security Management System（ISO27001）
+**Approved Standards**:   
+
+Information Security Management System（ISO27001） 
 
 Quality Management System（ISO9001）
 
