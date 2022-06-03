@@ -9,13 +9,13 @@ cardImage: logo_pc.png
 
 # Shared Team
 
-### Why Choose Andaze?
+## Why Choose Andaze?
 
-### Andaz professionals
+## Andaz professionals
 
-### Shared Teams" (move from the services we provide) to support the success of your project.
+## Shared Teams" (move from the services we provide) to support the success of your project.
 
-#### A diverse team of highly skilled professionals   
+## A diverse team of highly skilled professionals   
 
 Shared Team is a group of professionals from various fields. Each consultant, PM, and engineer takes the initiative in steering the project to achieve the goals. By not having a fixed number of team members, all Andaz staff naturally understand the client's technical information, regardless of the size of the project. We are able to provide our knowledge as needed. We do not limit the scope of work, but rather offer a flexible "quasi-contract" style that allows us to work flexibly according to your company's situation, from strategic planning to design, operation, and helpdesk services. One of our strengths is that we can utilize the know-how we have cultivated for our clients' projects because each individual has a wide range of activities. Of course, we do not divulge trade secrets.
 
