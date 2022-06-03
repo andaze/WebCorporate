@@ -14,6 +14,9 @@
         {{ partial "breadcrumbs.html" . }}
     </div>
     <div class="container mx-auto px-5 lg:px-40 py-5 mb-24">
+        {{ .Content }}
+    </div>
+    <div class="container mx-auto px-5 lg:px-40 py-5 mb-24">
         <!-- {{ partial "molecule-section-services-tabview.html" . }} -->
 
         {{ .Scratch.Set "section" "services" }}
