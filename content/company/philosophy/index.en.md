@@ -6,17 +6,20 @@ weight: 4
 ---
 # Management Philosophy
 ## Supporting corporate DX at the forefront of technology.
-In this day and age, it is impossible to compete only on the quality and price of products.
-To survive in the competitive marketplace of the future, you need
+In this day and age, it is impossible to compete only on the quality and price of products.  
+To survive in the competitive marketplace of the future, you need  
 DX to drive business value at an accelerated rate.
-Andaze is a company that adds value to businesses and
-And we contribute to the creation of innovative innovations that fundamentally overturn existing business models.
+
+Andaze is a company that adds value to businesses and  
+And we contribute to the creation of innovative innovations that fundamentally overturn existing business models.  
 Andaze contributes to the creation of innovative innovations that fundamentally overturn existing business models.
-Professionals with diverse skills
-We create new added value that goes beyond mere digitization.
+
+Professionals with diverse skills  
+We create new added value that goes beyond mere digitization.  
 We create new value-added products and services.
-Capturing business at the forefront of such technology
-Andaze's Shared Team, which sees its business at the forefront of technology
+
+Capturing business at the forefront of such technology  
+Andaze's Shared Team, which sees its business at the forefront of technology  
 Andaze's shared team, which captures the business at the forefront of technology, shares a common philosophy.
 
 ## Corporate Slogan Corporate Philosophy
