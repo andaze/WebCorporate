@@ -182,24 +182,22 @@
     post := ${post},<br>  
     Inquiry Detials := ${inquiryDetials},<br>`;
 
-    let host = {{ .Site.Params.emailCredential.host }};
-    let userName = {{ .Site.Params.emailCredential.userName }};
-    let password = {{ .Site.Params.emailCredential.password }};
+    // let host = {{ .Site.Params.emailCredential.host }};
+    // let userName = {{ .Site.Params.emailCredential.userName }};
+    // let password = {{ .Site.Params.emailCredential.password }};
+    let secureToken = {{ .Site.Params.emailCredential.secureToken }};
     let bccMail = {{ .Site.Params.emailCredential.bccMail }};
     let fromMail = {{ .Site.Params.emailCredential.fromMail }};
-    // let secureToken = {{ .Site.Params.emailCredential.secureToken }};
 
     Email.send({
-      Host : host,
-      Username : userName,
-      Password : password,
+      SecureToken : secureToken,
       To : email,
       From : fromMail,
       Bcc : bccMail,
       Subject : `Contact Form filled By ${fName} ${lName}`,
       Body : body
     }).then(
-      message => alert(message)
+      message => alert("Your Contact Form has Been submitted")
     );
     // Email.send({
     //   SecureToken : secureToken,
