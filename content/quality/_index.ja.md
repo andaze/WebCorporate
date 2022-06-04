@@ -3,7 +3,7 @@ title: "品質方針"
 date: 2022-06-04T16:11:55+09:00
 weight: 10
 ---
-
+<div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="text-center">品質方針</h1>
 
 <div class="my-8">
@@ -30,4 +30,5 @@ weight: 10
 アンダーズ株式会社
 
 代表取締役 新井 美奈
+</div>
 </div>

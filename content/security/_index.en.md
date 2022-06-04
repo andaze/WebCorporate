@@ -3,8 +3,7 @@ title: "Information Security Policy"
 date: 2022-06-04T16:04:54+09:00
 weight: 10
 ---
-
-
+<div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="text-center">Basic Policy on Information Security</h1>
 
 Andaze Corporation aims first and foremost to satisfy not only our customers but also all people involved with our products, and to be a company that is trusted and secure.  
@@ -30,4 +29,5 @@ Andaze Corporation
 President and Representative Director 
 
 Mina Arai 
+</div>
 </div>

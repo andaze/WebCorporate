@@ -3,7 +3,7 @@ title: "情報セキュリティ方針"
 date: 2022-06-04T16:04:44+09:00
 weight: 10
 ---
-
+<div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="text-center">情報セキュリティ基本方針</h1>
 
 アンダーズ株式会社について、第一にお客様はもとより、当社の製品に関わる全ての人々の満足を得る事を目標とし、信頼・安心される会社を目指す。 
@@ -27,4 +27,5 @@ weight: 10
 アンダーズ株式会社 
 
 代表取締役　新井　美奈 
+</div>
 </div>
