@@ -9,63 +9,41 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is "database optimization" important? An increasing number of companies are using NOSQL to complement traditional RDBs to handle exponentially growing data, such as real-time analytics while holding large amounts of data.
+# AZURE COSMOS DATABASE
 
-So far we have used a database called RDBMS. The internal data structure was normalized, and it was necessary to refer to several master tables to display one screen.
+## NOSQL Database Development" for storing huge databases with data optimization.
 
-A database called NOSQL, on the other hand, allows you to design the information you need in one shot. By adding the number of servers, you will be able to flexibly deal with the increase in data volume and traffic.
+### Overview
 
-**Pros of NOSQL**
+Database file size is getting bigger and bigger. In order to handle exponentially increasing data, such as real-time analysis while maintaining such a large amount of data, "data optimization" is necessary. Therefore, an increasing number of companies are using NOSQL (abbreviation of Not only SQL) as a complement to the conventional RDB (Relational DataBase Management System / Relational DataBase Management System ).
 
-- Can take the data storage format optimized for the application
-- Can store data without defining data type
-- Performance can be easily improved by adding more servers
+The database called RDBMS used until now had a normalized internal data structure, and it was necessary to refer to a number of master tables to display a single screen.
 
-**Cons**
+On the other hand, a database called NOSQL can be designed to retrieve the necessary information in a single shot. Furthermore, by adding more servers, the system can flexibly handle increases in data volume and traffic.
 
-- Data integrity needs to be considered in design
+### Effects of Introduction
 
-![ Image is not Available !](cosmos-database.webp)
+- Data can be stored in a format optimized for the application.
+- Store data without defining data types
+- Easily increase performance by adding more servers.
 
-### Case
+### Suggested Industries
 
-**Industry**: Automobile manufacturing
+- Gaming
+- Distribution
+- Telecommunications
+- Automotive
+- Consumer electronics
+- Financial Services
 
-**Overview**: Raw data from IoT devices is stored in a large-capacity database, Azure Table Storage. For inquiries from the system, data is aggregated and processed by the regular startup of Azure Function to create Json data optimized for the display format. By saving to the Cosmos database that can store flexible data, the inquiry screen has been improved so that the necessary information can be referenced almost in an instant.
+### Product Image
 
+Andaze will promptly proceed with database optimization by utilizing AZURE COSMOS DATABASE. Please feel free to contact us if your company is having trouble storing large scale data.
 
-## Contract
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
+### Case Study
 
-## Deliverables
+**Industry**: Automobile manufacturing industry  
 
-**Basic set**
+**Problem**: The company is having trouble processing the huge amount of data sent from IoT terminals  
 
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**Design**
-
-- Content layout design
-- Navigation design
-- Performance design
-- Cache design
-
-**As your IT team**
-
-- AMP Specialist
-- HTML/CSS coder
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+**Solution**: Store raw data from IoT terminals into a large database, Azure Table Storage. For querying from the system, periodic invocation of Azure Function aggregates and processes the data to create Json data optimized for display format. Then, by storing the data in AZURE COSMOS DATABASE, which can store flexible data, we improved the system so that the necessary information can be viewed from the inquiry screen almost instantly.

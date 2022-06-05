@@ -9,66 +9,49 @@ headerImage:
     imageDescription: ""
 ---
 
-Why are “chatbots” getting so much attention? A chatbot is a combination of chat and bot, which means "a robot that talks." It is not a physical robot but a communication tool for companies.
+# AZURE BOT FRAMEWORK
 
-**User benefits**
+## Chatbot Development" for 24-hour automated response to help increase customer satisfaction.
 
-- Feel free to contact us
-- Reduces call waiting time
+### Overview
 
-**Corporate benefits**
+A chatbot is an "automatic conversation system" that combines "chat" and "robot. They can reply to inquiries often received from users at internal help desks, customer support, etc., in place of staff using tools such as LINE. Andaz's chatbot development is characterized by a high degree of accuracy that contributes to increased operational efficiency and customer satisfaction.
 
-- Reduced man-hours for operators and reduced turnover rate
-- Repeat bot learning to improve service
-- Logs help improve business
+### Effects of Introduction
 
-Even in work style reforms aimed at improving labor productivity, there is an urgent need to improve work efficiency, especially for small and medium-sized enterprises. Chatbots are IT tools that help improve operations together with RPA.
+#### (1) User side
 
-We utilize **Azure Bot Framework** to quickly develop chatbots. Please contact our professionals to understand your current situation and plan a plan.
+- Users can easily make inquiries 24 hours a day.
+- Quick replies, so questions can be resolved in a short time.
+- Increased knowledge of products and services, resulting in higher customer satisfaction
+- Customers can be served online without having to visit a storefront.
 
-![ Image is not Available !](azure-bot.webp)
+#### (2) Company side
 
-### Case
+- Streamlines the workload and personnel costs of the customer support department
+- Reduction of burden and labor cost for customer support department
+- Inquiry records are useful for business improvement
+- The accuracy of responses increases as the chatbot learns more.
+- Increase in sales by increasing the number of customer contacts
 
-**Industry**: Securities
+### Suggested Industries
 
-**Request**: Reduced frequent internal inquiries to the IT department
+- Distribution
+- Securities
+- Fashion, Cosmetics
+- Apparel
+- Food
+- Home appliances
+- Banking
 
-**Solution**: Since Office 365 E3 was already used by users, we set up an inquiry bot by Bot-Framework and Q&A Maker so that it could be used by company operators. For atypical questions, the Handoff feature transferred conversations from bots to humans. After applying the solution, we were able to reduce most of the telephone inquiries.
+### Product Image
 
+We can quickly develop chatbots using the Azure Bot Framework. Please contact us for a consultation so that we can understand your company's current situation and plan your project.
 
-## Contract
-- Planning and design: Semi-delegation ontract
-- Production: Contract contract
+### Case Study
 
+**Industry**: Securities  
 
-## Deliverables
-**Basic set**
+**Ploblem**: Reduce frequent internal inquiries to the IT department  
 
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**Design**
-
-- Chatbot design
-- Security design
-- Performance design
-
-**As your IT team**
-
-- Bot consultant
-- Azure Bot Service Specialist
-- C#/JavaScript programmer
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+**Solution**: Since the company was already using Office 365 E3 internally, we set up an inquiry bot with Bot Framework and Q&A Maker and made it available through Microsoft Teams. For atypical questions, the conversation was shifted from bot to human with the Handoff feature. After applying the solution, the majority of telephone inquiries were eliminated.

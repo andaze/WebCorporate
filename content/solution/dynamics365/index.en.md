@@ -9,64 +9,41 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is “Customer Relationship Management” getting so much attention? It is important to continue to cultivate new customers, but it is said to be an era in which we aim to increase sales as a whole by taking more care of our current customers. We need a system that manages information about customer relationships by keeping a history of contact with customers by the system.
+# Dynamics365
 
-### Purpose of CRM
+## Introduction of Customer Relationship Management CRM" for accurate analysis of information on existing customers for sales promotion.
 
-- Increase new customers
-- Increase repeat rate from existing customers
-- Increase service unit price
-- Lower costs
+### Overview
 
-The customer relationship management system can centrally manage information about prospects, sales, and after-sales service. You can flexibly customize it to suit your business.
+CRM (Customer Relationship Management) is an IT tool that has been introduced in many successful companies. Now is the time when developing new customers is important, while correctly understanding existing customers and implementing the most appropriate strategy for each of them will pay off. Andaze helps you visualize the analysis of customer information with its superior solution Dynamics365 so that you can optimize your outreach to your users.
 
-We will promptly launch the system with the **Customer Relationship Management System Dynamics 365**. Please contact our professionals to understand your current situation and plan a plan.
+### Effect of introduction
 
-![ Image is not Available !](dynamics-365.webp)
+- Better understanding of existing customers
+- Increase repeat business of existing customers
+- Acquisition of new customers
+- Increase in cost-per-customer
 
-### Case
+### Suggested Industries
 
-**Industry**: Mid-level service industry
+- Wholesale and retail
+- Automotive
+- Information and Communication
+- Real estate
+- Manufacturing
 
-**Number of licenses**: 700
+### Product Image
 
-**Request**: We are using Salesforce, but the budget ratio of license fees is high and the cost to optimize CRM is insufficient.
+Customer Relationship Management CRM centrally manages a large amount of information, including data analysis of existing customers, inquiries from prospective customers, e-mail distribution, accurate sales, and after-sales service. It is expected to be effective in increasing sales and profits. Andaze can quickly develop a system with Dynamics 365, a customer relationship management system. We can also customize the system flexibly to meet your company's requirements and business.
 
-**Solution**: A company that was worried about license fees and governor restrictions. Since Office 365 E3 was already introduced, we have proposed Dynamics 365. For data migration, we set up a real-time data migration pipeline from Salesforce with a three month parallel uptime. In the meantime, data registration was performed from Salesforce, data reference was performed on Dynamics side, and two CRMs were operated in parallel using the same data. We asked the Dynamics side to confirm that there were no operational problems, set a switching date, and implemented the transition to Dynamics. We have achieved a smooth transition.
+### Case Study
 
-## Contract
+**Industry**: Medium-sized service company  
 
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
+**Number of licenses**: 700  
 
-## Deliverables
+**Request**: Currently using Salesforce. Lack of cost to optimize CRM due to high license fee budget ratio is an issue.  
 
-**Basic set**
+**Solution**: The company was concerned about license fees and governor restrictions; since Office 365 E3 was already in place, Dynamics 365 was proposed. For data migration, we set up a real-time data migration pipeline from Salesforce and set up a 3-month parallel operation period. During this period, data registration from Salesforce and data reference on the Dynamics365 side were possible, and the two CRMs were operated in parallel using the same data. The migration to Dynamics365 was executed. A smooth transition was achieved.
 
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**Design**
-
-- CRM design
-- Fit & gap
-- Security design
-
-**As your IT team**
-
-- CRM consultant
-- Dynamics 365 engineer
-- C#/JavaScript programmer
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support desk (phone/chat)
-- Functional description for administrators
+<font color="gray">(*Salesforce has many advantages, and Dynamics365 is not necessarily superior.)</font>

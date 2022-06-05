@@ -9,64 +9,34 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is the "two-way communication web service" attracting attention? For information such as stock charts and chats, real-time properties are required as product value. In the old system, the information was updated with a mechanism such as periodic screen updates. It was not a good user experience because the amount of communication for that purpose increased and the screen flickered.
+# SIGNALR
 
-A two-way web service is a mechanism that allows users to browse information stored in the system in real time. Two-way communication allows the server to send messages. Even if the screen is not updated regularly, when the information source becomes new, it will be possible to reflect it on the screen the user is looking at in real time.
+## Interactive Communication Web Service Development" to make users' site browsing more comfortable.
 
-**Pros of interactive web services**
+### Overview
 
-- Real-time information is displayed just by opening the browser (no refresh button required)
-- Automatically updated screen user experience enhances product value
+For example, real-time information, such as stock price charts and chats, is required as a product value. However, with conventional systems, information must be kept up-to-date through "periodic screen updates. This results in high communication volume, flickering screens, and other problems that can lead to a low level of user satisfaction.
 
-**Cons**
+Therefore, we recommend "interactive web services. An interactive web service is a system that allows users to refer to information stored in the system in real time. Through interactive communication, new information can be reflected on the user's screen in real time without the need to press an update button.
 
-- Need advanced design compared to unidirectional
+### Effects of introduction
 
-We will proceed with the web development of bidirectional communication promptly with the **bidirectional communication framework SignalR**. Please contact our professionals to understand your current situation and plan a plan.
+- Information is updated without the need to press the refresh button while the browser is open.
+- The user experience of automatically updating the screen increases satisfaction and improves the value of the product
 
-![ Image is not Available !](signalr.webp)
+### Suggested Industries
 
-### Case
+- Distribution
+- Securities & Investments
+- Financial Services
+- Manufacturing
 
-**Industry**: Major distribution industry
+### Product Image
 
-**Issues**: I am operating the e-mail function on the web, but I am operating it while pressing the "Refresh" button of the browser to check for new mail.
+At Andaze, we use the SignalR interactive communication framework to speed up the development of interactive communication websites. Please feel free to contact our professionals to discuss your needs.
 
-**Solution overview**: SignalR pushes that there is new mail from the server side. Use Azure Signal R Service together to maintain the quality of technology and reduce development costs.
+### Case Study
 
-## Contract
-
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
-
-## Deliverables
-
-**Basic set**
-
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Review meeting
-
-
-
-**Design**
-
-- Application design
-- Communication design
-- Security design
-- Performance design
-
-**As your IT team**
-
-- Two-way communication specialist
-- C#/JavaScript programmer
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+**Industry**: Major distribution company Problem: The company was operating a web-based e-mail function, and the problem was that the "refresh" button on the browser had to be pressed to check for new e-mails.
+  
+**Summary**: By deploying SignalR, the new mail is pushed from the server side. By using "Azure Signal R Service" together, the quality of the technology was maintained and development costs were reduced.

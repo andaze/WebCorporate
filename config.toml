@@ -61,7 +61,7 @@ name    = "services"
 url     = "services"
 weight  = 2
 [[Languages.en.menu.main]]
-name    = "reason"
+name    = "Why Choose Us"
 url     = "reason"
 weight  =  3
 [[Languages.en.menu.main]]
@@ -96,7 +96,7 @@ name    = "サービス"
 url     = "services"
 weight  = 2
 [[Languages.ja.menu.main]]
-name    = "理由"
+name    = "選ばれる理由"
 url     = "reason"
 weight  =  3
 [[Languages.ja.menu.main]]

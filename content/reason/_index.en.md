@@ -1,98 +1,117 @@
 ---
-title: "Reason"
+title: "Why Choose Us"
 date: 2022-02-23T17:03:34+09:00
 weight: 3
 headerVideo: 
     videoName: "service"
-    videoTitle: "Reason"
+    videoTitle: "Why Choose Us"
     videoDescription: ""
 ---
 
-# 選ばれる理由
+<h1 class="text-4xl font-bold mb-8">Reasons to choose us.</h1>
 
-## 一枚岩となって、競争優位をもたらすプロジェクトを完遂。
-アンダーズがお客様に選ばれる理由。
-それは、戦略から運用保守まですべてのプロセスに責任を持ち、
-ワンストップですべてのソリューションを提供できるから。
-そして、シェアード・チームに蓄積されている
-汎用性の高いライブラリを活用することで
-開発効率を高め、本質的な競争優位につながる開発に注力します。
-プロジェクトをリードしながらやり遂げられるのは
-ベンチャーならではのスピード感があってこそ。
-ご予算を超過することなく、期待以上の成果を生み出します。
+<h2 class="text-2xl font-bold mt-12 mb-6">Working as one, we complete projects that give you a competitive advantage.</h2>
+Andaze is chosen by our clients because we take responsibility for the entire process, from strategy to operations and maintenance.<br><br>
 
-### 全プロセスに責任を持ち、ビジネスの成功にフルコミット。
-「当初の計画書は良かったのに、期待する効果は得られなかった」
-「導入したシステムが複雑で、使いづらく利用が定着しない」
-「プロジェクト過程で追加費用が発生。コストが膨大になってしまった」
-システム導入に際し、よく聞く事例です。
-アンダーズは新規事業の戦略に向き合ってきたメンバーが、
-最上流のコンサルティングから手がけるため、
-戦略が「絵に描いた餅」で終わることはありません。
-また、最下流の運用保守まで担うことから、
-ビジネスの変化を現在進行形で捉えることができます。
-さらに、変革のマインドを持つベンチャーならではの
-開発スピードも強みのひとつ。
-グローバル基準の技術で競争優位をもたらすサービスを
-適正価格で完遂できる環境です。
-テクノロジーパートナーとして
-フルコミットで伴走し続けます。
+We take responsibility for all processes from strategy to operation and maintenance.  
+And we are able to provide one-stop solutions.<br><br>
 
-### 戦略立案から運用保守まで、ワンストップで完結。
-「戦略段階から運用時まであらゆることを相談したい」
-「システムや工程ごとに責任の所在が異なって大変」
-「当初の計画に固執するよりも製品の内容を重視したい」
-依頼後に、このようなご要望やお悩みが発生することもあります。
-アンダーズが提供するのは戦略から運用保守まで一手に担う
-各分野のプロで構成されたシェアード・チーム。
-時には戦略立案を手がけたチームが
-最下流の運用保守を担うこともあります。 
-高い一貫性で付加価値の高いサービスを提供すべく、
-プライム受注を徹底し、下請けに丸投げすることはありません。
-使用するのは、レガシープロジェクトではなく
-どれもが将来性の高いグローバル基準のテクノロジー。
-だからこそ、シェアード・チームのモチベーションは
-常に高く保たれているのです。
-もちろん「製品ができたら終わり」ではなく、
-その先も一枚岩となって、より最適な環境をご提供します。
-一貫性を保つということは、付加価値の高いサービスの大前提です。
+And we are able to provide one-stop solutions by utilizing our shared team's  
+By utilizing highly versatile libraries  
+We focus on development that improves development efficiency and leads to an essential competitive advantage.<br><br>
 
-### 汎用性の高いライブラリによって、競争優位の付加価値を提供。
-「コンサルファームは開発にコミットしない」
-「システム会社は業務理解に乏しい」
-「戦略やシステム開発の委託費が高額に」
-このような原因で、発注側が求める結果にたどり着かないこともよくある話しです。
-アンダーズは、お客様のお困りごとを解決できる
-汎用性の高いライブラリを蓄積しています。
-さらに、堅牢なセキュリティ環境を整備。
-余裕を持って、競争優位をもたらす
-付加価値の開発に集中できるため、
-適正価格で最適なソリューションを提供できます。
+We are able to accomplish this while leading the project because  
+We are able to lead and complete projects with a sense of speed that only a venture company can provide.<br><br>
 
-## アンダーズが提供するサービス
-戦略立案から設計、開発、運用保守まで、すべてのプロセスでビジネスとテクノロジーを熟知したプロフェッショナルチームが支援。お客様のビジネス価値を最大限に高めるサービスを生み出し、磨き続けます。
+We will produce results that exceed your expectations without exceeding your budget.<br><br><br><br>
 
-### 戦略/DXコンサルティング
-アンダーズは高度なソリューションを展開。優れた技術や、旬の業界トレンドを取り入れながら、お客様の課題解決につながる提案を行います。丁寧に、粘り強く、コラボレーションやノウハウを駆使。お客様が最適なソリューションを活用できるように徹底サポートします。
+<h3 class="text-xl font-bold mb-6">We take responsibility for the entire process and are fully committed to the success of your business.<h3>
+The original plan was good, but it didn't deliver the desired results.  
+The system is complicated, difficult to use, and does not stick.  
+Additional costs were incurred during the project process. Additional costs were incurred during the project process, resulting in huge costs.  
+These are some of the common cases we hear about when implementing a system.<br><br>
 
-### システム・コンサルティング
-ビジネスを深く理解するシェアード・チームが、経営視点からお客様のIT戦略に基づいたシステムを設計。トップダウンのような一方通行のコミュニケーションではなく、プロフェッショナルの視点から最善の要件定義をご提案します。 Microsoftのゴールドパートナーとして、優れた技術を用い、ビジネスの価値を最大限に高めるアイデアをお伝えさせてください。
+At Andaze, our team members, who have experience in new business strategies, are able to provide the highest level of consulting services.  
+Andaze members, who have experience in new business strategy, handle the project from the top-level consulting.  
+Andaze's team members, who have experience in new business strategy, start from the top-level consulting, so your strategy will not end up as a "cakewalk".<br><br>
 
-### システム開発
-戦略立案やシステム・コンサルティングを手掛けたシェアード・チームが開発に着手。ただ当初の計画に固執するのではなく、お客様の状況の変化やフィードバックに適宜対応しながら、可能な限り修正を繰り返します。何度も試作品と改良を積み重ねることで、短納期で高品質なシステム開発を実現。お客様の潜在ニーズを引き出し、Microsoftゴールドパートナーの強みを活かした付加価値の高い製品をご提供します。
+And since Andaze is also responsible for operation and maintenance of the bottom line, we are able to  
+And because we are responsible for the bottom-line operation and maintenance, we are able to grasp changes in the business as they are happening now.<br><br>
 
-### 運用保守
-実装後、長期的にサポートするのも、コンサルティングから開発まで、すべてのプロセスに携わったシェアード・チーム。24時間365日体制のシステム運用監視や、トラブル時の復旧対応もサポートします。さらにプロジェクトの目標達成に視点を置き、未来を見据えたシステム改善などDX化を成功に導くためのご提案もいたします。
+In addition, our venture company's speed of development is also one of our strengths.   
+We also have the ability to develop products at a rapid pace, which is unique to a venture company with a revolutionary mindset.<br><br>
 
-### 採用代行サービス
-「求人」の手法やサービスが多様化する昨今。一方で多くの企業では、採用活動が優先度の低い「ながら仕事」になっているのではないでしょうか。アンダーズでは「こういう人材を何名採りたい」とターゲットが決まった段階から、すべての採用プロセスをワンストップで支援。デジタル技術を駆使し、経験値や年代、人数、期間、コストによって最適な媒体や方法を「見える化」します。また、スカウトメール作成代行や日程調整など、手間のかかる作業もアウトソース可能。採用活動後は一連のプロセスを分析し、改善点のご提案をすることで採用の質を高めることができます。
+We are able to provide services that give us a competitive advantage with global standard technology at a reasonable price.  
+and services that bring competitive advantage with global standard technology at a reasonable price.<br><br>
 
-## 認証、認定、法人免許・（加盟団体・パートナー）
-組織的な能力向上のため、マイクロソフトをはじめとする各領域の認証や認定、法人免許などを取得しています。
-•	マイクロソフトゴールド
-•	ISO27001
-•	ISO9001
-•	IT導入補助金対象サービス
-•	有料職業紹介事業免許
-•	テレワークマスター
-•	パートナーシップ構築宣言
+As a technology partner  
+We will continue to accompany you with full commitment as a technology partner.<br><br><br><br>
+
+<h3 class="text-xl font-bold mb-6">One-stop service from strategic planning to operation and maintenance.</h3>
+We want to consult with you on everything from the strategy stage to the operation stage.  
+It is difficult to assign different responsibilities to different systems and processes.  
+We want to focus on product content rather than sticking to the original plan.  
+These requests and concerns may arise after the request has been made.<br><br>
+
+Andaze provides a full range of services from strategy to operation and maintenance.  
+Andaze provides a shared team of professionals in each field, from strategy to operation and maintenance.<br><br>
+
+Sometimes, the team that handled the strategic planning  
+Andaze provides a shared team of professionals in each field who are responsible for everything from strategy to operation and maintenance. <br><br>
+
+In order to provide high value-added services with a high level of consistency  
+We do not subcontract work to subcontractors.<br><br>
+
+We do not use legacy projects.  
+We use global standard technologies with high future potential.<br><br>
+
+That is why the motivation of the shared team is always high.<br><br>
+
+Of course, we don't stop when the product is finished.  
+We work as one team to provide an optimal environment for our clients.<br><br>
+
+Consistency is a prerequisite for value-added services.<br><br><br><br>
+
+<h3 class="text-xl font-bold mb-6">We provide value-added competitive advantage through our versatile libraries.</h3>
+Consulting firms don't commit to development.  
+Systems companies lack business understanding.  
+Outsourcing strategy and system development is expensive.  
+It is often the case that clients are unable to achieve the results they are looking for due to these reasons.<br><br>
+
+Andaze can solve your problems.  
+Andaze has accumulated a highly versatile library that can solve your problems.  
+In addition, we have a robust security environment.<br><br>
+
+We have the leeway to focus on value-added development that gives us a competitive advantage.  
+We can concentrate on developing value-added solutions at a reasonable price.  
+Andaze can provide the best solution at the right price.<br><br>
+
+<h2 class="text-2xl font-bold mt-12 mb-6">Services offered by Andaze</h2>
+From strategic planning to design, development, operation and maintenance, we have a team of professionals who know your business and technology inside and out. We continue to create and refine services that maximize our clients' business value.<br><br><br>
+
+<h3 class="text-xl font-bold mb-6">Strategy/DX Consulting</h3>
+Andaze deploys advanced solutions. We make proposals that solve our clients' problems while incorporating superior technologies and seasonal industry trends. We are attentive, persistent, and use collaboration and expertise. We provide thorough support so that our clients can utilize the best solutions.<br><br><br>
+
+<h3 class="text-xl font-bold mb-6">Systems Consulting</h3>
+Our shared team, with a deep understanding of your business, designs a system based on your IT strategy from a management perspective. We propose the best requirement definition from a professional point of view, rather than a one-way communication like a top-down approach. As a Microsoft Gold Partner, let us share our ideas to maximize your business value using superior technology.<br><br><br>
+
+<h3 class="text-xl font-bold mb-6">System Development</h3>
+A shared team that has worked on strategic planning and systems consulting will begin development. We don't just stick to the original plan; we make modifications as often as possible, responding to changes in your situation and feedback as appropriate. Through repeated prototyping and refinement, we are able to develop high-quality systems with short turnaround times. We draw out the customer's latent needs and provide high value-added products that take advantage of our strength as a Microsoft Gold Partner.<br><br><br>
+
+<h3 class="text-xl font-bold mb-6">Operation and Maintenance</h3>
+After implementation, our shared team, which is involved in the entire process from consulting to development, provides long-term support, including 24/7/365 system operation monitoring and recovery support in case of trouble. We also make proposals for future-oriented system improvements and other measures that will lead to a successful DX implementation, with a focus on achieving the goals of the project.<br><br><br>
+
+<h3 class="text-xl font-bold mb-6">Recruitment Agency Services</h3>
+Recruiting" methods and services are diversifying these days. On the other hand, many companies may find that recruiting has become a low-priority "work in progress. At Andaze, we provide one-stop support for the entire recruitment process, starting from the stage when the target "how many of these people we want to hire" is decided. We use digital technology to "visualize" the most appropriate media and methods based on experience, age, number of people, time frame, and cost. We can also outsource time-consuming tasks such as creating scout emails and scheduling. After the recruiting process, we can analyze the entire process and make suggestions for improvements to enhance the quality of the recruitment process.<br><br><br>
+
+<h2 class="text-2xl font-bold mt-12 mb-6">Certification, Accreditation, Corporate Licensure, (Member Organization/Partner)</h2>
+In order to improve our organizational capabilities, we have acquired certifications, accreditations, and corporate licenses in various areas, including Microsoft.
+<ul class="ml-6 mt-6 list-disc">
+<li>Microsoft Gold</li>
+<li>ISO27001</li>
+<li>ISO9001</li>
+<li>IT introduction subsidy eligible service</li>
+<li>Licensed as a fee-charging employment agency</li>
+<li>Telework Master</li>
+<li>Declaration of Partnership Building</li>
+</ul>

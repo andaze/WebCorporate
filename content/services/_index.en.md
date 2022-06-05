@@ -7,5 +7,3 @@ headerVideo:
     videoTitle: "Service"
     videoDescription: ""
 ---
-
-# サービス

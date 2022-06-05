@@ -7,5 +7,3 @@ headerVideo:
     videoTitle: "サービスアーカイブ"
     videoDescription: ""
 ---
-
-# サービス

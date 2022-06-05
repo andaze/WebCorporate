@@ -9,63 +9,41 @@ headerImage:
     imageDescription: ""
 ---
 
-Why is "Big Data" attracting attention? With the spread of smartphones, a large amount of data has started to appear. Even refrigerators and air conditioners are connected to the Internet and continue to generate new data. Corporate maintenance data is growing exponentially.
+# AZURE TABLE STORAGE
 
-In the past, storage, storage, and processing of large-scale, diverse data have had issues of capacity, cost, speed, and so on. But with the advent of cheap table storage, it's possible to store unnormalized data as raw information. In combination with a denormalized database, we can provide the information users need in a responsive manner.
+## Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data.
 
-**Pros of table storage**
+### Overview
 
-- Large amount of data can be handled at low cost
-- Can store denormalized or duplicate data for faster loading
-- Maximize system performance in combination with normalized data
+The recent proliferation of smartphones has led to the emergence of massive amounts of data. Moreover, even home appliances such as refrigerators, air conditioners, and vacuum cleaners are connected to the Internet and continue to generate new data. The amount of data held by companies is growing exponentially.
 
-**Cons**
+In order to store and process such large and varied data, problems of capacity, cost, and speed have been a constant concern until now. However, with the advent of inexpensive table storage, it is now possible to store information that has not been normalized in its raw form. This makes it possible to provide users with the information they need in a responsive manner.
 
-- Limited indexing capabilities
+### Effects of introduction
 
-We will build a database promptly with **Large-scale data storage Azure Table Storage**. Please contact our professionals to understand your current situation and plan a plan.
+- Large volumes of data can be handled at low cost.
+- Normalized data and duplicated data can be stored, and readability is improved.
+- Maximizes system performance when combined with normalized data
+
+**Recommended industries
+
+- Distribution
+- Information and telecommunications
+- Automotive
+- Advertising
+- Home Appliances
+- Financial Services
+
+### Product Image
+
+Andaze quickly builds databases with large-scale data storage Azure Table Storage. Please feel free to contact us if your company is troubled with handling big data or has management issues.
 
 ![ Image is not Available !](table-storage.webp)
 
-### Case
+### Case Study
 
-**Industry**: Human resource services
+**Industry**: Human resource services  
 
-**Overview**: Raw data from IoT devices is stored in a large-capacity database, Azure Table Storage. In order for the user to see the information, by regularly invoking Azure Function, data is aggregated and processed to create Json data optimized for display. By storing the display data in the Cosmos database whose performance is easy to tune, the query screen was displayed almost instantly.
+**Ploblem**: Extract necessary information from the huge amount of data sent from IoT terminals  
 
-## Contract
-
-- Planning and design: Semi-delegation contract
-- Production: Contract contract
-
-## Deliverables
-
-**Basic set**
-
-- Understanding the current situation and understanding your solution
-- Goal design, milestone formulation
-- Requirements definition document
-- Basic design document creation
-- Prototype/POC creation
-- Conducting a review meeting
-
-
-
-**Design**
-
-- Storage design
-- Security design
-- Performance design
-
-**As your IT team**
-
-- Big Data Consultant
-- Azure Table Storage Engineer
-- C#/JavaScript programmer
-
-**Operation**
-
-- System usage analysis
-- Planning of improvement measures
-- Support Desk
-- Functional description for administrators
+**Solution**: Store raw data from IoT terminals into a large database, Azure Table Storage; aggregate and process human resource data by periodically launching Azure Function to create Json data optimized for display format. The data was then stored in Azure COSMOS DATABASE, which can store flexible data. Necessary information can now be quickly accessed from the inquiry screen.
