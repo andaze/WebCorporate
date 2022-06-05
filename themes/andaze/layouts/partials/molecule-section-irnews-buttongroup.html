@@ -18,6 +18,12 @@
         {{ .Scratch.Delete "backgroundTheme"}}
     {{ end }}
 
+{{ else if eq (.Scratch.Get "section") ("recruit") }}
+    {{ with .Site.GetPage (.Scratch.Get "section") }}
+        {{ .Scratch.Set "buttonLink" "recruit" }}
+        {{ partial "atom-irnews-button.html" .}}
+        {{ .Scratch.Delete "buttonLink"}}
+    {{ end }}
 
 {{ else }}
     {{ with .Site.GetPage (.Scratch.Get "section") }}
