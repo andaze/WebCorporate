@@ -101,7 +101,7 @@ name   = "ケーススタディ"
 url    = "casestudy"
 weight = 4
 [[Languages.ja.menu.main]]
-name   = "解決方法"
+name   = "ソリューション"
 url    = "solution"
 weight = 5
 [[Languages.ja.menu.main]]
