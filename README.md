@@ -1,3 +1,15 @@
+# リポジトリの利用・運用方法について
+
+* 利用する端末には事前にHUGOパッケージをインストールしておく
+* git clone 直後は `npm install` などしてNodeパッケージをインストールする
+
+## https://github.com/andaze/HUGO-base との連携について
+
+* `git remote add hugo-base https://github.com/andaze/HUGO-base.git` 
+* `git subtree pull --prefix=themes/andaze hugo-base main` or `git subtree push --prefix=themes/andaze hugo-base main` などで通常のリポジトリのように取得・更新が可能
+
+* 基本的にすべてのコミット情報は origin リポジトリにコミットされる
+
 # 経緯・現況
 
 * 既存コーポレートサイトでは言葉で技術力を謳っているが、サイト上での表現力・実装技術が乏しい（と感じている）
