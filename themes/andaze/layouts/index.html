@@ -11,6 +11,9 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
   </div>
+  <div class="w-full h-96 lg:h-[34rem]">
+    <img src="{{ `img/top.png` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
+  </div>
   <div class="bg-white py-20 md:py-36 lg:py-36">
     {{ if .Site.GetPage "news"}}
       {{ .Scratch.Set "section" "news" }}
