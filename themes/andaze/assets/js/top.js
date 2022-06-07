@@ -51,6 +51,13 @@ window.interval_time = 500;
 
 export function kv_main() {
   
+  // トップページ以外でリロードが発生した時用
+  if (first_visit) {
+    // 表示させる画像のパスを指定
+    img.src = "../img/logo.png";
+    img.crossOrigin = "anonymous";
+  }
+  
 // キャンバスをDOMツリーに追加
 const wrapper = document.querySelector("#webgl");
 if (wrapper) {

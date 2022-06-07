@@ -4,7 +4,7 @@ import * as kvMain from './top.js';
 
 
 // 初回訪問判定フラグ
-var first_visit = true;
+window.first_visit = true;
 
 
 export function kv_sub() {
