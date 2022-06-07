@@ -14,13 +14,11 @@
   <div class="w-full h-96 lg:h-[34rem]">
     <img src="{{ `img/top.png` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
   </div>
-  <div class="bg-white py-20 md:py-36 lg:py-36">
-    {{ if .Site.GetPage "news"}}
-      {{ .Scratch.Set "section" "news" }}
-      {{ partial "template-section-newtopic.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
-  </div>
+  {{ if .Site.GetPage "news"}} // todo: Probably don't need it.
+    {{ .Scratch.Set "section" "news" }}
+    {{ partial "template-section-newtopic.html" . }}
+    {{ .Scratch.Delete "section" }}
+  {{ end }}
   <div class="bg-black p-1">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
