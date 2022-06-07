@@ -18,7 +18,7 @@
   {{ if or (eq (.context.Title) ("News")) (eq (.context.Title) ("ニュース")) }}
   {{ else }}
     <div class="collapse mt-4" id="collapseWithScrollbar_{{.id}}">
-      <ul class="text-left pl-10">
+      <ul class="text-left pl-10 pb-5 border-b border-b-gray-600">
         {{ range .context.Pages }}
           {{ partial "atom-footer-page-list.html" . }}
         {{ end }}
