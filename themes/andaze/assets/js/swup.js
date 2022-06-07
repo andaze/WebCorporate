@@ -31,6 +31,11 @@ async function init() {
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
+    } else {
+        const loading_background = document.getElementById("loading");
+        // ロード画面を非表示
+        loading_background.style.opacity = 0;
+        loading_background.style.visibility = "hidden";
     }
 }
 
