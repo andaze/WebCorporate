@@ -44,35 +44,48 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
   const loading_icon = document.getElementById("loading_icon");
   const loading_background = document.getElementById("loading");
 
-  // 初回訪問時のみローディング画面を表示する
+  loading_background.style.opacity = 1;
+  loading_icon.style.visibility = "visible";
+
+  // 初回訪問時
   if (first_visit) {
     
     window.setTimeout(() => {
-      loading_icon.style.visibility = "visible";
+      loading_background.style.visibility = "visible";
     }, 0.1)
   
-    window.addEventListener('load', () => {
-  
+    if (!is_bottom) {
+      
+      window.addEventListener('load', () => {
+        
+        window.setTimeout(() => {
+          
+            // ロード画面を非表示
+            loading_background.style.opacity = 0;
+            loading_background.style.visibility = "hidden";
+    
+        }, 500);
+    
+      })
+
+    } else {
+
       window.setTimeout(() => {
-  
-          // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "hidden";
-  
-      }, 500);
-  
-    })
+
+        // ロード画面を非表示
+        loading_background.style.opacity = 0;
+        loading_background.style.visibility = "hidden";
+
+    }, 1000);
+
+    }
 
     first_visit = !first_visit
 
   } else {
 
-    // ロード画面を表示
-    loading_background.style.opacity = 1;
-    loading_background.style.visibility = "visible";
-
     window.setTimeout(() => {
-  
+
       // ロード画面を非表示
       loading_background.style.opacity = 0;
       loading_background.style.visibility = "hidden";
