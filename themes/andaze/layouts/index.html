@@ -11,13 +11,12 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
   </div>
-  <div class="bg-white py-20 md:py-36 lg:py-36">
-    {{ if .Site.GetPage "news"}}
-      {{ .Scratch.Set "section" "news" }}
-      {{ partial "template-section-newtopic.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
+  {{ if .Site.GetPage "news"}}
+    {{ .Scratch.Set "section" "news" }}
+    {{ partial "template-section-newtopic.html" . }}
+    {{ .Scratch.Delete "section" }}
   </div>
+  {{ end }}
   <div class="bg-black p-1">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
