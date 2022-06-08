@@ -33,7 +33,6 @@ if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCo
 init();
 
 async function init() {
-    console.log(is_bottom)
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
