@@ -6,6 +6,7 @@ import SwupScrollPlugin from '@swup/scroll-plugin';
 import SwupMorphPlugin from 'swup-morph-plugin';
 import * as kvMain from './top.js';
 import * as kvSub from './top-sub.js';
+import * as sendForm from './sendform.js';
 
 const swup = new Swup({
     plugins: [
@@ -33,10 +34,17 @@ if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCo
 init();
 
 async function init() {
-    console.log(is_bottom)
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
+    }
+    if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
+        document.querySelector('#privacy').addEventListener("click", () => {
+            sendForm.btnEnableDisable();
+        });
+        document.querySelector('#submitButton').addEventListener("click", () => {
+            sendForm.sendEmail();
+        });
     }
 }
 
