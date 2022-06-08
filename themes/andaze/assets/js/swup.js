@@ -26,21 +26,17 @@ const swup = new Swup({
 });
 
 window.is_bottom = false;
-if ((location.pathname != '/WebCorporate/ja/') | (location.pathname != '/WebCorporate/en/')) {
+if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
     is_bottom = !is_bottom
 }
 
 init();
 
 async function init() {
+    console.log(is_bottom)
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
-    } else {
-        const loading_background = document.getElementById("loading");
-        // ロード画面を非表示
-        loading_background.style.opacity = 0;
-        loading_background.style.visibility = "hidden";
     }
 }
 
