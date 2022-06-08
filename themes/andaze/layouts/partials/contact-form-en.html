@@ -145,82 +145,14 @@
   </div>
   <div class="text-center pt-5 pb-2">
     <label class="text-center text-gray-500 font-bold">
-      <input class="mr-2 leading-tight" type="checkbox" id="privacy" onclick="btnEnableDisable()">
+      <input class="mr-2 leading-tight" type="checkbox" id="privacy">
       <a href="#" class="text-sm no-underline">
         I agree to the use of my personal information
       </a>
     </label>
   </div>
   <div class="text-center">
-    <button type="button" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" onclick="sendEmail()" disabled> ▶︎　Confirmation 
+    <button type="button" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" disabled> ▶︎　Confirmation 
     </button>
   </div>
 </form>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-  function sendEmail()
-  {
-    let fName = document.getElementById('full_name').value;
-    let lName = document.getElementById('last_name').value;
-    let cName = document.getElementById('company_name').value;
-    let email = document.getElementById('email').value;
-    let contact_number = document.getElementById('contact_number').value;
-    var d = document.getElementById("department");
-    let department = d.value;
-    var p = document.getElementById("post");
-    let post =  p.value;
-    let inquiryDetials = document.getElementById('inquiry_content').value;
-
-    let body = `Hello,<br>Following are detail come from contact form:
-    <hr> 
-    <br>
-    Name :=  ${fName} ${lName},<br> 
-    Company Name := ${cName},<br> 
-    email := ${email},<br> 
-    Contact Number := ${contact_number},<br> 
-    department := ${department},<br> 
-    post := ${post},<br>  
-    Inquiry Detials := ${inquiryDetials},<br>`;
-
-    // let host = {{ .Site.Params.emailCredential.host }};
-    // let userName = {{ .Site.Params.emailCredential.userName }};
-    // let password = {{ .Site.Params.emailCredential.password }};
-    let secureToken = {{ .Site.Params.emailCredential.secureToken }};
-    let bccMail = {{ .Site.Params.emailCredential.bccMail }};
-    let fromMail = {{ .Site.Params.emailCredential.fromMail }};
-
-    Email.send({
-      SecureToken : secureToken,
-      To : email,
-      From : fromMail,
-      Bcc : bccMail,
-      Subject : `Contact Form filled By ${fName} ${lName}`,
-      Body : body
-    }).then(
-      message => alert("Your Contact Form has Been submitted")
-    );
-    // Email.send({
-    //   SecureToken : secureToken,
-    //   To : email,
-    //   From : fromMail,
-    //   Bcc: bccMail,
-    //   Subject : `Contact Form filled By ${fName} ${lName}`,
-    //   Body : body
-    // }).then(
-    //   message => alert(message)
-    // );
-
-  }
-  function btnEnableDisable(){
-    if(document.getElementById("privacy").checked)
-    {
-      document.getElementById("submitButton").disabled = false;
-      document.getElementById("submitButton").classList.remove("opacity-50","cursor-not-allowed");
-    }
-    else
-    {
-      document.getElementById("submitButton").disabled = true;
-      document.getElementById("submitButton").classList.add("opacity-50","cursor-not-allowed");
-    }
-  }
-</script>
