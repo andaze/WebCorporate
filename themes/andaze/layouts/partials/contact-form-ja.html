@@ -145,80 +145,14 @@ TEL：03-3230-0401
   </div>
   <div class="text-center pt-5 pb-2">
     <label class="text-center text-gray-500 font-bold">
-      <input class="mr-2 leading-tight" type="checkbox" id="privacy" onclick="btnEnableDisable()">
+      <input class="mr-2 leading-tight" type="checkbox" id="privacy">
       <a href="#" class="text-sm no-underline">
         個人情報利用に同意します
       </a>
     </label>
   </div>
   <div class="text-center">
-    <button type="button" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" onclick="sendEmail()" disabled> ▶︎　同意の上、入力内容の確認
+    <button type="button" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" disabled> ▶︎　同意の上、入力内容の確認
     </button>
   </div>
 </form>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-   function sendEmail()
-  {
-    let fName = document.getElementById('full_name').value;
-    let lName = document.getElementById('last_name').value;
-    let cName = document.getElementById('company_name').value;
-    let email = document.getElementById('email').value;
-    let contact_number = document.getElementById('contact_number').value;
-    var d = document.getElementById("department");
-    let department = d.value;
-    var p = document.getElementById("post");
-    let post =  p.value;
-    let inquiryDetials = document.getElementById('inquiry_content').value;
-
-    let body = `こんにちは <br> 以下は、お問い合わせフォームからのお問い合わせ内容です。:
-    <hr>
-    <br>
-    名 := ${fName} ${lName}, <br> 
-    会社名:= ${cName},<br> 
-    メールアドレス := ${email},<br> 
-    電話番号 := ${contact_number},<br> 
-    部門:= ${department},<br> 
-    役職:= ${post},<br> 
-    お問い合わせ内容:= ${inquiryDetials},<br>`;
-
-    let secureToken = {{ .Site.Params.emailCredential.secureToken }};
-    let bccMail = {{ .Site.Params.emailCredential.bccMail }};
-    let fromMail = {{ .Site.Params.emailCredential.fromMail }};
-
-
-    Email.send({
-      SecureToken : secureToken,
-      To : email,
-      From : fromMail,
-      Bcc : bccMail,
-      Subject : `お問い合わせフォームから ${fName} ${lName}`,
-      Body : body
-    }).then(
-      message => alert("お問い合わせフォームが送信されました")
-    );
-
-    // Email.send({
-    //   SecureToken : secureToken,
-    //   To : email,
-    //   From : fromMail,
-    //   Bcc : bccMail,
-    //   Subject : `お問い合わせフォームから ${fName} ${lName}`,
-    //   Body : body
-    // }).then(
-    //   message => alert(message)
-    // );
-  }
-  function btnEnableDisable(){
-    if(document.getElementById("privacy").checked)
-    {
-      document.getElementById("submitButton").disabled = false;
-      document.getElementById("submitButton").classList.remove("opacity-50","cursor-not-allowed");
-    }
-    else
-    {
-      document.getElementById("submitButton").disabled = true;
-      document.getElementById("submitButton").classList.add("opacity-50","cursor-not-allowed");
-    }
-  }
-</script>
