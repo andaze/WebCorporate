@@ -19,7 +19,7 @@ Andaze creates products that change common sense.
 
 <!-- ## About Us -->
 
-**Company Name**: Andaze Corporation
+**Company Name**: Andaze Ltd.
 
 **Location**:  
 
