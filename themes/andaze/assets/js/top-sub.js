@@ -58,7 +58,7 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
           
           // ロード画面を非表示
           loading_background.style.opacity = 0;
-          loading_background.style.visibility = "hidden";
+          loading_background.style.visibility = "invisible";
           
         }, 500);
         
@@ -71,7 +71,7 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
 
         // ロード画面を非表示
         loading_background.style.opacity = 0;
-        loading_background.style.visibility = "hidden";
+        loading_background.style.visibility = "invisible";
 
       }, 1000);
 
@@ -85,7 +85,7 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
 
       // ロード画面を非表示
       loading_background.style.opacity = 0;
-      loading_background.style.visibility = "hidden";
+      loading_background.style.visibility = "invisible";
 
     }, 500);
 
@@ -117,7 +117,7 @@ function blackOut() {
         dark_cover.style.visibility = "visible";
     } else if (window.scrollY < target_static) {
         dark_cover.style.opacity = 0;
-        dark_cover.style.visibility = "hidden";
+        dark_cover.style.visibility = "invisible";
     }
 }
 
