@@ -27,7 +27,7 @@ We believe that the services we provide will ideally contribute to the further d
 <div class="text-right">
 January 27, 2021
 
-Andaz Corporation
+Andaze Ltd.
 
 Representative Director
 
