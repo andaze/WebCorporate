@@ -1,5 +1,5 @@
 ---
-title: "Otsuka Warehouse Co.,Ltd.: "Delivery visualization" shows the health of logistics."
+title: "Otsuka Warehouse Co.,Ltd.: 'Delivery visualization' shows the health of logistics."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png

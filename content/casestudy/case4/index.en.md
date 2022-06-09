@@ -1,5 +1,5 @@
 ---
-title: "Contact Otsuka Warehouse Co.,Ltd. easily from a variety of venues with the "Inquiry multi-chat function""
+title: "Contact Otsuka Warehouse Co.,Ltd. easily from a variety of venues with the 'Inquiry multi-chat function'."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png 
