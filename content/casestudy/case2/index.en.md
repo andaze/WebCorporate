@@ -1,26 +1,26 @@
 ---
-title: "伊勢湾海運様 デバン管理"
+title: "ISEWAN TERMINAL SERVICE CO.,LTD. Devan Management"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png
 ---
 
-# 伊勢湾海運様 デバン管理
+# ISEWAN TERMINAL SERVICE CO.,LTD. Devan Management
 
-## 概要
-創業70年以上の歴史を持つ伊勢湾海運様。愛知県の名古屋港をはじめ、全国主要都市に33の拠点を持ち、アメリカやドイツ、中国、ベルギー、タイなど海外にも24拠点を展開されています。現在では海運にとどまらず、総合物流企業としてグローバルに活躍されている企業様です。そんな伊勢湾海運様が導入されたのが「デバン管理」。デバン管理とは、海外から港に到着したコンテナの荷物を取り出す「デバンニング」で降ろした荷物のケースマークを一字一句読み取り、通関書類の内容と照らし合わせることができるシステムです。
+## Overview
+ISEWAN TERMINAL SERVICE CO.,LTD. has been in business for more than 70 years. Starting with the Port of Nagoya in Aichi Prefecture, the company has 33 bases in major cities throughout Japan and 24 overseas bases in the U.S., Germany, China, Belgium, and Thailand. Today, ISEWAN TERMINAL SERVICE CO.,LTD. is not only a shipping company, but also a comprehensive logistics company that is active on a global scale. ISEWAN TERMINAL SERVICE CO.,LTD. has introduced "deban management. Deban management is a system that reads the case marks of cargo unloaded during "debanning," the process of removing cargo from containers arriving at ports from overseas, word for word, and compares them to the contents of customs clearance documents.
 
-## 導⼊背景
-近年では、通販サイトの普及で個人が海外からも手軽に商品が買えるようになりました。そのため荷物は小型化・細分化しており、コンテナのスペースを他の荷主と分け合う「混載（コンソリレーション）」で到着することも。海外からの荷物に書かれているケースマークは、申告時に書かれた通関書類と同じ記号番号が書かれているとは限りません。一つひとつ目視で確認しながら荷物を仕分ける作業は、時間と手間がかかる上にミスが発生するリスクも。そこで、システムを活用した「仕分けツール」が求められていました。
+## Background of Application
+In recent years, the spread of mail-order websites has made it easier for individuals to buy goods from overseas. As a result, packages have become smaller and more segmented, and sometimes arrive in "consolidation," in which container space is shared with other shippers. The case markings on cargo from overseas do not always have the same symbol number as on the customs clearance document written at the time of declaration. Sorting packages by visually checking them one by one is not only time-consuming and labor intensive, but also carries the risk of mistakes being made. Therefore, a system-based "sorting tool" was required.
 
-## 得られた成果
-ケースマークの写真を撮ると、デバン管理システムが箱に書かれている文字情報を認識します。そして通関書類と自動でマッチングを行い、荷物の詳細情報を照会。正しい送り先へ輸送手配することができます。荷物を確認した際に発見した「リマーク（傷）」もその段階でデータとして保存。この仕組みによって、仕分けの効率や正確性が明らかにアップしました。
+## Results obtained
+When a photo of the case mark is taken, the deban management system recognizes the text information on the box. The system then automatically matches the information with the customs documents and inquires detailed information about the cargo. The system can then arrange transportation to the correct destination. The system also saves any "re-marks" (scratches) found when checking the cargo as data at that stage. This system has clearly improved the efficiency and accuracy of sorting.
 
-## お客様情報
-伊勢湾海運株式会社
+## Customer Information
+ISEWAN TERMINAL SERVICE CO.,LTD.
 
-〒455-0032 愛知県名古屋市港区入船一丁目7番40号
+1-7-40 Irifune, Minato-ku, Nagoya, Aichi 455-0032, Japan
 
-TEL:052-661-5181
+TEL: 052-661-5181
 
 https://www.isewan.co.jp/

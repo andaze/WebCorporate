@@ -1,38 +1,38 @@
 ---
-title: "大塚倉庫様「問い合わせマルチチャット機能」で多彩な場から手軽に連絡"
+title: "Contact Otsuka Warehouse Co.,Ltd. easily from a variety of venues with the "Inquiry multi-chat function""
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png 
 ---
 
-# 大塚倉庫様「問い合わせマルチチャット機能」で多彩な場から手軽に連絡。
+# Contact Otsuka Warehouse Co.,Ltd. easily from a variety of venues with the "Inquiry multi-chat function".
 
-## 概要
-「物流業界でもっとも使われるITインフラの創造」を掲げる大塚倉庫様が、第1フェーズで目指すゴールのひとつが、「コールセンターの電話対応をやめる」こと。端末を使ったシステム連携によって入荷から出荷まで現場完結型を実現するために、電話対応の削減は大きなテーマでした。
+## Overview
+One of the goals of the first phase of Otsuka Warehouse Co.,Ltd.'s "Creation of the most used IT infrastructure in the logistics industry" is to "eliminate call center telephone support. In order to achieve on-site completion from receiving to shipping through system integration using terminals, reducing the number of phone calls was a major theme.
 
-というのも、大塚倉庫様が配送するのは、自社グループが扱う食品や飲料品、医薬品、日用品だけではありません。納品先が一致する商品であれば、他社の商品であってもまとめて配送できる「共通プラットフォーム」を構築しているため、外販のお客様からのお問い合わせも多いのが現状です。
+Otsuka Warehouse Co.,Ltd. delivers not only food products, beverages, pharmaceuticals, and daily necessities handled by the company group. The company has established a "common platform" that allows for the collective delivery of other companies' products as long as the delivery destination is the same, so it receives many inquiries from external customers.
 
-そこで、CARGO TRACKSの中に「マルチチャット機能」を入れることで、問い合わせ内容を一元管理することにしました。社内外のコミュニケーションをデジタル化することで、あらゆるやり取りをログとして蓄積。TeamsとLINEを連携するという画期的な試みを導入し、パソコンやスマートフォンから手軽に確認や返信ができる仕組みを実現しています。また、日時や期間、関わった担当者も分かるため、返信漏れや担当者不在の状況を防ぐ効果も狙いました。
+Therefore, we decided to centralize the management of inquiries by including a "multi-chat function" within CARGO TRACKS. By digitizing internal and external communications, all interactions are stored as logs, and we have introduced a groundbreaking attempt to link Teams and LINE to create a system that allows easy confirmation and replies from PCs and smartphones. In addition, since the date, time, period, and the person in charge are also known, the aim was to prevent omissions of replies and the absence of the person in charge.
 
-## 導⼊背景
-CARGO TRACKSの導入を決めた当初は、「配送のみえる化」専用のシステムとして想定していました。しかし、アンダーズの開発チームが要件定義書を作る過程で、電話やメールで行う業務連絡が煩雑で、大事な連絡の見落としや「言ったor言わない」が発生してしまうリスクがあることを把握。また、車内のドライバーなど手軽に連絡できる手段が限られた担当者がいることも、問い合わせの回答に影響を与えていました。
+## Background of Application
+When we first decided to introduce CARGO TRACKS, we envisioned it as a dedicated "delivery visualization" system. However, in the process of creating the requirement definition, Andaze's development team realized that business communication by phone or email was complicated, and there was a risk of missing important communications and "said-or-not-said" situations. In addition, the fact that some staff members, such as drivers in the car, had limited means of easily contacting the company, was also affecting responses to inquiries.
 
-そこで、マルチチャット機能を追加することで、やり取りをWEB上で一括管理し、ログとして記録を残せるシステムが必要なのではないかと提案。当時、大塚倉庫様の社内ではTeamsをコミュニケーションツールとして使い始めていたため、マルチチャット機能の利便性を実感されていたタイミングでした。社内外すべての担当者が日常的に使っているスマートフォンアプリやパソコンなどから気軽に書き込めるUIが、大塚倉庫様にとってニーズを満たす重要な仕組みになると着想したのです。
+Therefore, we suggested that a system that could collectively manage interactions on the Web by adding a multi-chat function and record them as logs might be necessary. At the time, Otsuka Warehouse Co.,Ltd. had already begun using Teams as a communication tool within the company, and the timing was right for them to experience the convenience of the multi-chat function. The company realized that a UI that could be easily written from a smartphone application or PC, which all internal and external personnel use on a daily basis, would be an important mechanism for Otsuka Warehouse Co.,Ltd. to meet its needs.
 
-## 得られた成果
-①「連絡手段はスマートフォン」のみという配送ドライバー全員に、新たなチャットアプリをダウンロードしてもらうのは手間がかかりますし、機能を使いこなすことに難易度の高さを感じるドライバーもいます。そこで、アンダーズが他社に先駆けて実現したのがLINEとTeamsの連携です。大塚倉庫様やメーカーの担当者はCARGO TRACKS上やTeamsからやり取りを行い、ドライバーは元々スマートフォンに入っているLINEを使って確認や返信が可能になりました。この画期的な連携によって、いつでも、どこでも、それぞれの場で活躍する人たちが、手軽に連絡ができるという利便性の向上につながっています。
+## Results obtained
+(1) It would take a lot of time and effort to get all delivery drivers who only use their smartphones to download a new chat application, and some drivers would find it difficult to master the functions. Therefore, Andaze pioneered the integration of LINE and Teams. Otsuka Warehouse Co.,Ltd. and manufacturer representatives communicate with each other on CARGO TRACKS and Teams, while drivers can now check and reply to messages using LINE, which was originally included in their smartphones. This groundbreaking linkage has led to improved convenience in that people active in their respective fields can easily communicate with each other anytime, anywhere.
 
-②いつ、だれが、どんな問い合わせを受け、誰に確認して、どう返したか。一連の問い合わせ対応をすべて記録。現在は担当者が対応を行っていますが、今後はシステム上に蓄積したデータを活用し、チャットの返信を「チャットボット」のように自動化する計画を進めています。
+(2) When, who, what kind of inquiry was received, who confirmed it with whom, and how it was returned. A series of inquiries are all recorded. Currently, the person in charge handles the inquiries, but in the future, plans are underway to utilize the data accumulated in the system to automate chat replies like a "chatbot".
 
-③ひとつの問い合わせ内容に対して、複数のチャットルームを作ることが可能に。同じテーマであっても、会話するメンバー構成ごとに部屋を分けてやり取りすることができます。
+(3) Multiple chat rooms can be created for a single inquiry. Even if the subject matter is the same, the chat rooms can be divided according to the members of the group with whom the user is conversing.
 
-④チャット上で連絡を完結させることで、問い合わせの種類や傾向などのデータを蓄積。後から内容を分析し、さらなる業務改善や顧客満足につなげることも可能です。
+(4) By completing communication through chat rooms, data on the types and trends of inquiries can be accumulated. Later, the content can be analyzed for further business improvement and customer satisfaction.
 
-問い合わせをチャットに集約することで、事務所の負担を解消。電話やFAXなど出社を伴う業務が削減したことでテレワークを可能とし、コロナ禍のような社会情勢でも適応できる環境を整備しました。現在は社内のみの活用ですが、これからパートナー企業にもトレーニングを行い、徐々に取引先とチャット上で会話ができる仕組みを構築。「大塚倉庫は電話を使いません」という完全なデジタル化に向けて、歩みを進めています。さらに今後は、WEB発注や配送のみえる化、マルチチャット機能を1つのログインで完結できるように構築を進めていく予定です。
+By consolidating inquiries into chat, the burden on the office is eliminated. Teleworking is made possible by reducing the number of phone calls, faxes, and other tasks that require coming to the office, creating an environment that can adapt to social conditions such as the Corona disaster. Currently, the system is used only within the company, but training will be provided to partner companies in the future, and gradually a system will be established to enable conversations with business partners over chat. Otsuka Warehouse Co.,Ltd. is taking steps toward complete digitalization, saying, "Otsuka Warehouse Co.,Ltd. does not use the telephone. In the future, we plan to build a system that enables web ordering, delivery visualization, and multi-chat functions to be completed with a single login.
 
-### お客様情報
-大塚倉庫株式会社
+### Customer Information
+Otsuka Warehouse Co.,Ltd.
 
-大阪府大阪市港区石田1丁目3番16号
+1-3-16 Ishida, Minato-ku, Osaka-shi, Osaka
 
 https://www.otsukawh.co.jp/

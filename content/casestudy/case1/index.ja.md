@@ -13,4 +13,5 @@ cardImage: logo_pc.png
 
 ## 得られた成果
 
+
 ## お客様情報

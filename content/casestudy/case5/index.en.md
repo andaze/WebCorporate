@@ -1,31 +1,31 @@
 ---
-title: "大塚倉庫様「配送みえる化」で物流の健康状態を見せる"
+title: "Otsuka Warehouse Co.,Ltd.: "Delivery visualization" shows the health of logistics."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png
 ---
 
 
-# 大塚倉庫様「配送みえる化」で物流の健康状態を見せる。
+# Otsuka Warehouse Co.,Ltd.: "Delivery visualization" shows the health of logistics.
 
-## 概要
-点滴や薬などの医薬品から飲料・日用品まで、私たちの日常に欠かせない製品の物流インフラを提供されている大塚倉庫様。大塚ホールディングスのグループ製品にとどまらず、全国翌日納品体制を敷く物流ネットワークを生かし、共通プラットフォームとして外販製品の取り扱いも60％以上と共同物流を推進しています。そんな大塚倉庫様が掲げている
-のが「IT×物流」。倉庫を「TECH-BASE」と位置づけ、物流業界の課題を解消すべくさまざまなデジタル化への企画開発に取り組んでいます。
+# Overview
+Otsuka Warehouse Co.,Ltd. provides the logistics infrastructure for products essential to our daily lives, from pharmaceuticals such as intravenous drips and medicines to beverages and daily necessities. Otsuka Warehouse Co.,Ltd. is not limited to Otsuka Holdings Group products, but also promotes joint distribution by utilizing its nationwide next-day delivery logistics network and handling more than 60% of products sold externally as a common platform. The Otsuka Warehouse Co.,Ltd. is committed to "IT x Logistics".
+Otsuka Warehouse Co.,Ltd. is committed to "IT x Logistics". The warehouse is positioned as a "TECH-BASE" and is working on various digitalization projects and developments to solve issues in the logistics industry.
 
-そもそも物流業界は多くが「紙」の情報がなければ荷物を動かすことができませんでした。たとえば受注はFAXで届いた情報を手作業で入力。在庫の引当を行い、紙のリストに沿って保管場所を探し、商品を見つけ出します。伝票はメーカー専用のフォーマットに合わせて1枚1枚印刷。データを使うのはメーカーごとにエクセル入力をする程度で、すべての工程で人力の作業が欠かせませんでした。そこで、大塚倉庫様はWEB受注やピッキング、運送会社への指示を自動で可能にするID運輸、さらに納品伝票のペーパーレス化を実現。社内の事務作業の大幅な削減に成功し、日本ロジスティクスシステム協会のロジスティクス大賞を受賞しました。
+To begin with, most of the logistics industry requires "paper" information to move goods. For example, orders received by fax were manually entered. Inventory allocations are made, and the storage locations are searched and products are found according to paper lists. Slips are printed one by one according to a manufacturer-specific format. Data is only used for Excel input for each manufacturer, and human labor was essential for the entire process. To solve this problem, Otsuka Warehouse Co.,Ltd. has implemented ID transportation, which automatically enables web-based ordering, picking, and instructions to shipping companies, as well as paperless delivery slips. The company succeeded in drastically reducing internal administrative work, and was awarded the Logistics Grand Prize by the Japan Logistics Systems Association.
 
-その中で、大塚倉庫様がIT×物流の第1フェーズとして取り組んでいるのが「配送状況のみえる化」です。配送のみえる化とは、画面上で受注から配送までの状況を確認できるシステム「CARGO TRACKS」の機能。画面の地図上で荷物の位置から経路、到着予定時間、配達車両内の温湿度の情報までリアルタイムで把握することができます。
+The first phase of Otsuka Warehouse Co.,Ltd.'s IT x logistics initiative is "visualization of delivery status. The "visualization of delivery" is a function of CARGO TRACKS, a system that allows users to check the status of orders from receipt to delivery on the screen. The system allows the user to grasp in real time the location of the package, its route, estimated time of arrival, and even the temperature and humidity inside the delivery vehicle on the map on the screen.
 
-## 導⼊背景
-卸先やメーカーにとって、配送状況が「見えない」ことは不安につながりやすく、以前は電話やメールによる問い合わせが殺到していました。しかし、配送業務を運送会社に委託している場合などは、現場のドライバーに直接連絡がつかないことも。配送会社の事務所に連絡して、事務所からドライバーに連絡をしてもらい、折り返しを待つという電話リレーが発生するため、問い合わせに回答した時にはすでに納品されていたという事例が起きていました。とくに災害や事故が発生した際には、コールセンターだけでなく社内での確認や問い合わせが殺到することも多く、コストや業務負担も課題に。そのため全国の社員やパートナー、そして納品先のお客様がもっと手軽に、必要な情報を取り出せる共通のプラットフォームを構築しました。
+## Background of Application
+For wholesalers and manufacturers, being unable to "see" the delivery status easily leads to anxiety, and in the past they were inundated with inquiries by phone and e-mail. However, when delivery operations are outsourced to a shipping company, it is sometimes difficult to contact the driver directly. The delivery company would contact the office of the delivery company, which would then contact the driver and wait for the driver to return the call, resulting in cases where the delivery had already been made by the time the inquiry was responded to. In particular, when a disaster or accident occurs, the call center is often inundated with inquiries and confirmations from within the company as well as from the call center, resulting in cost and workload issues. Therefore, we built a common platform that allows employees and partners nationwide, as well as customers at the delivery site, to retrieve necessary information more easily.
 
-## 得られた成果
-導入して間もない頃、東北地方で地震が発生した日がありました。地震が起きると、状況によって配送の遅延が発生します。これまでは災害などが起きた場合、メーカーごとに出荷データをエクセルで作成し、配送や納品状況を追記してはメールするという作業を繰り返していました。しかし今回は、東北地方を管轄する仙台営業所がCARGO TRACKSの「配送のみえる化」機能を駆使。配達完了ログをこまめにとったことで、運用部隊のロジスティクス本部が配送ステータスをリアルタイムで確認し、抜群のレスポンスでメーカーに伝えることができたのです。その結果、お客様側は問い合わせの回答を待つ時間と手間が大幅に削減。「いつ荷物が届くか分からない」といった不安が解消されました。今後は、パートナーの企業も画面上でステータスが確認できるように構築を進めていきます。
-配送のみえる化は、大塚倉庫様が手がける物流の「健康状態」を見せるための仕組みです。速報が欲しい有事のときほど、社内はもちろん納品する卸先やメーカーにとっても有益な情報といえます。このような物流が持つ付加価値をさらに高める「コネクティック物流」は、競争優位にもつながるサービスといえるでしょう。
+## Results obtained
+Shortly after the introduction of the system, there was a day when an earthquake occurred in the Tohoku region. When an earthquake occurs, there are delays in deliveries depending on the situation. In the past, when a disaster occurred, we had to create shipping data for each manufacturer in Excel, add delivery and delivery status, and email it to them. This time, however, the Sendai Sales Office, which has jurisdiction over the Tohoku region, made full use of CARGO TRACKS' "delivery visualization" function. By taking delivery completion logs frequently, the Logistics Division, the operational unit, was able to check the delivery status in real time and communicate it to the manufacturer with outstanding response. As a result, the time and effort required for customers to wait for a response to their inquiries was greatly reduced. The customer's anxiety about not knowing when the package will be delivered has been eliminated. In the future, Otsuka plans to build a system that will allow partner companies to check the status of their shipments on the screen as well.
+The "delivery visualization" system is a mechanism for showing the "health status" of Otsuka Warehouse Co.,Ltd.'s logistics operations. In times of emergency, when breaking news is needed, this information is useful not only to the company itself, but also to the wholesalers and manufacturers to whom deliveries are made. This kind of "connected logistics" that further enhances the added value of logistics can be said to be a service that can lead to competitive advantage.
 
-## お客様情報
-大塚倉庫株式会社  
+### Customer Information
+Otsuka Warehouse Co.,Ltd.  
 
-大阪府大阪市港区石田1丁目3番16号 
+1-3-16 Ishida, Minato-ku, Osaka-shi, Osaka 
  
 https://www.otsukawh.co.jp/
