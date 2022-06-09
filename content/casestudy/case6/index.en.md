@@ -1,27 +1,27 @@
 ---
-title: "日綜産業様　Power BI"
+title: "Nisso Industries Co.,Ltd. Power BI"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png
 ---
 
-# 日綜産業様　Power BI
+# Nisso Industries Co.,Ltd. Power BI
 
-## 概要
-建物、土木、鉄道などの建築・メンテナンス工事に欠かせない「仮設機材」の専門メーカーとして、50年以上の実績を持つ日綜産業様。さらなる事業拡大を見据え、採用活動も活発に行っています。そこで、採用活動の意思決定を人間の主観や感覚ではなく、データの「事実」に基づいて行うため「POWER BI」を導入。POWER BIは、採用プロセスが今どの段階にあるのか、どの部署で止まっているのか、そして応募から採用までどれぐらいの期間がかかっているのか。採用活動の効果を客観的な数値で分析することができます。
+## Overview
+Nisso Industries Co.,Ltd. has over 50 years of experience as a specialized manufacturer of "temporary construction equipment" indispensable for building, civil engineering, and railroad construction and maintenance work. With an eye on further business expansion, the company is actively recruiting. To make hiring decisions based on data rather than human subjectivity and sensibilities, Nisso Industries Co.,Ltd. introduced POWER BI, which provides objective numerical data on the effectiveness of hiring activities, such as where the hiring process is at, which departments it has stopped at, and how long it takes from application to hiring. It enables objective numerical analysis of the effectiveness of recruiting activities.
 
-## 導⼊背景
-複数の応募者とやり取りをされる人事部門は、一つひとつの採用プロセスを円滑に進める中で、より効率的かつ満足度の高い採用につなげるために尽力されています。ただ、人事部門の方々だけが頑張っても、採用活動は成功しません。時に採用スピードが遅い原因が、面接を担当する各部署や担当者が、採用業務を後回しにしているからという場合もあるでしょう。しかし応募から採用までの期間が長くなればなるほど、応募者が辞退するリスクも高まります。そこで、各担当者が採用活動に責任を持って取り組むためのツールが求められていました。
+## Background of Application
+Human resource departments, which deal with multiple applicants, are working hard to make the hiring process more efficient and satisfying while facilitating each and every hiring process. However, even if only the HR department works hard, the recruiting process will not be successful. Sometimes the reason for slow hiring is that the departments or people in charge of interviewing are putting off the hiring process. However, the longer the time between application and hiring, the greater the risk that an applicant will decline the position. Therefore, a tool was needed to help each person in charge take responsibility for the hiring process.
 
-## 得られた成果
-出稿した求人広告に対する応募者数、応募から採用までの期間など、採用活動の成果を数値で分析。1名を採用するためにかかったコストから、費用対効果を算出できるように。そのため、数値を根拠にした客観的な広告媒体の選定も可能になりました。
+## Results obtained
+The number of applicants to job advertisements and the time from application to hiring were analyzed numerically, so that the cost effectiveness of recruiting one person could be calculated. This enables objective selection of advertising media based on numerical values.
 
-また、今どの部署で採用活動が止まっているのかなど、責任の所在も「見える化」。担当者が採用活動を「自分ごと」として取り組むようになり、採用活動のスピードもアップ。後から一連の採用を振り返る際に、主観ではなく客観的な事実で議論できることにより、本質的な課題の発見・解消にもつながっています。
+In addition, responsibility is now "visualized," such as which departments are currently at a standstill in their recruiting activities. The staff members in charge now approach recruitment activities as "their own business," and the speed of recruitment activities has been increased. When looking back on a series of recruitment activities later, the ability to discuss them based on objective facts rather than subjectivity has also led to the discovery and resolution of essential issues.
 
-## お客様情報
-日綜産業株式会社
+### Customer Information
+Nisso Industries Co.,Ltd.
 
-東京都中央区日本橋蛎殻町1-10-1
+1-10-1 Nihonbashi-Kakigaracho, Chuo-ku, Tokyo
 
 TEL. 03-3668-2701
 

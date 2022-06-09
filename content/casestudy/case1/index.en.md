@@ -5,12 +5,13 @@ weight: 0
 cardImage: logo_pc.png
 ---
 
-# A社（Dynamics 365）
+# Company A (Dynamics 365)
 
-## 概要
+## Overview
 
-## 導⼊背景
+## Background of Application
 
-## 得られた成果
+## Results obtained
 
-## お客様情報
+
+## Customer Information

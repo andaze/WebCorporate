@@ -23,7 +23,7 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 
 ### (2) Advanced AI development cultivated on the frontlines of new business
 
-* AI implementation in business is a form of handling large amounts of data. Therefore, Andaz has acquired ISO27001 information security management system. We provide an environment that achieves ideal performance.
+* AI implementation in business is a form of handling large amounts of data. Therefore, Andazehas acquired ISO27001 information security management system. We provide an environment that achieves ideal performance.
 
 * We employ the open source AI development framework ML.NET to model machine learning with speed.
 

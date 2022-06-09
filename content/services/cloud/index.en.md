@@ -1,5 +1,5 @@
 ---
-title: "クラウド"
+title: "Cloud"
 date: 2022-02-23T17:03:34+09:00
 weight: 2
 cardImage: logo_pc.png
@@ -9,7 +9,7 @@ cardImage: logo_pc.png
 
 #  Cloud Computing　
 ## Supporting the Best Cloud Deployment for Your Digital Strategy      
-Cloud computing is essential for DX. In addition, the adoption of the most appropriate cloud service is required depending on the customer's business challenges and system environment. Andaz will develop a detailed migration roadmap in accordance with the customer's industry, company size, and requirements. We not only realize the migration of existing systems to the cloud, but also provide access to them under safer and more secure security, which will be a driving force to promote the transformation of your company in the wake of digitalization.
+Cloud computing is essential for DX. In addition, the adoption of the most appropriate cloud service is required depending on the customer's business challenges and system environment. Andazewill develop a detailed migration roadmap in accordance with the customer's industry, company size, and requirements. We not only realize the migration of existing systems to the cloud, but also provide access to them under safer and more secure security, which will be a driving force to promote the transformation of your company in the wake of digitalization.
 
 ## Why Choose Andaze?
 
@@ -19,7 +19,7 @@ Cloud computing is essential for DX. In addition, the adoption of the most appro
 * We have obtained ISO27001 advanced security management system (ISMS) certification to maintain and improve the balance of confidentiality, integrity and availability of information.   
   
 ### (2) In-house complete one-stop service
-* Andaz is responsible for providing services from strategic planning to cloud design, construction, and post-operation. There is no process that is thrown entirely to group companies or subcontractors.
+* Andazeis responsible for providing services from strategic planning to cloud design, construction, and post-operation. There is no process that is thrown entirely to group companies or subcontractors.
 * Development members specializing in cloud technology provide services to meet the needs of the market, not only in terms of functionality and performance, but also within a reasonable cost range.
 * We build a strong partnership where you can consult with us on anything regarding DX promotion using the cloud.
 

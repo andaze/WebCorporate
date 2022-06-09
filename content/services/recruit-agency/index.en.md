@@ -33,7 +33,7 @@ Andaze will develop a recruiting plan based on your needs such as "what kind of 
 
 ### (2) One-stop support for companies that are not able to handle the human resource area 
 
-For example, even for a large company that needs to hire 100 people a year, there are only 2 to 3 people in charge of the human resource department. With such a small amount of manpower, many companies must be responsible for a huge amount of recruiting work, such as creating job advertisements, scheduling interviews, and sending out scout emails. In addition, some companies may have personnel in charge of both human resources and other tasks. Andaz provides a specialized team that can outsource such time-consuming and time-consuming HR tasks.
+For example, even for a large company that needs to hire 100 people a year, there are only 2 to 3 people in charge of the human resource department. With such a small amount of manpower, many companies must be responsible for a huge amount of recruiting work, such as creating job advertisements, scheduling interviews, and sending out scout emails. In addition, some companies may have personnel in charge of both human resources and other tasks. Andazeprovides a specialized team that can outsource such time-consuming and time-consuming HR tasks.
 
 ### (3) Visualize the results of your recruiting activities with the new "POWER BI" technology  
 
