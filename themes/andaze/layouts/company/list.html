@@ -10,12 +10,16 @@
         </div>
         {{ end }}
     {{ end }}
-    <div class="container mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
-        {{ partial "breadcrumbs.html" . }}
+    <div class="mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
+        <div class="list-detail-container ">
+            {{ partial "breadcrumbs.html" . }}
+        </div>
     </div>
-    <div class="container mx-auto px-5 lg:px-40 py-5 mb-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {{ partial "molecule-section-company-detailpage-buttonlist.html" . }}
+    <div class="mx-auto px-5 lg:px-40 pb-5 mb-24">
+        <div class="list-detail-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {{ partial "molecule-section-company-detailpage-buttonlist.html" . }}
+            </div>
         </div>
     </div>
 {{ end }}
