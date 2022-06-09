@@ -62,8 +62,8 @@ name    = "Why Choose Us"
 url     = "reason"
 weight  =  3
 [[Languages.en.menu.main]]
-name   = "casestudy"
-url    = "casestudy"
+name   = "case study"
+url    = "case study"
 weight = 4
 [[Languages.en.menu.main]]
 name   = "solution"
