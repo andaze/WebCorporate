@@ -20,3 +20,27 @@ html.is-animating .transition-fade {
       @apply border-b-4 border-black text-black font-bold;
     }
   }
+
+  .list-detail-container{
+    max-width: 970px;
+    margin: 0 auto;
+  }
+  
+  .arrow-item{
+    position: relative;
+    padding-right: 30px;
+  } 
+ .arrow-item::before {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: block;
+    width: 9px;
+    height: 9px;
+    content: '';
+    border: 1px solid rgba(0,0,0,.3);
+    border: 1px solid var(0,0,0,.3);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(-45deg);
+}
