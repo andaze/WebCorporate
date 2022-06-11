@@ -7,9 +7,9 @@ weight: 0
 
 <div class="mb-96">
 
-<h1 class="text-3xl lg:text-7xl font-black mb-8">A group of professionals who accelerate DX from a management perspective.</h1>
+<h1 class="text-3xl lg:text-7xl font-black mb-8">A group of professionals who accelerate DX from a management perspective</h1>
 
-<font class="text-xs lg:text-base" color="lightgray">*DX (Digital Transformation)...the penetration of IT changes people's lives for the better in every aspect.</font> 
+<font class="text-xs lg:text-base" color="lightgray">*DX (Digital Transformation)...The penetration of IT changes people's lives for the better in every aspect</font> 
 
 </div>
 
@@ -17,7 +17,7 @@ weight: 0
 
 <h2 class="text-2xl lg:text-5xl font-extrabold">A team of technology professionals who lead businesses to success（Who We Are）<h2>
 
-<p class="text-xl lg:text-4xl font-bold mt-20 mb-10">Accelerate your company's growth by staying close to your customers  </p>
+<p class="text-xl lg:text-4xl font-bold mt-20 mb-10">Accelerate your company's growth by staying close to your customers</p>
 
 <p class="lg:w-11/12">Andaze is a group of specialists working in various fields. Our team of business-savvy technology professionals catches the changes in your business and proposes successful strategies that are not just a "picture of the future". Then, we start system development efficiently, using superior technology of global standards. We provide solutions that lead your business to success at a reasonable price using the "Andaze Method," in which every member functions as a player.</p>
 
@@ -45,9 +45,9 @@ weight: 0
 <h3 class="taxt-xl lg:text-3xl font-bold underline">UI/UX Design<h3>
 <p class="my-4 lg:w-11/12">Our team of professionals with a deep understanding of business and expertise in UI and UX will work closely with you to develop products that are both easy to use and highly satisfying.  </p>  
 
-<font class="text-xs lg:text-base" color="lightgray">*UI (user interface): The point of contact between the user and the product.)</font>  
+<font class="text-xs lg:text-base" color="lightgray">*UI (user interface): The point of contact between the user and the product</font>  
 
-<font class="text-xs lg:text-base" color="lightgray">*UX (user experience)...all user experiences gained through a product or service.</font>  
+<font class="text-xs lg:text-base" color="lightgray">*UX (user experience)...All user experiences gained through a product or service</font>  
 
 </li>
 

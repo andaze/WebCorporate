@@ -13,6 +13,8 @@ headerImage:
 
 ## NOSQL Database Development" for storing huge databases with data optimization.
 
+***
+
 ### Overview
 
 Database file size is getting bigger and bigger. In order to handle exponentially increasing data, such as real-time analysis while maintaining such a large amount of data, "data optimization" is necessary. Therefore, an increasing number of companies are using NOSQL (abbreviation of Not only SQL) as a complement to the conventional RDB (Relational DataBase Management System / Relational DataBase Management System ).
@@ -21,11 +23,15 @@ The database called RDBMS used until now had a normalized internal data structur
 
 On the other hand, a database called NOSQL can be designed to retrieve the necessary information in a single shot. Furthermore, by adding more servers, the system can flexibly handle increases in data volume and traffic.
 
+***
+
 ### Effects of Introduction
 
 - Data can be stored in a format optimized for the application.
 - Store data without defining data types
 - Easily increase performance by adding more servers.
+
+***
 
 ### Suggested Industries
 
@@ -36,9 +42,13 @@ On the other hand, a database called NOSQL can be designed to retrieve the neces
 - Consumer electronics
 - Financial Services
 
+***
+
 ### Product Image
 
 Andaze will promptly proceed with database optimization by utilizing AZURE COSMOS DATABASE. Please feel free to contact us if your company is having trouble storing large scale data.
+
+***
 
 ### Case Study
 
