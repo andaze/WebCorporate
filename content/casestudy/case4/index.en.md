@@ -1,11 +1,11 @@
 ---
-title: "Contact Otsuka Warehouse Co.,Ltd. easily from a variety of venues with the 'Inquiry multi-chat function'."
+title: "Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the 'Inquiry multi-chat function'."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: logo_pc.png 
 ---
 
-# Contact Otsuka Warehouse Co.,Ltd. easily from a variety of venues with the "Inquiry multi-chat function".
+# Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the "Inquiry multi-chat function".
 
 ## Overview
 One of the goals of the first phase of Otsuka Warehouse Co.,Ltd.'s "Creation of the most used IT infrastructure in the logistics industry" is to "eliminate call center telephone support. In order to achieve on-site completion from receiving to shipping through system integration using terminals, reducing the number of phone calls was a major theme.
