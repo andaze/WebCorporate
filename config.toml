@@ -50,11 +50,11 @@ footerSiteMapText = "Site Map"
 unsafe = true
 
 [[Languages.en.menu.main]]
-name    ="company"
+name    ="Company"
 url     ="company"
 weight = 1
 [[Languages.en.menu.main]]
-name    = "services"
+name    = "Services"
 url     = "services"
 weight  = 2
 [[Languages.en.menu.main]]
@@ -62,23 +62,23 @@ name    = "Why Choose Us"
 url     = "reason"
 weight  =  3
 [[Languages.en.menu.main]]
-name   = "case study"
+name   = "Case study"
 url    = "casestudy"
 weight = 4
 [[Languages.en.menu.main]]
-name   = "solution"
+name   = "Solution"
 url    = "solution"
 weight = 5
 [[Languages.en.menu.main]]
-name   = "news"
+name   = "News"
 url    = "news"
 weight = 6
 [[Languages.en.menu.main]]
-name   = "recruit"
+name   = "Recruit"
 url    = "https://www.andaze.com/job/en/"
 weight = 7
 [[Languages.en.menu.main]]
-name   = "contact"
+name   = "Contact"
 url    = "contact"
 weight = 8
 
