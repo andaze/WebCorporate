@@ -13,9 +13,13 @@ headerImage:
 
 ## Chatbot Development" for 24-hour automated response to help increase customer satisfaction.
 
+***
+
 ### Overview
 
 A chatbot is an "automatic conversation system" that combines "chat" and "robot. They can reply to inquiries often received from users at internal help desks, customer support, etc., in place of staff using tools such as LINE. Andaz's chatbot development is characterized by a high degree of accuracy that contributes to increased operational efficiency and customer satisfaction.
+
+***
 
 ### Effects of Introduction
 
@@ -34,6 +38,8 @@ A chatbot is an "automatic conversation system" that combines "chat" and "robot.
 - The accuracy of responses increases as the chatbot learns more.
 - Increase in sales by increasing the number of customer contacts
 
+***
+
 ### Suggested Industries
 
 - Distribution
@@ -44,9 +50,13 @@ A chatbot is an "automatic conversation system" that combines "chat" and "robot.
 - Home appliances
 - Banking
 
+***
+
 ### Product Image
 
 We can quickly develop chatbots using the Azure Bot Framework. Please contact us for a consultation so that we can understand your company's current situation and plan your project.
+
+***
 
 ### Case Study
 

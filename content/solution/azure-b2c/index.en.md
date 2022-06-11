@@ -9,11 +9,17 @@ headerImage:
     imageDescription: ""
 ---
 
-Superior Subject Authentication Service to Protect Sensitive Information from Hackers
+# AZURE B2C
+
+## Superior Subject Authentication Service to Protect Sensitive Information from Hackers
+
+***
 
 ### Overview
 
 Hacking and hijacking of applications can be a major social problem if personal information such as IDs and passwords are leaked to outside parties. AZURE B2C prevents data leakage and provides high security services. We work on system development while placing emphasis on the handling of personal information.
+
+***
 
 ### Effects of Introduction
 
@@ -24,6 +30,8 @@ Securely handles billions of logins per day, preventing information leaks that c
 #### (2) Single sign-on is possible with user-specified IDs.
 
 Integrates with the latest applications and pre-existing software; single sign-on access to web and mobile applications is possible from social networking sites such as Facebook and Twitter, as well as from local account IDs. Secure login with "Subject Authentication" that identifies the user and provides detailed analytics on sign-in behavior and sign-up conversions.
+
+***
 
 ### Suggested Industries
 
@@ -36,8 +44,12 @@ Integrates with the latest applications and pre-existing software; single sign-o
 - Retail
 - Retail Distribution
 
+***
+
 ### Product Image
 
 Login" is an essential part of any system. Andaze can quickly build a subject authentication service using our white label authentication solution. If your company is interested in safe and secure "authentication", please feel free to contact us.
+
+***
 
 ### Case Study
