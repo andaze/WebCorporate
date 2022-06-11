@@ -7,7 +7,7 @@ weight: 0
 
 <div class="mb-96">
 
-<h1 class="text-3xl lg:text-7xl font-black mb-8">経営視点でDXを加速させるプロ集団。</h1>
+<h1 class="text-3xl lg:text-7xl font-black mb-8">経営視点でDXを加速させるプロ集団</h1>
 
 <font class="text-xs lg:text-base" color="lightgray">※DX（デジタルトランスフォーメーション）…ITの浸透が、人々の生活をあらゆる面でより良い方向に変化させる</font>  
 
