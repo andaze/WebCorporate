@@ -323,21 +323,21 @@ export function kv_main() {
       // フラグ反転
       window.setTimeout(function(){click_flag = !click_flag}, fadein_times*interval_time);
       window.setTimeout(function(){moving_flag = !moving_flag}, fadein_times*interval_time);
-    }, 500);
-
 
       // 初期アニメーション　パターン1
       // サイト表示後、拡散したパーティクルが集合する
       // gatherFromFar();
-
+  
       // 初期アニメーション　パターン2
       // サイト表示後、拡散したパーティクルが集合する
       gather2D();
-
-
+  
+  
       // 初期アニメーション　パターン3
       // サイト表示後、拡散したパーティクルが集合する
       // gather3D();
+
+    }, 500);
 
 
     // デバイスがPCかスマホか判別し処理を分ける
