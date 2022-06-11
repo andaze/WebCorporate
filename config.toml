@@ -63,7 +63,7 @@ url     = "reason"
 weight  =  3
 [[Languages.en.menu.main]]
 name   = "case study"
-url    = "case study"
+url    = "casestudy"
 weight = 4
 [[Languages.en.menu.main]]
 name   = "solution"
