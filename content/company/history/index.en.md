@@ -5,23 +5,68 @@ weight: 3
  
 ---
 
-## History
-- 2011　 Representative Arai came to India
+<h1 class="mb-14">History</h1>
 
-- 2015　 Returned from India. Started preparing to establish a company.
+<table>
 
-- 2016　 Founding of Andaze Co.
+<tbody>
 
-- 2017　 Microsoft Network Partner Certification
+<tr class="flex p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold">2011</th>
+<td class="w-2/3 p-0">Representative Arai came to India</td>
+</tr>
 
-- 2018　 Certified as a Microsoft Silver Partner
+<tr class="flex p-8 border-0">
+<th class="w-1/3 font-bold">2015</th>
+<td class="w-2/3 p-0">Returned from India. Started preparing to establish a company</td>
+</tr>
 
-- 2019　 Head office relocated from Toranomon to Kojimachi
+<tr class="flex p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold">2016</th>
+<td class="w-2/3 p-0">Founding of Andaze Ltd.</td>
+</tr>
 
-- 2019　 Capital Increase (5 million → 10 million)
+<tr class="flex p-8 border-0">
+<th class="w-1/3 font-bold">2017</th>
+<td class="w-2/3 p-0">Certified as a Microsoft Network Partner</td>
+</tr>
 
-- 2020　 Establish development base at WeWork Hanzomon
+<tr class="flex p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold">2018</th>
+<td class="w-2/3 p-0">Certified as a Microsoft Silver Partner</td>
+</tr>
 
-- 2020　 Microsoft Gold Partner Certification
+<tr class="flex p-8 border-0">
+<th class="w-1/3 font-bold">2019</th>
+<td class="w-2/3 p-0">Head office relocated from Toranomon to Kojimachi</td>
+</tr>
 
-- 2021　 Obtained ISO 9001 and ISO 27001 certification, Capital Increase (10 million → 20 million)
+<tr class="flex p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold">2019</th>
+<td class="w-2/3 p-0">Capital Increase (5 million → 10 million)</td>
+</tr>
+
+<tr class="flex p-8 border-0">
+<th class="w-1/3 font-bold">2020</th>
+<td class="w-2/3 p-0">Establish development base at WeWork Hanzomon</td>
+</tr>
+
+<tr class="flex p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold">2020</th>
+<td class="w-2/3 p-0">Certified as a Microsoft Gold Partner
+</td>
+</tr>
+
+<tr class="flex p-8 border-0">
+<th class="w-1/3 font-bold">2021</th>
+<td class="w-2/3 p-0">Obtained ISO 9001 and ISO 27001 certification</td>
+</tr>
+
+<tr class="flex p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold">2021</th>
+<td class="w-2/3 p-0">Capital Increase (10 million → 20 million)</td>
+</tr>
+
+</tbody>
+
+</table>
