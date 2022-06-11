@@ -11,8 +11,13 @@ headerImage:
 ---
 
 # AI (Artificial Intelligence)
+
+***
+
 ## Providing highly accurate AI solutions that further enhance business value   
 Andaze's AI solutions, based on our strength of abundant knowledge and advanced technology, are highly accurate and contribute significantly to business efficiency. Our shared team, which is involved from consulting to development and operation, achieves high-level AI development. We further enhance the quality of our solutions by repeatedly improving them through design illustrations and prototypes that are easy to visualize.
+
+***
 
 ## Why Choose Andeze? 
 ### (1) Specialized AI experts help you expand your business
@@ -28,6 +33,8 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 * We employ the open source AI development framework ML.NET to model machine learning with speed.
 
 * As a Microsoft-certified Gold Partner, we will meet the expectations of customers who are considering AI implementation by staying close to their latent needs and providing immediate support.
+
+***
 
 ### (3) Providing one-stop AI solutions
 * We can provide consulting services at the time of implementation, as well as management services such as maintenance of data integration platforms.

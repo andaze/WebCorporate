@@ -9,11 +9,19 @@ cardImage: logo_pc.png
 
 # Shared Team
 
+***
+
 ## Why Choose Andaze?
+
+***
 
 ## Andaze with professionals
 
+***
+
 ## "Shared Teams" to support the success of your project
+
+***
 
 ## A diverse team of highly skilled professionals   
 

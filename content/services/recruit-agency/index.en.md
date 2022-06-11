@@ -12,6 +12,8 @@ headerImage:
 
 # Recruitment Agency Services
 
+***
+
 ## Total support from recruiting to hiring and training   
 
 Andaze utilizes AI to select the most effective media and methods among diversifying recruitment methods. We also provide a series of HR services on behalf of our clients, from consulting to recruitment planning, job posting, scheduling, and post-hire training, etc. We support strategic recruitment activities by analyzing market trends and information obtained through our professional knowledge cultivated by supporting more than 200 companies in their recruitment, and through collaboration with various agencies and partner companies. We support strategic recruiting activities.   
@@ -24,6 +26,8 @@ We provide strategic recruiting support by analyzing information and market tren
 * Want to reduce the cost of recruiting
 * Want to recruit people for multiple positions
 * Want to hire experienced people who are ready to work immediately
+
+***
 
 ## Why choose Andaze?
 
@@ -38,6 +42,8 @@ For example, even for a large company that needs to hire 100 people a year, ther
 ### (3) Visualize the results of your recruiting activities with the new "POWER BI" technology  
 
 POWER BI" is a tool to "visualize" which process is the problem, such as when HR is not getting results no matter how hard the company tries. From the number of days it takes from application to job offer, to the names of departments that are putting off interviews, it all becomes clear at a glance. This helps to speed up the hiring process. Also, after hiring, you can look back at the numbers to find issues and make improvements.
+
+***
 
 ## Andaze Recruitment Agency Services
 
@@ -83,6 +89,8 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 * Support for exhibiting at events
 * Production of novelty goods
 
+***
+
 ## Effects of the introduction
 
 * Secure the desired human resources
@@ -91,12 +99,16 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 * Reduce the burden on the human resources department
 * Improvement of skills after hiring
 
+***
+
 ## Recommended industries and sectors
 
 * All industries suffering from a shortage of human resources
 * All industries that are planning to build a job site
 * All industries that want to strengthen their HR departments  
 etc.
+
+***
 
 ## Case Studies
 
@@ -106,7 +118,8 @@ etc.
 
 **Ploblem**: To reduce the cost of recruiting nationwide and for multiple positions
 
-**Solution**: To respond to spot vacancies and increases in staff from various departments, we used advertisements and referrals on a case-by-case basis, which was time-consuming and labor-intensive. Since there are always positions available, we set up an in-house recruiting site optimized for Indeed and Google Job Search so that we could immediately begin recruiting. By doing so, it became possible to flexibly recruit according to internal needs and reduce mismatches by consolidating the information to be conveyed. The company was able to reduce the cost of introductions and advertisements, and the site itself became an asset to the company.
+**Solution**: To respond to spot vacancies and increases in staff from various departments, we used advertisements and referrals on a case-by-case basis, which was time-consuming and labor-intensive. Since there are always positions available, we set up an in-house recruiting site optimized for Indeed and Google Job Search so that we could immediately begin recruiting. By doing so, it became possible to flexibly recruit according to internal needs and reduce mismatches by consolidating the information to be conveyed. The company was able to reduce the cost of introductions and advertisements, and the site itself became an asset to the company.  
+
 ### (2) Case 2
 
 **Industry**: Outsourcing (construction)
