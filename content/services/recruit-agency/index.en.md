@@ -33,7 +33,7 @@ Andaze will develop a recruiting plan based on your needs such as "what kind of 
 
 ### (2) One-stop support for companies that are not able to handle the human resource area 
 
-For example, even for a large company that needs to hire 100 people a year, there are only 2 to 3 people in charge of the human resource department. With such a small amount of manpower, many companies must be responsible for a huge amount of recruiting work, such as creating job advertisements, scheduling interviews, and sending out scout emails. In addition, some companies may have personnel in charge of both human resources and other tasks. Andazeprovides a specialized team that can outsource such time-consuming and time-consuming HR tasks.
+For example, even for a large company that needs to hire 100 people a year, there are only 2 to 3 people in charge of the human resource department. With such a small amount of manpower, many companies must be responsible for a huge amount of recruiting work, such as creating job advertisements, scheduling interviews, and sending out scout emails. In addition, some companies may have personnel in charge of both human resources and other tasks. Andaze provides a specialized team that can outsource such time-consuming and time-consuming HR tasks.
 
 ### (3) Visualize the results of your recruiting activities with the new "POWER BI" technology  
 
@@ -55,7 +55,7 @@ This is a recruiting method that has been attracting attention in recent years. 
 
 ### (4) Recruitment outsourcing    
 
-We can start as early as the next day and ensure stable operations. Since the service is available on an hourly basis, it is possible to handle a series of recruitment tasks without having to cut out tasks. Compared to hiring temporary staff in-house or temporarily hiring an agency, Andaz's professional team is safe and speedy with no training required. Our team structure ensures that no one is assigned to a specific position, so there is no risk of sudden resignations or absences.
+We can start as early as the next day and ensure stable operations. Since the service is available on an hourly basis, it is possible to handle a series of recruitment tasks without having to cut out tasks. Compared to hiring temporary staff in-house or temporarily hiring an agency, Andaze's professional team is safe and speedy with no training required. Our team structure ensures that no one is assigned to a specific position, so there is no risk of sudden resignations or absences.
 
 Examples of use
 
@@ -74,7 +74,7 @@ Depending on name recognition, company size, and industry, even the best compani
 
 ### (6) Post-recruitment training    
 
-After successful recruitment, we start training the new employees. At Andaz, education professionals with more than 30 years of experience in the human resource field at major advertising agencies are in charge of training new recruits, manner training, and skill improvement training. We receive many requests from clients who are about to set up an education department or who are not able to handle training.
+After successful recruitment, we start training the new employees. At Andaze, education professionals with more than 30 years of experience in the human resource field at major advertising agencies are in charge of training new recruits, manner training, and skill improvement training. We receive many requests from clients who are about to set up an education department or who are not able to handle training.
 
 ### (7) We also offer the following services
 
@@ -95,7 +95,7 @@ After successful recruitment, we start training the new employees. At Andaz, edu
 
 * All industries suffering from a shortage of human resources
 * All industries that are planning to build a job site
-* All industries that want to strengthen their HR departments
+* All industries that want to strengthen their HR departments  
 etc.
 
 ## Case Studies
@@ -107,7 +107,7 @@ etc.
 **Ploblem**: To reduce the cost of recruiting nationwide and for multiple positions
 
 **Solution**: To respond to spot vacancies and increases in staff from various departments, we used advertisements and referrals on a case-by-case basis, which was time-consuming and labor-intensive. Since there are always positions available, we set up an in-house recruiting site optimized for Indeed and Google Job Search so that we could immediately begin recruiting. By doing so, it became possible to flexibly recruit according to internal needs and reduce mismatches by consolidating the information to be conveyed. The company was able to reduce the cost of introductions and advertisements, and the site itself became an asset to the company.
-### (2) Case Study 2
+### (2) Case 2
 
 **Industry**: Outsourcing (construction)
 

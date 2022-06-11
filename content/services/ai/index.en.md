@@ -19,11 +19,11 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 
 * Based on the know-how cultivated over many years in the AI and forecasting domains, our specialized AI team contributes not only to proof of concept, but also to further business expansion and profitability.
 
-* Andaz, which has been responsible for practical application of AI in various industries, provides a shared team of specialists in various fields.
+* Andaze, which has been responsible for practical application of AI in various industries, provides a shared team of specialists in various fields.
 
 ### (2) Advanced AI development cultivated on the frontlines of new business
 
-* AI implementation in business is a form of handling large amounts of data. Therefore, Andazehas acquired ISO27001 information security management system. We provide an environment that achieves ideal performance.
+* AI implementation in business is a form of handling large amounts of data. Therefore, Andaze has acquired ISO27001 information security management system. We provide an environment that achieves ideal performance.
 
 * We employ the open source AI development framework ML.NET to model machine learning with speed.
 
@@ -34,7 +34,7 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 
 * We can design AI algorithms that are ahead of the times in a short period of time.
 
-* From understanding the current situation to planning, Andaz's AI specialists, who are well versed in business and cutting-edge technologies, provide one-stop service.
+* From understanding the current situation to planning, Andaze's AI specialists, who are well versed in business and cutting-edge technologies, provide one-stop service.
 
 ## Professionals with Andaze 
 <!-- Why is "machine learning" attracting so much attention? With the spread of smartphones and other devices, large amounts of data have emerged. However, machine learning has made it possible to "calculate analysis results at a speed and accuracy that humans can never achieve".
