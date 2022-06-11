@@ -23,7 +23,7 @@ We focus on development that improves development efficiency and leads to an ess
 We are able to accomplish this while leading the project because  
 We are able to lead and complete projects with a sense of speed that only a venture company can provide.<br><br>
 
-We will produce results that exceed your expectations without exceeding your budget.<br><br><br><br>
+We will produce results that exceed your expectations without exceeding your budget.<br><br><br><br><br>
 
 <h3 class="text-xl font-bold mb-6">We take responsibility for the entire process and are fully committed to the success of your business.<h3>
 The original plan was good, but it didn't deliver the desired results.  
@@ -84,10 +84,16 @@ In addition, we have a robust security environment.<br><br>
 
 We have the leeway to focus on value-added development that gives us a competitive advantage.  
 We can concentrate on developing value-added solutions at a reasonable price.  
-Andaze can provide the best solution at the right price.<br><br>
+Andaze can provide the best solution at the right price.
+
+<br><br><br>
+
+<hr>
+
+<br>
 
 <h2 class="text-2xl font-bold mt-12 mb-6">Services offered by Andaze</h2>
-From strategic planning to design, development, operation and maintenance, we have a team of professionals who know your business and technology inside and out. We continue to create and refine services that maximize our clients' business value.<br><br><br>
+From strategic planning to design, development, operation and maintenance, we have a team of professionals who know your business and technology inside and out. We continue to create and refine services that maximize our clients' business value.<br><br><br><br>
 
 <h3 class="text-xl font-bold mb-6">Strategy/DX Consulting</h3>
 Andaze deploys advanced solutions. We make proposals that solve our clients' problems while incorporating superior technologies and seasonal industry trends. We are attentive, persistent, and use collaboration and expertise. We provide thorough support so that our clients can utilize the best solutions.<br><br><br>
@@ -102,7 +108,13 @@ A shared team that has worked on strategic planning and systems consulting will 
 After implementation, our shared team, which is involved in the entire process from consulting to development, provides long-term support, including 24/7/365 system operation monitoring and recovery support in case of trouble. We also make proposals for future-oriented system improvements and other measures that will lead to a successful DX implementation, with a focus on achieving the goals of the project.<br><br><br>
 
 <h3 class="text-xl font-bold mb-6">Recruitment Agency Services</h3>
-Recruiting" methods and services are diversifying these days. On the other hand, many companies may find that recruiting has become a low-priority "work in progress. At Andaze, we provide one-stop support for the entire recruitment process, starting from the stage when the target "how many of these people we want to hire" is decided. We use digital technology to "visualize" the most appropriate media and methods based on experience, age, number of people, time frame, and cost. We can also outsource time-consuming tasks such as creating scout emails and scheduling. After the recruiting process, we can analyze the entire process and make suggestions for improvements to enhance the quality of the recruitment process.<br><br><br>
+Recruiting" methods and services are diversifying these days. On the other hand, many companies may find that recruiting has become a low-priority "work in progress. At Andaze, we provide one-stop support for the entire recruitment process, starting from the stage when the target "how many of these people we want to hire" is decided. We use digital technology to "visualize" the most appropriate media and methods based on experience, age, number of people, time frame, and cost. We can also outsource time-consuming tasks such as creating scout emails and scheduling. After the recruiting process, we can analyze the entire process and make suggestions for improvements to enhance the quality of the recruitment process.
+
+<br><br><br>
+
+<hr>
+
+<br>
 
 <h2 class="text-2xl font-bold mt-12 mb-6">Certification, Accreditation, Corporate Licensure, (Member Organization/Partner)</h2>
 In order to improve our organizational capabilities, we have acquired certifications, accreditations, and corporate licenses in various areas, including Microsoft.
