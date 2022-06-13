@@ -11,80 +11,62 @@ headerVideo:
 <h1 class="text-4xl font-bold mb-8">Reasons to choose us.</h1>
 
 <h2 class="text-2xl font-bold mt-12 mb-6">Working as one, we complete projects that give you a competitive advantage.</h2>
-Andaze is chosen by our clients because we take responsibility for the entire process, from strategy to operations and maintenance.<br><br>
+Andaze is chosen by our clients because we are responsible for all processes from strategy to operation and maintenance. <br><br>
 
-We take responsibility for all processes from strategy to operation and maintenance.  
-And we are able to provide one-stop solutions.<br><br>
+We are able to provide one-stop solutions, taking responsibility for all processes from strategy to operation and maintenance. <br><br>
 
-And we are able to provide one-stop solutions by utilizing our shared team's  
-By utilizing highly versatile libraries  
-We focus on development that improves development efficiency and leads to an essential competitive advantage.<br><br>
+And by utilizing the highly versatile libraries accumulated by our shared team, we are able to increase development efficiency and focus on development that leads to essential competitive advantages.<br><br>
 
-We are able to accomplish this while leading the project because  
-We are able to lead and complete projects with a sense of speed that only a venture company can provide.<br><br>
+We are able to lead and complete projects at a speed that only a venture company can provide. <br><br>
 
 We will produce results that exceed your expectations without exceeding your budget.<br><br><br><br><br>
 
 <h3 class="text-xl font-bold mb-6">We take responsibility for the entire process and are fully committed to the success of your business.<h3>
-The original plan was good, but it didn't deliver the desired results.  
-The system is complicated, difficult to use, and does not stick.  
-Additional costs were incurred during the project process. Additional costs were incurred during the project process, resulting in huge costs.  
+The initial plan was good, but it did not produce the desired results.<br>
+The system is complicated, difficult to use, and does not take root.<br>
+Additional costs were incurred during the project process, resulting in huge costs.<br>
 These are some of the common cases we hear about when implementing a system.<br><br>
 
-At Andaze, our team members, who have experience in new business strategies, are able to provide the highest level of consulting services.  
-Andaze members, who have experience in new business strategy, handle the project from the top-level consulting.  
-Andaze's team members, who have experience in new business strategy, start from the top-level consulting, so your strategy will not end up as a "cakewalk".<br><br>
+At Andaze, our team members who have experience in new business strategy work from the top-level consulting process, so your strategy will never end up as "Pie in the sky".<br><br>
 
-And since Andaze is also responsible for operation and maintenance of the bottom line, we are able to  
-And because we are responsible for the bottom-line operation and maintenance, we are able to grasp changes in the business as they are happening now.<br><br>
+And since Andaz is responsible for the downstream operations and maintenance, we are able to grasp changes in the business in an ongoing manner.<br><br>
 
-In addition, our venture company's speed of development is also one of our strengths.   
-We also have the ability to develop products at a rapid pace, which is unique to a venture company with a revolutionary mindset.<br><br>
+Another of our strengths is the speed of development that can only be achieved by a venture company with a mindset of change.<br><br>
 
-We are able to provide services that give us a competitive advantage with global standard technology at a reasonable price.  
-and services that bring competitive advantage with global standard technology at a reasonable price.<br><br>
+This is an environment where you can complete services that give you a competitive advantage with global standard technology at a reasonable price.<br><br>
 
-As a technology partner  
 We will continue to accompany you with full commitment as a technology partner.<br><br><br><br>
 
 <h3 class="text-xl font-bold mb-6">One-stop service from strategic planning to operation and maintenance.</h3>
-We want to consult with you on everything from the strategy stage to the operation stage.  
-It is difficult to assign different responsibilities to different systems and processes.  
-We want to focus on product content rather than sticking to the original plan.  
+We want to consult with you on everything from the strategy phase to the operational phase.<br>  
+It is difficult to assign different responsibilities to different systems and processes. <br>
+We want to focus on the product rather than sticking to the original plan.<br>
 These requests and concerns may arise after the request has been made.<br><br>
 
-Andaze provides a full range of services from strategy to operation and maintenance.  
-Andaze provides a shared team of professionals in each field, from strategy to operation and maintenance.<br><br>
+Andaze provides a shared team of professionals in each field who handle everything from strategy to operation and maintenance.<br><br>
 
-Sometimes, the team that handled the strategic planning  
-Andaze provides a shared team of professionals in each field who are responsible for everything from strategy to operation and maintenance. <br><br>
+Sometimes, the team that developed the strategy is also responsible for the downstream operations and maintenance.<br><br>
 
-In order to provide high value-added services with a high level of consistency  
-We do not subcontract work to subcontractors.<br><br>
+In order to provide high value-added services with a high level of consistency, we are committed to accepting prime orders and do not subcontract work to subcontractors.<br><br>
 
-We do not use legacy projects.  
-We use global standard technologies with high future potential.<br><br>
+We do not work on legacy projects, but rather on technologies that are future-proof and of global standards.<br><br>
 
-That is why the motivation of the shared team is always high.<br><br>
+This is why our shared team is always highly motivated.<br><br>
 
-Of course, we don't stop when the product is finished.  
-We work as one team to provide an optimal environment for our clients.<br><br>
+Of course, we don't stop when the product is ready; we continue to work as one team to provide the best possible environment.<br><br>
 
-Consistency is a prerequisite for value-added services.<br><br><br><br>
+Consistency is a prerequisite for high value-added services.<br><br><br><br>
 
 <h3 class="text-xl font-bold mb-6">We provide value-added competitive advantage through our versatile libraries.</h3>
-Consulting firms don't commit to development.  
-Systems companies lack business understanding.  
-Outsourcing strategy and system development is expensive.  
-It is often the case that clients are unable to achieve the results they are looking for due to these reasons.<br><br>
+Consulting firms don't commit to development.<br>
+Systems companies lack business understanding.<br> 
+Outsourcing strategy and system development is expensive.<br>
+It is often the case that the client does not get the results they are looking for due to these reasons.<br><br>
 
-Andaze can solve your problems.  
-Andaze has accumulated a highly versatile library that can solve your problems.  
+Andaz has accumulated a highly versatile library that can solve your problems.<br>  
 In addition, we have a robust security environment.<br><br>
 
-We have the leeway to focus on value-added development that gives us a competitive advantage.  
-We can concentrate on developing value-added solutions at a reasonable price.  
-Andaze can provide the best solution at the right price.
+And we can provide the best solutions at the right price because we can concentrate on developing value-added products that give us a competitive advantage.
 
 <br><br><br>
 
