@@ -45,7 +45,7 @@ weight: 0
 <h3 class="taxt-xl lg:text-3xl font-bold underline">UI/UX Design<h3>
 <p class="my-4 lg:w-11/12">Our team of professionals with a deep understanding of business and expertise in UI and UX will work closely with you to develop products that are both easy to use and highly satisfying.  </p>  
 
-<font class="text-xs lg:text-base" color="lightgray">*UI (user interface): The point of contact between the user and the product</font>  
+<font class="text-xs lg:text-base" color="lightgray">*UI (user interface)...The point of contact between the user and the product</font>  
 
 <font class="text-xs lg:text-base" color="lightgray">*UX (user experience)...All user experiences gained through a product or service</font>  
 

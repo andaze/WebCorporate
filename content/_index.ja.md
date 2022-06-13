@@ -45,7 +45,7 @@ weight: 0
 <h3 class="taxt-xl lg:text-3xl font-bold underline">UI/UXデザイン<h3>
 <p class="my-4 lg:w-11/12">ビジネスを深く理解し、UIやUXに精通したプロフェッショナルチームが、使いやすさと高い満足度をかね備えたプロダクト開発に寄り添います。</p>  
 
- <font class="text-xs lg:text-base" color="lightgray">※UI（ユーザーインターフェイス）…ユーザーとプロダクトをつなぐ接点）</font> 
+ <font class="text-xs lg:text-base" color="lightgray">※UI（ユーザーインターフェイス）…ユーザーとプロダクトをつなぐ接点</font> 
 
  <font class="text-xs lg:text-base" color="lightgray">※UX（ユーザーエクスペリエンス）…プロダクトやサービスを通じて得られるすべてのユーザー体験</font>
 
