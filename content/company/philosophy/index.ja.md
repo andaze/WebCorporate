@@ -25,7 +25,7 @@ weight: 4
 ***
 
 ## Corporate Slogan 企業理念
-**グローバルかつ優れた技術で、日本にイノベーションを。**
+<font class="font-bold text-xl">グローバルかつ優れた技術で、日本にイノベーションを。<font>
 
 ***
 
