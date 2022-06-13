@@ -14,7 +14,8 @@
   <div class="w-full h-96 lg:h-[34rem]">
     <img src="{{ `img/top.png` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
   </div>
-  {{ if .Site.GetPage "news"}} // todo: Probably don't need it.
+  {{/*  // todo: Probably don't need it.  */}}
+  {{ if .Site.GetPage "news"}}
     {{ .Scratch.Set "section" "news" }}
     {{ partial "template-section-newtopic.html" . }}
     {{ .Scratch.Delete "section" }}
