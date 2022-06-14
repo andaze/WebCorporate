@@ -12,8 +12,6 @@ headerImage:
 
 # AI (Artificial Intelligence)
 
-***
-
 ## Providing highly accurate AI solutions that further enhance business value   
 Andaze's AI solutions, based on our strength of abundant knowledge and advanced technology, are highly accurate and contribute significantly to business efficiency. Our shared team, which is involved from consulting to development and operation, achieves high-level AI development. We further enhance the quality of our solutions by repeatedly improving them through design illustrations and prototypes that are easy to visualize.
 
