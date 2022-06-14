@@ -9,8 +9,6 @@ cardImage: logo_pc.png
 
 # Shared Team
 
-***
-
 ## Why Choose Andaze?
 
 ***

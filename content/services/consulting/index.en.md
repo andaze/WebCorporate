@@ -9,7 +9,6 @@ cardImage: logo_pc.png
 
 # Consulting　
 
-***
 
 ## Experienced consultants with a high level of expertise   
 DX enables our clients to transform all aspects of their corporate activities for the better. Andaze's shared team of highly specialized digital consultants provides a comprehensive range of services, from strategy development and implementation to customer support, to help you design a digital strategy that works for you.

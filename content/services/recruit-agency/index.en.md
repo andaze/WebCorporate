@@ -12,8 +12,6 @@ headerImage:
 
 # Recruitment Agency Services
 
-***
-
 ## Total support from recruiting to hiring and training   
 
 Andaze utilizes AI to select the most effective media and methods among diversifying recruitment methods. We also provide a series of HR services on behalf of our clients, from consulting to recruitment planning, job posting, scheduling, and post-hire training, etc. We support strategic recruitment activities by analyzing market trends and information obtained through our professional knowledge cultivated by supporting more than 200 companies in their recruitment, and through collaboration with various agencies and partner companies. We support strategic recruiting activities.   

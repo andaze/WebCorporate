@@ -9,8 +9,6 @@ cardImage: logo_pc.png
 
 # New Business Service Development　
 
-***
-
 ## Support from new business to expansion using existing systems   
 From the digitization of analog information such as documents to new businesses that create business models from scratch, the possibilities for DX are endless. Andaze's one-stop shared team with over 20 years of experience handles everything from strategic planning to implementation, operation, and maintenance of services utilizing superior technology. More objective and neutral. We support your digital innovation within the feasible cost range.
 

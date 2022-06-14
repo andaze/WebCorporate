@@ -19,7 +19,7 @@ weight: 0
 
 <p class="text-xl lg:text-4xl font-bold mt-20 mb-10">Accelerate your company's growth by staying close to your customers</p>
 
-<p class="lg:w-11/12">Andaze is a group of specialists working in various fields. Our team of business-savvy technology professionals catches the changes in your business and proposes successful strategies that are not just a "picture of the future". Then, we start system development efficiently, using superior technology of global standards. We provide solutions that lead your business to success at a reasonable price using the "Andaze Method," in which every member functions as a player.</p>
+<p class="lg:w-11/12">Andaze is a group of specialists working in various fields. Our team of business-savvy technology professionals catches the changes in your business and proposes successful strategies that are not just a "Pie in the sky". Then, we start system development efficiently, using superior technology of global standards. We provide solutions that lead your business to success at a reasonable price using the "Andaze Method," in which every member functions as a player.</p>
 
 </div>
 
@@ -45,9 +45,9 @@ weight: 0
 <h3 class="taxt-xl lg:text-3xl font-bold underline">UI/UX Design<h3>
 <p class="my-4 lg:w-11/12">Our team of professionals with a deep understanding of business and expertise in UI and UX will work closely with you to develop products that are both easy to use and highly satisfying.  </p>  
 
-<font class="text-xs lg:text-base" color="lightgray">*UI (user interface): The point of contact between the user and the product</font>  
+<font class="text-xs lg:text-base" color="lightgray">*UI (User Interface)...The point of contact between the user and the product</font>  
 
-<font class="text-xs lg:text-base" color="lightgray">*UX (user experience)...All user experiences gained through a product or service</font>  
+<font class="text-xs lg:text-base" color="lightgray">*UX (User Experience)...All user experiences gained through a product or service</font>  
 
 </li>
 
