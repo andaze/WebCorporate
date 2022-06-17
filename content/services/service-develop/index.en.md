@@ -2,8 +2,11 @@
 title: "New Business Service Development"
 date: 2022-02-23T17:03:34+09:00
 weight: 6
-cardImage: logo_pc.png
-
+cardImage: service-develop.jpg
+headerImage:
+    imageName: "service-develop.jpg"
+    imageTitle: ""
+    imageDescription: ""
  
 ---
 
