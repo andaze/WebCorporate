@@ -3,9 +3,9 @@ title: "トップメッセージ"
 date: 2022-02-23T17:03:34+09:00
 weight: 1
 headerImage:
-    imageName: "mina-arai.jpg"
+    imageName: "mina-arai_new.png"
     imageTitle: "トップメッセージ"
-    imageDescription: "代表取締役社長    <br> 新井　美奈"
+    imageDescription: "アンダーズ株式会社   <br> 代表取締役社長    <br> 新井　美奈"
  
 ---
 
@@ -35,8 +35,8 @@ DX推進を戦略段階からサポートしてほしい、
 このような経営課題やお困りごとがありましたら  
 どうぞ、アンダーズにご相談ください。    
 
+**アンダーズ株式会社**  
 **代表取締役社長**    
-
 **新井　美奈**
 
 <!-- ### 企業情報 TOP  -->
