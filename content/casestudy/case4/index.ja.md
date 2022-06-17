@@ -2,7 +2,11 @@
 title: "大塚倉庫様「問い合わせマルチチャット機能」で多彩な場から手軽に連絡"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: logo_pc.png
+cardImage: case_4.jpg
+headerImage:
+    imageName: "case_4.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 # 大塚倉庫様「問い合わせマルチチャット機能」で多彩な場から手軽に連絡。
