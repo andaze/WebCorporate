@@ -2,7 +2,11 @@
 title: "日綜産業様　Power BI"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: logo_pc.png
+cardImage: case_6.jpg
+headerImage:
+    imageName: "case_6.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 # 日綜産業様　Power BI

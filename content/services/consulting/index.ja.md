@@ -2,8 +2,11 @@
 title: "コンサルティング"
 date: 2022-02-23T17:03:34+09:00
 weight: 3
-cardImage: logo_pc.png
-
+cardImage: consulting.jpg
+headerImage:
+    imageName: "consulting.jpg"
+    imageTitle: ""
+    imageDescription: ""
  
 ---
 

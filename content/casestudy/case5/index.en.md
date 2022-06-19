@@ -2,7 +2,11 @@
 title: "Otsuka Warehouse Co.,Ltd.: 'Delivery visualization' shows the health of logistics."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: logo_pc.png
+cardImage: case_5.jpg
+headerImage:
+    imageName: "case_5.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 

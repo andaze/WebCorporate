@@ -2,7 +2,11 @@
 title: "大塚倉庫様「配送みえる化」で物流の健康状態を見せる"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: logo_pc.png
+cardImage: case_5.jpg
+headerImage:
+    imageName: "case_5.jpg"
+    imageTitle: ""
+    imageDescription: ""
 ---
 
 # 大塚倉庫様「配送みえる化」で物流の健康状態を見せる。

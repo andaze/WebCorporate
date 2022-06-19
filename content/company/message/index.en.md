@@ -3,9 +3,9 @@ title: "Top Message"
 date: 2022-02-23T17:03:34+09:00
 weight: 1
 headerImage:
-    imageName: "mina-arai.jpg"
+    imageName: "mina-arai_new.png"
     imageTitle: "Top Message"
-    imageDescription: "President and Representative Director   <br> Mina Arai"
+    imageDescription: "Andaze Ltd.   <br> President and Representative Director   <br> Mina Arai"
  
 ---
 
@@ -28,8 +28,8 @@ We are able to provide services that meet the needs of our clients, including th
 
 If you have any of these management issues or problems, please contact Andaze.    
 
-**President and Representative Director** 
-
+**Andaze Ltd.**  
+**President and Representative Director**   
 **Mina Arai**
 
 <!-- ### About Us TOP  -->
