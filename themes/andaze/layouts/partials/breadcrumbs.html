@@ -11,6 +11,6 @@
 
 
 <li class="inline-flex items-center {{ if eq .p1 .p2 }} {{else}} arrow-item {{end}}">
-  <a href="{{.p1.Permalink}}" class="inline-flex items-center text-xs font-normal {{ if eq .p1 .p2 }} text-gray-400 {{ else }} text-gray-700 {{ end }}">{{ .p1.Title }}</a>
+  <a href="{{.p1.Permalink}}" class="inline-flex items-center text-sm font-normal {{ if eq .p1 .p2 }} text-gray-400 {{ else }} text-gray-700 {{ end }}">{{ .p1.Title }}</a>
 </li>
 {{ end }}
