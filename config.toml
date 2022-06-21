@@ -65,10 +65,10 @@ weight  =  3
 name   = "Case study"
 url    = "casestudy"
 weight = 4
-[[Languages.en.menu.main]]
-name   = "Solution"
-url    = "solution"
-weight = 5
+# [[Languages.en.menu.main]]
+# name   = "Solution"
+# url    = "solution"
+# weight = 5
 [[Languages.en.menu.main]]
 name   = "News"
 url    = "news"
@@ -100,10 +100,10 @@ weight  =  3
 name   = "ケーススタディ"
 url    = "casestudy"
 weight = 4
-[[Languages.ja.menu.main]]
-name   = "ソリューション"
-url    = "solution"
-weight = 5
+# [[Languages.ja.menu.main]]
+# name   = "ソリューション"
+# url    = "solution"
+# weight = 5
 [[Languages.ja.menu.main]]
 name   = "ニュース"
 url    = "news"
