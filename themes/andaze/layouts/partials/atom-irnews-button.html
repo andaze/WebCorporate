@@ -1,11 +1,13 @@
 {{ if eq (.Scratch.Get "backgroundTheme") ("white") }}
-<a href="{{ .Permalink }}" type="button" class="w-30 md:w-44 text-black hover:text-white border border-gray-800 hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-6 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
+<a href="{{ .Permalink }}" type="button" class="w-30 md:w-44 text-black hover:text-white border border-gray-800 hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-6 py-4 text-center mr-2 mb-2">{{ .Title }}</a>
 {{ else if eq (.Scratch.Get "backgroundTheme") ("black")}}
-<a href="{{ .Permalink }}" type="button" class="w-30 md:w-44 text-white hover:text-black border border-gray-800 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-6 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
+<a href="{{ .Permalink }}" type="button" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-6 py-4 text-center mr-2 mb-2">{{ .Title }}</a>
+{{ else if eq (.Scratch.Get "backgroundTheme") ("company")}}
+<a href="{{ .Permalink }}" type="button" class="w-30 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-6 py-4 text-center mr-2 mb-2 md:px-28">{{ .Title }}</a>
 {{ else if eq (.Scratch.Get "buttonLink") ("recruit")}}
     {{if eq (.Lang) ("ja")}}
-    <a href="https://www.andaze.com/job/ja/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-20 lg:px-20 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
+    <a href="https://www.andaze.com/job/ja/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-28 py-4 text-center mr-2 mb-2">{{ .Title }}</a>
     {{ else }}
-    <a href="https://www.andaze.com/job/en/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-20 lg:px-20 py-3.5 text-center mr-2 mb-2">{{ .Title }}</a>
+    <a href="https://www.andaze.com/job/en/"target="_blank" rel="noopener noreferrer" class="w-30 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm px-12 md:px-28 py-4 text-center mr-2 mb-2">{{ .Title }}</a>
     {{ end }}
 {{ end }}

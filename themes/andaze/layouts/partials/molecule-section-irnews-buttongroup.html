@@ -13,7 +13,7 @@
 
 {{ else if eq (.Scratch.Get "section") ("company") }}
     {{ with .Site.GetPage (.Scratch.Get "section") }}
-        {{ .Scratch.Set "backgroundTheme" "black" }}
+        {{ .Scratch.Set "backgroundTheme" "company" }}
         {{ partial "atom-irnews-button.html" .}}
         {{ .Scratch.Delete "backgroundTheme"}}
     {{ end }}
