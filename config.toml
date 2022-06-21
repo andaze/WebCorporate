@@ -69,10 +69,10 @@ weight = 4
 # name   = "Solution"
 # url    = "solution"
 # weight = 5
-[[Languages.en.menu.main]]
-name   = "News"
-url    = "news"
-weight = 6
+# [[Languages.en.menu.main]]
+# name   = "News"
+# url    = "news"
+# weight = 6
 [[Languages.en.menu.main]]
 name   = "Recruit"
 url    = "https://www.andaze.com/job/en/"
@@ -104,10 +104,10 @@ weight = 4
 # name   = "ソリューション"
 # url    = "solution"
 # weight = 5
-[[Languages.ja.menu.main]]
-name   = "ニュース"
-url    = "news"
-weight = 6
+# [[Languages.ja.menu.main]]
+# name   = "ニュース"
+# url    = "news"
+# weight = 6
 [[Languages.ja.menu.main]]
 name   = "採用情報"
 url    = "https://www.andaze.com/job/ja/"
