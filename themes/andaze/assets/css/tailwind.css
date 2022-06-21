@@ -102,4 +102,8 @@ h2 {
   .lg\:text-5xl {
     line-height: 1.4 !important;
   }
+
+  .pc_visible {
+    display: none;
+  }
 }
