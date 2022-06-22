@@ -20,7 +20,7 @@
     {{ partial "template-section-newtopic.html" . }}
     {{ .Scratch.Delete "section" }}
   {{ end }}
-  <div class="bg-black">
+  <div class="bg-black pt-16 pb-48">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
       {{ partial "template-section-irnews.html" . }}
@@ -39,13 +39,14 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-    {{ if .Site.GetPage "recruit"}}
-      {{ .Scratch.Set "section" "recruit" }}
-      {{ partial "template-section-recruit.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
-
   </div>
+
+  {{ if .Site.GetPage "recruit"}}
+    {{ .Scratch.Set "section" "recruit" }}
+    {{ partial "template-section-recruit.html" . }}
+    {{ .Scratch.Delete "section" }}
+  {{ end }}
+
   {{ range first 10 .Data.Pages }}
   {{ .Render "summary" }}
   {{ end }}
