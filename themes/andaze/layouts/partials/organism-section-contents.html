@@ -1,7 +1,7 @@
-    {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-    <div class="flex flex-row flex-wrap bg-white border-t border-l">
-        {{ range .Pages }}
-            {{ partial "molecule-services-polaroid-card.html" . }}
-        {{ end }}
-    </div>
+{{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+<div class="flex flex-row flex-wrap bg-white border-t border-l mb-5 md:mb-16">
+    {{ range .Pages }}
+    {{ partial "molecule-services-polaroid-card.html" . }}
     {{ end }}
+</div>
+{{ end }}
