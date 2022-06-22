@@ -2,9 +2,9 @@
 title: "Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the 'Inquiry multi-chat function'."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: case_4.jpg
+cardImage: case_3.png
 headerImage:
-    imageName: "case_4.jpg"
+    imageName: "case_3.png"
     imageTitle: ""
     imageDescription: ""
 ---
@@ -37,6 +37,8 @@ Therefore, we suggested that a system that could collectively manage interaction
 (4) By completing communication through chat rooms, data on the types and trends of inquiries can be accumulated. Later, the content can be analyzed for further business improvement and customer satisfaction.
 
 By consolidating inquiries into chat, the burden on the office is eliminated. Teleworking is made possible by reducing the number of phone calls, faxes, and other tasks that require coming to the office, creating an environment that can adapt to social conditions such as the Corona disaster. Currently, the system is used only within the company, but training will be provided to partner companies in the future, and gradually a system will be established to enable conversations with business partners over chat. Otsuka Warehouse Co.,Ltd. is taking steps toward complete digitalization, saying, "Otsuka Warehouse Co.,Ltd. does not use the telephone. In the future, we plan to build a system that enables web ordering, delivery visualization, and multi-chat functions to be completed with a single login.
+
+![ Image is not Available !](case_3-2.png)
 
 ***
 
