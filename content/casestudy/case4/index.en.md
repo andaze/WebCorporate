@@ -1,48 +1,41 @@
 ---
-title: "Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the 'Inquiry multi-chat function'."
+title: "Otsuka Warehouse Co.,Ltd.: 'Delivery visualization' shows the health of logistics."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: case_4.jpg
+cardImage: case_5.jpg
 headerImage:
-    imageName: "case_4.jpg"
+    imageName: "case_5.jpg"
     imageTitle: ""
     imageDescription: ""
 ---
 
-# Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the "Inquiry multi-chat function".
 
-## Overview
-One of the goals of the first phase of Otsuka Warehouse Co.,Ltd.'s "Creation of the most used IT infrastructure in the logistics industry" is to "eliminate call center telephone support. In order to achieve on-site completion from receiving to shipping through system integration using terminals, reducing the number of phone calls was a major theme.
+# Otsuka Warehouse Co.,Ltd.: "Delivery visualization" shows the health of logistics.
 
-Otsuka Warehouse Co.,Ltd. delivers not only food products, beverages, pharmaceuticals, and daily necessities handled by the company group. The company has established a "common platform" that allows for the collective delivery of other companies' products as long as the delivery destination is the same, so it receives many inquiries from external customers.
+# Overview
+Otsuka Warehouse Co.,Ltd. provides the logistics infrastructure for products essential to our daily lives, from pharmaceuticals such as intravenous drips and medicines to beverages and daily necessities. Otsuka Warehouse Co.,Ltd. is not limited to Otsuka Holdings Group products, but also promotes joint distribution by utilizing its nationwide next-day delivery logistics network and handling more than 60% of products sold externally as a common platform. The Otsuka Warehouse Co.,Ltd. is committed to "IT x Logistics".
+Otsuka Warehouse Co.,Ltd. is committed to "IT x Logistics". The warehouse is positioned as a "TECH-BASE" and is working on various digitalization projects and developments to solve issues in the logistics industry.
 
-Therefore, we decided to centralize the management of inquiries by including a "multi-chat function" within CARGO TRACKS. By digitizing internal and external communications, all interactions are stored as logs, and we have introduced a groundbreaking attempt to link Teams and LINE to create a system that allows easy confirmation and replies from PCs and smartphones. In addition, since the date, time, period, and the person in charge are also known, the aim was to prevent omissions of replies and the absence of the person in charge.
+To begin with, most of the logistics industry requires "paper" information to move goods. For example, orders received by fax were manually entered. Inventory allocations are made, and the storage locations are searched and products are found according to paper lists. Slips are printed one by one according to a manufacturer-specific format. Data is only used for Excel input for each manufacturer, and human labor was essential for the entire process. To solve this problem, Otsuka Warehouse Co.,Ltd. has implemented ID transportation, which automatically enables web-based ordering, picking, and instructions to shipping companies, as well as paperless delivery slips. The company succeeded in drastically reducing internal administrative work, and was awarded the Logistics Grand Prize by the Japan Logistics Systems Association.
+
+The first phase of Otsuka Warehouse Co.,Ltd.'s IT x logistics initiative is "visualization of delivery status. The "visualization of delivery" is a function of CARGO TRACKS, a system that allows users to check the status of orders from receipt to delivery on the screen. The system allows the user to grasp in real time the location of the package, its route, estimated time of arrival, and even the temperature and humidity inside the delivery vehicle on the map on the screen.
 
 ***
 
 ## Background of Application
-When we first decided to introduce CARGO TRACKS, we envisioned it as a dedicated "delivery visualization" system. However, in the process of creating the requirement definition, Andaze's development team realized that business communication by phone or email was complicated, and there was a risk of missing important communications and "said-or-not-said" situations. In addition, the fact that some staff members, such as drivers in the car, had limited means of easily contacting the company, was also affecting responses to inquiries.
-
-Therefore, we suggested that a system that could collectively manage interactions on the Web by adding a multi-chat function and record them as logs might be necessary. At the time, Otsuka Warehouse Co.,Ltd. had already begun using Teams as a communication tool within the company, and the timing was right for them to experience the convenience of the multi-chat function. The company realized that a UI that could be easily written from a smartphone application or PC, which all internal and external personnel use on a daily basis, would be an important mechanism for Otsuka Warehouse Co.,Ltd. to meet its needs.
+For wholesalers and manufacturers, being unable to "see" the delivery status easily leads to anxiety, and in the past they were inundated with inquiries by phone and e-mail. However, when delivery operations are outsourced to a shipping company, it is sometimes difficult to contact the driver directly. The delivery company would contact the office of the delivery company, which would then contact the driver and wait for the driver to return the call, resulting in cases where the delivery had already been made by the time the inquiry was responded to. In particular, when a disaster or accident occurs, the call center is often inundated with inquiries and confirmations from within the company as well as from the call center, resulting in cost and workload issues. Therefore, we built a common platform that allows employees and partners nationwide, as well as customers at the delivery site, to retrieve necessary information more easily.
 
 ***
 
 ## Results obtained
-(1) It would take a lot of time and effort to get all delivery drivers who only use their smartphones to download a new chat application, and some drivers would find it difficult to master the functions. Therefore, Andaze pioneered the integration of LINE and Teams. Otsuka Warehouse Co.,Ltd. and manufacturer representatives communicate with each other on CARGO TRACKS and Teams, while drivers can now check and reply to messages using LINE, which was originally included in their smartphones. This groundbreaking linkage has led to improved convenience in that people active in their respective fields can easily communicate with each other anytime, anywhere.
-
-(2) When, who, what kind of inquiry was received, who confirmed it with whom, and how it was returned. A series of inquiries are all recorded. Currently, the person in charge handles the inquiries, but in the future, plans are underway to utilize the data accumulated in the system to automate chat replies like a "chatbot".
-
-(3) Multiple chat rooms can be created for a single inquiry. Even if the subject matter is the same, the chat rooms can be divided according to the members of the group with whom the user is conversing.
-
-(4) By completing communication through chat rooms, data on the types and trends of inquiries can be accumulated. Later, the content can be analyzed for further business improvement and customer satisfaction.
-
-By consolidating inquiries into chat, the burden on the office is eliminated. Teleworking is made possible by reducing the number of phone calls, faxes, and other tasks that require coming to the office, creating an environment that can adapt to social conditions such as the Corona disaster. Currently, the system is used only within the company, but training will be provided to partner companies in the future, and gradually a system will be established to enable conversations with business partners over chat. Otsuka Warehouse Co.,Ltd. is taking steps toward complete digitalization, saying, "Otsuka Warehouse Co.,Ltd. does not use the telephone. In the future, we plan to build a system that enables web ordering, delivery visualization, and multi-chat functions to be completed with a single login.
+Shortly after the introduction of the system, there was a day when an earthquake occurred in the Tohoku region. When an earthquake occurs, there are delays in deliveries depending on the situation. In the past, when a disaster occurred, we had to create shipping data for each manufacturer in Excel, add delivery and delivery status, and email it to them. This time, however, the Sendai Sales Office, which has jurisdiction over the Tohoku region, made full use of CARGO TRACKS' "delivery visualization" function. By taking delivery completion logs frequently, the Logistics Division, the operational unit, was able to check the delivery status in real time and communicate it to the manufacturer with outstanding response. As a result, the time and effort required for customers to wait for a response to their inquiries was greatly reduced. The customer's anxiety about not knowing when the package will be delivered has been eliminated. In the future, Otsuka plans to build a system that will allow partner companies to check the status of their shipments on the screen as well.
+The "delivery visualization" system is a mechanism for showing the "health status" of Otsuka Warehouse Co.,Ltd.'s logistics operations. In times of emergency, when breaking news is needed, this information is useful not only to the company itself, but also to the wholesalers and manufacturers to whom deliveries are made. This kind of "connected logistics" that further enhances the added value of logistics can be said to be a service that can lead to competitive advantage.
 
 ***
 
 ## Customer Information
-Otsuka Warehouse Co.,Ltd.
+Otsuka Warehouse Co.,Ltd.  
 
-1-3-16 Ishida, Minato-ku, Osaka-shi, Osaka
-
+1-3-16 Ishida, Minato-ku, Osaka-shi, Osaka 
+ 
 https://www.otsukawh.co.jp/

@@ -1,36 +1,50 @@
 ---
-title: "ISEWAN TERMINAL SERVICE CO.,LTD. Devan Management"
+title: "Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organization with the cool design of the 'Disability Monitor'."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: case_2.jpg
+cardImage: case_3.png
 headerImage:
-    imageName: "case_2.jpg"
+    imageName: "case_3.png"
     imageTitle: ""
     imageDescription: ""
 ---
 
-# ISEWAN TERMINAL SERVICE CO.,LTD. Devan Management
+# Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organization with the cool design of the "Disability Monitor".
 
-## Overview
-ISEWAN TERMINAL SERVICE CO.,LTD. has been in business for more than 70 years. Starting with the Port of Nagoya in Aichi Prefecture, the company has 33 bases in major cities throughout Japan and 24 overseas bases in the U.S., Germany, China, Belgium, and Thailand. Today, ISEWAN TERMINAL SERVICE CO.,LTD. is not only a shipping company, but also a comprehensive logistics company that is active on a global scale. ISEWAN TERMINAL SERVICE CO.,LTD. has introduced "deban management. Deban management is a system that reads the case marks of cargo unloaded during "debanning," the process of removing cargo from containers arriving at ports from overseas, word for word, and compares them to the contents of customs clearance documents.
+## Overview　
+One of major strengths of Otsuka Warehouse Co.,Ltd. is its "nationwide next-day delivery system. With 83 distribution centers nationwide, Otsuka Warehouse Co.,Ltd. has built one of the largest distribution systems in Japan. Therefore, if a system failure were to occur, the situation must be assessed immediately and action taken to prevent delays. Technology Division of Otsuka Warehouse Co.,Ltd. has three main policies in operating multiple systems.
+
+(1) Never stop or cause system failures.
+
+(2) Detect failures as soon as they occur
+
+(3) Restore the system in a short period of time, with the goal of restoring the system within 60 minutes of the failure.
+
+Every system has its share of failures. In addition, they often occur at the same time for some reason. Therefore, the Technology Division has been working to increase the speed of failure detection and recovery. However, until now, the operations team has only received simple alert e-mails in the event of a failure. The alert e-mails were often lost in the mass of other e-mails, and even when they were found, they were full of alphanumeric characters and technical terms that were difficult for anyone other than the person in charge to understand, causing a slow response. The "Failure Monitor" introduced this time visualizes what kind of problem is occurring in which system in an easy-to-understand diagram. The design of the system was designed to excite the members of the operations team. The contents are easy to understand immediately, and since the solution is displayed from the database, the system is easy to read so that anyone can see and respond to the problem.
 
 ***
 
 ## Background of Application
-In recent years, the spread of mail-order websites has made it easier for individuals to buy goods from overseas. As a result, packages have become smaller and more segmented, and sometimes arrive in "consolidation," in which container space is shared with other shippers. The case markings on cargo from overseas do not always have the same symbol number as on the customs clearance document written at the time of declaration. Sorting packages by visually checking them one by one is not only time-consuming and labor intensive, but also carries the risk of mistakes being made. Therefore, a system-based "sorting tool" was required.
+When some trouble occurs somewhere in a number of systems, it can stop many systems that are linked to the data. If the location of the trouble is not known, the field cannot start work. This can lead to missed shipments and delivery delays. The extent of the failure is unknown even after reading the alert e-mail. What is happening?" "Does it need to be resolved immediately?" "What should we do about it?" The time is ticking away while we are fretting and fussing.... The theme of the project was a mechanism to resolve this situation.
+
+The most important factor for Otsuka Warehouse Co.,Ltd. to consider when introducing the disorder monitor was the "visual" aspect of the system. They requested a design that would show the health status of each system on the monitor, based on the motif of a fictional organization from a popular animated film. Andaze's development team proposed more than 10 design patterns. We showed them a variety of visual proposals, from text fonts to coloring and the positioning of parts. We were conscious of the fact that the operation team would feel as if they were in control of all the systems that govern logistics. We proceeded with the construction of the system with a sense of urgency, building on the process of accurately grasping the intent, showing the actual system, and making modifications to it.
+
+At Andaze, you can choose from more than 100 patterns for not only the visual image displayed on the screen, but also the logo design of the system. Because we are programmers who know business and technology inside and out, we are able to present feasible designs that are not just theories on paper. The UI is easy to use, yet cool. We will meet your design needs so that everyone who incorporates the system into their work will become attached to it.
 
 ***
 
 ## Results obtained
-When a photo of the case mark is taken, the deban management system recognizes the text information on the box. The system then automatically matches the information with the customs documents and inquires detailed information about the cargo. The system can then arrange transportation to the correct destination. The system also saves any "re-marks" (scratches) found when checking the cargo as data at that stage. This system has clearly improved the efficiency and accuracy of sorting.
+The introduction of the failure monitor enabled us to visually check the location of system failures, the scope of impact, and solutions. When a failure of any kind occurs, the level of the trouble is indicated in red on the monitor in three levels: "Caution," "Warning," and "Critical," so the extent of the failure can also be determined. The solution is also written below the display, so there is no need for the operations team to be in a hurry to solve the problem. When the problem is resolved, the display changes to the words "Failure, Resolved" with a gorgeous graphic.
+
+This system has enabled us to create an environment that is in line with the three policies set forth by the Technology Division. The speed of recovery has increased dramatically, leading to a quick resolution within 60 minutes. In addition, the operation team members are now inspired by the cool visuals of the monitors and feel as if they are part of a secret organization on an important mission. It can be said that the design has also brought about the effect of allowing the people using the monitors to enjoy their work.
+
+In the future, we will build a system to automate the resolution of obstacles that are currently handled by manpower, and eliminate the need for human judgment in order to achieve even higher speed.
 
 ***
 
 ## Customer Information
-ISEWAN TERMINAL SERVICE CO.,LTD.
+Otsuka Warehouse Co.,Ltd.
 
-1-7-40 Irifune, Minato-ku, Nagoya, Aichi 455-0032, Japan
+1-3-16 Ishida, Minato-ku, Osaka-shi, Osaka
 
-TEL: 052-661-5181
-
-https://www.isewan.co.jp/
+https://www.otsukawh.co.jp/
