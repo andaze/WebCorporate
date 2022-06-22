@@ -2,9 +2,9 @@
 title: "Otsuka Warehouse Co.,Ltd.: 'Delivery visualization' shows the health of logistics."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: case_5.jpg
+cardImage: case_4.png
 headerImage:
-    imageName: "case_5.jpg"
+    imageName: "case_4.png"
     imageTitle: ""
     imageDescription: ""
 ---
@@ -30,6 +30,8 @@ For wholesalers and manufacturers, being unable to "see" the delivery status eas
 ## Results obtained
 Shortly after the introduction of the system, there was a day when an earthquake occurred in the Tohoku region. When an earthquake occurs, there are delays in deliveries depending on the situation. In the past, when a disaster occurred, we had to create shipping data for each manufacturer in Excel, add delivery and delivery status, and email it to them. This time, however, the Sendai Sales Office, which has jurisdiction over the Tohoku region, made full use of CARGO TRACKS' "delivery visualization" function. By taking delivery completion logs frequently, the Logistics Division, the operational unit, was able to check the delivery status in real time and communicate it to the manufacturer with outstanding response. As a result, the time and effort required for customers to wait for a response to their inquiries was greatly reduced. The customer's anxiety about not knowing when the package will be delivered has been eliminated. In the future, Otsuka plans to build a system that will allow partner companies to check the status of their shipments on the screen as well.
 The "delivery visualization" system is a mechanism for showing the "health status" of Otsuka Warehouse Co.,Ltd.'s logistics operations. In times of emergency, when breaking news is needed, this information is useful not only to the company itself, but also to the wholesalers and manufacturers to whom deliveries are made. This kind of "connected logistics" that further enhances the added value of logistics can be said to be a service that can lead to competitive advantage.
+
+![ Image is not Available !](case_4-2.png)
 
 ***
 
