@@ -33,6 +33,13 @@
             </div>
             {{ partial "organism-section-contents.html" . }}
         {{ .Scratch.Delete "section" }}
+
+        {{ .Scratch.Set "section" "casestudy" }}
+            <div class="text-left mb-6">
+                {{ partial "atom-services-listpage-title.html" . }}
+            </div>
+            {{ partial "organism-section-contents.html" . }}
+        {{ .Scratch.Delete "section" }}
         
         <!-- Below Commented code is tab wise view -->
         <!-- <div class="tab-content" id="tabs-tabContentFill">
