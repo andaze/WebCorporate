@@ -2,9 +2,9 @@
 title: "Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organization with the cool design of the 'Disability Monitor'."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
-cardImage: case_3.png
+cardImage: case_2.png
 headerImage:
-    imageName: "case_3.png"
+    imageName: "case_2.png"
     imageTitle: ""
     imageDescription: ""
 ---
