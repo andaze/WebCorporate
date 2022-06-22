@@ -34,9 +34,6 @@
 
 {{ if eq (.Scratch.Get "section") "services" }}
     {{ partial "organism-section-contents.html" . }}
-    <div class="flex justify-center md:hidden lg:hidden mt-5">
-        {{ partial "molecule-section-irnews-buttongroup.html" . }}
-    </div>
 {{ end }}
 
 {{ if eq (.Scratch.Get "section") "solution" }}
