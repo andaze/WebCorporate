@@ -46,7 +46,10 @@ async function init() {
             sendForm.sendEmail();
         });
     }
-    if (!((location.pathname == '/WebCorporate/ja/company/message/') | (location.pathname == '/WebCorporate/en/company/message/'))) {
+    if (((location.pathname == '/WebCorporate/ja/casestudy/case4/') | (location.pathname == '/WebCorporate/en/casestudy/case4/'))) {
+        const header_image = document.getElementById('header_image');
+        header_image.style.objectPosition = "0% 40%";
+    } else if (!((location.pathname == '/WebCorporate/ja/company/message/') | (location.pathname == '/WebCorporate/en/company/message/'))) {
         const header_image = document.getElementById('header_image');
         header_image.style.objectPosition = "50% 50%";
     }
