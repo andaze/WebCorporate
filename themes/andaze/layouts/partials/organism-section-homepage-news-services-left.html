@@ -1,11 +1,13 @@
 <div>
-    {{ partial "atom-irnews-heading.html" . }}
-    {{ if eq (.Scratch.Get "section") "news" }}
-    <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12">
-        {{ partial "atom-newtopic-sliderbutton.html" . }}
-    </div>
+    {{ if or (eq (.Scratch.Get "section") "services") (eq (.Scratch.Get "section") "news") }}
+        {{ partial "atom-irnews-heading.html" . }}
+        {{ if eq (.Scratch.Get "section") "news" }}
+            <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12">
+                {{ partial "atom-newtopic-sliderbutton.html" . }}
+            </div>
+        {{ end }}
+        <div class="hidden md:block lg:block">
+            {{ partial "molecule-section-irnews-buttongroup.html" . }}
+        </div>
     {{ end }}
-    <div class="hidden md:block lg:block">
-        {{ partial "molecule-section-irnews-buttongroup.html" . }}
-    </div>
 </div>
