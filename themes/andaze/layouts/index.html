@@ -39,6 +39,12 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
+    {{ if .Site.GetPage "casestudy"}}
+      {{ .Scratch.Set "section" "casestudy" }}
+      {{ partial "template-section.html" . }}
+      {{ .Scratch.Delete "section" }}
+    {{ end }}
+
   </div>
 
   {{ if .Site.GetPage "recruit"}}
