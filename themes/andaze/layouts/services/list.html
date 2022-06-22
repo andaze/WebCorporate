@@ -24,13 +24,10 @@
         {{ .Scratch.Delete "section" }}
 
         {{ .Scratch.Set "section" "solution" }}
-            <div class="mt-24">
-                {{ with .Site.GetPage (.Scratch.Get "section") }}
-                    {{ .Scratch.Set "backgroundTheme" "white" }}
-                    {{ partial "atom-irnews-button.html" .}}
-                    {{ .Scratch.Delete "backgroundTheme"}}
-                {{ end }}
+            <div class="text-left py-5">
+                {{ partial "atom-services-listpage-title.html" . }}
             </div>
+            {{ partial "organism-section-contents.html" . }}
         {{ .Scratch.Delete "section" }}
         
         <!-- Below Commented code is tab wise view -->
