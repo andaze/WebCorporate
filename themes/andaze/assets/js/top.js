@@ -494,29 +494,29 @@ export function kv_main() {
       } else {
         if (width >= width_break_point_sp) {
           if (width < height) {
-            camera.position.z = height / width * 500;
+            camera.position.z = height / width * 230;
             mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
           } else {
             if  (camera.aspect > 1.85) {
-              camera.position.z = width / height * 250;
+              camera.position.z = width / height * 120;
               mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
             } else {
-              camera.position.z = width / height * 350;
+              camera.position.z = width / height * 170;
               mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((2800 + height) / width);
             }
           }
         } else {
           if (width < height) {
-            camera.position.z = height / width * 400;
+            camera.position.z = height / width * 200;
             mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1600 + height) / width);
             nav_block.style.bottom = height*0.15 + 'px';
           } else {
             if (camera.aspect > 1.8) {
-              camera.position.z = width / height * 250;
+              camera.position.z = width / height * 120;
               mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((3400 + height) / width);
               nav_block.style.display = 'none'
             } else {
-              camera.position.z = width / height * 350;
+              camera.position.z = width / height * 170;
               mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
               nav_block.style.bottom = height*0.15 + 'px';
             }
