@@ -54,6 +54,10 @@ name    ="Company"
 url     ="company"
 weight = 4
 [[Languages.en.menu.main]]
+name    ="Sustainability"
+url     ="sustainability"
+weight = 5
+[[Languages.en.menu.main]]
 name    = "Services"
 url     = "services"
 weight  = 2
@@ -84,6 +88,10 @@ weight = 8
 name    ="会社情報"
 url     ="company"
 weight = 4
+[[Languages.ja.menu.main]]
+name    ="サステナビリティ"
+url     ="sustainability"
+weight = 5
 [[Languages.ja.menu.main]]
 name    = "サービス"
 url     = "services"
