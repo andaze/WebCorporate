@@ -56,7 +56,7 @@ weight = 4
 [[Languages.en.menu.main]]
 name    ="Sustainability"
 url     ="sustainability"
-weight = 5
+weight = 3
 [[Languages.en.menu.main]]
 name    = "Services"
 url     = "services"
@@ -83,7 +83,7 @@ weight = 4
 [[Languages.ja.menu.main]]
 name    ="サステナビリティ"
 url     ="sustainability"
-weight = 5
+weight = 3
 [[Languages.ja.menu.main]]
 name    = "サービス"
 url     = "services"
