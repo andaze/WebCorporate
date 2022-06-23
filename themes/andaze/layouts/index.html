@@ -20,7 +20,7 @@
     {{ partial "template-section-newtopic.html" . }}
     {{ .Scratch.Delete "section" }}
   {{ end }}
-  <div class="bg-black pt-16 pb-48">
+  <div class="bg-black pt-36 pb-48">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
       {{ partial "template-section-irnews.html" . }}
@@ -42,6 +42,14 @@
     {{ if .Site.GetPage "casestudy"}}
       {{ .Scratch.Set "section" "casestudy" }}
       {{ partial "template-section.html" . }}
+      {{ .Scratch.Delete "section" }}
+    {{ end }}
+
+    {{ if .Site.GetPage "services"}}
+      {{ .Scratch.Set "section" "services" }}
+        <div class="flex justify-center md:hidden lg:hidden mt-5">
+          {{ partial "molecule-section-irnews-buttongroup.html" . }}
+        </div>
       {{ .Scratch.Delete "section" }}
     {{ end }}
 

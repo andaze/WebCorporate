@@ -20,26 +20,32 @@
     </div>
     <div class="container mx-auto px-5 lg:px-40 mb-24">
 
-        {{ .Scratch.Set "section" "services" }}
-            <div class="text-left mb-6">
-                {{ partial "atom-services-listpage-title.html" . }}
-            </div>
-            {{ partial "organism-section-contents.html" . }}
-        {{ .Scratch.Delete "section" }}
+        <div class="mb-20">
+            {{ .Scratch.Set "section" "services" }}
+                <div class="text-left mb-8">
+                    {{ partial "atom-services-listpage-title.html" . }}
+                </div>
+                {{ partial "organism-section-contents.html" . }}
+            {{ .Scratch.Delete "section" }}
+        </div>
 
-        {{ .Scratch.Set "section" "solution" }}
-            <div class="text-left mb-6">
-                {{ partial "atom-services-listpage-title.html" . }}
-            </div>
-            {{ partial "organism-section-contents.html" . }}
-        {{ .Scratch.Delete "section" }}
+        <div class="mb-20">
+            {{ .Scratch.Set "section" "solution" }}
+                <div class="text-left mb-6">
+                    {{ partial "atom-services-listpage-title.html" . }}
+                </div>
+                {{ partial "organism-section-contents.html" . }}
+            {{ .Scratch.Delete "section" }}
+        </div>
 
-        {{ .Scratch.Set "section" "casestudy" }}
-            <div class="text-left mb-6">
-                {{ partial "atom-services-listpage-title.html" . }}
-            </div>
-            {{ partial "organism-section-contents.html" . }}
-        {{ .Scratch.Delete "section" }}
+        <div>
+            {{ .Scratch.Set "section" "casestudy" }}
+                <div class="text-left mb-6">
+                    {{ partial "atom-services-listpage-title.html" . }}
+                </div>
+                {{ partial "organism-section-contents.html" . }}
+            {{ .Scratch.Delete "section" }}
+        </div>
         
         <!-- Below Commented code is tab wise view -->
         <!-- <div class="tab-content" id="tabs-tabContentFill">
