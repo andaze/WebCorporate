@@ -383,12 +383,12 @@ export function kv_main() {
 
 
     // パーティクルを変色させる
-    window.setTimeout(() => {
-      colorChangeStart(88, 0, 219, 219, 212, 0);
-    }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000);
+    // window.setTimeout(() => {
+    //   colorChangeStart(88, 0, 219, 219, 212, 0);
+    // }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000);
 
-    colorChangeLoop();
-    window.setInterval(colorChangeLoop, 25500); 
+    // colorChangeLoop();
+    // window.setInterval(colorChangeLoop, 25500); 
 
     
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
