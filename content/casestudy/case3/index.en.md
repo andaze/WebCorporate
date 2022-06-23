@@ -1,5 +1,5 @@
 ---
-title: "Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organization with the cool design of the 'Disability Monitor'."
+title: "Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the 'Inquiry multi-chat function'."
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: case_3.png
@@ -9,36 +9,36 @@ headerImage:
     imageDescription: ""
 ---
 
-# Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organization with the cool design of the "Disability Monitor".
+# Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the "Inquiry multi-chat function".
 
-## Overview　
-One of major strengths of Otsuka Warehouse Co.,Ltd. is its "nationwide next-day delivery system. With 83 distribution centers nationwide, Otsuka Warehouse Co.,Ltd. has built one of the largest distribution systems in Japan. Therefore, if a system failure were to occur, the situation must be assessed immediately and action taken to prevent delays. Technology Division of Otsuka Warehouse Co.,Ltd. has three main policies in operating multiple systems.
+## Overview
+One of the goals of the first phase of Otsuka Warehouse Co.,Ltd.'s "Creation of the most used IT infrastructure in the logistics industry" is to "eliminate call center telephone support. In order to achieve on-site completion from receiving to shipping through system integration using terminals, reducing the number of phone calls was a major theme.
 
-(1) Never stop or cause system failures.
+Otsuka Warehouse Co.,Ltd. delivers not only food products, beverages, pharmaceuticals, and daily necessities handled by the company group. The company has established a "common platform" that allows for the collective delivery of other companies' products as long as the delivery destination is the same, so it receives many inquiries from external customers.
 
-(2) Detect failures as soon as they occur
-
-(3) Restore the system in a short period of time, with the goal of restoring the system within 60 minutes of the failure.
-
-Every system has its share of failures. In addition, they often occur at the same time for some reason. Therefore, the Technology Division has been working to increase the speed of failure detection and recovery. However, until now, the operations team has only received simple alert e-mails in the event of a failure. The alert e-mails were often lost in the mass of other e-mails, and even when they were found, they were full of alphanumeric characters and technical terms that were difficult for anyone other than the person in charge to understand, causing a slow response. The "Failure Monitor" introduced this time visualizes what kind of problem is occurring in which system in an easy-to-understand diagram. The design of the system was designed to excite the members of the operations team. The contents are easy to understand immediately, and since the solution is displayed from the database, the system is easy to read so that anyone can see and respond to the problem.
+Therefore, we decided to centralize the management of inquiries by including a "multi-chat function" within CARGO TRACKS. By digitizing internal and external communications, all interactions are stored as logs, and we have introduced a groundbreaking attempt to link Teams and LINE to create a system that allows easy confirmation and replies from PCs and smartphones. In addition, since the date, time, period, and the person in charge are also known, the aim was to prevent omissions of replies and the absence of the person in charge.
 
 ***
 
 ## Background of Application
-When some trouble occurs somewhere in a number of systems, it can stop many systems that are linked to the data. If the location of the trouble is not known, the field cannot start work. This can lead to missed shipments and delivery delays. The extent of the failure is unknown even after reading the alert e-mail. What is happening?" "Does it need to be resolved immediately?" "What should we do about it?" The time is ticking away while we are fretting and fussing.... The theme of the project was a mechanism to resolve this situation.
+When we first decided to introduce CARGO TRACKS, we envisioned it as a dedicated "delivery visualization" system. However, in the process of creating the requirement definition, Andaze's development team realized that business communication by phone or email was complicated, and there was a risk of missing important communications and "said-or-not-said" situations. In addition, the fact that some staff members, such as drivers in the car, had limited means of easily contacting the company, was also affecting responses to inquiries.
 
-The most important factor for Otsuka Warehouse Co.,Ltd. to consider when introducing the disorder monitor was the "visual" aspect of the system. They requested a design that would show the health status of each system on the monitor, based on the motif of a fictional organization from a popular animated film. Andaze's development team proposed more than 10 design patterns. We showed them a variety of visual proposals, from text fonts to coloring and the positioning of parts. We were conscious of the fact that the operation team would feel as if they were in control of all the systems that govern logistics. We proceeded with the construction of the system with a sense of urgency, building on the process of accurately grasping the intent, showing the actual system, and making modifications to it.
-
-At Andaze, you can choose from more than 100 patterns for not only the visual image displayed on the screen, but also the logo design of the system. Because we are programmers who know business and technology inside and out, we are able to present feasible designs that are not just theories on paper. The UI is easy to use, yet cool. We will meet your design needs so that everyone who incorporates the system into their work will become attached to it.
+Therefore, we suggested that a system that could collectively manage interactions on the Web by adding a multi-chat function and record them as logs might be necessary. At the time, Otsuka Warehouse Co.,Ltd. had already begun using Teams as a communication tool within the company, and the timing was right for them to experience the convenience of the multi-chat function. The company realized that a UI that could be easily written from a smartphone application or PC, which all internal and external personnel use on a daily basis, would be an important mechanism for Otsuka Warehouse Co.,Ltd. to meet its needs.
 
 ***
 
 ## Results obtained
-The introduction of the failure monitor enabled us to visually check the location of system failures, the scope of impact, and solutions. When a failure of any kind occurs, the level of the trouble is indicated in red on the monitor in three levels: "Caution," "Warning," and "Critical," so the extent of the failure can also be determined. The solution is also written below the display, so there is no need for the operations team to be in a hurry to solve the problem. When the problem is resolved, the display changes to the words "Failure, Resolved" with a gorgeous graphic.
+(1) It would take a lot of time and effort to get all delivery drivers who only use their smartphones to download a new chat application, and some drivers would find it difficult to master the functions. Therefore, Andaze pioneered the integration of LINE and Teams. Otsuka Warehouse Co.,Ltd. and manufacturer representatives communicate with each other on CARGO TRACKS and Teams, while drivers can now check and reply to messages using LINE, which was originally included in their smartphones. This groundbreaking linkage has led to improved convenience in that people active in their respective fields can easily communicate with each other anytime, anywhere.
 
-This system has enabled us to create an environment that is in line with the three policies set forth by the Technology Division. The speed of recovery has increased dramatically, leading to a quick resolution within 60 minutes. In addition, the operation team members are now inspired by the cool visuals of the monitors and feel as if they are part of a secret organization on an important mission. It can be said that the design has also brought about the effect of allowing the people using the monitors to enjoy their work.
+(2) When, who, what kind of inquiry was received, who confirmed it with whom, and how it was returned. A series of inquiries are all recorded. Currently, the person in charge handles the inquiries, but in the future, plans are underway to utilize the data accumulated in the system to automate chat replies like a "chatbot".
 
-In the future, we will build a system to automate the resolution of obstacles that are currently handled by manpower, and eliminate the need for human judgment in order to achieve even higher speed.
+(3) Multiple chat rooms can be created for a single inquiry. Even if the subject matter is the same, the chat rooms can be divided according to the members of the group with whom the user is conversing.
+
+(4) By completing communication through chat rooms, data on the types and trends of inquiries can be accumulated. Later, the content can be analyzed for further business improvement and customer satisfaction.
+
+By consolidating inquiries into chat, the burden on the office is eliminated. Teleworking is made possible by reducing the number of phone calls, faxes, and other tasks that require coming to the office, creating an environment that can adapt to social conditions such as the Corona disaster. Currently, the system is used only within the company, but training will be provided to partner companies in the future, and gradually a system will be established to enable conversations with business partners over chat. Otsuka Warehouse Co.,Ltd. is taking steps toward complete digitalization, saying, "Otsuka Warehouse Co.,Ltd. does not use the telephone. In the future, we plan to build a system that enables web ordering, delivery visualization, and multi-chat functions to be completed with a single login.
+
+![ Image is not Available !](case_3-2.png)
 
 ***
 
