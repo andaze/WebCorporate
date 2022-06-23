@@ -919,12 +919,8 @@ export function kv_main() {
           var distance = Math.sqrt( Math.pow( particle_pos.x - pushed_pos.x, 2 ) + Math.pow( particle_pos.y - pushed_pos.y, 2 ) ) ;
 
 
-          // スマホの場合はパーティクルが吹き飛びやすくする
-          if (typeof window.ontouchstart != "undefined") {
-            var power = 3;
-          } else {
-            var power = 2;
-          }
+          // パーティクル拡散対象を決定する係数
+          var power = 2;
 
 
           if (particleFlag[i] === 1) {
@@ -1104,12 +1100,8 @@ export function kv_main() {
       random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
 
 
-      // スマホの場合はパーティクルが吹き飛びにくくする
-      if (typeof window.ontouchstart != "undefined") {
-        var diameter = 30;
-      } else {
-        var diameter = 20;
-      }
+      // パーティクルが一度に拡散する対象範囲
+      var diameter = 20;
 
       
       // パーティクル拡散距離方向を決定するための乱数生成
