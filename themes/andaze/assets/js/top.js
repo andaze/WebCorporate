@@ -40,7 +40,13 @@ const img = new Image();
 
 
 // 表示させる画像のパスを指定
-img.src = "../img/logo.png";
+if (typeof window.ontouchstart === "undefined") {
+  // PCの処理
+  img.src = "../img/logo.png";
+} else {
+  // スマホの処理
+  img.src = "../img/logo_small.png";
+}
 img.crossOrigin = "anonymous";
 
 // グローバル変数として定義
@@ -54,7 +60,13 @@ export function kv_main() {
   // トップページ以外でリロードが発生した時用
   if (first_visit) {
     // 表示させる画像のパスを指定
-    img.src = "../img/logo.png";
+    if (typeof window.ontouchstart === "undefined") {
+      // PCの処理
+      img.src = "../img/logo.png";
+    } else {
+      // スマホの処理
+      img.src = "../img/logo_small.png";
+    }
     img.crossOrigin = "anonymous";
   }
   
