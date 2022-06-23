@@ -66,14 +66,6 @@ name    = "Why Choose Us"
 url     = "reason"
 weight  =  1
 [[Languages.en.menu.main]]
-name   = "Case study"
-url    = "casestudy"
-weight = 3
-[[Languages.en.menu.main]]
-name   = "News"
-url    = "news"
-weight = 6
-[[Languages.en.menu.main]]
 name   = "Recruit"
 url    = "https://www.andaze.com/job/en/"
 weight = 7
@@ -100,14 +92,6 @@ weight  = 2
 name    = "選ばれる理由"
 url     = "reason"
 weight  =  1
-[[Languages.ja.menu.main]]
-name   = "ケーススタディ"
-url    = "casestudy"
-weight = 3
-[[Languages.ja.menu.main]]
-name   = "ニュース"
-url    = "news"
-weight = 6
 [[Languages.ja.menu.main]]
 name   = "採用情報"
 url    = "https://www.andaze.com/job/ja/"
