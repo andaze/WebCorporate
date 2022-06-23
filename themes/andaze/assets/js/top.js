@@ -40,7 +40,13 @@ const img = new Image();
 
 
 // 表示させる画像のパスを指定
-img.src = "../img/logo.png";
+if (typeof window.ontouchstart === "undefined") {
+  // PCの処理
+  img.src = "../img/logo.png";
+} else {
+  // スマホの処理
+  img.src = "../img/logo_small.png";
+}
 img.crossOrigin = "anonymous";
 
 // グローバル変数として定義
@@ -54,7 +60,13 @@ export function kv_main() {
   // トップページ以外でリロードが発生した時用
   if (first_visit) {
     // 表示させる画像のパスを指定
-    img.src = "../img/logo.png";
+    if (typeof window.ontouchstart === "undefined") {
+      // PCの処理
+      img.src = "../img/logo.png";
+    } else {
+      // スマホの処理
+      img.src = "../img/logo_small.png";
+    }
     img.crossOrigin = "anonymous";
   }
   
@@ -383,12 +395,12 @@ export function kv_main() {
 
 
     // パーティクルを変色させる
-    window.setTimeout(() => {
-      colorChangeStart(88, 0, 219, 219, 212, 0);
-    }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000);
+    // window.setTimeout(() => {
+    //   colorChangeStart(88, 0, 219, 219, 212, 0);
+    // }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000) + 15000);
 
-    colorChangeLoop();
-    window.setInterval(colorChangeLoop, 25500); 
+    // colorChangeLoop();
+    // window.setInterval(colorChangeLoop, 25500); 
 
     
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -482,30 +494,30 @@ export function kv_main() {
       } else {
         if (width >= width_break_point_sp) {
           if (width < height) {
-            camera.position.z = height / width * 500;
-            mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1200 + height) / width);
+            camera.position.z = height / width * 230;
+            mesh.material.uniforms.u_value.value = ((width + height) / 180) - ((1200 + height) / width);
           } else {
             if  (camera.aspect > 1.85) {
-              camera.position.z = width / height * 250;
-              mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+              camera.position.z = width / height * 120;
+              mesh.material.uniforms.u_value.value = ((width + height) / 200) - ((2800 + height) / width);
             } else {
-              camera.position.z = width / height * 350;
-              mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((2800 + height) / width);
+              camera.position.z = width / height * 170;
+              mesh.material.uniforms.u_value.value = ((width + height) / 180) - ((2800 + height) / width);
             }
           }
         } else {
           if (width < height) {
-            camera.position.z = height / width * 400;
-            mesh.material.uniforms.u_value.value = ((width + height) / 500) - ((1600 + height) / width);
+            camera.position.z = height / width * 200;
+            mesh.material.uniforms.u_value.value = ((width + height) / 180) - ((1600 + height) / width);
             nav_block.style.bottom = height*0.15 + 'px';
           } else {
             if (camera.aspect > 1.8) {
-              camera.position.z = width / height * 250;
-              mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((3400 + height) / width);
+              camera.position.z = width / height * 120;
+              mesh.material.uniforms.u_value.value = ((width + height) / 200) - ((3400 + height) / width);
               nav_block.style.display = 'none'
             } else {
-              camera.position.z = width / height * 350;
-              mesh.material.uniforms.u_value.value = ((width + height) / 800) - ((2800 + height) / width);
+              camera.position.z = width / height * 170;
+              mesh.material.uniforms.u_value.value = ((width + height) / 200) - ((2800 + height) / width);
               nav_block.style.bottom = height*0.15 + 'px';
             }
           }
@@ -907,12 +919,8 @@ export function kv_main() {
           var distance = Math.sqrt( Math.pow( particle_pos.x - pushed_pos.x, 2 ) + Math.pow( particle_pos.y - pushed_pos.y, 2 ) ) ;
 
 
-          // スマホの場合はパーティクルが吹き飛びやすくする
-          if (typeof window.ontouchstart != "undefined") {
-            var power = 3;
-          } else {
-            var power = 2;
-          }
+          // パーティクル拡散対象を決定する係数
+          var power = 2;
 
 
           if (particleFlag[i] === 1) {
@@ -1092,12 +1100,8 @@ export function kv_main() {
       random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
 
 
-      // スマホの場合はパーティクルが吹き飛びにくくする
-      if (typeof window.ontouchstart != "undefined") {
-        var diameter = 30;
-      } else {
-        var diameter = 20;
-      }
+      // パーティクルが一度に拡散する対象範囲
+      var diameter = 20;
 
       
       // パーティクル拡散距離方向を決定するための乱数生成

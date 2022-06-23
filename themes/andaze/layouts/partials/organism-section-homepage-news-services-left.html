@@ -6,8 +6,10 @@
                 {{ partial "atom-newtopic-sliderbutton.html" . }}
             </div>
         {{ end }}
-        <div class="hidden md:block lg:block">
-            {{ partial "molecule-section-irnews-buttongroup.html" . }}
-        </div>
+        {{ if or (eq (.Scratch.Get "section") "services") (eq (.Scratch.Get "section") "news") }}
+            <div class="hidden md:block lg:block">
+                {{ partial "molecule-section-irnews-buttongroup.html" . }}
+            </div>
+        {{ end }}
     {{ end }}
 </div>
