@@ -22,7 +22,10 @@
             {{ if .Page.Date }}
                 <span class="text-xs text-gray-400">{{ dateFormat "2006-01-02" .Page.Date }} {{ if eq (.Page.Lang) ("ja") }} (公開日) {{ else }} (publication date) {{ end }}</span>
             {{ end }}
-            <h1 class="text-left text-3xl font-extrabold pt-4">{{ .Title }}</h1>
+            {{ if .Page.Params.newsDescription }}
+                <h1 class="text-left text-3xl font-extrabold pt-4">{{ .Page.Params.newsDescription }}</h1>
+            {{ end }}
+            <hr>
             {{ if .Page.Params.shareLink }}
                 {{ partial "molecule-section-share-social-media-link.html" . }}
             {{ end }}

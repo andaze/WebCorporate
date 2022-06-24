@@ -1,6 +1,6 @@
 {{ if eq (.Scratch.Get "backgroundTheme") ("white") }}
-<span class="col-span-2 text-sm md:text-md md:font-normal text-left text-black">{{ .Title }} </span>
+<span class="col-span-2 text-sm md:text-md md:font-normal text-left text-black">{{ .Page.Params.newsDescription }} </span>
 {{ end }}
 {{ if eq (.Scratch.Get "backgroundTheme") ("black") }}
-<span class="col-span-2 text-sm md:text-md md:font-normal text-left text-white">{{ .Title }} </span>
+<span class="col-span-2 text-sm md:text-md md:font-normal text-left text-white">{{ .Page.Params.newsDescription }} </span>
 {{ end }}
