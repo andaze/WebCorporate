@@ -14,8 +14,6 @@ headerImage:
 
 ## Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
 
-***
-
 ### Overview
 
 AMP (Accelerated Mobile Pages, commonly known as amp) is a standard jointly launched by Google and Twitter to enable mobile users to comfortably view websites. The literal translation means "faster pages for mobile.

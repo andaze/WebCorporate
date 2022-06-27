@@ -13,8 +13,6 @@ headerImage:
 
 ## SPA application development" that can provide comfortable web expression
 
-***
-
 ### Overview
 
 SPA (Single Page Application) is a system in which contents are switched one after another on a single web page. The next content can be displayed without having to click on a link and reload the page. Andaze provides comfortable web expressions that run crisply, not to mention improved visuals and usability. This leads to increased user satisfaction.
