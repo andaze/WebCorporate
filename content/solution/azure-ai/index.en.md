@@ -13,8 +13,6 @@ headerImage:
 
 ## AI Machine Learning Development" for high prediction accuracy and improved business value
 
-***
-
 ### Overview
 
 In recent years, with the spread of smartphones and IoT, a large amount of data has been accumulated. Analyzing this data by humans takes an enormous amount of time and effort. On the other hand, AI machine learning makes it possible to discover regularities that cannot be found by human power and to finish the analysis work in an instant. At Andaze, our professionals develop AI with high prediction accuracy. Andaze professionals develop AI with high forecasting accuracy, contributing to corporate business innovation through technology.
