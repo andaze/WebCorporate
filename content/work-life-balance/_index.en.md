@@ -5,9 +5,9 @@ weight: 9
 
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
-<h1 class="text-center">Andaze Ltd. Action Plan</h1>
+<h1 class="inline">Andaze Ltd. Action Plan</h1>
 
-We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life. 
+<p class="mt-16">We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life. </p>
 
 1.Action plan period: May 1, 2022 - April 30, 2024 (2 years)
 

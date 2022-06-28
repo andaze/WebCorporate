@@ -13,8 +13,6 @@ headerImage:
 
 ## Interactive Communication Web Service Development" to make users' site browsing more comfortable.
 
-***
-
 ### Overview
 
 For example, real-time information, such as stock price charts and chats, is required as a product value. However, with conventional systems, information must be kept up-to-date through "periodic screen updates. This results in high communication volume, flickering screens, and other problems that can lead to a low level of user satisfaction.

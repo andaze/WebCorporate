@@ -13,8 +13,6 @@ headerImage:
 
 ## NOSQL Database Development" for storing huge databases with data optimization.
 
-***
-
 ### Overview
 
 Database file size is getting bigger and bigger. In order to handle exponentially increasing data, such as real-time analysis while maintaining such a large amount of data, "data optimization" is necessary. Therefore, an increasing number of companies are using NOSQL (abbreviation of Not only SQL) as a complement to the conventional RDB (Relational DataBase Management System / Relational DataBase Management System ).

@@ -4,9 +4,9 @@ date: 2022-06-04T16:11:55+09:00
 weight: 10
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
-<h1 class="text-center">品質方針</h1>
+<h1 class="inline">品質方針</h1>
 
-<div class="my-8">
+<div class="mt-16 mb-8">
 <h2>1.基本理念</h2>
 
 私達は、私達の行うサービスが社会に対し更なる発展をもたらすことを理想とし、この実現のために、共に考え、話し合い、そして実行を積み重ねながら、常に品質の安定及び向上に努めます。

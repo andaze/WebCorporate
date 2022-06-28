@@ -13,8 +13,6 @@ headerImage:
 
 ## Superior Subject Authentication Service to Protect Sensitive Information from Hackers
 
-***
-
 ### Overview
 
 Hacking and hijacking of applications can be a major social problem if personal information such as IDs and passwords are leaked to outside parties. AZURE B2C prevents data leakage and provides high security services. We work on system development while placing emphasis on the handling of personal information.

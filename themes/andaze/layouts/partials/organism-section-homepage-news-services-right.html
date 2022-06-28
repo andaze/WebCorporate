@@ -2,15 +2,16 @@
     <div #swiperRef="" class="swiper mySwiper">
         <div class="swiper-wrapper">
             {{ with .Site.GetPage (.Scratch.Get "section") }}
-                {{ .Scratch.Set "tagName" ""}}
-                {{ if eq .Lang ("en") }}
+                {{/*  {{ .Scratch.Set "tagName" ""}}  */}}
+                {{/*  {{ if eq .Lang ("en") }}
                     {{ .Scratch.Set "tagName" "press-release"}}
                 {{ else }}
                     {{ .Scratch.Set "tagName" "プレスリリース"}}
-                {{ end }}
+                {{ end }}  */}}
 
-                {{$tagName:= .Scratch.Get "tagName" }}
-                {{ range (where .Pages "Params.tags" "intersect" (slice $tagName)) }}
+                {{/*  {{$tagName:= .Scratch.Get "tagName" }}
+                {{ range (where .Pages "Params.tags" "intersect" (slice $tagName)) }}  */}}
+                {{ range .Pages }}
                     {{ partial "molecule-section-newtopic-slide.html" . }}
                 {{ end }}
             {{ end }}
@@ -37,10 +38,6 @@
 {{ end }}
 
 {{ if eq (.Scratch.Get "section") "solution" }}
-    {{ partial "organism-section-contents.html" . }}
-{{ end }}
-
-{{ if eq (.Scratch.Get "section") "casestudy" }}
     {{ partial "organism-section-contents.html" . }}
 {{ end }}
 

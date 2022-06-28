@@ -4,9 +4,9 @@ date: 2022-06-04T16:11:48+09:00
 weight: 10
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
-<h1 class="text-center">Quality Policy</h1>
+<h1 class="inline">Quality Policy</h1>
 
-<div class="my-8">
+<div class="mt-16 mb-8">
 <h2>1.Basic Philosophy</h2>
 
 We believe that the services we provide will ideally contribute to the further development of society, and to realize this ideal, we will constantly strive to stabilize and improve quality through joint thought, discussion, and implementation.
