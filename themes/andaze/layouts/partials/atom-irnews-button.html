@@ -5,9 +5,7 @@
 {{ else if eq (.Scratch.Get "backgroundTheme") ("company")}}
 <a href="{{ .Permalink }}" type="button" class="w-52 md:w-72 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mr-2 mb-2">{{ .Title }}</a>
 {{ else if eq (.Scratch.Get "buttonLink") ("recruit")}}
-    {{if eq (.Lang) ("ja")}}
-    <a href="https://www.andaze.com/job/ja/"target="_blank" rel="noopener noreferrer" class="w-52 md:w-72 bg-black text-white hover:text-black border border-gray-50 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 block">{{ .Title }}</a>
-    {{ else }}
-    <a href="https://www.andaze.com/job/en/"target="_blank" rel="noopener noreferrer" class="w-52 md:w-72 bg-black text-white hover:text-black border border-gray-50 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 block">{{ .Title }}</a>
+    {{ range where .Site.Menus.main "Identifier" "recruit" }}
+    <a href="{{ .URL }}"target="_blank" rel="noopener noreferrer" class="w-52 md:w-72 bg-black text-white hover:text-black border border-gray-50 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 block">{{ .Name }}</a>
     {{ end }}
 {{ end }}
