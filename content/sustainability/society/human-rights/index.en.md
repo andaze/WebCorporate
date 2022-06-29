@@ -2,7 +2,9 @@
 title: Human Rights Policy
 date: 2022-05-03T19:02:12+09:00
 weight: 3
-
+headerImage:
+    imageName: "meeting.jpg"
+    imageTitle: "Human Rights Policy"
 ---
 # Human Rights Policy
 

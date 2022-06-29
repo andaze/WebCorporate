@@ -3,7 +3,7 @@ title: トップメッセージ
 date: 2022-05-03T19:02:12+09:00
 weight: 1
 headerImage:
-    imageName: "mina-arai_new.png"
+    imageName: "mina-arai.jpg"
     imageTitle: "トップメッセージ"
 ---
 

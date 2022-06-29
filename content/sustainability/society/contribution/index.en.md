@@ -2,7 +2,9 @@
 title: Contribution to society based on our corporate philosophy
 date: 2022-05-03T19:02:12+09:00
 weight: 3
-
+headerImage:
+    imageName: "gathering.jpg"
+    imageTitle: "Contribution to society based on our corporate philosophy"
 ---
 
 # Contribution to society based on our corporate philosophy

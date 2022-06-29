@@ -2,7 +2,9 @@
 title: Environmental Policy
 date: 2022-05-03T19:02:12+09:00
 weight: 3
-
+headerImage:
+    imageName: "environment.jpg"
+    imageTitle: "Environmental Policy"
 ---
 
 # Environmental Policy

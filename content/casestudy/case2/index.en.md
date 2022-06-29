@@ -40,6 +40,8 @@ This system has enabled us to create an environment that is in line with the thr
 
 In the future, we will build a system to automate the resolution of obstacles that are currently handled by manpower, and eliminate the need for human judgment in order to achieve even higher speed.
 
+![ Image is not Available !](case_2-2.png)
+
 ***
 
 ## Customer Information

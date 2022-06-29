@@ -2,7 +2,9 @@
 title: 環境方針
 date: 2022-05-03T19:02:12+09:00
 weight: 3
-
+headerImage:
+    imageName: "environment.jpg"
+    imageTitle: "環境方針"
 ---
 
 # 環境方針
