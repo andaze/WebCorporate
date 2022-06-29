@@ -1,15 +1,5 @@
 {{ define "main" }}
-    {{ if .Page.Params.headerImage }}
-    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
-        {{partial "molecule-section-header-image.html" . }}
-    </div>
-    {{ else }}
-        {{ if .Page.Params.headerVideo }}
-        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
-            {{partial "molecule-section-header-video.html" . }}
-        </div>
-        {{ end }}
-    {{ end }}
+    {{ partial "organism-header.html" . }}
     <div class="container mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
         {{ partial "breadcrumbs.html" . }}
     </div>
