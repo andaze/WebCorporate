@@ -34,6 +34,10 @@ if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCo
 init();
 
 async function init() {
+    if (typeof friconix_update === "function" ) {
+        // https://friconix.com/start/#display-icons
+        friconix_update();
+    }
     if (document.querySelector('#webgl')) {
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
