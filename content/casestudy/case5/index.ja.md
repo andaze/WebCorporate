@@ -7,6 +7,7 @@ headerImage:
     imageName: "case_5.jpg"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # 日綜産業様　Power BI

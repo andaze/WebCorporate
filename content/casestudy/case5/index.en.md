@@ -7,6 +7,7 @@ headerImage:
     imageName: "case_5.jpg"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # Nisso Industries Co.,Ltd. Power BI

@@ -7,6 +7,7 @@ headerImage:
     imageName: "case_1.jpg"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # 伊勢湾海運様 デバン管理
