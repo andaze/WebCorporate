@@ -2,7 +2,9 @@
 title: 資源の有効活用
 date: 2022-05-03T19:02:12+09:00
 weight: 3
-
+headerImage:
+    imageName: "conversation.jpg"
+    imageTitle: "資源の有効活用"
 ---
 
 # 資源の有効活用
