@@ -1,5 +1,6 @@
 ---
 title: "新規事業サービス開発"
+titleEn: "New Business Service Development"
 date: 2022-02-23T17:03:34+09:00
 weight: 6
 cardImage: service-develop.jpg
@@ -7,7 +8,7 @@ headerImage:
     imageName: "service-develop.jpg"
     imageTitle: ""
     imageDescription: ""
- 
+topText: "サービス内容の立案から設計、開発、運用まで、スピード感を持ってスピーディーに新規事業サービスの立ち上げをサポートします。"
 ---
 
 # 新規事業サービス開発　

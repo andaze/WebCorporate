@@ -7,7 +7,7 @@ headerImage:
     imageName: "ai.jpg"
     imageTitle: ""
     imageDescription: ""
- 
+topText: "We provide highly accurate AI solutions that solve business challenges and further enhance business value."
 ---
 
 # AI (Artificial Intelligence)

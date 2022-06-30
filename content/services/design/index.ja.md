@@ -1,5 +1,6 @@
 ---
 title: "UI/UXデザイン"
+titleEn: "UI/UX Design"
 date: 2022-02-23T17:03:34+09:00
 weight: 4
 cardImage: design.png
@@ -7,7 +8,9 @@ headerImage:
     imageName: "design.png"
     imageTitle: ""
     imageDescription: ""
- 
+topText: "ビジネスを深く理解し、UIやUXに精通したプロフェッショナルチームが、使いやすさと高い満足度をかね備えたプロダクト開発に寄り添います。"
+annotationText: "※UI（ユーザーインターフェイス）…ユーザーとプロダクトをつなぐ接点"
+annotationTextSecond: "※UX（ユーザーエクスペリエンス）…プロダクトやサービスを通じて得られるすべてのユーザー体験"
 ---
 
 # UI/UXデザイン
