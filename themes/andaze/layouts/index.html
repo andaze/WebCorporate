@@ -37,6 +37,28 @@
       {{ end }}
     </div>
 
+    <div class="pb-72">
+      {{ if .Site.GetPage "services"}}
+          {{ .Scratch.Set "section" "services" }}
+          {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+            <h2 class= "font-extrabold text-white">
+              <span class="text-3xl lg:text-6xl">
+                {{ .Page.Params.topTitle  }}
+              </span>
+              <span class="block mt-4">
+                {{ .Page.Params.topSubtitle  }}
+              </span>
+            </h2>
+            <h3 class="text-xl lg:text-4xl font-bold mt-20 mb-10">{{ .Page.Params.topTextTitle }}</h3>
+            <div class="mb-20 leading-8">
+              {{ .Page.Params.topTextContent }}
+            </div>
+          {{ end }}
+          {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+
+
   </div>
   <div class="w-full h-96 lg:h-[34rem]">
     <img src="{{ `img/top.jpg` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
