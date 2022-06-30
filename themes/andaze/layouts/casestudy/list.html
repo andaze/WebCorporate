@@ -1,8 +1,6 @@
 {{ define "main" }}
     {{ partial "organism-header.html" . }}
-    <div class="container mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
-        {{ partial "breadcrumbs.html" . }}
-    </div>
+    {{ partial "organism-bredcrumbs-page.html" . }}
     <div class="container mx-auto px-5 lg:px-40 py-5 mb-24">
         {{ .Scratch.Set "section" "casestudy" }}
             <div class="text-left py-5">
