@@ -11,13 +11,6 @@
     </ul>
     {{ end }}
 
-{{ else if eq (.Scratch.Get "section") ("company") }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-        {{ .Scratch.Set "backgroundTheme" "company" }}
-        {{ partial "atom-irnews-button.html" .}}
-        {{ .Scratch.Delete "backgroundTheme"}}
-    {{ end }}
-
 {{ else if eq (.Scratch.Get "section") ("recruit") }}
     {{ with .Site.GetPage (.Scratch.Get "section") }}
         {{ .Scratch.Set "buttonLink" "recruit" }}
