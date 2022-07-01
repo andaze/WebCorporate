@@ -89,7 +89,6 @@ headerVideo:
 
 <br><br><br>
 
-<hr>
 
 <br>
 
@@ -113,7 +112,6 @@ headerVideo:
 
 <br><br><br>
 
-<hr>
 
 <br>
 
