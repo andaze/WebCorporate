@@ -19,7 +19,7 @@
       {{ if .Site.GetPage "reason"}}
           {{ .Scratch.Set "section" "reason" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-            {{ partial "organism-white-transparent-top.html" .}}
+            {{ partial "organism-section-white-transparent-top.html" .}}
             {{ .Scratch.Set "backgroundTheme" "long" }}
               {{ partial "atom-irnews-button.html" .}}
             {{ .Scratch.Delete "backgroundTheme"}}
@@ -32,23 +32,8 @@
       {{ if .Site.GetPage "services"}}
           {{ .Scratch.Set "section" "services" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-            {{ partial "organism-white-transparent-top.html" .}}
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-14">
-              {{ range .Pages.Reverse }}
-                <a href="{{ .Permalink }}" {{ if or (eq .Page.Params.cardImage ("shared.png")) (eq .Page.Params.cardImage ("recruit.jpg")) }} class="hidden" {{ end }} class="bg-white shadow-xl bg-opacity-50">
-                  <img class="w-full h-52 object-cover pt-6 px-6" src="{{ .Permalink }}{{.Page.Params.cardImage}}" alt="Image Not Available">
-                  <h2 class="text-black pt-6 w-fit mx-auto font-bold md:text-lg">{{ .Title }}</h2>
-                  <h2 class="text-gray-500 pt-2 w-fit mx-auto font-bold md:text-lg">{{ .Page.Params.titleEn }}</h2>
-                  <div class="p-6">
-                    <p>{{ .Page.Params.topText }}</p>
-                    <div class="text-xs text-slate-500">
-                      <p>{{ .Page.Params.annotationText }}</p>
-                      <p>{{ .Page.Params.annotationTextSecond }}</p>
-                    </div>
-                  </div>
-                </a>
-              {{ end }}
-            </div>
+            {{ partial "organism-section-white-transparent-top.html" .}}
+            {{ partial "organism-section-cards-part.html" . }}
           {{ end }}
           {{ .Scratch.Delete "section" }}
       {{ end }}
