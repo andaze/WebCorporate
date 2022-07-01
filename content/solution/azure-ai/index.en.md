@@ -13,13 +13,13 @@ headerImage:
 
 ## AI Machine Learning Development" for high prediction accuracy and improved business value
 
-***
+{{< br >}}
 
 ### Overview
 
 In recent years, with the spread of smartphones and IoT, a large amount of data has been accumulated. Analyzing this data by humans takes an enormous amount of time and effort. On the other hand, AI machine learning makes it possible to discover regularities that cannot be found by human power and to finish the analysis work in an instant. At Andaze, our professionals develop AI with high prediction accuracy. Andaze professionals develop AI with high forecasting accuracy, contributing to corporate business innovation through technology.
 
-***
+{{< br >}}
 
 ### Effect of introduction
 
@@ -30,7 +30,7 @@ In recent years, with the spread of smartphones and IoT, a large amount of data 
 - Increased profit margins through land and property price assessments
 - Automated preparation of reports and other paperwork to achieve a paperless office.
 
-***
+{{< br >}}
 
 ### Suggested Industries
 
@@ -42,13 +42,13 @@ In recent years, with the spread of smartphones and IoT, a large amount of data 
 - Manufacturing
 - Retail (food supermarket)
 
-***
+{{< br >}}
 
 ### Product Image
 
 At Andaze, we use the open source AI development framework ML.NET to model machine learning in a short period of time. Why not use technology to solve your company's management issues?
 
-***
+{{< br >}}
 
 ### Case Study
 

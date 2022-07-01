@@ -13,7 +13,7 @@ headerImage:
 
 ## Interactive Communication Web Service Development" to make users' site browsing more comfortable.
 
-***
+{{< br >}}
 
 ### Overview
 
@@ -21,14 +21,14 @@ For example, real-time information, such as stock price charts and chats, is req
 
 Therefore, we recommend "interactive web services. An interactive web service is a system that allows users to refer to information stored in the system in real time. Through interactive communication, new information can be reflected on the user's screen in real time without the need to press an update button.
 
-***
+{{< br >}}
 
 ### Effects of Introduction
 
 - Information is updated without the need to press the refresh button while the browser is open.
 - The user experience of automatically updating the screen increases satisfaction and improves the value of the product
 
-***
+{{< br >}}
 
 ### Suggested Industries
 
@@ -37,13 +37,13 @@ Therefore, we recommend "interactive web services. An interactive web service is
 - Financial Services
 - Manufacturing
 
-***
+{{< br >}}
 
 ### Product Image
 
 At Andaze, we use the SignalR interactive communication framework to speed up the development of interactive communication websites. Please feel free to contact our professionals to discuss your needs.
 
-***
+{{< br >}}
 
 ### Case Study
 

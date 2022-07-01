@@ -15,7 +15,7 @@ headerImage:
 ## Supporting the development of products that are comfortable, pleasant, and easy to use   
 Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze expresses UI and UX in the best possible way based on our extensive experience and knowledge. We leverage our high level of expertise to support development that places the highest priority on the customer experience while adhering to the client's requirements. Experience the best UI/UX design with meaning and value in every single piece.
 
-***
+{{< br >}}
 
 ## Why choose Andaze?　
 ### (1) Design that combines problem solving and user comfort
@@ -33,10 +33,10 @@ Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze
 * Even after implementation, experts involved in the development of the service will continuously propose improvements and enhancements to the service.
 * We build a strong partnership where you can consult with us on everything from strategic aspects to post-implementation.
 
-***
+{{< br >}}
 
 ## Case Studies
 
-***
+{{< br >}}
 
 ## Professionals with Andaze
