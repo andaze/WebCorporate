@@ -13,6 +13,8 @@ headerImage:
 
 ## Static Website Development" for fast page loading with secure security
 
+***
+
 ### Overview
 
 You want to increase the display speed of your web pages, or you want to have a solid security measure, or you do not want to update information in real time.... Static website development is useful for websites with such characteristics. There are three main reasons why static websites are attracting attention today.

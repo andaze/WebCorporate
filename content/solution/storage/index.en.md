@@ -13,6 +13,8 @@ headerImage:
 
 ## Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data.
 
+***
+
 ### Overview
 
 The recent proliferation of smartphones has led to the emergence of massive amounts of data. Moreover, even home appliances such as refrigerators, air conditioners, and vacuum cleaners are connected to the Internet and continue to generate new data. The amount of data held by companies is growing exponentially.

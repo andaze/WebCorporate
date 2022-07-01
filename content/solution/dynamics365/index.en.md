@@ -13,6 +13,8 @@ headerImage:
 
 ## Introduction of Customer Relationship Management CRM" for accurate analysis of information on existing customers for sales promotion.
 
+***
+
 ### Overview
 
 CRM (Customer Relationship Management) is an IT tool that has been introduced in many successful companies. Now is the time when developing new customers is important, while correctly understanding existing customers and implementing the most appropriate strategy for each of them will pay off. Andaze helps you visualize the analysis of customer information with its superior solution Dynamics365 so that you can optimize your outreach to your users.

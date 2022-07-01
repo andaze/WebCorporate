@@ -13,6 +13,8 @@ headerImage:
 
 ## UX-focused application development" that enhances the value of services through user satisfaction
 
+***
+
 ### Overview
 
 Satisfaction and pleasure obtained through services and products. Such value that users experience and feel is called "UX (user experience). A decade ago, high functionality was enough to attract people's interest and attention, but in recent years, when material wealth has been achieved, more and more people are willing to pay for "experience" in addition to functionality.

@@ -11,6 +11,8 @@ headerImage:
 
 # AZURE B2C
 
+***
+
 ## Superior Subject Authentication Service to Protect Sensitive Information from Hackers
 
 ### Overview
