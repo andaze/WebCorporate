@@ -54,6 +54,12 @@
     {{ end }}
 
   </div>
+  
+    {{ if .Site.GetPage "sustainability"}}
+      {{ .Scratch.Set "section" "sustainability" }}
+      {{ partial "template-section-newtopic.html" . }}
+      {{ .Scratch.Delete "section" }}
+    {{ end }}
 
   {{ if .Site.GetPage "recruit"}}
     {{ .Scratch.Set "section" "recruit" }}
