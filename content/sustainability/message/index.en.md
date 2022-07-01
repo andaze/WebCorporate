@@ -2,6 +2,7 @@
 title: Top Message
 date: 2022-05-03T19:02:12+09:00
 weight: 1
+newsimg: mina-arai.jpg
 headerImage:
     imageName: "mina-arai.jpg"
     imageTitle: "Top Message"
