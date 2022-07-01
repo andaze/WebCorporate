@@ -4,7 +4,7 @@
 </div>
 
 <main class="absolute z-10 w-full" id="top_main">
-  <div class="container mx-auto text-white" id="company_section">
+  <div class="pb-72 container mx-auto text-white" id="company_section">
 
     <div class="lg:pl-12 lg:pr-80">
       <h1 class="text-3xl lg:text-7xl font-black mb-8">
@@ -19,18 +19,7 @@
       {{ if .Site.GetPage "reason"}}
           {{ .Scratch.Set "section" "reason" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-            <h2 class= "font-extrabold">
-              <span class="text-3xl lg:text-6xl">
-                {{ .Page.Params.topTitle  }}
-              </span>
-              <span class="block mt-4">
-                {{ .Page.Params.topSubtitle  }}
-              </span>
-            </h2>
-            <h3 class="text-xl lg:text-4xl font-bold mt-20 mb-10">{{ .Page.Params.topTextTitle }}</h3>
-            <div class="mb-20 leading-8">
-              {{ .Page.Params.topTextContent }}
-            </div>
+            {{ partial "organism-white-transparent-top.html" .}}
             {{ .Scratch.Set "backgroundTheme" "long" }}
               {{ partial "atom-irnews-button.html" .}}
             {{ .Scratch.Delete "backgroundTheme"}}
@@ -39,22 +28,11 @@
       {{ end }}
     </div>
 
-    <div class="mb-72 bg-white bg-opacity-75 p-20 text-black">
+    <div class="bg-white bg-opacity-75 p-20 text-black">
       {{ if .Site.GetPage "services"}}
           {{ .Scratch.Set "section" "services" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-            <h2 class= "font-extrabold">
-              <span class="text-3xl lg:text-6xl">
-                {{ .Page.Params.topTitle  }}
-              </span>
-              <span class="block mt-4">
-                {{ .Page.Params.topSubtitle  }}
-              </span>
-            </h2>
-            <h3 class="text-xl lg:text-4xl font-bold mt-20 mb-10">{{ .Page.Params.topTextTitle }}</h3>
-            <div class="mb-20 leading-8">
-              {{ .Page.Params.topTextContent }}
-            </div>
+            {{ partial "organism-white-transparent-top.html" .}}
             <div class="grid grid-cols-3 gap-14">
               {{ range .Pages.Reverse }}
                 <a href="{{ .Permalink }}" {{ if or (eq .Page.Params.cardImage ("shared.png")) (eq .Page.Params.cardImage ("recruit.jpg")) }} class="hidden" {{ end }} class="bg-white shadow-xl bg-opacity-50">
