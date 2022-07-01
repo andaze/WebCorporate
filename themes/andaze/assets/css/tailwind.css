@@ -61,28 +61,7 @@ p {
 h1 {
   line-height: 1.25 !important;
   position: relative;
-  margin-bottom: 80px !important;
-}
-
-h1::before {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 2%;
-  height: 1px;
-  width: 98%;
-  background-color: lightgray;
-  opacity: .7;
-}
-
-h1::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  height: 1px;
-  width: 2%;
-  background-color: gray;
+  margin-bottom: 60px !important;
 }
 
 h2 {
