@@ -3,6 +3,6 @@ title: "運用保守"
 titleEn: "Operation and Maintenance"
 date: 2022-07-02T16:18:55+09:00
 weight: 2
-cardImage: logo.png
+cardImage: operation.png
 topText: "実装後、長期的にサポートするのも、コンサルティングから開発まで、すべてのプロセスに携わったシェアード・チーム。24時間365日体制のシステム運用監視や、トラブル時の復旧対応もサポートします。さらにプロジェクトの目標達成に視点を置き、未来を見据えたシステム改善などDX化を成功に導くためのご提案もいたします。"
 ---

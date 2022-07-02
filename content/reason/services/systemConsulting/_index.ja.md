@@ -3,6 +3,6 @@ title: "システム・コンサルティング"
 titleEn: "Systems Consulting"
 date: 2022-07-02T16:17:37+09:00
 weight: 4
-cardImage: logo.png
+cardImage: systenConsulting.png
 topText: "ビジネスを深く理解するシェアード・チームが、経営視点からお客様のIT戦略に基づいたシステムを設計。トップダウンのような一方通行のコミュニケーションではなく、プロフェッショナルの視点から最善の要件定義をご提案します。Microsoftのゴールドパートナーとして、優れた技術を用い、ビジネスの価値を最大限に高めるアイデアをお伝えさせてください。"
 ---
