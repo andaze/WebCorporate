@@ -19,7 +19,11 @@ And by utilizing the highly versatile libraries accumulated by our shared team, 
 
 We are able to lead and complete projects at a speed that only a venture company can provide. <br><br>
 
-We will produce results that exceed your expectations without exceeding your budget.<br><br><br><br><br>
+We will produce results that exceed your expectations without exceeding your budget.<br><br><br>
+
+![ Image is not Available !](reason1.jpg)
+
+<br><br>
 
 <h3 class="text-xl font-bold mb-6">We take responsibility for the entire process and are fully committed to the success of your business.<h3>
 The initial plan was good, but it did not produce the desired results.<br>
@@ -35,7 +39,11 @@ Another of our strengths is the speed of development that can only be achieved b
 
 This is an environment where you can complete services that give you a competitive advantage with global standard technology at a reasonable price.<br><br>
 
-We will continue to accompany you with full commitment as a technology partner.<br><br><br><br>
+We will continue to accompany you with full commitment as a technology partner.<br><br>
+
+![ Image is not Available !](reason2.jpg)
+
+<br><br>
 
 <h3 class="text-xl font-bold mb-6">One-stop service from strategic planning to operation and maintenance.</h3>
 We want to consult with you on everything from the strategy phase to the operational phase.<br>  
@@ -55,7 +63,11 @@ This is why our shared team is always highly motivated.<br><br>
 
 Of course, we don't stop when the product is ready; we continue to work as one team to provide the best possible environment.<br><br>
 
-Consistency is a prerequisite for high value-added services.<br><br><br><br>
+Consistency is a prerequisite for high value-added services.<br><br>
+
+![ Image is not Available !](reason3.jpg)
+
+<br><br>
 
 <h3 class="text-xl font-bold mb-6">We provide value-added competitive advantage through our versatile libraries.</h3>
 Consulting firms don't commit to development.<br>
