@@ -13,8 +13,23 @@
     <div class="container mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
         {{ partial "breadcrumbs.html" . }}
     </div>
-    <div class="container mx-auto px-5 lg:px-40 py-5 mb-24">
-        {{ .Content }}
+    <div class="container mx-auto px-5 lg:px-40 py-5 mb-24 ">
+        <div class="lg:w-8/12">
+            <h1 class="text-4xl font-bold mb-8">{{ .Title }}</h1>
+            {{ range .Pages }}
+                <div class="mb-28">
+                    <h2 class="text-2xl font-bold mt-12 mb-6">{{ .Title }}</h2>
+                    {{ .Page.Params.text | markdownify }}
+                </div>
+                {{ range .Pages }}
+                <div class="mb-20">
+                    <h3 class="text-xl font-bold mb-6">{{ .Title }}</h3>
+                    {{ .Page.Params.text | markdownify }}
+                    <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-full h-auto object-cover mt-10" alt="Image is not Available !">
+                </div>
+                {{ end }}
+            {{ end }}
+        </div>
     </div>
     {{/*  <div class="container mx-auto px-5 lg:px-40 py-5 mb-24">
         {{ .Scratch.Set "section" "reason" }}
