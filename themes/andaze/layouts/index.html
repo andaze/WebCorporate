@@ -4,12 +4,42 @@
 </div>
 
 <main class="absolute z-10 w-full" id="top_main">
-  <div class="bg-black bg-opacity-0 py-20 md:py-60" id="company_section">
-    {{ if .Site.GetPage "company"}}
-      {{ .Scratch.Set "section" "company" }}
-      {{ partial "template-section-company.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
+  <div class="pb-72 container mx-auto text-white" id="company_section">
+
+    <div class="pl-4 pr-12 md:pl-10 md:pr-20 lg:pl-12 lg:pr-80">
+      <h1 class="text-3xl md:text-5xl lg:text-7xl font-black mb-8">
+        {{ .Site.Params.topCatchCopy }}
+      </h1>
+      <p class="text-xs lg:text-base text-slate-300">
+        {{ .Site.Params.annotationDX }}
+      </p>
+    </div>
+
+    <div class="mt-96 mb-72 bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black w-5/6">
+      {{ if .Site.GetPage "reason"}}
+          {{ .Scratch.Set "section" "reason" }}
+          {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+            {{ partial "organism-section-white-transparent-top.html" .}}
+            {{ .Scratch.Set "backgroundTheme" "long" }}
+              {{ partial "atom-irnews-button.html" .}}
+            {{ .Scratch.Delete "backgroundTheme"}}
+          {{ end }}
+          {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+
+    <div class="bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black">
+      {{ if .Site.GetPage "services"}}
+          {{ .Scratch.Set "section" "services" }}
+          {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+            {{ partial "organism-section-white-transparent-top.html" .}}
+            {{ partial "organism-section-cards-part.html" . }}
+          {{ end }}
+          {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+
+
   </div>
   <div class="w-full h-96 lg:h-[34rem]">
     <img src="{{ `img/top.jpg` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">

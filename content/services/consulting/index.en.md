@@ -7,7 +7,7 @@ headerImage:
     imageName: "consulting.jpg"
     imageTitle: ""
     imageDescription: ""
- 
+topText: "Based on our accumulated know-how, we develop DX strategies that incorporate superior technologies. We support the advanced digital shift required in various industries."
 ---
 
 # Consulting　
