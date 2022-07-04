@@ -1,107 +1,111 @@
 <form class="max-w-none pt-8">
   <div class="flex flex-wrap mb-6">
-    <div class="md:flex w-full">
-      <div class="md:w-1/4 ">
-        <label class="text-gray-700 text-sm font-medium" for="full_name">
-          First Name <sup class="text-xs text-red-500">*</sup>
-          <hr class="hidden md:block mr-28 mt-2">
-        </label>
+    <div class="md:flex w-full gap-4">
+      <div class="md:flex w-full flex-col mb-4">
+        <div class="w-full h-8">
+          <label class="text-gray-700 text-sm font-medium" for="full_name">
+            First Name <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
+            <hr class="hidden md:block mr-28 mt-2">
+          </label>
+        </div>
+        <div class="w-full">
+          <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="full_name" name="full_name" type="text" placeholder="Example : Arai">
+        </div>
       </div>
-      <div class="md:w-3/4">
-        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="full_name" name="full_name" type="text" placeholder="Example : Arai">
+      <div class="md:flex w-full flex-col mb-4">
+        <div class="w-full h-8">
+          <label class="text-gray-700 text-sm font-medium" for="last_name">
+            Last Name <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
+            <hr class="hidden md:block mr-28 mt-2">
+          </label>
+        </div>
+        <div class="w-full">
+          <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="last_name" name="last_name" type="text" placeholder="Example : Mina">
+        </div>
       </div>
     </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
-        <label class="text-gray-700 text-sm font-medium" for="last_name">
-          Last Name <sup class="text-xs text-red-500">*</sup>
-          <hr class="hidden md:block mr-28 mt-2">
-        </label>
-      </div>
-      <div class="md:w-3/4">
-        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="last_name" name="last_name" type="text" placeholder="Example : Mina">
-      </div>
-    </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
+    <div class="md:flex w-full flex-col mb-4">
+      <div class="w-full h-8">
         <label class="text-gray-700 text-sm font-medium" for="company_name">
-          Company Name <sup class="text-xs text-red-500">*</sup>
+          Company Name <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
           <hr class="hidden md:block mr-28 mt-2">
         </label>
       </div>
-      <div class="md:w-3/4">
+      <div class="w-full">
         <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="company_name" name="company_name" type="text" placeholder="Example : Andaze">
       </div>
     </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
+    <div class="md:flex w-full flex-col mb-4">
+      <div class="w-full h-8">
         <label class="text-gray-700 text-sm font-medium" for="email">
-          Email <sup class="text-xs text-red-500">*</sup>
+          Email <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
           <hr class="hidden md:block mr-28 mt-2">
         </label>
       </div>
-      <div class="md:w-3/4">
+      <div class="w-full">
         <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="email" name="email" type="text" placeholder="Example : andaze@example.com">
       </div>
     </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
+    <div class="md:flex w-full flex-col mb-4">
+      <div class="w-full h-8">
         <label class="text-gray-700 text-sm font-medium" for="contact_number">
           Phone Number
           <hr class="hidden md:block mr-28 mt-2">
         </label>
       </div>
-      <div class="md:w-3/4">
+      <div class="w-full">
         <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="contact_number" name="contact_number" type="text" placeholder="Example : 1234567890">
       </div>
     </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
-        <label class="text-gray-700 text-sm font-medium" for="department">
-          Department <sup class="text-xs text-red-500">*</sup>
-          <hr class="hidden md:block mr-28 mt-2">
-        </label>
+    <div class="md:flex w-full gap-4">
+      <div class="md:flex w-full flex-col mb-4">
+        <div class="w-full h-8">
+          <label class="text-gray-700 text-sm font-medium" for="department">
+            Department <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
+            <hr class="hidden md:block mr-28 mt-2">
+          </label>
+        </div>
+        <div class="w-full">
+          <select name="department" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="department" >
+            <option class="bg-opacity-50 bg-gray-100 text-gray-500">Please select Department</option>
+            <option value="経営全般">Business management</option>
+            <option value="営業">Sales</option>
+            <option value="マーケティング・広報・企画">Marketing</option>
+            <option value="情報システム">IT</option>
+            <option value="人事・総務">General administration</option>
+            <option value="その他">Others</option>
+          </select>
+        </div>
       </div>
-      <div class="md:w-3/4">
-        <select name="department" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="department" >
-          <option class="bg-opacity-50 bg-gray-100 text-gray-500">Please select Department</option>
-          <option value="経営全般">Business management</option>
-          <option value="営業">Sales</option>
-          <option value="マーケティング・広報・企画">Marketing</option>
-          <option value="情報システム">IT</option>
-          <option value="人事・総務">General administration</option>
-          <option value="その他">Others</option>
-        </select>
+      <div class="md:flex w-full flex-col mb-4">
+        <div class="w-full h-8">
+          <label class="text-gray-700 text-sm font-medium" for="post">
+            Post <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
+            <hr class="hidden md:block mr-28 mt-2">
+          </label>
+        </div>
+        <div class="w-full">
+          <select name="post" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="post" >
+            <option class="bg-opacity-50 bg-gray-100 text-gray-500">Please select Post</option>
+            <option value="経営者・役員">Director</option>
+            <option value="部長クラス">General Manager</option>
+            <option value="課長・係長・主任クラス">Manager</option>
+            <option value="一般社員">Employee / Staff</option>
+            <option value="個人">Self-employed</option>
+            <option value="学生">Student</option>
+            <option value="その他">Others</option>
+          </select>
+        </div>
       </div>
     </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
+    <div class="md:flex w-full flex-col mb-4">
+      <div class="w-full h-8">
         <label class="text-gray-700 text-sm font-medium" for="post">
-          Post <sup class="text-xs text-red-500">*</sup>
+          Inquiry Details <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">Required</span>
           <hr class="hidden md:block mr-28 mt-2">
         </label>
       </div>
-      <div class="md:w-3/4">
-        <select name="post" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="post" >
-          <option class="bg-opacity-50 bg-gray-100 text-gray-500">Please select Post</option>
-          <option value="経営者・役員">Director</option>
-          <option value="部長クラス">General Manager</option>
-          <option value="課長・係長・主任クラス">Manager</option>
-          <option value="一般社員">Employee / Staff</option>
-          <option value="個人">Self-employed</option>
-          <option value="学生">Student</option>
-          <option value="その他">Others</option>
-        </select>
-      </div>
-    </div>
-    <div class="md:flex w-full">
-      <div class="md:w-1/4">
-        <label class="text-gray-700 text-sm font-medium" for="post">
-          Inquiry Details <sup class="text-xs text-red-500">*</sup>
-          <hr class="hidden md:block mr-28 mt-2">
-        </label>
-      </div>
-      <div class="md:w-3/4">
+      <div class="w-full">
         <textarea
           class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" rows="6" name="inquiry_content" id="inquiry_content" placeholder="Please write within 2,000 characters."></textarea>
       </div>
