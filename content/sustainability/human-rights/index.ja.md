@@ -1,10 +1,11 @@
 ---
 title: 人権方針
 date: 2022-05-03T19:02:12+09:00
-weight: 3
+weight: 2
 headerImage:
     imageName: "meeting.jpg"
     imageTitle: "人権方針"
+newsimg: human.jpg
 ---
 
 # 人権方針  

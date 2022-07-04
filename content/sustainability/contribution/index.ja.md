@@ -1,10 +1,11 @@
 ---
 title: 企業理念に基づく社会貢献
 date: 2022-05-03T19:02:12+09:00
-weight: 3
+weight: 5
 headerImage:
     imageName: "gathering.jpg"
     imageTitle: "企業理念に基づく社会貢献"
+newsimg: globe.jpg
 ---
 
 # 企業理念に基づく社会貢献

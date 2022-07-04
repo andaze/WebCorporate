@@ -1,10 +1,11 @@
 ---
 title: Basic Policy on Information Security
 date: 2022-05-03T19:02:12+09:00
-weight: 3
+weight: 7
 headerImage:
     imageName: "information.jpg"
     imageTitle: "Basic Policy on Information Security"
+newsimg: security.jpg
 ---
 # Basic Policy on Information Security
 

@@ -1,4 +1,4 @@
-{{ if eq (.Scratch.Get "section") "news" }}
+{{ if or (eq (.Scratch.Get "section") "news")  (eq (.Scratch.Get "section") "sustainability") }}
     <div #swiperRef="" class="swiper mySwiper">
         <div class="swiper-wrapper">
             {{ with .Site.GetPage (.Scratch.Get "section") }}
@@ -20,9 +20,8 @@
     <div class="flex justify-center md:hidden lg:hidden mt-5">
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
-{{ end }}
 
-{{ if eq (.Scratch.Get "section") "ir" }}
+{{ else if eq (.Scratch.Get "section") "ir" }}
     <div class="mt-2">
         {{ .Scratch.Set "backgroundTheme" "black" }}
         {{ partial "molecule-section-irnews-pdf-listing.html" . }}
@@ -31,16 +30,8 @@
     <div class="flex justify-center md:hidden lg:hidden mt-5">
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
-{{ end }}
 
-{{ if eq (.Scratch.Get "section") "services" }}
+{{ else }}
     {{ partial "organism-section-contents.html" . }}
 {{ end }}
 
-{{ if eq (.Scratch.Get "section") "solution" }}
-    {{ partial "organism-section-contents.html" . }}
-{{ end }}
-
-{{ if eq (.Scratch.Get "section") "casestudy" }}
-    {{ partial "organism-section-contents.html" . }}
-{{ end }}

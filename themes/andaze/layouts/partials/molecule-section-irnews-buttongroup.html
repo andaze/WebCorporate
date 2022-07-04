@@ -1,5 +1,5 @@
 
-{{if eq (.Scratch.Get "section") ("news") }}
+{{if or (eq (.Scratch.Get "section") ("news")) (eq (.Scratch.Get "section") ("sustainability")) }}
     
     {{ with .Site.GetPage (.Scratch.Get "section") }}
     <ul class="pt-2">

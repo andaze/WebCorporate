@@ -1,10 +1,11 @@
 ---
 title: Effective use of resources
 date: 2022-05-03T19:02:12+09:00
-weight: 3
+weight: 4
 headerImage:
     imageName: "conversation.jpg"
     imageTitle: "Effective use of resources"
+newsimg: nature.jpg
 ---
 # Effective use of resources
 
