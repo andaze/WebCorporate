@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "corridor.jpg"
     imageTitle: "Information Security Management System"
+newsimg: internet.jpg
 ---
 # Information Security Management System
 

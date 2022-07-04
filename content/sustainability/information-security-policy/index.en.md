@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "information.jpg"
     imageTitle: "Basic Policy on Information Security"
+newsimg: security.jpg
 ---
 # Basic Policy on Information Security
 

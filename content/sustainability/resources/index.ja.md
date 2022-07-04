@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "conversation.jpg"
     imageTitle: "資源の有効活用"
+newsimg: nature.jpg
 ---
 
 # 資源の有効活用

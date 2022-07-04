@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "gathering.jpg"
     imageTitle: "Contribution to society based on our corporate philosophy"
+newsimg: globe.jpg
 ---
 
 # Contribution to society based on our corporate philosophy

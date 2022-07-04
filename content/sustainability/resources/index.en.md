@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "conversation.jpg"
     imageTitle: "Effective use of resources"
+newsimg: nature.jpg
 ---
 # Effective use of resources
 

@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "environment.jpg"
     imageTitle: "環境方針"
+newsimg: environment-policy.jpg
 ---
 
 # 環境方針

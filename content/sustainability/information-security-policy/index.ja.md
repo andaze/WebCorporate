@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "information.jpg"
     imageTitle: "情報セキュリティ基本方針"
+newsimg: security.jpg
 ---
 
 # 情報セキュリティ基本方針

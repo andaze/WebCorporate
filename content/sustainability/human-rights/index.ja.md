@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "meeting.jpg"
     imageTitle: "人権方針"
+newsimg: human.jpg
 ---
 
 # 人権方針  

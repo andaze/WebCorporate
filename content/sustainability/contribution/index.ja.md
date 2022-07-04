@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "gathering.jpg"
     imageTitle: "企業理念に基づく社会貢献"
+newsimg: globe.jpg
 ---
 
 # 企業理念に基づく社会貢献

@@ -5,6 +5,7 @@ weight: 3
 headerImage:
     imageName: "meeting.jpg"
     imageTitle: "Human Rights Policy"
+newsimg: human.jpg
 ---
 # Human Rights Policy
 
