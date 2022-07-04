@@ -1,5 +1,6 @@
 ---
-title: "DEVEXPRESS"
+title: "UX重視型アプリケーション開発"
+titleEn: "DEVEXPRESS"
 date: 2022-02-23T17:03:34+09:00
 weight: 7
 cardImage: devexpress.jpg
