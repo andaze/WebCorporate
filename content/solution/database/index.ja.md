@@ -1,5 +1,5 @@
 ---
-title: "NOSQLデータベース開発/AZURE COSMOS DATABASE"
+title: "NOSQLデータベース開発 / AZURE COSMOS DATABASE"
 date: 2022-02-23T17:03:34+09:00
 weight: 10
 cardImage: database.jpg

@@ -1,5 +1,5 @@
 ---
-title: "双方向通信ウェブサービス開発/SIGNALR"
+title: "双方向通信ウェブサービス開発 / SIGNALR"
 date: 2022-02-23T17:03:34+09:00
 weight: 6
 cardImage: signalr.jpg
