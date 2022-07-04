@@ -1,6 +1,5 @@
 ---
-title: "B2Cサービス開発"
-titleEn: "AZURE B2C"
+title: "B2Cサービス開発/AZURE B2C"
 date: 2022-02-23T17:03:34+09:00
 weight: 4
 cardImage: b2c.jpg

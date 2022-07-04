@@ -1,6 +1,5 @@
 ---
-title: "ビッグデータ分析開発"
-titleEn: "AZURE TABLE STORAGE"
+title: "ビッグデータ分析開発/AZURE TABLE STORAGE"
 date: 2022-02-23T17:03:34+09:00
 weight: 11
 cardImage: storage.jpg
