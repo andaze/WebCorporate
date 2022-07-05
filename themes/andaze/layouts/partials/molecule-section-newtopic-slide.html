@@ -3,7 +3,9 @@
         {{ partial "atom-newtopic-slide-image.html" . }}
         {{ partial "atom-newtopic-slide-title.html" . }}
         {{ partial "atom-newtopic-slide-newstitle.html" . }}
-        {{ partial "atom-newtopic-slide-date.html" . }}
+        {{ if eq (.Scratch.Get "section") "news" }}
+            {{ partial "atom-newtopic-slide-date.html" . }}
+        {{ end }}
     </a>
 </div>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

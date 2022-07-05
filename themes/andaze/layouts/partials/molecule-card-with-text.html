@@ -1,5 +1,5 @@
 <a href="{{ .Permalink }}"
-    {{ if or (eq .Page.Params.cardImage ("shared.png")) (eq .Page.Params.cardImage ("recruit.jpg"))}}
+    {{ if or (eq .Page.Params.cardImage ("shared.svg")) (eq .Page.Params.cardImage ("recruit.svg"))}}
         class="hidden" 
     {{ else if not .IsHome}}
         class="pointer-events-none bg-white shadow-xl bg-opacity-50" 
