@@ -2,9 +2,9 @@
 title: "New Business Service Development"
 date: 2022-02-23T17:03:34+09:00
 weight: 6
-cardImage: service-develop.jpg
+cardImage: service.svg
 headerImage:
-    imageName: "service-develop.jpg"
+    imageName: "service.svg"
     imageTitle: ""
     imageDescription: ""
 topText: "From service content planning to design, development, and operation, we support the speedy launch of new business services with a sense of urgency."

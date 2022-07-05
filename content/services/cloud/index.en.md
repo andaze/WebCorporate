@@ -2,9 +2,9 @@
 title: "Cloud"
 date: 2022-02-23T17:03:34+09:00
 weight: 2
-cardImage: cloud.jpg
+cardImage: cloud.svg
 headerImage:
-    imageName: "cloud.jpg"
+    imageName: "cloud.svg"
     imageTitle: ""
     imageDescription: ""
 topText: "We support the implementation of cloud services
