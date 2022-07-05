@@ -7,7 +7,7 @@ headerImage:
     imageName: "shared.svg"
     imageTitle: ""
     imageDescription: ""
- 
+kind: service
 ---
 
 # シェアードチーム  

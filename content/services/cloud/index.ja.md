@@ -9,6 +9,7 @@ headerImage:
     imageTitle: ""
     imageDescription: ""
 topText: "お客様のビジネス戦略に合わせて、より安心安全なセキュリティのもとでアクセスできるクラウドサービスの導入をサポートします。"
+kind: service
 ---
 
 # クラウド　

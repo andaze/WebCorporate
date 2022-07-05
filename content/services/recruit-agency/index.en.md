@@ -7,7 +7,7 @@ headerImage:
     imageName: "recruit.svg"
     imageTitle: ""
     imageDescription: ""
- 
+kind: service
 ---
 
 # Recruitment Agency Services

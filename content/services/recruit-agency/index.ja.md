@@ -7,7 +7,7 @@ headerImage:
     imageName: "recruit.svg"
     imageTitle: ""
     imageDescription: ""
- 
+kind: service
 ---
 
 # 採用代行サービス

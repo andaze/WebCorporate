@@ -9,6 +9,7 @@ headerImage:
     imageTitle: ""
     imageDescription: ""
 topText: "サービス内容の立案から設計、開発、運用まで、スピード感を持ってスピーディーに新規事業サービスの立ち上げをサポートします。"
+kind: service
 ---
 
 # 新規事業サービス開発　
