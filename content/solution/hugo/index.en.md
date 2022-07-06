@@ -13,11 +13,13 @@ headerImage:
 
 ## Static Website Development" for fast page loading with secure security
 
+{{< br >}}
+
 ### Overview
 
 You want to increase the display speed of your web pages, or you want to have a solid security measure, or you do not want to update information in real time.... Static website development is useful for websites with such characteristics. There are three main reasons why static websites are attracting attention today.
 
-***
+{{< br >}}
 
 ### Effects of Introduction
 
@@ -33,7 +35,7 @@ Problems such as "slow page loading speed" are difficult to avoid due to the mec
 
 When a CMS is implemented, "regular maintenance" costs must be anticipated, as compatibility checks, bug fixes, backups, and server-side update support are required when CMS versions are upgraded. There is a wild notion of "no version upgrades," but this is problematic because it leaves security holes open. Static sites are simpler on the server side, and maintenance and system expansion are relatively easy.
 
-***
+{{< br >}}
 
 ### Suggested Industries
 
@@ -41,13 +43,13 @@ When a CMS is implemented, "regular maintenance" costs must be anticipated, as c
 - Job posting web pages for various industries
 - Landing pages (LP) for corporate advertisements, etc.
 
-***
+{{< br >}}
 
 ### Advantages and disadvantages of static websites
 
 ![ Image is not Available !](hugo-web.webp)
 
-***
+{{< br >}}
 
 ### Differences between a static website and a dynamic CMS
 
@@ -66,7 +68,7 @@ Andaze provides a simple and easy way to create a static site generator that is 
 
 Andaze will quickly build a static website with our static site generator HUGO. Please feel free to contact us for a consultation so that we can gain a deeper understanding of your current situation and suggest ways to improve it.
 
-***
+{{< br >}}
 
 ### Case Study
 

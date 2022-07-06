@@ -20,12 +20,12 @@ To begin with, most of the logistics industry requires "paper" information to mo
 
 The first phase of Otsuka Warehouse Co.,Ltd.'s IT x logistics initiative is "visualization of delivery status. The "visualization of delivery" is a function of CARGO TRACKS, a system that allows users to check the status of orders from receipt to delivery on the screen. The system allows the user to grasp in real time the location of the package, its route, estimated time of arrival, and even the temperature and humidity inside the delivery vehicle on the map on the screen.
 
-***
+{{< br >}}
 
 ## Background of Application
 For wholesalers and manufacturers, being unable to "see" the delivery status easily leads to anxiety, and in the past they were inundated with inquiries by phone and e-mail. However, when delivery operations are outsourced to a shipping company, it is sometimes difficult to contact the driver directly. The delivery company would contact the office of the delivery company, which would then contact the driver and wait for the driver to return the call, resulting in cases where the delivery had already been made by the time the inquiry was responded to. In particular, when a disaster or accident occurs, the call center is often inundated with inquiries and confirmations from within the company as well as from the call center, resulting in cost and workload issues. Therefore, we built a common platform that allows employees and partners nationwide, as well as customers at the delivery site, to retrieve necessary information more easily.
 
-***
+{{< br >}}
 
 ## Results obtained
 Shortly after the introduction of the system, there was a day when an earthquake occurred in the Tohoku region. When an earthquake occurs, there are delays in deliveries depending on the situation. In the past, when a disaster occurred, we had to create shipping data for each manufacturer in Excel, add delivery and delivery status, and email it to them. This time, however, the Sendai Sales Office, which has jurisdiction over the Tohoku region, made full use of CARGO TRACKS' "delivery visualization" function. By taking delivery completion logs frequently, the Logistics Division, the operational unit, was able to check the delivery status in real time and communicate it to the manufacturer with outstanding response. As a result, the time and effort required for customers to wait for a response to their inquiries was greatly reduced. The customer's anxiety about not knowing when the package will be delivered has been eliminated. In the future, Otsuka plans to build a system that will allow partner companies to check the status of their shipments on the screen as well.
@@ -33,7 +33,7 @@ The "delivery visualization" system is a mechanism for showing the "health statu
 
 ![ Image is not Available !](case_4-2.png)
 
-***
+{{< br >}}
 
 ## Customer Information
 Otsuka Warehouse Co.,Ltd.  

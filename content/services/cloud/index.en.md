@@ -2,13 +2,14 @@
 title: "Cloud"
 date: 2022-02-23T17:03:34+09:00
 weight: 2
-cardImage: cloud.jpg
+cardImage: cloud.svg
 headerImage:
-    imageName: "cloud.jpg"
+    imageName: "cloud.svg"
     imageTitle: ""
     imageDescription: ""
 topText: "We support the implementation of cloud services
 that can be accessed with more security and safety in accordance with the customer's business strategy."
+kind: service
 ---
 
 #  Cloud Computing　
@@ -16,7 +17,7 @@ that can be accessed with more security and safety in accordance with the custom
 ## Supporting the Best Cloud Deployment for Your Digital Strategy      
 Cloud computing is essential for DX. In addition, the adoption of the most appropriate cloud service is required depending on the customer's business challenges and system environment. Andaze will develop a detailed migration roadmap in accordance with the customer's industry, company size, and requirements. We not only realize the migration of existing systems to the cloud, but also provide access to them under safer and more secure security, which will be a driving force to promote the transformation of your company in the wake of digitalization.
 
-***
+{{< br >}}
 
 ## Why Choose Andaze?
 
@@ -38,10 +39,10 @@ Cloud computing is essential for DX. In addition, the adoption of the most appro
 
 <font color="gray">*DevOps is a software development method in which development and operations work together</font>
 
-***
+{{< br >}}
 
 ## Case Studies
 
-***
+{{< br >}}
 
 ## Professionals with Andaze
