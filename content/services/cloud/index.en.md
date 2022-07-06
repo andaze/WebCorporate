@@ -2,13 +2,14 @@
 title: "Cloud"
 date: 2022-02-23T17:03:34+09:00
 weight: 2
-cardImage: cloud.jpg
+cardImage: cloud.svg
 headerImage:
-    imageName: "cloud.jpg"
+    imageName: "cloud.svg"
     imageTitle: ""
     imageDescription: ""
 topText: "We support the implementation of cloud services
 that can be accessed with more security and safety in accordance with the customer's business strategy."
+kind: service
 ---
 
 #  Cloud Computing　

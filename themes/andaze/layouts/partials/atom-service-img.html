@@ -1,1 +1,9 @@
-<img class="w-full h-32 md:h-40 object-cover" src="{{ .Permalink }}{{.Page.Params.cardImage}}" alt="Image Not Available">
+<img
+    {{ if eq (.Page.Params.kind) "service" }}
+        class="w-full h-32 md:h-40"
+    {{ else }}
+        class="object-cover w-full h-32 md:h-40" 
+    {{ end }}
+    src="{{ .Permalink }}{{.Page.Params.cardImage}}" 
+    alt="Image Not Available"
+>

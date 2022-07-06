@@ -3,12 +3,13 @@ title: "AI（人工知能）"
 titleEn: "AI（Artificial Intelligence)"
 date: 2022-02-23T17:03:34+09:00
 weight: 1
-cardImage: ai.jpg
+cardImage: ai.svg
 headerImage:
-    imageName: "ai.jpg"
+    imageName: "ai.svg"
     imageTitle: ""
     imageDescription: ""
 topText: "企業が抱える経営課題を解決し、ビジネスの価値をさらに高める精度の高いAIソリューションを提供します。"
+kind: service
 ---
 
 # AI（人工知能）

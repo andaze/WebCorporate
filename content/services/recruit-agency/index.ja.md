@@ -2,12 +2,12 @@
 title: "採用代行サービス"
 date: 2022-02-23T17:03:34+09:00
 weight: 5
-cardImage: recruit.jpg
+cardImage: recruit.svg
 headerImage:
-    imageName: "recruit.jpg"
+    imageName: "recruit.svg"
     imageTitle: ""
     imageDescription: ""
- 
+kind: service
 ---
 
 # 採用代行サービス

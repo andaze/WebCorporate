@@ -2,12 +2,12 @@
 title: "シェアードチーム"
 date: 2022-02-23T17:03:34+09:00
 weight: 7
-cardImage: shared.png
+cardImage: shared.svg
 headerImage:
-    imageName: "shared.png"
+    imageName: "shared.svg"
     imageTitle: ""
     imageDescription: ""
- 
+kind: service
 ---
 
 # シェアードチーム  
