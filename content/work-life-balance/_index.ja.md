@@ -1,7 +1,7 @@
 ---
 title: ワークライフバランス
 date: 2022-05-03T19:02:12+09:00
-weight: 9
+weight: 8
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="inline">アンダーズ株式会社　行動計画 </h1>

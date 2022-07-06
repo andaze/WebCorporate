@@ -2,12 +2,13 @@
 title: "New Business Service Development"
 date: 2022-02-23T17:03:34+09:00
 weight: 6
-cardImage: service-develop.jpg
+cardImage: service.svg
 headerImage:
-    imageName: "service-develop.jpg"
+    imageName: "service.svg"
     imageTitle: ""
     imageDescription: ""
- 
+topText: "From service content planning to design, development, and operation, we support the speedy launch of new business services with a sense of urgency."
+kind: service
 ---
 
 # New Business Service Development　
@@ -15,7 +16,7 @@ headerImage:
 ## Support from new business to expansion using existing systems   
 From the digitization of analog information such as documents to new businesses that create business models from scratch, the possibilities for DX are endless. Andaze's one-stop shared team with over 20 years of experience handles everything from strategic planning to implementation, operation, and maintenance of services utilizing superior technology. More objective and neutral. We support your digital innovation within the feasible cost range.
 
-***
+{{< br >}}
 
 ## Why choose Andaze?
 
@@ -34,10 +35,10 @@ From the digitization of analog information such as documents to new businesses 
 * By using shared use cloud and libraries, we can launch a new business in a short period of time.
 * The ultimate goal is to make the business profitable. Therefore, post-operational improvement proposals and quality enhancement are also our strengths.
 
-***
+{{< br >}}
 
 ## Case Studies
 
-***
+{{< br >}}
 
 ## Professionals with Andaze

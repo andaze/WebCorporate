@@ -1,5 +1,5 @@
 
-{{if eq (.Scratch.Get "section") ("news") }}
+{{if or (eq (.Scratch.Get "section") ("news")) (eq (.Scratch.Get "section") ("sustainability")) }}
     
     {{ with .Site.GetPage (.Scratch.Get "section") }}
     <ul class="pt-2">
@@ -9,13 +9,6 @@
             {{ .Scratch.Delete "backgroundTheme"}}
         </li>
     </ul>
-    {{ end }}
-
-{{ else if eq (.Scratch.Get "section") ("company") }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-        {{ .Scratch.Set "backgroundTheme" "company" }}
-        {{ partial "atom-irnews-button.html" .}}
-        {{ .Scratch.Delete "backgroundTheme"}}
     {{ end }}
 
 {{ else if eq (.Scratch.Get "section") ("recruit") }}

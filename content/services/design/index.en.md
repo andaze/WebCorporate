@@ -2,12 +2,15 @@
 title: "UI/UX Design"
 date: 2022-02-23T17:03:34+09:00
 weight: 4
-cardImage: design.png
+cardImage: design.svg
 headerImage:
-    imageName: "design.png"
+    imageName: "design.svg"
     imageTitle: ""
     imageDescription: ""
- 
+topText: "Our team of professionals with a deep understanding of business and expertise in UI and UX will work closely with you to develop products that are both easy to use and highly satisfying."
+annotationText: "*UI (User Interface)…The point of contact between the user and the product"
+annotationTextSecond: "*UX (User Experience)…All user experiences gained through a product or service"
+kind: service
 ---
 
 # UI/UX Design
@@ -15,7 +18,7 @@ headerImage:
 ## Supporting the development of products that are comfortable, pleasant, and easy to use   
 Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze expresses UI and UX in the best possible way based on our extensive experience and knowledge. We leverage our high level of expertise to support development that places the highest priority on the customer experience while adhering to the client's requirements. Experience the best UI/UX design with meaning and value in every single piece.
 
-***
+{{< br >}}
 
 ## Why choose Andaze?　
 ### (1) Design that combines problem solving and user comfort
@@ -33,10 +36,10 @@ Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze
 * Even after implementation, experts involved in the development of the service will continuously propose improvements and enhancements to the service.
 * We build a strong partnership where you can consult with us on everything from strategic aspects to post-implementation.
 
-***
+{{< br >}}
 
 ## Case Studies
 
-***
+{{< br >}}
 
 ## Professionals with Andaze

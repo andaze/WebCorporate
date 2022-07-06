@@ -13,13 +13,15 @@ headerImage:
 
 ## Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data.
 
+{{< br >}}
+
 ### Overview
 
 The recent proliferation of smartphones has led to the emergence of massive amounts of data. Moreover, even home appliances such as refrigerators, air conditioners, and vacuum cleaners are connected to the Internet and continue to generate new data. The amount of data held by companies is growing exponentially.
 
 In order to store and process such large and varied data, problems of capacity, cost, and speed have been a constant concern until now. However, with the advent of inexpensive table storage, it is now possible to store information that has not been normalized in its raw form. This makes it possible to provide users with the information they need in a responsive manner.
 
-***
+{{< br >}}
 
 ### Effects of Introduction
 
@@ -27,7 +29,7 @@ In order to store and process such large and varied data, problems of capacity, 
 - Normalized data and duplicated data can be stored, and readability is improved.
 - Maximizes system performance when combined with normalized data
 
-***
+{{< br >}}
 
 ### Suggested Industries
 
@@ -38,7 +40,7 @@ In order to store and process such large and varied data, problems of capacity, 
 - Home Appliances
 - Financial Services
 
-***
+{{< br >}}
 
 ### Product Image
 
@@ -46,7 +48,7 @@ Andaze quickly builds databases with large-scale data storage Azure Table Storag
 
 ![ Image is not Available !](table-storage.webp)
 
-***
+{{< br >}}
 
 ### Case Study
 
