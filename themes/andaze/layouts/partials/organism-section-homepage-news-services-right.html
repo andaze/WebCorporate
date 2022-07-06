@@ -1,4 +1,4 @@
-{{ if or (eq (.Scratch.Get "section") "news")  (eq (.Scratch.Get "section") "sustainability") }}
+{{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
     <div #swiperRef="" class="swiper mySwiper">
         <div class="swiper-wrapper">
             {{ with .Site.GetPage (.Scratch.Get "section") }}
