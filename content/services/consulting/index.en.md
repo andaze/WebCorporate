@@ -2,9 +2,10 @@
 title: "Consulting"
 date: 2022-02-23T17:03:34+09:00
 weight: 3
-cardImage: consulting.svg
+cardImage: consulting.jpg
+cardIcon: consulting.svg
 headerImage:
-    imageName: "consulting.svg"
+    imageName: "consulting.jpg"
     imageTitle: ""
     imageDescription: ""
 topText: "Based on our accumulated know-how, we develop DX strategies that incorporate superior technologies. We support the advanced digital shift required in various industries."

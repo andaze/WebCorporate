@@ -3,9 +3,10 @@ title: "クラウド"
 titleEn: "Cloud"
 date: 2022-02-23T17:03:34+09:00
 weight: 2
-cardImage: cloud.svg
+cardImage: cloud.jpg
+cardIcon: cloud.svg
 headerImage:
-    imageName: "cloud.svg"
+    imageName: "cloud.jpg"
     imageTitle: ""
     imageDescription: ""
 topText: "お客様のビジネス戦略に合わせて、より安心安全なセキュリティのもとでアクセスできるクラウドサービスの導入をサポートします。"

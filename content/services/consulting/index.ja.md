@@ -3,9 +3,10 @@ title: "コンサルティング"
 titleEn: "Consulting"
 date: 2022-02-23T17:03:34+09:00
 weight: 3
-cardImage: consulting.svg
+cardImage: consulting.jpg
+cardIcon: consulting.svg
 headerImage:
-    imageName: "consulting.svg"
+    imageName: "consulting.jpg"
     imageTitle: ""
     imageDescription: ""
 topText: "培ったノウハウをもとに、優れた技術を取り入れたDX戦略を立案。さまざまな業界で求められている先進的なデジタルシフトを支援します。"
