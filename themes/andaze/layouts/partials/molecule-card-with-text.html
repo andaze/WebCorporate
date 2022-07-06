@@ -1,15 +1,13 @@
 <a href="{{ .Permalink }}"
     {{ if or (eq .Page.Params.cardImage ("shared.png")) (eq .Page.Params.cardImage ("recruit.jpg"))}}
         class="hidden" 
-    {{ else if not .IsHome}}
-        class="pointer-events-none bg-white shadow-xl bg-opacity-50" 
     {{ else }}
-        class="bg-white shadow-xl bg-opacity-50"
+        class="pointer-events-none bg-white shadow-xl bg-opacity-50" 
     {{ end }}
 >
-    <img class="w-full h-52 pt-6 px-6" src="{{ .Permalink }}{{.Page.Params.cardIcon}}" alt="Image Not Available">
-    <h2 class="text-black pt-6 w-fit mx-auto font-bold md:text-lg">{{ .Title }}</h2>
-    <h2 class="text-gray-500 pt-2 w-fit mx-auto font-bold md:text-lg">{{ .Page.Params.titleEn }}</h2>
+<h2 class="text-black pt-6 w-fit mx-auto font-bold md:text-lg">{{ .Title }}</h2>
+<h2 class="text-gray-500 pt-2 w-fit mx-auto font-bold md:text-lg">{{ .Page.Params.titleEn }}</h2>
+<img class="w-full h-52 pt-6 px-6" src="{{ .Permalink }}{{.Page.Params.cardIcon}}" alt="Image Not Available">
     <div class="p-6">
         <p>{{ .Page.Params.topText }}</p>
         <div class="text-xs text-slate-500">
