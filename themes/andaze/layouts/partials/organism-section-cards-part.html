@@ -1,4 +1,4 @@
-<div class="grid md:grid-cols-2 gap-6 lg:gap-14" {{ if .IsHome }} class="lg:grid-cols-3" {{ end }}>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-14">
     {{ range .Pages.Reverse }}
         {{ partial "molecule-card-with-text.html" . }}
     {{ end }}
