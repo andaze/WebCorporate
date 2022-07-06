@@ -3,6 +3,7 @@ title: "Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with t
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: case_3.png
+newsimg: case_3.png
 headerImage:
     imageName: "case_3.png"
     imageTitle: ""
