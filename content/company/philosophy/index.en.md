@@ -19,12 +19,12 @@ that goes beyond mere digitization.
 Andaze's Shared Teams are at the forefront of technology,  
 and we share a common philosophy.
 
-***
+{{< br >}}
 
 ## Corporate Slogan Corporate Philosophy
 <font class="font-bold text-xl">Bringing innovation to Japan through global and superior technology.</font>
 
-***
+{{< br >}}
 
 ## 5DNA Code of Conduct
 ### (1)	Dominate the market
@@ -42,7 +42,7 @@ Because we have brought together professionals who have been active on the front
 ### (5)	Thinking in terms of global standards
 What is needed to create new business models is a global perspective. We will always provide superior technology and world-class service.
 
-***
+{{< br >}}
 
 ## Andaze Philosophy
 ### (1)	Be a player

@@ -13,11 +13,13 @@ headerImage:
 
 ## SPA application development" that can provide comfortable web expression
 
+{{< br >}}
+
 ### Overview
 
 SPA (Single Page Application) is a system in which contents are switched one after another on a single web page. The next content can be displayed without having to click on a link and reload the page. Andaze provides comfortable web expressions that run crisply, not to mention improved visuals and usability. This leads to increased user satisfaction.
 
-***
+{{< br >}}
 
 ### Effects of Introduction
 
@@ -27,7 +29,7 @@ SPA (Single Page Application) is a system in which contents are switched one aft
 - Improved display speed and performance because parts of the page that do not need to be changed remain unchanged.
 - More advanced expression on web pages
 
-***
+{{< br >}}
 
 ### Suggested Industries
 
@@ -40,7 +42,7 @@ SPA (Single Page Application) is a system in which contents are switched one aft
 - Retail
 - Retail Distribution
 
-***
+{{< br >}}
 
 ### Product Image
 
@@ -50,7 +52,7 @@ Andaze can build SPAs in a short period of time with our SPA framework "BLAZOR".
 
 <font color="gray">*Native application...An application that is installed and used via an application store.</font>
 
-***
+{{< br >}}
 
 ### Case Study
 

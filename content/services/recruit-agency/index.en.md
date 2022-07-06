@@ -25,7 +25,7 @@ We provide strategic recruiting support by analyzing information and market tren
 * Want to recruit people for multiple positions
 * Want to hire experienced people who are ready to work immediately
 
-***
+{{< br >}}
 
 ## Why choose Andaze?
 
@@ -41,7 +41,7 @@ For example, even for a large company that needs to hire 100 people a year, ther
 
 POWER BI" is a tool to "visualize" which process is the problem, such as when HR is not getting results no matter how hard the company tries. From the number of days it takes from application to job offer, to the names of departments that are putting off interviews, it all becomes clear at a glance. This helps to speed up the hiring process. Also, after hiring, you can look back at the numbers to find issues and make improvements.
 
-***
+{{< br >}}
 
 ## Andaze Recruitment Agency Services
 
@@ -87,7 +87,7 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 * Support for exhibiting at events
 * Production of novelty goods
 
-***
+{{< br >}}
 
 ## Effects of the introduction
 
@@ -97,7 +97,7 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 * Reduce the burden on the human resources department
 * Improvement of skills after hiring
 
-***
+{{< br >}}
 
 ## Recommended industries and sectors
 
@@ -106,7 +106,7 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 * All industries that want to strengthen their HR departments  
 etc.
 
-***
+{{< br >}}
 
 ## Case Studies
 

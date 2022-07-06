@@ -74,7 +74,6 @@ And we can provide the best solutions at the right price because we can concentr
 
 <br><br><br>
 
-<hr>
 
 <br>
 
@@ -98,7 +97,6 @@ Recruiting" methods and services are diversifying these days. On the other hand,
 
 <br><br><br>
 
-<hr>
 
 <br>
 

@@ -93,7 +93,6 @@ topTextContent: "アンダーズは、各分野で活躍するスペシャリス
 
 <br><br><br>
 
-<hr>
 
 <br>
 
@@ -117,7 +116,6 @@ topTextContent: "アンダーズは、各分野で活躍するスペシャリス
 
 <br><br><br>
 
-<hr>
 
 <br>
 
