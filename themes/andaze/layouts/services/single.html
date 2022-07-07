@@ -20,7 +20,7 @@
             {{ if .Site.GetPage "professional-images"}}
                 {{ .Scratch.Set "section" "professional-images" }}
                 {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-                <div class="flex flex-wrap justify-between">
+                <div class="flex flex-wrap justify-center sm:justify-between">
                     {{ range .Pages }}
                         <div class="mb-10">
                             <img class="w-48 h-72 object-cover m-0" src="{{ .Permalink }}{{.Page.Params.image}}" alt="Image Not Available">
