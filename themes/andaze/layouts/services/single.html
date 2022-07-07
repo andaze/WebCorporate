@@ -20,6 +20,7 @@
             {{ if .Site.GetPage "professional-images"}}
                 {{ .Scratch.Set "section" "professional-images" }}
                 {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+                <h2>{{ .Title }}</h2>
                 <div class="flex flex-wrap justify-center sm:justify-between">
                     {{ range .Pages }}
                         <div class="mb-10">
