@@ -40,5 +40,3 @@ DX enables our clients to transform all aspects of their corporate activities fo
 ## Case Studies
 
 {{< br >}}
-
-## Professionals with Andaze
