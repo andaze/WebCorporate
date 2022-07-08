@@ -12,17 +12,9 @@ kind: service
 
 # Shared Team
 
-<!-- ## Why Choose Andaze?
-
-{{< br >}} -->
-
 ## Andaze with professionals
 
 {{< br >}}
-
-<!-- ## "Shared Teams" to support the success of your project
-
-{{< br >}} -->
 
 ## A diverse team of highly skilled professionals   
 
