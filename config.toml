@@ -19,10 +19,11 @@ weight = 1
 languageCode = "ja-JP"
 topCatchCopy = "経営視点でDXを加速させるプロ集団"
 annotationDX = "※DX（デジタルトランスフォーメーション）…ITの浸透が、人々の生活をあらゆる面でより良い方向に変化させる"
-# footerFacebookTitle = "公式フェイスブック"
-footerFacebookTitle = "公式ツイッター"
-footerPrivacyText = "プライバシーポリシー"
-footerSocialMediaPrivacyText = "ソーシャルメディアポリシー"
+footerFacebookTitle = "公式フェイスブック"
+# footerPrivacyText = "プライバシーポリシー"
+footerPrivacyText = "個人情報保護方針"
+# footerSocialMediaPrivacyText = "ソーシャルメディアポリシー"
+footerSocialMediaPrivacyText = "基本利用条件"
 footerSiteMapText = "サイトマップ"
 
 [Languages.en]
@@ -34,7 +35,8 @@ annotationDX = "*DX (Digital Transformation)...The penetration of IT changes peo
 # footerFacebookTitle = "Official Facebook"
 footerFacebookTitle = "Official Twitter"
 footerPrivacyText = "Privacy Policy"
-footerSocialMediaPrivacyText = "Social Media Policy"
+# footerSocialMediaPrivacyText = "Social Media Policy"
+footerSocialMediaPrivacyText = "Terms"
 footerSiteMapText = "Site Map"
 
 [params]
