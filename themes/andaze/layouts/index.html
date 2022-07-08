@@ -57,11 +57,11 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-    {{ if .Site.GetPage "services"}}
+    {{/*  {{ if .Site.GetPage "services"}}
       {{ .Scratch.Set "section" "services" }}
       {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
-    {{ end }}
+    {{ end }}  */}}
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
@@ -69,14 +69,14 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-    {{ if .Site.GetPage "casestudy"}}
+    {{/*  {{ if .Site.GetPage "casestudy"}}
       {{ .Scratch.Set "section" "casestudy" }}
       {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
-    {{ end }}
+    {{ end }}  */}}
 
-    {{ if .Site.GetPage "services"}}
-      {{ .Scratch.Set "section" "services" }}
+    {{ if .Site.GetPage "solution"}}
+      {{ .Scratch.Set "section" "solution" }}
         <div class="flex justify-center md:hidden lg:hidden mt-5">
           {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>
