@@ -3,6 +3,7 @@ title: "Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organiza
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: case_2.png
+newsimg: case_2.png
 headerImage:
     imageName: "case_2.png"
     imageTitle: ""
