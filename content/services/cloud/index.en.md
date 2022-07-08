@@ -39,9 +39,9 @@ Cloud computing is essential for DX. In addition, the adoption of the most appro
 
 <font color="gray">*DevOps is a software development method in which development and operations work together</font>
 
-{{< br >}}
+<!-- {{< br >}}
 
-## Case Studies
+## Case Studies -->
 
 {{< br >}}
 

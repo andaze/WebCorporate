@@ -35,9 +35,9 @@ From the digitization of analog information such as documents to new businesses 
 * By using shared use cloud and libraries, we can launch a new business in a short period of time.
 * The ultimate goal is to make the business profitable. Therefore, post-operational improvement proposals and quality enhancement are also our strengths.
 
-{{< br >}}
+<!-- {{< br >}}
 
-## Case Studies
+## Case Studies -->
 
 {{< br >}}
 

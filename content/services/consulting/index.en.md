@@ -35,9 +35,9 @@ DX enables our clients to transform all aspects of their corporate activities fo
 * Our shared team, which has abundant experience in launching new businesses and possesses both the conceptualization and execution skills required for system construction, provides one-stop, integrated support from strategy to development and operation.
 * Long-term partnerships are established even after operation. We will propose improvements while responding to changes in circumstances and fee-backs.
 
-{{< br >}}
+<!-- {{< br >}}
 
-## Case Studies
+## Case Studies -->
 
 {{< br >}}
 
