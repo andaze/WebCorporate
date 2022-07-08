@@ -1,5 +1,5 @@
 <div>
-    {{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "sustainability") }}
+    {{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
         {{ partial "atom-irnews-heading.html" . }}
         {{ if ne (.Scratch.Get "section") "solution" }}
             <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12">
