@@ -41,5 +41,3 @@ Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze
 ## Case Studies
 
 {{< br >}}
-
-## Professionals with Andaze

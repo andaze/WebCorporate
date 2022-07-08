@@ -44,5 +44,3 @@ Cloud computing is essential for DX. In addition, the adoption of the most appro
 ## Case Studies
 
 {{< br >}}
-
-## Professionals with Andaze

@@ -40,5 +40,3 @@ From the digitization of analog information such as documents to new businesses 
 ## Case Studies
 
 {{< br >}}
-
-## Professionals with Andaze
