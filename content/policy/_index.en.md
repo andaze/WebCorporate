@@ -40,6 +40,8 @@ If the customer wishes to inquire, correct or delete his or her personal informa
 **Compliance and review of laws and regulations**  
 We will comply with Japanese laws and regulations and other norms that apply to the personal information we hold, and will review the content of this policy as appropriate and strive to improve it.
 
+{{< br >}}
+
 **Contact Us**  
 For inquiries regarding our handling of personal information, please contact the following.
 
