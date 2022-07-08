@@ -34,6 +34,9 @@
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
             {{ partial "organism-section-white-transparent-top.html" .}}
             {{ partial "organism-section-cards-part.html" . }}
+            {{ .Scratch.Set "backgroundTheme" "long" }}
+              {{ partial "atom-irnews-button.html" .}}
+            {{ .Scratch.Delete "backgroundTheme"}}
           {{ end }}
           {{ .Scratch.Delete "section" }}
       {{ end }}
@@ -57,11 +60,11 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-    {{ if .Site.GetPage "services"}}
+    {{/*  {{ if .Site.GetPage "services"}}
       {{ .Scratch.Set "section" "services" }}
       {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
-    {{ end }}
+    {{ end }}  */}}
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
@@ -69,14 +72,14 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-    {{ if .Site.GetPage "casestudy"}}
+    {{/*  {{ if .Site.GetPage "casestudy"}}
       {{ .Scratch.Set "section" "casestudy" }}
       {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
-    {{ end }}
+    {{ end }}  */}}
 
-    {{ if .Site.GetPage "services"}}
-      {{ .Scratch.Set "section" "services" }}
+    {{ if .Site.GetPage "solution"}}
+      {{ .Scratch.Set "section" "solution" }}
         <div class="flex justify-center md:hidden lg:hidden mt-5">
           {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>

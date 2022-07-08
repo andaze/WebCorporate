@@ -1,7 +1,7 @@
 {{ $pageTitle := strings.TrimRight "\\//" .File.Dir }}
 <div class="mr-8 mb-6 text-left leading-5">
   {{ partial "atom-footer-page-title.html" (dict "pageLink" .Permalink "pageTitle" .Title ) }}
-  {{ if or (eq .Title "ニュース") (eq .Title "news") }}
+  {{ if or (eq .Title "ニュース") (eq .Title "news") (eq .Title "選ばれる理由") (eq .Title "Why Choose Us") }}
   {{ else }}
   <ul class="list-none mb-0 mt-2">
       {{ $section := site.GetPage $pageTitle }}
