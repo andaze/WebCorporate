@@ -3,6 +3,7 @@ title: "大塚倉庫様 クールなデザインの「障害モニター」で�
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: case_2.png
+newsimg: case_2.png
 headerImage:
     imageName: "case_2.png"
     imageTitle: ""

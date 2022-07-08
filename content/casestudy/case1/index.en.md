@@ -3,6 +3,7 @@ title: "ISEWAN TERMINAL SERVICE CO.,LTD. Devan Management"
 date: 2022-02-23T17:03:34+09:00
 weight: 0
 cardImage: case_1.jpg
+newsimg: case_1.jpg
 headerImage:
     imageName: "case_1.jpg"
     imageTitle: ""
