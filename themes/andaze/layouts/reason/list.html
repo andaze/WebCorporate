@@ -10,10 +10,10 @@
         </div>
         {{ end }}
     {{ end }}
-    <div class="container mx-auto px-5 lg:px-40 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
+    <div class="container mx-auto px-5 lg:px-28 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
         {{ partial "breadcrumbs.html" . }}
     </div>
-    <div class="container mx-auto px-5 lg:px-40 py-5 mb-24 ">
+    <div class="container mx-auto px-5 lg:px-28 py-5 mb-24 ">
         <div class="">
             <h1 class="text-4xl font-bold mb-8">{{ .Title }}</h1>
             {{ range .Pages }}
@@ -22,10 +22,14 @@
                     {{ .Page.Params.text | markdownify }}
                     {{ .Content }}
                     {{ if eq .Page.Params.type ("list")}}
-                        <div class="my-32">
-                            {{ partial "organism-section-cards-part.html" . }}
-                        </div>
-                        {{ else }}
+                        {{ .Scratch.Set "section" "services" }}
+                        {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+                            <div class="my-32">
+                                {{ partial "organism-section-cards-part.html" . }}
+                            </div>
+                        {{ end }}
+                        {{ .Scratch.Delete "section" }}
+                    {{ else }}
                         {{ range .Pages }}
                         <div class="my-20">
                             <h3 class="text-2xl font-bold mb-6">{{ .Title }}</h3>

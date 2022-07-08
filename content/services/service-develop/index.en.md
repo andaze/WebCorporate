@@ -37,4 +37,3 @@ From the digitization of analog information such as documents to new businesses 
 
 {{< br >}}
 
-## Professionals with Andaze

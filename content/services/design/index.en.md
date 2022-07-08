@@ -38,4 +38,3 @@ Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze
 
 {{< br >}}
 
-## Professionals with Andaze
