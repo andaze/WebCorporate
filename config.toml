@@ -34,7 +34,8 @@ topCatchCopy = "A group of professionals who accelerate DX from a management per
 annotationDX = "*DX (Digital Transformation)...The penetration of IT changes people's lives for the better in every aspect"
 footerFacebookTitle = "Official Facebook"
 footerPrivacyText = "Privacy Policy"
-footerSocialMediaPrivacyText = "Social Media Policy"
+# footerSocialMediaPrivacyText = "Social Media Policy"
+footerSocialMediaPrivacyText = "Terms"
 footerSiteMapText = "Site Map"
 
 [params]
