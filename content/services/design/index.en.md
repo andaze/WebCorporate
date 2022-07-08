@@ -36,10 +36,6 @@ Beautiful design, easy-to-use functions, and intuitive colors and tastes. Andaze
 * Even after implementation, experts involved in the development of the service will continuously propose improvements and enhancements to the service.
 * We build a strong partnership where you can consult with us on everything from strategic aspects to post-implementation.
 
-<!-- {{< br >}}
-
-## Case Studies -->
-
 {{< br >}}
 
 ## Professionals with Andaze
