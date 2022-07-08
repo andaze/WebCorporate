@@ -43,8 +43,6 @@ We will comply with Japanese laws and regulations and other norms that apply to 
 **Contact Us**  
 For inquiries regarding our handling of personal information, please contact the following.
 
-{{< br >}}
-
 Expert Office 1F  
 2-10-3 Kojimachi, Chiyoda-ku, Tokyo 102-0083 Andaze Ltd.  
 E-mail: admin@andaze.com
