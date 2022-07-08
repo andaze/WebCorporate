@@ -1,6 +1,6 @@
 {{ $class := "" }}
-{{ if and (ne (.Scratch.Get "section") ("news")) (ne (.Scratch.Get "section") ("casestudy")) (ne (.Scratch.Get "section") ("sustainability")) }}
-    {{ $class := "text-white" }}
+{{ if eq (.Scratch.Get "section") ("solution") }}
+    {{ $class = "text-white" }}
 {{ end }}
 
 <h2 class="text-2xl md:text-3xl mb-5 font-bold uppercase {{ $class }}" >
