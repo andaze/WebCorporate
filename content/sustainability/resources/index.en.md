@@ -16,6 +16,6 @@ newsimg: nature.jpg
 We are eliminating conventional paper-based meetings and distribution of materials to the greatest extent possible. We place emphasis on digital meetings using monitors and other devices both inside and outside the company.  
 We also actively use electronic seals and contracts, and promote paperless communication with telecommuting employees and business partners as much as possible.
 
-### Promoting the 3Rs (Reduce, Reuse, Recycle)
+<!-- ### Promoting the 3Rs (Reduce, Reuse, Recycle)
 
-### Power saving measures for OA equipment
+### Power saving measures for OA equipment -->
