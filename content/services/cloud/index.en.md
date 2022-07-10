@@ -41,6 +41,4 @@ Cloud computing is essential for DX. In addition, the adoption of the most appro
 
 {{< br >}}
 
-## Case Studies
 
-{{< br >}}

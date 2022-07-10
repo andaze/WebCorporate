@@ -18,10 +18,3 @@ Shared Team is a group of professionals from various fields. Each consultant, PM
 
 In today's evolving technology environment, change is the norm. We spare no effort to proactively take on challenges while staying close to such a growth process. Professionals in each department exercise diverse leadership skills to drive the team. The "Shared Team", a new-age management style, brings together the high performance of each individual to support the success of projects at a reasonable price.
 
-## Why Choose Andaze?
-
-{{< br >}}
-
-## "Shared Teams" to support the success of your project
-
-{{< br >}}

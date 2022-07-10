@@ -37,6 +37,3 @@ DX enables our clients to transform all aspects of their corporate activities fo
 
 {{< br >}}
 
-## Case Studies
-
-{{< br >}}
