@@ -18,12 +18,28 @@ export function activeSwiper() {
     {
         sliderView = 3; 
     }
-    var swiper = new Swiper(".mySwiper", {
+    var newsSwiper = new Swiper(".newsSwiper", {
         slidesPerView: sliderView,
         spaceBetween: 30,
         navigation: {
-            nextEl: ".next",
-            prevEl: ".previous",
+            nextEl: ".newsNext",
+            prevEl: ".newsPrevious",
+        },
+    });
+    var casestudySwiper = new Swiper(".casestudySwiper", {
+        slidesPerView: sliderView,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".casestudyNext",
+            prevEl: ".casestudyPrevious",
+        },
+    });
+    var sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
+        slidesPerView: sliderView,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".sustainabilityNext",
+            prevEl: ".sustainabilityPrevious",
         },
     });
 }
