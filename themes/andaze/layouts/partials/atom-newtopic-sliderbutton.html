@@ -1,2 +1,15 @@
-<img src="{{ `img/previous.svg` | absURL }}" alt="Previous" class="previous pr-2 w-14">
-<img src="{{ `img/next.svg` | absURL }}" alt="Next" class="next pr-2 w-14">
+{{ $previousBtnName := "" }}
+{{ $nextBtnName := "" }}
+{{ if eq (.Scratch.Get "section") "news" }}
+    {{ $nextBtnName = "newsNext" }}
+    {{ $previousBtnName = "newsPrevious" }}
+{{ else if eq (.Scratch.Get "section") "casestudy" }}
+    {{ $nextBtnName = "casestudyNext" }}
+    {{ $previousBtnName = "casestudyPrevious" }}
+{{ else if eq (.Scratch.Get "section") "sustainability" }}
+    {{ $nextBtnName = "sustainabilityNext" }}
+    {{ $previousBtnName = "sustainabilityPrevious" }}
+{{ end }}
+
+<img src="{{ `img/previous.svg` | absURL }}" alt="Previous" class="{{ $previousBtnName }} pr-2 w-14">
+<img src="{{ `img/next.svg` | absURL }}" alt="Next" class="{{ $nextBtnName }} pr-2 w-14">
