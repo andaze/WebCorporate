@@ -7,6 +7,7 @@
     "@swup/scroll-plugin": "^1.1.0",
     "@tweenjs/tween.js": "^18.6.4",
     "gsap": "^3.10.4",
+    "swiper": "^8.3.0",
     "swup": "^2.0.14",
     "swup-morph-plugin": "^0.2.0",
     "three": "^0.141.0"
