@@ -1,7 +1,7 @@
 <div class="grid lg:grid-cols-5 md:grid-cols-4 p-5">
     {{ with .Site.GetPage "/" }}
         {{ range .Sections.ByWeight }}
-            {{ if or (eq (.Title) ("Site Map")) (eq (.Title) ("サイトマップ")) (eq (.Title) ("Privacy Policy")) (eq (.Title) ("個人情報保護方針")) (eq (.Title) ("Terms")) (eq (.Title) ("基本利用条件")) }}
+            {{ if .Page.Params.footerTitileHidden }}
             {{ else }}
                 {{ partial "molecule-section-footer-pagelist.html" . }}
             {{ end }}
