@@ -7,6 +7,7 @@ import SwupMorphPlugin from 'swup-morph-plugin';
 import * as kvMain from './top.js';
 import * as kvSub from './top-sub.js';
 import * as sendForm from './sendform.js';
+import * as swiperScript from './swiper.js';
 
 const swup = new Swup({
     plugins: [
@@ -34,6 +35,8 @@ if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCo
 init();
 
 async function init() {
+    const swiper = await swiperScript.activeSwiper();
+
     if (typeof friconix_update === "function" ) {
         // https://friconix.com/start/#display-icons
         friconix_update();
