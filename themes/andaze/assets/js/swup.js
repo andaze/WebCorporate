@@ -14,9 +14,8 @@ const swup = new Swup({
         new SwupBodyClassPlugin(),
         new SwupHeadPlugin(),
         new SwupHtmlLangPlugin(),
-        new SwupScrollPlugin({
-            doScrollingRightAway: true,
-            animateScroll: true
+        new SwupScrollPlugin({ // https://swup.js.org/plugins/scroll-plugin
+            animateScroll: false,
         }),
         new SwupMorphPlugin({
             containers: [
