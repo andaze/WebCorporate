@@ -3,7 +3,7 @@ title: "選ばれる理由"
 date: 2022-02-23T17:03:34+09:00
 weight: 1
 headerVideo: 
-    videoName: "service"
+    videoName: "reason"
     videoTitle: "選ばれる理由"
     videoDescription: ""
 topTitle: "Who We Are"
