@@ -9,7 +9,7 @@ These are some of the common cases we hear about when implementing a system.
 <br><br>
 At Andaze, our team members who have experience in new business strategy work from the top-level consulting process, so your strategy will never end up as "Pie in the sky".
 <br><br>
-And since Andaz is responsible for the downstream operations and maintenance, we are able to grasp changes in the business in an ongoing manner.
+And since Andaze is responsible for the downstream operations and maintenance, we are able to grasp changes in the business in an ongoing manner.
 <br><br>
 Another of our strengths is the speed of development that can only be achieved by a venture company with a mindset of change.
 <br><br>
