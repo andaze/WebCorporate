@@ -1,5 +1,14 @@
+{{ $swiperName := "" }}
+{{ if eq (.Scratch.Get "section") "news" }}
+    {{ $swiperName = "newsSwiper" }}
+{{ else if eq (.Scratch.Get "section") "casestudy" }}
+    {{ $swiperName = "casestudySwiper" }}
+{{ else if eq (.Scratch.Get "section") "sustainability" }}
+    {{ $swiperName = "sustainabilitySwiper" }}
+{{ end }}
+
 {{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
-    <div #swiperRef="" class="swiper mySwiper">
+    <div #swiperRef="" class="swiper {{ $swiperName }}">
         <div class="swiper-wrapper">
             {{ with .Site.GetPage (.Scratch.Get "section") }}
                 {{/*  {{ .Scratch.Set "tagName" ""}}  */}}
