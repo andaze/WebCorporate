@@ -2,9 +2,9 @@
 title: "UI/UX Design"
 date: 2022-02-23T17:03:34+09:00
 weight: 4
-cardImage: design.svg
+cardImage: design.png
 headerImage:
-    imageName: "design.svg"
+    imageName: "design.png"
     imageTitle: ""
     imageDescription: ""
 topText: "Our team of professionals with a deep understanding of business and expertise in UI and UX will work closely with you to develop products that are both easy to use and highly satisfying."
