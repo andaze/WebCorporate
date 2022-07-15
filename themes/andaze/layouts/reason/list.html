@@ -31,10 +31,20 @@
                         {{ .Scratch.Delete "section" }}
                     {{ else }}
                         {{ range .Pages }}
+
+                        {{ $class := ""}}
+                        {{ if .Page.Params.rowReverse }}
+                            {{ $class = "flex-row-reverse"}}
+                        {{ end }}
+
                         <div class="my-20">
-                            <h3 class="text-2xl font-bold mb-6">{{ .Title }}</h3>
-                            {{ .Page.Params.text | markdownify }}
-                            <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-auto h-52 md:h-96 object-cover mt-10" alt="Image is not Available !">
+                            <div class="lg:flex justify-between gap-10 {{ $class }}">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-6">{{ .Title }}</h3>
+                                    {{ .Page.Params.text | markdownify }}
+                                </div>
+                                <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-auto h-52 md:h-80 object-cover mt-10 lg:mt-0" alt="Image is not Available !">
+                            </div>
                         </div>
                         {{ end }}
                     {{ end }}
