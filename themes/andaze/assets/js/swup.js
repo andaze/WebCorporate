@@ -7,6 +7,7 @@ import SwupMorphPlugin from 'swup-morph-plugin';
 import * as kvMain from './top.js';
 import * as kvSub from './top-sub.js';
 import * as sendForm from './sendform.js';
+import * as swiperScript from './swiper.js';
 
 const swup = new Swup({
     plugins: [
@@ -34,6 +35,8 @@ if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCo
 init();
 
 async function init() {
+    const swiper = await swiperScript.activeSwiper();
+
     if (typeof friconix_update === "function" ) {
         // https://friconix.com/start/#display-icons
         friconix_update();
@@ -50,16 +53,15 @@ async function init() {
             sendForm.sendEmail();
         });
     }
-    if (((location.pathname == '/WebCorporate/ja/casestudy/case4/') | (location.pathname == '/WebCorporate/en/casestudy/case4/'))) {
-        const header_image = document.getElementById('header_image');
+
+    const header_image = document.getElementById('header_image');
+
+    if (document.URL.match('/casestudy/case4/')) {
         header_image.style.objectPosition = "0% 40%";
-    } else if (!(
-        (location.pathname == '/WebCorporate/ja/company/message/') | (location.pathname == '/WebCorporate/en/company/message/')
-        | (location.pathname == '/WebCorporate/ja/sustainability/message/') | (location.pathname == '/WebCorporate/en/sustainability/message/')
-    )) {
-        const header_image = document.getElementById('header_image');
+    } else if ((document.URL.match('/company/message/')) | (document.URL.match('/sustainability/message/'))) { 
         header_image.style.objectPosition = "50% 50%";
     }
+
 }
 
 swup.on('contentReplaced', init);

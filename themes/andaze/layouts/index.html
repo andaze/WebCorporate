@@ -47,7 +47,7 @@
   <div class="w-full h-96 lg:h-[34rem]">
     <img src="{{ `img/top.jpg` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
   </div>
-  {{/*  // todo: Probably don't need it.  */}}
+
   {{ if .Site.GetPage "news"}}
     {{ .Scratch.Set "section" "news" }}
     {{ partial "template-section-newtopic.html" . }}
@@ -60,23 +60,11 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-    {{/*  {{ if .Site.GetPage "services"}}
-      {{ .Scratch.Set "section" "services" }}
-      {{ partial "template-section.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}  */}}
-
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
       {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
     {{ end }}
-
-    {{/*  {{ if .Site.GetPage "casestudy"}}
-      {{ .Scratch.Set "section" "casestudy" }}
-      {{ partial "template-section.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}  */}}
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
