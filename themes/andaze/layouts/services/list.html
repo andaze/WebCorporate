@@ -47,57 +47,5 @@
             {{ .Scratch.Delete "section" }}
         </div>
         
-        <!-- Below Commented code is tab wise view -->
-        <!-- <div class="tab-content" id="tabs-tabContentFill">
-                <div class="tab-pane fade show active" id="tabs-all" role="tabpanel" aria-labelledby="tabs-all-tabFill">
-                    {{ .Scratch.Set "section" "services" }}
-                    <div class="text-left py-5">
-                        {{ partial "atom-services-listpage-title.html" . }}
-                    </div>
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-
-                    {{ .Scratch.Set "section" "reason" }}
-                    <div class="text-left py-5">
-                        {{ partial "atom-services-listpage-title.html" . }}
-                    </div>
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                    
-                    {{ .Scratch.Set "section" "casestudy" }}
-                    <div class="text-left py-5">
-                        {{ partial "atom-services-listpage-title.html" . }}
-                    </div>
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                    
-                    {{ .Scratch.Set "section" "solution" }}
-                    <div class="text-left py-5">
-                        {{ partial "atom-services-listpage-title.html" . }}
-                    </div>
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                </div>
-                <div class="tab-pane fade show" id="tabs-services" role="tabpanel" aria-labelledby="tabs-services-tabFill">
-                    {{ .Scratch.Set "section" "services" }}
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                </div>
-                <div class="tab-pane fade" id="tabs-reason" role="tabpanel" aria-labelledby="tabs-reason-tabFill">
-                    {{ .Scratch.Set "section" "reason" }}
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                </div>
-                <div class="tab-pane fade" id="tabs-casestudy" role="tabpanel" aria-labelledby="tabs-casestudy-tabFill">
-                    {{ .Scratch.Set "section" "casestudy" }}
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                </div>
-                <div class="tab-pane fade" id="tabs-solution" role="tabpanel" aria-labelledby="tabs-solution-tabFill">
-                    {{ .Scratch.Set "section" "solution" }}
-                    {{ partial "organism-section-contents.html" . }}
-                    {{ .Scratch.Delete "section" }}
-                </div>
-            </div> -->
     </div>
 {{ end }}
