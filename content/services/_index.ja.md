@@ -4,7 +4,7 @@ date: 2022-02-23T17:03:34+09:00
 weight: 2
 headerVideo: 
     videoName: "service"
-    videoTitle: "サービスアーカイブ"
+    videoTitle: "サービス"
     videoDescription: ""
 topTitle: "What We Do"
 topSubtitle: "培ったノウハウとスピードで、付加価値を提供"
