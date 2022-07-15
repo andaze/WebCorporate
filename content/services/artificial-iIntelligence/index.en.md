@@ -2,9 +2,9 @@
 title: "AI（Artificial Intelligence）"
 date: 2022-02-23T17:03:34+09:00
 weight: 1
-cardImage: ai.svg
+cardImage: ai.png
 headerImage:
-    imageName: "ai.svg"
+    imageName: "ai.png"
     imageTitle: ""
     imageDescription: ""
 topText: "We provide highly accurate AI solutions that solve business challenges and further enhance business value."

@@ -2,9 +2,9 @@
 title: "Recruitment agency services"
 date: 2022-02-23T17:03:34+09:00
 weight: 5
-cardImage: recruit.svg
+cardImage: recruit.png
 headerImage:
-    imageName: "recruit.svg"
+    imageName: "recruit.png"
     imageTitle: ""
     imageDescription: ""
 kind: service
