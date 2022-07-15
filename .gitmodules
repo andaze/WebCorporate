@@ -1,0 +1,3 @@
+[submodule "hugo-jobs"]
+	path = hugo-jobs
+	url = https://github.com/andaze/hugo-jobs.git
