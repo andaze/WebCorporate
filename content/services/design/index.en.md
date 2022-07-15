@@ -8,8 +8,6 @@ headerImage:
     imageTitle: ""
     imageDescription: ""
 topText: "Our team of professionals with a deep understanding of business and expertise in UI and UX will work closely with you to develop products that are both easy to use and highly satisfying."
-annotationText: "*UI (User Interface)…The point of contact between the user and the product"
-annotationTextSecond: "*UX (User Experience)…All user experiences gained through a product or service"
 kind: service
 ---
 
