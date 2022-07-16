@@ -7,18 +7,6 @@ weight: 2
 
 <h1>About Us</h1>
 
-<!-- ## What is Andaze ?
-
-Leveraging IT Tech from Around the World
-We create the best products by communicating with users.
-and communicate with users to create the best products.
-We are a next-generation development company that creates optimal products by communicating with users.
-
-Andaze creates products that change common sense.
-"Andaze", which creates products that change the way we think about the world. -->
-
-<!-- ## About Us -->
-
 <table>
 
 <tbody>
@@ -32,8 +20,8 @@ Andaze creates products that change common sense.
 <th class="w-1/3 font-bold">Location</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
-<li class="p-0 mt-0 mb-4"> ＜head office＞<br>10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo</li>
-<li class="p-0 mt-0">＜development base＞<br>5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo
+<li class="p-0 mt-0 mb-4"><span class="font-bold ">head office</span><br>10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo</li>
+<li class="p-0 mt-0"><span class="font-bold ">development base</span><br>5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo
 WeWork Hanzomon PREXSouth 2F</li>
 </ul>
 </td>

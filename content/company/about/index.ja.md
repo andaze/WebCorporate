@@ -7,18 +7,6 @@ weight: 2
 
 <h1>会社情報</h1>
 
-<!-- ## アンダーズとは
-
-世界中のITテックを活用し
-ユーザーとのコミュニケーションにより
-最適なプロダクトをつくり上げる、
-次世代型開発会社。
-
-常識を変えるプロダクトを生み出す
-「アンダーズ」をご体感ください。 -->
-
-<!-- ## 会社情報 -->
-
 <table>
 
 <tbody>
@@ -37,8 +25,8 @@ weight: 2
 <th class="w-1/3 font-bold">所在地</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
-<li class="p-0 mt-0 mb-4">＜本社＞〒 102-0083<br>東京都千代田区麹町 2-10-3 エキスパートオフィス 1F</li>
-<li class="p-0 mt-0">＜開発拠点＞〒 102-0083<br>東京都千代田区麹町二丁目5−１ WeWork半蔵門tdREXSouth 2F</li>
+<li class="p-0 mt-0 mb-4"><span class="font-bold block">本社</span>〒 102-0083<br>東京都千代田区麹町 2-10-3 エキスパートオフィス 1F</li>
+<li class="p-0 mt-0"><span class="font-bold block">開発拠点</span>〒 102-0083<br>東京都千代田区麹町二丁目5−１ WeWork半蔵門tdREXSouth 2F</li>
 </ul>
 </td>
 </tr>
