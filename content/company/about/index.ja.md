@@ -73,7 +73,7 @@ weight: 2
 
 <tr class="flex p-8 border-0">
 <th class="w-1/3 font-bold">ウェブサイト</td>
-<td class="w-2/3 p-0"><a href="https://www.andaze.com/ja/">https://andaze.com</a></td>
+<td class="w-2/3 p-0"><a href="https://andaze.com/ja/">https://andaze.com</a></td>
 </tr>
 
 <tr class="flex p-8 border-0 bg-gray-50">

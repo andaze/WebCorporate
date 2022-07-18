@@ -72,7 +72,7 @@ url     = "reason"
 weight  =  1
 [[Languages.en.menu.main]]
 name   = "Recruit"
-url    = "https://www.andaze.com/job/en/"
+url    = "https://andaze.com/job/en/"
 weight = 7
 identifier = "recruit"
 post = "<i class='fi-xwsuxl-external-link-solid ml-1'></i>"
@@ -101,7 +101,7 @@ url     = "reason"
 weight  =  1
 [[Languages.ja.menu.main]]
 name   = "採用情報"
-url    = "https://www.andaze.com/job/ja/"
+url    = "https://andaze.com/job/ja/"
 weight = 7
 post = "<i class='fi-xwsuxl-external-link-solid ml-1'></i>"
 identifier = "recruit"

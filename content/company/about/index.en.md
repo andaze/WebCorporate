@@ -69,7 +69,7 @@ WeWork Hanzomon PREXSouth 2F</li>
 
 <tr class="flex p-8 border-0 bg-gray-50">
 <th class="w-1/3 font-bold">Website</td>
-<td class="w-2/3 p-0"><a href="https://www.andaze.com/en/">https://andaze.com</a></td>
+<td class="w-2/3 p-0"><a href="https://andaze.com/en/">https://andaze.com</a></td>
 </tr>
 
 <tr class="flex p-8 border-0">
