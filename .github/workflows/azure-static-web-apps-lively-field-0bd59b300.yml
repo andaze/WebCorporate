@@ -30,12 +30,12 @@ jobs:
       - name: Build WebCoporates
         run: "npm install && hugo --minify"
         env:
-          HUGO_BASEURL: "https://dev.andaze.com"
+          HUGO_BASEURL: "https://andaze.com"
 
       - name: Build WebJobs
         run: cd hugo-jobs && hugo --minify && mv -f public ../public/job
         env:
-          HUGO_BASEURL: "https://dev.andaze.com/job"
+          HUGO_BASEURL: "https://andaze.com/job"
 
       - name: Build And Deploy
         id: builddeploy
