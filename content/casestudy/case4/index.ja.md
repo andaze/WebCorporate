@@ -8,6 +8,7 @@ headerImage:
     imageName: "case_4.png"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # 大塚倉庫様「配送みえる化」で物流の健康状態を見せる。

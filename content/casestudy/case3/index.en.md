@@ -8,6 +8,7 @@ headerImage:
     imageName: "case_3.png"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # Otsuka Warehouse Co.,Ltd. Contact easily from a variety of venues with the "Inquiry multi-chat function".

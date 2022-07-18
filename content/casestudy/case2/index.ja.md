@@ -8,6 +8,7 @@ headerImage:
     imageName: "case_2.png"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # 大塚倉庫様 クールなデザインの「障害モニター」で秘密組織の一員を体験。

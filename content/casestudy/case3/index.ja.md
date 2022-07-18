@@ -8,6 +8,7 @@ headerImage:
     imageName: "case_3.png"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # 大塚倉庫様「問い合わせマルチチャット機能」で多彩な場から手軽に連絡。

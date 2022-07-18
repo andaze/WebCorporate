@@ -8,6 +8,7 @@ headerImage:
     imageName: "case_2.png"
     imageTitle: ""
     imageDescription: ""
+draft: true
 ---
 
 # Otsuka Warehouse Co.,Ltd. Experience being a member of a secret organization with the cool design of the "Disability Monitor".
