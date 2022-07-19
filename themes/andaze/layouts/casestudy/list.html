@@ -18,34 +18,19 @@
     <div class="container mx-auto px-5 lg:px-28 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
         {{ partial "breadcrumbs.html" . }}
     </div>
-    <div class="container mx-auto px-5 lg:px-28 mb-24">
-    
-        <div>
-            {{ .Scratch.Set "section" "casestudy" }}
-                <div class="text-left mb-6">
-                    {{ partial "atom-services-listpage-title.html" . }}
-                </div>
-                {{ partial "organism-section-contents.html" . }}
-            {{ .Scratch.Delete "section" }}
-        </div>
+    <div class="container mx-auto px-5 lg:px-28 mb-24 grid gap-y-12 md:gap-y-24">
         
+        {{ .Scratch.Set "section" "casestudy" }}
+        {{ partial "organism-lists-lattice.html" . }}
+        {{ .Scratch.Delete "section" }}
 
-        <div class="mb-20">
-            {{ .Scratch.Set "section" "services" }}
-                <div class="text-left mb-8">
-                    {{ partial "atom-services-listpage-title.html" . }}
-                </div>
-                {{ partial "organism-section-contents.html" . }}
-            {{ .Scratch.Delete "section" }}
-        </div>
-
-        <div class="mb-20">
-            {{ .Scratch.Set "section" "solution" }}
-                <div class="text-left mb-6">
-                    {{ partial "atom-services-listpage-title.html" . }}
-                </div>
-                {{ partial "organism-section-contents.html" . }}
-            {{ .Scratch.Delete "section" }}
-        </div>
+        {{ .Scratch.Set "section" "services" }}
+        {{ partial "organism-lists-lattice.html" . }}
+        {{ .Scratch.Delete "section" }}
+    
+        {{ .Scratch.Set "section" "solution" }}
+        {{ partial "organism-lists-lattice.html" . }}
+        {{ .Scratch.Delete "section" }}
+        
     </div>
 {{ end }}
