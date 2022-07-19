@@ -1,10 +1,14 @@
+{{ $class := "" }}
+{{ if ne (.Page.Params.kind) ("service") }}
+    {{ $class = "hidden" }}
+{{ end }}
 
 <a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border w-full">
     <div class="w-full h-fit overflow-hidden pt-2 px-2 md:pt-5 md:px-5">
         {{ partial "atom-service-img.html" . }}
         <div class="text-gray-400 text-xs">
             {{ partial "atom-service-title.html" . }}
-            <h3 class="pb-6">{{.Page.Params.subtitle  }}</h3>
+            <h3 class="pb-6 {{ $class }}">{{ .Page.Params.subtitle }}</h3>
         </div>
     </div>
 </a>
