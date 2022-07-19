@@ -19,10 +19,10 @@
         {{ partial "breadcrumbs.html" . }}
     </div>
     <div class="container mx-auto px-5 lg:px-28 mb-24">
-
+        
         <div class="mb-20">
-            {{ .Scratch.Set "section" "services" }}
-                <div class="text-left mb-8">
+            {{ .Scratch.Set "section" "solution" }}
+                <div class="text-left mb-6">
                     {{ partial "atom-services-listpage-title.html" . }}
                 </div>
                 {{ partial "organism-section-contents.html" . }}
@@ -30,8 +30,8 @@
         </div>
 
         <div class="mb-20">
-            {{ .Scratch.Set "section" "solution" }}
-                <div class="text-left mb-6">
+            {{ .Scratch.Set "section" "services" }}
+                <div class="text-left mb-8">
                     {{ partial "atom-services-listpage-title.html" . }}
                 </div>
                 {{ partial "organism-section-contents.html" . }}
