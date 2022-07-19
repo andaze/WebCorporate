@@ -24,21 +24,24 @@
                 <h2>{{ .Title }}</h2>
                 <div #swiperRef="" class="swiper professionalSwiper">
                     <div class="swiper-wrapper">
-                    {{ range .Pages }}
+                        {{ range .Pages }}
                             <div class="swiper-slide mb-10">
-                            <img class="w-48 h-72 object-cover m-0" src="{{ .Permalink }}{{.Page.Params.image}}" alt="Image Not Available">
-                            <div class="flex flex-col mt-4">
-                                <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
-                                <p class="m-0">{{.Page.Params.position}}</p>
+                                <img class="w-48 h-72 object-cover m-0" src="{{ .Permalink }}{{.Page.Params.image}}" alt="Image Not Available">
+                                <div class="flex flex-col mt-4">
+                                    <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
+                                    <p class="m-0">{{.Page.Params.position}}</p>
+                                </div>
                             </div>
-                        </div>
-                    {{ end }}
-                </div>
+                        {{ end }}
+                    </div>
                     <div class="flex justify-between w-3/5 mx-auto">
                         <div alt="Previous" class="professionalPrevious w-14 font-bold text-xl">←</div>
+                        <div class="progressbar relative w-3/5 h-2 mt-2.5 bg-gray-200 overflow-hidden">
+                            <span class="progressbar_in inline-block absolute inset-0 w-full bg-gray-700 scale-x-0 origin-left ease-linear"></span>
+                        </div>
                         <div alt="Next" class="professionalNext w-14 font-bold text-xl text-center">→</div>
                     </div>
-                    </div>
+                </div>
                 {{ end }}
                 {{ .Scratch.Delete "section" }}
             {{ end }}
