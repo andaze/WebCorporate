@@ -45,6 +45,14 @@ export function activeSwiper() {
     var sustainabilitySwiper = new Swiper(".professionalSwiper", {
         slidesPerView: sliderView,
         spaceBetween: 30,
+        navigation: {
+            nextEl: ".professionalNext",
+            prevEl: ".professionalPrevious",
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
         loop: true,
         loopAdditionalSlides: 1,
         speed: 800,
