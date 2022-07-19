@@ -7,6 +7,7 @@ headerImage:
     imageName: "database.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: データの最適化で膨大なデータベースを格納する「NOSQLデータベース開発」
 ---
 
 # AZURE COSMOS DATABASE

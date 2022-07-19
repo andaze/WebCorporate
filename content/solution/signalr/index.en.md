@@ -7,11 +7,12 @@ headerImage:
     imageName: "signalr.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: Interactive Communication Web Service Development" to make users' site browsing more comfortable
 ---
 
 # SIGNALR
 
-## Interactive Communication Web Service Development" to make users' site browsing more comfortable.
+## Interactive Communication Web Service Development" to make users' site browsing more comfortable
 
 {{< br >}}
 

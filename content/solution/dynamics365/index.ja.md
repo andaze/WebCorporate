@@ -7,6 +7,7 @@ headerImage:
     imageName: "dynamics365.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: 既存客の情報を正確に分析して販促につなげる「顧客管理CRM導入」
 ---
 
 # Dynamics365

@@ -7,6 +7,7 @@ headerImage:
     imageName: "hugo.png"
     imageTitle: ""
     imageDescription: ""
+subtitle: 安心のセキュリティでページの読み込みが早い「静的WEBサイト開発」
 ---
 
 # HUGO WEB
