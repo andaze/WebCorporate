@@ -31,9 +31,13 @@
                         {{ .Scratch.Delete "section" }}
 
                     {{ else if eq .Page.Params.type ("images")}}
+                        <div class="grid md:grid-cols-3 sm:grid-cols-2 md:gap-4 mt-10">
                             {{ range .Pages }}
+                                <div class="flex justify-center">
                                     <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-auto h-20 my-6 md:h-32 object-cover" alt="Image is not Available !">
+                                </div>
                             {{ end }}
+                        </div>
 
                     {{ else }}
                         {{ range .Pages }}
