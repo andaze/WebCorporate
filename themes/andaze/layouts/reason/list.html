@@ -29,6 +29,12 @@
                             </div>
                         {{ end }}
                         {{ .Scratch.Delete "section" }}
+
+                    {{ else if eq .Page.Params.type ("images")}}
+                            {{ range .Pages }}
+                                    <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-auto h-20 my-6 md:h-32 object-cover" alt="Image is not Available !">
+                            {{ end }}
+
                     {{ else }}
                         {{ range .Pages }}
 
