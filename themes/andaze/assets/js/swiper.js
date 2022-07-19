@@ -42,4 +42,12 @@ export function activeSwiper() {
             prevEl: ".sustainabilityPrevious",
         },
     });
+    var sustainabilitySwiper = new Swiper(".professionalSwiper", {
+        slidesPerView: sliderView,
+        spaceBetween: 30,
+        loop: true,
+        loopAdditionalSlides: 1,
+        speed: 800,
+    });
+    
 }
