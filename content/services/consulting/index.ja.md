@@ -10,6 +10,7 @@ headerImage:
     imageDescription: ""
 topText: "培ったノウハウをもとに、優れた技術を取り入れたDX戦略を立案。さまざまな業界で求められている先進的なデジタルシフトを支援します。"
 kind: service
+subtitle: ベテランコンサルタントが高い専門性を発揮 
 ---
 
 # コンサルティング　

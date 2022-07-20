@@ -7,6 +7,7 @@ headerImage:
     imageName: "blazor.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: 快適なWEB表現をご提供できる「SPAアプリ開発」
 ---
 
 # BLAZOR WEB

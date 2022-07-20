@@ -7,11 +7,12 @@ headerImage:
     imageName: "bot.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: Chatbot Development" for 24-hour automated response to help increase customer satisfaction
 ---
 
 # AZURE BOT FRAMEWORK
 
-## Chatbot Development" for 24-hour automated response to help increase customer satisfaction.
+## Chatbot Development" for 24-hour automated response to help increase customer satisfaction
 
 {{< br >}}
 

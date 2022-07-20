@@ -7,11 +7,12 @@ headerImage:
     imageName: "storage.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data
 ---
 
 # AZURE TABLE STORAGE
 
-## Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data.
+## Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data
 
 {{< br >}}
 

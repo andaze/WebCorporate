@@ -1,5 +1,5 @@
 ---
-title: "静的ウェブサイト開発 / HUGO WE"
+title: "静的ウェブサイト開発 / HUGO WEB"
 date: 2022-02-23T17:03:34+09:00
 weight: 9
 cardImage: hugo.png
@@ -7,6 +7,7 @@ headerImage:
     imageName: "hugo.png"
     imageTitle: ""
     imageDescription: ""
+subtitle: 安心のセキュリティでページの読み込みが早い「静的WEBサイト開発」
 ---
 
 # HUGO WEB

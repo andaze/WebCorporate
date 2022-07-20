@@ -10,6 +10,7 @@ headerImage:
     imageDescription: ""
 topText: "お客様のビジネス戦略に合わせて、より安心安全なセキュリティのもとでアクセスできるクラウドサービスの導入をサポートします。"
 kind: service
+subtitle: お客様のデジタル戦略に最適なクラウド導入をサポート
 ---
 
 # クラウド　

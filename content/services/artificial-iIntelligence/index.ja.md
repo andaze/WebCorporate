@@ -10,6 +10,7 @@ headerImage:
     imageDescription: ""
 topText: "企業が抱える経営課題を解決し、ビジネスの価値をさらに高める精度の高いAIソリューションを提供します。"
 kind: service
+subtitle: ビジネス価値をさらに高める、精度の高いAIソリューションをご提供
 ---
 
 # AI（人工知能）

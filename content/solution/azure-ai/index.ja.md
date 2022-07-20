@@ -7,7 +7,7 @@ headerImage:
     imageName: "ai.jpg"
     imageTitle: ""
     imageDescription: ""
-
+subtitle: 高い予測精度で、ビジネス価値向上につながる「AI機械学習開発」
 ---
 
 # AZURE AI

@@ -7,6 +7,7 @@ headerImage:
     imageName: "blazor.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: SPA application development" that can provide comfortable web expression
 ---
 
 # BLAZOR WEB

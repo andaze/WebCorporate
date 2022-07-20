@@ -7,7 +7,7 @@ headerImage:
     imageName: "amp.jpg"
     imageTitle: ""
     imageDescription: ""
-
+subtitle: WEBページが表示されるまでの待ち時間を短縮する「モバイルコンテンツ高速化」
 ---
 
 # AMP WEB
