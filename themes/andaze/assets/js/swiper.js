@@ -42,4 +42,33 @@ export function activeSwiper() {
             prevEl: ".sustainabilityPrevious",
         },
     });
+
+    var bar = document.querySelector('.progressbar_in');
+    var speed = 5000;
+    var sustainabilitySwiper = new Swiper(".professionalSwiper", {
+        slidesPerView: sliderView,
+        spaceBetween: 30,
+        on: {
+            slideChangeTransitionStart: function () {
+                bar.style.transitionDuration = '0s',
+                bar.style.transform = 'scaleX(0)'
+            },
+            slideChangeTransitionEnd: function () {
+                bar.style.transitionDuration = speed + 'ms',
+                bar.style.transform = 'scaleX(1)'
+            },
+        },
+        navigation: {
+            nextEl: ".professionalNext",
+            prevEl: ".professionalPrevious",
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        loopAdditionalSlides: 1,
+        speed: 800,
+    });
+    
 }
