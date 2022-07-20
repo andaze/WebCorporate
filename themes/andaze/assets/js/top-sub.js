@@ -60,7 +60,7 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
           loading_background.style.opacity = 0;
           loading_background.style.visibility = "invisible";
           
-        }, 500);
+        }, 1000);
         
       })
 
@@ -87,7 +87,7 @@ hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight)
       loading_background.style.opacity = 0;
       loading_background.style.visibility = "invisible";
 
-    }, 500);
+    }, 1000);
 
   }
 
