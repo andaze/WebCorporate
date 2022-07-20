@@ -6,6 +6,7 @@ headerVideo:
     videoName: "service"
     videoTitle: "Case study"
     videoDescription: ""
+footerTitileHidden: true
 ---
 
 # 事例一覧
