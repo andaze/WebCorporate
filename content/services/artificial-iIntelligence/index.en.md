@@ -9,6 +9,7 @@ headerImage:
     imageDescription: ""
 topText: "We provide highly accurate AI solutions that solve business challenges and further enhance business value."
 kind: service
+subtitle: Providing highly accurate AI solutions that further enhance business value
 ---
 
 # AI (Artificial Intelligence)

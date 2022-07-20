@@ -10,6 +10,7 @@ headerImage:
     imageDescription: ""
 topText: "ビジネスを深く理解し、UIやUXに精通したプロフェッショナルチームが、使いやすさと高い満足度をかね備えたプロダクト開発に寄り添います。"
 kind: service
+subtitle: 心地よく快適で、使いやすいプロダクト開発をサポート
 ---
 
 # UI/UXデザイン

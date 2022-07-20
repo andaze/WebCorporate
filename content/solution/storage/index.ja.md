@@ -7,6 +7,7 @@ headerImage:
     imageName: "storage.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: 指数関数的に増加するデータを安価でスピーディーに解析できる「ビッグデータ分析開発」
 ---
 
 # AZURE TABLE STORAGE

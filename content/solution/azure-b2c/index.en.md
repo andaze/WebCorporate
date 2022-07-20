@@ -7,6 +7,7 @@ headerImage:
     imageName: "b2c.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: Superior Subject Authentication Service to Protect Sensitive Information from Hackers
 ---
 
 # AZURE B2C

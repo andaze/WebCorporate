@@ -7,6 +7,7 @@ headerImage:
     imageName: "b2c.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: ハッカーから機密情報を守る、優れた主体認証サービス
 ---
 
 # AZURE B2C

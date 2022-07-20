@@ -8,6 +8,7 @@ headerImage:
     imageTitle: ""
     imageDescription: ""
 kind: service
+subtitle: 多彩なメンバーの高いスキルを投入
 ---
 
 # シェアードチーム  

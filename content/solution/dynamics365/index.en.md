@@ -7,6 +7,7 @@ headerImage:
     imageName: "dynamics365.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: Introduction of Customer Relationship Management CRM" for accurate analysis of information on existing customers for sales promotion.
 ---
 
 # Dynamics365

@@ -8,6 +8,7 @@ headerImage:
     imageTitle: ""
     imageDescription: ""
 kind: service
+subtitle: A diverse team of highly skilled professionals
 ---
 
 # Shared Team

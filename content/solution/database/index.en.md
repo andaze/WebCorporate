@@ -7,11 +7,12 @@ headerImage:
     imageName: "database.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: NOSQL Database Development" for storing huge databases with data optimization
 ---
 
 # AZURE COSMOS DATABASE
 
-## NOSQL Database Development" for storing huge databases with data optimization.
+## NOSQL Database Development" for storing huge databases with data optimization
 
 {{< br >}}
 

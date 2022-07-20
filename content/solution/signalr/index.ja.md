@@ -7,6 +7,7 @@ headerImage:
     imageName: "signalr.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: ユーザーのサイト閲覧をより快適にする「双方向通信WEBサービス開発」
 ---
 
 # SIGNALR

@@ -7,7 +7,7 @@ headerImage:
     imageName: "amp.jpg"
     imageTitle: ""
     imageDescription: ""
-
+subtitle: Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
 ---
 
 # AMP WEB

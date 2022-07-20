@@ -7,6 +7,7 @@ headerImage:
     imageName: "devexpress.jpg"
     imageTitle: ""
     imageDescription: ""
+subtitle: 使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発
 ---
 
 # DEVEXPRESS
