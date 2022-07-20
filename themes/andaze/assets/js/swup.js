@@ -57,10 +57,10 @@ async function init() {
 
     if (document.URL.match('/casestudy/case4/')) {
         header_image.style.objectPosition = "0% 40%";
-    } else if ((document.URL.match('/company/message/')) | (document.URL.match('/sustainability/message/'))) { 
-        header_image.style.objectPosition = "50% 50%";
+    } else if (document.URL.match('/company/message/')) { 
+        header_image.style.objectPosition = "right";
     }
-
+    
 }
 
 swup.on('contentReplaced', init);
