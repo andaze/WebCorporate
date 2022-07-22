@@ -54,8 +54,6 @@ html.is-animating .transition-fade {
 
 p {
   line-height: 1.75;
-  text-align: justify;
-  text-justify: inter-ideograph; /* IE用 */
 }
 
 h1 {
