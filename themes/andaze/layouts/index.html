@@ -21,7 +21,9 @@
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
             {{ partial "organism-section-white-transparent-top.html" .}}
             {{ .Scratch.Set "backgroundTheme" "long" }}
-              {{ partial "atom-irnews-button.html" .}}
+              <div class="text-center sm:text-left">
+                {{ partial "atom-irnews-button.html" .}}
+              </div>
             {{ .Scratch.Delete "backgroundTheme"}}
           {{ end }}
           {{ .Scratch.Delete "section" }}
@@ -35,7 +37,9 @@
             {{ partial "organism-section-white-transparent-top.html" .}}
             {{ partial "organism-section-cards-part.html" . }}
             {{ .Scratch.Set "backgroundTheme" "long" }}
-              {{ partial "atom-irnews-button.html" .}}
+              <div class="text-center sm:text-left">
+                {{ partial "atom-irnews-button.html" .}}
+              </div>
             {{ .Scratch.Delete "backgroundTheme"}}
           {{ end }}
           {{ .Scratch.Delete "section" }}
