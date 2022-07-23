@@ -1,5 +1,5 @@
 {{ $class := "" }}
-{{ if eq (.Scratch.Get "section") ("solution") }}
+{{ if or (eq (.Scratch.Get "section") ("solution")) (eq (.Scratch.Get "section") ("recruit")) }}
     {{ $class = "text-white" }}
 {{ end }}
 

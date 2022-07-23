@@ -2,7 +2,17 @@
 <html class="scroll-smooth">
 {{- partial "head.html" . -}}
 
-<body {{ if .IsHome }} class="bg-black" {{ end }}>
+{{ $class := "" }}
+{{ if and (eq ( print site.Language) ("ja")) (.IsHome) }}
+  {{ $class = "text-justify bg-black" }}
+{{ else if eq ( print site.Language) ("ja") }}
+  {{ $class = "text-justify" }}
+{{ else if .IsHome  }}
+  {{ $class = "bg-black" }}
+{{ end }}
+
+
+<body class="{{ $class }}">
   {{- partial "header.html" . -}}
 
   <!-- ローディング画面 -->
