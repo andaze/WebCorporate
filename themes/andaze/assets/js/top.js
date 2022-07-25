@@ -341,6 +341,8 @@ export function kv_main() {
 
     // オブジェクトをシーンに追加
     scene.add( mesh );
+      // ローディング画面除去
+      removeLoadingEnd();
 
 
     // オブジェクトを配列（raycaster用）に追加
