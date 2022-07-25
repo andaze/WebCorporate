@@ -26,10 +26,7 @@ const swup = new Swup({
     ]
 });
 
-window.is_bottom = false;
-if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
-    is_bottom = !is_bottom
-}
+
 
 init();
 
