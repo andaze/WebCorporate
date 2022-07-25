@@ -8,7 +8,7 @@ import gsap from 'gsap';
 // ---------------------------------------------------------------------------------------------
 
 // 初回訪問判定フラグ
-var first_visit = true;
+export var first_visit = true;
 
 var is_bottom = false;
 if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
@@ -16,7 +16,7 @@ if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCo
 }
 
 const loading_icon = document.getElementById("loading_icon");
-const loading_background = document.getElementById("loading");
+export const loading_background = document.getElementById("loading");
 
 loading_background.style.opacity = 1;
 loading_icon.style.visibility = "visible";
@@ -1322,28 +1322,18 @@ export function kv_main() {
       // 初回訪問時
       if (first_visit) {
         
-        if (!is_bottom) {
+        if (is_bottom) {
 
-          // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "invisible";
-      
-        } else {
+          // ロード画面を表示
           loading_background.style.opacity = 1;
-          
-          // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "invisible";
       
-        }
-      
-        first_visit = !first_visit
-      
-      } else {
-      
+        } 
+
         // ロード画面を非表示
         loading_background.style.opacity = 0;
         loading_background.style.visibility = "invisible";
+      
+        first_visit = !first_visit
       
       }
     }
