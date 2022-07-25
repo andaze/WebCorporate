@@ -2,6 +2,72 @@ import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
+
+// ---------------------------------------------------------------------------------------------
+// ローディング画面の表示
+// ---------------------------------------------------------------------------------------------
+
+// 初回訪問判定フラグ
+var first_visit = true;
+
+var is_bottom = false;
+if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
+    is_bottom = !is_bottom
+}
+
+const loading_icon = document.getElementById("loading_icon");
+const loading_background = document.getElementById("loading");
+
+loading_background.style.opacity = 1;
+loading_icon.style.visibility = "visible";
+
+// 初回訪問時
+if (first_visit) {
+  
+  if (!is_bottom) {
+    
+    window.addEventListener('load', () => {
+      
+      window.setTimeout(() => {
+        
+        // ロード画面を非表示
+        loading_background.style.opacity = 0;
+        loading_background.style.visibility = "invisible";
+        
+      }, 1000);
+      
+    })
+
+  } else {
+    loading_background.style.opacity = 1;
+    
+    window.setTimeout(() => {
+
+      // ロード画面を非表示
+      loading_background.style.opacity = 0;
+      loading_background.style.visibility = "invisible";
+
+    }, 1000);
+
+  }
+
+  first_visit = !first_visit
+
+} else {
+
+  window.setTimeout(() => {
+
+    // ロード画面を非表示
+    loading_background.style.opacity = 0;
+    loading_background.style.visibility = "invisible";
+
+  }, 1000);
+
+}
+
+
+
+
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
