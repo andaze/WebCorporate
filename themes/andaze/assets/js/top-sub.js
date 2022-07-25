@@ -3,10 +3,6 @@ import gsap from 'gsap';
 import * as kvMain from './top.js';
 
 
-// 初回訪問判定フラグ
-window.first_visit = true;
-
-
 export function kv_sub() {
   
 // ロゴ以外の処理についてこのファイルで記述します
@@ -36,61 +32,6 @@ if (canvas) {
 var company_section_height = document.getElementById("company_section").clientHeight;
 var hidden_cover = document.getElementById("hidden_cover");
 hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
-
-// ---------------------------------------------------------------------------------------------
-// ローディング画面の表示
-// ---------------------------------------------------------------------------------------------
-
-  const loading_icon = document.getElementById("loading_icon");
-  const loading_background = document.getElementById("loading");
-
-  loading_background.style.opacity = 1;
-  loading_icon.style.visibility = "visible";
-  
-  // 初回訪問時
-  if (first_visit) {
-    
-    if (!is_bottom) {
-      
-      window.addEventListener('load', () => {
-        
-        window.setTimeout(() => {
-          
-          // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "invisible";
-          
-        }, 1000);
-        
-      })
-
-    } else {
-      loading_background.style.opacity = 1;
-      
-      window.setTimeout(() => {
-
-        // ロード画面を非表示
-        loading_background.style.opacity = 0;
-        loading_background.style.visibility = "invisible";
-
-      }, 1000);
-
-    }
-
-    first_visit = !first_visit
-
-  } else {
-
-    window.setTimeout(() => {
-
-      // ロード画面を非表示
-      loading_background.style.opacity = 0;
-      loading_background.style.visibility = "invisible";
-
-    }, 1000);
-
-  }
-
 
 
 // ---------------------------------------------------------------------------------------------
