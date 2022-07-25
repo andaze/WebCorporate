@@ -23,56 +23,6 @@ loading_icon.style.visibility = "visible";
 
 removeLoadingEnd();
 
-function removeLoadingEnd() {
-  // 初回訪問時
-  if (first_visit) {
-    
-    if (!is_bottom) {
-      
-      window.addEventListener('load', () => {
-        
-        window.setTimeout(() => {
-          
-          // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "invisible";
-          
-        }, 1000);
-        
-      })
-  
-    } else {
-      loading_background.style.opacity = 1;
-      
-      window.setTimeout(() => {
-  
-        // ロード画面を非表示
-        loading_background.style.opacity = 0;
-        loading_background.style.visibility = "invisible";
-  
-      }, 1000);
-  
-    }
-  
-    first_visit = !first_visit
-  
-  } else {
-  
-    window.setTimeout(() => {
-  
-      // ロード画面を非表示
-      loading_background.style.opacity = 0;
-      loading_background.style.visibility = "invisible";
-  
-    }, 1000);
-  
-  }
-}
-
-
-
-
-
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
@@ -1354,6 +1304,56 @@ export function kv_main() {
       }, 45000)
     }
 
+
+    // ---------------------------------------------------------------------------------------------
+    // 関数定義20　ローディング画面除去
+    // ---------------------------------------------------------------------------------------------
+
+    function removeLoadingEnd() {
+      // 初回訪問時
+      if (first_visit) {
+        
+        if (!is_bottom) {
+          
+          window.addEventListener('load', () => {
+            
+            window.setTimeout(() => {
+              
+              // ロード画面を非表示
+              loading_background.style.opacity = 0;
+              loading_background.style.visibility = "invisible";
+              
+            }, 1000);
+            
+          })
+      
+        } else {
+          loading_background.style.opacity = 1;
+          
+          window.setTimeout(() => {
+      
+            // ロード画面を非表示
+            loading_background.style.opacity = 0;
+            loading_background.style.visibility = "invisible";
+      
+          }, 1000);
+      
+        }
+      
+        first_visit = !first_visit
+      
+      } else {
+      
+        window.setTimeout(() => {
+      
+          // ロード画面を非表示
+          loading_background.style.opacity = 0;
+          loading_background.style.visibility = "invisible";
+      
+        }, 1000);
+      
+      }
+    }
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   //　関数定義 end
