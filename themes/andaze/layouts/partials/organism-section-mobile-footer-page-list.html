@@ -2,7 +2,7 @@
 {{ with .Site.GetPage "/"}}
 {{ range .Pages}}
   {{ $id:= $.Scratch.Get "index" }}
-  {{ if or (eq (.Title) ("Site Map")) (eq (.Title) ("サイトマップ")) (eq (.Title) ("Privacy Policy")) (eq (.Title) ("個人情報保護方針")) (eq (.Title) ("Terms")) (eq (.Title) ("基本利用条件")) }}
+  {{ if .Page.Params.footerTitileHidden }}
   {{ else }}
    {{ partial "molecule-section-mobile-footer-pagelist.html" (dict "context" . "id" $id) }}
    {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
