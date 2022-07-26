@@ -2,6 +2,26 @@ import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
+
+// ---------------------------------------------------------------------------------------------
+// ローディング画面の表示
+// ---------------------------------------------------------------------------------------------
+
+// 初回訪問判定フラグ
+export var first_visit = true;
+
+var is_bottom = false;
+if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
+    is_bottom = !is_bottom
+}
+
+const loading_icon = document.getElementById("loading_icon");
+export const loading_background = document.getElementById("loading");
+
+loading_background.style.opacity = 1;
+loading_icon.style.visibility = "visible";
+
+
 // ---------------------------------------------------------------------------------------------
 //　3D空間のセットアップ・オブジェクトの生成
 // ---------------------------------------------------------------------------------------------
@@ -318,39 +338,68 @@ export function kv_main() {
   //　変数定義 end
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    // オブジェクトをシーンに追加
-    scene.add( mesh );
+    new Promise((resolve) => {
+      window.setTimeout(() => {
+
+        // オブジェクトをシーンに追加
+        scene.add( mesh );
+
+        resolve();
+
+      }, 500)
+    }).then(() => {
+      window.setTimeout(() => {
+
+        // ローディング画面除去
+        removeLoadingEnd();
+
+      }, 2000)
+    }).then(() => {
+      window.setTimeout(() => {
+  
+        // // フェードイン実行（FadeIn関数）
+        FadeIn(fadein_times-1, interval_time);
+      
+        // フラグ反転
+        window.setTimeout(function(){click_flag = !click_flag}, fadein_times*interval_time);
+        window.setTimeout(function(){moving_flag = !moving_flag}, fadein_times*interval_time);
+  
+        // 初期アニメーション　パターン1
+        // サイト表示後、拡散したパーティクルが集合する
+        // gatherFromFar();
+    
+        // 初期アニメーション　パターン2
+        // サイト表示後、拡散したパーティクルが集合する
+        gather2D();
+    
+    
+        // 初期アニメーション　パターン3
+        // サイト表示後、拡散したパーティクルが集合する
+        // gather3D();
+        
+      }, 1000);
+    }).then(() => {
+      window.setTimeout(() => {
+        
+        // ロードから一定時間経過後、自動でパーティクルを拡散
+        window.setInterval(autoDiffusion, 1000)
+  
+        // ウィンドウが非アクティブの場合、アニメーション停止
+        window.addEventListener('blur', () => {
+          stopDiffusion = !stopDiffusion;
+        });
+      
+        // ウィンドウがアクティブの場合、アニメーション再開
+        window.addEventListener('focus', () => {
+          stopDiffusion = !stopDiffusion;
+        });  
+  
+      }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
+    });
 
 
     // オブジェクトを配列（raycaster用）に追加
     objects.push( mesh );
-
-
-    // 画面が読み込まれた後にフェードイン開始
-    window.setTimeout(() => {
-
-      // // フェードイン実行（FadeIn関数）
-      FadeIn(fadein_times-1, interval_time);
-    
-      // フラグ反転
-      window.setTimeout(function(){click_flag = !click_flag}, fadein_times*interval_time);
-      window.setTimeout(function(){moving_flag = !moving_flag}, fadein_times*interval_time);
-
-      // 初期アニメーション　パターン1
-      // サイト表示後、拡散したパーティクルが集合する
-      // gatherFromFar();
-  
-      // 初期アニメーション　パターン2
-      // サイト表示後、拡散したパーティクルが集合する
-      gather2D();
-  
-  
-      // 初期アニメーション　パターン3
-      // サイト表示後、拡散したパーティクルが集合する
-      // gather3D();
-
-    }, 500);
-
 
     // デバイスがPCかスマホか判別し処理を分ける
     if (typeof window.ontouchstart === "undefined") {
@@ -375,25 +424,6 @@ export function kv_main() {
     onResize();
 
     
-    // ロードから一定時間経過後、自動でパーティクルを拡散
-    window.setTimeout(() => {
-      
-      window.setInterval(autoDiffusion, 1000)
-
-      // ウィンドウが非アクティブの場合、アニメーション停止
-      window.addEventListener('blur', () => {
-        stopDiffusion = !stopDiffusion;
-      });
-    
-      // ウィンドウがアクティブの場合、アニメーション再開
-      window.addEventListener('focus', () => {
-        stopDiffusion = !stopDiffusion;
-      });  
-
-    }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
-
-
-
     // パーティクルを変色させる
     // window.setTimeout(() => {
     //   colorChangeStart(88, 0, 219, 219, 212, 0);
@@ -1283,6 +1313,30 @@ export function kv_main() {
       }, 45000)
     }
 
+
+    // ---------------------------------------------------------------------------------------------
+    // 関数定義20　ローディング画面除去
+    // ---------------------------------------------------------------------------------------------
+
+    function removeLoadingEnd() {
+      // 初回訪問時
+      if (first_visit) {
+        
+        if (is_bottom) {
+
+          // ロード画面を表示
+          loading_background.style.opacity = 1;
+      
+        } 
+
+        // ロード画面を非表示
+        loading_background.style.opacity = 0;
+        loading_background.style.visibility = "invisible";
+      
+        first_visit = !first_visit
+      
+      }
+    }
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   //　関数定義 end

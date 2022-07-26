@@ -26,10 +26,7 @@ const swup = new Swup({
     ]
 });
 
-window.is_bottom = false;
-if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
-    is_bottom = !is_bottom
-}
+
 
 init();
 
@@ -40,10 +37,21 @@ async function init() {
         // https://friconix.com/start/#display-icons
         friconix_update();
     }
+
     if (document.querySelector('#webgl')) {
+        kvMain.loading_background.style.opacity = 1;
+        if (!kvMain.first_visit) {
+            window.setTimeout(() => {
+                kvMain.loading_background.style.opacity = 0;
+                kvMain.loading_background.style.visibility = "invisible";
+            }, 2000);
+        }
         const kv_main = await kvMain.kv_main();
         const kv_sub  = await kvSub.kv_sub();
+    } else {
+        kvMain.loading_background.style.opacity = 0;
     }
+    
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
         document.querySelector('#privacy').addEventListener("click", () => {
             sendForm.btnEnableDisable();
