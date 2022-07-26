@@ -3,12 +3,14 @@ import Swiper from 'swiper/bundle';
 export function activeSwiper() {
     const breakPoint = 412;
 
-    let sustainabilitySwiper;
     let newsSwiper;
+    let casestudySwiper;
+    let sustainabilitySwiper;
     let swiperBool;
 
     window.addEventListener('load',() => {
         createNewsSwiper();
+        createCasestudySwiper();
         createSustainabilitySwiper();
         if (breakPoint < window.innerWidth){
             swiperBool = false;
@@ -20,10 +22,12 @@ export function activeSwiper() {
     window.addEventListener('resize',()=>{
         if (breakPoint < window.innerWidth && swiperBool){
             newsSwiper.destroy(false,true);
+            casestudySwiper.destroy(false,true);
             sustainabilitySwiper.destroy(false,true);
             swiperBool = false;
         } else if (breakPoint >= window.innerWidth && !(swiperBool)){
             createNewsSwiper();
+            createCasestudySwiper();
             createSustainabilitySwiper();
             swiperBool = true;
         }
@@ -50,14 +54,27 @@ export function activeSwiper() {
         });
     }
 
-    // var casestudySwiper = new Swiper(".casestudySwiper", {
-    //     slidesPerView: sliderView,
-    //     spaceBetween: 30,
-    //     navigation: {
-    //         nextEl: ".casestudyNext",
-    //         prevEl: ".casestudyPrevious",
-    //     },
-    // });
+    const createCasestudySwiper = () => {
+        casestudySwiper = new Swiper(".casestudySwiper", {
+            breakpoints: {
+                280: {
+                    slidesPerView: 1,
+                },
+                412: {
+                    slidesPerView: 2,
+                },
+                851: {
+                    slidesPerView: 3,
+                }
+            },
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".casestudyNext",
+                prevEl: ".casestudyPrevious",
+            },
+        });
+    }
+
     const createSustainabilitySwiper = () => {
         sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
             breakpoints: {
