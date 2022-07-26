@@ -8,35 +8,6 @@ export function activeSwiper() {
     let sustainabilitySwiper;
     let professionalSwiper;
     let swiperBool;
-
-    window.addEventListener('load',() => {
-        createNewsSwiper();
-        createCasestudySwiper();
-        createSustainabilitySwiper();
-        createProfessionalSwiper();
-        if (breakPoint < window.innerWidth){
-            swiperBool = false;
-        } else {
-            swiperBool = true;
-        }
-    },false);
-
-    window.addEventListener('resize',()=>{
-        if (breakPoint < window.innerWidth && swiperBool){
-            newsSwiper.destroy(false,true);
-            casestudySwiper.destroy(false,true);
-            sustainabilitySwiper.destroy(false,true);
-            professionalSwiper.destroy(false,true);
-            swiperBool = false;
-        } else if (breakPoint >= window.innerWidth && !(swiperBool)){
-            createNewsSwiper();
-            createCasestudySwiper();
-            createSustainabilitySwiper();
-            createProfessionalSwiper();
-            swiperBool = true;
-        }
-    },false);
-
     const createNewsSwiper = () => {
         newsSwiper = new Swiper(".newsSwiper", {
             breakpoints: {
@@ -139,5 +110,35 @@ export function activeSwiper() {
             speed: 800,
         });    
     }
+
+    createNewsSwiper();
+    createCasestudySwiper();
+    createSustainabilitySwiper();
+    createProfessionalSwiper();
+    
+    window.addEventListener('load',() => {
+        if (breakPoint < window.innerWidth){
+            swiperBool = false;
+        } else {
+            swiperBool = true;
+        }
+    },false);
+
+    window.addEventListener('resize',()=>{
+        if (breakPoint < window.innerWidth && swiperBool){
+            newsSwiper.destroy(false,true);
+            casestudySwiper.destroy(false,true);
+            sustainabilitySwiper.destroy(false,true);
+            professionalSwiper.destroy(false,true);
+            swiperBool = false;
+        } else if (breakPoint >= window.innerWidth && !(swiperBool)){
+            createNewsSwiper();
+            createCasestudySwiper();
+            createSustainabilitySwiper();
+            createProfessionalSwiper();
+            swiperBool = true;
+        }
+    },false);
+
 
 }
