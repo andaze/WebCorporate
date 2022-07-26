@@ -4,24 +4,24 @@ export function activeSwiper() {
     const breakPoint = 412;
 
     let sustainabilitySwiper;
-    let sustainabilitySwiperBool;
+    let swiperBool;
 
-    window.addEventListener('load',()=>{
+    window.addEventListener('load',() => {
         createSustainabilitySwiper();
         if (breakPoint < window.innerWidth){
-            sustainabilitySwiperBool = false;
+            swiperBool = false;
         } else {
-            sustainabilitySwiperBool = true;
+            swiperBool = true;
         }
     },false);
 
     window.addEventListener('resize',()=>{
-        if (breakPoint < window.innerWidth && sustainabilitySwiperBool){
+        if (breakPoint < window.innerWidth && swiperBool){
             sustainabilitySwiper.destroy(false,true);
-            sustainabilitySwiperBool = false;
-        } else if (breakPoint >= window.innerWidth && !(sustainabilitySwiperBool)){
+            swiperBool = false;
+        } else if (breakPoint >= window.innerWidth && !(swiperBool)){
             createSustainabilitySwiper();
-            sustainabilitySwiperBool = true;
+            swiperBool = true;
         }
     },false);
 
