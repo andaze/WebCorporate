@@ -60,6 +60,7 @@ h1 {
   line-height: 1.25 !important;
   position: relative;
   margin-bottom: 60px !important;
+  text-align: left;
 }
 
 h2 {
