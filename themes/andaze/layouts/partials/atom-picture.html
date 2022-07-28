@@ -1,0 +1,150 @@
+{{/*
+
+The behavior can be changed by scratch in templates that use or call this template.
+----------
+
+{{ .Scratch.Set "alt" "Foo Bar Baz" }}
+{{ .Scratch.Set "anchor" }}
+{{ .Scratch.Set "aspect-ratio" "4/3" }}
+{{ .Scratch.Set "class" "w-full" }}
+{{ .Scratch.Set "format" "webp" }}
+{{ .Scratch.Set "hint" "smart" }}
+{{ .Scratch.Set "quolity" "90" }}
+{{ .Scratch.Set "src" "https://example.com/foo.jpg" }}
+{{ .Scratch.Set "type" "full" }}
+
+*/}}
+
+{{ $src := default "none" (.Scratch.Get "src") }}
+
+{{ $image :="" }}
+{{ if .Resources.GetMatch $src }}
+{{ $image = .Resources.GetMatch $src }}
+{{ else if resources.Get $src }}
+{{ $image = resources.Get $src }}
+{{ else }}
+{{ with resources.GetRemote $src }}
+{{ with .Err }}
+{{ warnf "%s" . }}
+{{ $image = resources.GetRemote "https://source.unsplash.com/random" }}
+{{ else }}
+{{ $image = . }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ $img_jumbo := $image }}
+{{ $img_xl := $image }}
+{{ $img_lg := $image }}
+{{ $img_md := $image }}
+{{ $img_sm := $image }}
+{{ $img_xs := $image }}
+
+{{ $alt := default $image.Title (.Scratch.Get "alt") }}
+{{ $anchor := default "Smart" (.Scratch.Get "anchor") }}
+{{ $aspect_ratio := default "auto" (.Scratch.Get "aspect-ratio") }}
+{{ $class := default "w-full" (.Scratch.Get "class") }}
+{{ $format := default "webp" (.Scratch.Get "format") }}
+{{ $hint := default "photo" (.Scratch.Get "hint") }}
+{{ $quolity := default "75" (.Scratch.Get "quolity") }}
+{{ $type := default "thumbnail" (.Scratch.Get "type") }}
+
+{{ $multiply_raito_value := 0 }}
+{{ if ne "auto" $aspect_ratio }}
+{{ $raito_values := (split (humanize $aspect_ratio) " ") }}
+{{ $multiply_raito_value = div (float (index $raito_values 1)) (float (index $raito_values 0)) }}
+{{ end }}
+
+{{ if eq $type "content" }}
+
+        {{ $img_jumbo = $image.Resize (printf "%dx%d %s q%s %s %s" (int 1920) (int (mul 1920 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_xl = $image.Resize (printf "%dx%d %s q%s %s %s" (int 1600) (int (mul 1600 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_lg = $image.Resize (printf "%dx%d %s q%s %s %s" (int 1280) (int (mul 1280 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_md = $image.Resize (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_sm = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_xs = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+
+{{ else if eq $type "full" }}
+
+        {{ $img_jumbo = $image.Resize (printf "%dx%d %s q%s %s %s" (int 1920) (int (mul 1920 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_xl = $image.Resize (printf "%dx%d %s q%s %s %s" (int 1600) (int (mul 1600 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_lg = $image.Resize (printf "%dx%d %s q%s %s %s" (int 1280) (int (mul 1280 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_md = $image.Resize (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_sm = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+        {{ $img_xs = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+
+{{ else if eq $type "thumbnail-lg" }}
+
+        {{ if ne $multiply_raito_value 0 }}
+
+                {{ $img_jumbo = $image.Fill (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xl = $image.Fill (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_lg = $image.Fill (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_md = $image.Fill (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_sm = $image.Fill (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xs = $image.Fill (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+
+        {{ else }}
+
+                {{ $img_jumbo = $image.Resize (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xl = $image.Resize (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_lg = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_md = $image.Resize (printf "%dx%d %s q%s %s %s" (int 960) (int (mul 960 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_sm = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xs = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+
+        {{ end }}
+
+{{ else if eq $type "thumbnail" }}
+
+        {{ if ne $multiply_raito_value 0 }}
+
+                {{ $img_jumbo = $image.Fill (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xl = $image.Fill (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_lg = $image.Fill (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_md = $image.Fill (printf "%dx%d %s q%s %s %s" (int 480) (int (mul 480 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_sm = $image.Fill (printf "%dx%d %s q%s %s %s" (int 320) (int (mul 320 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xs = $image.Fill (printf "%dx%d %s q%s %s %s" (int 320) (int (mul 320 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+
+        {{ else }}
+
+                {{ $img_jumbo = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xl = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_lg = $image.Resize (printf "%dx%d %s q%s %s %s" (int 640) (int (mul 640 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_md = $image.Resize (printf "%dx%d %s q%s %s %s" (int 480) (int (mul 480 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_sm = $image.Resize (printf "%dx%d %s q%s %s %s" (int 320) (int (mul 320 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_xs = $image.Resize (printf "%dx%d %s q%s %s %s" (int 320) (int (mul 320 $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                
+        {{ end }}
+
+{{ end }}
+
+<picture>
+        {{ with $img_jumbo }}
+        <source media="(min-width:1920px)"
+                srcset="{{ .RelPermalink }}">
+        {{ end }}
+        {{ with $img_xl }}
+        <source media="(min-width:1600px)"
+                srcset="{{ .RelPermalink }}">
+        {{ end }}
+        {{ with $img_lg }}
+        <source media="(min-width:1280px)"
+                srcset="{{ .RelPermalink }}">
+        {{ end }}
+        {{ with $img_md }}
+        <source media="(min-width:960px)"
+                srcset="{{ .RelPermalink }}">
+        {{ end }}
+        {{ with $img_sm }}
+        <source media="(min-width:640px)"
+                srcset="{{ .RelPermalink }}">
+        {{ end }}
+        {{ with $img_xs }}
+        <img src="{{ .RelPermalink }}"
+             width="{{ .Width }}"
+             height="{{ .Height }}"
+             class="{{ $class }}"
+             alt="{{ $alt }}">
+        {{ end }}
+</picture>
