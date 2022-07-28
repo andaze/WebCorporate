@@ -54,7 +54,7 @@ export function kv_sub() {
           dark_cover.style.visibility = "visible";
       } else if (window.scrollY < target_static) {
           dark_cover.style.opacity = 0;
-          dark_cover.style.visibility = "invisible";
+          dark_cover.style.visibility = "hidden";
       }
   }
 

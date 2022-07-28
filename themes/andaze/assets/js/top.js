@@ -866,12 +866,12 @@ export function kv_main() {
 
       // タップした位置の座標を記憶（スマホ）
       if (typeof window.ontouchstart != "undefined") {
-        pushed_pos.x = event.changedTouches[0].pageX - (resized_width / 2);
-        pushed_pos.y = - (event.changedTouches[0].pageY - (resized_height / 2)) + header_height + camera.position.y;
+        pushed_pos.x = event.changedTouches[0].clientX - (resized_width / 2);
+        pushed_pos.y = - (event.changedTouches[0].clientY - (resized_height / 2)) + header_height + camera.position.y;
 
           // raycaster用マウス座標取得
-        mouse_pos.x = ( event.changedTouches[0].pageX / resized_width ) * 2 - 1;
-        mouse_pos.y = - ( event.changedTouches[0].pageY / resized_height ) * 2 + 1;
+        mouse_pos.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
+        mouse_pos.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
       }
 
 
@@ -921,8 +921,8 @@ export function kv_main() {
 
       // タップを放したした位置の座標を記憶（スマホ）
       if (typeof window.ontouchstart != "undefined") {
-        released_pos.x = event.changedTouches[0].pageX - (resized_width / 2);
-        released_pos.y = - (event.changedTouches[0].pageY - (resized_height / 2)) + header_height + camera.position.y;
+        released_pos.x = event.changedTouches[0].clientX - (resized_width / 2);
+        released_pos.y = - (event.changedTouches[0].clientY - (resized_height / 2)) + header_height + camera.position.y;
       }
 
 

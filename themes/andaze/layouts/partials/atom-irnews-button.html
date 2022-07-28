@@ -1,16 +1,19 @@
+{{ $class := "w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" }}
+
 {{ if eq (.Scratch.Get "backgroundTheme") ("white") }}
-<a href="{{ .Permalink }}" type="button" class="w-52 md:w-44 text-black hover:text-white border border-gray-800 hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mr-2 mb-2">{{ .Title }}</a>
+<a href="{{ .Permalink }}" type="button" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white {{ $class }}">{{ .Title }}</a>
 {{ else if eq (.Scratch.Get "backgroundTheme") ("black")}}
-<a href="{{ .Permalink }}" type="button" class="w-52 md:w-44 text-white hover:text-black border border-gray-500 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mr-2 mb-2">{{ .Title }}</a>
+<a href="{{ .Permalink }}" type="button" class="md:w-44 text-white hover:text-black border-gray-500 hover:bg-white bg-black {{ $class }}">{{ .Title }}</a>
 {{ else if eq (.Scratch.Get "backgroundTheme") ("long")}}
-<a href="{{ .Permalink }}" type="button" class="w-52 md:w-72 text-black hover:text-white border border-gray-500 hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mr-2 mb-2 bg-white">{{ .Title }}</a>
+<a href="{{ .Permalink }}" type="button" class="md:w-72 text-black hover:text-white border-gray-500 hover:bg-black bg-white {{ $class }}">{{ .Title }}</a>
 {{ else if eq (.Scratch.Get "buttonLink") ("recruit")}}
     {{ range where .Site.Menus.main "Identifier" "recruit" }}
     <a
+    type="button"
     href="{{ .URL }}"
     target="_blank"
     rel="noopener noreferrer"
-    class="w-52 md:w-72 bg-black text-white hover:text-black border border-gray-50 hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center"
+    class="md:w-72 bg-black text-white hover:text-black border-gray-50 hover:bg-white {{ $class }}"
     >{{ .Name }}{{ .Post }}</a>
     {{ end }}
 {{ end }}
