@@ -218,6 +218,9 @@ export function kv_main() {
 
     // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
     const interval_time = 500;
+
+    // ガイドを表示するまでの時間
+    const show_guide_time = fadein_times*interval_time+3500
     
 
     // ---------------------------------------------------------------------------------------------
@@ -382,7 +385,7 @@ export function kv_main() {
         // ガイド表示
         showGuide();
 
-      }, fadein_times*interval_time+5000)
+      }, show_guide_time)
     }).then(() => {
       window.setTimeout(() => {
         
@@ -399,7 +402,7 @@ export function kv_main() {
           stopDiffusion = !stopDiffusion;
         });  
   
-      }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
+      }, show_guide_time + 500);
     });
 
 
