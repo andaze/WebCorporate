@@ -378,6 +378,13 @@ export function kv_main() {
       }, 1000);
     }).then(() => {
       window.setTimeout(() => {
+
+        // ガイド表示
+        showGuide();
+
+      }, fadein_times*interval_time+5000)
+    }).then(() => {
+      window.setTimeout(() => {
         
         // ロードから一定時間経過後、自動でパーティクルを拡散
         window.setInterval(autoDiffusion, 1000)
