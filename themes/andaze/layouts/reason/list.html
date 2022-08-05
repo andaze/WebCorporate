@@ -24,7 +24,7 @@
                     {{ if eq .Page.Params.type ("list")}}
                         {{ .Scratch.Set "section" "services" }}
                         {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-                            <div class="my-32">
+                            <div class="my-12 sm:my-32">
                                 {{ partial "organism-section-cards-part.html" . }}
                             </div>
                         {{ end }}

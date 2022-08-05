@@ -3,13 +3,22 @@
     {{ $class = "hidden" }}
 {{ end }}
 
-<div class="bg-white shadow-xl bg-opacity-50 {{ $class }}">
-    <img class="w-full h-52 pt-6 px-6 object-cover" src="{{ .Permalink }}{{.Page.Params.cardImage}}" alt="Image Not Available">
-    <h2 class="text-black pt-6 w-fit mx-auto font-bold md:text-lg">{{ .Title }}</h2>
-    <h2 class="text-gray-500 pt-2 w-fit mx-auto font-bold md:text-lg text-left">{{ .Page.Params.titleEn }}</h2>
-    <div class="p-6">
-        <p>{{ .Page.Params.topText }}</p>
-        <div class="text-xs text-slate-500">
+{{ $heightClass := "" }}
+{{ if eq ( print site.Language) ("ja") }}
+  {{ $heightClass = "h-16" }}
+{{ else }}
+  {{ $heightClass = "h-12" }}
+{{ end }}
+
+<div class="h-[25rem] sm:h-auto bg-white shadow-xl bg-opacity-50 flex flex-col {{ $class }}">
+    <div>
+        <img class="w-full h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover" src="{{ .Permalink }}{{.Page.Params.cardImage}}" alt="Image Not Available">
+        <div class="px-2 sm:px-0 text-center {{ $heightClass }} sm:h-auto">
+            <h2 class="text-black pt-3 sm:pt-6 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Title }}</h2>
+            <h2 class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Page.Params.titleEn }}</h2>
         </div>
+    </div>
+    <div class="p-2 sm:p-6 text-xs sm:text-base h-40 sm:h-auto">
+        <p>{{ .Page.Params.topText }}</p>
     </div>
 </div>
