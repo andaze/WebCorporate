@@ -71,8 +71,6 @@ img.crossOrigin = "anonymous";
 
 // グローバル変数として定義
 window.slide_flag = false;
-window.fadein_times = 4;
-window.interval_time = 500;
 
 
 export function kv_main() {
@@ -220,6 +218,9 @@ export function kv_main() {
 
     // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
     const interval_time = 500;
+
+    // ガイドを表示するまでの時間
+    const show_guide_time = fadein_times*interval_time+3500
     
 
     // ---------------------------------------------------------------------------------------------
@@ -380,6 +381,13 @@ export function kv_main() {
       }, 1000);
     }).then(() => {
       window.setTimeout(() => {
+
+        // ガイド表示
+        showGuide();
+
+      }, show_guide_time)
+    }).then(() => {
+      window.setTimeout(() => {
         
         // ロードから一定時間経過後、自動でパーティクルを拡散
         window.setInterval(autoDiffusion, 1000)
@@ -394,7 +402,7 @@ export function kv_main() {
           stopDiffusion = !stopDiffusion;
         });  
   
-      }, fadein_times*interval_time+5000 + (randomNumbers(5, 1)*1000));
+      }, show_guide_time + 500);
     });
 
 
@@ -1335,6 +1343,41 @@ export function kv_main() {
       
         first_visit = !first_visit
       
+      }
+    }
+    
+
+    // ---------------------------------------------------------------------------------------------
+    // 関数定義21　インタラクションガイド
+    // ---------------------------------------------------------------------------------------------
+
+    function showGuide() {
+      const nav_block = document.getElementById("nav_block");
+      const circle = document.getElementById("circle");
+      const animation_nav = gsap.timeline();
+  
+      animation_nav
+      .to(circle, {
+        duration: 0.5,
+        opacity: .7,
+        y: 5,
+      })
+      .to(circle, {
+        duration: 0.5,
+        x:  anime_nav.clientWidth*0.5,
+      })
+      .to(circle, {
+        duration: 0.4,
+        opacity: 0,
+        x:  anime_nav.clientWidth*0.8,
+        y: -5,
+      });
+  
+      animation_nav.repeat(-1);
+  
+      if (slide_flag === false) {
+        nav_block.style.opacity = 1;
+        nav_block.style.visibility = "visible";
       }
     }
 
