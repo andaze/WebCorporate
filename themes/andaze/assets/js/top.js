@@ -444,7 +444,7 @@ export function kv_main() {
     function animate() {
 
       var getDeltaTime = clock.getDelta();
-
+    
       // 画面の描画毎にanimate関数を呼び出す
       requestAnimationFrame( animate );
     
@@ -1106,8 +1106,14 @@ export function kv_main() {
 
     function autoDiffusion() {
 
+      const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
+
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
-      if (!((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | stopDiffusion) {
+      if (
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        stopDiffusion | 
+        (window.scrollY > targetForStop)
+      ) {
         return;
       }
 
