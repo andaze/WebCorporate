@@ -1106,7 +1106,8 @@ export function kv_main() {
 
     function autoDiffusion() {
 
-      if (stopDiffusion) {
+      // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
+      if (!((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | stopDiffusion) {
         return;
       }
 
