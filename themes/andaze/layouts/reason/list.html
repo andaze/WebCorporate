@@ -22,6 +22,7 @@
                     {{ .Page.Params.text | markdownify }}
                     {{ .Content }}
                     {{ if eq .Page.Params.type ("list")}}
+
                         {{ .Scratch.Set "section" "services" }}
                         {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
                             <div class="my-12 sm:my-32">
@@ -31,15 +32,27 @@
                         {{ .Scratch.Delete "section" }}
 
                     {{ else if eq .Page.Params.type ("images")}}
+
                         <div class="grid md:grid-cols-3 sm:grid-cols-2 md:gap-4 mt-10">
                             {{ range .Pages }}
                                 <div class="flex justify-center">
-                                    <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-auto h-20 my-6 md:h-32 object-cover" alt="Image is not Available !">
+                                    {{ .Scratch.Set "class" "w-auto h-20 my-6 md:h-32 object-cover" }}
+                                    {{ .Scratch.Set "format" "webp" }}
+                                    {{ .Scratch.Set "hint" "smart" }}
+                                    {{ .Scratch.Set "src" .Page.Params.img }}
+                                    {{ .Scratch.Set "type" "thumbnail" }}
+                                        {{ partial "atom-picture.html" . }}
+                                    {{ .Scratch.Delete "class" }}
+                                    {{ .Scratch.Delete "format" }}
+                                    {{ .Scratch.Delete "hint" }}
+                                    {{ .Scratch.Delete "src" }}
+                                    {{ .Scratch.Delete "type" }}
                                 </div>
                             {{ end }}
                         </div>
 
                     {{ else }}
+
                         {{ range .Pages }}
 
                         {{ $class := ""}}
@@ -53,9 +66,20 @@
                                     <h3 class="text-2xl font-bold mb-6">{{ .Title }}</h3>
                                     {{ .Page.Params.text | markdownify }}
                                 </div>
-                                <img src="{{ .Permalink }}{{ .Page.Params.img }}" class="w-auto h-52 md:h-80 object-cover mt-10 lg:mt-0" alt="Image is not Available !">
+                                {{ .Scratch.Set "class" "w-auto h-52 md:h-80 object-cover mt-10 lg:mt-0" }}
+                                {{ .Scratch.Set "format" "webp" }}
+                                {{ .Scratch.Set "hint" "smart" }}
+                                {{ .Scratch.Set "src" .Page.Params.img }}
+                                {{ .Scratch.Set "type" "thumbnail-lg" }}
+                                    {{ partial "atom-picture.html" . }}   
+                                {{ .Scratch.Delete "class" }}
+                                {{ .Scratch.Delete "format" }}
+                                {{ .Scratch.Delete "hint" }}
+                                {{ .Scratch.Delete "src" }}
+                                {{ .Scratch.Delete "type" }}
                             </div>
                         </div>
+
                         {{ end }}
                     {{ end }}
                 </div>
