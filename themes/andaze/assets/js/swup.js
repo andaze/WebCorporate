@@ -64,14 +64,6 @@ async function init() {
             sendForm.sendEmail();
         });
     }
-
-    const header_image = document.getElementById('header_image');
-
-    if (document.URL.match('/casestudy/case4/')) {
-        header_image.style.objectPosition = "0% 40%";
-    } else if (document.URL.match('/company/message/')) { 
-        header_image.style.objectPosition = "right";
-    }
     
 }
 
