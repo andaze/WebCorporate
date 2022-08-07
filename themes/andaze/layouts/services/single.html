@@ -26,7 +26,19 @@
                     <div class="swiper-wrapper">
                         {{ range .Pages }}
                             <div class="swiper-slide mb-10">
-                                <img class="w-48 h-72 object-cover my-0 mx-auto" src="{{ .Permalink }}{{.Page.Params.image}}" alt="Image Not Available">
+
+                                {{ .Scratch.Set "class" "w-48 h-72 object-cover my-0 mx-auto" }}
+                                {{ .Scratch.Set "format" "webp" }}
+                                {{ .Scratch.Set "hint" "smart" }}
+                                {{ .Scratch.Set "quolity" "90" }}
+                                {{ .Scratch.Set "src" .Page.Params.image }}
+                                    {{ partial "atom-picture.html" . }}
+                                {{ .Scratch.Delete "class" }}
+                                {{ .Scratch.Delete "format" }}
+                                {{ .Scratch.Delete "hint" }}
+                                {{ .Scratch.Delete "quolity" }}
+                                {{ .Scratch.Delete "src" }}
+
                                 <div class="flex flex-col mt-4 w-48 mx-auto">
                                     <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
                                     <p class="m-0">{{.Page.Params.position}}</p>
