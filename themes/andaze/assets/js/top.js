@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
-console.log(location.pathname);
 // ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
@@ -455,7 +454,7 @@ export function kv_main() {
     
       // 画面の描画毎にanimate関数を呼び出す
       requestAnimationFrame( animate );
-    
+
       // レンダラーにシーンとカメラを追加
       renderer.render( scene, camera );
       
@@ -1118,7 +1117,7 @@ export function kv_main() {
 
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/andaze.com/ja/") | (location.pathname === "/andaze.com/en/")) | 
+        !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
         // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
         stopDiffusion | 
         (window.scrollY > targetForStop)
