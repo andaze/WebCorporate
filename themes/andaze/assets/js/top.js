@@ -2,6 +2,9 @@ import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
+console.log(location.pathname)
+console.log(location.href)
+
 // ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
@@ -1116,17 +1119,15 @@ export function kv_main() {
       const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
 
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
-      // if (
-      //   !((location.pathname === "/andaze.com/ja/") | (location.pathname === "/andaze.com/en/")) | 
-      //   // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
-      //   stopDiffusion | 
-      //   (window.scrollY > targetForStop)
-      // ) {
-      //   return;
-      // }
-      if(stopDiffusion) {
+      if (
+        !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
+        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        stopDiffusion | 
+        (window.scrollY > targetForStop)
+      ) {
         return;
       }
+
 
       // パーティクルが存在する座標範囲内を決定するための乱数生成
       pos_range_plus.x = randomNumbers(375, 0);
