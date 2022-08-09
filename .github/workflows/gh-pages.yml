@@ -3,7 +3,8 @@ name: github pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      # - main  # Set a branch to deploy
+      - '**'
   pull_request:
   workflow_dispatch:
 
@@ -22,12 +23,19 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: Build WebCoporates
+        run: "npm install && hugo --minify"
+        env:
+          HUGO_BASEURL: "https://dev.andaze.com"
+
+      - name: Build WebJobs
+        run: cd hugo-jobs && hugo --minify && mv -f public ../public/job
+        env:
+          HUGO_BASEURL: "https://dev.andaze.com/job"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        # if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
