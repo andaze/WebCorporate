@@ -25331,8 +25331,6 @@
   var TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
   // ns-hugo:/home/runner/work/WebCorporate/WebCorporate/themes/andaze/assets/js/top.js
-  console.log(location.pathname);
-  console.log(location.href);
   var first_visit = true;
   var is_bottom = false;
   if (!(location.pathname == "/WebCorporate/ja/" | location.pathname == "/WebCorporate/en/")) {
