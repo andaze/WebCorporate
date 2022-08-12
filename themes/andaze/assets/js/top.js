@@ -2,9 +2,6 @@ import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
-console.log(location.pathname)
-console.log(location.href)
-
 // ---------------------------------------------------------------------------------------------
 // ローディング画面の表示
 // ---------------------------------------------------------------------------------------------
