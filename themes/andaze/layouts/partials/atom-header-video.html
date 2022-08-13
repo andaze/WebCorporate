@@ -1,6 +1,5 @@
 {{ $videoName:= printf "%s%s" (.Page.Params.headerVideo.videoName) ".mp4" }}
-{{ $video:= .Page.Resources.GetMatch  $videoName }}
 <video playsinline muted autoplay loop class="w-screen h-full object-cover">
-    <source src="{{ .Permalink }}{{ $video }}">
+    <source src="/video/{{ $videoName }}">
 </video>
 
