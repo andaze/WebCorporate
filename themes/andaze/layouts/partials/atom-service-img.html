@@ -1,1 +1,13 @@
-<img class="object-cover w-full h-32 md:h-40" src="{{ .Permalink }}{{.Page.Params.cardImage}}" alt="Image Not Available">
+{{ .Scratch.Set "alt" "Image Not Available" }}
+{{ .Scratch.Set "class" "object-cover w-full h-32 md:h-40" }}
+{{ .Scratch.Set "format" "webp" }}
+{{ .Scratch.Set "hint" "smart" }}
+{{ .Scratch.Set "src" .Page.Params.cardImage }}
+{{ .Scratch.Set "type" "thumbnail" }}
+    {{ partial "atom-picture.html" . }}
+{{ .Scratch.Delete "alt" }}
+{{ .Scratch.Delete "class" }}
+{{ .Scratch.Delete "format" }}
+{{ .Scratch.Delete "hint" }}
+{{ .Scratch.Delete "src" }}
+{{ .Scratch.Delete "type" }}
