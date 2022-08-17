@@ -1,9 +1,89 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: ''
 webhook_url: 
-sections: 
+sections:
+- type: directory
+  path: content/work-life-balance
+  label: work-life-balance
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/terms
+  label: terms
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/sustainability
+  label: sustainability
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/solution
+  label: solution
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/sitemap
+  label: sitemap
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/services
+  label: services
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/security
+  label: security
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/recruit
+  label: recruit
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/reason
+  label: reason
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/quality
+  label: quality
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/professional-images
+  label: professional-images
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/policy
+  label: policy
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/news
+  label: news
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/casestudy
+  label: casestudy
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/company
+  label: company
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/contact
+  label: contact
+  create: all
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
