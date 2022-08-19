@@ -99,7 +99,6 @@ build:
   preview_env:
   - HUGO_VERSION=0.100.2
   - HUGO_ENV=staging
-  - ENV=staging
   - HUGO_BASEURL=/
   preview_output_directory: public
   install_dependencies_command: npm install
