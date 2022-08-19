@@ -1,13 +1,12 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: ''
+admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: document
   path: content/_index.ja.md
   label: home ja
-  match: "**/*"
 - type: document
   path: content/_index.en.md
   label: home en
