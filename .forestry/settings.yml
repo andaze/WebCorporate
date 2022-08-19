@@ -4,6 +4,13 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: content/_index.ja.md
+  label: home ja
+  match: "**/*"
+- type: document
+  path: content/_index.en.md
+  label: home en
 - type: directory
   path: content/work-life-balance
   label: work-life-balance
