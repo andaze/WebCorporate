@@ -98,10 +98,12 @@ file_template: ":filename:"
 build:
   preview_env:
   - HUGO_VERSION=0.100.2
+  - HUGO_ENV=staging
+  - ENV=staging
   preview_output_directory: public
   install_dependencies_command: npm install
   preview_docker_image: forestryio/hugo:node16
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: hugo server --port 8080 --bind 0.0.0.0 --renderToDisk -d
-    public --baseURL "/"
+  instant_preview_command: hugo server  --port 8080 --bind 0.0.0.0 --renderToDisk
+    -d public
