@@ -31,7 +31,9 @@
                                 {{ .Scratch.Set "format" "webp" }}
                                 {{ .Scratch.Set "hint" "smart" }}
                                 {{ .Scratch.Set "quolity" "90" }}
-                                {{ .Scratch.Set "src" .Page.Params.image }}
+                                {{ if .Page.Params.image }}
+                                    {{ .Scratch.Set "src" .Page.Params.image }}
+                                {{ end }}
                                     {{ partial "atom-picture.html" . }}
                                 {{ .Scratch.Delete "class" }}
                                 {{ .Scratch.Delete "format" }}

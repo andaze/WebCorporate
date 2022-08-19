@@ -39,7 +39,9 @@
                                     {{ .Scratch.Set "class" "w-auto h-20 my-6 md:h-32 object-cover" }}
                                     {{ .Scratch.Set "format" "webp" }}
                                     {{ .Scratch.Set "hint" "smart" }}
-                                    {{ .Scratch.Set "src" .Page.Params.img }}
+                                    {{ if .Page.Params.img }}
+                                        {{ .Scratch.Set "src" .Page.Params.img }}
+                                    {{ end }}
                                     {{ .Scratch.Set "type" "thumbnail" }}
                                         {{ partial "atom-picture.html" . }}
                                     {{ .Scratch.Delete "class" }}
@@ -69,7 +71,9 @@
                                 {{ .Scratch.Set "class" "w-auto h-52 md:h-80 object-cover mt-10 lg:mt-0" }}
                                 {{ .Scratch.Set "format" "webp" }}
                                 {{ .Scratch.Set "hint" "smart" }}
-                                {{ .Scratch.Set "src" .Page.Params.img }}
+                                {{ if .Page.Params.img }}
+                                    {{ .Scratch.Set "src" .Page.Params.img }}
+                                {{ end }}
                                 {{ .Scratch.Set "type" "thumbnail-lg" }}
                                     {{ partial "atom-picture.html" . }}   
                                 {{ .Scratch.Delete "class" }}

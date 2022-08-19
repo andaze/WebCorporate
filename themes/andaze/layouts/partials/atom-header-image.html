@@ -9,7 +9,9 @@
 {{ .Scratch.Set "class" $class }}
 {{ .Scratch.Set "format" "webp" }}
 {{ .Scratch.Set "hint" "smart" }}
-{{ .Scratch.Set "src" .Page.Params.headerImage.imageName }}
+{{ if .Page.Params.headerImage.imageName }}
+    {{ .Scratch.Set "src" .Page.Params.headerImage.imageName }}
+{{ end }}
 {{ .Scratch.Set "type" "full" }}
 
 {{ partial "atom-picture.html" . }}

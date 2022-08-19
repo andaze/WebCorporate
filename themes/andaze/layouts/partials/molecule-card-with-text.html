@@ -15,7 +15,9 @@
         {{ .Scratch.Set "class" "w-full h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover" }}
         {{ .Scratch.Set "format" "webp" }}
         {{ .Scratch.Set "hint" "smart" }}
-        {{ .Scratch.Set "src" .Page.Params.cardImage }}
+        {{ if .Page.Params.cardImage }}
+            {{ .Scratch.Set "src" .Page.Params.cardImage }}
+        {{ end }}
         {{ .Scratch.Set "type" "thumbnail" }}
             {{ partial "atom-picture.html" . }}
         {{ .Scratch.Delete "class" }}
