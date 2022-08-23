@@ -1,11 +1,1 @@
 {{ partial "template-section-footer.html" . }}
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
-{{ $opts := "" }}
-{{ if hugo.IsProduction }}
-    {{ $opts = dict "targetPath" "main.js" "minify" true }}
-{{ else }}
-    {{ $opts = dict "targetPath" "main.js" "minify" false }}
-{{ end }}
-{{ $built := resources.Get "js/swup.js" | js.Build $opts }}
-<script defer type="text/javascript" src="{{ $built.RelPermalink }}"></script>

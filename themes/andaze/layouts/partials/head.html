@@ -2,13 +2,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="og:image" content="{{ `img/favicon.ico` | absURL }}"/>
   <title>{{ .Title }} | {{ .Site.Title }}</title>
   {{ hugo.Generator }}
-  {{- partialCached  "googlefonts.html" . -}}
-  {{- partialCached  "tailwindcss.cdn.html" . -}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <meta name="og:image" content="{{ `img/favicon.ico` | absURL }}"/>
   <link id="favicon" rel="shortcut icon" href="{{ `img/favicon.ico` | absURL }}" type="image/png"/>
+  {{- partialCached  "googlefonts.html" . -}}
+  {{- partialCached  "tailwindcss.postcss.html" . -}}
   <script defer src="https://friconix.com/cdn/friconix.js"></script>
+  {{- partialCached  "script-mainjs.html" . -}}
 </head>
