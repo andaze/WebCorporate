@@ -1,91 +1,5 @@
-<!doctype html><html class=scroll-smooth><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><title>双方向通信ウェブサービス開発 / SIGNALR | アンダーズ株式会社</title><meta name=generator content="Hugo 0.101.0"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel=stylesheet><script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-<script>tailwind.config={theme:{extend:{zIndex:{"-1":"-1"},height:{"height for key-visual":"calc(100vh_+_20rem)","height-25rem":"25rem","height-34rem":"34rem"},backgroundImage:{interaction_guide_circle:"url('../img/clicked.svg')"},transitionDuration:{2000:"2000ms"}}}}</script><style type=text/tailwindcss>
-    
-    @tailwind base;
-@tailwind components;
-
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-
-@tailwind utilities;
-
-@layer base {
-  html {
-    font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", Meiryo, メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
-  }
-
-  .nav-tabs .nav-link.active {
-    @apply border-b-4 border-black text-black font-bold;
-  }
-}
-
-@layer components {
-  .text-size-13 {
-    font-size: 0.82rem;
-  }
-}
-
-  .list-detail-container{
-    max-width: 970px;
-    margin: 0 auto;
-  }
-  
-  .arrow-item{
-    position: relative;
-    padding-right: 30px;
-  } 
- .arrow-item::before {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    display: block;
-    width: 9px;
-    height: 9px;
-    content: '';
-    border: 1px solid rgba(0,0,0,.3);
-    border: 1px solid var(0,0,0,.3);
-    border-top: 0;
-    border-left: 0;
-    transform: rotate(-45deg);
-}
-
-p {
-  line-height: 1.75;
-}
-
-h1 {
-  line-height: 1.25 !important;
-  position: relative;
-  margin-bottom: 60px !important;
-  text-align: left;
-}
-
-h2 {
-  line-height: 1.5 !important;
-}
-
-.lg\:text-7xl {
-  line-height: 1.4 !important;
-  position: static;
-}
-
-.lg\:text-5xl {
-  line-height: 1.2 !important;
-}
-
-@media screen and (max-width: 768px) {
-  .lg\:text-5xl {
-    line-height: 1.4 !important;
-  }
-}
-    
-</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css><link rel=stylesheet href=https://unpkg.com/swiper/swiper-bundle.min.css><meta name=og:image content="https://andaze.com/img/favicon.ico"><link id=favicon rel="shortcut icon" href=https://andaze.com/img/favicon.ico type=image/png><script defer src=https://friconix.com/cdn/friconix.js></script></head><body class=text-justify><nav class="bg-black top-0 fixed w-full z-50" id=header_nav><div class="flex flex-wrap justify-between items-center mx-auto p-2"><div class="ml-3 lg:hidden flex items-center"><button class="outline-none mobile-menu-button"><svg class="w-6 h-6 text-gray-500 hover:text-white" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentcolor"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class=w-40><a href=https://andaze.com/ja class="flex items-center"><img src=https://andaze.com/img/headerLogo.png alt="Header Logo"></a></div><div class="flex items-center md:order-2 mr-5"><a class="text-white px-2" href=https://andaze.com/ja/solution/signalr/>JP</a>
+<!doctype html><html class=scroll-smooth><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=og:image content="https://andaze.com/img/favicon.ico"><title>双方向通信ウェブサービス開発 / SIGNALR | アンダーズ株式会社</title><meta name=generator content="Hugo 0.101.0"><link rel=stylesheet href=https://unpkg.com/swiper/swiper-bundle.min.css><link id=favicon rel="shortcut icon" href=https://andaze.com/img/favicon.ico type=image/png><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel=stylesheet><link href="/css/tailwind.min.09a378b2401ffc2ec0ffc4f9d40e6b3f158227ebf509152caf9461a6721b0b26.css" rel=stylesheet><script defer src=https://friconix.com/cdn/friconix.js></script>
+<script defer type=text/javascript src=https://andaze.com/main.js></script></head><body class=text-justify><nav class="bg-black top-0 fixed w-full z-50" id=header_nav><div class="flex flex-wrap justify-between items-center mx-auto p-2"><div class="ml-3 lg:hidden flex items-center"><button class="outline-none mobile-menu-button"><svg class="w-6 h-6 text-gray-500 hover:text-white" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentcolor"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class=w-40><a href=https://andaze.com/ja class="flex items-center"><img src=https://andaze.com/img/headerLogo.png alt="Header Logo"></a></div><div class="flex items-center md:order-2 mr-5"><a class="text-white px-2" href=https://andaze.com/ja/solution/signalr/>JP</a>
 <span class=text-white>/</span>
 <a class="text-white px-2" href=https://andaze.com/en/solution/signalr/>EN</a></div><div class="hidden md:hidden lg:block justify-between items-center w-full md:flex md:w-auto md:order-1" id=mobile-menu-2><ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"><li class="text-white capitalize flex"><a href=https://andaze.com/ja/reason>選ばれる理由</a></li><li class="text-white capitalize flex"><a href=https://andaze.com/ja/services>サービス</a></li><li class="text-white capitalize flex"><a href=https://andaze.com/ja/sustainability>サステナビリティ</a></li><li class="text-white capitalize flex"><a href=https://andaze.com/ja/company>会社情報</a></li><li class="text-white capitalize flex"><a href=https://andaze.com/job/ja/ target=_blank rel="noopener noreferrer">採用情報</a>
 <i class='fi-xwsuxl-external-link-solid ml-1'></i></li><li class="text-white capitalize flex"><a href=https://andaze.com/ja/contact>お問い合わせ</a></li></ul></div></div><div class="hidden mobile-menu overflow-y-scroll h-screen w-screen pb-14"><ul class="mt-6 mb-6"><li class="text-white p-3 pl-8"><a href=https://andaze.com/ja/reason>選ばれる理由</a></li><li class="text-white p-3 pl-8"><a href=https://andaze.com/ja/services>サービス</a></li><li class="text-white p-3 pl-8"><a href=https://andaze.com/ja/sustainability>サステナビリティ</a></li><li class="text-white p-3 pl-8"><a href=https://andaze.com/ja/company>会社情報</a></li><li class="text-white p-3 pl-8"><a href=https://andaze.com/job/ja/ target=_blank rel="noopener noreferrer">採用情報</a></li><li class="text-white p-3 pl-8"><a href=https://andaze.com/ja/contact>お問い合わせ</a></li></ul><hr><div class="text-white flex text-sm p-4 items-center"><a href=https://twitter.com/AndazeD365 target=_blank rel="noopener noreferrer" class="pr-2 font-normal text-xs text-gray-500 hover:text-white">公式ツイッター</a>
@@ -96,5 +10,4 @@ h2 {
 <img src=https://andaze.com/img/twitter.png class="text-white w-6 h-6 object-cover" alt srcset></div><div class="p-4 text-center"><hr class=opacity-25><div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-gray-500"><div class="text-center lg:text-left w-60 md:w-72 md:w-full lg-w-full mx-auto py-8"><a class="font-normal text-white opacity-50 transition duration-300 ease-in-out hover:opacity-30 text-size-13 mt-2 md:mt-0 lg:mt-0 inline-block mr-6" href=https://andaze.com/ja/policy/>個人情報保護方針</a>
 <a class="font-normal text-white opacity-50 transition duration-300 ease-in-out hover:opacity-30 text-size-13 mt-2 md:mt-0 lg:mt-0 inline-block md:mr-6" href=https://andaze.com/ja/terms/>基本利用条件</a>
 <a class="font-normal text-white opacity-50 transition duration-300 ease-in-out hover:opacity-30 text-size-13 mt-2 md:mt-0 lg:mt-0 inline-block" href=https://andaze.com/ja/sitemap/>サイトマップ</a></div><div class="text-center lg:text-right w-60 md:w-72 md:w-full lg-w-full mx-auto py-8"><a class="font-normal text-white opacity-50 transition duration-300 ease-in-out hover:opacity-30 text-[10.4px]" href=https://andaze.com>Copyright©2022 Andaze Ltd. All rights reserved.</a></div></div></div></div><button type=button class="fixed hidden border border-white inline-block p-3 bg-black text-white hover:bg-gray-800 active:bg-gray-800 bottom-20 md:bottom-5 right-5" id=btn-back-to-top><svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-4 h-4 md:w-8 md:h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentcolor" d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></button>
-<script>let mybutton=document.getElementById("btn-back-to-top");console.log(mybutton),window.onscroll=function(){scrollFunction()};function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?mybutton.style.display="block":mybutton.style.display="none"}mybutton.addEventListener("click",backToTop);function backToTop(){document.body.scrollTop=0,document.documentElement.scrollTop=0}</script></footer><script src=https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js></script>
-<script defer type=text/javascript src=https://andaze.com/main.js></script></body></html>
+<script>let mybutton=document.getElementById("btn-back-to-top");console.log(mybutton),window.onscroll=function(){scrollFunction()};function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?mybutton.style.display="block":mybutton.style.display="none"}mybutton.addEventListener("click",backToTop);function backToTop(){document.body.scrollTop=0,document.documentElement.scrollTop=0}</script></footer></body></html>
