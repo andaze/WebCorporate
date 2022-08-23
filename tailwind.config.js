@@ -4,6 +4,7 @@ module.exports = {
     './public/**/*.{html,js}',
     './content/**/*.{md,html,js}',
     './themes/**/*.{md,html,js}',
+    './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
     extend: {
