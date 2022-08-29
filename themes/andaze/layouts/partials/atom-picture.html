@@ -40,6 +40,7 @@
         {{ $multiply_raito_value = div (float (index $raito_values 1)) (float (index $raito_values 0)) }}
 {{ end }}
 
+{{ $is_lazy := default true (.Scratch.Get "is-lazy") }}
 {{ $anchor := default "Smart" (.Scratch.Get "anchor") }}
 {{ $class := default "w-full" (.Scratch.Get "class") }}
 {{ $format := default "webp" (.Scratch.Get "format") }}
@@ -239,15 +240,14 @@
                 {{ else }}
                 
                         {{ $default_img := index ($img_sizes_srcset.Get (index $value "name")) "1x" }}
-                        <img src='{{ $default_img.Permalink }}'
-                        srcset='{{ $srcset }}'
+                        <img src="{{ $default_img.Permalink }}"
+                        srcset="{{ $srcset }}"
                         width="{{ $default_img.Width }}"
                         height="{{ $default_img.Height }}"
                         class="{{ $class }}"
                         alt="{{ $alt }}"
-                        loading="lazy"
+                        loading='{{ cond ($is_lazy) "lazy" "eager" }}'
                         >
-                        
                 {{ end }}
         
         {{ end }}
