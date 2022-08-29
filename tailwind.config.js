@@ -32,6 +32,7 @@ module.exports = {
           fontFamily: 'Noto Sans JP',
           fontWeight: '100 900',
           src: 'url("../font/NotoSansCJKjp-VF.min.woff2") format("woff2"), url("../font/NotoSansCJKjp-VF.min.woff") format("woff"), url("../font/NotoSansCJKjp-VF.min.ttf") format("ttf")',
+          fontDisplay: 'swap',
         }
       });
     })
