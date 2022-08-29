@@ -408,16 +408,16 @@ export function kv_main() {
     // オブジェクトを配列（raycaster用）に追加
     objects.push( mesh );
 
-    // デバイスがPCかスマホか判別し処理を分ける
-    if (typeof window.ontouchstart === "undefined") {
-      // PCの処理
-      renderer.domElement.addEventListener('mousedown', pushJudge);
-      renderer.domElement.addEventListener('mouseup', diffusion);
-    } else {
-      // スマホの処理
-      renderer.domElement.addEventListener('touchstart', pushJudge);
-      renderer.domElement.addEventListener('touchend', diffusion);
-    }
+    // // デバイスがPCかスマホか判別し処理を分ける
+    // if (typeof window.ontouchstart === "undefined") {
+    //   // PCの処理
+    //   renderer.domElement.addEventListener('mousedown', pushJudge);
+    //   renderer.domElement.addEventListener('mouseup', diffusion);
+    // } else {
+    //   // スマホの処理
+    //   renderer.domElement.addEventListener('touchstart', pushJudge);
+    //   renderer.domElement.addEventListener('touchend', diffusion);
+    // }
 
 
     // アニメーションの実行（animate関数）
