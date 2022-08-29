@@ -13,6 +13,7 @@
     {{ .Scratch.Set "src" .Page.Params.headerImage.imageName }}
 {{ end }}
 {{ .Scratch.Set "type" "full" }}
+{{ .Scratch.Set "is-lazy" false }}
 
 {{ partial "atom-picture.html" . }}
 
@@ -21,3 +22,4 @@
 {{ .Scratch.Delete "hint" }}
 {{ .Scratch.Delete "src" }}
 {{ .Scratch.Delete "type" }}
+{{ .Scratch.Delete "is-lazy" }}
