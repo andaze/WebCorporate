@@ -170,7 +170,7 @@ export function kv_main() {
     geometry.setAttribute("rand", rands);
     geometry.setAttribute("flag", flags);
     geometry.setAttribute("colorChangeFlag", colorChangeFlags);
-    
+
     geometry.setAttribute("aSpeed", speeds);
     geometry.setAttribute("aOffset", offsets);
     geometry.setAttribute("aPress", presses); 
@@ -462,6 +462,39 @@ export function kv_main() {
     //   renderer.domElement.addEventListener('touchend', diffusion);
     // }
 
+    var test = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(2000, 2000),
+      new THREE.MeshBasicMaterial()
+    );
+
+    window.addEventListener('mousedown', (e) => {
+      gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 1,
+          ease: "ease.out(1, 0.3)"
+      })
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+      })
+    });
+
+    window.addEventListener('mousemove', (event) => {
+      mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+      mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+  
+      raycaster.setFromCamera( mouse, camera );
+  
+      let intersects = raycaster.intersectObjects( [test] );
+  
+      point.x = intersects[0].point.x;
+      point.y = intersects[0].point.y;
+  
+    }, false);
 
     // アニメーションの実行（animate関数）
     animate();
