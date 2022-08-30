@@ -195,6 +195,8 @@ export function kv_main() {
         move: {type: "f", value: 0},
         time: {type: "f", value: 0},
         mousePressed: {type: "f", value: 0},
+        diffusionScale: {type: "f", value: 0},
+        circleScale: {type: "f", value: 0},
       },
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -593,6 +595,13 @@ export function kv_main() {
         mesh.material.uniforms.mouse.value = point;
         mesh.material.uniforms.time.value = time;
         mesh.material.uniforms.move.value = move;
+        if (typeof window.ontouchstart === "undefined") {
+          mesh.material.uniforms.diffusionScale.value = 90.0;
+          mesh.material.uniforms.circleScale.value = 50.0;
+        } else {
+          mesh.material.uniforms.diffusionScale.value = 40.0;
+          mesh.material.uniforms.circleScale.value = 25.0;
+        }
       }, fadein_times*interval_time-500)
 
       // Tween.jsアニメーションの実行
