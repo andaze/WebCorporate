@@ -138,6 +138,30 @@ export function kv_main() {
     }
     const colorChangeFlags = new THREE.BufferAttribute(new Float32Array(colorChangeFlag), 1);
 
+    const speed = [];
+    for (let i = 0; i < vertces; i++) {
+      speed.push(random(-1000, 1000));
+    }
+    const speeds = new THREE.BufferAttribute(new Float32Array(speed), 1);
+
+    const offset = [];
+    for (let i = 0; i < vertces; i++) {
+      offset.push(random(0.4, 1));
+    }
+    const offsets = new THREE.BufferAttribute(new Float32Array(offset), 1);
+
+    const press = [];
+    for (let i = 0; i < vertces; i++) {
+      press.push(random(0.4, 1));
+    }
+    const presses = new THREE.BufferAttribute(new Float32Array(press), 1);
+
+    const direction = [];
+    for (let i = 0; i < vertces; i++) {
+      direction.push(Math.random() > 0.5 ? 1 : -1);
+    }
+    const directions = new THREE.BufferAttribute(new Float32Array(direction), 1);
+
     
     // 各パラメータをジオメトリーに登録
     geometry.setAttribute("position", position);
@@ -146,6 +170,11 @@ export function kv_main() {
     geometry.setAttribute("rand", rands);
     geometry.setAttribute("flag", flags);
     geometry.setAttribute("colorChangeFlag", colorChangeFlags);
+    
+    geometry.setAttribute("aSpeed", speeds);
+    geometry.setAttribute("aOffset", offsets);
+    geometry.setAttribute("aPress", presses); 
+    geometry.setAttribute("aDirection", directions); 
     
     
     // マテリアルの作成
@@ -159,7 +188,13 @@ export function kv_main() {
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
         // pointTexture: { value: new THREE.TextureLoader().load( '../img/spark.png' ) }
-        pointTexture: { value: new THREE.TextureLoader().load( '../img/triangle.png' ) }
+        pointTexture: { value: new THREE.TextureLoader().load( '../img/triangle.png' ) },
+
+        mouse: {type: "v2", value: null},
+        mousePressed: {type: "f", value: 0},
+        move: {type: "f", value: 0},
+        time: {type: "f", value: 0},
+        mousePressed: {type: "f", value: 0},
       },
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -240,6 +275,14 @@ export function kv_main() {
 
     // スライド時間定義
     var slide_time;
+
+    var time = 0;
+
+    var move = 0;
+
+    var mouse = new THREE.Vector2();
+
+    var point = new THREE.Vector2();
 
     // アニメーション速度の調整用
     const clock = new THREE.Clock();
@@ -450,6 +493,8 @@ export function kv_main() {
 
     function animate() {
 
+      time++;
+
       var getDeltaTime = clock.getDelta();
     
       // 画面の描画毎にanimate関数を呼び出す
@@ -461,6 +506,9 @@ export function kv_main() {
       // パーティクル移動速度
       window.setTimeout(() =>{
         mesh.material.uniforms.u_time.value += (2.0 * getDeltaTime);
+        mesh.material.uniforms.mouse.value = point;
+        mesh.material.uniforms.time.value = time;
+        mesh.material.uniforms.move.value = move;
       }, fadein_times*interval_time-500)
 
       // Tween.jsアニメーションの実行
@@ -1091,6 +1139,10 @@ export function kv_main() {
       // 整数の乱数を生成する
       return Math.floor( Math.random() * max + 1 - min ) + min;
 
+    }
+
+    function random(a, b) {
+      return a + (b - a) * Math.random();
     }
     
 
