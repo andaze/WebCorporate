@@ -276,6 +276,14 @@ export function kv_main() {
     // スライド時間定義
     var slide_time;
 
+    // アニメーション速度の調整用
+    const clock = new THREE.Clock();
+
+
+    // ---------------------------------------------------------------------------------------------
+    //　WebGLアニメーション関係変数定義
+    // ---------------------------------------------------------------------------------------------
+
     var time = 0;
 
     var move = 0;
@@ -283,9 +291,6 @@ export function kv_main() {
     var mouse = new THREE.Vector2();
 
     var point = new THREE.Vector2();
-
-    // アニメーション速度の調整用
-    const clock = new THREE.Clock();
 
 
     // ---------------------------------------------------------------------------------------------
@@ -462,7 +467,8 @@ export function kv_main() {
     //   renderer.domElement.addEventListener('touchend', diffusion);
     // }
 
-    var test = new THREE.Mesh(
+    // マウスドラッグアニメーション
+    var target = new THREE.Mesh(
       new THREE.PlaneBufferGeometry(2000, 2000),
       new THREE.MeshBasicMaterial()
     );
@@ -489,7 +495,7 @@ export function kv_main() {
   
       raycaster.setFromCamera( mouse, camera );
   
-      let intersects = raycaster.intersectObjects( [test] );
+      let intersects = raycaster.intersectObjects( [target] );
   
       point.x = intersects[0].point.x;
       point.y = intersects[0].point.y;
