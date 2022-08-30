@@ -472,48 +472,64 @@ export function kv_main() {
       new THREE.PlaneBufferGeometry(2000, 2000),
       new THREE.MeshBasicMaterial()
     );
+    if (typeof window.ontouchstart === "undefined") {
 
-    window.addEventListener('mousedown', (e) => {
-      startAnimation();
-    });
+      window.addEventListener('mousedown', (e) => {
+        startAnimation();
+      });
+  
+      window.addEventListener('mouseup', (e) => {
+        endAnimation();
+      });
+  
+      window.addEventListener('mousemove', (event) => {
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    
+        raycaster.setFromCamera( mouse, camera );
+    
+        let intersects = raycaster.intersectObjects( [target] );
+    
+        point.x = intersects[0].point.x;
+        point.y = intersects[0].point.y;
+    
+      }, false);
+    } else {
 
-    window.addEventListener('mouseup', (e) => {
-      endAnimation();
-    });
+      window.addEventListener('touchstart', (event) => {
+  
+        mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
+        mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+    
+        raycaster.setFromCamera( mouse, camera );
+    
+        let intersects = raycaster.intersectObjects( [target] );
+    
+        point.x = intersects[0].point.x;
+        point.y = intersects[0].point.y;
 
-    window.addEventListener('mousemove', (event) => {
-      mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-      mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        startAnimation();
+      });
   
-      raycaster.setFromCamera( mouse, camera );
+      window.addEventListener('touchend', (e) => {
+        endAnimation();
+      });
   
-      let intersects = raycaster.intersectObjects( [target] );
-  
-      point.x = intersects[0].point.x;
-      point.y = intersects[0].point.y;
-  
-    }, false);
+      window.addEventListener('touchmove', (event) => {
+        mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
+        mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+    
+        raycaster.setFromCamera( mouse, camera );
+    
+        let intersects = raycaster.intersectObjects( [target] );
+    
+        point.x = intersects[0].point.x;
+        point.y = intersects[0].point.y;
+    
+      }, false);
+    }
 
-    window.addEventListener('touchstart', (e) => {
-      startAnimation();
-    });
 
-    window.addEventListener('touchend', (e) => {
-      endAnimation();
-    });
-
-    window.addEventListener('touchmove', (event) => {
-      mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
-      mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
-  
-      raycaster.setFromCamera( mouse, camera );
-  
-      let intersects = raycaster.intersectObjects( [target] );
-  
-      point.x = intersects[0].point.x;
-      point.y = intersects[0].point.y;
-  
-    }, false);
 
     // アニメーションの実行（animate関数）
     animate();
