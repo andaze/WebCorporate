@@ -502,6 +502,35 @@ export function kv_main() {
   
     }, false);
 
+    window.addEventListener('touchstart', (e) => {
+      gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 1,
+          ease: "ease.out(1, 0.3)"
+      })
+    });
+
+    window.addEventListener('touchend', (e) => {
+      gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+      })
+    });
+
+    window.addEventListener('touchmove', (event) => {
+      mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
+      mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+  
+      raycaster.setFromCamera( mouse, camera );
+  
+      let intersects = raycaster.intersectObjects( [target] );
+  
+      point.x = intersects[0].point.x;
+      point.y = intersects[0].point.y;
+  
+    }, false);
+
     // アニメーションの実行（animate関数）
     animate();
 
