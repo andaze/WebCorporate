@@ -475,11 +475,19 @@ export function kv_main() {
     if (typeof window.ontouchstart === "undefined") {
 
       window.addEventListener('mousedown', (e) => {
-        startAnimation();
+        gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 1,
+          ease: "ease.out(1, 0.3)"
+        });
       });
   
       window.addEventListener('mouseup', (e) => {
-        endAnimation();
+        gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+        });
       });
   
       window.addEventListener('mousemove', (event) => {
@@ -508,11 +516,19 @@ export function kv_main() {
         point.x = intersects[0].point.x;
         point.y = intersects[0].point.y;
 
-        startAnimation();
+        gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 1,
+          ease: "ease.out(1, 0.3)"
+        });
       });
   
       window.addEventListener('touchend', (e) => {
-        endAnimation();
+        gsap.to(material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+        });
       });
   
       window.addEventListener('touchmove', (event) => {
@@ -1507,26 +1523,6 @@ export function kv_main() {
         nav_block.style.opacity = 1;
         nav_block.style.visibility = "visible";
       }
-    }
-
-    // ---------------------------------------------------------------------------------------------
-    //  関数定義22　マウスドラッグアニメーション（WebGL）
-    // ---------------------------------------------------------------------------------------------
-
-    function startAnimation() {
-      gsap.to(material.uniforms.mousePressed, {
-        duration: 0.3,
-        value: 1,
-        ease: "ease.out(1, 0.3)"
-      });
-    }
-
-    function endAnimation() {
-      gsap.to(material.uniforms.mousePressed, {
-        duration: 0.3,
-        value: 0,
-        ease: "ease.out(1, 0.3)"
-      });
     }
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
