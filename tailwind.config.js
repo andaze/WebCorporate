@@ -35,6 +35,7 @@ module.exports = {
           fontDisplay: 'swap',
         }
       });
-    })
+    }),
+    require('tw-elements/dist/plugin'),
   ],
 }
