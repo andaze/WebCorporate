@@ -41,8 +41,17 @@ async function init() {
         friconix_update();
     }
 
-    if (document.querySelector('#webgl')) {
+    if (document.querySelector('#webgl')){
+        kvMain.loading_background.style.opacity = 1;
+        if (!kvMain.first_visit) {
+            window.setTimeout(() => {
+                kvMain.loading_background.style.opacity = 0;
+                kvMain.loading_background.style.visibility = "invisible";
+            }, 2000);
+        }
         const kv_main = await kvMain.kv_main();
+    } else {
+        kvMain.loading_background.style.opacity = 0;
     }
     
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
