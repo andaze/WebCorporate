@@ -83,12 +83,21 @@ function blackOut() {
 }
 
 
+// 画像要素を生成
+const img = new Image();
+
+// 表示させる画像のパスを指定
+if (typeof window.ontouchstart === "undefined") {
+  // PCの処理
+  img.src = "../img/logo.png";
+} else {
+  // スマホの処理
+  img.src = "../img/logo_small.png";
+}
+img.crossOrigin = "anonymous";
+
+
 export function kv_main() {
-
-
-
-
-
 
 }
 
