@@ -202,6 +202,11 @@ class Sketch {
     // 初期アニメーション　パターン2
     // サイト表示後、拡散したパーティクルが集合する
     this.gather2D();
+
+    // 初期アニメーション　パターン3
+    // サイト表示後、拡散したパーティクルが集合する
+    // this.gather3D();
+
   addObjects() {
     // ジオメトリーの作成
     this.geometry = new THREE.BufferGeometry();
@@ -442,4 +447,37 @@ class Sketch {
         gathering2d.start();
       }
   }
+
+  gather3D() {
+
+      // ジオメトリの頂点座標の配列
+      let attribute = this.mesh.geometry.attributes.position;
+      // パーティクルの座標配列
+      const particlePositions = this.mesh.geometry.attributes.position.array;
+
+      for (let i = 0; i < this.vertces; i++) {
+        particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+        particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+        particlePositions[3*i+2] = 500;
+    
+        // パーティクルの座標
+        this.particle_pos.x = attribute.getX(i)*(500/this.camera.position.z) - 8;
+        this.particle_pos.y = attribute.getY(i)*(500/this.camera.position.z) + 8;
+        this.particle_pos.z = attribute.getZ(i)*(500/this.camera.position.z);
+    
+        // オブジェクト頂点座標
+        let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
+    
+        let gathering3d = new TWEEN.Tween(vertex_position);
+        gathering3d.to({x: this.pixcel_img.position[3*i], y: this.pixcel_img.position[3*i+1], z: this.pixcel_img.position[3*i+2]},3000);
+        gathering3d.easing( TWEEN.Easing.Quadratic.Out );
+        gathering3d.onUpdate(function (object) {
+          particlePositions[3*i] = object.x;
+          particlePositions[3*i+1] = object.y;
+          particlePositions[3*i+2] = object.z;
+        });
+        gathering3d.start();
+      }
+  }
+
 }
