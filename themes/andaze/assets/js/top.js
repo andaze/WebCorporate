@@ -181,6 +181,10 @@ class Sketch {
 
     this.init();
   init() {
+
+    // オブジェクトをシーンに追加
+    this.addObjects();
+  addObjects() {
   }
   }
   }
