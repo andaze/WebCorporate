@@ -185,8 +185,75 @@ class Sketch {
     // オブジェクトをシーンに追加
     this.addObjects();
   addObjects() {
+    // ジオメトリーの作成
+    this.geometry = new THREE.BufferGeometry();
+
+    // 画像の変換（ImagePixel関数）
+    this.pixcel_img = this.ImagePixel(img, img.width, img.height, 2.0);
+
+    
+    // 変換後の画像の頂点座標情報抽出
+    const position = new THREE.BufferAttribute(
+      new Float32Array(this.pixcel_img.position),
+      3
+    );
+
+    // 変換後の画像の色情報抽出
+    const color = new THREE.BufferAttribute(
+      new Float32Array(this.pixcel_img.color),
+      3
+    );
+    
+    // 変換後の画像の透明度情報抽出
+    const alpha = new THREE.BufferAttribute(
+      new Float32Array(this.pixcel_img.alpha),
+      1
+    );
+      
+    // ランダム値の生成
+    const rand = [];
+    this.vertces = this.pixcel_img.position.length / 3;  // 頂点の数
+    for (let i = 0; i < this.vertces; i++) {
+      rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
   }
+    const rands = new THREE.BufferAttribute(new Float32Array(rand), 2);
+
+    // オブジェクト移動許可フラグの生成
+    const flag = [];
+    for (let i = 0; i < this.vertces; i++) {
+      flag.push(1);
   }
+    const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
+    
+    // 各パラメータをジオメトリーに登録
+    this.geometry.setAttribute("position", position);
+    this.geometry.setAttribute("color", color);
+    this.geometry.setAttribute("alpha", alpha);
+    this.geometry.setAttribute("rand", rands);
+    this.geometry.setAttribute("flag", flags);
+
+
+    // マテリアルの作成
+    this.material = new THREE.RawShaderMaterial({
+
+      // シェーダーの設定
+      vertexShader: document.querySelector("#js-vertex-shader").textContent,
+      fragmentShader: document.querySelector("#js-fragment-shader").textContent,
+      uniforms: {
+        u_ratio: { type: "f", value: 0.0 },
+        u_time: { type: "f", value: 0.0 },
+        u_value: { type: "f", value: 0.0 },
+        pointTexture: { value: new THREE.TextureLoader().load( '../img/triangle.png' ) }
+      },
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthTest: false
+    });
+
+    // オブジェクトの作成
+    this.mesh = new THREE.Points(this.geometry, this.material);
+
+    this.scene.add( this.mesh );
   }
 
 
