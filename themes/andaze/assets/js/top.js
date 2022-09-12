@@ -180,6 +180,7 @@ class Sketch {
 
 
     this.init();
+    this.animate();
   init() {
 
     // オブジェクトをシーンに追加
@@ -669,6 +670,38 @@ class Sketch {
         }
       }
     }
+
+  }
+
+  animate() {
+
+    this.getDeltaTime = this.clock.getDelta();
+
+    // 画面の描画毎にanimate関数を呼び出す
+    requestAnimationFrame( this.animate.bind(this) );
+  
+    // レンダラーにシーンとカメラを追加
+    this.renderer.render( this.scene, this.camera );
+    
+    // パーティクル移動速度
+    window.setTimeout(() =>{
+      this.mesh.material.uniforms.u_time.value += (2.0 * this.getDeltaTime);
+    }, this.fadein_times*this.interval_time-500)
+
+    // Tween.jsアニメーションの実行
+    TWEEN.update();
+    
+    // // 頂点の透明度の更新を許可
+    this.mesh.geometry.attributes.alpha.needsUpdate = true;
+
+    // // 頂点の座標の更新を許可
+    this.mesh.geometry.attributes.position.needsUpdate = true;
+
+    // // 頂点の色の更新を許可
+    this.mesh.geometry.attributes.color.needsUpdate = true;
+
+    // // 頂点の移動検知フラグの更新を許可
+    this.mesh.geometry.attributes.flag.needsUpdate = true;
 
   }
   }
