@@ -190,6 +190,10 @@ class Sketch {
 
     // フェードイン実行（FadeIn関数）
     this.fadeIn(this.fadein_times-1, this.interval_time);
+
+    // フラグ反転
+    window.setTimeout(function(){this.click_flag = !this.click_flag}.bind(this), this.fadein_times*this.interval_time);
+    window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
   addObjects() {
     // ジオメトリーの作成
     this.geometry = new THREE.BufferGeometry();
