@@ -108,6 +108,78 @@ img.crossOrigin = "anonymous";
 
 
 export function kv_main() {
-
+  img.addEventListener('load', () => {
+    new Sketch();
+  });
 }
 
+class Sketch {
+  constructor() {
+
+    // シーンの作成
+    this.scene = new THREE.Scene();
+
+
+    // キャンバスの作成
+    this.canvas = document.createElement("canvas");
+
+    // リサイズ後のウィンドウサイズ
+    this.resized_width = window.innerWidth;
+    this.resized_height = window.innerHeight;
+
+
+    // カメラの作成
+    this.camera = new THREE.PerspectiveCamera( 75, this.width / this.height, 0.1, 1500 );
+
+    // カメラ位置設定
+    this.camera.position.x = 0;
+    this.camera.position.y = 30;
+
+
+    // レンダラーの作成
+    this.renderer = new THREE.WebGLRenderer();
+
+    // レンダラーの高さ
+    this.renderer.setSize( this.width, this.height -  this.header_height);
+
+
+    // キャンバスをDOMツリーに追加
+    this.wrapper = document.querySelector("#webgl");
+    if (this.wrapper) {
+      this.wrapper.appendChild(this.renderer.domElement);
+    }
+
+    // アニメーション速度の調整用
+    this.clock = new THREE.Clock();
+
+
+    // フェードインを何段階で実行するか
+    this.fadein_times = 4;
+    // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
+    this.interval_time = 500;
+
+
+    // クリック許可フラグ
+    this.click_flag = false;
+
+    // オブジェクト移動許可フラグ
+    this.moving_flag = false;
+
+    // raycaster検知フラグ
+    this.detection = false;
+
+    // 自動アニメーション停止フラグ
+    this.stopDiffusion = false;
+
+    // パーティクルフラグ
+    this.slide_flag = false;
+
+
+    // パーティクルの頂点座標
+    this.particle_pos = new THREE.Vector2();
+
+
+  }
+
+
+}
