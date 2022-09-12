@@ -181,6 +181,7 @@ class Sketch {
 
     this.init();
     this.animate();
+    this.showGuide();
   init() {
 
     // オブジェクトをシーンに追加
@@ -704,5 +705,38 @@ class Sketch {
     this.mesh.geometry.attributes.flag.needsUpdate = true;
 
   }
+
+  showGuide() {
+    this.nav_block = document.getElementById("nav_block");
+    this.circle = document.getElementById("circle");
+    this.animation_nav = gsap.timeline();
+
+    this.animation_nav
+    .to(this.circle, {
+      duration: 0.5,
+      opacity: .7,
+      y: 5,
+    })
+    .to(this.circle, {
+      duration: 0.5,
+      x:  anime_nav.clientWidth*0.5,
+    })
+    .to(this.circle, {
+      duration: 0.4,
+      opacity: 0,
+      x:  anime_nav.clientWidth*0.8,
+      y: -5,
+    });
+
+    this.animation_nav.repeat(-1);
+
+    window.setTimeout(() => {
+      if (this.slide_flag === false) {
+        this.nav_block.style.opacity = 1;
+        this.nav_block.style.visibility = "visible";
+      }
+    }, this.fadein_times*this.interval_time+5000);
+  }
+
   }
 }
