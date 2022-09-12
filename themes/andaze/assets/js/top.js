@@ -184,6 +184,9 @@ class Sketch {
 
     // オブジェクトをシーンに追加
     this.addObjects();
+
+    // ローディング画面除去
+    this.removeLoadingEnd();
   addObjects() {
     // ジオメトリーの作成
     this.geometry = new THREE.BufferGeometry();
@@ -317,4 +320,23 @@ class Sketch {
 
   }
 
+  removeLoadingEnd() {
+      // 初回訪問時
+      if (first_visit) {
+        
+        if (is_bottom) {
+
+          // ロード画面を表示
+          loading_background.style.opacity = 1;
+      
+        } 
+
+        // ロード画面を非表示
+        loading_background.style.opacity = 0;
+        loading_background.style.visibility = "invisible";
+      
+        first_visit = !first_visit
+      
+      }
+  }
 }
