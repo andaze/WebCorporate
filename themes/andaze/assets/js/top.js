@@ -183,6 +183,9 @@ class Sketch {
     this.animate();
     this.showGuide();
     this.setSize();
+    this.resize();
+  }
+
   init() {
 
     // オブジェクトをシーンに追加
@@ -259,14 +262,14 @@ class Sketch {
     this.vertces = this.pixcel_img.position.length / 3;  // 頂点の数
     for (let i = 0; i < this.vertces; i++) {
       rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
-  }
+    }
     const rands = new THREE.BufferAttribute(new Float32Array(rand), 2);
 
     // オブジェクト移動許可フラグの生成
     const flag = [];
     for (let i = 0; i < this.vertces; i++) {
       flag.push(1);
-  }
+    }
     const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
     
     // 各パラメータをジオメトリーに登録
@@ -819,5 +822,30 @@ class Sketch {
       this.resized_width = window.innerWidth;
       this.resized_height = window.innerHeight;
   }
+
+  resize() {
+    this.currentWidth = window.innerWidth;
+    this.currentHeight = window.innerHeight;
+    
+    window.addEventListener("resize", function() {
+  
+      if (this.currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
+  
+        // インタラクションガイドの位置を変更。
+        if (this.currentHeight < window.innerHeight) {
+          this.nav_block.style.bottom = (this.height*0.15 + 80) + 'px';
+        } else {
+          this.nav_block.style.bottom = this.height*0.15 + 'px';
+        }
+  
+        // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
+        return;
+      }
+      
+      // ウインドウ横幅が変わったのでリサイズと見なす。
+      // 横幅を更新
+      this.currentWidth = window.innerWidth;
+      this.setSize();
+    }.bind(this));
   }
 }
