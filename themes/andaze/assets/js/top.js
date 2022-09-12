@@ -782,8 +782,8 @@ class Sketch {
       });
   
       window.addEventListener('touchmove', (event) => {
-        this.mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
-        this.mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+        this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
+        this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
     
         this.raycaster.setFromCamera( this.mouse, this.camera );
     
