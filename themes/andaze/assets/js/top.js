@@ -62,6 +62,10 @@ function randomNumbers(max, min) {
   return Math.floor( Math.random() * max + 1 - min ) + min;
 }
 
+function random(a, b) {
+  return a + (b - a) * Math.random();
+}
+
 function plusMinus() {
   let plus_and_minus = [1, -1];
   return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
@@ -180,8 +184,15 @@ class Sketch {
     // パーティクルの頂点座標
     this.particle_pos = new THREE.Vector2();
 
+    this.time = 0;
+    this.move = 0;
+    this.raycaster = new THREE.Raycaster();
+    this.mouse = new THREE.Vector2();
+    this.point = new THREE.Vector2();
+
 
     this.init();
+    this.mouseInteraction();
     this.setSize();
     this.animate();
     this.resize();
@@ -274,6 +285,32 @@ class Sketch {
       flag.push(1);
     }
     const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
+
+
+    // WebGLアニメーション用パラメータ
+    const speed = [];
+    for (let i = 0; i < this.vertces; i++) {
+      speed.push(random(-1000, 1000));
+    }
+    const speeds = new THREE.BufferAttribute(new Float32Array(speed), 1);
+
+    const offset = [];
+    for (let i = 0; i < this.vertces; i++) {
+      offset.push(random(0.4, 1));
+    }
+    const offsets = new THREE.BufferAttribute(new Float32Array(offset), 1);
+
+    const press = [];
+    for (let i = 0; i < this.vertces; i++) {
+      press.push(random(0.4, 1));
+    }
+    const presses = new THREE.BufferAttribute(new Float32Array(press), 1);
+
+    const direction = [];
+    for (let i = 0; i < this.vertces; i++) {
+      direction.push(Math.random() > 0.5 ? 1 : -1);
+    }
+    const directions = new THREE.BufferAttribute(new Float32Array(direction), 1);
     
     // 各パラメータをジオメトリーに登録
     this.geometry.setAttribute("position", position);
@@ -281,6 +318,11 @@ class Sketch {
     this.geometry.setAttribute("alpha", alpha);
     this.geometry.setAttribute("rand", rands);
     this.geometry.setAttribute("flag", flags);
+
+    this.geometry.setAttribute("aSpeed", speeds);
+    this.geometry.setAttribute("aOffset", offsets);
+    this.geometry.setAttribute("aPress", presses); 
+    this.geometry.setAttribute("aDirection", directions); 
 
 
     // マテリアルの作成
@@ -293,7 +335,14 @@ class Sketch {
         u_ratio: { type: "f", value: 0.0 },
         u_time: { type: "f", value: 0.0 },
         u_value: { type: "f", value: 0.0 },
-        pointTexture: { value: new THREE.TextureLoader().load( '../img/triangle.png' ) }
+        pointTexture: { value: new THREE.TextureLoader().load( '../img/triangle.png' ) },
+        mouse: { type: "v2", value: new THREE.Vector2(0., 0.) },
+        mousePressed: {type: "f", value: 0},
+        move: {type: "f", value: 0},
+        time: {type: "f", value: 0},
+        mousePressed: {type: "f", value: 0},
+        diffusionScale: {type: "f", value: 0},
+        circleScale: {type: "f", value: 0},
       },
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -681,6 +730,88 @@ class Sketch {
 
   }
 
+  mouseInteraction() {
+    // マウスドラッグアニメーション
+    let target = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(2000, 2000),
+      new THREE.MeshBasicMaterial()
+    );
+
+    if (typeof window.ontouchstart === "undefined") {
+
+      window.addEventListener('mousedown', (e) => {
+        gsap.to(this.material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 1,
+          ease: "ease.out(1, 0.3)"
+        });
+      });
+  
+      window.addEventListener('mouseup', (e) => {
+        gsap.to(this.material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+        });
+      });
+  
+      window.addEventListener('mousemove', (event) => {
+        this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    
+        this.raycaster.setFromCamera( this.mouse, this.camera );
+    
+        let intersects = this.raycaster.intersectObjects( [target] );
+    
+        this.point.x = intersects[0].point.x;
+        this.point.y = intersects[0].point.y;
+    
+      }, false);
+    } else {
+
+      window.addEventListener('touchstart', (event) => {
+  
+        this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
+        this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
+    
+        this.raycaster.setFromCamera( this.mouse, this.camera );
+    
+        let intersects = this.raycaster.intersectObjects( [target] );
+    
+        this.point.x = intersects[0].point.x;
+        this.point.y = intersects[0].point.y;
+
+        gsap.to(this.material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 1,
+          ease: "ease.out(1, 0.3)"
+        });
+      });
+  
+      window.addEventListener('touchend', (e) => {
+        gsap.to(this.material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+        });
+      });
+  
+      window.addEventListener('touchmove', (event) => {
+        this.mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
+        this.mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+    
+        this.raycaster.setFromCamera( this.mouse, this.camera );
+    
+        let intersects = this.raycaster.intersectObjects( [target] );
+    
+        this.point.x = intersects[0].point.x;
+        this.point.y = intersects[0].point.y;
+    
+      }, false);
+    }
+ 
+  }
+
   showGuide() {
     this.nav_block = document.getElementById("nav_block");
     this.circle = document.getElementById("circle");
@@ -796,6 +927,8 @@ class Sketch {
 
   animate() {
 
+    this.time++;
+
     this.getDeltaTime = this.clock.getDelta();
 
     // 画面の描画毎にanimate関数を呼び出す
@@ -807,7 +940,17 @@ class Sketch {
     // パーティクル移動速度
     window.setTimeout(() =>{
       this.mesh.material.uniforms.u_time.value += (2.0 * this.getDeltaTime);
-    }, this.fadein_times*this.interval_time-500)
+      this.mesh.material.uniforms.mouse.value = this.point;
+      this.mesh.material.uniforms.time.value = this.time;
+      this.mesh.material.uniforms.move.value = this.move;
+      if (typeof window.ontouchstart === "undefined") {
+        this.mesh.material.uniforms.diffusionScale.value = 90.0;
+        this.mesh.material.uniforms.circleScale.value = 50.0;
+      } else {
+        this.mesh.material.uniforms.diffusionScale.value = 40.0;
+        this.mesh.material.uniforms.circleScale.value = 25.0;
+      }
+    }, this.fadein_times*this.interval_time-500);
 
     // Tween.jsアニメーションの実行
     TWEEN.update();
