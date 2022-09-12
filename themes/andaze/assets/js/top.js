@@ -157,6 +157,8 @@ class Sketch {
     this.fadein_times = 4;
     // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
     this.interval_time = 500;
+    // ガイドを表示するまでの時間
+    this.show_guide_time = this.fadein_times*this.interval_time+3500;
 
 
     // クリック許可フラグ
@@ -182,7 +184,6 @@ class Sketch {
     this.init();
     this.setSize();
     this.animate();
-    this.showGuide();
     this.resize();
   }
 
@@ -213,6 +214,8 @@ class Sketch {
     // サイト表示後、拡散したパーティクルが集合する
     // this.gather3D();
 
+    this.showGuide();
+
     window.setTimeout(() => {
       
       // ロードから一定時間経過後、自動でパーティクルを拡散
@@ -228,7 +231,7 @@ class Sketch {
         this.stopDiffusion = !this.stopDiffusion;
       });  
 
-    }, this.fadein_times*this.interval_time+5000 + (randomNumbers(5, 1)*1000));
+    }, this.show_guide_time + 500);
   }
 
   addObjects() {
@@ -678,6 +681,38 @@ class Sketch {
 
   }
 
+  showGuide() {
+    this.nav_block = document.getElementById("nav_block");
+    this.circle = document.getElementById("circle");
+    this.animation_nav = gsap.timeline();
+
+    this.animation_nav
+    .to(this.circle, {
+      duration: 0.5,
+      opacity: .7,
+      y: 5,
+    })
+    .to(this.circle, {
+      duration: 0.5,
+      x:  anime_nav.clientWidth*0.5,
+    })
+    .to(this.circle, {
+      duration: 0.4,
+      opacity: 0,
+      x:  anime_nav.clientWidth*0.8,
+      y: -5,
+    });
+
+    this.animation_nav.repeat(-1);
+
+    window.setTimeout(() => {
+      if (this.slide_flag === false) {
+        this.nav_block.style.opacity = 1;
+        this.nav_block.style.visibility = "visible";
+      }
+    }, this.fadein_times*this.interval_time+5000);
+  }
+
   setSize() {
 
     // ウィンドウサイズを取得
@@ -789,38 +824,6 @@ class Sketch {
     // // 頂点の移動検知フラグの更新を許可
     this.mesh.geometry.attributes.flag.needsUpdate = true;
 
-  }
-
-  showGuide() {
-    this.nav_block = document.getElementById("nav_block");
-    this.circle = document.getElementById("circle");
-    this.animation_nav = gsap.timeline();
-
-    this.animation_nav
-    .to(this.circle, {
-      duration: 0.5,
-      opacity: .7,
-      y: 5,
-    })
-    .to(this.circle, {
-      duration: 0.5,
-      x:  anime_nav.clientWidth*0.5,
-    })
-    .to(this.circle, {
-      duration: 0.4,
-      opacity: 0,
-      x:  anime_nav.clientWidth*0.8,
-      y: -5,
-    });
-
-    this.animation_nav.repeat(-1);
-
-    window.setTimeout(() => {
-      if (this.slide_flag === false) {
-        this.nav_block.style.opacity = 1;
-        this.nav_block.style.visibility = "visible";
-      }
-    }, this.fadein_times*this.interval_time+5000);
   }
 
   resize() {
