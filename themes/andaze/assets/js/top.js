@@ -179,6 +179,10 @@ class Sketch {
     this.particle_pos = new THREE.Vector2();
 
 
+    this.init();
+  init() {
+  }
+  }
   }
 
 
