@@ -56,21 +56,6 @@ window.addEventListener('resize', () => {
   blackOut();
 });
 
-
-function randomNumbers(max, min) {
-  // 整数の乱数を生成する
-  return Math.floor( Math.random() * max + 1 - min ) + min;
-}
-
-function random(a, b) {
-  return a + (b - a) * Math.random();
-}
-
-function plusMinus() {
-  let plus_and_minus = [1, -1];
-  return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
-}
-
 function resizeWindow() {
   // canvasのmargin-topにheaderの高さを設定
   canvas_elment.style.marginTop = header_height + "px";
@@ -994,4 +979,18 @@ class Sketch {
       this.setSize();
     }.bind(this));
   }
+}
+
+function randomNumbers(max, min) {
+  // 整数の乱数を生成する
+  return Math.floor( Math.random() * max + 1 - min ) + min;
+}
+
+function random(a, b) {
+  return a + (b - a) * Math.random();
+}
+
+function plusMinus() {
+  let plus_and_minus = [1, -1];
+  return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
 }
