@@ -182,6 +182,7 @@ class Sketch {
     this.init();
     this.animate();
     this.showGuide();
+    this.setSize();
   init() {
 
     // オブジェクトをシーンに追加
@@ -738,5 +739,85 @@ class Sketch {
     }, this.fadein_times*this.interval_time+5000);
   }
 
+  setSize() {
+
+      // ウィンドウサイズを取得
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+
+      // ヘッダーの高さ
+      this.header_height = document.getElementById("header_nav").clientHeight;
+
+      // トップページmainタグの高さを取得してfooterのmargin-topに設定
+      this.main_height = document.getElementById("top_main").clientHeight;
+      document.querySelector("footer").style.marginTop = this.main_height + "px";
+
+
+      // ブレイクポイントの設定
+      this.width_break_point = 700;
+      this.height_break_point = 864;
+
+      this.width_break_point_sp = 1440;
+
+
+      // カメラのアスペクト比を正す
+      this.camera.aspect = this.width / (this.height -  this.header_height);
+      this.camera.updateProjectionMatrix();
+
+      // デバイスがPCの場合
+      if (typeof window.ontouchstart === "undefined") {
+        if (this.width >= this.width_break_point) {
+          this.camera.position.z = 400;
+          if (this.height <= this.height_break_point) {
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1000) - ((1200 + this.height) / this.width);
+          } else {
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 600) - ((1200 + this.height) / this.width);
+          }
+        } else {
+          this.camera.position.z = this.height / this.width * 400;
+          this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1800) - ((1200 + this.height) / this.width);
+        }
+        
+        // デバイスがモバイルの場合
+      } else {
+        if (this.width >= this.width_break_point_sp) {
+          if (this.width < this.height) {
+            this.camera.position.z = this.height / this.width * 230;
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1200 + this.height) / this.width);
+          } else {
+            if  (this.this.camera.aspect > 1.85) {
+              this.camera.position.z = this.width / this.height * 120;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
+            } else {
+              this.camera.position.z = this.width / this.height * 170;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((2800 + this.height) / this.width);
+            }
+          }
+        } else {
+          if (this.width < this.height) {
+            this.camera.position.z = this.height / this.width * 200;
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1600 + this.height) / this.width);
+            nav_block.style.bottom = this.height*0.15 + 'px';
+          } else {
+            if (this.camera.aspect > 1.8) {
+              this.camera.position.z = this.width / this.height * 120;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((3400 + this.height) / this.width);
+              nav_block.style.display = 'none'
+            } else {
+              this.camera.position.z = this.width / this.height * 170;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
+              nav_block.style.bottom = this.height*0.15 + 'px';
+            }
+          }
+        }
+      }
+
+      // レンダラーのサイズを調整する
+      this.renderer.setSize(this.width, this.height -  this.header_height);
+
+      // ウィンドウサイズ更新
+      this.resized_width = window.innerWidth;
+      this.resized_height = window.innerHeight;
+  }
   }
 }
