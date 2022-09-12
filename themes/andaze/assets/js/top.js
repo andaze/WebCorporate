@@ -194,6 +194,11 @@ class Sketch {
     // フラグ反転
     window.setTimeout(function(){this.click_flag = !this.click_flag}.bind(this), this.fadein_times*this.interval_time);
     window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
+
+    // 初期アニメーション　パターン1
+    // サイト表示後、拡散したパーティクルが集合する
+    // this.gatherFromFar();
+
   addObjects() {
     // ジオメトリーの作成
     this.geometry = new THREE.BufferGeometry();
@@ -391,4 +396,19 @@ class Sketch {
         
       }  
   }
+
+  gatherFromFar() {
+      gsap.set(this.mesh.material.uniforms.u_ratio, {
+        value: 10000.0,
+      });
+      
+      window.setTimeout(() => {
+        gsap.to(this.mesh.material.uniforms.u_ratio, {
+          value: 0.0,
+          duration: 5,
+          ease: "power4.out",
+        })
+      }, 0);
+  }
+
 }
