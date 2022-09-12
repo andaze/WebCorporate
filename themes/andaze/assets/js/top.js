@@ -256,5 +256,65 @@ class Sketch {
     this.scene.add( this.mesh );
   }
 
+  ImagePixel(path, w, h, ratio) {
+
+    // canvasの設定
+    this.ctx = this.canvas.getContext("2d");
+    this.canvas_width = w;
+    this.canvas_height = h;
+    this.canvas.width = this.canvas_width;
+    this.canvas.height = this.canvas_height;
+
+    // 画像データの描画
+    this.ctx.drawImage(path, 0, 0);
+    this.data = this.ctx.getImageData(0, 0, this.canvas_width, this.canvas_height).data;
+
+    // 座標情報
+    this.position = [];
+    // 色情報
+    this.color = [];
+    // 透明度
+    this.alpha = [];
+
+    for (let y = 0; y < this.canvas_height; y += ratio) {
+      for (let x = 0; x < this.canvas_width; x += ratio) {
+
+        // 配列内の任意の[x、y]ピクセルの位置を取得
+        this.index = (y * this.canvas_width + x) * 4;
+
+        // webglは原点が中心となり、xは右がプラス左がマイナス。yは上がプラス下がマイナス。
+        this.pX = x - this.canvas_width / 2;
+        this.pY = -(y - this.canvas_height / 2);
+        this.pZ = 0;
+
+        // カラージェネレーターで選定した色を出現させる（出現し得る色は5種類 rgb値で指定）
+        this.rgb_vals = [
+          [(88/255).toFixed(2), (0/255).toFixed(2), (219/255).toFixed(2)],
+          [(219/255).toFixed(2), (47/255).toFixed(2), (7/255).toFixed(2)],
+          [(0/255).toFixed(2), (102/255).toFixed(2), (219/255).toFixed(2)],
+          [(219/255).toFixed(2), (212/255).toFixed(2), (0/255).toFixed(2)],
+          [(0/255).toFixed(2), (219/255).toFixed(2), (144/255).toFixed(2)]
+        ];
+
+        this.rgb_val = this.rgb_vals[Math.floor(Math.random() * this.rgb_vals.length)]
+
+        this.r = this.rgb_val[0];
+        this.g = this.rgb_val[1];
+        this.b = this.rgb_val[2];
+
+
+        // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
+        this.a = this.data[this.index + 3] / 255;
+        
+        // 座標、色、透明度の値を配列に追加
+        if (this.a > 0) {
+          this.position.push(this.pX, this.pY, this.pZ), this.color.push(this.r, this.g, this.b), this.alpha.push(this.a);
+        }
+      }
+    }
+
+    return { position: this.position, color: this.color, alpha: this.alpha };
+
+  }
 
 }
