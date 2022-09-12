@@ -207,6 +207,24 @@ class Sketch {
     // サイト表示後、拡散したパーティクルが集合する
     // this.gather3D();
 
+    window.setTimeout(() => {
+      
+      // ロードから一定時間経過後、自動でパーティクルを拡散
+      window.setInterval(this.autoDiffusion.bind(this), 1000);
+
+      // ウィンドウが非アクティブの場合、アニメーション停止
+      window.addEventListener('blur', () => {
+        this.stopDiffusion = !this.stopDiffusion;
+      });
+    
+      // ウィンドウがアクティブの場合、アニメーション再開
+      window.addEventListener('focus', () => {
+        this.stopDiffusion = !this.stopDiffusion;
+      });  
+
+    }, this.fadein_times*this.interval_time+5000 + (randomNumbers(5, 1)*1000));
+  }
+
   addObjects() {
     // ジオメトリーの作成
     this.geometry = new THREE.BufferGeometry();
@@ -480,4 +498,6 @@ class Sketch {
       }
   }
 
+  autoDiffusion() {
+  }
 }
