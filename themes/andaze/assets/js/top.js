@@ -187,6 +187,9 @@ class Sketch {
 
     // ローディング画面除去
     this.removeLoadingEnd();
+
+    // フェードイン実行（FadeIn関数）
+    this.fadeIn(this.fadein_times-1, this.interval_time);
   addObjects() {
     // ジオメトリーの作成
     this.geometry = new THREE.BufferGeometry();
@@ -338,5 +341,50 @@ class Sketch {
         first_visit = !first_visit
       
       }
+  }
+
+  fadeIn(sampling_time, interval_time) {
+
+      // パーティクルの透明度の配列
+      const particleAlpha = this.mesh.geometry.attributes.alpha.array;
+      // パーティクルの移動許可フラグの配列
+      const particleFlag = this.mesh.geometry.attributes.flag.array;
+
+      // 透明ではないパーティクルの透明度を下げて見えなくする
+      for (let i=0; i < this.vertces; i++) {
+        if(particleAlpha[i] > 0) {
+          particleAlpha[i] = 0.5 ** 6;
+        }
+      }
+
+      // 透過させたパーティクルをランダムに複数回サンプリングして透明度を下げていく
+      for (let i=0; i < sampling_time; i++) {
+        for (let j=0; j < this.vertces; j++) {
+          let random = (j + Math.floor(Math.random() * 2) + 1);
+          if(particleAlpha[random] > 0) {
+            particleAlpha[random] = 0.5 ** (i + 7);
+          }
+        }
+      }
+
+      // パーティクルの全頂点をTween.jsによりアニメーションさせる
+      for (let i = 0; i < this.vertces; i++) {
+        let vertex = {x: particleAlpha[i], y: particleFlag[i]};
+        let tween = new TWEEN.Tween(vertex);
+        tween.to({x: 1, y: 1}, interval_time+1000);
+
+        // 透明度の低いパーティクルから順番に出現させる
+        for (let j = 0; j < sampling_time + 1; j++) {
+          if (particleAlpha[i] === 0.5 **  (j + 6)) {
+            tween.delay(j * (interval_time));
+            tween.start();
+          }
+        }
+        tween.onUpdate(function(object) {
+            particleAlpha[i] = object.x;
+            particleFlag[i] = object.y;
+        });
+        
+      }  
   }
 }
