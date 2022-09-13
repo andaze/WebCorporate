@@ -10,69 +10,72 @@ import gsap from 'gsap';
 // 初回訪問判定フラグ
 export let first_visit = true;
 
-// 下層ページ判定フラグ
-let is_bottom = false;
-
-if (!((location.pathname == '/WebCorporate/ja/') | (location.pathname == '/WebCorporate/en/'))) {
-    is_bottom = !is_bottom
-}
-
-// ローディング画面の表示
-const loading_icon = document.getElementById("loading_icon");
+// // ローディング画面の表示
 export const loading_background = document.getElementById("loading");
 
-if(!is_bottom) {
-  loading_background.style.opacity = 1;
-  loading_icon.style.visibility = "visible";
-}
+export class Surround {
+  constructor() {
 
-// canvasのmargin-topにheaderの高さを設定
-const header_height = document.getElementById("header_nav").clientHeight;
+    // // canvasのmargin-topにheaderの高さを設定
+    this.header_height = document.getElementById("header_nav").clientHeight;
 
-export const canvas_elment = document.getElementById('webgl');
-if (canvas_elment) {
-  canvas_elment.style.marginTop = header_height + "px";
-}
+    // canvasのmargin-topにheaderの高さを設定
+    this.canvas_elm = document.getElementById('webgl');
 
-
-// 透過黒レイヤー（hidden_cover）の高さ調整
-const company_section_height = document.getElementById("company_section").clientHeight;
-const hidden_cover = document.getElementById("hidden_cover");
-hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
-
-// コンテンツ位置までスクロールしたら暗くする
-const dark_cover = document.getElementById('hidden_cover')
-const key_visual = document.getElementById("key-visual");
-let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-let target_static = key_visual_bottom - (window.innerHeight * 0.88);
-
-window.addEventListener('load', blackOut);
-window.addEventListener('scroll', blackOut);
-
-
-// リサイズ時の処理（3D表示以外の調整）
-window.addEventListener('resize', () => {
-  resizeWindow();
-  blackOut();
-});
-
-function resizeWindow() {
-  // canvasのmargin-topにheaderの高さを設定
-  canvas_elment.style.marginTop = header_height + "px";
-
-  // canvasのmargin-topにheaderの高さを設定
-  if (canvas_elment) {
-    canvas_elment.style.marginTop = header_height + "px";
+    window.addEventListener('load', this.blackOut.bind(this));
+    window.addEventListener('scroll', this.blackOut.bind(this));
+    
+    
+    // リサイズ時の処理（3D表示以外の調整）
+    window.addEventListener('resize', () => {
+      this.resizeWindow().bind(this);
+      this.blackOut().bind(this);
+    });
   }
-}
 
-function blackOut() {
-  if (window.scrollY >= target_static) {
-    dark_cover.style.opacity = .5;
-    dark_cover.style.visibility = "visible";
-  } else if (window.scrollY < target_static) {
-    dark_cover.style.opacity = 0;
-    dark_cover.style.visibility = "invisible";
+  callFunctions() {
+    this.setMainHeight();
+    this.blackOut();
+    this.resizeWindow();
+  }
+
+  setMainHeight() {
+    if (this.canvas_elm) {
+      this.canvas_elm.style.marginTop = this.header_height + "px";
+    }
+  }
+
+  blackOut() {
+    // 透過黒レイヤー（hidden_cover）の高さ調整
+    const company_section_height = document.getElementById("company_section").clientHeight;
+    const hidden_cover = document.getElementById("hidden_cover");
+    hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
+
+    // コンテンツ位置までスクロールしたら暗くする
+    const dark_cover = document.getElementById('hidden_cover')
+    const key_visual = document.getElementById("key-visual");
+    let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
+    let target_static = key_visual_bottom - (window.innerHeight * 0.88);
+
+    if (window.scrollY >= target_static) {
+      dark_cover.style.opacity = .5;
+      dark_cover.style.visibility = "visible";
+    } else if (window.scrollY < target_static) {
+      dark_cover.style.opacity = 0;
+      dark_cover.style.visibility = "invisible";
+    }
+  }
+
+  resizeWindow() {
+    this.canvas_elm = document.getElementById('webgl');
+
+    // canvasのmargin-topにheaderの高さを設定
+    this.canvas_elm.style.marginTop = this.header_height + "px";
+  
+    // canvasのmargin-topにheaderの高さを設定
+    if (this.canvas_elm) {
+      this.canvas_elm.style.marginTop = this.header_height + "px";
+    }
   }
 }
 
