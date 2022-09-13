@@ -18,7 +18,7 @@ html.is-animating .transition-fade {
   }
 
   .nav-tabs .nav-link.active {
-    @apply border-b-4 border-black text-black font-bold;
+    @apply font-bold text-black border-b-4 border-black;
   }
 }
 
@@ -50,21 +50,6 @@ html.is-animating .transition-fade {
     border-top: 0;
     border-left: 0;
     transform: rotate(-45deg);
-}
-
-p {
-  line-height: 1.75;
-}
-
-h1 {
-  line-height: 1.25 !important;
-  position: relative;
-  margin-bottom: 60px !important;
-  text-align: left;
-}
-
-h2 {
-  line-height: 1.5 !important;
 }
 
 .lg\:text-7xl {
