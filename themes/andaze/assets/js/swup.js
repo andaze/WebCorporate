@@ -43,13 +43,14 @@ async function init() {
 
     if (document.querySelector('#webgl')){
         kvMain.loading_background.style.opacity = 1;
+        const sketch = await new kvMain.Sketch();
         if (!kvMain.first_visit) {
             window.setTimeout(() => {
                 kvMain.loading_background.style.opacity = 0;
                 kvMain.loading_background.style.visibility = "invisible";
+                sketch.callFunctions();
             }, 2000);
         }
-        const kv_main = await kvMain.kv_main();
     } else {
         kvMain.loading_background.style.opacity = 0;
     }

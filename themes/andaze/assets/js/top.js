@@ -95,22 +95,21 @@ if (typeof window.ontouchstart === "undefined") {
 }
 img.crossOrigin = "anonymous";
 
-
 export function kv_main() {
   img.addEventListener('load', () => {
     new Sketch();
   });
 }
 
-class Sketch {
+export default class Sketch {
   constructor() {
 
     // シーンの作成
     this.scene = new THREE.Scene();
 
-
     // キャンバスの作成
     this.canvas = document.createElement("canvas");
+
 
     // リサイズ後のウィンドウサイズ
     this.resized_width = window.innerWidth;
@@ -176,6 +175,14 @@ class Sketch {
     this.point = new THREE.Vector2();
 
 
+    this.init();
+    this.mouseInteraction();
+    this.setSize();
+    this.animate();
+    this.resize();
+  }
+
+  callFunctions() {
     this.init();
     this.mouseInteraction();
     this.setSize();
