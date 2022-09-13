@@ -2,11 +2,6 @@ import * as THREE from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
-
-// ====================================================================
-// キービジュアル周辺レイアウトのセットアップ
-// ====================================================================
-
 // 初回訪問判定フラグ
 export let first_visit = true;
 
@@ -18,7 +13,8 @@ export const loading_background = document.getElementById("loading");
 export class Surround {
   constructor() {
 
-
+    // canvasのmargin-topにheaderの高さを設定
+    this.header_height = document.getElementById("header_nav").clientHeight;
 
     // canvasのmargin-topにheaderの高さを設定
     this.canvas_element = document.getElementById('webgl');
@@ -44,7 +40,6 @@ export class Surround {
     this.header_height = document.getElementById("header_nav").clientHeight;
 
     if (this.canvas_element) {
-      console.log(this.header_height)
       this.canvas_element.style.marginTop = this.header_height + "px";
     }
   }
@@ -69,14 +64,7 @@ export class Surround {
       dark_cover.style.visibility = "invisible";
     }
   }
-
 }
-
-
-
-// ====================================================================
-// キービジュアルロゴのセットアップ
-// ====================================================================
 
 export class Sketch {
   constructor() {
@@ -84,9 +72,9 @@ export class Sketch {
     // シーンの作成
     this.scene = new THREE.Scene();
 
+
     // キャンバスの作成
     this.canvas = document.createElement("canvas");
-
 
     // リサイズ後のウィンドウサイズ
     this.resized_width = window.innerWidth;
@@ -123,7 +111,7 @@ export class Sketch {
     // フェードインの速度（フェードイン完了まで fadein_times × interval_time）
     this.interval_time = 500;
     // ガイドを表示するまでの時間
-    this.show_guide_time = this.fadein_times*this.interval_time+3500;
+    this.show_guide_time = this.fadein_times*this.interval_time+3500
 
 
     // クリック許可フラグ
@@ -145,20 +133,34 @@ export class Sketch {
     // パーティクルの頂点座標
     this.particle_pos = new THREE.Vector2();
 
+
     this.time = 0;
     this.move = 0;
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
     this.point = new THREE.Vector2();
 
+    
   }
 
   callFunctions() {
-    this.init();
-    this.mouseInteraction();
-    this.setSize();
-    this.animate();
-    this.resize();
+    if(first_visit) {
+      this.img.addEventListener('load', () => {
+        this.init();
+        this.mouseInteraction();
+        this.animate();
+        this.showGuide();
+        this.setSize();
+        this.resize();
+      });
+    } else {
+      this.init();
+      this.mouseInteraction();
+      this.animate();
+      this.showGuide();
+      this.setSize();
+      this.resize();
+    }
   }
 
   setImage() {
@@ -177,7 +179,6 @@ export class Sketch {
   }
 
   init() {
-
     // オブジェクトをシーンに追加
     this.addObjects();
 
@@ -203,8 +204,6 @@ export class Sketch {
     // サイト表示後、拡散したパーティクルが集合する
     // this.gather3D();
 
-    this.showGuide();
-
     window.setTimeout(() => {
       
       // ロードから一定時間経過後、自動でパーティクルを拡散
@@ -229,7 +228,6 @@ export class Sketch {
 
     // 画像の変換（ImagePixel関数）
     this.pixcel_img = this.ImagePixel(this.img, this.img.width, this.img.height, 2.0);
-
     
     // 変換後の画像の頂点座標情報抽出
     const position = new THREE.BufferAttribute(
@@ -264,8 +262,6 @@ export class Sketch {
     }
     const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
 
-
-    // WebGLアニメーション用パラメータ
     const speed = [];
     for (let i = 0; i < this.vertces; i++) {
       speed.push(random(-1000, 1000));
@@ -345,7 +341,6 @@ export class Sketch {
     // 画像データの描画
     this.ctx.drawImage(path, 0, 0);
     this.data = this.ctx.getImageData(0, 0, this.canvas_width, this.canvas_height).data;
-
     // 座標情報
     this.position = [];
     // 色情報
@@ -395,8 +390,15 @@ export class Sketch {
   }
 
   removeLoadingEnd() {
-      // 初回訪問時
-      if (first_visit) {
+    // 初回訪問時
+    if (first_visit) {
+
+        // if (is_bottom) {
+
+        //   // ロード画面を表示
+        //   loading_background.style.opacity = 1;
+      
+        // } 
 
         // ロード画面を非表示
         loading_background.style.opacity = 0;
@@ -640,7 +642,6 @@ export class Sketch {
             auto_diffusion.to({x: destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
             auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
             auto_diffusion.onUpdate(function (object) {
-              // console.log(this.mesh.geometry.attributes.flag.array)
               particlePositions[3*i] = object.x;
               particlePositions[3*i+1] = object.y;
               particleFlag[i] = object.z;
@@ -768,8 +769,8 @@ export class Sketch {
       });
   
       window.addEventListener('touchmove', (event) => {
-        this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
-        this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
+        this.mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
+        this.mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
     
         this.raycaster.setFromCamera( this.mouse, this.camera );
     
@@ -781,6 +782,53 @@ export class Sketch {
       }, false);
     }
  
+  }
+
+  animate() {
+
+    this.time++;
+
+    this.getDeltaTime = this.clock.getDelta();
+
+    // 画面の描画毎にanimate関数を呼び出す
+    requestAnimationFrame( this.animate.bind(this) );
+  
+    // レンダラーにシーンとカメラを追加
+    this.renderer.render( this.scene, this.camera );
+    
+    // パーティクル移動速度
+    window.setTimeout(() =>{
+      this.mesh.material.uniforms.u_time.value += (2.0 * this.getDeltaTime);
+      this.mesh.material.uniforms.mouse.value = this.point;
+      this.mesh.material.uniforms.time.value = this.time;
+      this.mesh.material.uniforms.move.value = this.move;
+      if (typeof window.ontouchstart === "undefined") {
+        this.mesh.material.uniforms.diffusionScale.value = 90.0;
+        this.mesh.material.uniforms.circleScale.value = 50.0;
+      } else {
+        this.mesh.material.uniforms.diffusionScale.value = 40.0;
+        this.mesh.material.uniforms.circleScale.value = 25.0;
+      }
+    }, this.fadein_times*this.interval_time-500)
+
+    // Tween.jsアニメーションの実行
+    TWEEN.update();
+    
+    // // 頂点の透明度の更新を許可
+    this.mesh.geometry.attributes.alpha.needsUpdate = true;
+
+    // // 頂点の座標の更新を許可
+    this.mesh.geometry.attributes.position.needsUpdate = true;
+
+    // // 頂点の色の更新を許可
+    this.mesh.geometry.attributes.color.needsUpdate = true;
+
+    // // 頂点の移動検知フラグの更新を許可
+    this.mesh.geometry.attributes.flag.needsUpdate = true;
+
+
+    // // 頂点の変色検知フラグの更新を許可
+    // this.mesh.geometry.attributes.colorChangeFlag.needsUpdate = true;
   }
 
   showGuide() {
@@ -817,127 +865,83 @@ export class Sketch {
 
   setSize() {
 
-    // ウィンドウサイズを取得
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+      // ウィンドウサイズを取得
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
 
-    // ヘッダーの高さ
-    this.header_height = document.getElementById("header_nav").clientHeight;
+      // ヘッダーの高さ
+      this.header_height = document.getElementById("header_nav").clientHeight;
 
-    // トップページmainタグの高さを取得してfooterのmargin-topに設定
-    this.main_height = document.getElementById("top_main").clientHeight;
-    document.querySelector("footer").style.marginTop = this.main_height + "px";
-
-
-    // ブレイクポイントの設定
-    this.width_break_point = 700;
-    this.height_break_point = 864;
-
-    this.width_break_point_sp = 1440;
+      // トップページmainタグの高さを取得してfooterのmargin-topに設定
+      this.main_height = document.getElementById("top_main").clientHeight;
+      document.querySelector("footer").style.marginTop = this.main_height + "px";
 
 
-    // カメラのアスペクト比を正す
-    this.camera.aspect = this.width / (this.height -  this.header_height);
-    this.camera.updateProjectionMatrix();
+      // ブレイクポイントの設定
+      this.width_break_point = 700;
+      this.height_break_point = 864;
 
-    // デバイスがPCの場合
-    if (typeof window.ontouchstart === "undefined") {
-      if (this.width >= this.width_break_point) {
-        this.camera.position.z = 400;
-        if (this.height <= this.height_break_point) {
-          this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1000) - ((1200 + this.height) / this.width);
-        } else {
-          this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 600) - ((1200 + this.height) / this.width);
-        }
-      } else {
-        this.camera.position.z = this.height / this.width * 400;
-        this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1800) - ((1200 + this.height) / this.width);
-      }
-      
-      // デバイスがモバイルの場合
-    } else {
-      if (this.width >= this.width_break_point_sp) {
-        if (this.width < this.height) {
-          this.camera.position.z = this.height / this.width * 230;
-          this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1200 + this.height) / this.width);
-        } else {
-          if  (this.camera.aspect > 1.85) {
-            this.camera.position.z = this.width / this.height * 120;
-            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
-          } else {
-            this.camera.position.z = this.width / this.height * 170;
-            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((2800 + this.height) / this.width);
-          }
-        }
-      } else {
-        if (this.width < this.height) {
-          this.camera.position.z = this.height / this.width * 200;
-          this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1600 + this.height) / this.width);
-          nav_block.style.bottom = this.height*0.15 + 'px';
-        } else {
-          if (this.camera.aspect > 1.8) {
-            this.camera.position.z = this.width / this.height * 120;
-            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((3400 + this.height) / this.width);
-            nav_block.style.display = 'none'
-          } else {
-            this.camera.position.z = this.width / this.height * 170;
-            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
-            nav_block.style.bottom = this.height*0.15 + 'px';
-          }
-        }
-      }
-    }
+      this.width_break_point_sp = 1440;
 
-    // レンダラーのサイズを調整する
-    this.renderer.setSize(this.width, this.height -  this.header_height);
 
-    // ウィンドウサイズ更新
-    this.resized_width = window.innerWidth;
-    this.resized_height = window.innerHeight;
-  }
+      // カメラのアスペクト比を正す
+      this.camera.aspect = this.width / (this.height -  this.header_height);
+      this.camera.updateProjectionMatrix();
 
-  animate() {
-
-    this.time++;
-
-    this.getDeltaTime = this.clock.getDelta();
-
-    // 画面の描画毎にanimate関数を呼び出す
-    requestAnimationFrame( this.animate.bind(this) );
-  
-    // レンダラーにシーンとカメラを追加
-    this.renderer.render( this.scene, this.camera );
-    
-    // パーティクル移動速度
-    window.setTimeout(() =>{
-      this.mesh.material.uniforms.u_time.value += (2.0 * this.getDeltaTime);
-      this.mesh.material.uniforms.mouse.value = this.point;
-      this.mesh.material.uniforms.time.value = this.time;
-      this.mesh.material.uniforms.move.value = this.move;
+      // デバイスがPCの場合
       if (typeof window.ontouchstart === "undefined") {
-        this.mesh.material.uniforms.diffusionScale.value = 90.0;
-        this.mesh.material.uniforms.circleScale.value = 50.0;
+        if (this.width >= this.width_break_point) {
+          this.camera.position.z = 400;
+          if (this.height <= this.height_break_point) {
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1000) - ((1200 + this.height) / this.width);
+          } else {
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 600) - ((1200 + this.height) / this.width);
+          }
+        } else {
+          this.camera.position.z = this.height / this.width * 400;
+          this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1800) - ((1200 + this.height) / this.width);
+        }
+        
+        // デバイスがモバイルの場合
       } else {
-        this.mesh.material.uniforms.diffusionScale.value = 40.0;
-        this.mesh.material.uniforms.circleScale.value = 25.0;
+        if (this.width >= this.width_break_point_sp) {
+          if (this.width < this.height) {
+            this.camera.position.z = this.height / this.width * 230;
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1200 + this.height) / this.width);
+          } else {
+            if  (this.this.camera.aspect > 1.85) {
+              this.camera.position.z = this.width / this.height * 120;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
+            } else {
+              this.camera.position.z = this.width / this.height * 170;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((2800 + this.height) / this.width);
+            }
+          }
+        } else {
+          if (this.width < this.height) {
+            this.camera.position.z = this.height / this.width * 200;
+            this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1600 + this.height) / this.width);
+            nav_block.style.bottom = this.height*0.15 + 'px';
+          } else {
+            if (this.camera.aspect > 1.8) {
+              this.camera.position.z = this.width / this.height * 120;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((3400 + this.height) / this.width);
+              nav_block.style.display = 'none'
+            } else {
+              this.camera.position.z = this.width / this.height * 170;
+              this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
+              nav_block.style.bottom = this.height*0.15 + 'px';
+            }
+          }
+        }
       }
-    }, this.fadein_times*this.interval_time-500);
 
-    // Tween.jsアニメーションの実行
-    TWEEN.update();
-    
-    // // 頂点の透明度の更新を許可
-    this.mesh.geometry.attributes.alpha.needsUpdate = true;
+      // レンダラーのサイズを調整する
+      this.renderer.setSize(this.width, this.height -  this.header_height);
 
-    // // 頂点の座標の更新を許可
-    this.mesh.geometry.attributes.position.needsUpdate = true;
-
-    // // 頂点の色の更新を許可
-    this.mesh.geometry.attributes.color.needsUpdate = true;
-
-    // // 頂点の移動検知フラグの更新を許可
-    this.mesh.geometry.attributes.flag.needsUpdate = true;
-
+      // ウィンドウサイズ更新
+      this.resized_width = window.innerWidth;
+      this.resized_height = window.innerHeight;
   }
 
   resize() {
