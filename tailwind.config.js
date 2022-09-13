@@ -37,5 +37,6 @@ module.exports = {
       });
     }),
     require('tw-elements/dist/plugin'),
+    require('@tailwindcss/typography'),
   ],
 }
