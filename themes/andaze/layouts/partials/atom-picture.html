@@ -15,7 +15,13 @@
 
 */}}
 
-{{ $image := (resources.GetRemote "https://source.unsplash.com/random") }}
+{{ $image := "" }}
+{{ if hugo.IsProduction }}
+        {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
+{{ else }}
+        {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
+{{ end }}
+
 {{ if $src := (.Scratch.Get "src") }}
         {{ if (.Page.Resources.GetMatch $src) }}
                 {{ $image = .Page.Resources.GetMatch $src }}
