@@ -54,7 +54,7 @@ async function init() {
             }, 2000);
         }
     } else {
-        kvMain.loading_background.style.opacity = 0;
+        sketch.removeMesh();
     }
     
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {

@@ -10,6 +10,8 @@ import gsap from 'gsap';
 // 初回訪問判定フラグ
 export let first_visit = true;
 
+const links = document.querySelectorAll('a');
+
 // // ローディング画面の表示
 export const loading_background = document.getElementById("loading");
 
@@ -988,6 +990,18 @@ export default class Sketch {
       this.currentWidth = window.innerWidth;
       this.setSize();
     }.bind(this));
+  }
+
+  removeMesh() {
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if(this.mesh) {
+          this.scene.remove( this.mesh );
+          this.geometry.dispose();
+          this.material.dispose();
+        }
+      });
+    });
   }
 }
 
