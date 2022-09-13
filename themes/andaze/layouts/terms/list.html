@@ -1,13 +1,13 @@
 {{ define "main" }}
-    <div class="container mx-auto px-5 lg:px-64 py-5 mt-16">
+    <div class="container px-5 py-5 mx-auto mt-16 lg:px-64">
         {{ partial "breadcrumbs.html" . }}
     </div>
 
-    <div class="pt-5 mb-44 px-5 lg:px-64 container mx-auto ">
-        <div class="bg-white max-w-none pb-4">
+    <div class="container px-5 pt-5 mx-auto mb-44 lg:px-64 ">
+        <div class="pb-4 bg-white max-w-none">
             <span class="text-4xl font-bold">{{ .Page.Title }}</span>
         </div>
-        <div class="prose max-w-none pt-5">
+        <div class="pt-5 max-w-none">
             {{ .Content }}
         </div>
     </div>

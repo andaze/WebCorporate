@@ -6,7 +6,7 @@
         <div class="hidden md:block md:w-1/4 ">
             {{ partial "organism-section-news-left.html" . }}
         </div>
-        <div class="md:w-3/4 bg-white prose max-w-none">
+        <div class="md:w-3/4 bg-white max-w-none">
             <h1 class="text-left text-3xl font-extrabold">{{ .Title }}</h1>
             {{ if eq (.Lang) ("ja")}}
                 {{ partial "contact-form-ja.html" . }}
