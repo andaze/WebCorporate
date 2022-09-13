@@ -29,21 +29,20 @@ export class Surround {
     
     // リサイズ時の処理（3D表示以外の調整）
     window.addEventListener('resize', () => {
-      this.resizeWindow().bind(this);
-      this.blackOut().bind(this);
+      this.setMainHeight();
+      this.blackOut();
     });
   }
 
   callFunctions() {
     this.setMainHeight();
     this.blackOut();
-    this.resizeWindow();
   }
 
   setMainHeight() {
     // // canvasのmargin-topにheaderの高さを設定
     this.header_height = document.getElementById("header_nav").clientHeight;
-    
+
     if (this.canvas_element) {
       console.log(this.header_height)
       this.canvas_element.style.marginTop = this.header_height + "px";
@@ -71,16 +70,6 @@ export class Surround {
     }
   }
 
-  resizeWindow() {
-
-    // canvasのmargin-topにheaderの高さを設定
-    this.canvas_element.style.marginTop = this.header_height + "px";
-  
-    // canvasのmargin-topにheaderの高さを設定
-    if (this.canvas_element) {
-      this.canvas_element.style.marginTop = this.header_height + "px";
-    }
-  }
 }
 
 
