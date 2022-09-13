@@ -18,11 +18,10 @@ export const loading_background = document.getElementById("loading");
 export class Surround {
   constructor() {
 
-    // // canvasのmargin-topにheaderの高さを設定
-    this.header_height = document.getElementById("header_nav").clientHeight;
+
 
     // canvasのmargin-topにheaderの高さを設定
-    this.canvas_elm = document.getElementById('webgl');
+    this.canvas_element = document.getElementById('webgl');
 
     window.addEventListener('load', this.blackOut.bind(this));
     window.addEventListener('scroll', this.blackOut.bind(this));
@@ -42,8 +41,12 @@ export class Surround {
   }
 
   setMainHeight() {
-    if (this.canvas_elm) {
-      this.canvas_elm.style.marginTop = this.header_height + "px";
+    // // canvasのmargin-topにheaderの高さを設定
+    this.header_height = document.getElementById("header_nav").clientHeight;
+    
+    if (this.canvas_element) {
+      console.log(this.header_height)
+      this.canvas_element.style.marginTop = this.header_height + "px";
     }
   }
 
@@ -69,14 +72,13 @@ export class Surround {
   }
 
   resizeWindow() {
-    this.canvas_elm = document.getElementById('webgl');
 
     // canvasのmargin-topにheaderの高さを設定
-    this.canvas_elm.style.marginTop = this.header_height + "px";
+    this.canvas_element.style.marginTop = this.header_height + "px";
   
     // canvasのmargin-topにheaderの高さを設定
-    if (this.canvas_elm) {
-      this.canvas_elm.style.marginTop = this.header_height + "px";
+    if (this.canvas_element) {
+      this.canvas_element.style.marginTop = this.header_height + "px";
     }
   }
 }
