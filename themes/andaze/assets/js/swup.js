@@ -43,6 +43,7 @@ async function init() {
 
     const surround = await new kvMain.Surround();
     const sketch = await new kvMain.Sketch();
+    sketch.setImage();
 
     if (document.querySelector('#webgl')){
 
@@ -56,7 +57,7 @@ async function init() {
 
                 kvMain.loading_background.style.opacity = 0;
                 kvMain.loading_background.style.visibility = "invisible";
-                
+
                 sketch.callFunctions();
             }, 1000);
         } else {

@@ -87,25 +87,6 @@ export class Surround {
 // キービジュアルロゴのセットアップ
 // ====================================================================
 
-// 画像要素を生成
-const img = new Image();
-
-// 表示させる画像のパスを指定
-if (typeof window.ontouchstart === "undefined") {
-  // PCの処理
-  img.src = "../img/logo.png";
-} else {
-  // スマホの処理
-  img.src = "../img/logo_small.png";
-}
-img.crossOrigin = "anonymous";
-
-export function kv_main() {
-  img.addEventListener('load', () => {
-    new Sketch();
-  });
-}
-
 export class Sketch {
   constructor() {
 
@@ -189,6 +170,21 @@ export class Sketch {
     this.resize();
   }
 
+  setImage() {
+    // 画像要素を生成
+    this.img = new Image();
+
+    // 表示させる画像のパスを指定
+    if (typeof window.ontouchstart === "undefined") {
+      // PCの処理
+      this.img.src = "../img/logo.png";
+    } else {
+      // スマホの処理
+      this.img.src = "../img/logo_small.png";
+    }
+    this.img.crossOrigin = "anonymous";
+  }
+
   init() {
 
     // オブジェクトをシーンに追加
@@ -241,7 +237,7 @@ export class Sketch {
     this.geometry = new THREE.BufferGeometry();
 
     // 画像の変換（ImagePixel関数）
-    this.pixcel_img = this.ImagePixel(img, img.width, img.height, 2.0);
+    this.pixcel_img = this.ImagePixel(this.img, this.img.width, this.img.height, 2.0);
 
     
     // 変換後の画像の頂点座標情報抽出
