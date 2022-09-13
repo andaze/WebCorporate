@@ -41,15 +41,22 @@ async function init() {
         friconix_update();
     }
 
+    const surround = await new kvMain.Surround();
+    const sketch = await new kvMain.Sketch();
+
     if (document.querySelector('#webgl')){
+
         kvMain.loading_background.style.opacity = 1;
-        const surround = await new kvMain.Surround();
-        const sketch = await new kvMain.Sketch();
+
         if (!kvMain.first_visit) {
+
             window.setTimeout(() => {
+
                 surround.callFunctions();
+
                 kvMain.loading_background.style.opacity = 0;
                 kvMain.loading_background.style.visibility = "invisible";
+                
                 sketch.callFunctions();
             }, 1000);
         } else {

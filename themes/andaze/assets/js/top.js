@@ -106,7 +106,7 @@ export function kv_main() {
   });
 }
 
-export default class Sketch {
+export class Sketch {
   constructor() {
 
     // シーンの作成
@@ -410,7 +410,7 @@ export default class Sketch {
   removeLoadingEnd() {
       // 初回訪問時
       if (first_visit) {
-        
+
         // ロード画面を非表示
         loading_background.style.opacity = 0;
         loading_background.style.visibility = "invisible";
@@ -874,7 +874,7 @@ export default class Sketch {
           this.camera.position.z = this.height / this.width * 230;
           this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1200 + this.height) / this.width);
         } else {
-          if  (this.this.camera.aspect > 1.85) {
+          if  (this.camera.aspect > 1.85) {
             this.camera.position.z = this.width / this.height * 120;
             this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
           } else {
