@@ -5,7 +5,6 @@ import SwupHtmlLangPlugin from '@mashvp/swup-html-lang-plugin';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 import SwupMorphPlugin from 'swup-morph-plugin';
 import * as kvMain from './top.js';
-import * as kvSub from './top-sub.js';
 import * as sendForm from './sendform.js';
 import * as swiperScript from './swiper.js';
 
@@ -42,18 +41,31 @@ async function init() {
         friconix_update();
     }
 
-    if (document.querySelector('#webgl')) {
+    const surround = await new kvMain.Surround();
+    const sketch = await new kvMain.Sketch();
+    sketch.setImage();
+
+    if (document.querySelector('#webgl')){
+
         kvMain.loading_background.style.opacity = 1;
+
         if (!kvMain.first_visit) {
+
             window.setTimeout(() => {
+
+                surround.callFunctions();
+
                 kvMain.loading_background.style.opacity = 0;
                 kvMain.loading_background.style.visibility = "invisible";
-            }, 2000);
+
+                sketch.callFunctions();
+            }, 1000);
+        } else {
+            surround.callFunctions();
+            sketch.callFunctions();
         }
-        const kv_main = await kvMain.kv_main();
-        const kv_sub  = await kvSub.kv_sub();
     } else {
-        kvMain.loading_background.style.opacity = 0;
+        sketch.removeMesh();
     }
     
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
