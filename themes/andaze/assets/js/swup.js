@@ -51,7 +51,10 @@ async function init() {
                 kvMain.loading_background.style.opacity = 0;
                 kvMain.loading_background.style.visibility = "invisible";
                 sketch.callFunctions();
-            }, 2000);
+            }, 1000);
+        } else {
+            surround.callFunctions();
+            sketch.callFunctions();
         }
     } else {
         sketch.removeMesh();

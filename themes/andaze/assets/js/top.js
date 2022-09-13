@@ -179,12 +179,6 @@ export default class Sketch {
     this.mouse = new THREE.Vector2();
     this.point = new THREE.Vector2();
 
-
-    this.init();
-    this.mouseInteraction();
-    this.setSize();
-    this.animate();
-    this.resize();
   }
 
   callFunctions() {
@@ -417,13 +411,6 @@ export default class Sketch {
       // 初回訪問時
       if (first_visit) {
         
-        if (is_bottom) {
-
-          // ロード画面を表示
-          loading_background.style.opacity = 1;
-      
-        } 
-
         // ロード画面を非表示
         loading_background.style.opacity = 0;
         loading_background.style.visibility = "invisible";
