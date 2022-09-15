@@ -19,6 +19,11 @@ export class Surround {
     // canvasのmargin-topにheaderの高さを設定
     this.canvas_element = document.getElementById('webgl');
 
+    // 透過黒レイヤー（hidden_cover）の高さ調整
+    const company_section_height = document.getElementById("company_section").clientHeight;
+    const hidden_cover = document.getElementById("hidden_cover");
+    hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
+
     window.addEventListener('load', this.blackOut.bind(this));
     window.addEventListener('scroll', this.blackOut.bind(this));
     
@@ -45,10 +50,6 @@ export class Surround {
   }
 
   blackOut() {
-    // 透過黒レイヤー（hidden_cover）の高さ調整
-    const company_section_height = document.getElementById("company_section").clientHeight;
-    const hidden_cover = document.getElementById("hidden_cover");
-    hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
 
     // コンテンツ位置までスクロールしたら暗くする
     const dark_cover = document.getElementById('hidden_cover')
