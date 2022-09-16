@@ -7,18 +7,28 @@
     {{ $swiperName = "sustainabilitySwiper" }}
 {{ end }}
 
+{{ $class := "" }}
+{{ if ne (.Scratch.Get "section") "news" }}
+    {{ $class = "hidden" }}
+{{ end }}
+
 {{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
-    <div #swiperRef="" class="swiper {{ $swiperName }}">
-        <div class="swiper-wrapper">
-            {{ with .Site.GetPage (.Scratch.Get "section") }}
-                {{ range .Pages }}
-                    {{ partial "molecule-section-newtopic-slide.html" . }}
-                {{ end }}
-            {{ end }}
+    <div class="flex">
+        <div class="{{ $class }} mr-8">
+            <iframe width="300" height="160" src="https://www.youtube.com/embed/RHR05atIgYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </div>
-    <div class="flex justify-center md:hidden lg:hidden mt-5">
-        {{ partial "molecule-section-irnews-buttongroup.html" . }}
+        <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
+            <div class="swiper-wrapper">
+                {{ with .Site.GetPage (.Scratch.Get "section") }}
+                    {{ range .Pages }}
+                        {{ partial "molecule-section-newtopic-slide.html" . }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        <div class="flex justify-center md:hidden lg:hidden mt-5">
+            {{ partial "molecule-section-irnews-buttongroup.html" . }}
+        </div>
     </div>
 
 {{ else if eq (.Scratch.Get "section") "ir" }}
