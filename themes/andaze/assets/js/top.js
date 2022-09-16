@@ -764,11 +764,13 @@ export class Sketch {
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
 
-        gsap.to(this.material.uniforms.mousePressed, {
-          duration: 0.3,
-          value: 1,
-          ease: "ease.out(1, 0.3)"
-        });
+        if(dark_cover.style.opacity == 0) {
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 1,
+            ease: "ease.out(1, 0.3)"
+          });
+        }
       });
   
       window.addEventListener('touchend', (e) => {
@@ -780,8 +782,8 @@ export class Sketch {
       });
   
       window.addEventListener('touchmove', (event) => {
-        this.mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
-        this.mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+        this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
+        this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
     
         this.raycaster.setFromCamera( this.mouse, this.camera );
     
