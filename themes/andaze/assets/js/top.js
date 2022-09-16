@@ -806,7 +806,7 @@ export class Sketch {
         this.mesh.material.uniforms.diffusionScale.value = 40.0;
         this.mesh.material.uniforms.circleScale.value = 25.0;
       }
-    }, this.fadein_times*this.interval_time-500)
+    }, this.fadein_times*this.interval_time+5000)
 
     // Tween.jsアニメーションの実行
     TWEEN.update();
