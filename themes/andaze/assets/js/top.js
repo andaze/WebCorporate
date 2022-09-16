@@ -733,15 +733,18 @@ export class Sketch {
     
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
-        console.log(dark_cover.style.opacity)
         
         if(dark_cover.style.opacity == 0) {
-          gsap.set(this.material.uniforms.mousePressed, {
-            value: 1
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 1,
+            ease: "ease.out(1, 0.3)"
           });
         } else {
-          gsap.set(this.material.uniforms.mousePressed, {
-            value: 0
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 0,
+            ease: "ease.out(1, 0.3)"
           });
         }
 
