@@ -18,7 +18,7 @@ export function activeSwiper() {
                     slidesPerView: 2,
                 },
                 851: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                 }
             },
             spaceBetween: 30,
