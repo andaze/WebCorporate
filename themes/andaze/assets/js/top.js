@@ -719,22 +719,6 @@ export class Sketch {
     );
 
     if (typeof window.ontouchstart === "undefined") {
-
-      window.addEventListener('mousedown', (e) => {
-        gsap.to(this.material.uniforms.mousePressed, {
-          duration: 0.3,
-          value: 1,
-          ease: "ease.out(1, 0.3)"
-        });
-      });
-  
-      window.addEventListener('mouseup', (e) => {
-        gsap.to(this.material.uniforms.mousePressed, {
-          duration: 0.3,
-          value: 0,
-          ease: "ease.out(1, 0.3)"
-        });
-      });
   
       window.addEventListener('mousemove', (event) => {
         this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -746,6 +730,10 @@ export class Sketch {
     
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
+
+        gsap.set(this.material.uniforms.mousePressed, {
+          value: 1
+        });
     
       }, false);
     } else {
