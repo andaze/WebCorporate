@@ -10,8 +10,6 @@ const links = document.querySelectorAll('a');
 // // ローディング画面の表示
 export const loading_background = document.getElementById("loading");
 
-// 半透明黒フィルター
-const dark_cover = document.getElementById('hidden_cover');
 
 export class Surround {
   constructor() {
@@ -23,9 +21,11 @@ export class Surround {
     this.canvas_element = document.getElementById('webgl');
 
     // 透過黒レイヤー（hidden_cover）の高さ調整
-    const company_section_height = document.getElementById("company_section").clientHeight;
-    const hidden_cover = document.getElementById("hidden_cover");
-    hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
+    if(document.getElementById("company_section")) {
+      const company_section_height = document.getElementById("company_section").clientHeight;
+      const hidden_cover = document.getElementById("hidden_cover");
+      hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
+    }
 
     window.addEventListener('load', this.blackOut.bind(this));
     window.addEventListener('scroll', this.blackOut.bind(this));
@@ -55,7 +55,7 @@ export class Surround {
   blackOut() {
 
     // コンテンツ位置までスクロールしたら暗くする
-    // const dark_cover = document.getElementById('hidden_cover');
+    const dark_cover = document.getElementById('hidden_cover');
     const key_visual = document.getElementById("key-visual");
     let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
     let target_static = key_visual_bottom - (window.innerHeight * 0.88);
@@ -562,16 +562,18 @@ export class Sketch {
     };
 
     
-    const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
-
-    // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
-    if (
-      // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
-      // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
-      this.stopDiffusion | 
-      (window.scrollY > targetForStop)
-    ) {
-      return;
+    if(document.getElementById("company_section")) {
+      const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
+  
+      // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
+      if (
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
+        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        this.stopDiffusion | 
+        (window.scrollY > targetForStop)
+      ) {
+        return;
+      }
     }
 
 
@@ -723,6 +725,9 @@ export class Sketch {
       new THREE.MeshBasicMaterial()
     );
 
+    // コンテンツ位置までスクロールしたら暗くする
+    const dark_cover = document.getElementById('hidden_cover');
+
     if (typeof window.ontouchstart === "undefined") {
   
       window.addEventListener('mousemove', (event) => {
@@ -793,7 +798,7 @@ export class Sketch {
 
     
       }, false);
-      
+
     } else {
 
       window.addEventListener('touchstart', (event) => {
