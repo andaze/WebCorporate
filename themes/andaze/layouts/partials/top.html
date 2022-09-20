@@ -58,9 +58,9 @@
     float dist = distance(stable.xy, mouse);
     float area = 1.0 - smoothstep(0.0, diffusionScale, dist);
 
-    stable.x += circleScale * sin(0.1 * time * aPress) * aDirection * area * mousePressed;
-    stable.y += circleScale * sin(0.1 * time * aPress) * aDirection * area * mousePressed;
-    stable.z += 100.0 * cos(0.1 * time * aPress) * aDirection * area * mousePressed;
+    stable.x += circleScale * sin(0.05 * time * aPress) * aDirection * area * mousePressed;
+    stable.y += circleScale * sin(0.05 * time * aPress) * aDirection * area * mousePressed;
+    stable.z += 100.0 * cos(0.05 * time * aPress) * aDirection * area * mousePressed;
 
     float moveRange = 1.0;
     float moveRandX = moveRange * sin(u_time + rand.x * rand.y * 50.0);

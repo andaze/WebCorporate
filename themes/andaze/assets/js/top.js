@@ -10,6 +10,9 @@ const links = document.querySelectorAll('a');
 // // ローディング画面の表示
 export const loading_background = document.getElementById("loading");
 
+// 半透明黒フィルター
+const dark_cover = document.getElementById('hidden_cover');
+
 export class Surround {
   constructor() {
 
@@ -52,7 +55,7 @@ export class Surround {
   blackOut() {
 
     // コンテンツ位置までスクロールしたら暗くする
-    const dark_cover = document.getElementById('hidden_cover')
+    // const dark_cover = document.getElementById('hidden_cover');
     const key_visual = document.getElementById("key-visual");
     let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
     let target_static = key_visual_bottom - (window.innerHeight * 0.88);
@@ -140,6 +143,7 @@ export class Sketch {
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
     this.point = new THREE.Vector2();
+    this.clickable = false;
 
     
   }
@@ -192,7 +196,8 @@ export class Sketch {
     // フラグ反転
     window.setTimeout(function(){this.click_flag = !this.click_flag}.bind(this), this.fadein_times*this.interval_time);
     window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
-
+    window.setTimeout(function(){this.clickable = !this.clickable}.bind(this), this.fadein_times*this.interval_time+5000);
+    
     // 初期アニメーション　パターン1
     // サイト表示後、拡散したパーティクルが集合する
     // this.gatherFromFar();
@@ -719,22 +724,6 @@ export class Sketch {
     );
 
     if (typeof window.ontouchstart === "undefined") {
-
-      window.addEventListener('mousedown', (e) => {
-        gsap.to(this.material.uniforms.mousePressed, {
-          duration: 0.3,
-          value: 1,
-          ease: "ease.out(1, 0.3)"
-        });
-      });
-  
-      window.addEventListener('mouseup', (e) => {
-        gsap.to(this.material.uniforms.mousePressed, {
-          duration: 0.3,
-          value: 0,
-          ease: "ease.out(1, 0.3)"
-        });
-      });
   
       window.addEventListener('mousemove', (event) => {
         this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -746,8 +735,65 @@ export class Sketch {
     
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
+        
+        if(dark_cover.style.opacity == 0) {
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 1,
+            ease: "ease.out(1, 0.3)"
+          });
+        } else {
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 0,
+            ease: "ease.out(1, 0.3)"
+          });
+        }
+
     
       }, false);
+
+      window.addEventListener('click', (event) => {
+        this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    
+        this.raycaster.setFromCamera( this.mouse, this.camera );
+    
+        let intersects = this.raycaster.intersectObjects( [target] );
+    
+        this.point.x = intersects[0].point.x;
+        this.point.y = intersects[0].point.y;
+
+        
+        if(dark_cover.style.opacity == 0) {
+          if(this.clickable) {
+            window.setTimeout(() => {
+              gsap.to(this.material.uniforms.mousePressed, {
+                duration: 1,
+                value: randomNumbers(10, 5),
+                ease: "ease.out(1, 0.3)",
+                repeat: 1,
+                yoyo: true
+              });
+            }, 100)
+            window.setTimeout(() => {
+              this.clickable =! this.clickable;
+            }, 500)
+            window.setTimeout(() => {
+              this.clickable =! this.clickable;
+            }, 2500)
+          }
+        } else {
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 0,
+            ease: "ease.out(1, 0.3)"
+          });
+        }
+
+    
+      }, false);
+      
     } else {
 
       window.addEventListener('touchstart', (event) => {
@@ -762,11 +808,13 @@ export class Sketch {
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
 
-        gsap.to(this.material.uniforms.mousePressed, {
-          duration: 0.3,
-          value: 1,
-          ease: "ease.out(1, 0.3)"
-        });
+        if(dark_cover.style.opacity == 0) {
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 1,
+            ease: "ease.out(1, 0.3)"
+          });
+        }
       });
   
       window.addEventListener('touchend', (e) => {
@@ -778,8 +826,8 @@ export class Sketch {
       });
   
       window.addEventListener('touchmove', (event) => {
-        this.mouse.x = ( event.changedTouches[0].clientX / resized_width ) * 2 - 1;
-        this.mouse.y = - ( event.changedTouches[0].clientY / resized_height ) * 2 + 1;
+        this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
+        this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
     
         this.raycaster.setFromCamera( this.mouse, this.camera );
     
@@ -818,7 +866,7 @@ export class Sketch {
         this.mesh.material.uniforms.diffusionScale.value = 40.0;
         this.mesh.material.uniforms.circleScale.value = 25.0;
       }
-    }, this.fadein_times*this.interval_time-500)
+    }, this.fadein_times*this.interval_time+5000)
 
     // Tween.jsアニメーションの実行
     TWEEN.update();
