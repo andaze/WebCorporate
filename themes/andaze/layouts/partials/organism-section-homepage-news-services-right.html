@@ -58,14 +58,14 @@
         </div>
     </div>
 
-    <div id="movie-modal" class="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 z-50 transition">
+    <div id="movie-modal" class="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 opacity-0 invisible z-50 transition select-none">
         <div class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[80%] h-[80%] bg-white">
             <div id="modal-close" class="absolute top-5 right-5 cursor-pointer text-3xl">×</div>
             <iframe class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" width="80%" height="80%" src="{{ $videoUrl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
-{{ else if eq (.Scratch.Get "section") "ir" }}z
+{{ else if eq (.Scratch.Get "section") "ir" }}
     <div class="mt-2">
         {{ .Scratch.Set "backgroundTheme" "black" }}
         {{ partial "molecule-section-irnews-pdf-listing.html" . }}
@@ -85,10 +85,23 @@
         const movie_thumbnail = document.getElementById('movie-thumbnail');
         const movie_modal = document.getElementById('movie-modal');
         const movie_close = document.getElementById('modal-close');
+        let isOpen = false;
     
         movie_thumbnail.addEventListener('mouseenter', () => {
-            movie_modal.style.opacity = 1
-        })
+            if(!isOpen) {
+                movie_modal.style.visibility = "visible";
+                movie_modal.style.opacity = 1;
+            }
+            isOpen = !isOpen;
+        });
+    
+        movie_close.addEventListener('click', () => {
+            if(isOpen) {
+                movie_modal.style.opacity = 0;
+                movie_modal.style.visibility = "hidden";
+            }
+            isOpen = !isOpen;
+        });
     }
 </script>
 
