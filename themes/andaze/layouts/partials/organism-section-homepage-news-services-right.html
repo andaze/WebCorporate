@@ -14,9 +14,9 @@
 
 {{ $videoUrl := "" }}
 {{ if eq (.Lang) ("en")}}
-    {{ $videoUrl = "https://www.youtube.com/embed/r1MN5Bxzhbw" }}
+    {{ $videoUrl = "https://www.youtube.com/embed/r1MN5Bxzhbw?enablejsapi=1" }}
 {{ else }}
-    {{ $videoUrl = "https://www.youtube.com/embed/RHR05atIgYM" }}
+    {{ $videoUrl = "https://www.youtube.com/embed/RHR05atIgYM?enablejsapi=1" }}
 {{ end }}
 
 {{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
@@ -61,7 +61,7 @@
     <div id="movie-modal" class="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 opacity-0 invisible z-50 transition select-none">
         <div class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[80%] h-[80%] bg-white">
             <div id="modal-close" class="absolute top-5 right-5 cursor-pointer text-3xl">×</div>
-            <iframe class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" width="80%" height="80%" src="{{ $videoUrl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="youtube-video" class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" width="80%" height="80%" src="{{ $videoUrl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -86,22 +86,47 @@
         const movie_modal = document.getElementById('movie-modal');
         const movie_close = document.getElementById('modal-close');
         let isOpen = false;
+
+        const targetWindow = document.getElementById('youtube-video').contentWindow;
+
+        const links = document.querySelectorAll('a');
+
+        //APIのコマンドを送信する関数
+        const videoControl = function(action,arg=null){
+            targetWindow.postMessage('{"event":"command", "func":"'+action+'", "args":'+arg+'}', '*');
+        };
     
         movie_thumbnail.addEventListener('mouseenter', () => {
-            if(!isOpen) {
-                movie_modal.style.visibility = "visible";
-                movie_modal.style.opacity = 1;
-            }
-            isOpen = !isOpen;
+            modalOpen();
         });
     
         movie_close.addEventListener('click', () => {
+            modalClose('pauseVideo');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                modalClose('stopVideo');
+            });
+        });
+
+        function modalOpen() {
+            if(!isOpen) {
+                movie_modal.style.visibility = "visible";
+                movie_modal.style.opacity = 1;
+                videoControl('playVideo');
+            }
+            isOpen = !isOpen;
+        }
+
+        function modalClose(option) {
             if(isOpen) {
+                videoControl(option);
                 movie_modal.style.opacity = 0;
                 movie_modal.style.visibility = "hidden";
             }
             isOpen = !isOpen;
-        });
+        }
     }
 </script>
 
