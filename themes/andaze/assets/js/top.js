@@ -860,13 +860,13 @@ export class Sketch {
       this.mesh.material.uniforms.time.value = this.time;
       this.mesh.material.uniforms.move.value = this.move;
       if (typeof window.ontouchstart === "undefined") {
-        this.mesh.material.uniforms.diffusionScale.value = 90.0;
+        this.mesh.material.uniforms.diffusionScale.value = 180.0;
         this.mesh.material.uniforms.circleScale.value = 50.0;
       } else {
-        this.mesh.material.uniforms.diffusionScale.value = 40.0;
+        this.mesh.material.uniforms.diffusionScale.value = 80.0;
         this.mesh.material.uniforms.circleScale.value = 25.0;
       }
-    }, this.fadein_times*this.interval_time+5000)
+    }, this.fadein_times*this.interval_time)
 
     // Tween.jsアニメーションの実行
     TWEEN.update();
