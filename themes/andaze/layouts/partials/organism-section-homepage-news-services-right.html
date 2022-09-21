@@ -21,7 +21,7 @@
 
 {{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
     <div class="flex flex-col sm:flex-row">
-        <div class="{{ $class }} mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
+        <div id="movie-thumbnail" class="{{ $class }} mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
 
             {{ .Scratch.Set "class" "w-full" }}
             {{ .Scratch.Set "format" "webp" }}
@@ -58,17 +58,14 @@
         </div>
     </div>
 
-    <div id="movieModal" class="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 z-50 {{ $class }}">
-        <div class="modal-content">
-            <div class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[80%] h-[80%] bg-white">
-                <div id="modalClose" class="absolute top-5 right-5 cursor-pointer text-3xl">×</div>
-                    <iframe class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" width="80%" height="80%" src="{{ $videoUrl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+    <div id="movie-modal" class="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 z-50 transition">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[80%] h-[80%] bg-white">
+            <div id="modal-close" class="absolute top-5 right-5 cursor-pointer text-3xl">×</div>
+            <iframe class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" width="80%" height="80%" src="{{ $videoUrl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
-{{ else if eq (.Scratch.Get "section") "ir" }}
+{{ else if eq (.Scratch.Get "section") "ir" }}z
     <div class="mt-2">
         {{ .Scratch.Set "backgroundTheme" "black" }}
         {{ partial "molecule-section-irnews-pdf-listing.html" . }}
@@ -81,4 +78,17 @@
 {{ else }}
     {{ partial "organism-section-contents.html" . }}
 {{ end }}
+
+<script>
+    'use strict';
+    {
+        const movie_thumbnail = document.getElementById('movie-thumbnail');
+        const movie_modal = document.getElementById('movie-modal');
+        const movie_close = document.getElementById('modal-close');
+    
+        movie_thumbnail.addEventListener('mouseenter', () => {
+            movie_modal.style.opacity = 1
+        })
+    }
+</script>
 
