@@ -116,7 +116,9 @@
                 movie_modal.style.opacity = 1;
                 videoControl('playVideo');
             }
-            isOpen = !isOpen;
+            setTimeout(() => {
+                isOpen = !isOpen;
+            }, 500);
         }
 
         function modalClose(option) {
@@ -125,7 +127,9 @@
                 movie_modal.style.opacity = 0;
                 movie_modal.style.visibility = "hidden";
             }
-            isOpen = !isOpen;
+            setTimeout(() => {
+                isOpen = !isOpen;
+            }, 500);
         }
     }
 </script>
