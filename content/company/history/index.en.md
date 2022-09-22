@@ -1,10 +1,9 @@
 ---
-title: "History"
-date: 2022-02-23T17:03:34+09:00
-weight: 3
- 
----
+title: History
+date: 2022-02-23T17:03:34.000+09:00
+weight: "3"
 
+---
 <h1 class="mb-14">History</h1>
 
 <table>
@@ -24,11 +23,6 @@ weight: 3
 <tr class="flex p-8 border-0 bg-gray-50">
 <th class="w-1/3 font-bold">2016</th>
 <td class="w-2/3 p-0">Founding of Andaze Ltd.</td>
-</tr>
-
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">2017</th>
-<td class="w-2/3 p-0">Certified as a Microsoft Network Partner</td>
 </tr>
 
 <tr class="flex p-8 border-0 bg-gray-50">
