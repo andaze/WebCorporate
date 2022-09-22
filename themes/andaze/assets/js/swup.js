@@ -7,6 +7,7 @@ import SwupMorphPlugin from 'swup-morph-plugin';
 import * as kvMain from './top.js';
 import * as sendForm from './sendform.js';
 import * as swiperScript from './swiper.js';
+import * as youtuberScript from './youtube.js';
 
 const swup = new Swup({
     plugins: [
@@ -35,6 +36,7 @@ init();
 
 async function init() {
     const swiper = await swiperScript.activeSwiper();
+    const youtube = await youtuberScript.handleYoutube();
 
     if (typeof friconix_update === "function" ) {
         // https://friconix.com/start/#display-icons
