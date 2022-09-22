@@ -1,4 +1,8 @@
 import * as THREE from 'three';
+import * as dat from 'lil-gui';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
@@ -98,6 +102,19 @@ export class Sketch {
 
     // レンダラーの高さ
     this.renderer.setSize( this.width, this.height -  this.header_height);
+    this.renderer.physicallyCorrectLights = true;
+
+    this.renderScene = new RenderPass( this.scene, this.camera );
+
+    this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+    this.bloomPass.threshold = this.settings.bloomThreshold;
+    this.bloomPass.strength = this.settings.bloomStrength;
+    this.bloomPass.radius = this.settings.bloomRadius;
+
+
+    this.composer = new EffectComposer( this.renderer );
+    this.composer.addPass( this.renderScene );
+    this.composer.addPass( this.bloomPass );
 
 
     // キャンバスをDOMツリーに追加
@@ -157,6 +174,8 @@ export class Sketch {
         this.showGuide();
         this.setSize();
         this.resize();
+        this.settings();
+        this.addPost();
       });
     } else {
       this.init();
@@ -165,6 +184,8 @@ export class Sketch {
       this.showGuide();
       this.setSize();
       this.resize();
+      this.settings();
+      this.addPost();
     }
   }
 
@@ -175,7 +196,7 @@ export class Sketch {
     // 表示させる画像のパスを指定
     if (typeof window.ontouchstart === "undefined") {
       // PCの処理
-      this.img.src = "../img/logo.png";
+      this.img.src = "../img/tate_c_small.png";
     } else {
       // スマホの処理
       this.img.src = "../img/logo_small.png";
@@ -186,6 +207,7 @@ export class Sketch {
   init() {
     // オブジェクトをシーンに追加
     this.addObjects();
+
 
     // ローディング画面除去
     this.removeLoadingEnd();
@@ -325,7 +347,7 @@ export class Sketch {
         circleScale: {type: "f", value: 0},
       },
       transparent: true,
-      blending: THREE.AdditiveBlending,
+      // blending: THREE.AdditiveBlending,
       depthTest: false
     });
 
@@ -376,9 +398,13 @@ export class Sketch {
 
         this.rgb_val = this.rgb_vals[Math.floor(Math.random() * this.rgb_vals.length)]
 
-        this.r = this.rgb_val[0];
-        this.g = this.rgb_val[1];
-        this.b = this.rgb_val[2];
+        this.r = this.data[this.index + 0] / 255;
+        this.g = this.data[this.index + 1] / 255;
+        this.b = this.data[this.index + 2] / 255;
+
+        // this.r = this.rgb_val[0];
+        // this.g = this.rgb_val[1];
+        // this.b = this.rgb_val[2];
 
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
@@ -393,6 +419,20 @@ export class Sketch {
 
     return { position: this.position, color: this.color, alpha: this.alpha };
 
+  }
+
+  addPost() {
+    // this.renderScene = new RenderPass( this.scene, this.camera );
+
+    // this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+    // this.bloomPass.threshold = this.settings.bloomThreshold;
+    // this.bloomPass.strength = this.settings.bloomStrength;
+    // this.bloomPass.radius = this.settings.bloomRadius;
+
+
+    // this.composer = new EffectComposer( this.renderer );
+    // this.composer.addPass( this.renderScene );
+    // this.composer.addPass( this.bloomPass );
   }
 
   removeLoadingEnd() {
@@ -844,6 +884,8 @@ export class Sketch {
   animate() {
 
     this.time++;
+    this.composer.setSize( window.innerWidth, window.innerHeight );
+    this.composer.render();
 
     this.getDeltaTime = this.clock.getDelta();
 
@@ -851,7 +893,11 @@ export class Sketch {
     requestAnimationFrame( this.animate.bind(this) );
   
     // レンダラーにシーンとカメラを追加
-    this.renderer.render( this.scene, this.camera );
+    // this.renderer.render( this.scene, this.camera );
+
+    this.bloomPass.strength = this.settings.bloomStrength;
+    this.bloomPass.threshold = this.settings.bloomThreshold;
+    this.bloomPass.radius = this.settings.bloomRadius;
     
     // パーティクル移動速度
     window.setTimeout(() =>{
@@ -1037,6 +1083,19 @@ export class Sketch {
         }
       });
     });
+  }
+
+  settings() {
+    let that = this;
+    this.settings = {
+        bloomStrength: 0,
+        bloomThreshold: 0,
+        bloomRadius: 0,
+    };
+    this.gui = new dat.GUI();
+    this.gui.add(this.settings, "bloomStrength", 0, 2, 0.01);
+    this.gui.add(this.settings, "bloomThreshold", 0, 1, 0.01);
+    this.gui.add(this.settings, "bloomRadius", 0, 1, 0.01);
   }
 }
 
