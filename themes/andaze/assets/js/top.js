@@ -752,47 +752,6 @@ export class Sketch {
 
     
       }, false);
-
-      // window.addEventListener('click', (event) => {
-      //   this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-      //   this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-    
-      //   this.raycaster.setFromCamera( this.mouse, this.camera );
-    
-      //   let intersects = this.raycaster.intersectObjects( [target] );
-    
-      //   this.point.x = intersects[0].point.x;
-      //   this.point.y = intersects[0].point.y;
-
-        
-      //   if(dark_cover.style.opacity == 0) {
-      //     if(this.clickable) {
-      //       window.setTimeout(() => {
-      //         gsap.to(this.material.uniforms.mousePressed, {
-      //           duration: 1,
-      //           value: randomNumbers(10, 5),
-      //           ease: "ease.out(1, 0.3)",
-      //           repeat: 1,
-      //           yoyo: true
-      //         });
-      //       }, 100)
-      //       window.setTimeout(() => {
-      //         this.clickable =! this.clickable;
-      //       }, 500)
-      //       window.setTimeout(() => {
-      //         this.clickable =! this.clickable;
-      //       }, 2500)
-      //     }
-      //   } else {
-      //     gsap.to(this.material.uniforms.mousePressed, {
-      //       duration: 0.3,
-      //       value: 0,
-      //       ease: "ease.out(1, 0.3)"
-      //     });
-      //   }
-
-    
-      // }, false);
       
     } else {
 
