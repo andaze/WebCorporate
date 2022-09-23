@@ -39,6 +39,10 @@ export function handleYoutube() {
                 movie_thumbnail.firstElementChild.classList.remove("shake-constant");
             }
         });
+        movie_thumbnail.addEventListener('click', () => {
+            movie_thumbnail.firstElementChild.classList.remove("shake");
+            movie_thumbnail.firstElementChild.classList.remove("shake-constant");
+        });
     }
     
     function modalOpen() {
