@@ -43,23 +43,41 @@ export function handleYoutube() {
     
     function modalOpen() {
         if(!isOpen) {
-            movie_modal.style.visibility = "visible";
-            movie_modal.style.opacity = 1;
-            videoControl('playVideo');
+            new Promise((resolve) => {
+                setTimeout(() => {
+                    movie_modal.style.visibility = "visible";
+                    movie_modal.style.opacity = 1;
+                }, 100);
+                resolve();
+            }).then(() => {
+                setTimeout(() => {
+                    videoControl('playVideo');
+                }, 300)
+            }).then(() => {
+                setTimeout(() => {
+                    isOpen = !isOpen;
+                }, 500);
+            })
         }
-        setTimeout(() => {
-            isOpen = !isOpen;
-        }, 500);
     }
     
     function modalClose(option) {
         if(isOpen) {
-            videoControl(option);
-            movie_modal.style.opacity = 0;
-            movie_modal.style.visibility = "hidden";
+            new Promise((resolve) => {
+                setTimeout(() => {
+                    videoControl(option);
+                }, 100);
+                resolve();
+            }).then(() => {
+                setTimeout(() => {
+                    movie_modal.style.opacity = 0;
+                    movie_modal.style.visibility = "hidden";
+                }, 300);
+            }).then(() => {
+                setTimeout(() => {
+                    isOpen = !isOpen;
+                }, 500);
+            })
         }
-        setTimeout(() => {
-            isOpen = !isOpen;
-        }, 500);
     }
 }
