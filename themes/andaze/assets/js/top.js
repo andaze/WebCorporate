@@ -612,10 +612,11 @@ export class Sketch {
     const particleFlag = this.mesh.geometry.attributes.flag.array;
     // パーティクルの座標配列
     const particlePositions = this.mesh.geometry.attributes.position.array;
-    // オブジェクト座標
-    const mesh_position = {
+    // オブジェクト座標＋エフェクト
+    const params = {
       x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z,
-      x2: this.mesh.rotation.x, y2: this.mesh.rotation.y, z2: this.mesh.rotation.z
+      x2: this.mesh.rotation.x, y2: this.mesh.rotation.y, z2: this.mesh.rotation.z,
+      s: this.bloomPass.strength, r: this.bloomPass.radius
     };
 
     
@@ -722,10 +723,11 @@ export class Sketch {
             
 
             // オブジェクト移動のTweenアニメーション
-            var auto_move = new TWEEN.Tween(mesh_position);
+            var auto_move = new TWEEN.Tween(params);
             auto_move.to({
                 x1: destination.x / (random_slide_time*1000), y1: destination.y*(-1) / (random_slide_time*1000), z1: this.mesh.position.z + (2000 / (random_slide_time*500)), 
                 x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
+                s: 2.0, r: 0.5
             },10000);
             auto_move.delay(2000);
             auto_move.onUpdate(function (object) {
@@ -734,12 +736,15 @@ export class Sketch {
               this.mesh.position.z = object.z1;
               this.mesh.rotation.x = object.x2;
               this.mesh.rotation.y = object.y2;
+              this.bloomPass.strength = object.s;
+              this.bloomPass.radius = object.r;
             }.bind(this));
 
-            let auto_return = new TWEEN.Tween(mesh_position);
+            let auto_return = new TWEEN.Tween(params);
             auto_return.to({
                 x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z, 
                 x2: this.mesh.rotation.x, y2: this.mesh.rotation.y,
+                s: 0.5, r: 1.5
             },10000);
             auto_return.delay(2000);
             auto_return.onUpdate(function (object) {
@@ -748,6 +753,8 @@ export class Sketch {
               this.mesh.position.z = object.z1;
               this.mesh.rotation.x = object.x2;
               this.mesh.rotation.y = object.y2;
+              this.bloomPass.strength = object.s;
+              this.bloomPass.radius = object.r;
             }.bind(this));
 
             auto_move.chain(auto_return);
