@@ -196,7 +196,7 @@ export class Sketch {
     // 表示させる画像のパスを指定
     if (typeof window.ontouchstart === "undefined") {
       // PCの処理
-      this.img.src = "../img/tate_c_small.png";
+      this.img.src = "../img/logo_color.png";
     } else {
       // スマホの処理
       this.img.src = "../img/logo_small.png";
