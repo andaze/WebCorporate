@@ -785,47 +785,6 @@ export class Sketch {
 
     
       }, false);
-
-      // window.addEventListener('click', (event) => {
-      //   this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-      //   this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-    
-      //   this.raycaster.setFromCamera( this.mouse, this.camera );
-    
-      //   let intersects = this.raycaster.intersectObjects( [target] );
-    
-      //   this.point.x = intersects[0].point.x;
-      //   this.point.y = intersects[0].point.y;
-
-        
-      //   if(dark_cover.style.opacity == 0) {
-      //     if(this.clickable) {
-      //       window.setTimeout(() => {
-      //         gsap.to(this.material.uniforms.mousePressed, {
-      //           duration: 1,
-      //           value: randomNumbers(10, 5),
-      //           ease: "ease.out(1, 0.3)",
-      //           repeat: 1,
-      //           yoyo: true
-      //         });
-      //       }, 100)
-      //       window.setTimeout(() => {
-      //         this.clickable =! this.clickable;
-      //       }, 500)
-      //       window.setTimeout(() => {
-      //         this.clickable =! this.clickable;
-      //       }, 2500)
-      //     }
-      //   } else {
-      //     gsap.to(this.material.uniforms.mousePressed, {
-      //       duration: 0.3,
-      //       value: 0,
-      //       ease: "ease.out(1, 0.3)"
-      //     });
-      //   }
-
-    
-      // }, false);
       
     } else {
 
@@ -895,13 +854,13 @@ export class Sketch {
       this.mesh.material.uniforms.time.value = this.time;
       this.mesh.material.uniforms.move.value = this.move;
       if (typeof window.ontouchstart === "undefined") {
-        this.mesh.material.uniforms.diffusionScale.value = 90.0;
+        this.mesh.material.uniforms.diffusionScale.value = 180.0;
         this.mesh.material.uniforms.circleScale.value = 50.0;
       } else {
-        this.mesh.material.uniforms.diffusionScale.value = 40.0;
+        this.mesh.material.uniforms.diffusionScale.value = 80.0;
         this.mesh.material.uniforms.circleScale.value = 25.0;
       }
-    }, this.fadein_times*this.interval_time+5000)
+    }, this.fadein_times*this.interval_time)
 
     // Tween.jsアニメーションの実行
     TWEEN.update();
