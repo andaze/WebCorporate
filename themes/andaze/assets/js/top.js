@@ -174,7 +174,7 @@ export class Sketch {
         this.showGuide();
         this.setSize();
         this.resize();
-        this.settings();
+        // this.settings();
         this.addPost();
       });
     } else {
@@ -184,7 +184,7 @@ export class Sketch {
       this.showGuide();
       this.setSize();
       this.resize();
-      this.settings();
+      // this.settings();
       this.addPost();
     }
   }
