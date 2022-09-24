@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import * as dat from 'lil-gui';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
@@ -174,7 +173,6 @@ export class Sketch {
         this.showGuide();
         this.setSize();
         this.resize();
-        // this.settings();
         this.addPost();
       });
     } else {
@@ -184,7 +182,6 @@ export class Sketch {
       this.showGuide();
       this.setSize();
       this.resize();
-      // this.settings();
       this.addPost();
     }
   }
@@ -393,24 +390,10 @@ export class Sketch {
         this.pY = -(y - this.canvas_height / 2);
         this.pZ = 0;
 
-        // カラージェネレーターで選定した色を出現させる（出現し得る色は5種類 rgb値で指定）
-        this.rgb_vals = [
-          [(88/255).toFixed(2), (0/255).toFixed(2), (219/255).toFixed(2)],
-          [(219/255).toFixed(2), (47/255).toFixed(2), (7/255).toFixed(2)],
-          [(0/255).toFixed(2), (102/255).toFixed(2), (219/255).toFixed(2)],
-          [(219/255).toFixed(2), (212/255).toFixed(2), (0/255).toFixed(2)],
-          [(0/255).toFixed(2), (219/255).toFixed(2), (144/255).toFixed(2)]
-        ];
-
-        this.rgb_val = this.rgb_vals[Math.floor(Math.random() * this.rgb_vals.length)]
 
         this.r = this.data[this.index + 0] / 255;
         this.g = this.data[this.index + 1] / 255;
         this.b = this.data[this.index + 2] / 255;
-
-        // this.r = this.rgb_val[0];
-        // this.g = this.rgb_val[1];
-        // this.b = this.rgb_val[2];
 
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
@@ -425,20 +408,6 @@ export class Sketch {
 
     return { position: this.position, color: this.color, alpha: this.alpha };
 
-  }
-
-  addPost() {
-    // this.renderScene = new RenderPass( this.scene, this.camera );
-
-    // this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-    // this.bloomPass.threshold = this.settings.bloomThreshold;
-    // this.bloomPass.strength = this.settings.bloomStrength;
-    // this.bloomPass.radius = this.settings.bloomRadius;
-
-
-    // this.composer = new EffectComposer( this.renderer );
-    // this.composer.addPass( this.renderScene );
-    // this.composer.addPass( this.bloomPass );
   }
 
   removeLoadingEnd() {
@@ -918,10 +887,6 @@ export class Sketch {
   
     // レンダラーにシーンとカメラを追加
     // this.renderer.render( this.scene, this.camera );
-
-    // this.bloomPass.strength = this.settings.bloomStrength;
-    // this.bloomPass.threshold = this.settings.bloomThreshold;
-    // this.bloomPass.radius = this.settings.bloomRadius;
     
     // パーティクル移動速度
     window.setTimeout(() =>{
