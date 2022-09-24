@@ -411,7 +411,7 @@ export class Sketch {
         this.a = this.data[this.index + 3] / 255;
         
         // 座標、色、透明度の値を配列に追加
-        if (this.a > 0) {
+        if (this.a > 0.5) {
           this.position.push(this.pX, this.pY, this.pZ), this.color.push(this.r, this.g, this.b), this.alpha.push(this.a);
         }
       }
