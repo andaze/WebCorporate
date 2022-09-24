@@ -107,9 +107,9 @@ export class Sketch {
     this.renderScene = new RenderPass( this.scene, this.camera );
 
     this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-    this.bloomPass.threshold = this.settings.bloomThreshold;
-    this.bloomPass.strength = this.settings.bloomStrength;
-    this.bloomPass.radius = this.settings.bloomRadius;
+    this.bloomPass.threshold = 0.0;
+    this.bloomPass.strength = 0.0;
+    this.bloomPass.radius = 0.0;
 
 
     this.composer = new EffectComposer( this.renderer );
@@ -231,6 +231,12 @@ export class Sketch {
     // 初期アニメーション　パターン3
     // サイト表示後、拡散したパーティクルが集合する
     // this.gather3D();
+
+    window.setTimeout(() => {
+
+      this.lightOn();
+
+    }, this.fadein_times*this.interval_time + 1000);
 
     window.setTimeout(() => {
       
@@ -575,6 +581,17 @@ export class Sketch {
       }
   }
 
+    lightOn() {
+    let bloomPass = {x: this.bloomPass.strength, y: this.bloomPass.radius};
+    let tween = new TWEEN.Tween(bloomPass);
+    tween.to({x: 0.5, y: 1.5}, 3000);
+    tween.start();
+    tween.onUpdate(function(object) {
+      this.bloomPass.strength = object.x;
+      this.bloomPass.radius = object.y;
+    }.bind(this));
+  }
+
   autoDiffusion() {
     // ランダム座標（自動拡散）
     let pos_range_plus = new THREE.Vector2();
@@ -895,9 +912,9 @@ export class Sketch {
     // レンダラーにシーンとカメラを追加
     // this.renderer.render( this.scene, this.camera );
 
-    this.bloomPass.strength = this.settings.bloomStrength;
-    this.bloomPass.threshold = this.settings.bloomThreshold;
-    this.bloomPass.radius = this.settings.bloomRadius;
+    // this.bloomPass.strength = this.settings.bloomStrength;
+    // this.bloomPass.threshold = this.settings.bloomThreshold;
+    // this.bloomPass.radius = this.settings.bloomRadius;
     
     // パーティクル移動速度
     window.setTimeout(() =>{
