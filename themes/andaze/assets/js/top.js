@@ -199,7 +199,7 @@ export class Sketch {
       this.img.src = "../img/logo_color.png";
     } else {
       // スマホの処理
-      this.img.src = "../img/logo_small.png";
+      this.img.src = "../img/logo_color_small.png";
     }
     this.img.crossOrigin = "anonymous";
   }
