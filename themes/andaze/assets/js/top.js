@@ -1,4 +1,7 @@
 import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
@@ -98,6 +101,19 @@ export class Sketch {
 
     // レンダラーの高さ
     this.renderer.setSize( this.width, this.height -  this.header_height);
+    this.renderer.physicallyCorrectLights = true;
+
+    this.renderScene = new RenderPass( this.scene, this.camera );
+
+    this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+    this.bloomPass.threshold = 0.0;
+    this.bloomPass.strength = 0.0;
+    this.bloomPass.radius = 0.0;
+
+
+    this.composer = new EffectComposer( this.renderer );
+    this.composer.addPass( this.renderScene );
+    this.composer.addPass( this.bloomPass );
 
 
     // キャンバスをDOMツリーに追加
@@ -157,6 +173,7 @@ export class Sketch {
         this.showGuide();
         this.setSize();
         this.resize();
+        this.addPost();
       });
     } else {
       this.init();
@@ -165,6 +182,7 @@ export class Sketch {
       this.showGuide();
       this.setSize();
       this.resize();
+      this.addPost();
     }
   }
 
@@ -175,10 +193,10 @@ export class Sketch {
     // 表示させる画像のパスを指定
     if (typeof window.ontouchstart === "undefined") {
       // PCの処理
-      this.img.src = "../img/logo.png";
+      this.img.src = "../img/logo_color.png";
     } else {
       // スマホの処理
-      this.img.src = "../img/logo_small.png";
+      this.img.src = "../img/logo_color_small.png";
     }
     this.img.crossOrigin = "anonymous";
   }
@@ -186,6 +204,7 @@ export class Sketch {
   init() {
     // オブジェクトをシーンに追加
     this.addObjects();
+
 
     // ローディング画面除去
     this.removeLoadingEnd();
@@ -209,6 +228,12 @@ export class Sketch {
     // 初期アニメーション　パターン3
     // サイト表示後、拡散したパーティクルが集合する
     // this.gather3D();
+
+    window.setTimeout(() => {
+
+      this.lightOn();
+
+    }, this.fadein_times*this.interval_time + 1000);
 
     window.setTimeout(() => {
       
@@ -325,7 +350,7 @@ export class Sketch {
         circleScale: {type: "f", value: 0},
       },
       transparent: true,
-      blending: THREE.AdditiveBlending,
+      // blending: THREE.AdditiveBlending,
       depthTest: false
     });
 
@@ -365,27 +390,17 @@ export class Sketch {
         this.pY = -(y - this.canvas_height / 2);
         this.pZ = 0;
 
-        // カラージェネレーターで選定した色を出現させる（出現し得る色は5種類 rgb値で指定）
-        this.rgb_vals = [
-          [(88/255).toFixed(2), (0/255).toFixed(2), (219/255).toFixed(2)],
-          [(219/255).toFixed(2), (47/255).toFixed(2), (7/255).toFixed(2)],
-          [(0/255).toFixed(2), (102/255).toFixed(2), (219/255).toFixed(2)],
-          [(219/255).toFixed(2), (212/255).toFixed(2), (0/255).toFixed(2)],
-          [(0/255).toFixed(2), (219/255).toFixed(2), (144/255).toFixed(2)]
-        ];
 
-        this.rgb_val = this.rgb_vals[Math.floor(Math.random() * this.rgb_vals.length)]
-
-        this.r = this.rgb_val[0];
-        this.g = this.rgb_val[1];
-        this.b = this.rgb_val[2];
+        this.r = this.data[this.index + 0] / 255;
+        this.g = this.data[this.index + 1] / 255;
+        this.b = this.data[this.index + 2] / 255;
 
 
         // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
         this.a = this.data[this.index + 3] / 255;
         
         // 座標、色、透明度の値を配列に追加
-        if (this.a > 0) {
+        if (this.a > 0.5) {
           this.position.push(this.pX, this.pY, this.pZ), this.color.push(this.r, this.g, this.b), this.alpha.push(this.a);
         }
       }
@@ -535,6 +550,17 @@ export class Sketch {
       }
   }
 
+    lightOn() {
+    let bloomPass = {x: this.bloomPass.strength, y: this.bloomPass.radius};
+    let tween = new TWEEN.Tween(bloomPass);
+    tween.to({x: 0.5, y: 1.5}, 3000);
+    tween.start();
+    tween.onUpdate(function(object) {
+      this.bloomPass.strength = object.x;
+      this.bloomPass.radius = object.y;
+    }.bind(this));
+  }
+
   autoDiffusion() {
     // ランダム座標（自動拡散）
     let pos_range_plus = new THREE.Vector2();
@@ -555,10 +581,11 @@ export class Sketch {
     const particleFlag = this.mesh.geometry.attributes.flag.array;
     // パーティクルの座標配列
     const particlePositions = this.mesh.geometry.attributes.position.array;
-    // オブジェクト座標
-    const mesh_position = {
+    // オブジェクト座標＋エフェクト
+    const params = {
       x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z,
-      x2: this.mesh.rotation.x, y2: this.mesh.rotation.y, z2: this.mesh.rotation.z
+      x2: this.mesh.rotation.x, y2: this.mesh.rotation.y, z2: this.mesh.rotation.z,
+      s: this.bloomPass.strength, r: this.bloomPass.radius
     };
 
     
@@ -665,10 +692,11 @@ export class Sketch {
             
 
             // オブジェクト移動のTweenアニメーション
-            var auto_move = new TWEEN.Tween(mesh_position);
+            var auto_move = new TWEEN.Tween(params);
             auto_move.to({
                 x1: destination.x / (random_slide_time*1000), y1: destination.y*(-1) / (random_slide_time*1000), z1: this.mesh.position.z + (2000 / (random_slide_time*500)), 
                 x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
+                s: 2.0, r: 0.5
             },10000);
             auto_move.delay(2000);
             auto_move.onUpdate(function (object) {
@@ -677,12 +705,15 @@ export class Sketch {
               this.mesh.position.z = object.z1;
               this.mesh.rotation.x = object.x2;
               this.mesh.rotation.y = object.y2;
+              this.bloomPass.strength = object.s;
+              this.bloomPass.radius = object.r;
             }.bind(this));
 
-            let auto_return = new TWEEN.Tween(mesh_position);
+            let auto_return = new TWEEN.Tween(params);
             auto_return.to({
                 x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z, 
                 x2: this.mesh.rotation.x, y2: this.mesh.rotation.y,
+                s: 0.5, r: 1.5
             },10000);
             auto_return.delay(2000);
             auto_return.onUpdate(function (object) {
@@ -691,6 +722,8 @@ export class Sketch {
               this.mesh.position.z = object.z1;
               this.mesh.rotation.x = object.x2;
               this.mesh.rotation.y = object.y2;
+              this.bloomPass.strength = object.s;
+              this.bloomPass.radius = object.r;
             }.bind(this));
 
             auto_move.chain(auto_return);
@@ -803,6 +836,8 @@ export class Sketch {
   animate() {
 
     this.time++;
+    this.composer.setSize( window.innerWidth, window.innerHeight );
+    this.composer.render();
 
     this.getDeltaTime = this.clock.getDelta();
 
@@ -810,7 +845,7 @@ export class Sketch {
     requestAnimationFrame( this.animate.bind(this) );
   
     // レンダラーにシーンとカメラを追加
-    this.renderer.render( this.scene, this.camera );
+    // this.renderer.render( this.scene, this.camera );
     
     // パーティクル移動速度
     window.setTimeout(() =>{
@@ -996,6 +1031,19 @@ export class Sketch {
         }
       });
     });
+  }
+
+  settings() {
+    let that = this;
+    this.settings = {
+        bloomStrength: 0,
+        bloomThreshold: 0,
+        bloomRadius: 0,
+    };
+    this.gui = new dat.GUI();
+    this.gui.add(this.settings, "bloomStrength", 0, 2, 0.01);
+    this.gui.add(this.settings, "bloomThreshold", 0, 1, 0.01);
+    this.gui.add(this.settings, "bloomRadius", 0, 1, 0.01);
   }
 }
 
