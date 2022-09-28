@@ -26,6 +26,12 @@ export function activeSwiper() {
                 nextEl: ".newsNext",
                 prevEl: ".newsPrevious",
             },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
         });
     }
 
@@ -47,6 +53,12 @@ export function activeSwiper() {
                 nextEl: ".casestudyNext",
                 prevEl: ".casestudyPrevious",
             },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
         });
     }
 
@@ -68,6 +80,12 @@ export function activeSwiper() {
                 nextEl: ".sustainabilityNext",
                 prevEl: ".sustainabilityPrevious",
             },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
         });
     }
 
