@@ -25,50 +25,63 @@ The copyright of the works posted on this site belongs to the Company, except fo
 **Prohibited matter**  
 The following acts are prohibited even when using with the prior consent of our document or when using the information posted on this site by private use or any other method explicitly recognized by law To do.
 
-a. Actions that infringe or may infringe property or privacy of a third party or our company.
+1.  Actions that infringe or may infringe property or privacy of a third party or our company.
 
-b. Any act that causes or may cause disadvantage or damage to a third party or the Company.
 
-c. Any act that damages the reputation or credibility of a third party or the Company, or any act that may result in such damage.
+1.  Any act that causes or may cause disadvantage or damage to a third party or the Company.
 
-d. Business activities and other commercial purposes.
 
-e. Use or provision of harmful programs such as computer viruses, or acts that may result.
+1.  Any act that damages the reputation or credibility of a third party or the Company, or any act that may result in such damage.
 
-f. False declaration or notification, such as registering another person’s e-mail address.
 
-g. Acts that are or may be offensive to public order and morals.
+1.  Business activities and other commercial purposes.
 
-h. Any act that violates or may violate the law.
 
-i. In addition to the above, acts that the Company deems inappropriate.
+1.  Use or provision of harmful programs such as computer viruses, or acts that may result.
+
+
+1.  False declaration or notification, such as registering another person’s e-mail address.
+
+
+1.  Acts that are or may be offensive to public order and morals.
+
+
+1.  Any act that violates or may violate the law.
+
+
+1.  In addition to the above, acts that the Company deems inappropriate.
 
 {{< br >}}
 
-**Disclaimer regarding information**  
-a. The Company pays close attention to the information posted on this site. However, we do not guarantee the accuracy, completeness, usefulness, safety, or the purpose of use of the information posted. In addition, this information is subject to change or discontinuation of publication without notice, and we shall not be liable even if the user suffers damage due to this.
+1. **Disclaimer regarding information**  
+    The Company pays close attention to the information posted on this site. However, we do not guarantee the accuracy, completeness, usefulness, safety, or the purpose of use of the information posted. In addition, this information is subject to change or discontinuation of publication without notice, and we shall not be liable even if the user suffers damage due to this.
 
-b. Service interruptions, delays, etc. may occur due to failures, stoppages, power outages, natural disasters, maintenance work, or other reasons for the server, network equipment, lines, etc. on this site. In this case, we shall not be responsible to the user.
 
-c. Our company will not take any responsibility even if the user suffers damage due to the use of this site.
+1.  Service interruptions, delays, etc. may occur due to failures, stoppages, power outages, natural disasters, maintenance work, or other reasons for the server, network equipment, lines, etc. on this site. In this case, we shall not be responsible to the user.
+
+
+1.  Our company will not take any responsibility even if the user suffers damage due to the use of this site.
 
 Link to this site
 As a general rule, links to this site are free. However, please link after agreeing to the following.
 
-a. Please do not link from any of the following websites.
+1.  Please do not link from any of the following websites.
 
 * Websites that contain content that violates public order and morals
 * Websites that contain content that slanders, slanders or threatens the Company or a third party
 * Websites that infringes the copyright or other property rights of the Company or a third party, or damages
 * WWebsites that contain disadvantageous content or websites that contain other illegal content
 
-b. Please clearly indicate that this is a link to this site.
+1.  Please clearly indicate that this is a link to this site.
 
-c. Our logo cannot be used for linking.
 
-d. Please set to display this site in a separate window.
+1.  Our logo cannot be used for linking.
 
-e. If we violate any of the above-mentioned matters or if we determine that it is inappropriate, we may apply for link deletion. In that case, please delete the link immediately.
+
+1.  Please set to display this site in a separate window.
+
+
+1.  If we violate any of the above-mentioned matters or if we determine that it is inappropriate, we may apply for link deletion. In that case, please delete the link immediately.
 
 {{< br >}}
 
