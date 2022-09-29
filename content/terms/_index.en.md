@@ -1,13 +1,13 @@
 ---
-title: "Terms"
-date: 2022-07-08T11:35:23+09:00
-weight: 0
+title: Terms
+date: 2022-07-08T11:35:23.000+09:00
+weight: "0"
 footerTitileHidden: true
+
 ---
+#### Content usage conditions
 
-Content usage conditions
-
-Andaze Ltd corporate site and related sites (hereinafter referred to as “this site”) are operated by Andaze Ltd. (hereinafter referred to as “the Company”) or its agent. In using this site, it is assumed that you have agreed to the following conditions of use.
+##### Andaze Ltd corporate site and related sites (hereinafter referred to as “this site”) are operated by Andaze Ltd. (hereinafter referred to as “the Company”) or its agent. In using this site, it is assumed that you have agreed to the following conditions of use.
 
 {{< br >}}
 
@@ -16,7 +16,7 @@ We may change the usage conditions of this site without notice and suspend the o
 
 {{< br >}}
 
-**Copyright**  
+**Copyright**
 
 The copyright of the works posted on this site belongs to the Company, except for contributions based on the contract with the Company. It is prohibited to use (including duplication, modification, uploading, posting, transmitting, distributing, license, selling, publishing, etc.) the copyrighted works published on this site, except with the prior consent of our document. I will.
 
@@ -57,10 +57,10 @@ As a general rule, links to this site are free. However, please link after agree
 
 a. Please do not link from any of the following websites.
 
-- Websites that contain content that violates public order and morals
-- Websites that contain content that slanders, slanders or threatens the Company or a third party
-- Websites that infringes the copyright or other property rights of the Company or a third party, or damages
-- WWebsites that contain disadvantageous content or websites that contain other illegal content
+* Websites that contain content that violates public order and morals
+* Websites that contain content that slanders, slanders or threatens the Company or a third party
+* Websites that infringes the copyright or other property rights of the Company or a third party, or damages
+* WWebsites that contain disadvantageous content or websites that contain other illegal content
 
 b. Please clearly indicate that this is a link to this site.
 
