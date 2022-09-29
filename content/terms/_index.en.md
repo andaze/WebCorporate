@@ -25,7 +25,7 @@ The copyright of the works posted on this site belongs to the Company, except fo
 **Prohibited matter**  
 The following acts are prohibited even when using with the prior consent of our document or when using the information posted on this site by private use or any other method explicitly recognized by law To do.
 
-Actions that infringe or may infringe property or privacy of a third party or our company.
+a. Actions that infringe or may infringe property or privacy of a third party or our company.
 
 b. Any act that causes or may cause disadvantage or damage to a third party or the Company.
 
