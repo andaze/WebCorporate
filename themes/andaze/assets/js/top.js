@@ -29,20 +29,12 @@ export class Surround {
       hidden_cover.style.height = (company_section_height + hidden_cover.clientHeight) + "px";
     }
 
-    window.addEventListener('load', this.blackOut.bind(this));
-    window.addEventListener('scroll', this.blackOut.bind(this));
-    
-    
-    // リサイズ時の処理（3D表示以外の調整）
-    window.addEventListener('resize', () => {
-      this.setMainHeight();
-      this.blackOut();
-    });
   }
 
   callFunctions() {
     this.setMainHeight();
     this.blackOut();
+    this.ResponseToEvent();
   }
 
   setMainHeight() {
@@ -58,7 +50,6 @@ export class Surround {
 
     // コンテンツ位置までスクロールしたら暗くする
     const dark_cover = document.getElementById('hidden_cover');
-    
     const key_visual = document.getElementById("key-visual");
     let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
     let target_static = key_visual_bottom - (window.innerHeight * 0.88);
@@ -70,6 +61,18 @@ export class Surround {
       dark_cover.style.opacity = 0;
       dark_cover.style.visibility = "invisible";
     }
+  }
+
+  ResponseToEvent() {
+
+    window.addEventListener('load', this.blackOut.bind(this));
+    window.addEventListener('scroll', this.blackOut.bind(this));
+    
+    // リサイズ時の処理（3D表示以外の調整）
+    window.addEventListener('resize', () => {
+      this.setMainHeight();
+      this.blackOut();
+    });
   }
 }
 

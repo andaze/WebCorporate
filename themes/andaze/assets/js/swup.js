@@ -36,7 +36,6 @@ init();
 
 async function init() {
     const swiper = await swiperScript.activeSwiper();
-    const youtube = await youtuberScript.handleYoutube();
 
     if (typeof friconix_update === "function" ) {
         // https://friconix.com/start/#display-icons
@@ -77,6 +76,10 @@ async function init() {
         document.querySelector('#submitButton').addEventListener("click", () => {
             sendForm.sendEmail();
         });
+    }
+
+    if (document.getElementById('youtube-video')) {
+        const youtube = await youtuberScript.handleYoutube();
     }
     
 }
