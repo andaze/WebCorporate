@@ -15,10 +15,10 @@ export function activeSwiper() {
                     slidesPerView: 1,
                 },
                 412: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                 },
                 851: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                 }
             },
             spaceBetween: 30,
@@ -26,6 +26,12 @@ export function activeSwiper() {
                 nextEl: ".newsNext",
                 prevEl: ".newsPrevious",
             },
+            // autoplay: {
+            //     delay: 2000,
+            //     disableOnInteraction: false,
+            // },
+            // loop: true,
+            // loopAdditionalSlides: 1,
         });
     }
 
@@ -47,6 +53,12 @@ export function activeSwiper() {
                 nextEl: ".casestudyNext",
                 prevEl: ".casestudyPrevious",
             },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
         });
     }
 
@@ -68,6 +80,12 @@ export function activeSwiper() {
                 nextEl: ".sustainabilityNext",
                 prevEl: ".sustainabilityPrevious",
             },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
         });
     }
 
