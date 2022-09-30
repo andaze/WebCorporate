@@ -26,12 +26,12 @@ export function activeSwiper() {
                 nextEl: ".newsNext",
                 prevEl: ".newsPrevious",
             },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
+            // autoplay: {
+            //     delay: 2000,
+            //     disableOnInteraction: false,
+            // },
+            // loop: true,
+            // loopAdditionalSlides: 1,
         });
     }
 
