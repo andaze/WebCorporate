@@ -35,9 +35,7 @@ weight: "8"
 </tr>
 </table>
 
-  
-
-<p style="border: 1px solid black; padding-left: 10px">取組内容： 従業員のワークライフバランスの実現に向け、メリハリのある働き方ができるように年次有給休暇の取得率アップを目指す。（年間6日以上の取得率70％を目指す） </p>
+  <p style="border: 1px solid black; padding-left: 10px">取組内容： 従業員のワークライフバランスの実現に向け、メリハリのある働き方ができるように年次有給休暇の取得率アップを目指す。（年間6日以上の取得率70％を目指す） </p>
 
 <table>
 <tr>
