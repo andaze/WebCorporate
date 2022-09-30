@@ -1,6 +1,5 @@
 export function handleYoutube() {
     const movie_thumbnail = document.getElementById('movie-thumbnail');
-    const movie_thumbnail_pos = movie_thumbnail.offsetTop
 
     const movie_modal = document.getElementById('movie-modal');
     const movie_close = document.getElementById('modal-close');
@@ -29,22 +28,6 @@ export function handleYoutube() {
         });
     });
 
-    if (typeof window.ontouchstart !== "undefined") {
-        window.addEventListener('scroll', () => {
-            if ((window.scrollY > movie_thumbnail_pos + window.innerHeight*2/3) & (window.scrollY < movie_thumbnail_pos + window.innerHeight*4/3)) {
-                movie_thumbnail.firstElementChild.classList.add("shake");
-                movie_thumbnail.firstElementChild.classList.add("shake-constant");
-            } else {
-                movie_thumbnail.firstElementChild.classList.remove("shake");
-                movie_thumbnail.firstElementChild.classList.remove("shake-constant");
-            }
-        });
-        movie_thumbnail.addEventListener('click', () => {
-            movie_thumbnail.firstElementChild.classList.remove("shake");
-            movie_thumbnail.firstElementChild.classList.remove("shake-constant");
-        });
-    }
-    
     function modalOpen() {
         if(!isOpen) {
             new Promise((resolve) => {
@@ -53,10 +36,6 @@ export function handleYoutube() {
                     movie_modal.style.opacity = 1;
                 }, 100);
                 resolve();
-            }).then(() => {
-                setTimeout(() => {
-                    videoControl('playVideo');
-                }, 300)
             }).then(() => {
                 setTimeout(() => {
                     isOpen = !isOpen;
