@@ -14,7 +14,7 @@ export function handleYoutube() {
         targetWindow.postMessage('{"event":"command", "func":"'+action+'", "args":'+arg+'}', '*');
     };
     
-    movie_thumbnail.addEventListener('mouseenter', () => {
+    movie_thumbnail.addEventListener('click', () => {
         modalOpen();
     });
     
@@ -36,6 +36,10 @@ export function handleYoutube() {
                     movie_modal.style.opacity = 1;
                 }, 100);
                 resolve();
+            }).then(() => {
+                setTimeout(() => {
+                    videoControl('playVideo');
+                }, 300)
             }).then(() => {
                 setTimeout(() => {
                     isOpen = !isOpen;
