@@ -58,7 +58,7 @@ export class Surround {
 
     // コンテンツ位置までスクロールしたら暗くする
     const dark_cover = document.getElementById('hidden_cover');
-
+    
     const key_visual = document.getElementById("key-visual");
     let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
     let target_static = key_visual_bottom - (window.innerHeight * 0.88);
