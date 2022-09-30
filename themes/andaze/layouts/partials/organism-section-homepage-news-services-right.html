@@ -42,6 +42,13 @@
             {{ .Scratch.Delete "quolity" }}
             {{ .Scratch.Delete "src" }}
             
+            <div class="text-sm font-bold pt-5">
+                {{ if eq (.Lang) ("en")}}
+                    Company guide from the president
+                {{ else }}
+                    代表が説明する会社案内
+                {{ end }}
+            </div>
         </div>
 
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
