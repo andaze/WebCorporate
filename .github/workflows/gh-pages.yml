@@ -26,17 +26,17 @@ jobs:
       - name: Build WebCoporates
         run: "npm install && hugo --minify"
         env:
-          HUGO_BASEURL: "https://andaze.com"
+          HUGO_BASEURL: "https://dev.andaze.com"
 
       - name: Build WebJobs
         run: cd hugo-jobs && hugo --minify && mv -f public ../public/job
         env:
-          HUGO_BASEURL: "https://andaze.com/job"
+          HUGO_BASEURL: "https://dev.andaze.com/job"
 
       - name: Build d365blog
         run: cd d365blog && hugo --gc --minify --config config/config.toml,config/config_prod.toml && mv -f public ../public/dynamics365
         env:
-          HUGO_BASEURL: "https://andaze.com/dynamics365"
+          HUGO_BASEURL: "https://dev.andaze.com/dynamics365"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
