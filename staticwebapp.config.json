@@ -1,0 +1,9 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/foobar*",
+      "rewrite": "https://dynamics365blog.andaze.com"
+    }
+  ]
+}

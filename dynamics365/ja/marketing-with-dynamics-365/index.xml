@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dynamics-365-for-marketing on My New Hugo Site</title><link>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/</link><description>Recent content in dynamics-365-for-marketing on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><atom:link href="https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/index.xml" rel="self" type="application/rss+xml"/><item><title>Dynamics 365 for Marketing のセットアップ</title><link>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/dynamics-365-for-marketing-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/dynamics-365-for-marketing-setup/</guid><description>Author:Takafumi Noguchi
+linkedIn Dynamics 365 for Marketing というマーケティング支援のアプリケーションをご存知でしょうか？
+会社のホームページやブログ、メルマガなどの情報受信者や、セミナーやイベントに参加いただいた方を自社の見込み顧客に対して行ったマーケティング施策が、どれくらい効果があり、次に何を行えば商談につながるのかを分析できるアプリケーションが、Dynamics 365 for Marketing です。
+もともと Marketing は、Sales に付随するマーケティング機能として、キャンペーンメール送信をメインとして利用することができていましたが、近年 MA（Marketing Automation）ツールの必要性が高まり、Dynamics 365 for Marketing というアプリケーションに進化しました。 Customer Engagement Plan のライセンスを利用しているのであれば、ぜひとも活用したいアプリケーションです。
+何ができるのか？ Dynamics 365 for Marketing には以下のような機能が含まれています。
+コア マーケティング 電子メール マーケティング、顧客体験、行動追跡、リード スコアリング、マーケティング ページ、その他を提供します。 これらの機能は、Marketing アプリの中核をなす機能であり、Dynamics 365 for Marketing に固有です。
+イベント管理 対面イベントまたはウェビナー イベントを企画して主催します。これには、出席者がイベントのスケジュールやスピーカーの確認およびイベントの登録に使用できるオンライン ポータルが含まれます。 現在、この機能は Dynamics 365 for Marketing でのみ利用できます。
+お客様の声 オンライン調査を作成し、結果を分析します。 この機能は Marketing アプリにバンドルされていますが、他の Dynamics 365 製品のアドオンとして別に利用することもできます。
+Dynamics 365 Connector for LinkedIn Lead Gen Forms LinkedIn のリード ツールで生成されたリードを、Dynamics 365 にインポートします。 この機能は Marketing アプリにバンドルされていますが、他の Dynamics 365 製品のアドオンとして別に利用することもできます。</description></item><item><title>Dynamics 365 for Marketing 無償版のセットアップ【2019.04】</title><link>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/d365-marketing-trials-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/d365-marketing-trials-setup/</guid><description>Author:Takafumi Noguchi
+linkedIn Dynamics 365 の無償版利用手順についてはご紹介しました。以前はこの 無償版の一覧に Marketing が表示されていましたが、現在表示されていません。マイクロソフトにお問い合わせをしたところ、Marketing においては別の URL で無償版を提供しているようなので、その手順をご紹介します。
+※ ご紹介する無償版 Marketing の URL は一時的な措置のため、アナウンスなく利用できなくなる可能性があります。
+Office 365 E3 の無料試用版をセットアップ まず、Office 365 E3 の無償版をセットアップします。Dynamics 365 for Marketing の無償版を利用する場合、下図の for Sales のような開発を目的としたセットアップができないので、企業のメールアドレスが必要になります。
+Office 365 E3 へアクセスして、「無料試用版」をクリックします。
+必要な情報を入力して、「次へ」をクリックします。
+Office 365 テナントのIDとパスワードを設定します。任意の名前とパスワードで「アカウントの作成」をクリックします。
+ロボットでないことの認証があるので、自身の電話番号を入力してSMSでコードを取得したら入力して先に進みます。
+セットアップが完了すると、Office 365 の画面に移動できます。「管理」をクリックします。
+今回は、この Office 365 のアカウントを Dynamics 365 for Marketing の管理者としてセットアップします。
+Dynamics 365 for Marketing の無償版セットアップ Dynamics 365 for Marketing の無償版へアクセスします。(2019年4月時点はまだ有効です）
+電子メールアドレスは上記で作成した Office 365 のアドレスを使います。「はじめに」をクリックします。
+チェックボックスに２つチェックをいれたら、「作成」をクリックします。</description></item><item><title>Marketing メール送受信不可の対応【無償版】</title><link>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/cannot-send-email-from-trial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.andaze.com/dynamics365/ja/marketing-with-dynamics-365/cannot-send-email-from-trial/</guid><description>Author:Takafumi Noguchi
+linkedIn Dynamics 365 for Marketing 無償版を利用して、マーケティングメールを送信する際、うまく送受信できない現象が確認できたので、そのトラブルシュート方法について記載しておきます。
+テスト送信が受信されない Dynamics 365 for Marketing のマーケティング電子メールを作成して、「テスト送信」をクリックしても、該当のメールアドレスにメールが受信されませんでした。
+Dynamics 365 のメール設定を確認する 基本中の基本ですが、Dynamics 365 でメールが送受信できるかどうかの確認をします。
+「設定」から「電子メールアクセス」で「メールボックス」をクリックします。
+自分のメールボックスが下図のように、送受信とも “成功” となっていると問題はありません。
+”実行しない” となっていると未設定のため、メールボックスをクリックします。「同期方法」で下図のように設定したら、「電子メールの承認」をクリックします。
+承認後、今度は「メールボックスのテストと有効化」をクリックして、ダイアログでチェックをいれて「OK」をクリックします。
+しばらくすると、送受信とも “成功” となり、Dynamics 365 からメールの送受信が可能になりました。
+Exchange Online でメール追跡 上記のように Dynamics 365 でメールを有効にしている状態でも、マーケティングメールを Outlook で受信ができない場合は、Exchange 側が怪しい。
+そこで、マイクロソフトサポートに確認したところ、どうやら “onmicrosoft.com” というドメイン名が Exchange 側でブロックされているのではないか？とのこと。
+Office 365 から Exchange Online でメール追跡を行ってみます。
+Exchange Online へアクセス まず、Office 365 管理センターへアクセス。左のパネル「管理センター」より「Exchange」をクリックします。
+Exchange 管理センターを開くと、「メールフロー」があるのでクリックして、「メッセージの追加」から「新しいメッセージ追跡に今すぐ移動する」をクリックします。
+左パネルの「メール フロー」で「メッセージ追跡」をクリックします。
+「追跡の開始」をクリックして、送信元と送信先を既定のすべてのままにして「検索」をクリックします。
+結果を確認すると、先ほどマーケティングメールで送信したメールが “FilteredAsSpam” としてスパム判定されていました。
+受信側の Outlook を確認すると、確かに迷惑メールに入っています。右クリックで「迷惑メールにしない」をクリックしておきます。</description></item></channel></rss>
