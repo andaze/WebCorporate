@@ -9,7 +9,11 @@ newsimg: nature.jpg
 ---
 # Effective use of resources
 
+{{< space height="h-4" >}}
+
 **We at Andaze believe that it is important for people living on the earth to address environmental issues such as climate change. We are working to reduce our environmental impact with the aim of achieving a sustainable society.**
+
+{{< space height="h-10" >}}
 
 ### Promoting a paperless work environment
 
