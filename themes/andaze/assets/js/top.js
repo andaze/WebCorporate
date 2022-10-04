@@ -238,16 +238,6 @@ export class Sketch {
       // ロードから一定時間経過後、自動でパーティクルを拡散
       window.setInterval(this.autoDiffusion.bind(this), 1000);
 
-      // ウィンドウが非アクティブの場合、アニメーション停止
-      window.addEventListener('blur', () => {
-        this.stopDiffusion = !this.stopDiffusion;
-      });
-    
-      // ウィンドウがアクティブの場合、アニメーション再開
-      window.addEventListener('focus', () => {
-        this.stopDiffusion = !this.stopDiffusion;
-      });  
-
     }, this.show_guide_time + 500);
   }
 
@@ -740,6 +730,18 @@ export class Sketch {
               this.moving_flag = !this.moving_flag
               window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
             }
+
+            // ウィンドウが非アクティブの場合、アニメーション停止
+            window.addEventListener('blur', () => {
+              auto_diffusion.stop();
+              this.stopDiffusion = true;
+            });
+
+            // ウィンドウがアクティブの場合、アニメーション再開
+            window.addEventListener('focus', () => {
+              auto_diffusion.start();
+              this.stopDiffusion = false;
+            });
           }
         }
       }
