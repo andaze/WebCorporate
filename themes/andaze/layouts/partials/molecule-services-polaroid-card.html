@@ -3,10 +3,10 @@
     {{ $class = "hidden" }}
 {{ end }}
 
-<a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border w-full">
-    <div class="w-full h-fit overflow-hidden">
+<a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border border-gray-600 w-full">
+    <div class="w-full h-fit overflow-hidden bg-white">
         {{ partial "atom-service-img.html" . }}
-        <div class="text-gray-400 text-xs py-6 px-4">
+        <div class="text-gray-400 text-xs py-6 px-4 h-32">
             {{ partial "atom-service-title.html" . }}
             <h3 class="{{ $class }}">{{ .Page.Params.subtitle }}</h3>
         </div>
