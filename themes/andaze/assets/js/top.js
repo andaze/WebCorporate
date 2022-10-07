@@ -13,9 +13,6 @@ const links = document.querySelectorAll('a');
 // // ローディング画面の表示
 export const loading_background = document.getElementById("loading");
 
-// 半透明黒フィルター
-const dark_cover = document.getElementById('hidden_cover');
-
 export class Surround {
   constructor() {
 
@@ -58,7 +55,7 @@ export class Surround {
   blackOut() {
 
     // コンテンツ位置までスクロールしたら暗くする
-    // const dark_cover = document.getElementById('hidden_cover');
+    const dark_cover = document.getElementById('hidden_cover');
     const key_visual = document.getElementById("key-visual");
     let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
     let target_static = key_visual_bottom - (window.innerHeight * 0.88);
@@ -766,6 +763,9 @@ export class Sketch {
     
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
+
+        // 半透明黒フィルター
+        const dark_cover = document.getElementById('hidden_cover');
         
         if(dark_cover.style.opacity == 0) {
           gsap.to(this.material.uniforms.mousePressed, {
