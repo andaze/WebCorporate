@@ -10,7 +10,11 @@ headerImage:
 ---
 
 # Top Message
-## As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.
+
+{{< space height="h-4" >}}
+
+## As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.  
+
 Andaze is a venture company created by spin-outs of leading professionals in various fields ranging from technology development to consulting.
 
 Since its inception, Andaze has always been on the lookout for trends and has been generous in its use of superior technology.  
@@ -28,24 +32,9 @@ We are able to provide services that meet the needs of our clients, including th
 
 If you have any of these management issues or problems, please contact Andaze.    
 
+{{< space height="h-4" >}}
+
 **Andaze Ltd.**  
 **President and Representative Director**   
 **Mina Arai**
 
-<!-- ### About Us TOP  -->
-
-<!-- Andaze has three mottos that have been important to us since our founding.
-
-**1. Proposal of systems with high introduction effect**
-
-Our mission is to help our clients strengthen their business. We propose systems that have a good reputation and are highly effective in their implementation, reaching even the management level, based on our experience in a wide range of industries and a wealth of solutions.
-
-**2. Manufacturing with the future in mind**
-
-The world is full of wonderful IT products. However, have you ever had to worry about maintenance fees, version upgrades, and compatibility after your system has been installed? We shape the system from the perspective of both the "system owner" who invests in the system and the "user" who operates the system in the field, with an eye toward future maintenance and operation.
-
-**3. Global Curation**
-
-Our technical team consists mainly of members from India and other countries. We continually gather technologies and concepts at a global level, utilize superior materials that have been verified, and assemble systems that allow users to "firmly experience" the value.
-
-If as many people as possible could fully benefit from technology and innovation, work would become more interesting. We at Andaze will continue to work with you toward this goal. -->
