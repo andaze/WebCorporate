@@ -1,5 +1,5 @@
 ---
-title: "UX重視型アプリケーション開発 / DEVEXPRESS"
+title: "DEVEXPRESS"
 date: 2022-02-23T17:03:34+09:00
 weight: 7
 cardImage: devexpress.jpg
@@ -7,7 +7,7 @@ headerImage:
     imageName: "devexpress.jpg"
     imageTitle: ""
     imageDescription: ""
-subtitle: 使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発
+subtitle: 使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発」
 ---
 
 # DEVEXPRESS
