@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ if .Page.Params.headerImage }}
+    {{/*  {{ if .Page.Params.headerImage }}
     <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover ">
         {{partial "molecule-section-header-image.html" . }}
     </div>
@@ -7,7 +7,11 @@
     <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover ">
         {{partial "molecule-section-header-video.html" . }}
     </div>
-    {{ end }}
+    {{ end }}  */}}
+
+    <video playsinline muted autoplay loop class="w-screen h-full object-cover" id="random_video">
+    </video>
+    
     <div class="container lg:px-28 mx-auto px-5 py-10">
         {{ partial "breadcrumbs.html" . }}
     </div>
