@@ -149,6 +149,7 @@ export class Sketch {
         this.showGuide();
         this.setSize();
         this.resize();
+        this.removeMesh();
       });
     } else {
       this.init();
@@ -157,6 +158,7 @@ export class Sketch {
       this.showGuide();
       this.setSize();
       this.resize();
+      this.removeMesh();
     }
   }
 
