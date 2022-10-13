@@ -569,6 +569,7 @@ export class Sketch {
   }
 
   autoDiffusion() {
+
     // ランダム座標（自動拡散）
     let pos_range_plus = new THREE.Vector2();
     let pos_range_minus = new THREE.Vector2();
@@ -602,154 +603,154 @@ export class Sketch {
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
         // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
         this.stopDiffusion | 
         (window.scrollY > targetForStop)
       ) {
         return;
-      }
-    }
-
-
-    // パーティクルが存在する座標範囲内を決定するための乱数生成
-    pos_range_plus.x = randomNumbers(375, 0);
-    pos_range_minus.x = -1 * randomNumbers(400, 0);
-    pos_range_plus.y = randomNumbers(410, 0);
-    pos_range_minus.y = -1 * randomNumbers(230, 0);
-
-
-    // 疑似クリック・タップ座標値の生成
-    random_pos.x = [pos_range_plus.x, pos_range_minus.x];
-    random_pos.y = [pos_range_plus.y, pos_range_minus.y];
+      } else {
     
-    random_pushed_pos.x = random_pos.x[Math.floor(Math.random() * random_pos.x.length)];
-    random_pushed_pos.y = random_pos.y[Math.floor(Math.random() * random_pos.y.length)];
-
-
-    // 疑似スライド距離の値を作成
-    random_slide_distance.x = randomNumbers(200, 5) * plusMinus();
-    random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
-
-
-    // パーティクルが一度に拡散する対象範囲
-    let diameter = 20;
-    
-    // パーティクル拡散距離方向を決定するための乱数生成
-    let random_numbers = randomNumbers(200, 50);
-    let direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
-    let direction_coef = direction_coefs[Math.floor(Math.random() * direction_coefs.length)];
-
-    // x, y方向のために2種類生成
-    let direction_coef_first = random_numbers * direction_coef[0];
-    let direction_coef_second = random_numbers * direction_coef[1];
+        // パーティクルが存在する座標範囲内を決定するための乱数生成
+        pos_range_plus.x = randomNumbers(375, 0);
+        pos_range_minus.x = -1 * randomNumbers(400, 0);
+        pos_range_plus.y = randomNumbers(410, 0);
+        pos_range_minus.y = -1 * randomNumbers(230, 0);
     
     
-    if (this.click_flag) {
-      for (let i = 0; i < this.vertces; i++) {
-
-        // ジオメトリの頂点座標の配列
-        let attribute = this.mesh.geometry.attributes.position;
+        // 疑似クリック・タップ座標値の生成
+        random_pos.x = [pos_range_plus.x, pos_range_minus.x];
+        random_pos.y = [pos_range_plus.y, pos_range_minus.y];
         
-        // パーティクルの座標
-        let x = attribute.getX(i)*(500/this.camera.position.z) - 8;
-        let y = attribute.getY(i)*(500/this.camera.position.z) + 8;
+        random_pushed_pos.x = random_pos.x[Math.floor(Math.random() * random_pos.x.length)];
+        random_pushed_pos.y = random_pos.y[Math.floor(Math.random() * random_pos.y.length)];
+    
+    
+        // 疑似スライド距離の値を作成
+        random_slide_distance.x = randomNumbers(200, 5) * plusMinus();
+        random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
+    
+    
+        // パーティクルが一度に拡散する対象範囲
+        let diameter = 20;
         
-        let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+        // パーティクル拡散距離方向を決定するための乱数生成
+        let random_numbers = randomNumbers(200, 50);
+        let direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
+        let direction_coef = direction_coefs[Math.floor(Math.random() * direction_coefs.length)];
+    
+        // x, y方向のために2種類生成
+        let direction_coef_first = random_numbers * direction_coef[0];
+        let direction_coef_second = random_numbers * direction_coef[1];
         
-
-        // 疑似クリック・タップ座標からパーティクルまでの距離
-        let distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
         
-
-        // パーティクルの拡散方向（上下左右の4通り）
-        let directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
-        let direction = directions[Math.floor(Math.random() * directions.length)];
-        
-        random_direction.x = direction[0];
-        random_direction.y = direction[1];
-        
-
-        // 疑似スライド時間の作成
-        let random_slide_time = randomNumbers(110, 80) * 0.001;
-        
-        if (particleFlag[i] === 1) {
-          
-          // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
-          if (distance < diameter) {
+        if (this.click_flag) {
+          for (let i = 0; i < this.vertces; i++) {
+    
+            // ジオメトリの頂点座標の配列
+            let attribute = this.mesh.geometry.attributes.position;
             
-            particleFlag[i] = 0;
-
-            // 減衰係数
-            let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
-  
-            // パーティクル拡散時の到達座標
-            destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-            destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-
-
-            // パーティクル拡散のTweenアニメーション
-            let auto_diffusion = new TWEEN.Tween(vertex_position);
-            auto_diffusion.to({x: destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
-            auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
-            auto_diffusion.onUpdate(function (object) {
-              particlePositions[3*i] = object.x;
-              particlePositions[3*i+1] = object.y;
-              particleFlag[i] = object.z;
-            });
-            auto_diffusion.repeat(1);
-            auto_diffusion.yoyo(true);
+            // パーティクルの座標
+            let x = attribute.getX(i)*(500/this.camera.position.z) - 8;
+            let y = attribute.getY(i)*(500/this.camera.position.z) + 8;
             
-
-            // オブジェクト移動のTweenアニメーション
-            var auto_move = new TWEEN.Tween(params);
-            auto_move.to({
-                x1: destination.x / (random_slide_time*1000), y1: destination.y*(-1) / (random_slide_time*1000), z1: this.mesh.position.z + (2000 / (random_slide_time*500)), 
-                x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
-                s: 2.0, r: 0.5
-            },10000);
-            auto_move.delay(2000);
-            auto_move.onUpdate(function (object) {
-              this.mesh.position.x = object.x1;
-              this.mesh.position.y = object.y1;
-              this.mesh.position.z = object.z1;
-              this.mesh.rotation.x = object.x2;
-              this.mesh.rotation.y = object.y2;
-              this.bloomPass.strength = object.s;
-              this.bloomPass.radius = object.r;
-            }.bind(this));
-
-            let auto_return = new TWEEN.Tween(params);
-            auto_return.to({
-                x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z, 
-                x2: this.mesh.rotation.x, y2: this.mesh.rotation.y,
-                s: 0.5, r: 1.5
-            },10000);
-            auto_return.delay(2000);
-            auto_return.onUpdate(function (object) {
-              this.mesh.position.x = object.x1;
-              this.mesh.position.y = object.y1;
-              this.mesh.position.z = object.z1;
-              this.mesh.rotation.x = object.x2;
-              this.mesh.rotation.y = object.y2;
-              this.bloomPass.strength = object.s;
-              this.bloomPass.radius = object.r;
-            }.bind(this));
-
-            auto_move.chain(auto_return);
-
-            // パーティクル拡散
-            auto_diffusion.start();
-
-
-            // スライドフラグ反転
-            this.slide_flag = !this.slide_flag
-
-
-            // オブジェクト移動（視点が極端に近づかないように制限）
-            if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
-              auto_move.start();
-              this.moving_flag = !this.moving_flag
-              window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
+            let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+            
+    
+            // 疑似クリック・タップ座標からパーティクルまでの距離
+            let distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
+            
+    
+            // パーティクルの拡散方向（上下左右の4通り）
+            let directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+            let direction = directions[Math.floor(Math.random() * directions.length)];
+            
+            random_direction.x = direction[0];
+            random_direction.y = direction[1];
+            
+    
+            // 疑似スライド時間の作成
+            let random_slide_time = randomNumbers(110, 80) * 0.001;
+            
+            if (particleFlag[i] === 1) {
+              
+              // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
+              if (distance < diameter) {
+                
+                particleFlag[i] = 0;
+    
+                // 減衰係数
+                let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
+      
+                // パーティクル拡散時の到達座標
+                destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+                destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+    
+    
+                // パーティクル拡散のTweenアニメーション
+                let auto_diffusion = new TWEEN.Tween(vertex_position);
+                auto_diffusion.to({x: destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
+                auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
+                auto_diffusion.onUpdate(function (object) {
+                  particlePositions[3*i] = object.x;
+                  particlePositions[3*i+1] = object.y;
+                  particleFlag[i] = object.z;
+                });
+                auto_diffusion.repeat(1);
+                auto_diffusion.yoyo(true);
+                
+    
+                // オブジェクト移動のTweenアニメーション
+                var auto_move = new TWEEN.Tween(params);
+                auto_move.to({
+                    x1: destination.x / (random_slide_time*1000), y1: destination.y*(-1) / (random_slide_time*1000), z1: this.mesh.position.z + (2000 / (random_slide_time*500)), 
+                    x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
+                    s: 2.0, r: 0.5
+                },10000);
+                auto_move.delay(2000);
+                auto_move.onUpdate(function (object) {
+                  this.mesh.position.x = object.x1;
+                  this.mesh.position.y = object.y1;
+                  this.mesh.position.z = object.z1;
+                  this.mesh.rotation.x = object.x2;
+                  this.mesh.rotation.y = object.y2;
+                  this.bloomPass.strength = object.s;
+                  this.bloomPass.radius = object.r;
+                }.bind(this));
+    
+                let auto_return = new TWEEN.Tween(params);
+                auto_return.to({
+                    x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z, 
+                    x2: this.mesh.rotation.x, y2: this.mesh.rotation.y,
+                    s: 0.5, r: 1.5
+                },10000);
+                auto_return.delay(2000);
+                auto_return.onUpdate(function (object) {
+                  this.mesh.position.x = object.x1;
+                  this.mesh.position.y = object.y1;
+                  this.mesh.position.z = object.z1;
+                  this.mesh.rotation.x = object.x2;
+                  this.mesh.rotation.y = object.y2;
+                  this.bloomPass.strength = object.s;
+                  this.bloomPass.radius = object.r;
+                }.bind(this));
+    
+                auto_move.chain(auto_return);
+    
+                // パーティクル拡散
+                auto_diffusion.start();
+    
+    
+                // スライドフラグ反転
+                this.slide_flag = !this.slide_flag
+    
+    
+                // オブジェクト移動（視点が極端に近づかないように制限）
+                if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
+                  auto_move.start();
+                  this.moving_flag = !this.moving_flag
+                  window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
+                }
+              }
             }
           }
         }
@@ -888,6 +889,7 @@ export class Sketch {
 
   animate() {
 
+    // console.log(location.pathname)
     this.time++;
     this.composer.setSize( window.innerWidth, window.innerHeight );
     this.composer.render();
