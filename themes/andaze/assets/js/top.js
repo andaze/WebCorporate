@@ -1079,6 +1079,8 @@ export class Sketch {
           this.scene.remove( this.mesh );
           this.geometry.dispose();
           this.material.dispose();
+          this.renderer.dispose();
+          this.composer.removePass();
         }
       });
     });
