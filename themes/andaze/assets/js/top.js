@@ -98,33 +98,6 @@ export class Sketch {
     this.camera.position.x = 0;
     this.camera.position.y = 30;
 
-
-    // レンダラーの作成
-    this.renderer = new THREE.WebGLRenderer();
-
-    // レンダラーの高さ
-    this.renderer.setSize( this.width, this.height -  this.header_height);
-    this.renderer.physicallyCorrectLights = true;
-
-    this.renderScene = new RenderPass( this.scene, this.camera );
-
-    this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-    this.bloomPass.threshold = 0.0;
-    this.bloomPass.strength = 0.0;
-    this.bloomPass.radius = 0.0;
-
-
-    this.composer = new EffectComposer( this.renderer );
-    this.composer.addPass( this.renderScene );
-    this.composer.addPass( this.bloomPass );
-
-
-    // キャンバスをDOMツリーに追加
-    this.wrapper = document.querySelector("#webgl");
-    if (this.wrapper) {
-      this.wrapper.appendChild(this.renderer.domElement);
-    }
-
     // アニメーション速度の調整用
     this.clock = new THREE.Clock();
 
@@ -203,6 +176,9 @@ export class Sketch {
   }
 
   init() {
+
+    this.setRendere();
+
     // オブジェクトをシーンに追加
     this.addObjects();
 
@@ -252,6 +228,34 @@ export class Sketch {
       });  
 
     }, this.show_guide_time + 500);
+  }
+
+  setRendere() {
+    // レンダラーの作成
+    this.renderer = new THREE.WebGLRenderer();
+
+    // レンダラーの高さ
+    this.renderer.setSize( this.width, this.height -  this.header_height);
+    this.renderer.physicallyCorrectLights = true;
+
+    this.renderScene = new RenderPass( this.scene, this.camera );
+
+    this.bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+    this.bloomPass.threshold = 0.0;
+    this.bloomPass.strength = 0.0;
+    this.bloomPass.radius = 0.0;
+
+
+    this.composer = new EffectComposer( this.renderer );
+    this.composer.addPass( this.renderScene );
+    this.composer.addPass( this.bloomPass );
+
+
+    // キャンバスをDOMツリーに追加
+    this.wrapper = document.querySelector("#webgl");
+    if (this.wrapper) {
+      this.wrapper.appendChild(this.renderer.domElement);
+    }
   }
 
   addObjects() {
