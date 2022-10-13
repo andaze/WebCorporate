@@ -894,8 +894,10 @@ export class Sketch {
 
     this.getDeltaTime = this.clock.getDelta();
 
-    // 画面の描画毎にanimate関数を呼び出す
-    requestAnimationFrame( this.animate.bind(this) );
+    if (document.querySelector('#webgl')) {
+      // 画面の描画毎にanimate関数を呼び出す
+      requestAnimationFrame( this.animate.bind(this) );
+    }
   
     // レンダラーにシーンとカメラを追加
     // this.renderer.render( this.scene, this.camera );
