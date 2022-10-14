@@ -7,17 +7,19 @@ weight: 2
 
 <h1>About Us</h1>
 
+{{< space height="h-8" >}}
+
 <table>
 
 <tbody>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">Company Name</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">Company Name</th>
 <td class="w-2/3 p-0">Andaze Ltd.</td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">Location</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">Location</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4"><span class="font-bold ">head office</span><br>10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo</li>
@@ -27,23 +29,23 @@ WeWork Hanzomon PREXSouth 2F</li>
 </td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">Established</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">Established</th>
 <td class="w-2/3 p-0">April 2016 Fiscal year: March</td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">Capital</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">Capital</th>
 <td class="w-2/3 p-0">20,000,000 Yen</td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">Representative</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">Representative</th>
 <td class="w-2/3 p-0">Mina Arai</td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">Bank</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">Bank</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4">Sumitomo Mitsui Banking Corporation, Hibiya Branch</li>
@@ -52,8 +54,8 @@ WeWork Hanzomon PREXSouth 2F</li>
 </td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">Approved Standards</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">Approved Standards</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4">Information Security Management System（ISO27001)</li>
@@ -62,18 +64,18 @@ WeWork Hanzomon PREXSouth 2F</li>
 </td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">Phone number</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">Phone number</th>
 <td class="w-2/3 p-0">03-3230-0401</td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">Website</td>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">Website</td>
 <td class="w-2/3 p-0"><a href="https://andaze.com/en/">https://andaze.com</a></td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">Business</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">Business</th>
 <td class="w-2/3 p-0">
 <ol class="list-none p-0">
 <li class="p-0 mt-0 mb-4">(1) Diagnosis, guidance, and consulting of management information systems for various companies</li>

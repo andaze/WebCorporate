@@ -1,3 +1,6 @@
 [submodule "hugo-jobs"]
 	path = hugo-jobs
 	url = https://github.com/andaze/hugo-jobs.git
+[submodule "d365blog"]
+	path = d365blog
+	url = https://github.com/andaze/d365blog.git

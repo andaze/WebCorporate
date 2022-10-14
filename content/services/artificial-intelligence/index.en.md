@@ -14,17 +14,25 @@ subtitle: Providing highly accurate AI solutions that further enhance business v
 
 # AI (Artificial Intelligence)
 
+{{< space height="h-10" >}}
+
 ## Providing highly accurate AI solutions that further enhance business value   
+
 Andaze's AI solutions, based on our strength of abundant knowledge and advanced technology, are highly accurate and contribute significantly to business efficiency. Our shared team, which is involved from consulting to development and operation, achieves high-level AI development. We further enhance the quality of our solutions by repeatedly improving them through design illustrations and prototypes that are easy to visualize.
 
-{{< br >}}
+{{< space height="h-20" >}}
 
 ## Why Choose Andeze? 
+
+{{< space height="h-6" >}}
+
 ### (1) Specialized AI experts help you expand your business
 
 * Based on the know-how cultivated over many years in the AI and forecasting domains, our specialized AI team contributes not only to proof of concept, but also to further business expansion and profitability.
 
 * Andaze, which has been responsible for practical application of AI in various industries, provides a shared team of specialists in various fields.
+
+{{< space height="h-6" >}}
 
 ### (2) Advanced AI development cultivated on the frontlines of new business
 
@@ -34,7 +42,7 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 
 * As a Microsoft-certified Gold Partner, we will meet the expectations of customers who are considering AI implementation by staying close to their latent needs and providing immediate support.
 
-{{< br >}}
+{{< space height="h-6" >}}
 
 ### (3) Providing one-stop AI solutions
 * We can provide consulting services at the time of implementation, as well as management services such as maintenance of data integration platforms.
@@ -43,4 +51,4 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 
 * From understanding the current situation to planning, Andaze's AI specialists, who are well versed in business and cutting-edge technologies, provide one-stop service.
 
-{{< br >}}
+{{< space height="h-28" >}}

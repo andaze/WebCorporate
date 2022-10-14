@@ -7,22 +7,24 @@ weight: 2
 
 <h1>会社情報</h1>
 
+{{< space height="h-8" >}}
+
 <table>
 
 <tbody>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">会社名</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">会社名</th>
 <td class="w-2/3 p-0">アンダーズ株式会社</td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">英文社名</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">英文社名</th>
 <td class="w-2/3 p-0">Andaze Ltd.</td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">所在地</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">所在地</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4"><span class="font-bold block">本社</span>〒 102-0083<br>東京都千代田区麹町 2-10-3 エキスパートオフィス 1F</li>
@@ -31,23 +33,23 @@ weight: 2
 </td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">設立</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">設立</th>
 <td class="w-2/3 p-0">2016 年 4 月　決算期: 3 月</td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">資本金</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">資本金</th>
 <td class="w-2/3 p-0">20,000,000 円</td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">代表者</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">代表者</th>
 <td class="w-2/3 p-0">新井 美奈</td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">取引銀行</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">取引銀行</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4">三井住友銀行 日比谷支店</li>
@@ -56,8 +58,8 @@ weight: 2
 </td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">認定規格</th>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">認定規格</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4">情報セキュリティマネジメントシステム（ISO27001）</li>
@@ -66,18 +68,18 @@ weight: 2
 </td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">電話番号</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">電話番号</th>
 <td class="w-2/3 p-0">03-3230-0401</td>
 </tr>
 
-<tr class="flex p-8 border-0">
-<th class="w-1/3 font-bold">ウェブサイト</td>
+<tr class="flex items-center p-8 border-0">
+<th class="w-1/3 font-bold !m-0">ウェブサイト</td>
 <td class="w-2/3 p-0"><a href="https://andaze.com/ja/">https://andaze.com</a></td>
 </tr>
 
-<tr class="flex p-8 border-0 bg-gray-50">
-<th class="w-1/3 font-bold">事業内容</th>
+<tr class="flex items-center p-8 border-0 bg-gray-50">
+<th class="w-1/3 font-bold !m-0">事業内容</th>
 <td class="w-2/3 p-0">
 <ol class="list-none p-0">
 <li class="p-0 mt-0 mb-4">(1) 各種企業に対する経営情報システムの診断、指導並びにコンサルティング</li>

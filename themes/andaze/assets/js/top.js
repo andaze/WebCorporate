@@ -224,16 +224,6 @@ export class Sketch {
       // ロードから一定時間経過後、自動でパーティクルを拡散
       window.setInterval(this.autoDiffusion.bind(this), 1000);
 
-      // ウィンドウが非アクティブの場合、アニメーション停止
-      window.addEventListener('blur', () => {
-        this.stopDiffusion = !this.stopDiffusion;
-      });
-    
-      // ウィンドウがアクティブの場合、アニメーション再開
-      window.addEventListener('focus', () => {
-        this.stopDiffusion = !this.stopDiffusion;
-      });  
-
     }, this.show_guide_time + 500);
   }
 
@@ -757,6 +747,18 @@ export class Sketch {
                 }
               }
             }
+
+            // ウィンドウが非アクティブの場合、アニメーション停止
+            window.addEventListener('blur', () => {
+              auto_diffusion.stop();
+              this.stopDiffusion = true;
+            });
+
+            // ウィンドウがアクティブの場合、アニメーション再開
+            window.addEventListener('focus', () => {
+              auto_diffusion.start();
+              this.stopDiffusion = false;
+            });
           }
         }
       }
@@ -786,6 +788,9 @@ export class Sketch {
     
         this.point.x = intersects[0].point.x;
         this.point.y = intersects[0].point.y;
+
+        // 半透明黒フィルター
+        const dark_cover = document.getElementById('hidden_cover');
         
         if(dark_cover.style.opacity == 0) {
           gsap.to(this.material.uniforms.mousePressed, {
