@@ -28,7 +28,7 @@ weight: 2
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
 <li class="p-0 mt-0 mb-4"><span class="font-bold block">本社</span>〒 102-0083<br>東京都千代田区麹町 2-10-3 エキスパートオフィス 1F</li>
-<li class="p-0 mt-0"><span class="font-bold block">開発拠点</span>〒 102-0083<br>東京都千代田区麹町二丁目5−１ WeWork半蔵門tdREXSouth 2F</li>
+<li class="p-0 mt-0"><span class="font-bold block">開発拠点</span>〒 102-0083<br>WeWork半蔵門PREX South 2F</li>
 </ul>
 </td>
 </tr>
