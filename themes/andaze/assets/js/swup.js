@@ -42,10 +42,13 @@ async function init() {
         friconix_update();
     }
 
+    let surround;
+    let sketch
+
     if (document.querySelector('#webgl')){
 
-        const surround = await new kvMain.Surround();
-        const sketch = await new kvMain.Sketch();
+        surround = await new kvMain.Surround();
+        sketch = await new kvMain.Sketch();
         sketch.setImage();
 
         kvMain.loading_background.style.opacity = 1;
@@ -65,6 +68,9 @@ async function init() {
             surround.callFunctions();
             sketch.callFunctions();
         }
+    } else {
+        surround = null;
+        sketch = null;
     }
     
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
