@@ -1,18 +1,18 @@
 ---
 title: Environmental Policy
-date: 2022-05-03T19:02:12+09:00
-weight: 3
+date: 2022-05-03T19:02:12.000+09:00
+weight: "3"
 headerImage:
-    imageName: "environment.jpg"
-    imageTitle: "Environmental Policy"
+  imageName: environment.jpg
+  imageTitle: Environmental Policy
 newsimg: environment-policy.jpg
----
 
+---
 # Environmental Policy
 
 {{< space height="h-4" >}}
 
-**We at Andaze have established the following Environmental Policy as a guideline to fulfill our responsibility toward the realization of a sustainable society.**
+### **We at Andaze have established the following Environmental Policy as a guideline to fulfill our responsibility toward the realization of a sustainable society.**
 
 {{< space height="h-10" >}}
 
@@ -36,7 +36,7 @@ We will establish an environmental management system, regularly discuss and eval
 
 ## Promotion of awareness-raising activities
 
-This policy applies to all officers and employees of Andaze. We will also seek the understanding of all Andaze business partners and service providers, and ensure that they are fully aware of this policy.   
+This policy applies to all officers and employees of Andaze. We will also seek the understanding of all Andaze business partners and service providers, and ensure that they are fully aware of this policy.  
 Through internal education and awareness-raising activities, Andaze will foster a corporate culture in which each employee can deepen their awareness of environmental issues and take concrete actions to address them.
 
 {{< space height="h-10" >}}
