@@ -16,9 +16,10 @@ export const loading_background = document.getElementById("loading");
 export class Surround {
   constructor() {
 
-    // canvasのmargin-topにheaderの高さを設定
-    this.header_height = document.getElementById("header_nav").clientHeight;
-
+    setTimeout(() => {
+      // canvasのmargin-topにheaderの高さを設定
+      this.header_height = document.getElementById("header_nav").clientHeight;
+    })
     // canvasのmargin-topにheaderの高さを設定
     this.canvas_element = document.getElementById('webgl');
 
@@ -38,12 +39,14 @@ export class Surround {
   }
 
   setMainHeight() {
-    // // canvasのmargin-topにheaderの高さを設定
-    this.header_height = document.getElementById("header_nav").clientHeight;
-
-    if (this.canvas_element) {
-      this.canvas_element.style.marginTop = this.header_height + "px";
-    }
+    setTimeout(() => {
+      // // canvasのmargin-topにheaderの高さを設定
+      this.header_height = document.getElementById("header_nav").clientHeight;
+  
+      if (this.canvas_element) {
+        this.canvas_element.style.marginTop = this.header_height + "px";
+      }
+    })
   }
 
   blackOut() {
