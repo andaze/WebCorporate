@@ -790,20 +790,22 @@ export class Sketch {
         this.point.y = intersects[0].point.y;
 
         // 半透明黒フィルター
-        const dark_cover = document.getElementById('hidden_cover');
-        
-        if(dark_cover.style.opacity == 0) {
-          gsap.to(this.material.uniforms.mousePressed, {
-            duration: 0.3,
-            value: 1,
-            ease: "ease.out(1, 0.3)"
-          });
-        } else {
-          gsap.to(this.material.uniforms.mousePressed, {
-            duration: 0.3,
-            value: 0,
-            ease: "ease.out(1, 0.3)"
-          });
+        if(document.getElementById('hidden_cover')) {
+          const dark_cover = document.getElementById('hidden_cover');
+          
+          if(dark_cover.style.opacity == 0) {
+            gsap.to(this.material.uniforms.mousePressed, {
+              duration: 0.3,
+              value: 1,
+              ease: "ease.out(1, 0.3)"
+            });
+          } else {
+            gsap.to(this.material.uniforms.mousePressed, {
+              duration: 0.3,
+              value: 0,
+              ease: "ease.out(1, 0.3)"
+            });
+          }
         }
 
     
