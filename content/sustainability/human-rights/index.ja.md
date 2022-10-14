@@ -1,19 +1,18 @@
 ---
 title: 人権方針
-date: 2022-05-03T19:02:12+09:00
-weight: 2
+date: 2022-05-03T19:02:12.000+09:00
+weight: "2"
 headerImage:
-    imageName: "meeting.jpg"
-    imageTitle: "人権方針"
+  imageName: meeting.jpg
+  imageTitle: 人権方針
 newsimg: human.jpg
+
 ---
+# 人権方針
 
-# 人権方針  
-
-{{< space height="h-4" >}}
+{{< space height="h-3" >}}
 
 **アンダーズは「グローバルかつ優れた技術で、日本にイノベーションを。」を経営理念として掲げています。この基本理念のもと、事業活動を通じて関わる全ての方々の人権の尊重に全社的に取り組みます。**
-  
 
 {{< space height="h-10" >}}
 
