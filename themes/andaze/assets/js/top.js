@@ -50,16 +50,18 @@ export class Surround {
 
     // コンテンツ位置までスクロールしたら暗くする
     const dark_cover = document.getElementById('hidden_cover');
-    const key_visual = document.getElementById("key-visual");
-    let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-    let target_static = key_visual_bottom - (window.innerHeight * 0.88);
-
-    if (window.scrollY >= target_static) {
-      dark_cover.style.opacity = .5;
-      dark_cover.style.visibility = "visible";
-    } else if (window.scrollY < target_static) {
-      dark_cover.style.opacity = 0;
-      dark_cover.style.visibility = "invisible";
+    if (document.getElementById("key-visual")) {
+      const key_visual = document.getElementById("key-visual");
+      let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
+      let target_static = key_visual_bottom - (window.innerHeight * 0.88);
+  
+      if (window.scrollY >= target_static) {
+        dark_cover.style.opacity = .5;
+        dark_cover.style.visibility = "visible";
+      } else if (window.scrollY < target_static) {
+        dark_cover.style.opacity = 0;
+        dark_cover.style.visibility = "invisible";
+      }
     }
   }
 
