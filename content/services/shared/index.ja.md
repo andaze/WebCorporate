@@ -1,5 +1,6 @@
 ---
 title: "シェアードチーム"
+titleEn: "Shared Team"
 date: 2022-02-23T17:03:34+09:00
 weight: 7
 cardImage: shared.png
@@ -7,6 +8,7 @@ headerImage:
     imageName: "shared.png"
     imageTitle: ""
     imageDescription: ""
+topText: "多彩なメンバーの高いスキルを投入"
 kind: service
 subtitle: 多彩なメンバーの高いスキルを投入
 ---

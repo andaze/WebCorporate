@@ -1,12 +1,13 @@
 ---
 title: "Shared Team"
 date: 2022-02-23T17:03:34+09:00
-weight: 7
+weight: 0
 cardImage: shared.png
 headerImage:
     imageName: "shared.png"
     imageTitle: ""
     imageDescription: ""
+topText: "A diverse team of highly skilled professionals."
 kind: service
 subtitle: A diverse team of highly skilled professionals
 ---
