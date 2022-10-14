@@ -1,7 +1,7 @@
 ---
 title: "採用代行サービス"
 date: 2022-02-23T17:03:34+09:00
-weight: 5
+weight: 6
 cardImage: recruit.png
 headerImage:
     imageName: "recruit.png"
