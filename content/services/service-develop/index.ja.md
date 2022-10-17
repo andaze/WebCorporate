@@ -2,7 +2,7 @@
 title: "新規事業サービス開発"
 titleEn: "New Business Service Development"
 date: 2022-02-23T17:03:34+09:00
-weight: 7
+weight: 6
 cardImage: service.png
 headerImage:
     imageName: "service.png"

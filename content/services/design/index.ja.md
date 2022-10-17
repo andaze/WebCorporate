@@ -2,7 +2,7 @@
 title: "UI/UXデザイン"
 titleEn: "UI/UX Design"
 date: 2022-02-23T17:03:34+09:00
-weight: 5
+weight: 4
 cardImage: design.png
 headerImage:
     imageName: "design.png"

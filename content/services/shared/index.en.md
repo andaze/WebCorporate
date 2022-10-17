@@ -1,7 +1,7 @@
 ---
 title: "Shared Team"
 date: 2022-02-23T17:03:34+09:00
-weight: 1
+weight: 7
 cardImage: shared.png
 headerImage:
     imageName: "shared.png"
