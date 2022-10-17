@@ -1,13 +1,7 @@
 {{ define "main" }}
-    {{ if .Page.Params.headerImage }}
     <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover ">
-        {{partial "molecule-section-header-image.html" . }}
+        {{partial "atom-header-video-random.html" . }}
     </div>
-    {{ else }}
-    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover ">
-        {{partial "molecule-section-header-video.html" . }}
-    </div>
-    {{ end }}
     <div class="container lg:px-28 mx-auto px-5 py-10">
         {{ partial "breadcrumbs.html" . }}
     </div>
