@@ -1,17 +1,18 @@
 ---
 title: Basic Policy on Information Security
-date: 2022-05-03T19:02:12+09:00
-weight: 7
+date: 2022-05-03T19:02:12.000+09:00
+weight: "7"
 headerImage:
-    imageName: "information.jpg"
-    imageTitle: "Basic Policy on Information Security"
+  imageName: information.jpg
+  imageTitle: Basic Policy on Information Security
 newsimg: security.jpg
+
 ---
 # Basic Policy on Information Security
 
 {{< space height="h-4" >}}
 
-**Andaze is committed to ensuring, maintaining, and utilizing information security, one of the most important issues in our business activities, in accordance with our corporate philosophy of "Bringing innovation to Japan through global and superior technology. We, Andaze Corporation, have established and implemented the following Basic Policy on Information Security based on our belief that it is our responsibility to protect all information assets we handle in order to ensure, maintain, and utilize information security, which is one of the most important issues in our business activities.**
+### **Andaze is committed to ensuring, maintaining, and utilizing information security, one of the most important issues in our business activities, in accordance with our corporate philosophy of "Bringing innovation to Japan through global and superior technology. We, Andaze Corporation, have established and implemented the following Basic Policy on Information Security based on our belief that it is our responsibility to protect all information assets we handle in order to ensure, maintain, and utilize information security, which is one of the most important issues in our business activities.**
 
 {{< space height="h-4" >}}
 
@@ -24,4 +25,3 @@ newsimg: security.jpg
 (4) We shall take preventive measures to prevent unauthorized intrusion, leakage, falsification, loss, or theft of the company's information assets. In the unlikely event of a problem, we shall strive for early detection, early investigation, and prevention of recurrence.
 
 (5) We will periodically review the above activities and strive for improvement.
-
