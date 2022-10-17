@@ -1,28 +1,28 @@
 ---
-title: "HUGO WEB"
-date: 2022-02-23T17:03:34+09:00
-weight: 9
+title: HUGO WEB
+date: 2022-02-23T17:03:34.000+09:00
+weight: "9"
 cardImage: hugo.png
 headerImage:
-    imageName: "hugo.png"
-    imageTitle: ""
-    imageDescription: ""
+  imageName: hugo.png
+  imageTitle: ''
+  imageDescription: ''
 subtitle: Static Website Development for fast page loading with secure security
----
 
+---
 # HUGO WEB
 
-## Static Website Development for fast page loading with secure security
+### Static Website Development for fast page loading with secure security
 
 {{< br >}}
 
-### Overview
+## Overview
 
 You want to increase the display speed of your web pages, or you want to have a solid security measure, or you do not want to update information in real time.... Static website development is useful for websites with such characteristics. There are three main reasons why static websites are attracting attention today.
 
 {{< br >}}
 
-### Effects of Introduction
+## Effects of Introduction
 
 #### (1) Security
 
@@ -38,31 +38,31 @@ When a CMS is implemented, "regular maintenance" costs must be anticipated, as c
 
 {{< br >}}
 
-### Suggested Industries
+## Suggested Industries
 
-- Corporate websites for various industries
-- Job posting web pages for various industries
-- Landing pages (LP) for corporate advertisements, etc.
+* ・ Corporate websites for various industries
+* ・ Job posting web pages for various industries
+* ・ Landing pages (LP) for corporate advertisements, etc.
 
 {{< br >}}
 
-### Advantages and disadvantages of static websites
+## Advantages and disadvantages of static websites
 
 ![ Image is not Available !](hugo-web.webp)
 
 {{< br >}}
 
-### Differences between a static website and a dynamic CMS
+## Differences between a static website and a dynamic CMS
 
 | Item | Static | Dynamic CMS |
-| ---------------- | ------------ | -------------- |
-Performance | Good | Medium to High |
+| --- | --- | --- |
+| Performance | Good | Medium to High |
 | Security | Very Good | Medium to High |
-| Infrastructure | Simple | More Complex | 
+| Infrastructure | Simple | More Complex |
 | Backup | Easier | More Complex |
 | Data Driven | Not Possible | Possible |
 | Content Update | Per File | Per Record |
-| Design | Free | By theme | 
+| Design | Free | By theme |
 | Version up | Optional | Continuous and Vulnerable |
 
 Andaze provides a simple and easy way to create a static site generator that is easy to use, easy to maintain, and easy to use.
@@ -71,10 +71,12 @@ Andaze will quickly build a static website with our static site generator HUGO. 
 
 {{< br >}}
 
-### Case Study
+## Case Study
 
-**Site**: Andaze corporate site  
+* **・ Site**: Andaze corporate site
 
-**Problem**: We used to build our website using various systems such as FrontPage, IBM Home Page Builder, DreamWeaver, and so on. Later, when we adopted WordPress, problems occurred due to version upgrades of the main body and plug-ins. We were also worried about the security vulnerability, which was worrying us.  
 
-**Solution**:If the site does not require a database, "Static Site Generator" is sufficient. However, with the release of Azure Static Web Apps, we decided to move to a static code generator and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. We then discovered and selected a static site generator called "Hugo" developed in the Google Go language. As a result, the time and mental burden on the site management staff was reduced, and productivity in content creation increased. Performance: Entering the URL of any of our corporate sites in PageSpeed Insights, we can see that it is performing well by Google.
+* **・ Problem**: We used to build our website using various systems such as FrontPage, IBM Home Page Builder, DreamWeaver, and so on. Later, when we adopted WordPress, problems occurred due to version upgrades of the main body and plug-ins. We were also worried about the security vulnerability, which was worrying us.
+
+
+* **・ Solution**:If the site does not require a database, "Static Site Generator" is sufficient. However, with the release of Azure Static Web Apps, we decided to move to a static code generator and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. We then discovered and selected a static site generator called "Hugo" developed in the Google Go language. As a result, the time and mental burden on the site management staff was reduced, and productivity in content creation increased. Performance: Entering the URL of any of our corporate sites in PageSpeed Insights, we can see that it is performing well by Google.
