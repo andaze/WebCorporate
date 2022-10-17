@@ -27,17 +27,17 @@ Therefore, we recommend "interactive web services. An interactive web service is
 
 ## Effects of Introduction
 
-* Information is updated without the need to press the refresh button while the browser is open.
-* The user experience of automatically updating the screen increases satisfaction and improves the value of the product
+* ・ Information is updated without the need to press the refresh button while the browser is open.
+* ・ The user experience of automatically updating the screen increases satisfaction and improves the value of the product
 
 {{< br >}}
 
 ## Suggested Industries
 
-* Distribution
-* Securities & Investments
-* Financial Services
-* Manufacturing
+* ・ Distribution
+* ・ Securities & Investments
+* ・ Financial Services
+* ・ Manufacturing
 
 {{< br >}}
 
