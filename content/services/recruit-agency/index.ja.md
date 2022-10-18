@@ -9,6 +9,7 @@ headerImage:
     imageDescription: ""
 kind: service
 subtitle: 人材紹介から採用活動、教育までトータルサポート
+topText: 人材紹介から採用活動、教育までトータルサポート
 ---
 
 # 採用代行サービス

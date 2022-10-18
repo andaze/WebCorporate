@@ -1,5 +1,5 @@
 {{ $class := "" }}
-{{ if or (eq .Page.Params.cardImage ("shared.png")) (eq .Page.Params.cardImage ("recruit.png"))}}
+{{ if eq .Page.Params.cardImage ("recruit.png") }}
     {{ $class = "hidden" }}
 {{ end }}
 

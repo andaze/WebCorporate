@@ -7,6 +7,7 @@ headerImage:
     imageName: "shared.png"
     imageTitle: ""
     imageDescription: ""
+topText: "A diverse team of highly skilled professionals."
 kind: service
 subtitle: A diverse team of highly skilled professionals
 ---
