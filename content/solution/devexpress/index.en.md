@@ -1,22 +1,23 @@
 ---
-title: "DEVEXPRESS"
-date: 2022-02-23T17:03:34+09:00
-weight: 7
+title: DEVEXPRESS
+date: 2022-02-23T17:03:34.000+09:00
+weight: "7"
 cardImage: devexpress.jpg
 headerImage:
-    imageName: "devexpress.jpg"
-    imageTitle: ""
-    imageDescription: ""
-subtitle: UX-focused application development" that enhances the value of services through user satisfaction
----
+  imageName: devexpress.jpg
+  imageTitle: ''
+  imageDescription: ''
+subtitle: UX-focused application development" that enhances the value of services
+  through user satisfaction
 
+---
 # DEVEXPRESS
 
-## UX-focused application development" that enhances the value of services through user satisfaction
+### UX-focused application development" that enhances the value of services through user satisfaction
 
 {{< br >}}
 
-### Overview
+## Overview
 
 Satisfaction and pleasure obtained through services and products. Such value that users experience and feel is called "UX (user experience). A decade ago, high functionality was enough to attract people's interest and attention, but in recent years, when material wealth has been achieved, more and more people are willing to pay for "experience" in addition to functionality.
 
@@ -24,34 +25,40 @@ Therefore, efforts to invest in UX are attracting attention as a means of differ
 
 {{< br >}}
 
-### Effects of Introduction
+## Effects of Introduction
 
-- Accurate understanding of user habits and issues
-- Create new experiences that have never existed before
-- Potential needs of users are brought out.
-- Increased value of services and products
-
-{{< br >}}
-
-### Suggested Industries
-
-- Manufacturing
-- Financial Services
-- Information and telecommunications
-- Distribution
+* ・ Accurate understanding of user habits and issues
+* ・ Create new experiences that have never existed before
+* ・ Potential needs of users are brought out.
+* ・ Increased value of services and products
 
 {{< br >}}
 
-### Product Image
+## Suggested Industries
+
+* ・ Manufacturing
+* ・ Financial Services
+* ・ Information and telecommunications
+* ・ Distribution
+
+{{< br >}}
+
+## Product Image
 
 Andaze utilizes the DevExpress Framework to accelerate UX development. ChoiceAwards" in 2021, where we were named best in class in 20 development categories. If you are looking to innovate your business through UX development, please feel free to contact our professionals.
 
 {{< br >}}
 
-### Case Study
+## Case Study
 
-**Industry**: Major food manufacturer  
+#### **Industry**: 
 
-**Ploblem**: To achieve high usability and responsiveness while allowing users to search and group nearly 1 million internal data items by any criteria.  
+Major food manufacturer
 
-**Solution**: Selected DevExpress UI kit. The system was designed to allow users to select and display the necessary data in about 0.2 seconds in a background query. This was a fresh experience for the user and was highly appreciated by the person in charge.
+#### **Ploblem**: 
+
+To achieve high usability and responsiveness while allowing users to search and group nearly 1 million internal data items by any criteria.
+
+#### **Solution**: 
+
+Selected DevExpress UI kit. The system was designed to allow users to select and display the necessary data in about 0.2 seconds in a background query. This was a fresh experience for the user and was highly appreciated by the person in charge.
