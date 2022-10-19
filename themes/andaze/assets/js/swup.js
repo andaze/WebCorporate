@@ -37,6 +37,7 @@ init();
 
 async function init() {
     const swiper = await swiperScript.activeSwiper();
+
     if (document.getElementById("youtube-video")) {
         const youtube = await youtuberScript.handleYoutube();
     }
@@ -49,11 +50,14 @@ async function init() {
         friconix_update();
     }
 
-    const surround = await new kvMain.Surround();
-    const sketch = await new kvMain.Sketch();
-    sketch.setImage();
+    let surround;
+    let sketch
 
     if (document.querySelector('#webgl')){
+
+        surround = await new kvMain.Surround();
+        sketch = await new kvMain.Sketch();
+        sketch.setImage();
 
         kvMain.loading_background.style.opacity = 1;
 
@@ -73,7 +77,8 @@ async function init() {
             sketch.callFunctions();
         }
     } else {
-        sketch.removeMesh();
+        surround = null;
+        sketch = null;
     }
     
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
@@ -83,6 +88,10 @@ async function init() {
         document.querySelector('#submitButton').addEventListener("click", () => {
             sendForm.sendEmail();
         });
+    }
+
+    if (document.getElementById('youtube-video')) {
+        const youtube = await youtuberScript.handleYoutube();
     }
     
 }
