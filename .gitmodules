@@ -4,3 +4,6 @@
 [submodule "d365blog"]
 	path = d365blog
 	url = https://github.com/andaze/d365blog.git
+[submodule "landing-page"]
+	path = landing-page
+	url = https://github.com/andaze/landing-page.git
