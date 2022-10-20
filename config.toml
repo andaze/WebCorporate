@@ -45,7 +45,7 @@ footerSiteMapText = "Site Map"
 [params.emailCredential]
 	secureToken = "7670de06-d726-44e6-af6c-96dca7e5b64f"
 	fromMail = "no-reply@andaze.com"
-	bccMail = "nishidai@andaze.com"
+	bccMail = "nishidai@andaze.com,contact-us@andaze.com"
 
 [markup]
 
