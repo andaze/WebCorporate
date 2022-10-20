@@ -38,6 +38,11 @@ jobs:
         env:
           HUGO_BASEURL: "https://andaze.com/dynamics365"
 
+      - name: Build landing-page
+        run: cd landing-page && hugo --gc --minify && mv -f public ../public/lp
+        env:
+          HUGO_BASEURL: "https://andaze.com/lp"
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
