@@ -39,7 +39,7 @@ jobs:
           HUGO_BASEURL: "https://andaze.com/dynamics365"
 
       - name: Build landing-page
-        run: cd landing-page && hugo --gc --minify && mv -f public ../public/lp
+        run: cd landing-page && npm install && hugo --gc --minify && mv -f public ../public/lp
         env:
           HUGO_ENVIRONMENT: production
 
