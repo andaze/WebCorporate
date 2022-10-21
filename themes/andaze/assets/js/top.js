@@ -148,7 +148,6 @@ export class Sketch {
   callFunctions() {
     if(first_visit) {
       this.img.addEventListener('load', () => {
-        console.log('repaire')
         this.init();
         this.mouseInteraction();
         this.animate();
@@ -158,7 +157,6 @@ export class Sketch {
         this.removeMesh();
       });
     } else {
-      console.log('repaire')
       this.init();
       this.mouseInteraction();
       this.animate();
@@ -684,7 +682,7 @@ export class Sketch {
     
     
                 // パーティクル拡散のTweenアニメーション
-                let auto_diffusion = new TWEEN.Tween(vertex_position);
+                var auto_diffusion = new TWEEN.Tween(vertex_position);
                 auto_diffusion.to({x: destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
                 auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
                 auto_diffusion.onUpdate(function (object) {
@@ -747,20 +745,21 @@ export class Sketch {
                   this.moving_flag = !this.moving_flag
                   window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
                 }
+
+                // ウィンドウが非アクティブの場合、アニメーション停止
+                window.addEventListener('blur', () => {
+                  auto_diffusion.stop();
+                  this.stopDiffusion = true;
+                });
+    
+                // ウィンドウがアクティブの場合、アニメーション再開
+                window.addEventListener('focus', () => {
+                  auto_diffusion.start();
+                  this.stopDiffusion = false;
+                });
               }
             }
 
-            // ウィンドウが非アクティブの場合、アニメーション停止
-            // window.addEventListener('blur', () => {
-            //   auto_diffusion.stop();
-            //   this.stopDiffusion = true;
-            // });
-
-            // ウィンドウがアクティブの場合、アニメーション再開
-            // window.addEventListener('focus', () => {
-            //   auto_diffusion.start();
-            //   this.stopDiffusion = false;
-            // });
           }
         }
       }
