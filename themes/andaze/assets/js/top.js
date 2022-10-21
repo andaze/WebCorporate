@@ -150,22 +150,22 @@ export class Sketch {
       this.img.addEventListener('load', () => {
         console.log('repaire')
         this.init();
-        // this.mouseInteraction();
+        this.mouseInteraction();
         this.animate();
         this.showGuide();
         this.setSize();
         this.resize();
-        // this.removeMesh();
+        this.removeMesh();
       });
     } else {
       console.log('repaire')
       this.init();
-      // this.mouseInteraction();
+      this.mouseInteraction();
       this.animate();
       this.showGuide();
       this.setSize();
       this.resize();
-      // this.removeMesh();
+      this.removeMesh();
     }
   }
 
@@ -751,16 +751,16 @@ export class Sketch {
             }
 
             // ウィンドウが非アクティブの場合、アニメーション停止
-            window.addEventListener('blur', () => {
-              auto_diffusion.stop();
-              this.stopDiffusion = true;
-            });
+            // window.addEventListener('blur', () => {
+            //   auto_diffusion.stop();
+            //   this.stopDiffusion = true;
+            // });
 
             // ウィンドウがアクティブの場合、アニメーション再開
-            window.addEventListener('focus', () => {
-              auto_diffusion.start();
-              this.stopDiffusion = false;
-            });
+            // window.addEventListener('focus', () => {
+            //   auto_diffusion.start();
+            //   this.stopDiffusion = false;
+            // });
           }
         }
       }
