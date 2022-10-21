@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - '**'  # Set a branch to deploy
   pull_request:
   workflow_dispatch:
 
@@ -41,7 +41,7 @@ jobs:
       - name: Build landing-page
         run: cd landing-page && hugo --gc --minify && mv -f public ../public/lp
         env:
-          HUGO_BASEURL: "https://andaze.com/lp"
+          HUGO_ENVIRONMENT: production
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
