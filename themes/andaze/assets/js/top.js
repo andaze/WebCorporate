@@ -148,22 +148,24 @@ export class Sketch {
   callFunctions() {
     if(first_visit) {
       this.img.addEventListener('load', () => {
+        console.log('repaire')
         this.init();
-        this.mouseInteraction();
+        // this.mouseInteraction();
         this.animate();
         this.showGuide();
         this.setSize();
         this.resize();
-        this.removeMesh();
+        // this.removeMesh();
       });
     } else {
+      console.log('repaire')
       this.init();
-      this.mouseInteraction();
+      // this.mouseInteraction();
       this.animate();
       this.showGuide();
       this.setSize();
       this.resize();
-      this.removeMesh();
+      // this.removeMesh();
     }
   }
 
