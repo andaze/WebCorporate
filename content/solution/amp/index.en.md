@@ -69,14 +69,14 @@ Andaze will promptly build your AMP site with our AMP framework. If your website
 
 ## Case Study
 
-#### **Site**:
+##### **Site**:
 
 Andaze corporate site
 
-#### **Problem**: 
+##### **Problem**:
 
 When the site was built with WordPress, there was a problem with access speed from mobile.
 
-#### **Solution**: 
+##### **Solution**:
 
 By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.
