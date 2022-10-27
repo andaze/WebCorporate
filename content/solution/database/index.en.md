@@ -1,22 +1,22 @@
 ---
-title: "AZURE COSMOS DATABASE"
-date: 2022-02-23T17:03:34+09:00
-weight: 10
+title: AZURE COSMOS DATABASE
+date: 2022-02-23T17:03:34.000+09:00
+weight: "10"
 cardImage: database.jpg
 headerImage:
-    imageName: "database.jpg"
-    imageTitle: ""
-    imageDescription: ""
+  imageName: database.jpg
+  imageTitle: ''
+  imageDescription: ''
 subtitle: NOSQL Database Development" for storing huge databases with data optimization
----
 
+---
 # AZURE COSMOS DATABASE
 
-## NOSQL Database Development" for storing huge databases with data optimization
+### NOSQL Database Development" for storing huge databases with data optimization
 
 {{< br >}}
 
-### Overview
+## Overview
 
 Database file size is getting bigger and bigger. In order to handle exponentially increasing data, such as real-time analysis while maintaining such a large amount of data, "data optimization" is necessary. Therefore, an increasing number of companies are using NOSQL (abbreviation of Not only SQL) as a complement to the conventional RDB (Relational DataBase Management System / Relational DataBase Management System ).
 
@@ -26,35 +26,41 @@ On the other hand, a database called NOSQL can be designed to retrieve the neces
 
 {{< br >}}
 
-### Effects of Introduction
+## Effects of Introduction
 
-- Data can be stored in a format optimized for the application.
-- Store data without defining data types
-- Easily increase performance by adding more servers.
-
-{{< br >}}
-
-### Suggested Industries
-
-- Gaming
-- Distribution
-- Telecommunications
-- Automotive
-- Consumer electronics
-- Financial Services
+* ・Data can be stored in a format optimized for the application.
+* ・Store data without defining data types
+* ・Easily increase performance by adding more servers.
 
 {{< br >}}
 
-### Product Image
+## Suggested Industries
+
+* ・Gaming
+* ・Distribution
+* ・Telecommunications
+* ・Automotive
+* ・Consumer electronics
+* ・Financial Services
+
+{{< br >}}
+
+## Product Image
 
 Andaze will promptly proceed with database optimization by utilizing AZURE COSMOS DATABASE. Please feel free to contact us if your company is having trouble storing large scale data.
 
 {{< br >}}
 
-### Case Study
+## Case Study
 
-**Industry**: Automobile manufacturing industry  
+#### **Industry**: 
 
-**Problem**: The company is having trouble processing the huge amount of data sent from IoT terminals  
+Automobile manufacturing industry
 
-**Solution**: Store raw data from IoT terminals into a large database, Azure Table Storage. For querying from the system, periodic invocation of Azure Function aggregates and processes the data to create Json data optimized for display format. Then, by storing the data in AZURE COSMOS DATABASE, which can store flexible data, we improved the system so that the necessary information can be viewed from the inquiry screen almost instantly.
+#### **Problem**: 
+
+The company is having trouble processing the huge amount of data sent from IoT terminals
+
+#### **Solution**: 
+
+Store raw data from IoT terminals into a large database, Azure Table Storage. For querying from the system, periodic invocation of Azure Function aggregates and processes the data to create Json data optimized for display format. Then, by storing the data in AZURE COSMOS DATABASE, which can store flexible data, we improved the system so that the necessary information can be viewed from the inquiry screen almost instantly.
