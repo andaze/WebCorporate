@@ -1,22 +1,23 @@
 ---
-title: "AMP WEB"
-date: 2022-02-23T17:03:34+09:00
-weight: 8
+title: AMP WEB
+date: 2022-02-23T17:03:34.000+09:00
+weight: "8"
 cardImage: amp.jpg
 headerImage:
-    imageName: "amp.jpg"
-    imageTitle: ""
-    imageDescription: ""
-subtitle: Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
----
+  imageName: amp.jpg
+  imageTitle: ''
+  imageDescription: ''
+subtitle: Mobile Content Acceleration" to reduce the waiting time until a web page
+  is displayed
 
+---
 # AMP WEB
 
-## Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
+### Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
 
 {{< br >}}
 
-### Overview
+## Overview
 
 AMP (Accelerated Mobile Pages, commonly known as amp) is a standard jointly launched by Google and Twitter to enable mobile users to comfortably view websites. The literal translation means "faster pages for mobile.
 
@@ -24,14 +25,13 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 {{< br >}}
 
-### Effect of introduction
+## Effect of introduction
 
-- Reduce the time users spend waiting for pages to be displayed.
-- Increased site traffic and revenue
-- Increased probability of articles being read
-- Prevent site abandonment rate information
-- Stress-free for users
-
+* ・Reduce the time users spend waiting for pages to be displayed.
+* ・Increased site traffic and revenue
+* ・Increased probability of articles being read
+* ・Prevent site abandonment rate information
+* ・Stress-free for users
 
 > Relationship between display speed and site return rate
 
@@ -39,13 +39,11 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 > Exhibit: "Google - Find out how you stack up to new industry benchmarks for mobile page speed"
 
-
 > Display speed of 3 seconds or less is acceptable
 
 > We found that 57% of users become numb and give up visiting if the display speed of a web page exceeds 3 seconds.
 
 > Exhibit: "Mynavi 3 seconds is acceptable - Why website performance matters"
-
 
 > Also affects conversion rates
 
@@ -55,24 +53,30 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 {{< br >}}
 
-### Suggested Industries
+## Suggested Industries
 
-- Information and telecommunications
-- Manufacturing (e.g., EC sites)
-- Landing pages for advertisements (LP)
+* ・Information and telecommunications
+* ・Manufacturing (e.g., EC sites)
+* ・Landing pages for advertisements (LP)
 
 {{< br >}}
 
-### Product Image
+## Product Image
 
 Andaze will promptly build your AMP site with our AMP framework. If your website is facing any issues, please feel free to contact us.
 
 {{< br >}}
 
-### Case Study
+## Case Study
 
-**Site**: Andaze corporate site  
+#### **Site**:
 
-**Problem**: When the site was built with WordPress, there was a problem with access speed from mobile.  
+Andaze corporate site
 
-**Solution**: By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.
+#### **Problem**: 
+
+When the site was built with WordPress, there was a problem with access speed from mobile.
+
+#### **Solution**: 
+
+By using standalone AMP, which is the same AMP page for both desktop and mobile, the access speed was improved. Reference: By entering any URL of our corporate site in the AMP checker, you can check the validity of AMP by Google and confirm that the functionality of this site was realized with stand-alone AMP.
