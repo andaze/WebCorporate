@@ -1,28 +1,29 @@
 ---
-title: "AZURE B2C"
-date: 2022-02-23T17:03:34+09:00
-weight: 4
+title: AZURE B2C
+date: 2022-02-23T17:03:34.000+09:00
+weight: "4"
 cardImage: b2c.jpg
 headerImage:
-    imageName: "b2c.jpg"
-    imageTitle: ""
-    imageDescription: ""
-subtitle: Superior Subject Authentication Service to Protect Sensitive Information from Hackers
----
+  imageName: b2c.jpg
+  imageTitle: ''
+  imageDescription: ''
+subtitle: Superior Subject Authentication Service to Protect Sensitive Information
+  from Hackers
 
+---
 # AZURE B2C
 
 {{< br >}}
 
-## Superior Subject Authentication Service to Protect Sensitive Information from Hackers
+### Superior Subject Authentication Service to Protect Sensitive Information from Hackers
 
-### Overview
+## Overview
 
 Hacking and hijacking of applications can be a major social problem if personal information such as IDs and passwords are leaked to outside parties. AZURE B2C prevents data leakage and provides high security services. We work on system development while placing emphasis on the handling of personal information.
 
 {{< br >}}
 
-### Effects of Introduction
+## Effects of Introduction
 
 #### (1) Support millions of users and billions of authentications per day
 
@@ -34,19 +35,19 @@ Integrates with the latest applications and pre-existing software; single sign-o
 
 {{< br >}}
 
-### Suggested Industries
+## Suggested Industries
 
-- Banking
-- Securities
-- Insurance
-- Construction
-- Public Sector
-- Construction Manufacturing
-- Retail
-- Retail Distribution
+* ・Banking
+* ・Securities
+* ・Insurance
+* ・Construction
+* ・Public Sector
+* ・Construction Manufacturing
+* ・Retail
+* ・Retail Distribution
 
 {{< br >}}
 
-### Product Image
+## Product Image
 
 Login" is an essential part of any system. Andaze can quickly build a subject authentication service using our white label authentication solution. If your company is interested in safe and secure "authentication", please feel free to contact us.
