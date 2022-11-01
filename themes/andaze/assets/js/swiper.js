@@ -11,7 +11,7 @@ export class SlideShow {
         this.sustainabilitySwiper;
         this.professionalSwiper;
 
-        this.onScroll();
+        // this.onScroll();
     }
 
     createNewsSwiper() {
@@ -38,6 +38,9 @@ export class SlideShow {
             // },
             // loop: true,
             // loopAdditionalSlides: 1,
+        });
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".newsSwiper", this.newsSwiper);
         });
     }
 
@@ -66,6 +69,9 @@ export class SlideShow {
             loop: true,
             loopAdditionalSlides: 1,
         });
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
+        });
     }
 
     createSustainabilitySwiper() {
@@ -92,6 +98,9 @@ export class SlideShow {
             },
             loop: true,
             loopAdditionalSlides: 1,
+        });
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
         });
     }
 
@@ -133,33 +142,19 @@ export class SlideShow {
             loopAdditionalSlides: 1,
             speed: 800,
         });    
-    }
-
-    onScroll() {
-        window.addEventListener('scroll', function() {
-            this.scroll = window.pageYOffset ;
-
-            if (document.querySelector(".newsSwiper")) {
-                this.handleAutoPlay(".newsSwiper", this.newsSwiper);
-            }
-            if (document.querySelector(".casestudySwiper")) {
-                this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
-            }
-            if (document.querySelector(".sustainabilitySwiper")) {
-                this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
-            }
-            if (document.querySelector(".professionalSwiper")) {
-                this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
-            }
-        }.bind(this))
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
+        });
     }
 
     handleAutoPlay(swiperElm, swiperName) {
+        this.scroll = window.pageYOffset ;
+
         if (document.querySelector(swiperElm)) {
             target = document.querySelector(swiperElm);
             targetPos = window.pageYOffset + target.getBoundingClientRect().top;
             targetHeight = target.clientWidth;
-    
+            
             if ((this.scroll > targetPos - 500) && (this.scroll < targetPos + targetHeight / 2)) {
                 swiperName.autoplay.start();
             } else {

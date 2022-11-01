@@ -41,19 +41,15 @@ async function init() {
         const swiper = await new swiperScript.SlideShow();
         if(document.querySelector(".newsSwiper")) {
             swiper.createNewsSwiper();
-            console.log('createNewsSwiper')
         }
         if(document.querySelector(".casestudySwiper")) {
             swiper.createCasestudySwiper();
-            console.log('createCasestudySwiper')
         }
         if(document.querySelector(".sustainabilitySwiper")) {
             swiper.createSustainabilitySwiper();
-            console.log('createSustainabilitySwiper')
         }
         if(document.querySelector(".professionalSwiper")) {
             swiper.createProfessionalSwiper();
-            console.log('createNewsSwiper')
         }
     }
 
