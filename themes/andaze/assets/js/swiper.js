@@ -133,30 +133,5 @@ export function activeSwiper() {
     createCasestudySwiper();
     createSustainabilitySwiper();
     createProfessionalSwiper();
-    
-    window.addEventListener('load',() => {
-        if (breakPoint < window.innerWidth){
-            swiperBool = false;
-        } else {
-            swiperBool = true;
-        }
-    },false);
-
-    window.addEventListener('resize',()=>{
-        if (breakPoint < window.innerWidth && swiperBool){
-            newsSwiper.destroy(false,true);
-            casestudySwiper.destroy(false,true);
-            sustainabilitySwiper.destroy(false,true);
-            professionalSwiper.destroy(false,true);
-            swiperBool = false;
-        } else if (breakPoint >= window.innerWidth && !(swiperBool)){
-            createNewsSwiper();
-            createCasestudySwiper();
-            createSustainabilitySwiper();
-            createProfessionalSwiper();
-            swiperBool = true;
-        }
-    },false);
-
 
 }
