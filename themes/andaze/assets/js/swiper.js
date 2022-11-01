@@ -1,4 +1,3 @@
-import { add } from '@tweenjs/tween.js';
 import Swiper from 'swiper/bundle';
 
 let target;
@@ -140,22 +139,31 @@ export class SlideShow {
         window.addEventListener('scroll', function() {
             this.scroll = window.pageYOffset ;
 
+            if (document.querySelector(".newsSwiper")) {
+                this.handleAutoPlay(".newsSwiper", this.newsSwiper);
+            }
+            if (document.querySelector(".casestudySwiper")) {
+                this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
+            }
+            if (document.querySelector(".sustainabilitySwiper")) {
+                this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
+            }
             if (document.querySelector(".professionalSwiper")) {
-                this.handleAutoPlay(".professionalSwiper");
+                this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
             }
         }.bind(this))
     }
 
-    handleAutoPlay(swiperElm) {
+    handleAutoPlay(swiperElm, swiperName) {
         if (document.querySelector(swiperElm)) {
             target = document.querySelector(swiperElm);
             targetPos = window.pageYOffset + target.getBoundingClientRect().top;
             targetHeight = target.clientWidth;
     
             if ((this.scroll > targetPos - 500) && (this.scroll < targetPos + targetHeight / 2)) {
-                this.professionalSwiper.autoplay.start();
+                swiperName.autoplay.start();
             } else {
-                this.professionalSwiper.autoplay.stop();
+                swiperName.autoplay.stop();
             }
         }
     }
