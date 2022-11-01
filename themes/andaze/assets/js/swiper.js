@@ -92,7 +92,7 @@ export class SlideShow {
     createProfessionalSwiper() {
         let bar = document.querySelector('.progressbar_in');
         let speed = 5000;
-        this.sustainabilitySwiper = new Swiper(".professionalSwiper", {
+        this.professionalSwiper = new Swiper(".professionalSwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
