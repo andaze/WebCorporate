@@ -1,6 +1,6 @@
 import Swiper from 'swiper/bundle';
 
-export class Swiper {
+export class SlideShow {
     constructor() {
         const breakPoint = 412;
 

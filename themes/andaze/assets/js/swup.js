@@ -36,7 +36,12 @@ const swup = new Swup({
 init();
 
 async function init() {
-    const swiper = await swiperScript.activeSwiper();
+
+    let swiper;
+
+    if (document.querySelector(".swiper")) {
+        swiper = await new swiperScript.SlideShow();
+    }
 
     if (document.getElementById("youtube-video")) {
         const youtube = await youtuberScript.handleYoutube();
