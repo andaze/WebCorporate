@@ -4,14 +4,14 @@ export class SlideShow {
     constructor() {
         const breakPoint = 412;
 
-        let newsSwiper;
-        let casestudySwiper;
-        let sustainabilitySwiper;
-        let professionalSwiper;
+        this.newsSwiper;
+        this.casestudySwiper;
+        this.sustainabilitySwiper;
+        this.professionalSwiper;
     }
 
     createNewsSwiper() {
-        newsSwiper = new Swiper(".newsSwiper", {
+        this.newsSwiper = new Swiper(".newsSwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -38,7 +38,7 @@ export class SlideShow {
     }
 
     createCasestudySwiper() {
-        casestudySwiper = new Swiper(".casestudySwiper", {
+        this.casestudySwiper = new Swiper(".casestudySwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -65,7 +65,7 @@ export class SlideShow {
     }
 
     createSustainabilitySwiper() {
-        sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
+        this.sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -94,7 +94,7 @@ export class SlideShow {
     createProfessionalSwiper() {
         let bar = document.querySelector('.progressbar_in');
         let speed = 5000;
-        sustainabilitySwiper = new Swiper(".professionalSwiper", {
+        this.sustainabilitySwiper = new Swiper(".professionalSwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
