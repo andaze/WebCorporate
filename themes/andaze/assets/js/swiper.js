@@ -10,8 +10,6 @@ export class SlideShow {
         this.casestudySwiper;
         this.sustainabilitySwiper;
         this.professionalSwiper;
-
-        // this.onScroll();
     }
 
     createNewsSwiper() {
@@ -167,3 +165,4 @@ export class SlideShow {
         }
     }
 }
+
