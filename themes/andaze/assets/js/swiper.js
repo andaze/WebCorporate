@@ -39,6 +39,7 @@ export class SlideShow {
             // loop: true,
             // loopAdditionalSlides: 1,
         });
+        this.newsSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".newsSwiper", this.newsSwiper);
         });
@@ -69,6 +70,7 @@ export class SlideShow {
             loop: true,
             loopAdditionalSlides: 1,
         });
+        this.casestudySwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
         });
@@ -99,6 +101,7 @@ export class SlideShow {
             loop: true,
             loopAdditionalSlides: 1,
         });
+        this.sustainabilitySwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
         });
@@ -142,6 +145,7 @@ export class SlideShow {
             loopAdditionalSlides: 1,
             speed: 800,
         });    
+        this.professionalSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
         });
