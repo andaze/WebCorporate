@@ -36,9 +36,23 @@ const swup = new Swup({
 init();
 
 async function init() {
-    if (document.querySelector('.swiper')) {
-        const swiper = await swiperScript.activeSwiper();
+
+    if (document.querySelector(".swiper")) {
+        const swiper = await new swiperScript.SlideShow();
+        if(document.querySelector(".newsSwiper")) {
+            swiper.createNewsSwiper();
+        }
+        if(document.querySelector(".casestudySwiper")) {
+            swiper.createCasestudySwiper();
+        }
+        if(document.querySelector(".sustainabilitySwiper")) {
+            swiper.createSustainabilitySwiper();
+        }
+        if(document.querySelector(".professionalSwiper")) {
+            swiper.createProfessionalSwiper();
+        }
     }
+
     if (document.getElementById("youtube-video")) {
         const youtube = await youtuberScript.handleYoutube();
     }

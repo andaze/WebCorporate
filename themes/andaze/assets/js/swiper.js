@@ -1,15 +1,19 @@
 import Swiper from 'swiper/bundle';
 
-export function activeSwiper() {
-    const breakPoint = 412;
+let target;
+let targetPos;
+let targetHeight;
 
-    let newsSwiper;
-    let casestudySwiper;
-    let sustainabilitySwiper;
-    let professionalSwiper;
-    let swiperBool;
-    const createNewsSwiper = () => {
-        newsSwiper = new Swiper(".newsSwiper", {
+export class SlideShow {
+    constructor() {
+        this.newsSwiper;
+        this.casestudySwiper;
+        this.sustainabilitySwiper;
+        this.professionalSwiper;
+    }
+
+    createNewsSwiper() {
+        this.newsSwiper = new Swiper(".newsSwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -33,10 +37,14 @@ export function activeSwiper() {
             // loop: true,
             // loopAdditionalSlides: 1,
         });
+        this.newsSwiper.autoplay.stop();
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".newsSwiper", this.newsSwiper);
+        });
     }
 
-    const createCasestudySwiper = () => {
-        casestudySwiper = new Swiper(".casestudySwiper", {
+    createCasestudySwiper() {
+        this.casestudySwiper = new Swiper(".casestudySwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -60,10 +68,14 @@ export function activeSwiper() {
             loop: true,
             loopAdditionalSlides: 1,
         });
+        this.casestudySwiper.autoplay.stop();
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
+        });
     }
 
-    const createSustainabilitySwiper = () => {
-        sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
+    createSustainabilitySwiper() {
+        this.sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -87,12 +99,16 @@ export function activeSwiper() {
             loop: true,
             loopAdditionalSlides: 1,
         });
+        this.sustainabilitySwiper.autoplay.stop();
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
+        });
     }
 
-    const createProfessionalSwiper = () => {
+    createProfessionalSwiper() {
         let bar = document.querySelector('.progressbar_in');
         let speed = 5000;
-        sustainabilitySwiper = new Swiper(".professionalSwiper", {
+        this.professionalSwiper = new Swiper(".professionalSwiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -127,11 +143,26 @@ export function activeSwiper() {
             loopAdditionalSlides: 1,
             speed: 800,
         });    
+        this.professionalSwiper.autoplay.stop();
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
+        });
     }
 
-    createNewsSwiper();
-    createCasestudySwiper();
-    createSustainabilitySwiper();
-    createProfessionalSwiper();
+    handleAutoPlay(swiperElm, swiperName) {
+        this.scroll = window.pageYOffset ;
 
+        if (document.querySelector(swiperElm)) {
+            target = document.querySelector(swiperElm);
+            targetPos = window.pageYOffset + target.getBoundingClientRect().top;
+            targetHeight = target.clientWidth;
+            
+            if ((this.scroll > targetPos - 500) && (this.scroll < targetPos + targetHeight / 2)) {
+                swiperName.autoplay.start();
+            } else {
+                swiperName.autoplay.stop();
+            }
+        }
+    }
 }
+
