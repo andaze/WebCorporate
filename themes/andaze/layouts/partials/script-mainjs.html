@@ -10,3 +10,5 @@
 <script defer type="text/javascript" src="{{ $built_top.RelPermalink }}"></script>
 {{ $built_swiper := resources.Get "js/swiper.js" | js.Build $opts }}
 <script defer type="text/javascript" src="{{ $built_swiper.RelPermalink }}"></script>
+{{ $built_youtube := resources.Get "js/youtube.js" | js.Build $opts }}
+<script defer type="text/javascript" src="{{ $built_youtube.RelPermalink }}"></script>

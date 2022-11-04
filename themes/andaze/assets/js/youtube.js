@@ -68,3 +68,7 @@ export function handleYoutube() {
         }
     }
 }
+
+if (document.getElementById("youtube-video")) {
+    handleYoutube();
+}
