@@ -150,6 +150,7 @@ export class SlideShow {
     }
 
     handleAutoPlay(swiperElm, swiperName) {
+
         this.scroll = window.pageYOffset ;
 
         if (document.querySelector(swiperElm)) {
@@ -166,3 +167,19 @@ export class SlideShow {
     }
 }
 
+if (document.querySelector(".swiper")) {
+    const swiper = new SlideShow;
+    if (document.querySelector(".newsSwiper")) {
+        swiper.createNewsSwiper();
+    }
+    if (document.querySelector(".casestudySwiper")) {
+        swiper.createCasestudySwiper();
+    }
+    if (document.querySelector(".sustainabilitySwiper")) {
+        swiper.createSustainabilitySwiper();
+    }
+    if (document.querySelector(".professionalSwiper")) {
+        swiper.createProfessionalSwiper();
+    }
+    swiper.handleAutoPlay();
+}

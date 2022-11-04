@@ -8,3 +8,5 @@
 <script defer async type="text/javascript" src="{{ $built.RelPermalink }}"></script>  */}}
 {{ $built_top := resources.Get "js/top.js" | js.Build $opts }}
 <script defer type="text/javascript" src="{{ $built_top.RelPermalink }}"></script>
+{{ $built_swiper := resources.Get "js/swiper.js" | js.Build $opts }}
+<script defer type="text/javascript" src="{{ $built_swiper.RelPermalink }}"></script>
