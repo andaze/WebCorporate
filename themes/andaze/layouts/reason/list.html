@@ -33,25 +33,7 @@
 
                     {{ else if eq .Page.Params.type ("images")}}
 
-                        <div class="grid md:grid-cols-3 sm:grid-cols-2 md:gap-4 mt-10">
-                            {{ range .Pages }}
-                                <div class="flex justify-center">
-                                    {{ .Scratch.Set "class" "w-auto h-20 my-6 md:h-32 object-cover" }}
-                                    {{ .Scratch.Set "format" "webp" }}
-                                    {{ .Scratch.Set "hint" "smart" }}
-                                    {{ if .Page.Params.img }}
-                                        {{ .Scratch.Set "src" .Page.Params.img }}
-                                    {{ end }}
-                                    {{ .Scratch.Set "type" "thumbnail" }}
-                                        {{ partial "atom-picture.html" . }}
-                                    {{ .Scratch.Delete "class" }}
-                                    {{ .Scratch.Delete "format" }}
-                                    {{ .Scratch.Delete "hint" }}
-                                    {{ .Scratch.Delete "src" }}
-                                    {{ .Scratch.Delete "type" }}
-                                </div>
-                            {{ end }}
-                        </div>
+                        {{ partialCached "certificate-images.html" . }}
 
                     {{ else }}
 
