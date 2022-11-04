@@ -1,5 +1,5 @@
 {{ $opts := "" }}
-{{ if hugo.IsProduction }}
+{{/*  {{ if hugo.IsProduction }}
     {{ $opts = dict "targetPath" "main.js" "minify" true }}
 {{ else }}
     {{ $opts = dict "targetPath" "main.js" "minify" false }}
@@ -12,3 +12,5 @@
 <script defer type="text/javascript" src="{{ $built_swiper.RelPermalink }}"></script>
 {{ $built_youtube := resources.Get "js/youtube.js" | js.Build $opts }}
 <script defer type="text/javascript" src="{{ $built_youtube.RelPermalink }}"></script>
+{{ $built_video := resources.Get "js/video.js" | js.Build $opts }}
+<script defer type="text/javascript" src="{{ $built_video.RelPermalink }}"></script>

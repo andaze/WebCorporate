@@ -10,6 +10,12 @@ export function handleVideo() {
 
     let source = sources[Math.floor(Math.random() * sources.length)];
 
-    const target_video = document.getElementById('random_video');
-    target_video.innerHTML = source;
+    if(document.getElementById('random_video')) {
+        const target_video = document.getElementById('random_video');
+        target_video.innerHTML = source;
+    }
+}
+
+if (document.getElementById('random_video')) {
+    handleVideo();
 }
