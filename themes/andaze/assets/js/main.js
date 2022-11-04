@@ -7,10 +7,10 @@ import * as videorScript from './video.js';
 
 init();
 
-async function init() {
+function init() {
 
     if (document.querySelector(".swiper")) {
-        const swiper = await new swiperScript.SlideShow();
+        const swiper = new swiperScript.SlideShow();
         if (document.querySelector(".newsSwiper")) {
             swiper.createNewsSwiper();
         }
@@ -26,10 +26,10 @@ async function init() {
     }
 
     if (document.getElementById("youtube-video")) {
-        const youtube = await youtuberScript.handleYoutube();
+        const youtube = youtuberScript.handleYoutube();
     }
     if (document.getElementById('random_video')) {
-        const video = await videorScript.handleVideo();
+        const video = videorScript.handleVideo();
     }
 
     if (typeof friconix_update === "function") {
@@ -42,8 +42,8 @@ async function init() {
 
     if (document.querySelector('#webgl')) {
 
-        surround = await new kvMain.Surround();
-        sketch = await new kvMain.Sketch();
+        surround = new kvMain.Surround();
+        sketch = new kvMain.Sketch();
         sketch.setImage();
 
         kvMain.loading_background.style.opacity = 1;
@@ -78,7 +78,7 @@ async function init() {
     }
 
     if (document.getElementById('youtube-video')) {
-        const youtube = await youtuberScript.handleYoutube();
+        const youtube = youtuberScript.handleYoutube();
     }
 
 }
