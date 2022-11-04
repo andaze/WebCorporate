@@ -1,11 +1,14 @@
+{{ $class := ""}}
+{{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "youtube") }}
+    {{ $class = "hidden"}}
+{{ end }}
+
 <div>
-    {{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
+    {{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") (eq (.Scratch.Get "section") "youtube") }}
         {{ partial "atom-irnews-heading.html" . }}
-        {{ if ne (.Scratch.Get "section") "solution" }}
-            <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12">
-                {{ partial "atom-newtopic-sliderbutton.html" . }}
-            </div>
-        {{ end }}
+        <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12 {{ $class }}">
+            {{ partial "atom-newtopic-sliderbutton.html" . }}
+        </div>
         <div class="hidden md:block lg:block">
             {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>
