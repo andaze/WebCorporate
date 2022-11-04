@@ -25,7 +25,7 @@ async function init() {
         }
     }
 
-    if (document.getElementById("youtube-video")) {
+    if (document.getElementById("youtubeList")) {
         const youtube = await youtuberScript.handleYoutube();
     }
     if (document.getElementById('random_video')) {
