@@ -5,6 +5,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
+
 // 初回訪問判定フラグ
 export let first_visit = true;
 
@@ -1132,4 +1133,13 @@ function random(a, b) {
 function plusMinus() {
   let plus_and_minus = [1, -1];
   return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
+}
+
+if (document.querySelector('#webgl')) {
+  const surround = new Surround;
+  const sketch = new Sketch;
+  
+  surround.callFunctions();
+  sketch.setImage();
+  sketch.callFunctions();
 }

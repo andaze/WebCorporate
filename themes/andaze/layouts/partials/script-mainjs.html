@@ -6,3 +6,5 @@
 {{ end }}  */}}
 {{/*  {{ $built := resources.Get "js/main.js" | js.Build $opts }}
 <script defer async type="text/javascript" src="{{ $built.RelPermalink }}"></script>  */}}
+{{ $built_top := resources.Get "js/top.js" | js.Build $opts }}
+<script defer type="text/javascript" src="{{ $built_top.RelPermalink }}"></script>
