@@ -57,6 +57,11 @@
     {{ partial "template-section-newtopic.html" . }}
     {{ .Scratch.Delete "section" }}
   {{ end }}
+
+  {{ .Scratch.Set "section" "youtube" }}
+  {{ partial "template-section-youtube.html" . }}
+  {{ .Scratch.Delete "section" }}
+  
   <div class="bg-black pt-36 pb-48">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
