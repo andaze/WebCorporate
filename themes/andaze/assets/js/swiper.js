@@ -19,10 +19,10 @@ export class SlideShow {
                     slidesPerView: 1,
                 },
                 412: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                 },
                 851: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 }
             },
             spaceBetween: 30,
