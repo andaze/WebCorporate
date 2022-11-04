@@ -84,6 +84,9 @@
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
 
+{{ else if eq (.Scratch.Get "section") "youtube" }}
+    <div id="youtubeList" class="flex flex-col sm:flex-row justify-between"></div>
+
 {{ else }}
     {{ partial "organism-section-contents.html" . }}
 {{ end }}
