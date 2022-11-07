@@ -35,6 +35,11 @@ export function handleYoutube() {
               controls: 0, //コントロールさせるかどうかの指定
             },
           });
+          if(document.getElementById("top_main")) {
+            // トップページmainタグの高さを取得してfooterのmargin-topに設定
+            let main_height = document.getElementById("top_main").clientHeight;
+            document.querySelector("footer").style.marginTop = main_height + "px";
+          }
         }
     });
 }
