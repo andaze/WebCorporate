@@ -5,4 +5,4 @@
     {{ $opts = dict "targetPath" "main.js" "minify" false }}
 {{ end }}
 {{ $built := resources.Get "js/main.js" | js.Build $opts }}
-<script defer async type="text/javascript" src="{{ $built.RelPermalink }}"></script>
+<script defer type="text/javascript" src="{{ $built.RelPermalink }}"></script>
