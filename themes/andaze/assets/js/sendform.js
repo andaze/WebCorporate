@@ -13,8 +13,8 @@ export function sendEmail() {
     let inquiryDetials = document.getElementById('inquiry_content').value;
 
     let secureToken = "7670de06-d726-44e6-af6c-96dca7e5b64f";
-    let bccMail = "nishidai@andaze.com";
-    let fromMail = "no-reply@andaze.com";
+    let bccMail = "contact-us@andaze.com";
+    let fromMail = "contact-us@andaze.com";
 
     let path = window.location.pathname;
 
