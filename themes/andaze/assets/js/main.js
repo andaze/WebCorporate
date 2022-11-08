@@ -26,7 +26,7 @@ async function init() {
     }
 
     if (document.getElementById("youtubeList")) {
-        const youtube = await youtuberScript.handleYoutube();
+        const youtube = await new youtuberScript.handleYoutube();
     }
     if (document.getElementById('random_video')) {
         const video = await videorScript.handleVideo();
@@ -75,10 +75,6 @@ async function init() {
         document.querySelector('#submitButton').addEventListener("click", () => {
             sendForm.sendEmail();
         });
-    }
-
-    if (document.getElementById('youtube-video')) {
-        const youtube = await youtuberScript.handleYoutube();
     }
 
 }
