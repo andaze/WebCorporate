@@ -36,7 +36,7 @@
                 {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
         {{ else }}
                 {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
-{{ end }}
+        {{ end }}
 {{ end }}
 
 {{ $alt := default $image.Title (.Scratch.Get "alt") }}
