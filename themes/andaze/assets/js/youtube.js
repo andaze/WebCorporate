@@ -14,7 +14,6 @@ export class handleYoutube {
           url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCfjT9TH2TOy7QRp1X_Ibr4A&maxResults=' + contentNum.toString() + '&order=date&type=video&key=AIzaSyCQdG7SoPSJVX-vhkkzhjSB6luh6a8Kyno',
           datatype: 'json',
           success: function(json){
-              console.log('success')
               var num = json.items.length;
               for(var i = 0; i < num ; i++){
                   var ID = json.items[i].id.videoId;
@@ -30,7 +29,6 @@ export class handleYoutube {
           }
       }).done(function() {
           if ($(".js-modal-video").length) { //クラス名js-modal-videoがあれば以下を実行
-              console.log('done')
             $(".js-modal-video").modalVideo({
               channel: "youtube",
               youtube: {
