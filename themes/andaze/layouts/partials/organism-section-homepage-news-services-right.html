@@ -24,7 +24,7 @@
 
         <div id="movie-thumbnail" class="{{ $class }} mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
 
-            {{ .Scratch.Set "class" "w-full h-[160px] object-cover" }}
+            {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer" }}
             {{ .Scratch.Set "format" "webp" }}
             {{ .Scratch.Set "hint" "smart" }}
             {{ .Scratch.Set "quolity" "90" }}

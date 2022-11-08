@@ -20,7 +20,7 @@ export class handleYoutube {
                   var image = json.items[i].snippet.thumbnails.medium.url;
                   var title = json.items[i].snippet.title;
                   $("#youtubeList").append(
-                      '<div class="w-full lg:w-[31.3%] mb-8 sm:mb-0"><img class="h-[180px] w-full object-cover m-0 js-modal-video" src="' + image + '" data-video-id="' + ID + '"><p class="font-bold pt-5 text-sm">' + title + '</p></div>'
+                      '<div class="w-full lg:w-[31.3%] mb-8 sm:mb-0"><img class="cursor-pointer h-[180px] w-full object-cover m-0 js-modal-video" src="' + image + '" data-video-id="' + ID + '"><p class="font-bold pt-5 text-sm">' + title + '</p></div>'
                   );
               }
           },
