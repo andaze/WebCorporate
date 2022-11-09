@@ -92,7 +92,6 @@
     <div id="youtubeList" class="flex flex-col sm:flex-row justify-between">
 
         {{ range $youtubeMovies.items }}
-        {{/*  <p>{{ .snippet.thumbnails.default.url }}</p>  */}}
             <div class="w-full lg:w-[31.3%] mb-8 sm:mb-0">
                 <img class="cursor-pointer h-[180px] w-full object-cover m-0 js-modal-video" src={{ .snippet.thumbnails.default.url }} data-video-id={{ .id.videoId }}>
                 <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
