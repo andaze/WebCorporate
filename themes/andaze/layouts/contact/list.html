@@ -7,18 +7,8 @@
             {{ partial "organism-section-news-left.html" . }}
         </div>
         <div class="bg-white md:w-3/4 max-w-none">
-            <h1 class="text-3xl font-extrabold text-left">{{ .Title }}</h1>
 
-            <div>
-                <p>
-                    現在、お問い合わせフォームを調整中です。御用の方はお手数ですが以下メールアドレスまで直接お問い合わせください。<br>
-                    We are currently adjusting our contact form. If you have any questions, please contact us directly at the following e-mail address.
-                </p>
-                <a href="m&#97;i&#108;t&#111;:&#99;&#111;&#110;&#116;&#97;&#99;&#116;@&#97;n&#100;az&#101;&#46;&#99;o&#109;"
-                class="text-3xl"
-                >&#99;&#111;&#110;&#116;&#97;&#99;&#116;@&#97;n&#100;az&#101;&#46;&#99;o&#109;
-            </a>
-            </div>
+            {{ .Content }}
 
         </div>
     </div>
