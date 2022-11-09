@@ -1,5 +1,5 @@
 {{ $class := ""}}
-{{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "youtube") }}
+{{ if eq (.Scratch.Get "section") "solution" }}
     {{ $class = "hidden"}}
 {{ end }}
 
