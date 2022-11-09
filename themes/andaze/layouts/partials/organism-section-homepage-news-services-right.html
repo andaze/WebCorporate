@@ -19,6 +19,9 @@
     {{ $videoUrl = "https://www.youtube.com/embed/RHR05atIgYM?enablejsapi=1" }}
 {{ end }}
 
+{{ $youtubeMovies := getJSON "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCfjT9TH2TOy7QRp1X_Ibr4A&maxResults=3&order=date&type=video&key=AIzaSyCQdG7SoPSJVX-vhkkzhjSB6luh6a8Kyno" }}
+
+
 {{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
     <div class="flex flex-col sm:flex-row">
 
@@ -86,8 +89,18 @@
     </div>
 
 {{ else if eq (.Scratch.Get "section") "youtube" }}
-    <div id="youtubeList" class="flex flex-col sm:flex-row justify-between"></div>
+    <div id="youtubeList" class="flex flex-col sm:flex-row justify-between">
+
+        {{ range $youtubeMovies.items }}
+        {{/*  <p>{{ .snippet.thumbnails.default.url }}</p>  */}}
+            <div class="w-full lg:w-[31.3%] mb-8 sm:mb-0">
+                <img class="cursor-pointer h-[180px] w-full object-cover m-0 js-modal-video" src={{ .snippet.thumbnails.default.url }} data-video-id={{ .id.videoId }}>
+                <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+            </div>
+        {{ end }}
+    </div>
     <div class="flex justify-center md:hidden lg:hidden mt-5">
+
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
 
