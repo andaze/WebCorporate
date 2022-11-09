@@ -1,5 +1,5 @@
 ---
-title: HUGO WEB
+title: "静的ウェブサイト開発 / HUGO WEB"
 date: 2022-02-23T17:03:34.000+09:00
 weight: "9"
 cardImage: hugo.png

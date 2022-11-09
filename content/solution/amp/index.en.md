@@ -1,5 +1,5 @@
 ---
-title: AMP WEB
+title: "モバイルコンテンツ高速化 / AMP WEB"
 date: 2022-02-23T17:03:34.000+09:00
 weight: "8"
 cardImage: amp.jpg

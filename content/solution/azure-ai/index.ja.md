@@ -1,5 +1,5 @@
 ---
-title: AZURE AI
+title: "AI機械学習開発 / AZURE AI"
 date: 2022-02-23T17:03:34.000+09:00
 weight: "2"
 cardImage: ai.jpg

@@ -1,5 +1,5 @@
 ---
-title: Dynamics365
+title: "顧客管理CRM導入 / Dynamics365"
 date: 2022-02-23T17:03:34.000+09:00
 weight: "3"
 cardImage: dynamics365.jpg
