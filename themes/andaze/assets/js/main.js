@@ -23,6 +23,9 @@ async function init() {
         if (document.querySelector(".professionalSwiper")) {
             swiper.createProfessionalSwiper();
         }
+        if (document.querySelector(".youtubeSwiper")) {
+            swiper.createYoutubeSwiper();
+        }
     }
 
     if (document.getElementById("youtubeList")) {
