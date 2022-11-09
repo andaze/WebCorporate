@@ -1,0 +1,10 @@
+{{ $required := (.Get "required" | default false) }}
+{{ $text := (.Get "text" | default false) }}
+{{ $name := (.Get "name" | default false) }}
+
+<label class="text-sm font-medium text-gray-700 inline-block" {{ if ne $name false }}for="{{ $name }}"{{ end }}>
+    {{ $text }}
+    {{ if ne $required false }}
+    <span class="text-white bg-red-500 py-0.5 px-1 text-xs rounded ml-1">必須</span>
+    {{ end }}
+</label>

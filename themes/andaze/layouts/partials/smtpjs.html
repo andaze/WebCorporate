@@ -1,0 +1,50 @@
+{{ if (eq true .Params.isSmtpJs) }}
+<script defer src="https://smtpjs.com/v3/smtp.js"></script>
+<script defer>
+    (function () {
+
+        const forms = document.querySelectorAll("form.smtpjs-form");
+        const secureToken = '{{- .Site.Params.smtpjs.secureToken | default false -}}';
+        const adminMail = '{{- .Site.Params.smtpjs.adminMail | default false -}}';
+        const bccMail = '{{- .Site.Params.smtpjs.bccMail | default false -}}';
+        const fromMail = '{{- .Site.Params.smtpjs.fromMail | default false -}}';
+        const subject = '{{- .Site.Params.smtpjs.subject -}}';
+        const alertMessage = '{{- .Site.Params.smtpjs.confirmMessage.alert -}}';
+        const bodyHeader = '{{- .Site.Params.smtpjs.confirmMessage.bodyHeader -}}';
+        const bodyFooter = '{{- .Site.Params.smtpjs.confirmMessage.bodyFooter -}}';
+
+        forms.forEach(function (form) {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                let toEmail = '';
+                let bodyMain = '<br/>';
+                for (const [name, value] of data) {
+                    if (name == 'email') {
+                        toEmail = value;
+                    }else{
+                        bodyMain = bodyMain.concat(name, " : <br/>", value, "<br/><br/>");
+                    }
+                }
+                submitted(toEmail, `${bodyHeader}<br/>${bodyMain}<br/>${bodyFooter}`);
+            })
+        });
+
+        function submitted(to_email, body) {
+            const email = Email.send({
+                SecureToken: secureToken,
+                To: to_email,
+                From: fromMail,
+                Bcc: bccMail,
+                Subject: subject,
+                Body: body,
+            }).then(
+                message => {
+                    alert(alertMessage)
+                }
+            );
+        }
+
+    })();
+</script>
+{{ end }}
