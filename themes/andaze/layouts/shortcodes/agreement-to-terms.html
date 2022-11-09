@@ -1,3 +1,4 @@
+{{ if eq ( print site.Language) ("ja") }}
 <div class="agreement-to-terms">
   <div class="w-full">
     <h6 class="mb-2 text-gray-700 text-md">
@@ -43,3 +44,51 @@
     </label>
   </div>
 </div>
+{{ else }}
+<div class="agreement-to-terms">
+  <div class="w-full">
+    <h6 class="mb-2 text-gray-700 text-md">
+      Use of Personal Information
+    </h6>
+    <p class="w-full px-4 py-3 mb-3 overflow-y-scroll text-gray-700 placeholder-gray-300 whitespace-pre-line bg-gray-100 bg-opacity-50 border border-white focus:ring-0 focus:border-white max-h-56 md:max-h-72">
+      1. Name of business
+      　Andaze Corporation
+
+      2. Name or title, affiliation and contact information of the personal information protection administrator (or its representative)
+      　Personal Information Protection Administrator Administration Department
+      　Contact: 03-3230-0401
+
+      3. Purpose of use of personal information
+      　Personal information of applicants for employment will be used for the Company's personnel recruitment activities (screening of documents, interview, evaluation, contact to applicants, etc.). 4.
+
+      4. Provision of personal information to third parties
+      　We will provide the name, affiliation, and work history of the applicant to our business partners for the purpose of introducing the candidate to the person in charge of the job or the candidate for the job, either in person or as an e-mail attachment (with a password).
+
+      5. Outsourcing the handling of personal information
+      　In the course of business operations, we may outsource the handling of personal information to outside parties within the scope of the purposes of use described in the previous section. In this case, we will select a contractor with a high level of personal information protection, sign a contract with the contractor regarding appropriate management and confidentiality of personal information, and have the contractor implement appropriate management.
+
+      6. Request for Disclosure of Personal Information
+      　A customer may request the Company to disclose his/her personal information (notification of purpose of use; disclosure; correction, addition, or deletion of content; suspension of use or deletion; suspension of provision to a third party) by contacting the Company's inquiry desk indicated below. We will respond to your request within a reasonable period of time after confirming your identity.
+
+      [Inquiry window】
+      　Andaze Co., Ltd.
+      　Personal Information Inquiry Desk
+      　2-10-3 Kojimachi, Chiyoda-ku, Tokyo 102-0083, Japan
+      　TEL: 03-3230-0401
+      　Mail: [contact@andaze.com](mailto:contact@andaze.com)
+      　Office hours: 9:00-18:00
+      　(Excluding Saturdays, Sundays, national holidays, and year-end and New Year holidays)
+
+      Voluntary nature of providing personal information　
+      　Whether or not you provide us with your personal information is voluntary. However, if you do not provide us with the required information, we may not be able to respond appropriately.
+
+    </p>
+  </div>
+  <div class="text-center py-8 md:py-10">
+    <input class="mr-2 leading-tight" type="checkbox" id="agree" required>
+    <label class="font-bold text-center text-gray-500" for="agree">
+      I agree to the terms
+    </label>
+  </div>
+</div>
+{{ end }}
