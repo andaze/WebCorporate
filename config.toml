@@ -42,10 +42,16 @@ footerSiteMapText = "Site Map"
 	footerLogo = "img/yoko_2w.png"
 
 	companyName = "アンダーズ株式会社"
-[params.emailCredential]
-	secureToken = "7670de06-d726-44e6-af6c-96dca7e5b64f"
-	fromMail = "no-reply@andaze.com"
-	bccMail = "nishidai@andaze.com,contact-us@andaze.com"
+[params.smtpjs]
+	secureToken = "22152f6c-a021-4af1-90d4-cd093adb07c0"
+	fromMail = "contact@andaze.com"
+	bccMail = "nishidai@andaze.com,contact-us@andaze.com,contact-us@andaze.com,d@solutus.jp"
+	subject = "お問い合わせいただきありがとうございます。"
+
+[params.smtpjs.confirmMessage]
+	alert = "お問い合わせいただきありがとうざいます。"
+	bodyHeader = "お問い合わせいただきありがとうざいます。"
+	bodyFooter = "上記の内容にてお問い合わせを受け付けました。<br/>追って担当者から回答させていただきます。"
 
 [markup]
 
