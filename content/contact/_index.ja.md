@@ -5,39 +5,39 @@ weight: 12
  
 ---
 
-# お問い合わせ先
+<h1 class="pb-12">お問い合わせ先</h1>
 
 {{< smtpjs-form >}}
     <!-- todo: input系(input,select,textarea) をショートコード化する -->
-    <div>
+    <div class="mb-5">
         {{< label text="お名前" name="full_name" required="true" >}}
         <input
             class="w-full px-4 py-3 mb-3 text-black placeholder-gray-300 bg-gray-100 bg-opacity-50 border border-white focus:ring-0 focus:border-white"
             id="full_name" name="お名前" type="text" placeholder="Example : 新井 美奈" required>
     </div>
 
-    <div>
+    <div class="mb-5">
         {{< label text="会社名" name="company_name" required="true" >}}
         <input
             class="w-full px-4 py-3 mb-3 text-black placeholder-gray-300 bg-gray-100 bg-opacity-50 border border-white focus:ring-0 focus:border-white"
             id="company_name" name="会社名" type="text" placeholder="Example : アンダース" required>
     </div>
 
-    <div>
+    <div class="mb-5">
         {{< label text="メールアドレス" name="email" required="true" >}}
         <input
             class="w-full px-4 py-3 mb-3 text-black placeholder-gray-300 bg-gray-100 bg-opacity-50 border border-white focus:ring-0 focus:border-white"
             id="email" name="email" type="text" placeholder="Example : andaze@example.com" required>
     </div>
 
-    <div>
+    <div class="mb-5">
         {{< label text="電話番号" name="contact_number" >}}
         <input
             class="w-full px-4 py-3 mb-3 text-black placeholder-gray-300 bg-gray-100 bg-opacity-50 border border-white focus:ring-0 focus:border-white"
             id="contact_number" name="電話番号" type="text" placeholder="Example : 1234567890">
     </div>
 
-    <div>
+    <div class="mb-5">
         {{< label text="部門" name="department" required="true" >}}
         <select 
             name="部門"
@@ -55,7 +55,7 @@ weight: 12
         </select>
     </div>
 
-    <div>
+    <div class="mb-5">
         {{< label text="役職" name="post" required="true" >}}
         <select 
             name="役職"
@@ -74,7 +74,7 @@ weight: 12
         </select>
     </div>
 
-    <div>
+    <div class="mb-10">
         {{< label text="お問い合わせ内容" name="inquiry_content" required="true" >}}
         <textarea
             class="w-full px-4 py-3 mb-3 text-black placeholder-gray-300 bg-gray-100 bg-opacity-50 border border-white focus:ring-0 focus:border-white"
