@@ -96,15 +96,8 @@ showCompanyMovie() {
                     }
                 }, 100)
             })
-        
         })
-
     })
-    setInterval(() => {
-        console.log(isOpen)
-
-    }, 1000)
-
 }
 
 }
