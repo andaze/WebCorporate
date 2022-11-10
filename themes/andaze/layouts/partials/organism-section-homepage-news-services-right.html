@@ -34,8 +34,10 @@
             {{ .Scratch.Set "hint" "smart" }}
             {{ .Scratch.Set "quolity" "90" }}
             {{ if eq (.Lang) ("en")}}
+                {{ .Scratch.Set "id" "r1MN5Bxzhbw" }}
                 {{ .Scratch.Set "src" "img/thumbnail_en.png" }}
-            {{ else }}
+                {{ else }}
+                {{ .Scratch.Set "id" "RHR05atIgYM" }}
                 {{ .Scratch.Set "src" "img/thumbnail_ja.png" }}
             {{ end }}
             {{ .Scratch.Set "is-lazy" false }}
