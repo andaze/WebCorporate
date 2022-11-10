@@ -42,12 +42,14 @@ showCompanyMovie() {
                     };
                 
                     movie_close.addEventListener('click', () => {
-                        modalClose('pauseVideo');
+                        modalClose('stopVideo');
+                        target_iframe.src = "";
                     });
         
                     links.forEach(link => {
                         link.addEventListener('click', () => {
                             modalClose('stopVideo');
+                            target_iframe.src = "";
                         });
                     });
 
