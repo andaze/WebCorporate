@@ -5,7 +5,7 @@ import * as swiperScript from './swiper.js';
 import * as youtuberScript from './youtube.js';
 import * as videorScript from './video.js';
 
-init();
+// init();
 
 async function init() {
 
