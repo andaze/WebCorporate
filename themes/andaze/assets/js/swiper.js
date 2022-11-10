@@ -176,9 +176,12 @@ export class SlideShow {
             loopAdditionalSlides: 1,
         });
         this.youtubeSwiper.autoplay.stop();
-        // window.addEventListener('scroll', () => {
-        //     this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper);
-        // });
+        document.querySelector(".youtubeSwiper").addEventListener('mouseover', () => {
+            this.youtubeSwiper.autoplay.stop();
+        })
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper);
+        });
     }
 
     handleAutoPlay(swiperElm, swiperName) {
