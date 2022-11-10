@@ -49,6 +49,7 @@
 {{ $is_lazy := default true (.Scratch.Get "is-lazy") }}
 {{ $anchor := default "Smart" (.Scratch.Get "anchor") }}
 {{ $class := default "w-full" (.Scratch.Get "class") }}
+{{ $id := default "" (.Scratch.Get "id") }}
 {{ $format := default "webp" (.Scratch.Get "format") }}
 {{ $hint := default "photo" (.Scratch.Get "hint") }}
 {{ $quolity := default "75" (.Scratch.Get "quolity") }}
@@ -251,6 +252,7 @@
                         width="{{ $default_img.Width }}"
                         height="{{ $default_img.Height }}"
                         class="{{ $class }}"
+                        id="{{ $id }}"
                         alt="{{ $alt }}"
                         loading='{{ cond ($is_lazy) "lazy" "eager" }}'
                         >
