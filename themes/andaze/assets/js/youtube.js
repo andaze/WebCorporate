@@ -53,7 +53,8 @@ showCompanyMovie() {
 
 
                     function modalOpen() {
-                        if(!isOpen) {
+                        if(isOpen === false) {
+                            console.log('OK')
                             new Promise((resolve) => {
                                 setTimeout(() => {
                                     movie_modal.style.visibility = "visible";
@@ -66,14 +67,14 @@ showCompanyMovie() {
                                 }, 300)
                             }).then(() => {
                                 setTimeout(() => {
-                                    isOpen = !isOpen;
+                                    isOpen = true;
                                 }, 500);
                             })
                         }
                     }
                 
                     function modalClose(option) {
-                        if(isOpen) {
+                        if(isOpen === true) {
                             new Promise((resolve) => {
                                 setTimeout(() => {
                                     videoControl(option);
@@ -86,7 +87,7 @@ showCompanyMovie() {
                                 }, 300);
                             }).then(() => {
                                 setTimeout(() => {
-                                    isOpen = !isOpen;
+                                    isOpen = false;
                                 }, 500);
                             })
                         }
@@ -95,8 +96,12 @@ showCompanyMovie() {
             })
         
         })
-    })
 
+    })
+    setInterval(() => {
+        console.log(isOpen)
+
+    }, 1000)
 
 }
 
