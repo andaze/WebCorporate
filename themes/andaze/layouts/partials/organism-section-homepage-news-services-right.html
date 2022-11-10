@@ -96,7 +96,7 @@
             <div class="swiper-wrapper">
                 {{ range $youtubeMovies.items }}
                     <div class="swiper-slide">
-                        <img class="cursor-pointer h-[180px] w-full object-cover m-0 js-modal-video" src={{ .snippet.thumbnails.default.url }} data-video-id={{ .id.videoId }}>
+                        <img class="cursor-pointer h-[180px] w-full object-cover m-0 js-modal-video" src={{ .snippet.thumbnails.high.url }} data-video-id={{ .id.videoId }}>
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
