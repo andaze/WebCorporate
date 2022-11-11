@@ -5,6 +5,7 @@
     "gsap": "^3.10.4",
     "lil-gui": "^0.17.0",
     "swiper": "^8.3.0",
+    "swup": "^2.0.19",
     "three": "^0.141.0"
   },
   "devDependencies": {
