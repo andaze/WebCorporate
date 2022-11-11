@@ -5,6 +5,7 @@ import * as swiperScript from './swiper.js';
 import * as youtuberScript from './youtube.js';
 import * as videorScript from './video.js';
 import Swup from 'swup';
+import SwupBodyClassPlugin from '@swup/body-class-plugin';
 init();
 
 async function init() {
@@ -80,8 +81,11 @@ async function init() {
     if (document.getElementById('youtube-video')) {
         const youtube = await youtuberScript.handleYoutube();
     }
-    const swup = new Swup(); // only this line when included with script tag
-    // console.log("swup",swup);
-    // swup.on('contentReplaced', init);
+        const swup = new Swup({
+            plugins: [new SwupBodyClassPlugin()]
+        });
+    
 
 }
+
+
