@@ -6,6 +6,10 @@ import * as youtuberScript from './youtube.js';
 import * as videorScript from './video.js';
 import Swup from 'swup';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
+import SwupScriptsPlugin from '@swup/scripts-plugin';
+import SwupScrollPlugin from '@swup/scroll-plugin';
+import { classify,getCurrentUrl } from 'swup/lib/helpers';
+
 init();
 
 async function init() {
@@ -81,11 +85,55 @@ async function init() {
     if (document.getElementById('youtube-video')) {
         const youtube = await youtuberScript.handleYoutube();
     }
-        const swup = new Swup({
-            plugins: [new SwupBodyClassPlugin()]
-        });
-    
-
+        
 }
+
+const swup = new Swup({
+    plugins: [new SwupBodyClassPlugin(),new SwupScriptsPlugin(),new SwupScrollPlugin()]
+});
+
+removeTopStyle();
+swup.on('contentReplaced', removeTopStyle);
+
+// let getCurrentPath = getCurrentUrl();
+// document.querySelector("#langUrl-ja").
+// // console.log("getCurrentUrl",getCurrentUrl());
+
+function removeTopStyle(){
+    
+    if (document.querySelector('#nav-footer')) {
+       
+        document.querySelector("#nav-footer").removeAttribute("style");
+        
+    }
+    
+}
+
+// let getCurrentPath =window.location.pathname
+// let reloadPage = document.querySelectorAll(".reloadPage");
+// reloadPage.forEach(element => {
+//        element.addEventListener("click",()=>{  
+//         element.href="{{ .RelPermalink }}"
+        
+//        }) 
+// }); 
+
+
+// document.addEventListener('swup:clickLink', (event) => {
+//     let getCurrentPath =window.location.pathname;
+//     if(getCurrentPath != "/WebCorporate/en/"){
+//         window.top.location = getCurrentPath;
+//     }
+    
+//   });
+
+
+       
+       
+     
+
+   
+
+
 
 
