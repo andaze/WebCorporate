@@ -52,16 +52,21 @@
     <img src="{{ `img/top.jpg` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
   </div>
 
-  {{ if .Site.GetPage "news"}}
-    {{ .Scratch.Set "section" "news" }}
-    {{ partial "template-section-newtopic.html" . }}
-    {{ .Scratch.Delete "section" }}
-  {{ end }}
+  <div class="bg-white overflow-hidden">
+    <div class="my-20 md:my-36 lg:my-36">
+      {{ if .Site.GetPage "news"}}
+        {{ .Scratch.Set "section" "news" }}
+        {{ partial "template-section-newtopic.html" . }}
+        {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+    <div class="my-20 md:my-36 lg:my-36">
+      {{ .Scratch.Set "section" "youtube" }}
+      {{ partial "template-section-youtube.html" . }}
+      {{ .Scratch.Delete "section" }}
+    </div>
+  </div>
 
-  {{ .Scratch.Set "section" "youtube" }}
-  {{ partial "template-section-youtube.html" . }}
-  {{ .Scratch.Delete "section" }}
-  
   <div class="bg-black pt-36 pb-48">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
