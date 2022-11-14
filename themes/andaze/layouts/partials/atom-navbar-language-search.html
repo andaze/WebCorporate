@@ -2,7 +2,7 @@
     {{ range $.AllTranslations }}
     
         
-        <a class="text-white px-2" id="langUrl-{{ .Page.Lang }}" data-urlId="langUrl-{{ .Page.Lang }}" href="{{ .RelPermalink }}">{{ .Language.LanguageName }} </a>
+        <a class="text-white px-2" id="langId-{{ .Page.Lang }}" href="{{ .RelPermalink }}">{{ .Language.LanguageName }} </a>
         {{ if eq (.Page.Lang) ("ja") }}
         <span class="text-white"> / </span>
             {{end}}

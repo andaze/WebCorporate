@@ -8,9 +8,10 @@ import Swup from 'swup';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupScrollPlugin from '@swup/scroll-plugin';
-import { classify,getCurrentUrl } from 'swup/lib/helpers';
-
+import { getCurrentUrl } from 'swup/lib/helpers';
 init();
+languageChange();
+removeFooterTopStyle();
 
 async function init() {
 
@@ -85,21 +86,35 @@ async function init() {
     if (document.getElementById('youtube-video')) {
         const youtube = await youtuberScript.handleYoutube();
     }
-        
+
+    
+    const swup = new Swup({
+        plugins: [new SwupBodyClassPlugin(),new SwupScriptsPlugin(),new SwupScrollPlugin()]
+    });
+    
+    swup.on('contentReplaced',languageChange,removeFooterTopStyle);
+    
 }
 
-const swup = new Swup({
-    plugins: [new SwupBodyClassPlugin(),new SwupScriptsPlugin(),new SwupScrollPlugin()]
-});
 
-removeTopStyle();
-swup.on('contentReplaced', removeTopStyle);
+function languageChange(){
+    let currentUrl = getCurrentUrl().toString();
+    let jaId = document.querySelector("#langId-ja");
+    let enId = document.querySelector("#langId-en");
+    jaId.addEventListener('click', () => {
+        if(currentUrl.search("/en/")){
+             window.top.location  =  currentUrl.replace(/en/,'/ja/');
+        }
+    });
+    enId.addEventListener('click', () => {
+        if(currentUrl.search("/ja/")){
+            window.top.location = currentUrl.replace(/ja/,'/en/');
+        }
+    });
+   
+}
 
-// let getCurrentPath = getCurrentUrl();
-// document.querySelector("#langUrl-ja").
-// // console.log("getCurrentUrl",getCurrentUrl());
-
-function removeTopStyle(){
+function removeFooterTopStyle(){
     
     if (document.querySelector('#nav-footer')) {
        
@@ -109,23 +124,6 @@ function removeTopStyle(){
     
 }
 
-// let getCurrentPath =window.location.pathname
-// let reloadPage = document.querySelectorAll(".reloadPage");
-// reloadPage.forEach(element => {
-//        element.addEventListener("click",()=>{  
-//         element.href="{{ .RelPermalink }}"
-        
-//        }) 
-// }); 
-
-
-// document.addEventListener('swup:clickLink', (event) => {
-//     let getCurrentPath =window.location.pathname;
-//     if(getCurrentPath != "/WebCorporate/en/"){
-//         window.top.location = getCurrentPath;
-//     }
-    
-//   });
 
 
        
