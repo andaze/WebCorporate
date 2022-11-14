@@ -4,7 +4,7 @@
 {{ if .Page.Params.Newsimg }}
     {{ .Scratch.Set "src" .Page.Params.Newsimg }}
 {{ end }}
-{{ .Scratch.Set "type" "full" }}
+{{ .Scratch.Set "type" "thumbnail" }}
 {{ .Scratch.Set "is-lazy" false }}
 
 {{ partial "atom-picture.html" . }}
