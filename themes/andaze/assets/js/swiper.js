@@ -10,6 +10,7 @@ export class SlideShow {
         this.casestudySwiper;
         this.sustainabilitySwiper;
         this.professionalSwiper;
+        this.youtubeSwiper;
     }
 
     createNewsSwiper() {
@@ -19,7 +20,7 @@ export class SlideShow {
                     slidesPerView: 1,
                 },
                 412: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                 },
                 851: {
                     slidesPerView: 2,
@@ -146,6 +147,40 @@ export class SlideShow {
         this.professionalSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
+        });
+    }
+
+    createYoutubeSwiper() {
+        this.youtubeSwiper = new Swiper(".youtubeSwiper", {
+            breakpoints: {
+                280: {
+                    slidesPerView: 1,
+                },
+                412: {
+                    slidesPerView: 2,
+                },
+                851: {
+                    slidesPerView: 3,
+                }
+            },
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".youtubeNext",
+                prevEl: ".youtubePrevious",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
+        });
+        this.youtubeSwiper.autoplay.stop();
+        document.querySelector(".youtubeSwiper").addEventListener('mouseover', () => {
+            this.youtubeSwiper.autoplay.stop();
+        })
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper);
         });
     }
 
