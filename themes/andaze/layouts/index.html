@@ -96,11 +96,15 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
   
-    {{ if .Site.GetPage "sustainability"}}
-      {{ .Scratch.Set "section" "sustainability" }}
-      {{ partial "template-section-newtopic.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
+  <div class="bg-white overflow-hidden">
+    <div class="my-20 md:my-36 lg:my-36">
+      {{ if .Site.GetPage "sustainability"}}
+        {{ .Scratch.Set "section" "sustainability" }}
+        {{ partial "template-section-newtopic.html" . }}
+        {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+  </div>
 
   {{ if .Site.GetPage "recruit"}}
     {{ .Scratch.Set "section" "recruit" }}
