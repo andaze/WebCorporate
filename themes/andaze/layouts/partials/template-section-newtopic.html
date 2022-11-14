@@ -1,7 +1,6 @@
 {{ $posts := ( where .Site.RegularPages "Section" "==" (.Scratch.Get "section") ) }}
 {{ $postCount := len $posts }}
 {{ if ne 0 $postCount }}
-<div class="bg-white py-20 md:py-36 lg:py-36">
     <div class="md:pl-12 lg:pl-28 md:flex">
         <div class="md:w-1/4 pl-4 md:pl-0">
             {{ partial "organism-section-homepage-news-services-left.html" . }}
@@ -10,6 +9,5 @@
             {{ partial "organism-section-homepage-news-services-right.html" . }}
         </div>
     </div>
-</div>
 {{ else }}
 {{ end }}

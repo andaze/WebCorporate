@@ -9,6 +9,9 @@
 {{ else if eq (.Scratch.Get "section") "sustainability" }}
     {{ $nextBtnName = "sustainabilityNext" }}
     {{ $previousBtnName = "sustainabilityPrevious" }}
+{{ else if eq (.Scratch.Get "section") "youtube" }}
+    {{ $nextBtnName = "youtubeNext" }}
+    {{ $previousBtnName = "youtubePrevious" }}
 {{ end }}
 
 <img src="{{ `img/previous.svg` | absURL }}" alt="Previous" class="{{ $previousBtnName }} pr-2 w-14">

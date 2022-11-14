@@ -29,10 +29,13 @@ async function init() {
         if (document.querySelector(".professionalSwiper")) {
             swiper.createProfessionalSwiper();
         }
+        if (document.querySelector(".youtubeSwiper")) {
+            swiper.createYoutubeSwiper();
+        }
     }
 
-    if (document.getElementById("youtube-video")) {
-        const youtube = await youtuberScript.handleYoutube();
+    if (document.getElementById("youtubeList")) {
+        const youtube = await new youtuberScript.handleYoutube();
     }
     if (document.getElementById('random_video')) {
         const video = await videorScript.handleVideo();
