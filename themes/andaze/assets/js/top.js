@@ -592,12 +592,6 @@ export class Sketch {
     const particleFlag = this.mesh.geometry.attributes.flag.array;
     // パーティクルの座標配列
     const particlePositions = this.mesh.geometry.attributes.position.array;
-    // オブジェクト座標＋エフェクト
-    const params = {
-      x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z,
-      x2: this.mesh.rotation.x, y2: this.mesh.rotation.y, z2: this.mesh.rotation.z,
-      s: this.bloomPass.strength, r: this.bloomPass.radius
-    };
 
     
     if(document.getElementById("company_section")) {
@@ -605,8 +599,8 @@ export class Sketch {
   
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
         this.stopDiffusion | 
         (window.scrollY > targetForStop)
       ) {
@@ -701,44 +695,6 @@ export class Sketch {
                 auto_diffusion.repeat(1);
                 auto_diffusion.yoyo(true);
                 
-    
-                // オブジェクト移動のTweenアニメーション
-                var auto_move = new TWEEN.Tween(params);
-                auto_move.to({
-                    x1: destination.x / (random_slide_time*1000), y1: destination.y*(-1) / (random_slide_time*1000), z1: this.mesh.position.z + (2000 / (random_slide_time*500)), 
-                    x2: destination.y / 1000 * (-1), y2: destination.x / 1000 * -1,
-                    s: 2.0, r: 0.5
-                },10000);
-                auto_move.delay(2000);
-                auto_move.onUpdate(function (object) {
-                  this.mesh.position.x = object.x1;
-                  this.mesh.position.y = object.y1;
-                  this.mesh.position.z = object.z1;
-                  this.mesh.rotation.x = object.x2;
-                  this.mesh.rotation.y = object.y2;
-                  this.bloomPass.strength = object.s;
-                  this.bloomPass.radius = object.r;
-                }.bind(this));
-    
-                let auto_return = new TWEEN.Tween(params);
-                auto_return.to({
-                    x1: this.mesh.position.x, y1: this.mesh.position.y, z1: this.mesh.position.z, 
-                    x2: this.mesh.rotation.x, y2: this.mesh.rotation.y,
-                    s: 0.5, r: 1.5
-                },10000);
-                auto_return.delay(2000);
-                auto_return.onUpdate(function (object) {
-                  this.mesh.position.x = object.x1;
-                  this.mesh.position.y = object.y1;
-                  this.mesh.position.z = object.z1;
-                  this.mesh.rotation.x = object.x2;
-                  this.mesh.rotation.y = object.y2;
-                  this.bloomPass.strength = object.s;
-                  this.bloomPass.radius = object.r;
-                }.bind(this));
-    
-                auto_move.chain(auto_return);
-    
                 // パーティクル拡散
                 auto_diffusion.start();
     
@@ -749,7 +705,69 @@ export class Sketch {
     
                 // オブジェクト移動（視点が極端に近づかないように制限）
                 if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
-                  auto_move.start();
+                  
+                  // オブジェクト回転のアニメーション
+                  gsap.fromTo(
+                    this.mesh.rotation,
+
+                    //初期状態
+                    {
+                      x: 0,
+                      y: 0,
+                    },
+                    
+                    //完了状態
+                    {
+                      x: destination.y / 1000 * (-1),
+                      y: destination.x / 1000 * -1,
+                      duration: 10,
+                      repeat: 1,
+                      yoyo: true
+                    },
+                  )
+
+                  // オブジェクト位置のアニメーション
+                  gsap.fromTo(
+                    this.mesh.position,
+
+                    //初期状態
+                    {
+                      x: 0,
+                      y: 0,
+                      z: 0
+                    },
+                    
+                    //完了状態
+                    {
+                      x: destination.x / (random_slide_time*1000), 
+                      y: destination.y*(-1) / (random_slide_time*1000), 
+                      z: this.mesh.position.z + (2000 / (random_slide_time*500)),
+                      duration: 10,
+                      repeat: 1,
+                      yoyo: true
+                    },
+                  )
+
+                  // オブジェクト発光のアニメーション
+                  gsap.fromTo(
+                    this.bloomPass,
+
+                    //初期状態
+                    {
+                      strength: 0.5,
+                      radius: 1.5,
+                    },
+                    
+                    //完了状態
+                    {
+                      strength: 2.0, 
+                      radius: 0.5, 
+                      duration: 10,
+                      repeat: 1,
+                      yoyo: true
+                    },
+                  )
+
                   this.moving_flag = !this.moving_flag
                   window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
                 }
