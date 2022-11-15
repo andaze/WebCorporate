@@ -23,7 +23,7 @@ export class SlideShow {
                     slidesPerView: 2,
                 },
                 851: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 }
             },
             spaceBetween: 30,
