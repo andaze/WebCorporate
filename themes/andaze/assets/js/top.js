@@ -552,15 +552,23 @@ export class Sketch {
       }
   }
 
-    lightOn() {
-    let bloomPass = {x: this.bloomPass.strength, y: this.bloomPass.radius};
-    let tween = new TWEEN.Tween(bloomPass);
-    tween.to({x: 0.5, y: 1.5}, 3000);
-    tween.start();
-    tween.onUpdate(function(object) {
-      this.bloomPass.strength = object.x;
-      this.bloomPass.radius = object.y;
-    }.bind(this));
+  lightOn() {
+    gsap.fromTo(
+      this.bloomPass,
+      
+      //初期状態
+      {
+        strength: 0,
+        radius: 0,
+      },
+       
+      //完了状態
+      {
+        strength: 0.5,
+        radius: 1.5,
+        duration: 3,
+      },
+    )
   }
 
   autoDiffusion() {
