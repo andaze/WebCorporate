@@ -2,9 +2,9 @@
 {{ $videoThumbnail := .Scratch.Get "video-thumbnail" }}
 {{ $videoTitle := .Scratch.Get "video-title" }}
 
-<div class="mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
+<div class="mb-8 sm:mb-0">
 
-    {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer movie-thumbnail" }}
+    {{ .Scratch.Set "class" "w-full object-cover cursor-pointer movie-thumbnail" }}
     {{ .Scratch.Set "format" "webp" }}
     {{ .Scratch.Set "hint" "smart" }}
     {{ .Scratch.Set "quolity" "90" }}

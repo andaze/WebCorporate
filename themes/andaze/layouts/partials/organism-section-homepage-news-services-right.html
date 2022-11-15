@@ -51,7 +51,7 @@
 {{ else if eq (.Scratch.Get "section") "youtube" }}
 
     {{/*  固定表示動画  */}}
-    <div class="flex flex-col sm:flex-row justify-between mb-12">
+    <div class="flex flex-col sm:flex-row justify-between gap-[30px] mb-12">
 
         {{/*  会社案内(英語と日本語)  */}}
         {{ if eq (.Lang) ("en")}}
@@ -93,7 +93,7 @@
         {{ .Scratch.Delete "video-thumbnail" }}
 
     </div>
-    
+
     <div id="youtubeList" class="flex flex-col sm:flex-row justify-between">
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
