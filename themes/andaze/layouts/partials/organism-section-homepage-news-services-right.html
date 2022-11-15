@@ -81,6 +81,50 @@
                 {{ end }}
             </div>
         </div>
+        <div class="mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
+
+            {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer movie-thumbnail" }}
+            {{ .Scratch.Set "format" "webp" }}
+            {{ .Scratch.Set "hint" "smart" }}
+            {{ .Scratch.Set "quolity" "90" }}
+            {{ .Scratch.Set "id" "nHCQjXzRPrg" }}
+            {{ .Scratch.Set "src" "img/thumbnail_crm.png" }}
+            {{ .Scratch.Set "is-lazy" false }}
+
+            {{ partial "atom-picture.html" . }}
+
+            {{ .Scratch.Delete "class" }}
+            {{ .Scratch.Delete "format" }}
+            {{ .Scratch.Delete "hint" }}
+            {{ .Scratch.Delete "quolity" }}
+            {{ .Scratch.Delete "src" }}
+
+            <div class="text-sm font-bold pt-5">
+                ジェネリックCRMのススメ
+            </div>
+        </div>
+        <div class="mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
+
+            {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer movie-thumbnail" }}
+            {{ .Scratch.Set "format" "webp" }}
+            {{ .Scratch.Set "hint" "smart" }}
+            {{ .Scratch.Set "quolity" "90" }}
+            {{ .Scratch.Set "id" "j_JhrVnCVFQ" }}
+            {{ .Scratch.Set "src" "img/thumbnail_paas.png" }}
+            {{ .Scratch.Set "is-lazy" false }}
+
+            {{ partial "atom-picture.html" . }}
+
+            {{ .Scratch.Delete "class" }}
+            {{ .Scratch.Delete "format" }}
+            {{ .Scratch.Delete "hint" }}
+            {{ .Scratch.Delete "quolity" }}
+            {{ .Scratch.Delete "src" }}
+
+            <div class="text-sm font-bold pt-5">
+                PaaSススメ
+            </div>
+        </div>
     </div>
     <div id="youtubeList" class="flex flex-col sm:flex-row justify-between">
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
