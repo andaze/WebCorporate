@@ -49,83 +49,51 @@
     </div>
 
 {{ else if eq (.Scratch.Get "section") "youtube" }}
+
+    {{/*  固定表示動画  */}}
     <div class="flex flex-col sm:flex-row justify-between mb-12">
-        <div class="mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
 
-            {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer movie-thumbnail" }}
-            {{ .Scratch.Set "format" "webp" }}
-            {{ .Scratch.Set "hint" "smart" }}
-            {{ .Scratch.Set "quolity" "90" }}
-            {{ if eq (.Lang) ("en")}}
-                {{ .Scratch.Set "id" "r1MN5Bxzhbw" }}
-                {{ .Scratch.Set "src" "img/thumbnail_en.png" }}
-            {{ else }}
-                {{ .Scratch.Set "id" "RHR05atIgYM" }}
-                {{ .Scratch.Set "src" "img/thumbnail_ja.png" }}
-            {{ end }}
-            {{ .Scratch.Set "is-lazy" false }}
+        {{/*  会社案内(英語と日本語)  */}}
+        {{ if eq (.Lang) ("en")}}
+            {{ .Scratch.Set "video-id" "r1MN5Bxzhbw" }}
+            {{ .Scratch.Set "video-thumbnail" "img/thumbnail_en.png" }}
+            {{ .Scratch.Set "video-title" "Company guide from the president. - Andaze Ltd." }}     
+        {{ else }}
+            {{ .Scratch.Set "video-id" "RHR05atIgYM" }}
+            {{ .Scratch.Set "video-thumbnail" "img/thumbnail_ja.png" }}
+            {{ .Scratch.Set "video-title" "アンダーズ株式会社　代表が説明する会社案内" }}     
+        {{ end }}
+        
+        {{ partial "molecule-youtube-video.html" . }}
 
-            {{ partial "atom-picture.html" . }}
+        {{ .Scratch.Delete "video-title" }}
+        {{ .Scratch.Delete "video-id" }}
+        {{ .Scratch.Delete "video-thumbnail" }}
 
-            {{ .Scratch.Delete "class" }}
-            {{ .Scratch.Delete "format" }}
-            {{ .Scratch.Delete "hint" }}
-            {{ .Scratch.Delete "quolity" }}
-            {{ .Scratch.Delete "src" }}
+        {{/*  ジェネリックCRMのススメ  */}}
+        {{ .Scratch.Set "video-id" "nHCQjXzRPrg" }}
+        {{ .Scratch.Set "video-thumbnail" "img/thumbnail_crm.png" }}
+        {{ .Scratch.Set "video-title" "ジェネリックCRMのススメ" }}
+        
+        {{ partial "molecule-youtube-video.html" . }}
 
-            <div class="text-sm font-bold pt-5">
-                {{ if eq (.Lang) ("en")}}
-                    Company guide from the president
-                {{ else }}
-                    代表が説明する会社案内
-                {{ end }}
-            </div>
-        </div>
-        <div class="mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
+        {{ .Scratch.Delete "video-title" }}
+        {{ .Scratch.Delete "video-id" }}
+        {{ .Scratch.Delete "video-thumbnail" }}
 
-            {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer movie-thumbnail" }}
-            {{ .Scratch.Set "format" "webp" }}
-            {{ .Scratch.Set "hint" "smart" }}
-            {{ .Scratch.Set "quolity" "90" }}
-            {{ .Scratch.Set "id" "nHCQjXzRPrg" }}
-            {{ .Scratch.Set "src" "img/thumbnail_crm.png" }}
-            {{ .Scratch.Set "is-lazy" false }}
+        {{/*  PaaSススメ  */}}
+        {{ .Scratch.Set "video-id" "j_JhrVnCVFQ" }}
+        {{ .Scratch.Set "video-thumbnail" "img/thumbnail_paas.png" }}
+        {{ .Scratch.Set "video-title" "PaaSススメ" }}
+        
+        {{ partial "molecule-youtube-video.html" . }}
 
-            {{ partial "atom-picture.html" . }}
+        {{ .Scratch.Delete "video-title" }}
+        {{ .Scratch.Delete "video-id" }}
+        {{ .Scratch.Delete "video-thumbnail" }}
 
-            {{ .Scratch.Delete "class" }}
-            {{ .Scratch.Delete "format" }}
-            {{ .Scratch.Delete "hint" }}
-            {{ .Scratch.Delete "quolity" }}
-            {{ .Scratch.Delete "src" }}
-
-            <div class="text-sm font-bold pt-5">
-                ジェネリックCRMのススメ
-            </div>
-        </div>
-        <div class="mb-8 sm:mb-0 sm:mr-8 w-auto sm:w-1/2 md:w-11/12 sm:max-w-[282px]">
-
-            {{ .Scratch.Set "class" "w-full h-[160px] object-cover cursor-pointer movie-thumbnail" }}
-            {{ .Scratch.Set "format" "webp" }}
-            {{ .Scratch.Set "hint" "smart" }}
-            {{ .Scratch.Set "quolity" "90" }}
-            {{ .Scratch.Set "id" "j_JhrVnCVFQ" }}
-            {{ .Scratch.Set "src" "img/thumbnail_paas.png" }}
-            {{ .Scratch.Set "is-lazy" false }}
-
-            {{ partial "atom-picture.html" . }}
-
-            {{ .Scratch.Delete "class" }}
-            {{ .Scratch.Delete "format" }}
-            {{ .Scratch.Delete "hint" }}
-            {{ .Scratch.Delete "quolity" }}
-            {{ .Scratch.Delete "src" }}
-
-            <div class="text-sm font-bold pt-5">
-                PaaSススメ
-            </div>
-        </div>
     </div>
+    
     <div id="youtubeList" class="flex flex-col sm:flex-row justify-between">
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
