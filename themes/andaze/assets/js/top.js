@@ -841,6 +841,15 @@ export class Sketch {
     
       }, false);
 
+      // ウィンドウが非アクティブの場合、アニメーション停止
+      window.addEventListener('blur', () => {
+        gsap.to(this.material.uniforms.mousePressed, {
+          duration: 0.3,
+          value: 0,
+          ease: "ease.out(1, 0.3)"
+        });
+      });
+
     } else {
 
       window.addEventListener('touchstart', (event) => {
