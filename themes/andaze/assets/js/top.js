@@ -684,7 +684,7 @@ export class Sketch {
     
     
                 // パーティクル拡散のTweenアニメーション
-                var auto_diffusion = new TWEEN.Tween(vertex_position);
+                let auto_diffusion = new TWEEN.Tween(vertex_position);
                 auto_diffusion.to({x: destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
                 auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
                 auto_diffusion.onUpdate(function (object) {
