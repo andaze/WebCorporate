@@ -758,7 +758,7 @@ export class Sketch {
                     }, "<"
                   )
 
-                  // ウィンドウが非アクティブの場合、アニメーション停止（オブジェクト）
+                  // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
                   window.addEventListener('blur', () => {
                     objectTimeline.pause();
                   });
