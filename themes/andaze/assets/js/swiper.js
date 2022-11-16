@@ -40,7 +40,7 @@ export class SlideShow {
         });
         this.newsSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".newsSwiper", this.newsSwiper);
+            this.handleAutoPlay(".newsSwiper", this.newsSwiper, 500);
         });
     }
 
@@ -71,7 +71,7 @@ export class SlideShow {
         });
         this.casestudySwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
+            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper, 500);
         });
     }
 
@@ -102,7 +102,7 @@ export class SlideShow {
         });
         this.sustainabilitySwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
+            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper, 500);
         });
     }
 
@@ -146,7 +146,7 @@ export class SlideShow {
         });    
         this.professionalSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
+            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper, 500);
         });
     }
 
@@ -180,11 +180,11 @@ export class SlideShow {
             this.youtubeSwiper.autoplay.stop();
         })
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper);
+            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper, 800);
         });
     }
 
-    handleAutoPlay(swiperElm, swiperName) {
+    handleAutoPlay(swiperElm, swiperName, offsetTop) {
         this.scroll = window.pageYOffset ;
 
         if (document.querySelector(swiperElm)) {
@@ -192,7 +192,7 @@ export class SlideShow {
             targetPos = window.pageYOffset + target.getBoundingClientRect().top;
             targetHeight = target.clientWidth;
             
-            if ((this.scroll > targetPos - 500) && (this.scroll < targetPos + targetHeight / 2)) {
+            if ((this.scroll > targetPos - offsetTop) && (this.scroll < targetPos + targetHeight / 2)) {
                 swiperName.autoplay.start();
             } else {
                 swiperName.autoplay.stop();
