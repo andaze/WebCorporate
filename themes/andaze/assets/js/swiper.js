@@ -176,8 +176,17 @@ export class SlideShow {
             loopAdditionalSlides: 1,
         });
         this.youtubeSwiper.autoplay.stop();
+
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper, 800);
+        });
+
+        // youtubeSwiper上のサムネクリックしたら自動スライド停止
+        const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener('click', () => {
+                this.youtubeSwiper.autoplay.stop();
+            });
         });
     }
 
