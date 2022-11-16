@@ -706,15 +706,11 @@ export class Sketch {
                 // オブジェクト移動（視点が極端に近づかないように制限）
                 if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
                   
-                  // オブジェクト回転のアニメーション
-                  gsap.fromTo(
-                    this.mesh.rotation,
+                  const objectTimeline = gsap.timeline();
 
-                    //初期状態
-                    {
-                      x: 0,
-                      y: 0,
-                    },
+                  // オブジェクト回転のアニメーション
+                  objectTimeline.to(
+                    this.mesh.rotation,
                     
                     //完了状態
                     {
@@ -727,15 +723,8 @@ export class Sketch {
                   )
 
                   // オブジェクト位置のアニメーション
-                  gsap.fromTo(
+                  objectTimeline.to(
                     this.mesh.position,
-
-                    //初期状態
-                    {
-                      x: 0,
-                      y: 0,
-                      z: 0
-                    },
                     
                     //完了状態
                     {
@@ -745,18 +734,12 @@ export class Sketch {
                       duration: 10,
                       repeat: 1,
                       yoyo: true
-                    },
+                    }, "<"
                   )
 
                   // オブジェクト発光のアニメーション
-                  gsap.fromTo(
+                  objectTimeline.to(
                     this.bloomPass,
-
-                    //初期状態
-                    {
-                      strength: 0.5,
-                      radius: 1.5,
-                    },
                     
                     //完了状態
                     {
@@ -765,8 +748,11 @@ export class Sketch {
                       duration: 10,
                       repeat: 1,
                       yoyo: true
-                    },
+                    }, "<"
                   )
+
+                  
+                  
 
                   this.moving_flag = !this.moving_flag
                   window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
