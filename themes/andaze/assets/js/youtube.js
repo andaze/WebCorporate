@@ -56,7 +56,6 @@ export class handleYoutube {
 
                         function modalOpen() {
                             if(isOpen === false) {
-                                console.log('OK')
                                 new Promise((resolve) => {
                                     setTimeout(() => {
                                         movie_modal.style.visibility = "visible";
