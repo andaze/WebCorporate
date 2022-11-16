@@ -718,6 +718,7 @@ export class Sketch {
                       y: destination.x / 1000 * -1,
                       duration: 10,
                       repeat: 1,
+                      delay: 2,
                       yoyo: true
                     },
                   )
@@ -733,6 +734,7 @@ export class Sketch {
                       z: this.mesh.position.z + (2000 / (random_slide_time*500)),
                       duration: 10,
                       repeat: 1,
+                      delay: 2,
                       yoyo: true
                     }, "<"
                   )
@@ -747,6 +749,7 @@ export class Sketch {
                       radius: 0.5, 
                       duration: 10,
                       repeat: 1,
+                      delay: 2,
                       yoyo: true,
                       onComplete: () => {
 
