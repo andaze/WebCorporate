@@ -747,24 +747,38 @@ export class Sketch {
                       radius: 0.5, 
                       duration: 10,
                       repeat: 1,
-                      yoyo: true
+                      yoyo: true,
+                      onComplete: () => {
+
+                        // アニメーション1ループ終了1~3秒後にのオブジェクトの移動を許可
+                        setTimeout(() => {
+                          this.moving_flag = !this.moving_flag;
+                        }, random(1000, 3000))
+                      },
                     }, "<"
                   )
 
-                  
-                  
+                  // ウィンドウが非アクティブの場合、アニメーション停止（オブジェクト）
+                  window.addEventListener('blur', () => {
+                    objectTimeline.pause();
+                  });
 
+                  // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
+                  window.addEventListener('focus', () => {
+                    objectTimeline.resume();
+                  });
+                  
+                  // オブジェクトの重複移動を防止
                   this.moving_flag = !this.moving_flag
-                  window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), 12000*2)
                 }
 
-                // ウィンドウが非アクティブの場合、アニメーション停止
+                // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
                 window.addEventListener('blur', () => {
                   auto_diffusion.stop();
                   this.stopDiffusion = true;
                 });
     
-                // ウィンドウがアクティブの場合、アニメーション再開
+                // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
                 window.addEventListener('focus', () => {
                   auto_diffusion.start();
                   this.stopDiffusion = false;
