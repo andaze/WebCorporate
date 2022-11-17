@@ -181,13 +181,15 @@ export class SlideShow {
             this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper, 800);
         });
 
-        // youtubeSwiper上のサムネクリックしたら自動スライド停止
-        const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
-        thumbnails.forEach((thumbnail) => {
-            thumbnail.addEventListener('click', () => {
-                this.youtubeSwiper.autoplay.stop();
+        // youtubeSwiper上のサムネクリックしたら自動スライド停止（PCのみ）
+        if (typeof window.ontouchstart === "undefined") {
+            const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
+            thumbnails.forEach((thumbnail) => {
+                thumbnail.addEventListener('click', () => {
+                    this.youtubeSwiper.autoplay.stop();
+                });
             });
-        });
+        }
 
         // youtube-section上をマウスオーバーしたら自動スライド開始
         document.getElementById("youtube-section").addEventListener('mouseover', () => {
