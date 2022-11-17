@@ -49,14 +49,38 @@
 
   </div>
   <div class="w-full h-96 lg:h-[34rem]">
-    <img src="{{ `img/top.jpg` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
+    {{ .Scratch.Set "class" "h-full w-full object-cover object-right" }}
+    {{ .Scratch.Set "format" "webp" }}
+    {{ .Scratch.Set "hint" "smart" }}
+    {{ .Scratch.Set "src" "img/top.jpg" }}
+    {{ .Scratch.Set "type" "full" }}
+    {{ .Scratch.Set "is-lazy" false }}
+
+    {{ partial "atom-picture.html" . }}
+
+    {{ .Scratch.Delete "class" }}
+    {{ .Scratch.Delete "format" }}
+    {{ .Scratch.Delete "hint" }}
+    {{ .Scratch.Delete "src" }}
+    {{ .Scratch.Delete "type" }}
+    {{ .Scratch.Delete "is-lazy" }}
   </div>
 
-  {{ if .Site.GetPage "news"}}
-    {{ .Scratch.Set "section" "news" }}
-    {{ partial "template-section-newtopic.html" . }}
-    {{ .Scratch.Delete "section" }}
-  {{ end }}
+  <div class="bg-white overflow-hidden">
+    <div class="my-20 md:my-36 lg:my-36">
+      {{ if .Site.GetPage "news"}}
+        {{ .Scratch.Set "section" "news" }}
+        {{ partial "template-section-newtopic.html" . }}
+        {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+    <div class="my-20 md:my-36 lg:my-36">
+      {{ .Scratch.Set "section" "youtube" }}
+      {{ partial "template-section-youtube.html" . }}
+      {{ .Scratch.Delete "section" }}
+    </div>
+  </div>
+
   <div class="bg-black pt-36 pb-48">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
@@ -86,11 +110,15 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
   
-    {{ if .Site.GetPage "sustainability"}}
-      {{ .Scratch.Set "section" "sustainability" }}
-      {{ partial "template-section-newtopic.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
+  <div class="bg-white overflow-hidden">
+    <div class="my-20 md:my-36 lg:my-36">
+      {{ if .Site.GetPage "sustainability"}}
+        {{ .Scratch.Set "section" "sustainability" }}
+        {{ partial "template-section-newtopic.html" . }}
+        {{ .Scratch.Delete "section" }}
+      {{ end }}
+    </div>
+  </div>
 
   {{ if .Site.GetPage "recruit"}}
     {{ .Scratch.Set "section" "recruit" }}
