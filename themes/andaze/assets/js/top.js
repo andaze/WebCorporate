@@ -973,6 +973,16 @@ export class Sketch {
 
     this.animation_nav.repeat(-1);
 
+    // ウィンドウがアクティブの場合、アニメーション停止
+    window.addEventListener('blur', () => {
+      this.animation_nav.pause();
+    });
+
+    // ウィンドウがアクティブの場合、アニメーション再開
+    window.addEventListener('focus', () => {
+      this.animation_nav.resume();
+    });
+
     window.setTimeout(() => {
       if (this.slide_flag === false) {
         this.nav_block.style.opacity = 1;
