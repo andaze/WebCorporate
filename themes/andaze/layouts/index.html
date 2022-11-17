@@ -49,7 +49,21 @@
 
   </div>
   <div class="w-full h-96 lg:h-[34rem]">
-    <img src="{{ `img/top.jpg` | absURL }}" alt="Image Not Available" class="h-full w-full object-cover object-right">
+    {{ .Scratch.Set "class" "h-full w-full object-cover object-right" }}
+    {{ .Scratch.Set "format" "webp" }}
+    {{ .Scratch.Set "hint" "smart" }}
+    {{ .Scratch.Set "src" "img/top.jpg" }}
+    {{ .Scratch.Set "type" "full" }}
+    {{ .Scratch.Set "is-lazy" false }}
+
+    {{ partial "atom-picture.html" . }}
+
+    {{ .Scratch.Delete "class" }}
+    {{ .Scratch.Delete "format" }}
+    {{ .Scratch.Delete "hint" }}
+    {{ .Scratch.Delete "src" }}
+    {{ .Scratch.Delete "type" }}
+    {{ .Scratch.Delete "is-lazy" }}
   </div>
 
   <div class="bg-white overflow-hidden">

@@ -1,6 +1,8 @@
 {{ $class := ""}}
 {{ if eq (.Scratch.Get "section") "solution" }}
     {{ $class = "hidden"}}
+{{ else if eq (.Scratch.Get "section") "youtube" }}
+    {{ $class = "hidden md:flex"}}
 {{ end }}
 
 <div>
