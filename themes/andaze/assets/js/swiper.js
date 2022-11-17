@@ -189,8 +189,8 @@ export class SlideShow {
             });
         });
 
-        // youtubeSwiper上をマウスオーバーしたら自動スライド開始
-        document.querySelector(".youtubeSwiper").addEventListener('mouseover', () => {
+        // youtube-section上をマウスオーバーしたら自動スライド開始
+        document.getElementById("youtube-section").addEventListener('mouseover', () => {
             this.youtubeSwiper.autoplay.start();
         });
     }
