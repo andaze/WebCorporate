@@ -25,9 +25,9 @@
     {{ end }}
 
 {{ else if eq (.Scratch.Get "section") ("youtube") }}
-    <a href="https://www.youtube.com/channel/UCfjT9TH2TOy7QRp1X_Ibr4A" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" target="_blank" rel="noopener">{{ $youtubeButtonText }}</a>
+    <a href="https://www.youtube.com/channel/UCfjT9TH2TOy7QRp1X_Ibr4A" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white {{ $class }}" target="_blank" rel="noopener">{{ $youtubeButtonText }}</a>
 
 {{ else }}
     <a href="{{ .Permalink }}" class="md:w-72 text-black hover:text-white border-gray-500 hover:bg-black bg-white {{ $class }}">{{ .Title }}</a>
-    
+
 {{ end }}
