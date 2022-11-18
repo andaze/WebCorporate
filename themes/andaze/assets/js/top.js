@@ -459,20 +459,29 @@ export class Sketch {
       // パーティクルの全頂点をTween.jsによりアニメーションさせる
       for (let i = 0; i < this.vertces; i++) {
         let vertex = {x: particleAlpha[i], y: particleFlag[i]};
-        let tween = new TWEEN.Tween(vertex);
-        tween.to({x: 1, y: 1}, interval_time+1000);
 
         // 透明度の低いパーティクルから順番に出現させる
         for (let j = 0; j < sampling_time + 1; j++) {
           if (particleAlpha[i] === 0.5 **  (j + 6)) {
-            tween.delay(j * (interval_time));
-            tween.start();
+
+            gsap.to(
+              vertex,
+              
+              //完了状態
+              {
+                x: 1,
+                y: 1,
+                delay: j * (interval_time / 1000),
+                duration: (interval_time+1000) / 1000,
+                ease: "Power1.easeOut",
+                onUpdate: () => {
+                  particleAlpha[i] = vertex.x;
+                  particleFlag[i] = vertex.y;
+                }
+              },
+            )
           }
         }
-        tween.onUpdate(function(object) {
-            particleAlpha[i] = object.x;
-            particleFlag[i] = object.y;
-        });
         
       }  
   }
