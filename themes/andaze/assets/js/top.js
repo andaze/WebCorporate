@@ -509,7 +509,7 @@ export class Sketch {
         // オブジェクト頂点座標
         let vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
     
-        
+
         const gathering2d = gsap.timeline();
   
         // パーティクル拡散のアニメーション
@@ -551,15 +551,27 @@ export class Sketch {
         // オブジェクト頂点座標
         let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
     
-        let gathering3d = new TWEEN.Tween(vertex_position);
-        gathering3d.to({x: this.pixcel_img.position[3*i], y: this.pixcel_img.position[3*i+1], z: this.pixcel_img.position[3*i+2]},3000);
-        gathering3d.easing( TWEEN.Easing.Quadratic.Out );
-        gathering3d.onUpdate(function (object) {
-          particlePositions[3*i] = object.x;
-          particlePositions[3*i+1] = object.y;
-          particlePositions[3*i+2] = object.z;
-        });
-        gathering3d.start();
+
+        const gathering3d = gsap.timeline();
+  
+        // パーティクル拡散のアニメーション
+        gathering3d.to(
+          vertex_position,
+          
+          //完了状態
+          {
+            x: this.pixcel_img.position[3*i],
+            y: this.pixcel_img.position[3*i+1],
+            z: this.pixcel_img.position[3*i+2],
+            duration: 3,
+            ease: "Power1.easeOut",
+            onUpdate: () => {
+              particlePositions[3*i] = vertex_position.x;
+              particlePositions[3*i+1] = vertex_position.y;
+              particlePositions[3*i+2] = vertex_position.z;
+            }
+          },
+        )
       }
   }
 
