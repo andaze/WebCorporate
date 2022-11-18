@@ -509,14 +509,25 @@ export class Sketch {
         // オブジェクト頂点座標
         let vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
     
-        let gathering2d = new TWEEN.Tween(vertex_position);
-        gathering2d.to({x:this.pixcel_img.position[3*i], y: this.pixcel_img.position[3*i+1]},3000);
-        gathering2d.easing( TWEEN.Easing.Quadratic.Out );
-        gathering2d.onUpdate(function (object) {
-          particlePositions[3*i] = object.x;
-          particlePositions[3*i+1] = object.y;
-        });
-        gathering2d.start();
+        
+        const gathering2d = gsap.timeline();
+  
+        // パーティクル拡散のアニメーション
+        gathering2d.to(
+          vertex_position,
+          
+          //完了状態
+          {
+            x: this.pixcel_img.position[3*i],
+            y: this.pixcel_img.position[3*i+1],
+            duration: 3,
+            ease: "Power1.easeOut",
+            onUpdate: () => {
+              particlePositions[3*i] = vertex_position.x;
+              particlePositions[3*i+1] = vertex_position.y;
+            }
+          },
+        )
       }
   }
 
