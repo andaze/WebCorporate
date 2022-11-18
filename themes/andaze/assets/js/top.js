@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import * as TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap';
 
 // 初回訪問判定フラグ
@@ -626,8 +625,8 @@ export class Sketch {
   
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
         this.stopDiffusion | 
         (window.scrollY > targetForStop)
       ) {
@@ -966,9 +965,6 @@ export class Sketch {
         this.mesh.material.uniforms.circleScale.value = 25.0;
       }
     }, this.fadein_times*this.interval_time)
-
-    // Tween.jsアニメーションの実行
-    TWEEN.update();
     
     // // 頂点の透明度の更新を許可
     this.mesh.geometry.attributes.alpha.needsUpdate = true;
