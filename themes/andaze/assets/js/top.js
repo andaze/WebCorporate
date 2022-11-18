@@ -508,12 +508,9 @@ export class Sketch {
     
         // オブジェクト頂点座標
         let vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
-    
-
-        const gathering2d = gsap.timeline();
-  
+      
         // パーティクル拡散のアニメーション
-        gathering2d.to(
+        gsap.to(
           vertex_position,
           
           //完了状態
@@ -551,11 +548,9 @@ export class Sketch {
         // オブジェクト頂点座標
         let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
     
-
-        const gathering3d = gsap.timeline();
   
         // パーティクル拡散のアニメーション
-        gathering3d.to(
+        gsap.to(
           vertex_position,
           
           //完了状態
