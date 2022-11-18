@@ -70,13 +70,13 @@
     <div class="my-20 md:my-36 lg:my-36">
       {{ if .Site.GetPage "news"}}
         {{ .Scratch.Set "section" "news" }}
-        {{ partial "template-section-newtopic.html" . }}
+        {{ partial "template-section.html" . }}
         {{ .Scratch.Delete "section" }}
       {{ end }}
     </div>
     <div class="my-20 md:my-36 lg:my-36">
       {{ .Scratch.Set "section" "youtube" }}
-      {{ partial "template-section-youtube.html" . }}
+      {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
     </div>
   </div>
@@ -106,7 +106,7 @@
 
     {{ if .Site.GetPage "casestudy"}}
       {{ .Scratch.Set "section" "casestudy" }}
-      {{ partial "template-section-newtopic.html" . }}
+      {{ partial "template-section.html" . }}
       {{ .Scratch.Delete "section" }}
     {{ end }}
   
@@ -114,7 +114,7 @@
     <div class="my-20 md:my-36 lg:my-36">
       {{ if .Site.GetPage "sustainability"}}
         {{ .Scratch.Set "section" "sustainability" }}
-        {{ partial "template-section-newtopic.html" . }}
+        {{ partial "template-section.html" . }}
         {{ .Scratch.Delete "section" }}
       {{ end }}
     </div>
