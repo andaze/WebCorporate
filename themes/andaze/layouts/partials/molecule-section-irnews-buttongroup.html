@@ -1,40 +1,4 @@
-{{ $youtubeButtonText := "" }}
-{{ if eq (.Lang) ("en")}}
-    {{ $youtubeButtonText = "YouTube Channel" }}
-{{ else }}
-    {{ $youtubeButtonText = "YouTubeチャンネル" }}
-{{ end }}
-
-{{if or (eq (.Scratch.Get "section") ("news")) (eq (.Scratch.Get "section") ("casestudy")) (eq (.Scratch.Get "section") ("sustainability")) }}
+<div class="pt-2">
+    {{ partial "atom-irnews-button.html" .}}
+</div>
     
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-    <ul class="pt-2">
-        <li>
-            {{ .Scratch.Set "backgroundTheme" "white" }}
-            {{ partial "atom-irnews-button.html" .}}
-            {{ .Scratch.Delete "backgroundTheme"}}
-        </li>
-    </ul>
-    {{ end }}
-
-{{ else if eq (.Scratch.Get "section") ("youtube") }}
-    <a href="https://www.youtube.com/channel/UCfjT9TH2TOy7QRp1X_Ibr4A" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" target="_blank" rel="noopener">{{ $youtubeButtonText }}</a>
-
-{{ else if eq (.Scratch.Get "section") ("recruit") }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-        {{ .Scratch.Set "buttonLink" "recruit" }}
-        {{ partial "atom-irnews-button.html" .}}
-        {{ .Scratch.Delete "buttonLink"}}
-    {{ end }}
-
-{{ else }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-    <ul class="pt-2">
-        <li>
-            {{ .Scratch.Set "backgroundTheme" "black" }}
-            {{ partial "atom-irnews-button.html" .}}
-            {{ .Scratch.Delete "backgroundTheme"}}
-        </li>
-    </ul>
-    {{ end }}
-{{ end }}

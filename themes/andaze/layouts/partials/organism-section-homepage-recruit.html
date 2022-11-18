@@ -1,4 +1,6 @@
 {{ partial "molecule-section-recruit-texts.html" . }}
 <div class="mt-8 md:mt-12 lg:mt-12">
+    {{ .Scratch.Set "section" "recruit" }}
     {{ partial "molecule-section-irnews-buttongroup.html" . }}
+    {{ .Scratch.Delete "section" }}
 </div>
