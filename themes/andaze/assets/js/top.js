@@ -650,7 +650,6 @@ export class Sketch {
             let x = attribute.getX(i)*(500/this.camera.position.z) - 8;
             let y = attribute.getY(i)*(500/this.camera.position.z) + 8;
             
-            let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
             
     
             // 疑似クリック・タップ座標からパーティクルまでの距離
@@ -682,23 +681,46 @@ export class Sketch {
                 destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
                 destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
     
-    
-                // パーティクル拡散のTweenアニメーション
-                let auto_diffusion = new TWEEN.Tween(vertex_position);
-                auto_diffusion.to({x: destination.x, y: destination.y, z: 0}, (random_slide_time*attenuation_coefficient));
-                auto_diffusion.easing( TWEEN.Easing.Quadratic.Out );
-                auto_diffusion.onUpdate(function (object) {
-                  particlePositions[3*i] = object.x;
-                  particlePositions[3*i+1] = object.y;
-                  particleFlag[i] = object.z;
+
+                // パーティクルの頂点座標
+                let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+
+                const particleTimeline = gsap.timeline();
+
+                // パーティクル拡散のアニメーション
+                particleTimeline.to(
+                  vertex_position,
+                  
+                  //完了状態
+                  {
+                    x: destination.x,
+                    y: destination.y,
+                    z: 0,
+                    duration: (random_slide_time*attenuation_coefficient) / 1000,
+                    repeat: 1,
+                    yoyo: true,
+                    ease: "Power1.easeOut",
+                    onUpdate: () => {
+                      particlePositions[3*i] = vertex_position.x;
+                      particlePositions[3*i+1] = vertex_position.y;
+                      particleFlag[i] = vertex_position.z;
+                    }
+                  },
+                )
+
+                // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
+                window.addEventListener('blur', () => {
+                  particleTimeline.pause();
+                  this.stopDiffusion = true;
                 });
-                auto_diffusion.repeat(1);
-                auto_diffusion.yoyo(true);
-                
-                // パーティクル拡散
-                auto_diffusion.start();
     
-    
+                // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
+                window.addEventListener('focus', () => {
+                  particleTimeline.resume();
+                  this.stopDiffusion = false;
+                });
+                  
+
                 // スライドフラグ反転
                 this.slide_flag = !this.slide_flag
     
@@ -775,17 +797,6 @@ export class Sketch {
                   this.moving_flag = !this.moving_flag
                 }
 
-                // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
-                window.addEventListener('blur', () => {
-                  auto_diffusion.stop();
-                  this.stopDiffusion = true;
-                });
-    
-                // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
-                window.addEventListener('focus', () => {
-                  auto_diffusion.start();
-                  this.stopDiffusion = false;
-                });
               }
             }
 
