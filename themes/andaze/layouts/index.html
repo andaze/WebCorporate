@@ -93,7 +93,7 @@
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
-        <div class="flex justify-center md:hidden lg:hidden mt-5">
+        <div class="flex justify-center lg:hidden mt-5">
           {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>
       {{ .Scratch.Delete "section" }}
