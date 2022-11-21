@@ -22,9 +22,8 @@ weight: 2
 <th class="w-1/3 font-bold !m-0">Location</th>
 <td class="w-2/3 p-0">
 <ul class="list-none p-0">
-<li class="p-0 mt-0 mb-4"><span class="font-bold ">head office</span><br>10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo</li>
-<li class="p-0 mt-0"><span class="font-bold ">development base</span><br>5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo
-WeWork Hanzomon PREXSouth 2F</li>
+<li class="p-0 mt-0 mb-4"><span class="font-bold ">Head office</span><br>10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo</li>
+<li class="p-0 mt-0"><span class="font-bold ">Development base</span><br>WeWork Hanzomon PREXSouth, 5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo</li>
 </ul>
 </td>
 </tr>
