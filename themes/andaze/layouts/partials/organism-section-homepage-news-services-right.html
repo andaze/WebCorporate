@@ -101,7 +101,14 @@
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
                 {{ range $youtubeMovies.items }}
-                    {{ if not (in .snippet.title "#shorts") }}
+                    {{/*  #shortsの動画と固定表示の動画は表示しない  */}}
+                    {{ if and 
+                        (not (in .snippet.title "#shorts")) 
+                        (ne .snippet.title "Company guide from the president. - Andaze Ltd.") 
+                        (ne .snippet.title "アンダーズ株式会社　代表が説明する会社案内") 
+                        (ne .snippet.title "ジェネリックCRMのススメ") 
+                        (ne .snippet.title "PaaSのススメ") 
+                    }}
                         <div class="swiper-slide">
                             <img class="cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnail youtube-slide" src={{ .snippet.thumbnails.high.url }} id={{ .id.videoId }}>
                             <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
