@@ -23,7 +23,7 @@ weight: 0
 
 
   {{< download-button
-      class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] rounded-2xl" btn-text="無料ダウンロードする"
+      class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] rounded-2xl font-bold" btn-text="ダウンロード"
   >}}
 
   </div>
