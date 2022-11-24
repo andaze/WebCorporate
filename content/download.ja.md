@@ -5,12 +5,12 @@ isDownload: true
 weight: 0
 ---
 
-<div class="py-20 pd:my-36 md:pl-12 lg:pl-28 bg-white">
-  <h2 class="text-4xl font-bold mb-4">無料PDFブック「PaaS」のススメ</h2>
+<div class="md:mx-0 py-20 pd:my-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-white">
+  <h2 class="text-2xl md:text-4xl font-bold mb-4">無料PDFブック「PaaS」のススメ</h2>
   <p class="text-lg font-bold">持続可能なシステムを「安くつくる」技術(2022年度版)</p>
 
-<div class="flex">
-  <div class="w-[540px]">
+<div class="flex flex-col md:flex-row md:gap-8 lg:gap-0">
+  <div class="md:w-2/3 lg:w-[540px]">
   <P class="mt-12">安価で融通の利くシステム開発について探しているものの、どれもピンとこないと悩んでいませんか？本書は弊社がPaaSを使ってクライアント様の課題を解決し、IT投資を成功させてきたノウハウをご紹介しています。</p>
 
   <ul class="my-8 list-disc ml-6">
@@ -28,7 +28,7 @@ weight: 0
 
   </div>
   
-  {{< picture alt="Image Not Available" src="img/ebook.png" type="content" quolity="100" class="w-80 ml-28 m-8">}}
+  {{< picture alt="Image Not Available" src="img/ebook.png" type="content" quolity="100" class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-8">}}
 </div>
 
 </div>
