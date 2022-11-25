@@ -2,7 +2,7 @@
 title: "Renewal of Corporate Website"
 date: 2022-06-24T09:38:56+09:00
 weight: 1
-newsimg: logo.png
+newsimg: renewal.png
 tags:
    - Press Release
 headerImage:
