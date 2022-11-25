@@ -64,21 +64,21 @@
   </div>
 
   <div class="bg-white overflow-hidden">
-    <div class="my-20 md:my-36 lg:my-36">
+    <div class="my-20 md:my-36">
       {{ if .Site.GetPage "news"}}
         {{ .Scratch.Set "section" "news" }}
         {{ partial "template-section-newtopic.html" . }}
         {{ .Scratch.Delete "section" }}
       {{ end }}
     </div>
-    <div class="my-20 md:my-36 lg:my-36">
+    <div class="my-20 md:my-36">
       {{ .Scratch.Set "section" "youtube" }}
       {{ partial "template-section-youtube.html" . }}
       {{ .Scratch.Delete "section" }}
     </div>
   </div>
 
-  <div class="bg-black pt-36 pb-48">
+  <div class="bg-black py-20 md:py-36">
     {{ if .Site.GetPage "ir"}}  
       {{ .Scratch.Set "section" "ir" }}
       {{ partial "template-section-irnews.html" . }}
@@ -93,7 +93,7 @@
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
-        <div class="flex justify-center md:hidden lg:hidden mt-5">
+        <div class="flex justify-center lg:hidden mt-5">
           {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>
       {{ .Scratch.Delete "section" }}
@@ -108,7 +108,7 @@
     {{ end }}
   
   <div class="bg-white overflow-hidden">
-    <div class="my-20 md:my-36 lg:my-36">
+    <div class="my-20 md:my-36">
       {{ if .Site.GetPage "sustainability"}}
         {{ .Scratch.Set "section" "sustainability" }}
         {{ partial "template-section-newtopic.html" . }}
