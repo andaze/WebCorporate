@@ -738,14 +738,12 @@ export class Sketch {
                 window.addEventListener('blur', () => {
                   particleTimeline.pause();
                   this.stopDiffusion = true;
-                  console.log('stop particle')
                 });
     
                 // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
                 window.addEventListener('focus', () => {
                   particleTimeline.resume();
                   this.stopDiffusion = false;
-                  console.log('start particle')
                 });
                   
 
@@ -814,13 +812,11 @@ export class Sketch {
                   // ウィンドウがアクティブの場合、アニメーション停止（オブジェクト）
                   window.addEventListener('blur', () => {
                     objectTimeline.pause();
-                    console.log('stop obj')
                   });
                   
                   // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
                   window.addEventListener('focus', () => {
                     objectTimeline.resume();
-                    console.log('start obj')
                   });
                   
                   // オブジェクトの重複移動を防止
