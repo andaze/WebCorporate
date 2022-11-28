@@ -5,7 +5,7 @@ weight: 0
 isDownload: true
 ---
 
-<div class="md:mx-0 py-20 pd:my-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-white">
+<div class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-white">
   <h2 class="text-2xl md:text-4xl font-bold mb-4">Free PDF Book "PaaS-no-Susume"</h2>
   <p class="text-lg font-bold">Technology to "cheaply create" sustainable systems (FY2022 Edition)</p>
 
