@@ -5,7 +5,7 @@ isDownload: true
 weight: 0
 ---
 
-<div class="md:mx-0 py-20 pd:my-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-white">
+<div class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-white">
   <h2 class="text-2xl md:text-4xl font-bold mb-4">無料PDFブック「PaaS」のススメ</h2>
   <p class="text-lg font-bold">持続可能なシステムを「安くつくる」技術(2022年度版)</p>
 
