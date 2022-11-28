@@ -3,7 +3,7 @@
 {{ .Scratch.Set "btn-text" (.Get "btn-text") }}
 {{ $btn_text := .Scratch.Get "btn-text" }}
 
-<a class="{{ $opt_class }} py-3 px-8 cursor-pointer" id="download-button" data-files="{{ "generic-crm-2023-1.pdf" | relURL }} {{ "paas-2022.pdf" | relURL }}">{{ $btn_text }}</a>
+<a class="{{ $opt_class }} py-3 px-8 cursor-pointer" id="download-button" data-files="{{ `generic-crm-2023-1.pdf` | absURL }} {{ `paas-2022.pdf` | absURL }}">{{ $btn_text }}</a>
 
 {{ .Scratch.Delete "btn-text" }}
 {{ .Scratch.Delete "class" }}
