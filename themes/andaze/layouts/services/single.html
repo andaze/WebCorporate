@@ -12,6 +12,7 @@
         <div class="md:w-2/3 bg-white max-w-none w-full">
             {{ .Content }}
 
+            {{/*  プロフェッショナル  */}}
             {{ if .Site.GetPage "professional-images"}}
                 {{ .Scratch.Set "section" "professional-images" }}
                 {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
@@ -44,10 +45,53 @@
                     </div>
                     <div class="flex justify-between w-3/5 mx-auto">
                         <div alt="Previous" class="professionalPrevious w-14 font-bold text-xl">←</div>
-                        <div class="progressbar relative w-3/5 h-2 mt-2.5 bg-gray-200 overflow-hidden">
-                            <span class="progressbar_in inline-block absolute inset-0 w-full bg-gray-700 scale-x-0 origin-left ease-linear"></span>
+                        <div class="Progressbar relative w-3/5 h-2 mt-2.5 bg-gray-200 overflow-hidden">
+                            <span class="professionalProgressbar_in inline-block absolute inset-0 w-full bg-gray-700 scale-x-0 origin-left ease-linear"></span>
                         </div>
                         <div alt="Next" class="professionalNext w-14 font-bold text-xl text-center">→</div>
+                    </div>
+                </div>
+                {{ end }}
+                {{ .Scratch.Delete "section" }}
+            {{ end }}
+
+            {{/*  ソリューション  */}}
+            {{ if .Site.GetPage "solution"}}
+                {{ .Scratch.Set "section" "solution" }}
+                {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+                <h2>{{ .Title }}</h2>
+                <div #swiperRef="" class="swiper solutionSwiper">
+                    <div class="swiper-wrapper">
+                        {{ range .Pages }}
+                            <div class="swiper-slide mb-10">
+
+                                {{ .Scratch.Set "class" "w-48 h-72 object-cover my-0 mx-auto" }}
+                                {{ .Scratch.Set "format" "webp" }}
+                                {{ .Scratch.Set "hint" "smart" }}
+                                {{ .Scratch.Set "quolity" "90" }}
+                                {{ if .Page.Params.cardImage }}
+                                    {{ .Scratch.Set "src" .Page.Params.cardImage }}
+                                {{ end }}
+                                    {{ partial "atom-picture.html" . }}
+                                {{ .Scratch.Delete "class" }}
+                                {{ .Scratch.Delete "format" }}
+                                {{ .Scratch.Delete "hint" }}
+                                {{ .Scratch.Delete "quolity" }}
+                                {{ .Scratch.Delete "src" }}
+
+                                <div class="flex flex-col mt-4 w-48 mx-auto">
+                                    <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
+                                    <p class="m-0">{{.Page.Params.subtitle}}</p>
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>
+                    <div class="flex justify-between w-3/5 mx-auto">
+                        <div alt="Previous" class="solutionPrevious w-14 font-bold text-xl">←</div>
+                        <div class="progressbar relative w-3/5 h-2 mt-2.5 bg-gray-200 overflow-hidden">
+                            <span class="solotionProgressbar_in inline-block absolute inset-0 w-full bg-gray-700 scale-x-0 origin-left ease-linear"></span>
+                        </div>
+                        <div alt="Next" class="solutionNext w-14 font-bold text-xl text-center">→</div>
                     </div>
                 </div>
                 {{ end }}

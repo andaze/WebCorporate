@@ -24,6 +24,9 @@ async function init() {
         if (document.querySelector(".professionalSwiper")) {
             swiper.createProfessionalSwiper();
         }
+        if (document.querySelector(".solutionSwiper")) {
+            swiper.createSolutionSwiper();
+        }
         if (document.querySelector(".youtubeSwiper")) {
             swiper.createYoutubeSwiper();
         }
