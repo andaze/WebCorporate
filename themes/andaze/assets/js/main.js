@@ -82,7 +82,7 @@ async function init() {
     }
 
     if (document.querySelector('#download-button')) {
-        const multi_download = await downloadScript.download();
+        const multi_download = await downloadScript.download("https://andaze.com/paas-no-susume/#download");
     }
 
 }
