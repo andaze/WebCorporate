@@ -65,24 +65,27 @@
                             <div class="swiper-wrapper">
                                 {{ range .Pages }}
                                     <div class="swiper-slide mb-10 shadow-xl">
-        
-                                        {{ .Scratch.Set "class" "w-full h-48 object-cover my-0" }}
-                                        {{ .Scratch.Set "format" "webp" }}
-                                        {{ .Scratch.Set "hint" "smart" }}
-                                        {{ .Scratch.Set "quolity" "90" }}
-                                        {{ if .Page.Params.cardImage }}
-                                            {{ .Scratch.Set "src" .Page.Params.cardImage }}
-                                        {{ end }}
-                                            {{ partial "atom-picture.html" . }}
-                                        {{ .Scratch.Delete "class" }}
-                                        {{ .Scratch.Delete "format" }}
-                                        {{ .Scratch.Delete "hint" }}
-                                        {{ .Scratch.Delete "quolity" }}
-                                        {{ .Scratch.Delete "src" }}
-        
-                                        <div class="flex flex-col mt-2 w-48 p-4 mx-auto min-h-[118px] text-left">
-                                            <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
-                                        </div>
+                                        <a href="{{ .RelPermalink }}">
+
+                                            {{ .Scratch.Set "class" "w-full h-48 object-cover my-0" }}
+                                            {{ .Scratch.Set "format" "webp" }}
+                                            {{ .Scratch.Set "hint" "smart" }}
+                                            {{ .Scratch.Set "quolity" "90" }}
+                                            {{ if .Page.Params.cardImage }}
+                                                {{ .Scratch.Set "src" .Page.Params.cardImage }}
+                                            {{ end }}
+                                                {{ partial "atom-picture.html" . }}
+                                            {{ .Scratch.Delete "class" }}
+                                            {{ .Scratch.Delete "format" }}
+                                            {{ .Scratch.Delete "hint" }}
+                                            {{ .Scratch.Delete "quolity" }}
+                                            {{ .Scratch.Delete "src" }}
+            
+                                            <div class="flex flex-col mt-2 w-48 p-4 mx-auto min-h-[118px] text-left">
+                                                <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
+                                            </div>
+                                        </a>
+    
                                     </div>
                                 {{ end }}
                             </div>
