@@ -13,8 +13,17 @@ export class SlideShow {
         this.youtubeSwiper;
     }
 
-    createNewsSwiper() {
-        this.newsSwiper = new Swiper(".newsSwiper", {
+    createSwiper(sectionName, autoplay=true, delayTime=2000, offset=500, withBar=false) {
+
+        let bar;
+        let speed;
+
+        if(withBar) {
+            bar = document.querySelector("." + sectionName + "Progressbar_in");
+            speed = 5000;
+        }
+
+        this.swiper = new Swiper("." + sectionName + "Swiper", {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -23,208 +32,65 @@ export class SlideShow {
                     slidesPerView: 2,
                 },
                 851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".newsNext",
-                prevEl: ".newsPrevious",
-            },
-            // autoplay: {
-            //     delay: 2000,
-            //     disableOnInteraction: false,
-            // },
-            // loop: true,
-            // loopAdditionalSlides: 1,
-        });
-        this.newsSwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".newsSwiper", this.newsSwiper, 500);
-        });
-    }
-
-    createCasestudySwiper() {
-        this.casestudySwiper = new Swiper(".casestudySwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                412: {
-                    slidesPerView: 2,
-                },
-                851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".casestudyNext",
-                prevEl: ".casestudyPrevious",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-        });
-        this.casestudySwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper, 500);
-        });
-    }
-
-    createSustainabilitySwiper() {
-        this.sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                412: {
-                    slidesPerView: 2,
-                },
-                851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".sustainabilityNext",
-                prevEl: ".sustainabilityPrevious",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-        });
-        this.sustainabilitySwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper, 500);
-        });
-    }
-
-    createProfessionalSwiper() {
-        let bar = document.querySelector('.professionalProgressbar_in');
-        let speed = 5000;
-        this.professionalSwiper = new Swiper(".professionalSwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                500: {
-                    slidesPerView: 2,
-                },
-                1280: {
                     slidesPerView: 3,
                 }
             },
             spaceBetween: 30,
             on: {
                 slideChangeTransitionStart: function () {
-                    bar.style.transitionDuration = '0s',
-                    bar.style.transform = 'scaleX(0)'
+                    if(withBar) {
+                        bar.style.transitionDuration = '0s',
+                        bar.style.transform = 'scaleX(0)'
+                    }
                 },
                 slideChangeTransitionEnd: function () {
-                    bar.style.transitionDuration = speed + 'ms',
-                    bar.style.transform = 'scaleX(1)'
+                    if(withBar) {
+                        bar.style.transitionDuration = speed + 'ms',
+                        bar.style.transform = 'scaleX(1)'
+                    }
                 },
             },
             navigation: {
-                nextEl: ".professionalNext",
-                prevEl: ".professionalPrevious",
+                nextEl: "." + sectionName + "Next",
+                prevEl: "." + sectionName + "Previous",
             },
             autoplay: {
-                delay: 5000,
+                delay: delayTime,
                 disableOnInteraction: false,
             },
             loop: true,
             loopAdditionalSlides: 1,
-            speed: 800,
-        });    
-        this.professionalSwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper, 500);
         });
+        this.swiper.autoplay.stop();
+
+        if (autoplay === true) {
+            window.addEventListener('scroll', () => {
+                this.handleAutoPlay("." + sectionName + "Swiper", this.swiper, offset);
+            });
+        }
+
+        if(sectionName === "youtube") {
+            this.youtubeAutoPlay();
+        }
     }
 
-    createSolutionSwiper() {
-        let bar = document.querySelector('.solotionProgressbar_in');
-        let speed = 5000;
-        this.solutionSwiper = new Swiper(".solutionSwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                500: {
-                    slidesPerView: 2,
-                },
-                1280: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            on: {
-                slideChangeTransitionStart: function () {
-                    bar.style.transitionDuration = '0s',
-                    bar.style.transform = 'scaleX(0)'
-                },
-                slideChangeTransitionEnd: function () {
-                    bar.style.transitionDuration = speed + 'ms',
-                    bar.style.transform = 'scaleX(1)'
-                },
-            },
-            navigation: {
-                nextEl: ".solutionNext",
-                prevEl: ".solutionPrevious",
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-            speed: 800,
-        });    
-        this.solutionSwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".solutionSwiper", this.solutionSwiper, 500);
-        });
+    handleAutoPlay(swiperElm, swiperName, offsetTop) {
+        this.scroll = window.pageYOffset ;
+        
+        if (document.querySelector(swiperElm)) {
+            target = document.querySelector(swiperElm);
+            targetPos = window.pageYOffset + target.getBoundingClientRect().top;
+            targetHeight = target.clientWidth;
+            
+            if ((this.scroll > targetPos - offsetTop) && (this.scroll < targetPos + targetHeight / 2)) {
+                swiperName.autoplay.start();
+            } else {
+                swiperName.autoplay.stop();
+            }
+        }
     }
 
-    createYoutubeSwiper() {
-        this.youtubeSwiper = new Swiper(".youtubeSwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                412: {
-                    slidesPerView: 2,
-                },
-                851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".youtubeNext",
-                prevEl: ".youtubePrevious",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-        });
-        this.youtubeSwiper.autoplay.stop();
-
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper, 800);
-        });
-
+    youtubeAutoPlay() {
         // youtubeSwiper上のサムネクリックしたら自動スライド停止（PCのみ）
         if (typeof window.ontouchstart === "undefined") {
             const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
@@ -239,22 +105,6 @@ export class SlideShow {
         document.getElementById("youtube-section").addEventListener('mouseover', () => {
             this.youtubeSwiper.autoplay.start();
         });
-    }
-
-    handleAutoPlay(swiperElm, swiperName, offsetTop) {
-        this.scroll = window.pageYOffset ;
-
-        if (document.querySelector(swiperElm)) {
-            target = document.querySelector(swiperElm);
-            targetPos = window.pageYOffset + target.getBoundingClientRect().top;
-            targetHeight = target.clientWidth;
-            
-            if ((this.scroll > targetPos - offsetTop) && (this.scroll < targetPos + targetHeight / 2)) {
-                swiperName.autoplay.start();
-            } else {
-                swiperName.autoplay.stop();
-            }
-        }
     }
 }
 
