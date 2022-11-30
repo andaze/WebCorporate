@@ -107,7 +107,7 @@ export class SlideShow {
     }
 
     createProfessionalSwiper() {
-        let bar = document.querySelector('.progressbar_in');
+        let bar = document.querySelector('.professionalProgressbar_in');
         let speed = 5000;
         this.professionalSwiper = new Swiper(".professionalSwiper", {
             breakpoints: {
@@ -147,6 +147,50 @@ export class SlideShow {
         this.professionalSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(".professionalSwiper", this.professionalSwiper, 500);
+        });
+    }
+
+    createSolutionSwiper() {
+        let bar = document.querySelector('.solotionProgressbar_in');
+        let speed = 5000;
+        this.solutionSwiper = new Swiper(".solutionSwiper", {
+            breakpoints: {
+                280: {
+                    slidesPerView: 1,
+                },
+                500: {
+                    slidesPerView: 2,
+                },
+                1280: {
+                    slidesPerView: 3,
+                }
+            },
+            spaceBetween: 30,
+            on: {
+                slideChangeTransitionStart: function () {
+                    bar.style.transitionDuration = '0s',
+                    bar.style.transform = 'scaleX(0)'
+                },
+                slideChangeTransitionEnd: function () {
+                    bar.style.transitionDuration = speed + 'ms',
+                    bar.style.transform = 'scaleX(1)'
+                },
+            },
+            navigation: {
+                nextEl: ".solutionNext",
+                prevEl: ".solutionPrevious",
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
+            speed: 800,
+        });    
+        this.solutionSwiper.autoplay.stop();
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".solutionSwiper", this.solutionSwiper, 500);
         });
     }
 
