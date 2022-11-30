@@ -117,6 +117,10 @@
     </div>
   </div>
 
+  {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
+    {{ .Content }}
+  {{ end }}
+
   {{ if .Site.GetPage "recruit"}}
     {{ .Scratch.Set "section" "recruit" }}
     {{ partial "template-section-recruit.html" . }}

@@ -11,6 +11,18 @@ canonifyurls = true
 
 paginate = 2
 
+# [Configure Modules | Hugo](https://gohugo.io/hugo-modules/configuration/)
+[module]
+[module.hugoVersion]
+extended = true
+min = "0.100"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = "uploads"
+target = "static"
+
 [Languages]
 [Languages.ja]
 languageName = "JP"

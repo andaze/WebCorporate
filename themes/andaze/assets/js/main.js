@@ -4,6 +4,7 @@ import * as sendForm from './sendform.js';
 import * as swiperScript from './swiper.js';
 import * as youtuberScript from './youtube.js';
 import * as videorScript from './video.js';
+import * as downloadScript from './multiDownload.js';
 
 init();
 
@@ -78,6 +79,10 @@ async function init() {
         document.querySelector('#submitButton').addEventListener("click", () => {
             sendForm.sendEmail();
         });
+    }
+
+    if (document.querySelector('#download-button')) {
+        const multi_download = await downloadScript.download("https://andaze.com/paas-no-susume/#download");
     }
 
 }
