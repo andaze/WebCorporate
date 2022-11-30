@@ -51,46 +51,35 @@
 {{ else if eq (.Scratch.Get "section") "youtube" }}
 
     {{/*  固定表示動画  */}}
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-[30px] mb-12 px-4 sm:pl-2 md:pl-4 pt-10 pb-10 bg-gray-100">
+    <div class="flex flex-col-reverse sm:flex-row lg:flex-row-reverse gap-[30px] mb-12 px-4 sm:pl-2 md:pl-4 pt-10 pb-10 bg-gray-100 sm:overflow-scroll lg:overflow-auto">
 
-        {{/*  会社案内(英語と日本語)  */}}
-        {{ if eq (.Lang) ("en")}}
-            {{ .Scratch.Set "video-id" "r1MN5Bxzhbw" }}
-            {{ .Scratch.Set "video-thumbnail" "img/thumbnail_en.png" }}
-            {{ .Scratch.Set "video-title" "Company guide from the president. - Andaze Ltd." }}     
+        {{ if eq (.Lang) ("en") }}
+            {{ range $youtubeMovies.items }}
+                {{ if or 
+                    (eq .snippet.title "Company guide from the president. - Andaze Ltd.") 
+                    (eq .snippet.title "ジェネリックCRMのススメ") 
+                    (eq .snippet.title "PaaSのススメ") 
+                }}
+                    <div class="sm:shrink-0 md:w-[47%] lg:w-1/3 lg:shrink">
+                        <img class="cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnail" src={{ .snippet.thumbnails.high.url }} id={{ .id.videoId }}>
+                        <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+                    </div>
+                {{ end }}
+            {{ end }}
         {{ else }}
-            {{ .Scratch.Set "video-id" "RHR05atIgYM" }}
-            {{ .Scratch.Set "video-thumbnail" "img/thumbnail_ja.png" }}
-            {{ .Scratch.Set "video-title" "アンダーズ株式会社　代表が説明する会社案内" }}     
+            {{ range $youtubeMovies.items }}
+                {{ if or 
+                    (eq .snippet.title "アンダーズ株式会社　代表が説明する会社案内") 
+                    (eq .snippet.title "ジェネリックCRMのススメ") 
+                    (eq .snippet.title "PaaSのススメ") 
+                }}
+                    <div class="sm:shrink-0 md:w-[47%] lg:w-1/3 lg:shrink">
+                        <img class="cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnail" src={{ .snippet.thumbnails.high.url }} id={{ .id.videoId }}>
+                        <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+                    </div>
+                {{ end }}
+            {{ end }}
         {{ end }}
-        
-        {{ partial "molecule-youtube-video.html" . }}
-
-        {{ .Scratch.Delete "video-title" }}
-        {{ .Scratch.Delete "video-id" }}
-        {{ .Scratch.Delete "video-thumbnail" }}
-
-        {{/*  ジェネリックCRMのススメ  */}}
-        {{ .Scratch.Set "video-id" "nHCQjXzRPrg" }}
-        {{ .Scratch.Set "video-thumbnail" "img/thumbnail_crm.png" }}
-        {{ .Scratch.Set "video-title" "ジェネリックCRMのススメ" }}
-        
-        {{ partial "molecule-youtube-video.html" . }}
-
-        {{ .Scratch.Delete "video-title" }}
-        {{ .Scratch.Delete "video-id" }}
-        {{ .Scratch.Delete "video-thumbnail" }}
-
-        {{/*  PaaSススメ  */}}
-        {{ .Scratch.Set "video-id" "j_JhrVnCVFQ" }}
-        {{ .Scratch.Set "video-thumbnail" "img/thumbnail_paas.png" }}
-        {{ .Scratch.Set "video-title" "PaaSのススメ" }}
-        
-        {{ partial "molecule-youtube-video.html" . }}
-
-        {{ .Scratch.Delete "video-title" }}
-        {{ .Scratch.Delete "video-id" }}
-        {{ .Scratch.Delete "video-thumbnail" }}
 
     </div>
 
@@ -101,10 +90,19 @@
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
                 {{ range $youtubeMovies.items }}
-                    <div class="swiper-slide">
-                        <img class="cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnail youtube-slide" src={{ .snippet.thumbnails.high.url }} id={{ .id.videoId }}>
-                        <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
-                    </div>
+                    {{/*  #shortsの動画と固定表示の動画は表示しない  */}}
+                    {{ if and 
+                        (not (in .snippet.title "#shorts")) 
+                        (ne .snippet.title "Company guide from the president. - Andaze Ltd.") 
+                        (ne .snippet.title "アンダーズ株式会社　代表が説明する会社案内") 
+                        (ne .snippet.title "ジェネリックCRMのススメ") 
+                        (ne .snippet.title "PaaSのススメ") 
+                    }}
+                        <div class="swiper-slide">
+                            <img class="cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnail youtube-slide" src={{ .snippet.thumbnails.high.url }} id={{ .id.videoId }}>
+                            <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+                        </div>
+                    {{ end }}
                 {{ end }}
             </div>
         </div>     
