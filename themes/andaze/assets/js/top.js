@@ -55,14 +55,18 @@ export class Surround {
     if (document.getElementById("key-visual")) {
       const key_visual = document.getElementById("key-visual");
       let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
-      let target_static = key_visual_bottom - (window.innerHeight * 0.88);
+      let target_top = key_visual_bottom - (window.innerHeight * 0.88);
+      let target_bottom = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
   
-      if (window.scrollY >= target_static) {
-        dark_cover.style.opacity = .5;
-        dark_cover.style.visibility = "visible";
-      } else if (window.scrollY < target_static) {
+      if (window.scrollY < target_top) {
         dark_cover.style.opacity = 0;
         dark_cover.style.visibility = "invisible";
+      } else if (window.scrollY <= target_bottom && window.scrollY > target_top) {
+        dark_cover.style.opacity = .5;
+        dark_cover.style.visibility = "visible";
+      } else {
+        dark_cover.style.opacity = 1;
+        dark_cover.style.visibility = "visible";
       }
     }
   }
