@@ -4,7 +4,7 @@ import * as sendForm from './sendform.js';
 import * as swiperScript from './swiper.js';
 import * as youtuberScript from './youtube.js';
 import * as videorScript from './video.js';
-import * as downloadScript from './multiDownload.js';
+import * as downloadScript from './multidownload.js';
 
 init();
 
