@@ -4,6 +4,7 @@
     "csshake": "^1.7.0",
     "gsap": "^3.10.4",
     "lil-gui": "^0.17.0",
+    "multi-download": "^4.0.0",
     "swiper": "^8.3.0",
     "three": "^0.141.0"
   },

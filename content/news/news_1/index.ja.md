@@ -2,7 +2,7 @@
 title: "コーポレートサイトをリニューアルしました"
 date: 2022-06-24T09:39:19+09:00
 weight: 1
-newsimg: logo.png
+newsimg: renewal.png
 tags:
    - プレスリリース
 headerImage:

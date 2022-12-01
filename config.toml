@@ -11,6 +11,18 @@ canonifyurls = true
 
 paginate = 2
 
+# [Configure Modules | Hugo](https://gohugo.io/hugo-modules/configuration/)
+[module]
+[module.hugoVersion]
+extended = true
+min = "0.100"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = "uploads"
+target = "static"
+
 [Languages]
 [Languages.ja]
 languageName = "JP"
@@ -18,7 +30,6 @@ title = "アンダーズ株式会社"
 weight = 1
 languageCode = "ja-JP"
 topCatchCopy = "経営視点でDXを加速させるプロ集団"
-annotationDX = "※DX（デジタルトランスフォーメーション）…ITの浸透が、人々の生活をあらゆる面でより良い方向に変化させる"
 footerFacebookTitle = "公式YouTube"
 footerPrivacyText = "個人情報保護方針"
 footerSocialMediaPrivacyText = "基本利用条件"

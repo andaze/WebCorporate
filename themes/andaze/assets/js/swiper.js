@@ -40,7 +40,7 @@ export class SlideShow {
         });
         this.newsSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".newsSwiper", this.newsSwiper);
+            this.handleAutoPlay(".newsSwiper", this.newsSwiper, 500);
         });
     }
 
@@ -71,7 +71,7 @@ export class SlideShow {
         });
         this.casestudySwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper);
+            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper, 500);
         });
     }
 
@@ -102,12 +102,12 @@ export class SlideShow {
         });
         this.sustainabilitySwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper);
+            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper, 500);
         });
     }
 
     createProfessionalSwiper() {
-        let bar = document.querySelector('.progressbar_in');
+        let bar = document.querySelector('.professionalProgressbar_in');
         let speed = 5000;
         this.professionalSwiper = new Swiper(".professionalSwiper", {
             breakpoints: {
@@ -146,7 +146,51 @@ export class SlideShow {
         });    
         this.professionalSwiper.autoplay.stop();
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper);
+            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper, 500);
+        });
+    }
+
+    createSolutionSwiper() {
+        let bar = document.querySelector('.solotionProgressbar_in');
+        let speed = 5000;
+        this.solutionSwiper = new Swiper(".solutionSwiper", {
+            breakpoints: {
+                280: {
+                    slidesPerView: 1,
+                },
+                500: {
+                    slidesPerView: 2,
+                },
+                1280: {
+                    slidesPerView: 3,
+                }
+            },
+            spaceBetween: 30,
+            on: {
+                slideChangeTransitionStart: function () {
+                    bar.style.transitionDuration = '0s',
+                    bar.style.transform = 'scaleX(0)'
+                },
+                slideChangeTransitionEnd: function () {
+                    bar.style.transitionDuration = speed + 'ms',
+                    bar.style.transform = 'scaleX(1)'
+                },
+            },
+            navigation: {
+                nextEl: ".solutionNext",
+                prevEl: ".solutionPrevious",
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
+            speed: 800,
+        });    
+        this.solutionSwiper.autoplay.stop();
+        window.addEventListener('scroll', () => {
+            this.handleAutoPlay(".solutionSwiper", this.solutionSwiper, 500);
         });
     }
 
@@ -176,15 +220,28 @@ export class SlideShow {
             loopAdditionalSlides: 1,
         });
         this.youtubeSwiper.autoplay.stop();
-        document.querySelector(".youtubeSwiper").addEventListener('mouseover', () => {
-            this.youtubeSwiper.autoplay.stop();
-        })
+
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper);
+            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper, 800);
+        });
+
+        // youtubeSwiper上のサムネクリックしたら自動スライド停止（PCのみ）
+        if (typeof window.ontouchstart === "undefined") {
+            const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
+            thumbnails.forEach((thumbnail) => {
+                thumbnail.addEventListener('click', () => {
+                    this.youtubeSwiper.autoplay.stop();
+                });
+            });
+        }
+
+        // youtube-section上をマウスオーバーしたら自動スライド開始
+        document.getElementById("youtube-section").addEventListener('mouseover', () => {
+            this.youtubeSwiper.autoplay.start();
         });
     }
 
-    handleAutoPlay(swiperElm, swiperName) {
+    handleAutoPlay(swiperElm, swiperName, offsetTop) {
         this.scroll = window.pageYOffset ;
 
         if (document.querySelector(swiperElm)) {
@@ -192,7 +249,7 @@ export class SlideShow {
             targetPos = window.pageYOffset + target.getBoundingClientRect().top;
             targetHeight = target.clientWidth;
             
-            if ((this.scroll > targetPos - 500) && (this.scroll < targetPos + targetHeight / 2)) {
+            if ((this.scroll > targetPos - offsetTop) && (this.scroll < targetPos + targetHeight / 2)) {
                 swiperName.autoplay.start();
             } else {
                 swiperName.autoplay.stop();
