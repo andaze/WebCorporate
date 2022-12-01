@@ -1,7 +1,13 @@
 {{ $posts := ( where .Site.RegularPages "Section" "==" (.Scratch.Get "section") ) }}
 {{ $postCount := len $posts }}
+
+{{ $id := "" }}
+{{ if eq (.Scratch.Get "section") "youtube" }}
+    {{ $id = "youtube-section" }}
+{{ end }}
+
 {{ if or (eq (.Scratch.Get "section") "youtube") (ne 0 $postCount) }}
-    <div class="md:pl-12 lg:pl-28 md:flex">
+    <div class="md:pl-12 lg:pl-28 md:flex" id="{{ $id }}">
         <div class="md:w-1/4 pl-4 md:pl-0">
             {{ partial "organism-section-homepage-news-services-left.html" . }}
         </div>
