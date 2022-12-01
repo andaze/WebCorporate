@@ -13,22 +13,22 @@ async function init() {
     if (document.querySelector(".swiper")) {
         const swiper = await new swiperScript.SlideShow();
         if (document.querySelector(".newsSwiper")) {
-            swiper.createSwiper("news", autoplay=false);
+            swiper.createNewsSwiper();
         }
         if (document.querySelector(".casestudySwiper")) {
-            swiper.createSwiper("casestudy");
+            swiper.createCasestudySwiper();
         }
         if (document.querySelector(".sustainabilitySwiper")) {
-            swiper.createSwiper("sustainability");
+            swiper.createSustainabilitySwiper();
         }
         if (document.querySelector(".professionalSwiper")) {
-            swiper.createSwiper("professional", delayTime=5000, withBar=true);
+            swiper.createProfessionalSwiper();
         }
         if (document.querySelector(".solutionSwiper")) {
-            swiper.createSwiper("solution", delayTime=5000, withBar=true);
+            swiper.createSolutionSwiper();
         }
         if (document.querySelector(".youtubeSwiper")) {
-            swiper.createSwiper("youtube", offset=800);
+            swiper.createYoutubeSwiper();
         }
     }
 
