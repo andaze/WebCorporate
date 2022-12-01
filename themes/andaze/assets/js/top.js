@@ -223,9 +223,32 @@ export class Sketch {
     }, this.fadein_times*this.interval_time + 1000);
 
     window.setTimeout(() => {
-      
+
       // ロードから一定時間経過後、自動でパーティクルを拡散
-      window.setInterval(this.autoDiffusion.bind(this), 1000);
+      let diffusion;
+      
+      diffusion = setInterval(function() {
+        this.autoDiffusion();
+
+        window.addEventListener('blur', () => {
+          console.log('clear')
+          clearInterval(diffusion)
+        });
+
+      }.bind(this), 1000)
+
+      // ウィンドウが再度アクティブとなった場合、setInterval再開
+      window.addEventListener('focus', () => {
+        diffusion = setInterval(function() {
+          this.autoDiffusion();
+  
+          window.addEventListener('blur', () => {
+            console.log('clear')
+            clearInterval(diffusion)
+          });
+  
+        }.bind(this), 1000)
+      });
 
     }, this.show_guide_time + 500);
   }
@@ -602,6 +625,7 @@ export class Sketch {
   }
 
   autoDiffusion() {
+    console.log('called')
 
     // ランダム座標（自動拡散）
     let pos_range_plus = new THREE.Vector2();
@@ -629,8 +653,8 @@ export class Sketch {
   
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
         this.stopDiffusion | 
         (window.scrollY > targetForStop)
       ) {
