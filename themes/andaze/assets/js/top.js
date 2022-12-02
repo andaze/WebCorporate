@@ -228,27 +228,44 @@ export class Sketch {
       let diffusion;
       
       diffusion = setInterval(function() {
-        this.autoDiffusion();
+        this.autoDiffusion()
+      }.bind(this), 1000);
 
-        window.addEventListener('blur', () => {
-          console.log('clear')
-          clearInterval(diffusion)
-        });
-
-      }.bind(this), 1000)
+      window.addEventListener('blur', () => {
+        console.log('clear')
+        clearInterval(diffusion)
+        diffusion = null;
+      });
 
       // ウィンドウが再度アクティブとなった場合、setInterval再開
       window.addEventListener('focus', () => {
         diffusion = setInterval(function() {
-          this.autoDiffusion();
-  
-          window.addEventListener('blur', () => {
-            console.log('clear')
-            clearInterval(diffusion)
-          });
-  
-        }.bind(this), 1000)
+          this.autoDiffusion()
+        }.bind(this), 1000);
       });
+
+      window.setInterval(() => {
+        console.log(diffusion)
+      }, 1000)
+
+      if(document.getElementById("company_section")) {
+        const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
+
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > targetForStop && diffusion !== null) {
+            // ページ下部ではアニメーションサイクルを破棄
+            clearInterval(diffusion)
+            diffusion = null;
+            this.stopDiffusion = true   
+          } else if (window.scrollY <= targetForStop && diffusion === null) {
+            // ページ上部ではアニメーションサイクルを再生成
+            this.stopDiffusion = false;
+            diffusion = setInterval(function() {
+              this.autoDiffusion()
+            }.bind(this), 1000);
+          }
+        })
+      }
 
     }, this.show_guide_time + 500);
   }
@@ -625,7 +642,7 @@ export class Sketch {
   }
 
   autoDiffusion() {
-    console.log('called')
+    // console.log('called')
 
     // ランダム座標（自動拡散）
     let pos_range_plus = new THREE.Vector2();
@@ -814,7 +831,7 @@ export class Sketch {
                       yoyo: true
                     }, "<"
                   )
-
+                  console.log('called')
                   // オブジェクト発光のアニメーション
                   objectTimeline.to(
                     this.bloomPass,
@@ -964,6 +981,7 @@ export class Sketch {
 
   animate() {
 
+    // console.log(this.stopDiffusion)
     // console.log(location.pathname)
     this.time++;
     this.composer.setSize( window.innerWidth, window.innerHeight );
