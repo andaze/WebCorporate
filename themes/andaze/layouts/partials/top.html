@@ -61,10 +61,10 @@
   uniform float diffusionScale;
   uniform float circleScale;
   uniform float cameraZ;
+  uniform float paramAlpha;
 
   void main() {
     v_color = color;
-    v_alpla = alpha;
 
     stable = position;
     float dist = distance(stable.xy, mouse);
@@ -87,6 +87,8 @@
 
     gl_Position = projectionMatrix * mvPosition;
     gl_PointSize = (7.0 + u_value) * (cameraZ / -mvPosition.z);
+
+    v_alpla = (alpha - paramAlpha) * (cameraZ/-mvPosition.z);
 }
 
 </script>

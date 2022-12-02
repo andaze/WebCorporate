@@ -3,6 +3,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import gsap from 'gsap';
+import { RGBA_ASTC_10x10_Format } from 'three';
 
 // 初回訪問判定フラグ
 export let first_visit = true;
@@ -190,6 +191,15 @@ export class Sketch {
 
     // フラグ反転
     window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
+    window.setTimeout(function(){
+      gsap.to(this.material.uniforms.paramAlpha,
+        {
+          value: 0.5,
+          duration: 1,
+          delay: 1,
+        }
+      )
+    }.bind(this), this.fadein_times*this.interval_time);
     
 
     // サイト表示後、拡散したパーティクルが集合する
@@ -377,7 +387,8 @@ export class Sketch {
         mousePressed: {type: "f", value: 0},
         diffusionScale: {type: "f", value: 0},
         circleScale: {type: "f", value: 0},
-        cameraZ: {value: 0}
+        cameraZ: {type: "f", value: 0},
+        paramAlpha: {type: "f", value: 0},
       },
       transparent: true,
       depthTest: false
