@@ -224,10 +224,6 @@ export class Sketch {
       // ロードから一定時間経過後、自動でパーティクルを拡散（アニメーションサイクル生成）
       let diffusion = null;
 
-      window.setInterval(() => {
-        console.log(diffusion)
-      }, 1000)
-
       if(document.getElementById("company_section")) {
         const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
 
@@ -257,7 +253,6 @@ export class Sketch {
         // ウィンドウが非アクティブとなった場合、アニメーションサイクルを破棄
         window.addEventListener('blur', () => {
           if(diffusion !== null) {
-            console.log('clear')
             clearInterval(diffusion)
             diffusion = null;
           }
@@ -648,7 +643,6 @@ export class Sketch {
   }
 
   autoDiffusion() {
-    // console.log('called')
 
     // ランダム座標（自動拡散）
     let pos_range_plus = new THREE.Vector2();
@@ -833,7 +827,7 @@ export class Sketch {
                       yoyo: true
                     }, "<"
                   )
-                  console.log('called')
+                  
                   // オブジェクト発光のアニメーション
                   objectTimeline.to(
                     this.bloomPass,
