@@ -377,6 +377,7 @@ export class Sketch {
         mousePressed: {type: "f", value: 0},
         diffusionScale: {type: "f", value: 0},
         circleScale: {type: "f", value: 0},
+        cameraZ: {value: 0}
       },
       transparent: true,
       depthTest: false
@@ -932,6 +933,7 @@ export class Sketch {
     // // 頂点の移動検知フラグの更新を許可
     this.mesh.geometry.attributes.flag.needsUpdate = true;
 
+    // console.log(this.camera.position)
   }
 
   showGuide() {
@@ -1003,14 +1005,14 @@ export class Sketch {
       // デバイスがPCの場合
       if (typeof window.ontouchstart === "undefined") {
         if (this.width >= this.width_break_point) {
-          this.camera.position.z = 400;
+          this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = 400;
           if (this.height <= this.height_break_point) {
             this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1000) - ((1200 + this.height) / this.width);
           } else {
             this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 600) - ((1200 + this.height) / this.width);
           }
         } else {
-          this.camera.position.z = this.height / this.width * 400;
+          this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.height / this.width * 400;
           this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 1800) - ((1200 + this.height) / this.width);
         }
         
@@ -1018,29 +1020,29 @@ export class Sketch {
       } else {
         if (this.width >= this.width_break_point_sp) {
           if (this.width < this.height) {
-            this.camera.position.z = this.height / this.width * 230;
+            this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.height / this.width * 230;
             this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1200 + this.height) / this.width);
           } else {
             if  (this.this.camera.aspect > 1.85) {
-              this.camera.position.z = this.width / this.height * 120;
+              this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.width / this.height * 120;
               this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
             } else {
-              this.camera.position.z = this.width / this.height * 170;
+              this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.width / this.height * 170;
               this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((2800 + this.height) / this.width);
             }
           }
         } else {
           if (this.width < this.height) {
-            this.camera.position.z = this.height / this.width * 200;
+            this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.height / this.width * 200;
             this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 180) - ((1600 + this.height) / this.width);
             nav_block.style.bottom = this.height*0.15 + 'px';
           } else {
             if (this.camera.aspect > 1.8) {
-              this.camera.position.z = this.width / this.height * 120;
+              this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.width / this.height * 120;
               this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((3400 + this.height) / this.width);
               nav_block.style.display = 'none'
             } else {
-              this.camera.position.z = this.width / this.height * 170;
+              this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = this.width / this.height * 170;
               this.mesh.material.uniforms.u_value.value = ((this.width + this.height) / 200) - ((2800 + this.height) / this.width);
               nav_block.style.bottom = this.height*0.15 + 'px';
             }
