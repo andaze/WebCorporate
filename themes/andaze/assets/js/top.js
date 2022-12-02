@@ -127,9 +127,6 @@ export class Sketch {
     // raycaster検知フラグ
     this.detection = false;
 
-    // 自動アニメーション停止フラグ
-    this.stopDiffusion = false;
-
     // パーティクルフラグ
     this.slide_flag = false;
 
@@ -256,10 +253,8 @@ export class Sketch {
             // ページ下部ではアニメーションサイクルを破棄
             clearInterval(diffusion)
             diffusion = null;
-            this.stopDiffusion = true   
           } else if (window.scrollY <= targetForStop && diffusion === null) {
             // ページ上部ではアニメーションサイクルを再生成
-            this.stopDiffusion = false;
             diffusion = setInterval(function() {
               this.autoDiffusion()
             }.bind(this), 1000);
@@ -671,9 +666,7 @@ export class Sketch {
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
         // !((location.pathname === "/ja/") | (location.pathname === "/en/")) | 
-        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/")) | 
-        this.stopDiffusion | 
-        (window.scrollY > targetForStop)
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
       ) {
         return;
       } else {
@@ -782,13 +775,11 @@ export class Sketch {
                 // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
                 window.addEventListener('blur', () => {
                   particleTimeline.pause();
-                  this.stopDiffusion = true;
                 });
     
                 // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
                 window.addEventListener('focus', () => {
                   particleTimeline.resume();
-                  this.stopDiffusion = false;
                 });
                   
 
@@ -981,7 +972,6 @@ export class Sketch {
 
   animate() {
 
-    // console.log(this.stopDiffusion)
     // console.log(location.pathname)
     this.time++;
     this.composer.setSize( window.innerWidth, window.innerHeight );
