@@ -222,11 +222,7 @@ export class Sketch {
     window.setTimeout(() => {
 
       // ロードから一定時間経過後、自動でパーティクルを拡散（アニメーションサイクル生成）
-      let diffusion;
-      diffusion = setInterval(function() {
-        this.autoDiffusion()
-      }.bind(this), 1000);
-
+      let diffusion = null;
 
       window.setInterval(() => {
         console.log(diffusion)
@@ -234,6 +230,16 @@ export class Sketch {
 
       if(document.getElementById("company_section")) {
         const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
+
+        // ページ上部にいる場合アニメーションサイクルを生成
+        if (window.scrollY <= targetForStop && diffusion === null) {
+          diffusion = setInterval(function() {
+            this.autoDiffusion()
+          }.bind(this), 1000);
+        }
+
+
+        // アニメーションサイクル破棄＆再生成（scroll, blur focus）
 
         window.addEventListener('scroll', () => {
           if (window.scrollY > targetForStop && diffusion !== null) {
