@@ -221,25 +221,12 @@ export class Sketch {
 
     window.setTimeout(() => {
 
-      // ロードから一定時間経過後、自動でパーティクルを拡散
+      // ロードから一定時間経過後、自動でパーティクルを拡散（アニメーションサイクル生成）
       let diffusion;
-      
       diffusion = setInterval(function() {
         this.autoDiffusion()
       }.bind(this), 1000);
 
-      window.addEventListener('blur', () => {
-        console.log('clear')
-        clearInterval(diffusion)
-        diffusion = null;
-      });
-
-      // ウィンドウが再度アクティブとなった場合、setInterval再開
-      window.addEventListener('focus', () => {
-        diffusion = setInterval(function() {
-          this.autoDiffusion()
-        }.bind(this), 1000);
-      });
 
       window.setInterval(() => {
         console.log(diffusion)
@@ -259,7 +246,25 @@ export class Sketch {
               this.autoDiffusion()
             }.bind(this), 1000);
           }
-        })
+        });
+
+        // ウィンドウが非アクティブとなった場合、アニメーションサイクルを破棄
+        window.addEventListener('blur', () => {
+          if(diffusion !== null) {
+            console.log('clear')
+            clearInterval(diffusion)
+            diffusion = null;
+          }
+        });
+
+        // ウィンドウが再度アクティブとなった場合、アニメーションサイクルを再生成
+        window.addEventListener('focus', () => {
+          if (window.scrollY <= targetForStop && diffusion === null) {
+            diffusion = setInterval(function() {
+              this.autoDiffusion()
+            }.bind(this), 1000);
+          }
+        });
       }
 
     }, this.show_guide_time + 500);
