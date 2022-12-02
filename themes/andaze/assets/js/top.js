@@ -118,17 +118,11 @@ export class Sketch {
     this.show_guide_time = this.fadein_times*this.interval_time+3500
 
 
-    // クリック許可フラグ
-    this.click_flag = false;
-
     // オブジェクト移動許可フラグ
     this.moving_flag = false;
 
     // raycaster検知フラグ
     this.detection = false;
-
-    // パーティクルフラグ
-    this.slide_flag = false;
 
 
     // パーティクルの頂点座標
@@ -197,7 +191,6 @@ export class Sketch {
     this.fadeIn(this.fadein_times-1, this.interval_time);
 
     // フラグ反転
-    window.setTimeout(function(){this.click_flag = !this.click_flag}.bind(this), this.fadein_times*this.interval_time);
     window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
     window.setTimeout(function(){this.clickable = !this.clickable}.bind(this), this.fadein_times*this.interval_time+5000);
     
@@ -396,7 +389,6 @@ export class Sketch {
         circleScale: {type: "f", value: 0},
       },
       transparent: true,
-      // blending: THREE.AdditiveBlending,
       depthTest: false
     });
 
@@ -666,12 +658,11 @@ export class Sketch {
 
     
     if(document.getElementById("company_section")) {
-      const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
   
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/ja/") | (location.pathname === "/en/"))
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/"))
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
       ) {
         return;
       } else {
@@ -709,165 +700,160 @@ export class Sketch {
         let direction_coef_second = random_numbers * direction_coef[1];
         
         
-        if (this.click_flag) {
-          for (let i = 0; i < this.vertces; i++) {
-    
-            // ジオメトリの頂点座標の配列
-            let attribute = this.mesh.geometry.attributes.position;
+        for (let i = 0; i < this.vertces; i++) {
+  
+          // ジオメトリの頂点座標の配列
+          let attribute = this.mesh.geometry.attributes.position;
+          
+          // パーティクルの座標
+          let x = attribute.getX(i)*(500/this.camera.position.z) - 8;
+          let y = attribute.getY(i)*(500/this.camera.position.z) + 8;
+          
+          
+  
+          // 疑似クリック・タップ座標からパーティクルまでの距離
+          let distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
+          
+  
+          // パーティクルの拡散方向（上下左右の4通り）
+          let directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+          let direction = directions[Math.floor(Math.random() * directions.length)];
+          
+          random_direction.x = direction[0];
+          random_direction.y = direction[1];
+          
+  
+          // 疑似スライド時間の作成
+          let random_slide_time = randomNumbers(110, 80) * 0.001;
+          
+          if (particleFlag[i] === 1) {
             
-            // パーティクルの座標
-            let x = attribute.getX(i)*(500/this.camera.position.z) - 8;
-            let y = attribute.getY(i)*(500/this.camera.position.z) + 8;
-            
-            
-    
-            // 疑似クリック・タップ座標からパーティクルまでの距離
-            let distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
-            
-    
-            // パーティクルの拡散方向（上下左右の4通り）
-            let directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
-            let direction = directions[Math.floor(Math.random() * directions.length)];
-            
-            random_direction.x = direction[0];
-            random_direction.y = direction[1];
-            
-    
-            // 疑似スライド時間の作成
-            let random_slide_time = randomNumbers(110, 80) * 0.001;
-            
-            if (particleFlag[i] === 1) {
+            // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
+            if (distance < diameter) {
               
-              // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
-              if (distance < diameter) {
+              particleFlag[i] = 0;
+  
+              // 減衰係数
+              let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
+    
+              // パーティクル拡散時の到達座標
+              destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+              destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+  
+
+              // パーティクルの頂点座標
+              let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+
+              const particleTimeline = gsap.timeline();
+
+              // パーティクル拡散のアニメーション
+              particleTimeline.to(
+                vertex_position,
                 
-                particleFlag[i] = 0;
-    
-                // 減衰係数
-                let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
-      
-                // パーティクル拡散時の到達座標
-                destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-                destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-    
+                //完了状態
+                {
+                  x: destination.x,
+                  y: destination.y,
+                  z: 0,
+                  duration: (random_slide_time*attenuation_coefficient) / 1000,
+                  repeat: 1,
+                  yoyo: true,
+                  ease: "Power1.easeOut",
+                  onUpdate: () => {
+                    particlePositions[3*i] = vertex_position.x;
+                    particlePositions[3*i+1] = vertex_position.y;
+                    particleFlag[i] = vertex_position.z;
+                  }
+                },
+              )
 
-                // パーティクルの頂点座標
-                let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+              // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
+              window.addEventListener('blur', () => {
+                particleTimeline.pause();
+              });
+  
+              // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
+              window.addEventListener('focus', () => {
+                particleTimeline.resume();
+              });
+                
+  
+  
+              // オブジェクト移動（視点が極端に近づかないように制限）
+              if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
+                
+                const objectTimeline = gsap.timeline();
 
-                const particleTimeline = gsap.timeline();
-
-                // パーティクル拡散のアニメーション
-                particleTimeline.to(
-                  vertex_position,
+                // オブジェクト回転のアニメーション
+                objectTimeline.to(
+                  this.mesh.rotation,
                   
                   //完了状態
                   {
-                    x: destination.x,
-                    y: destination.y,
-                    z: 0,
-                    duration: (random_slide_time*attenuation_coefficient) / 1000,
+                    x: destination.y / 1000 * (-1),
+                    y: destination.x / 1000 * -1,
+                    duration: 10,
                     repeat: 1,
-                    yoyo: true,
-                    ease: "Power1.easeOut",
-                    onUpdate: () => {
-                      particlePositions[3*i] = vertex_position.x;
-                      particlePositions[3*i+1] = vertex_position.y;
-                      particleFlag[i] = vertex_position.z;
-                    }
+                    delay: 2,
+                    yoyo: true
                   },
                 )
 
-                // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
-                window.addEventListener('blur', () => {
-                  particleTimeline.pause();
-                });
-    
-                // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
-                window.addEventListener('focus', () => {
-                  particleTimeline.resume();
-                });
+                // オブジェクト位置のアニメーション
+                objectTimeline.to(
+                  this.mesh.position,
                   
-
-                // スライドフラグ反転
-                this.slide_flag = !this.slide_flag
-    
-    
-                // オブジェクト移動（視点が極端に近づかないように制限）
-                if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
+                  //完了状態
+                  {
+                    x: destination.x / (random_slide_time*1000), 
+                    y: destination.y*(-1) / (random_slide_time*1000), 
+                    z: this.mesh.position.z + (2000 / (random_slide_time*500)),
+                    duration: 10,
+                    repeat: 1,
+                    delay: 2,
+                    yoyo: true
+                  }, "<"
+                )
+                
+                // オブジェクト発光のアニメーション
+                objectTimeline.to(
+                  this.bloomPass,
                   
-                  const objectTimeline = gsap.timeline();
+                  //完了状態
+                  {
+                    strength: 2.0, 
+                    radius: 0.5, 
+                    duration: 10,
+                    repeat: 1,
+                    delay: 2,
+                    yoyo: true,
+                    onComplete: () => {
 
-                  // オブジェクト回転のアニメーション
-                  objectTimeline.to(
-                    this.mesh.rotation,
-                    
-                    //完了状態
-                    {
-                      x: destination.y / 1000 * (-1),
-                      y: destination.x / 1000 * -1,
-                      duration: 10,
-                      repeat: 1,
-                      delay: 2,
-                      yoyo: true
+                      // アニメーション1ループ終了1~3秒後にのオブジェクトの移動を許可
+                      setTimeout(() => {
+                        this.moving_flag = !this.moving_flag;
+                      }, random(1000, 3000))
                     },
-                  )
+                  }, "<"
+                )
 
-                  // オブジェクト位置のアニメーション
-                  objectTimeline.to(
-                    this.mesh.position,
-                    
-                    //完了状態
-                    {
-                      x: destination.x / (random_slide_time*1000), 
-                      y: destination.y*(-1) / (random_slide_time*1000), 
-                      z: this.mesh.position.z + (2000 / (random_slide_time*500)),
-                      duration: 10,
-                      repeat: 1,
-                      delay: 2,
-                      yoyo: true
-                    }, "<"
-                  )
-                  
-                  // オブジェクト発光のアニメーション
-                  objectTimeline.to(
-                    this.bloomPass,
-                    
-                    //完了状態
-                    {
-                      strength: 2.0, 
-                      radius: 0.5, 
-                      duration: 10,
-                      repeat: 1,
-                      delay: 2,
-                      yoyo: true,
-                      onComplete: () => {
-
-                        // アニメーション1ループ終了1~3秒後にのオブジェクトの移動を許可
-                        setTimeout(() => {
-                          this.moving_flag = !this.moving_flag;
-                        }, random(1000, 3000))
-                      },
-                    }, "<"
-                  )
-
-                  // ウィンドウがアクティブの場合、アニメーション停止（オブジェクト）
-                  window.addEventListener('blur', () => {
-                    objectTimeline.pause();
-                  });
-                  
-                  // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
-                  window.addEventListener('focus', () => {
-                    objectTimeline.resume();
-                  });
-                  
-                  // オブジェクトの重複移動を防止
-                  this.moving_flag = !this.moving_flag
-                }
-
+                // ウィンドウがアクティブの場合、アニメーション停止（オブジェクト）
+                window.addEventListener('blur', () => {
+                  objectTimeline.pause();
+                });
+                
+                // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
+                window.addEventListener('focus', () => {
+                  objectTimeline.resume();
+                });
+                
+                // オブジェクトの重複移動を防止
+                this.moving_flag = !this.moving_flag
               }
-            }
 
+            }
           }
+
         }
       }
     }
@@ -1014,7 +1000,7 @@ export class Sketch {
     this.mesh.geometry.attributes.position.needsUpdate = true;
 
     // // 頂点の色の更新を許可
-    this.mesh.geometry.attributes.color.needsUpdate = true;
+    // this.mesh.geometry.attributes.color.needsUpdate = true;
 
     // // 頂点の移動検知フラグの更新を許可
     this.mesh.geometry.attributes.flag.needsUpdate = true;
@@ -1059,10 +1045,8 @@ export class Sketch {
     });
 
     window.setTimeout(() => {
-      if (this.slide_flag === false) {
-        this.nav_block.style.opacity = 1;
-        this.nav_block.style.visibility = "visible";
-      }
+      this.nav_block.style.opacity = 1;
+      this.nav_block.style.visibility = "visible";
     }, this.fadein_times*this.interval_time+5000);
   }
 
