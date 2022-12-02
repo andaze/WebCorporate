@@ -134,8 +134,6 @@ export class Sketch {
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
     this.point = new THREE.Vector2();
-    this.clickable = false;
-
     
   }
 
@@ -192,19 +190,11 @@ export class Sketch {
 
     // フラグ反転
     window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
-    window.setTimeout(function(){this.clickable = !this.clickable}.bind(this), this.fadein_times*this.interval_time+5000);
     
-    // 初期アニメーション　パターン1
-    // サイト表示後、拡散したパーティクルが集合する
-    // this.gatherFromFar();
 
-    // 初期アニメーション　パターン2
     // サイト表示後、拡散したパーティクルが集合する
     this.gather2D();
 
-    // 初期アニメーション　パターン3
-    // サイト表示後、拡散したパーティクルが集合する
-    // this.gather3D();
 
     window.setTimeout(() => {
 
@@ -522,20 +512,6 @@ export class Sketch {
       }  
   }
 
-  gatherFromFar() {
-      gsap.set(this.mesh.material.uniforms.u_ratio, {
-        value: 10000.0,
-      });
-      
-      window.setTimeout(() => {
-        gsap.to(this.mesh.material.uniforms.u_ratio, {
-          value: 0.0,
-          duration: 5,
-          ease: "power4.out",
-        })
-      }, 0);
-  }
-
   gather2D() {
 
       // ジオメトリの頂点座標の配列
@@ -573,47 +549,6 @@ export class Sketch {
       }
   }
 
-  gather3D() {
-
-      // ジオメトリの頂点座標の配列
-      let attribute = this.mesh.geometry.attributes.position;
-      // パーティクルの座標配列
-      const particlePositions = this.mesh.geometry.attributes.position.array;
-
-      for (let i = 0; i < this.vertces; i++) {
-        particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-        particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-        particlePositions[3*i+2] = 500;
-    
-        // パーティクルの座標
-        this.particle_pos.x = attribute.getX(i)*(500/this.camera.position.z) - 8;
-        this.particle_pos.y = attribute.getY(i)*(500/this.camera.position.z) + 8;
-        this.particle_pos.z = attribute.getZ(i)*(500/this.camera.position.z);
-    
-        // オブジェクト頂点座標
-        let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: attribute.getZ(i)};
-    
-  
-        // パーティクル拡散のアニメーション
-        gsap.to(
-          vertex_position,
-          
-          //完了状態
-          {
-            x: this.pixcel_img.position[3*i],
-            y: this.pixcel_img.position[3*i+1],
-            z: this.pixcel_img.position[3*i+2],
-            duration: 3,
-            ease: "Power1.easeOut",
-            onUpdate: () => {
-              particlePositions[3*i] = vertex_position.x;
-              particlePositions[3*i+1] = vertex_position.y;
-              particlePositions[3*i+2] = vertex_position.z;
-            }
-          },
-        )
-      }
-  }
 
   lightOn() {
     gsap.fromTo(
@@ -963,7 +898,6 @@ export class Sketch {
 
   animate() {
 
-    // console.log(location.pathname)
     this.time++;
     this.composer.setSize( window.innerWidth, window.innerHeight );
     this.composer.render();
@@ -974,9 +908,6 @@ export class Sketch {
       // 画面の描画毎にanimate関数を呼び出す
       requestAnimationFrame( this.animate.bind(this) );
     }
-  
-    // レンダラーにシーンとカメラを追加
-    // this.renderer.render( this.scene, this.camera );
     
     // パーティクル移動速度
     window.setTimeout(() =>{
@@ -999,15 +930,10 @@ export class Sketch {
     // // 頂点の座標の更新を許可
     this.mesh.geometry.attributes.position.needsUpdate = true;
 
-    // // 頂点の色の更新を許可
-    // this.mesh.geometry.attributes.color.needsUpdate = true;
 
     // // 頂点の移動検知フラグの更新を許可
     this.mesh.geometry.attributes.flag.needsUpdate = true;
 
-
-    // // 頂点の変色検知フラグの更新を許可
-    // this.mesh.geometry.attributes.colorChangeFlag.needsUpdate = true;
   }
 
   showGuide() {
