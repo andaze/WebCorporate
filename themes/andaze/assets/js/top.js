@@ -584,7 +584,7 @@ export class Sketch {
     // 疑似スライド距離
     let random_slide_distance = new THREE.Vector2();
     // パーティクル拡散時の到達座標
-    let destination = new THREE.Vector2();
+    let destination = new THREE.Vector3();
 
 
     // パーティクルの移動許可フラグの配列
@@ -674,30 +674,33 @@ export class Sketch {
             // パーティクル拡散時の到達座標
             destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
             destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+            destination.z = particlePositions[3*i+2] + random(200, 0);
 
 
             // パーティクルの頂点座標
-            let vertex_position = {x: attribute.getX(i), y: attribute.getY(i), z: particleFlag[i]};
+            let vertex_params = {posX: attribute.getX(i), posY: attribute.getY(i), posZ: attribute.getZ(i), moveFlag: particleFlag[i]};
 
             const particleTimeline = gsap.timeline();
 
             // パーティクル拡散のアニメーション
             particleTimeline.to(
-              vertex_position,
+              vertex_params,
               
               //完了状態
               {
-                x: destination.x,
-                y: destination.y,
-                z: 0,
+                posX: destination.x,
+                posY: destination.y,
+                posZ: destination.z,
+                moveFlag: 0,
                 duration: (random_slide_time*attenuation_coefficient) / 1000,
                 repeat: 1,
                 yoyo: true,
                 ease: "Power1.easeOut",
                 onUpdate: () => {
-                  particlePositions[3*i] = vertex_position.x;
-                  particlePositions[3*i+1] = vertex_position.y;
-                  particleFlag[i] = vertex_position.z;
+                  particlePositions[3*i] = vertex_params.posX;
+                  particlePositions[3*i+1] = vertex_params.posY;
+                  particlePositions[3*i+2] = vertex_params.posZ;
+                  particleFlag[i] = vertex_params.moveFlag;
                 }
               },
             )
