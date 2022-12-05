@@ -23,13 +23,13 @@ isDownload: true
 
   <p>This 100+ page guide explains in detail how to create a sustainable system using PaaS and what you need to know in advance. We hope you will find it useful in your company's DX efforts.</p>
 
-
-  {{< download-button
-      class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] rounded-2xl font-bold select-none" btn-text="Download"
-  >}}
   </div>
 
   {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
 </div>
+
+{{< download-button
+    class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] rounded-2xl font-bold select-none" btn-text="Download"
+>}}
 
 </div>
