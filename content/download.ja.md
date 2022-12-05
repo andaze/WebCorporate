@@ -27,7 +27,7 @@ isDownload: true
   >}}
   </div>
 
-  {{< picture alt="Image Not Available" src="img/ebook.png" type="content" quolity="100" class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-8">}}
+  {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
 </div>
 
 </div>
