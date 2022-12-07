@@ -1119,7 +1119,7 @@ async function initKeyVisual() {
   
   }
 
-  activate();
+  await activate();
 
   function randomNumbers(max, min) {
     // 整数の乱数を生成する
@@ -1138,8 +1138,8 @@ async function initKeyVisual() {
   function activate() {
     if (document.querySelector('#webgl')) {
     
-        surround = await new Surround();
-        sketch = await new Sketch();
+        surround = new Surround();
+        sketch = new Sketch();
         sketch.setImage();
     
         loading_background.style.opacity = 1;
