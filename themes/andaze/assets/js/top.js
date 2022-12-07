@@ -1119,6 +1119,8 @@ async function initKeyVisual() {
   
   }
 
+  activate();
+
   function randomNumbers(max, min) {
     // 整数の乱数を生成する
     return Math.floor( Math.random() * max + 1 - min ) + min;
@@ -1133,33 +1135,34 @@ async function initKeyVisual() {
     return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
   }
 
-  
-  if (document.querySelector('#webgl')) {
-  
-      surround = await new Surround();
-      sketch = await new Sketch();
-      sketch.setImage();
-  
-      loading_background.style.opacity = 1;
-  
-      if (!first_visit) {
-  
-          window.setTimeout(() => {
-  
-              surround.callFunctions();
-  
-              loading_background.style.opacity = 0;
-              loading_background.style.visibility = "invisible";
-  
-              sketch.callFunctions();
-          }, 1000);
-      } else {
-          surround.callFunctions();
-          sketch.callFunctions();
-      }
-  } else {
-      surround = null;
-      sketch = null;
+  function activate() {
+    if (document.querySelector('#webgl')) {
+    
+        surround = await new Surround();
+        sketch = await new Sketch();
+        sketch.setImage();
+    
+        loading_background.style.opacity = 1;
+    
+        if (!first_visit) {
+    
+            window.setTimeout(() => {
+    
+                surround.callFunctions();
+    
+                loading_background.style.opacity = 0;
+                loading_background.style.visibility = "invisible";
+    
+                sketch.callFunctions();
+            }, 1000);
+        } else {
+            surround.callFunctions();
+            sketch.callFunctions();
+        }
+    } else {
+        surround = null;
+        sketch = null;
+    }
   }
 
 }
