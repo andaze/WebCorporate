@@ -1,1 +1,39 @@
-<div class="bg-white h-52 w-52"></div>
+<aside class="bg-white w-64 py-6 px-2 border-gray-600 rounded-3xl">
+    <p class="text-center text-[#1A81B6] font-bold mb-5">ジェネリックDXの資料<br>ダウンロードはこちら</p>
+    <div class="flex justify-between mb-2 text-sm">
+        <div class="text-left border border-gray-600 rounded p-2 w-28">
+            <label for="lastname" class="block font-bold">姓</label>
+            <input class="w-full lg:w-5/6 text-black placeholder-gray-300 focus:outline-none" type="text" id="name" placeholder="例）山田">
+        </div>
+        <div class="text-left border border-gray-600 rounded p-2 w-28">
+            <label for="firstname" class="block font-bold">名</label>
+            <input class="w-full lg:w-5/6 text-black placeholder-gray-300 focus:outline-none" type="text" id="name" placeholder="例）太郎">
+        </div>
+    </div>
+    <div class="text-left mb-2 border border-gray-600 rounded p-2 text-sm">
+        <label for="email" class="block font-bold">メールアドレス</label>
+        <input class="w-full lg:w-5/6 text-black placeholder-gray-300 focus:outline-none" type="email" id="email" placeholder="例）andaze@example.com">
+    </div>
+    <div class="text-left border border-gray-600 rounded p-2 text-sm">
+        <label for="company" class="block font-bold">企業名</label>
+        <input class="w-full lg:w-5/6 text-black placeholder-gray-300 focus:outline-none" type="text" id="company" placeholder="例）アンダーズ株式会社">
+    </div>
+    <div class="p-2 mt-4 text-xs">
+        <span>プライバシーポリシーに同意いただいた上でお問い合わせください。</span>
+    </div>
+    <div class="text-left p-2 flex items-start mt-2 mb-8">
+        <input class="mt-1 scale-125" type="checkbox" id="privacy">
+        <label for="privacy" class="block ml-2 text-xs">プライバシーポリシーに同意いただいた上でお問い合わせください。</label>
+    </div>
+
+    <div class="text-center">
+        {{ .Scratch.Set "class" "bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white rounded-2xl font-bold select-none text-sm" }}
+        {{ .Scratch.Set "btn-text" "ダウンロードする" }}
+    
+        {{ partial "atom-download-button.html" . }}
+    
+        {{ .Scratch.Delete "btn-text" }}
+        {{ .Scratch.Delete "class" }}
+    </div>
+
+</aside>
