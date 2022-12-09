@@ -5,6 +5,7 @@ import * as swiperScript from './swiper.js';
 import * as youtuberScript from './youtube.js';
 import * as videorScript from './video.js';
 import * as downloadScript from './multidownload.js';
+import * as requestForm from './requestform.js';
 
 init();
 
@@ -86,6 +87,10 @@ async function init() {
 
     if (document.querySelector('#download-button')) {
         const multi_download = await downloadScript.download("https://andaze.com/paas-no-susume/#download");
+    }
+
+    if (document.getElementById('accordion-collapse')) {
+        const request_download = await requestForm.handleForm();
     }
 
 }
