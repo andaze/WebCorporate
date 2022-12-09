@@ -24,7 +24,11 @@
             <input class="w-full border-none text-black placeholder-gray-300 focus:outline-none" type="text" id="company" placeholder="例）アンダーズ株式会社">
         </div>
         <div class="p-2 mt-4 text-xs">
-            <span>プライバシーポリシーに同意いただいた上でお問い合わせください。</span>
+            <p>
+                {{ with .Site.GetPage "privacy-policy"}}
+                <a href="{{ .Permalink }}" class="underline text-[#1A81B6]">プライバシーポリシー</a>に同意いただいた上でお問い合わせください。
+                {{ end }}
+            </p>
         </div>
         <div class="text-left p-2 flex items-start mt-2 mb-8">
             <input class="mt-1 scale-125" type="checkbox" id="privacy">
