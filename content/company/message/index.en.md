@@ -13,7 +13,7 @@ headerImage:
 
 {{< space height="h-4" >}}
 
-### As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.
+<h2 class="!text-[1.1rem]"> As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.</h2>
 
 Andaze is a venture company created by spin-outs of leading professionals in various fields ranging from technology development to consulting.
 
