@@ -16,6 +16,8 @@ weight: "8"
 
 <p style="border: 1px solid black; padding-left: 10px">取組内容：産休明けの社員への時短勤務、柔軟な労働環境の提供 </p>
 
+# aaaaa
+
 <table>
 <tr>
 <td width="10%">2022年5月 </td>
@@ -37,7 +39,7 @@ weight: "8"
 
 {{< space height="h-8" >}}
 
-  <p style="border: 1px solid black; padding-left: 10px">取組内容： 従業員のワークライフバランスの実現に向け、メリハリのある働き方ができるように年次有給休暇の取得率アップを目指す。（年間6日以上の取得率70％を目指す） </p>
+<p style="border: 1px solid black; padding-left: 10px">取組内容： 従業員のワークライフバランスの実現に向け、メリハリのある働き方ができるように年次有給休暇の取得率アップを目指す。（年間6日以上の取得率70％を目指す） </p>
 
 <table>
 <tr>
