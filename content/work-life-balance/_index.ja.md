@@ -16,9 +16,6 @@ weight: "8"
 
 <p style="border: 1px solid black; padding-left: 10px">取組内容：産休明けの社員への時短勤務、柔軟な労働環境の提供 </p>
 
-aaaa
-bbbbb
-
 <table>
 <tr>
 <td width="10%">2022年5月 </td>
