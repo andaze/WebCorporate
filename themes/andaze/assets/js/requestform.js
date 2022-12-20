@@ -19,7 +19,6 @@ export function handleForm() {
             if (window.scrollY >= target_static) {
 
                 form.style.opacity = 0;
-                form.style.visibility = "hidden";
 
                 clearTimeout( timeoutId ) ;
 
