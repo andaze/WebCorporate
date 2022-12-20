@@ -104,6 +104,13 @@
                 </div>
                 {{ .Scratch.Delete "section" }}
             {{ end }}
+            
         </div>
     </div>
+
+    {{/*  ebook  */}}
+    {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
+        {{ .Content }}
+    {{ end }}
+    
 {{ end }}
