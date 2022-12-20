@@ -1,5 +1,4 @@
 import 'tw-elements';
-import * as kvMain from './top.js';
 import * as sendForm from './sendform.js';
 import * as swiperScript from './swiper.js';
 import * as youtuberScript from './youtube.js';
@@ -44,36 +43,6 @@ async function init() {
         friconix_update();
     }
 
-    let surround;
-    let sketch
-
-    if (document.querySelector('#webgl')) {
-
-        surround = await new kvMain.Surround();
-        sketch = await new kvMain.Sketch();
-        sketch.setImage();
-
-        kvMain.loading_background.style.opacity = 1;
-
-        if (!kvMain.first_visit) {
-
-            window.setTimeout(() => {
-
-                surround.callFunctions();
-
-                kvMain.loading_background.style.opacity = 0;
-                kvMain.loading_background.style.visibility = "invisible";
-
-                sketch.callFunctions();
-            }, 1000);
-        } else {
-            surround.callFunctions();
-            sketch.callFunctions();
-        }
-    } else {
-        surround = null;
-        sketch = null;
-    }
 
     if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
         document.querySelector('#privacy').addEventListener("click", () => {
