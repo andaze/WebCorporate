@@ -295,3 +295,12 @@
 # Git戦略・運用方法について
 
 * [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) を採用する
+
+# サブディレクトリサイトを追加するときの手順
+
+1. submodule として本リポジトリに追加して、コミット
+   ``` e.x.
+  git submodule add https://github.com/andaze/LandingPages.git
+  ```
+
+2. .github/workflows/gh-pages.yml　の更新
