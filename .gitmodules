@@ -10,3 +10,6 @@
 	path = landing-page
 	url = https://github.com/andaze/landing-page.git
 	branch = main
+[submodule "LandingPages"]
+	path = LandingPages
+	url = https://github.com/andaze/LandingPages.git
