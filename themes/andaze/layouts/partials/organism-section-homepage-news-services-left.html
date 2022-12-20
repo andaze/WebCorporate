@@ -6,7 +6,7 @@
 {{ end }}
 
 <div>
-    {{ if or (eq (.Scratch.Get "section") "solution") (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") (eq (.Scratch.Get "section") "youtube") }}
+    {{ if or (ne (.Scratch.Get "section") "recruit") (eq (.Scratch.Get "section") "ir") }}
         {{ partial "atom-irnews-heading.html" . }}
         <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12 {{ $class }}">
             {{ partial "atom-newtopic-sliderbutton.html" . }}

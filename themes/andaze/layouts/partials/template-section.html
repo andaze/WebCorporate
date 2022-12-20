@@ -1,8 +1,18 @@
-<div class="lg:pl-12 lg:pl-28 lg:flex">
-    <div class="lg:w-1/4 pl-4 lg:pl-0">
-        {{ partial "organism-section-homepage-news-services-left.html" . }}
+{{ $posts := ( where .Site.RegularPages "Section" "==" (.Scratch.Get "section") ) }}
+{{ $postCount := len $posts }}
+
+{{ $id := "" }}
+{{ if eq (.Scratch.Get "section") "youtube" }}
+    {{ $id = "youtube-section" }}
+{{ end }}
+
+{{ if or (eq (.Scratch.Get "section") "youtube") (ne 0 $postCount) }}
+    <div class="md:pl-12 lg:pl-28 md:flex" id="{{ $id }}">
+        <div class="md:w-1/4 pl-4 md:pl-0">
+            {{ partial "organism-section-homepage-news-services-left.html" . }}
+        </div>
+        <div class="md:w-3/4 w-full px-4 sm:pl-2 md:pl-4 md:pr-0">
+            {{ partial "organism-section-homepage-news-services-right.html" . }}
+        </div>
     </div>
-    <div class="lg:w-3/4 w-full px-4 sm:pl-2 lg:pl-4 lg:pr-0">
-        {{ partial "organism-section-homepage-news-services-right.html" . }}
-    </div>
-</div>
+{{ end }}
