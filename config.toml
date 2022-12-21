@@ -1,5 +1,5 @@
 baseURL = "https://andaze.github.io/WebCorporate/"
-
+timeout = "180s"
 languageCode = "ja-JP"
 DefaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = true
