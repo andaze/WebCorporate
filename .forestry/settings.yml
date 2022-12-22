@@ -4,6 +4,11 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: directory
+  path: content/blogs
+  label: Blogs
+  create: all
+  match: "**/*"
 - type: document
   path: content/_index.ja.md
   label: home ja
