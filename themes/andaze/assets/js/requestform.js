@@ -12,30 +12,24 @@ export function handleForm() {
     let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
     let target_static = key_visual_bottom - (window.innerHeight * 0.88);
 
-    var timeoutId;
-
     if (window.innerWidth >= 900) {
         window.addEventListener('scroll', () => {
             if (window.scrollY >= target_static) {
 
-                form.style.opacity = 0;
+                form.style.opacity = 1;
+                form.style.visibility = "visible";
 
-                clearTimeout( timeoutId ) ;
-
-                timeoutId = setTimeout( function () {
-                    if (window.scrollY >= target_static) {
-                        form.style.opacity = 1;
-                        form.style.visibility = "visible";
-                        if (first_shown) {
-                            first_shown = !first_shown;
-                        } else if (!first_shown & expander.getAttribute('aria-expanded') === "false") {
-                            expander_body.classList.add("hidden");
-                        }
-                    }
-                }, 500 ) ;
             } else if (window.scrollY < target_static) {
-                form.style.opacity = 0;
-                form.style.visibility = "hidden";
+                new Promise((resolve) => {
+                    setTimeout(() => {
+                        form.style.opacity = 0;
+                        resolve();
+                    }, 10);
+                }).then(() => {
+                    setTimeout(() => {
+                        form.style.visibility = "hidden";
+                    }, 500)
+                });
             }
         });
     } else {
@@ -69,28 +63,6 @@ export function handleForm() {
 
             }
         })
-        button.addEventListener('click', () => {
-
-            if (!clicked) {
-                form.style.opacity = 1;
-                form.style.visibility = "visible";
-
-                black_background.style.opacity = 0.6;
-                black_background.style.visibility = "visible";
-
-                clicked = true;
-                button.textContent = "閉じる";
-            } else {
-                form.style.opacity = 0;
-                form.style.visibility = "hidden";
-
-                black_background.style.opacity = 0;
-                black_background.style.visibility = "hidden";
-
-                clicked = false;
-                button.textContent = original_text;
-            }
-        });
     }
 
 }
