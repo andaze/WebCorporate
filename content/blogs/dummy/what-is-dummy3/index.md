@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "What Is Dummy3"
+date: 2022-12-19T11:56:52+09:00
 weight: 0
 menu:
   header:
