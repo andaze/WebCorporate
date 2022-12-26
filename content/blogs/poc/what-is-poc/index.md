@@ -1,16 +1,16 @@
 ---
-title: "What Is Poc"
-date: 2022-12-19T10:35:44+09:00
-weight: 0
+title: Dummy
+date: 2022-12-19T10:35:44.000+09:00
+weight: "0"
 menu:
   header:
     show: false
-    name: ""
+    name: ''
   footer:
     show: false
-    name: ""
----
+    name: ''
 
+---
 # first headline (title)
 
 {{< space height="h-10" >}}
