@@ -25,3 +25,5 @@ fields:
   - type: text
     name: imageDescription
     label: imageDescription
+pages:
+- content/blogs/dummy/foobar.md
