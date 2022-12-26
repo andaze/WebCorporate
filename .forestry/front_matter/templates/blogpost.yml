@@ -26,6 +26,5 @@ fields:
     name: imageDescription
     label: imageDescription
 pages:
-- content/blogs/dummy/foobar.md
 - content/blogs/foo-bar.md
 - content/blogs/google.md
