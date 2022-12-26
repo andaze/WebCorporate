@@ -1,0 +1,26 @@
+---
+label: blogPost
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: weight
+  label: weight
+- type: field_group
+  name: headerImage
+  label: headerImage
+  fields:
+  - type: file
+    name: imageName
+    label: imageName
+  - type: text
+    name: imageTitle
+    label: imageTitle
+  - type: text
+    name: imageDescription
+    label: imageDescription
