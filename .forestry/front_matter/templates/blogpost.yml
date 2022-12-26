@@ -27,3 +27,4 @@ fields:
     label: imageDescription
 pages:
 - content/blogs/dummy/foobar.md
+- content/blogs/foo-bar.md
