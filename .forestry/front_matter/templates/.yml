@@ -1,0 +1,41 @@
+---
+label: ブログ投稿
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: titleEn
+  label: titleEn
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: weight
+  label: weight
+- type: file
+  name: cardImage
+  label: cardImage
+- type: field_group
+  name: headerImage
+  label: headerImage
+  fields:
+  - type: file
+    name: imageName
+    label: imageName
+  - type: text
+    name: imageTitle
+    label: imageTitle
+  - type: text
+    name: imageDescription
+    label: imageDescription
+- type: text
+  name: topText
+  label: topText
+- type: text
+  name: kind
+  label: kind
+- type: text
+  name: subtitle
+  label: subtitle
