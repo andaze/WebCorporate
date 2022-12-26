@@ -1,5 +1,5 @@
 ---
-title: PoCとは
+title: PoCとは？
 date: 2022-12-19T10:35:44.000+09:00
 weight: "0"
 menu:
