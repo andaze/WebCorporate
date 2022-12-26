@@ -48,7 +48,7 @@
         {{ partial "molecule-section-irnews-buttongroup.html" . }}
     </div>
 
-{{ else if eq (.Scratch.Get "section") "youtube" }}
+{{ else if (and (eq (.Scratch.Get "section") "youtube") $youtubeMovies) }}
 
     {{/*  固定表示動画  */}}
     <div class="flex flex-col-reverse sm:flex-row lg:flex-row-reverse gap-[30px] mb-12 px-4 sm:pl-2 md:pl-4 pt-10 pb-10 bg-gray-100 sm:overflow-scroll lg:overflow-auto">
