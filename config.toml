@@ -120,3 +120,8 @@ identifier = "recruit"
 name   = "お問い合わせ"
 url    = "contact"
 weight = 8
+
+[caches]
+[caches.getjson]
+dir = ':cacheDir/:project'
+maxAge = -1
