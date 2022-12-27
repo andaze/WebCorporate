@@ -8,9 +8,9 @@ headerImage:
   imageName: shared.png
   imageTitle: ''
   imageDescription: ''
-topText: テレワーク時の勤怠状況と生産性をモニタリングする管理ツール
+topText: 従業員の勤怠状況と生産性をモニタリングするリモート勤怠管理ツール
 kind: service
-subtitle: テレワーク時の勤怠状況と生産性をモニタリングする管理ツール
+subtitle: 従業員の勤怠状況と生産性をモニタリングするリモート勤怠管理ツール
 
 ---
 # **リモート勤怠管理サービス**
