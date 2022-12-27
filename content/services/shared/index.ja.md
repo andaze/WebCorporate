@@ -1,9 +1,9 @@
 ---
 title: リモート勤怠管理サービス
-titleEn: Shared Team
+titleEn: Workforce Analytics
 date: 2022-02-23T17:03:34.000+09:00
 weight: "7"
-cardImage: shared.png
+cardImage: ''
 headerImage:
   imageName: shared.png
   imageTitle: ''
