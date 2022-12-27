@@ -1,6 +1,6 @@
 ---
-title: ''
-date: 
+title: Generic CRM for Sales
+date: 2022-12-27T00:00:00+09:00
 weight: ''
 headerImage:
   imageName: ''
