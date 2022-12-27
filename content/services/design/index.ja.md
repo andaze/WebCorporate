@@ -1,6 +1,6 @@
 ---
-title: UI/UXデザイン
-titleEn: UI/UX Design
+title: Webサイト高速化
+titleEn: Static Site Generator
 date: 2022-02-23T17:03:34.000+09:00
 weight: "4"
 cardImage: design.png
@@ -8,9 +8,9 @@ headerImage:
   imageName: design.png
   imageTitle: ''
   imageDescription: ''
-topText: ビジネスを深く理解し、UIやUXに精通したプロフェッショナルチームが、使いやすさと高い満足度をかね備えたプロダクト開発に寄り添います。
+topText: Webサイトの表示高速化とセキュリティ強化を実現する、静的Webサイト開発
 kind: service
-subtitle: 心地よく快適で、使いやすいプロダクト開発をサポート
+subtitle: Webサイトの表示高速化とセキュリティ強化を実現する、静的Webサイト開発
 
 ---
 # **静的Webサイト構築サービス（Webサイト高速化）**
