@@ -13,7 +13,7 @@ kind: service
 subtitle: ビジネス価値をさらに高める、精度の高いAIソリューションをご提供
 
 ---
-# AI（人工知能）
+# AI（人工知能）開発サービス
 
 {{< space height="h-10" >}}
 
