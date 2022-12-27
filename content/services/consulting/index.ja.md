@@ -1,6 +1,6 @@
 ---
 title: コンサルティング
-titleEn: Consulting
+titleEn: PoC
 date: 2022-02-23T17:03:34.000+09:00
 weight: "3"
 cardImage: consulting.png
@@ -8,9 +8,9 @@ headerImage:
   imageName: consulting.png
   imageTitle: ''
   imageDescription: ''
-topText: 培ったノウハウをもとに、優れた技術を取り入れたDX戦略を立案。さまざまな業界で求められている先進的なデジタルシフトを支援します。
+topText: システム開発の実現可能性を確認し、投資判断をするための「試作・実装・検証」をご提供
 kind: service
-subtitle: ベテランコンサルタントが高い専門性を発揮
+subtitle: システム開発の実現可能性を確認し、投資判断をするための「試作・実装・検証」をご提供
 
 ---
 # **POC（概念実証）<br>プロトタイプ・試作品サービス**
