@@ -1,5 +1,5 @@
 ---
-title: クラウド
+title: 脱サブスク・脱クラウド
 titleEn: Cloud
 date: 2022-02-23T17:03:34.000+09:00
 weight: "2"
@@ -8,9 +8,9 @@ headerImage:
   imageName: cloud.png
   imageTitle: ''
   imageDescription: ''
-topText: お客様のビジネス戦略に合わせて、より安心安全なセキュリティのもとでアクセスできるクラウドサービスの導入をサポートします。
+topText: ''
 kind: service
-subtitle: お客様のデジタル戦略に最適なクラウド導入をサポート
+subtitle: "「脱サブスク・脱クラウド」を希望される企業様をサポート"
 
 ---
 # **脱サブスク・脱クラウド<br>支援サービス**
