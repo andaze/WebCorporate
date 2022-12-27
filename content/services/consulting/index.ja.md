@@ -8,9 +8,9 @@ headerImage:
   imageName: consulting.png
   imageTitle: ''
   imageDescription: ''
-topText: システム開発の実現可能性を確認し、投資判断をするための「試作・実装・検証」をご提供
+topText: システム開発の実現可能性を確認し、投資判断をするための試作・実装・検証をご提供
 kind: service
-subtitle: システム開発の実現可能性を確認し、投資判断をするための「試作・実装・検証」をご提供
+subtitle: システム開発の実現可能性を確認し、投資判断をするための試作・実装・検証をご提供
 
 ---
 # **POC（概念実証）<br>プロトタイプ・試作品サービス**
