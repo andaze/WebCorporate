@@ -81,6 +81,4 @@ PaaS内オンプレミスクラウドでは、オンプレミスとSaaSの間を
 
 {{< space height="h-2" >}}
 
-<font color="gray">※開発と運用が連携して取り組む、ソフトウェア開発手法のひとつ</font>
-
 {{< space height="h-28" >}}
