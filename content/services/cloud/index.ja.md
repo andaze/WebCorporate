@@ -8,9 +8,9 @@ headerImage:
   imageName: cloud.png
   imageTitle: ''
   imageDescription: ''
-topText: 脱サブスク・脱クラウドを希望される企業様をサポート
+topText: ROI改善のために、脱サブスク・脱クラウドを希望される企業様をサポート
 kind: service
-subtitle: 脱サブスク・脱クラウドを希望される企業様をサポート
+subtitle: ROI改善のために、脱サブスク・脱クラウドを希望される企業様をサポート
 
 ---
 # **脱サブスク・脱クラウド<br>支援サービス**
