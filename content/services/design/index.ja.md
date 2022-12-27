@@ -8,9 +8,9 @@ headerImage:
   imageName: design.png
   imageTitle: ''
   imageDescription: ''
-topText: Webサイトの表示高速化とセキュリティ強化を実現する、静的サイトジェネレータによるWebサイト開発
+topText: Webサイトの表示高速化とセキュリティ強化を実現する、静的Webサイト開発
 kind: service
-subtitle: Webサイトの表示高速化とセキュリティ強化を実現する、静的サイトジェネレータによるWebサイト開発
+subtitle: Webサイトの表示高速化とセキュリティ強化を実現する、静的Webサイト開発
 
 ---
 # **静的Webサイト構築サービス（Webサイト高速化）**
