@@ -80,7 +80,7 @@ STEP6 経験や勘に頼らないAIの分析結果をビジネスに活かす
 ライセンス数： 700
 要望： Salesforceを利用中。ライセンス料の予算比率が高くCRMを最適化するコストの不足が課題
 ソリューション： ライセンス料とガバナ制限にお悩みの企業様です。Office 365 E3 がすでに導入されていたため、Dynamics 365 をご提案。データ移行は、Salesforceからのリアルタイムデータ移行パイプラインを設置し、3カ月間の並行稼働期間を設定しました。その間、Salesforceからはデータ登録、Dynamics365側ではデータ参照ができ、同一データを使って 2 つの CRM を並行して運用。Dynamics365側にて業務上問題がないことを現場に確認いただき、切り替え日を設けてDynamics365への移行を実施。スムーズな移行を実現しています。
-（※Salesforceにも利点が多く、一概にDynamics365が優れているとは限りません）</description></item><item><title>コンサルティング</title><link>https://andaze.com/ja/services/consulting/</link><pubDate>Wed, 23 Feb 2022 17:03:34 +0900</pubDate><guid>https://andaze.com/ja/services/consulting/</guid><description>POC（概念実証）
+（※Salesforceにも利点が多く、一概にDynamics365が優れているとは限りません）</description></item><item><title>PoC（概念実証）</title><link>https://andaze.com/ja/services/consulting/</link><pubDate>Wed, 23 Feb 2022 17:03:34 +0900</pubDate><guid>https://andaze.com/ja/services/consulting/</guid><description>PoC（概念実証）
 プロトタイプ・試作品サービス システム開発の実現可能性を確認し、投資判断をするための「試作・実装・検証」をご提供 DXの成功の第一歩はPoCです。PoC（ピーオーシーまたはポック）とは「Proof of Concept」の略で、システム開発の実現可能性を見出すため、実際に小規模な試作や実装を行い、できあがったもので検証を重ね、IT投資を行うかどうかの判断をするためのものです。PoCで検証された結果をしっかりと分析し、本番環境で効果を実証・不具合の検証を継続していくことが、プロジェクト達成の近道となります。
 アンダーズでは、新システムの導入やセキュリティ構築を検討されている企業様のPoCを承っています。IoTやAIを開発する場合、前例のない施策や技術を活用して多額の投資を行うことが多いため、本格的な開発をしてから結果が得られないと、損失が大きくなります。そのため、まずはシステムの簡易版を作成し、小規模な検証を行うことで、早い段階で実現可能かどうか、投資額に見合った効果が生み出せるか、検証していただくことができます。すでにアイデアや技術的な実現性が確定したシステムのプロトタイプ・試作品製作も承っていますので、ぜひご相談ください。
 ●システム開発でPoC・プロトタイプ・試作品製作を行うメリット ・開発リスクの軽減
