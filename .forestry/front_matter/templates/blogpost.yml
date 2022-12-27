@@ -27,3 +27,4 @@ fields:
     label: imageDescription
 pages:
 - content/blogs/google.md
+- content/services/iot-big-data.md
