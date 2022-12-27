@@ -8,9 +8,9 @@ headerImage:
   imageName: shared.png
   imageTitle: ''
   imageDescription: ''
-topText: 多彩なメンバーの高いスキルを投入
+topText: ''
 kind: service
-subtitle: 多彩なメンバーの高いスキルを投入
+subtitle: ''
 
 ---
 # **リモート勤怠管理サービス**
