@@ -1,5 +1,5 @@
 ---
-title: AI（人工知能）
+title: AI（人工知能）開発サービス
 titleEn: AI（Artificial Intelligence)
 date: 2022-02-23T17:03:34.000+09:00
 weight: "1"
