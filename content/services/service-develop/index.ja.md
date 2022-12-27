@@ -1,6 +1,6 @@
 ---
 title: 新規事業サービス開発
-titleEn: New Business Service Development
+titleEn: New Business System Development
 date: 2022-02-23T17:03:34.000+09:00
 weight: "6"
 cardImage: service.png
@@ -8,9 +8,9 @@ headerImage:
   imageName: service.png
   imageTitle: ''
   imageDescription: ''
-topText: サービス内容の立案から設計、開発、運用まで、スピード感を持ってスピーディーに新規事業サービスの立ち上げをサポートします。
+topText: 新規事業を成功に導く、変化に柔軟なスピード感あるシステム開発
 kind: service
-subtitle: 新規事業から既存システムを使った拡張まで支援
+subtitle: 新規事業を成功に導く、変化に柔軟なスピード感あるシステム開発
 
 ---
 # **新規事業システム開発サービス（SaaS開発）**
