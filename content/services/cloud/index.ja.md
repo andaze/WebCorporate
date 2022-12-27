@@ -1,6 +1,6 @@
 ---
 title: 脱サブスク・脱クラウド
-titleEn: Cloud
+titleEn: Cloud Repatriation
 date: 2022-02-23T17:03:34.000+09:00
 weight: "2"
 cardImage: cloud.png
@@ -8,9 +8,9 @@ headerImage:
   imageName: cloud.png
   imageTitle: ''
   imageDescription: ''
-topText: ''
+topText: 脱サブスク・脱クラウドを希望される企業様をサポート
 kind: service
-subtitle: "「脱サブスク・脱クラウド」を希望される企業様をサポート"
+subtitle: 脱サブスク・脱クラウドを希望される企業様をサポート
 
 ---
 # **脱サブスク・脱クラウド<br>支援サービス**
