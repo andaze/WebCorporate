@@ -8,9 +8,9 @@ headerImage:
   imageName: ai.png
   imageTitle: ''
   imageDescription: ''
-topText: 企業が抱える経営課題を解決し、ビジネスの価値をさらに高める精度の高いAIソリューションを提供します。
+topText: 課題解決や経営戦略の実現に貢献する、精度の高いAIソリューションをご提供
 kind: service
-subtitle: ビジネス価値をさらに高める、精度の高いAIソリューションをご提供
+subtitle: 課題解決や経営戦略の実現に貢献する、精度の高いAIソリューションをご提供
 
 ---
 # AI（人工知能）開発サービス
