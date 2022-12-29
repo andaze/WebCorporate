@@ -7,6 +7,8 @@ on:
   workflow_dispatch:
   schedule:
    - cron: '20 20 * * *'
+  repository_dispatch:
+    types: [sync-shared-submodules] # https://towardsdev.com/update-submodule-automatically-with-github-actions-repository-dispatch-event-8e548ab1f517
 
 jobs:
   deploy:
