@@ -1,0 +1,106 @@
+baseURL: 'https://andaze.github.io/WebCorporate/'
+timeout: 180s
+languageCode: ja-JP
+DefaultContentLanguage: ja
+defaultContentLanguageInSubdir: true
+theme: andaze
+disableKinds:
+  - taxonomy
+  - term
+assetDir: /assets
+canonifyurls: true
+paginate: 2
+module:
+  hugoVersion:
+    extended: true
+    min: '0.100'
+  mounts:
+    - source: static
+      target: static
+    - source: uploads
+      target: static
+Languages:
+  ja:
+    languageName: JP
+    title: アンダーズ株式会社
+    weight: 1
+    languageCode: ja-JP
+    topCatchCopy: 経営視点でDXを加速させるプロ集団
+    footerFacebookTitle: 公式YouTube
+    footerPrivacyText: 個人情報保護方針
+    footerSocialMediaPrivacyText: 基本利用条件
+    footerSiteMapText: サイトマップ
+    menu:
+      main:
+        - name: 会社情報
+          url: company
+          weight: 4
+        - name: サステナビリティ
+          url: sustainability
+          weight: 3
+        - name: サービス
+          url: services
+          weight: 2
+        - name: 選ばれる理由
+          url: reason
+          weight: 1
+        - name: 採用情報
+          url: 'https://andaze.com/job/ja/'
+          weight: 7
+          post: <i class='fi-xwsuxl-external-link-solid ml-1'></i>
+          identifier: recruit
+        - name: お問い合わせ
+          url: contact
+          weight: 8
+  en:
+    languageName: EN
+    title: Andaze Ltd.
+    weight: 2
+    languageCode: en-us
+    topCatchCopy: A group of professionals who accelerate DX from a management perspective
+    annotationDX: >-
+      *DX (Digital Transformation)...The penetration of IT changes people's
+      lives for the better in every aspect
+    footerFacebookTitle: Official YouTube
+    footerPrivacyText: Privacy Policy
+    footerSocialMediaPrivacyText: Terms
+    footerSiteMapText: Site Map
+    menu:
+      main:
+        - name: Company
+          url: company
+          weight: 4
+        - name: Sustainability
+          url: sustainability
+          weight: 3
+        - name: Services
+          url: services
+          weight: 2
+        - name: Why Choose Us
+          url: reason
+          weight: 1
+        - name: Recruit
+          url: 'https://andaze.com/job/en/'
+          weight: 7
+          identifier: recruit
+          post: <i class='fi-xwsuxl-external-link-solid ml-1'></i>
+        - name: Contact
+          url: contact
+          weight: 8
+params:
+  JS: /js/main.js
+  headerLogo: img/yoko_c2.png
+  footerLogo: img/yoko_2w.png
+  companyName: アンダーズ株式会社
+  emailCredential:
+    bccMail: contact@andaze.com
+    fromMail: contact@andaze.com
+    secureToken: 7670de06-d726-44e6-af6c-96dca7e5b64f
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+caches:
+  getjson:
+    dir: ':cacheDir/:project'
+    maxAge: -1
