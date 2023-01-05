@@ -1,0 +1,16 @@
+{{ $siteId := default (default false .Site.Params.forestryIo.siteId) .Page.Params.forestryIo.siteId }}
+{{ $sidebarEditPath := default (default false .Site.Params.sidebarEditPath) .Page.Params.sidebarEditPath }}
+{{ $geekdocFilePath := false }}
+{{ if .File }}
+  {{ $geekdocFilePath = (default (path.Join (default "content" .Site.Params.contentDir) .File.Path) .Page.Params.GeekdocFilePath) }}
+  {{ $geekdocFilePath = replaceRE `[/\.]` "-" $geekdocFilePath }}
+  {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.sidebarEditPath $geekdocFilePath) }}
+  {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.siteId $geekdocFilePath) }}
+  {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.baseUrl $geekdocFilePath) }}
+{{ end }}
+
+{{ if $geekdocFilePath }}
+  <a href="{{ $geekdocFilePath }}" rel="noopener" target="_blank">
+    {{ .Title }} を編集する 
+  </a>
+{{ end }}
