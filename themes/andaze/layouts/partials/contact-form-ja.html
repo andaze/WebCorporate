@@ -1,5 +1,5 @@
 <p class="pt-8">営業は一切なし。お話・お悩みをお聞かせください。</p>
-<form class="max-w-none pt-8">
+<form class="max-w-none pt-8" id="contact_form">
   <div class="flex flex-wrap mb-6">
     <div class="md:flex w-full gap-4">
       <div class="md:flex w-full flex-col mb-8">
@@ -10,7 +10,7 @@
           </label>
         </div>
         <div class="w-full">
-          <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="full_name" name="full_name" type="text" placeholder="Example : 新井" required>
+          <input type="text" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="full_name" name="full_name" type="text" placeholder="Example : 新井" required>
         </div>
       </div>
       <div class="md:flex w-full flex-col mb-8">
@@ -21,7 +21,7 @@
           </label>
         </div>
         <div class="w-full">
-          <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="last_name" name="last_name" type="text" placeholder="Example : 美奈" required>
+          <input type="text" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="last_name" name="last_name" type="text" placeholder="Example : 美奈" required>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
         </label>
       </div>
       <div class="w-full">
-        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="company_name" name="company_name" type="text" placeholder="Example : アンダース" required>
+        <input type="text" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="company_name" name="company_name" type="text" placeholder="Example : アンダース" required>
       </div>
     </div>
     <div class="md:flex w-full flex-col mb-8">
@@ -44,7 +44,7 @@
         </label>
       </div>
       <div class="w-full">
-        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="email" name="email" type="text" placeholder="Example : andaze@example.com" required>
+        <input type="email" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="email" name="email" type="text" placeholder="Example : andaze@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
       </div>
     </div>
     <div class="md:flex w-full flex-col mb-8">
@@ -54,7 +54,7 @@
         </label>
       </div>
       <div class="w-full">
-        <input class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="contact_number" name="contact_number" type="text" placeholder="Example : 1234567890">
+        <input type="tel" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="contact_number" name="contact_number" type="text" placeholder="Example : 1234567890">
       </div>
     </div>
     <div class="md:flex w-full gap-4">
@@ -67,7 +67,7 @@
         </div>
         <div class="w-full">
           <select name="department" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="department" required >
-            <option class="bg-opacity-50 bg-gray-100 text-gray-500">--選択してください--</option>
+            <option class="bg-opacity-50 bg-gray-100 text-gray-500" value="">--選択してください--</option>
             <option value="経営全般">経営全般</option>
             <option value="営業">営業</option>
             <option value="マーケティング・広報・企画">マーケティング・広報・企画</option>
@@ -86,7 +86,7 @@
         </div>
         <div class="w-full">
           <select name="post" class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" id="post" required >
-            <option class="bg-opacity-50 bg-gray-100 text-gray-500">--選択してください--</option>
+            <option class="bg-opacity-50 bg-gray-100 text-gray-500" value="">--選択してください--</option>
             <option value="経営者・役員">経営者・役員</option>
             <option value="部長クラス">部長クラス</option>
             <option value="課長・係長・主任クラス">課長・係長・主任クラス</option>
@@ -107,7 +107,7 @@
       </div>
       <div class="w-full">
         <textarea
-          class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" rows="6" name="inquiry_content" id="inquiry_content" placeholder="2,000字以内でお書きください。"></textarea>
+          class="bg-opacity-50 w-full bg-gray-100 border border-white text-black  placeholder-gray-300 py-3 px-4 mb-3 focus:ring-0 focus:border-white" rows="6" name="inquiry_content" id="inquiry_content" placeholder="2,000字以内でお書きください。" required></textarea>
       </div>
     </div>
     <div class="w-full">
@@ -162,7 +162,7 @@
     </label>
   </div>
   <div class="text-center">
-    <button type="button" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" disabled> ▶︎　同意の上、入力内容の確認
+    <button type="submit" class="w-64 uppercase text-sm font-bold tracking-wide bg-black hover:bg-white hover:text-black text-white p-4 border text-center focus:outline-none focus:shadow-outline opacity-50 cursor-not-allowed" id="submitButton" disabled> ▶︎　同意の上、入力内容の確認
     </button>
   </div>
 </form>
