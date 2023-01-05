@@ -96,6 +96,11 @@ params:
     bccMail: contact@andaze.com
     fromMail: contact@andaze.com
     secureToken: 7670de06-d726-44e6-af6c-96dca7e5b64f
+  forestryIo:
+    baseUrl: "https://app.forestry.io/sites"
+    siteId: "ly8ghrslvcgofg"
+    sidebarEditPath: "#/pages"
+
 markup:
   goldmark:
     renderer:
