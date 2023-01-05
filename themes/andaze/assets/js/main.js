@@ -44,11 +44,12 @@ async function init() {
     }
 
 
-    if (document.querySelector('#privacy') && document.querySelector('#submitButton')) {
+    if (document.querySelector('#privacy') && document.querySelector('#contact_form')) {
         document.querySelector('#privacy').addEventListener("click", () => {
             sendForm.btnEnableDisable();
         });
-        document.querySelector('#submitButton').addEventListener("click", () => {
+        document.querySelector('#contact_form').addEventListener("submit", (e) => {
+            e.preventDefault();
             sendForm.sendEmail();
         });
     }
