@@ -36,7 +36,7 @@ export function sendEmail() {
             To: email,
             From: fromMail,
             Bcc: bccMail,
-            Subject: `お問い合わせフォームから ${fName} ${lName}`,
+            Subject: `${department} ${post} ${fName} ${lName}`,
             Body: body
         }).then(
             message => alert("お問い合わせフォームが送信されました")
@@ -61,7 +61,7 @@ export function sendEmail() {
             To: email,
             From: fromMail,
             Bcc: bccMail,
-            Subject: `Contact Form filled By ${fName} ${lName}`,
+            Subject: `${department} ${post} ${fName} ${lName}`,
             Body: body
         }).then(
             message => alert("Your Contact Form has Been submitted")
