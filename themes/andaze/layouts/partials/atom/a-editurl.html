@@ -10,7 +10,7 @@
 {{ end }}
 
 {{ if $geekdocFilePath }}
-  <a href="{{ $geekdocFilePath }}" rel="noopener" target="_blank">
+  <a href="{{ $geekdocFilePath | absURL }}" rel="noopener" target="_blank">
     {{ .Title }} を編集する 
   </a>
 {{ end }}
