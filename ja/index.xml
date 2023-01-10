@@ -130,8 +130,7 @@ Webサーバーの機能を拡張し、動的にWebページを生成するた�
 ●静的Webサイトに適したサイト・ページ ・ 各業種のコーポレートサイト
 ・ 各業種の求人Webページ
 ・ 企業広告などのランディングページ（LP）
-●動的／静的Webサイトのメリット・デメリット （図版）
-●静的Webサイトと動的Webサイトの違い 項目 静的Webサイト（Hugo） 動的Webサイト（WordPress）
+●動的／静的Webサイトのメリット・デメリット ●静的Webサイトと動的Webサイトの違い 項目 静的Webサイト（Hugo） 動的Webサイト（WordPress）
 制作・更新 △／× 〇 条件により異なる情報を表示 × ◎ ページの表示速度 ◎ △ サーバーへの負担 〇 △ セキュリティ ◎ △ コストパフォーマンス ◎ △～○
 バックアップ ◎ △ データ駆動化 × ◎ インフラ ◎ △ コンテンツ更新 ファイル単位 レコード単位 デザイン 自由 テーマによる バージョンアップ 任意 継続的かつ脆弱</description></item><item><title>経営理念</title><link>https://andaze.com/ja/company/philosophy/</link><pubDate>Wed, 23 Feb 2022 17:03:34 +0900</pubDate><guid>https://andaze.com/ja/company/philosophy/</guid><description>経営理念 企業のDXをテクノロジーの最前線で支援。 商品の質や価格だけでは勝負できないこの時代。
 これからの競争市場で生き残るために必要なのは、ビジネス価値を加速度的に押し上げるDXです。
