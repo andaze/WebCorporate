@@ -19,7 +19,7 @@
     <div class="hidden mobile-menu overflow-y-scroll h-screen w-screen pb-14">
         <ul class="mt-6 mb-6">
             {{ range .Site.Menus.main }}
-                <li class="text-white p-3 pl-8"><a href="{{ .URL | absLangURL }}" {{ if or (eq (.Name) ("採用情報")) (eq (.Name) ("recruit")) }}target="_blank" rel="noopener noreferrer" {{ end }}>{{ .Name }}</a> </li>
+                <li class="text-white p-3 pl-8"><a href="{{ .URL | absLangURL }}" {{ if or (eq (.Name) ("採用情報")) (eq (.Name) ("Careers")) }}target="_blank" rel="noopener noreferrer" {{ end }}>{{ .Name }}</a> </li>
             {{ end }}
         </ul>
         <hr>
