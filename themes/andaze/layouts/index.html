@@ -122,7 +122,7 @@
   {{ end }}
 
   {{ if .Site.GetPage "recruit"}}
-    {{ .Scratch.Set "section" "recruit" }}
+    {{ .Scratch.Set "section" "careers" }}
     {{ partial "template-section-recruit.html" . }}
     {{ .Scratch.Delete "section" }}
   {{ end }}
