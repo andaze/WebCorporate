@@ -6,11 +6,11 @@
   {{ $geekdocFilePath = replaceRE `[/\.]` "-" $geekdocFilePath }}
   {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.sidebarEditPath $geekdocFilePath) }}
   {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.siteId $geekdocFilePath) }}
-  {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.baseUrl $geekdocFilePath) }}
+  {{ $geekdocFilePath = (printf "%s%s" ("https://app.forestry.io/sites/" | safeURL) $geekdocFilePath) }}
 {{ end }}
 
 {{ if $geekdocFilePath }}
-  <a href="{{ $geekdocFilePath | absURL }}" rel="noopener" target="_blank">
+  <a href="{{$geekdocFilePath }}" rel="noopener" target="_blank">
     {{ .Title }} を編集する 
   </a>
 {{ end }}
