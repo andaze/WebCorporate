@@ -152,7 +152,8 @@ async function initKeyVisual() {
           this.showGuide();
           this.setSize();
           this.resize();
-          this.removeMesh();
+          // swupを使わないなら必要なし
+          // this.removeMesh();
         });
       } else {
         this.init();
@@ -161,7 +162,8 @@ async function initKeyVisual() {
         this.showGuide();
         this.setSize();
         this.resize();
-        this.removeMesh();
+        // swupを使わないなら必要なし
+        // this.removeMesh();
       }
     }
   
