@@ -79,7 +79,7 @@ Languages:
         - name: Why Choose Us
           url: reason
           weight: 1
-        - name: Recruit
+        - name: Careers
           url: 'https://andaze.com/job/en/'
           weight: 7
           identifier: recruit
