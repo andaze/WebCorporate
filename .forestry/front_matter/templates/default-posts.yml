@@ -1,0 +1,9 @@
+---
+label: Default Posts
+hide_body: false
+fields:
+- name: test_label
+  type: text
+  config:
+    required: false
+  label: test label
