@@ -7,3 +7,7 @@ fields:
   config:
     required: false
   label: test label
+- name: categories
+  type: tag_list
+  default: []
+  label: categories
