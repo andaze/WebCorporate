@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dynamics-365-customization on My New Hugo Site</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/</link><description>Recent content in dynamics-365-customization on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><atom:link href="https://andaze.com/dynamics365/customizing-dynamics-365/index.xml" rel="self" type="application/rss+xml"/><item><title>Dynamics 365 に Javascript のコードを埋め込んでみる</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/d365-usage-js-onform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/dynamics365/customizing-dynamics-365/d365-usage-js-onform/</guid><description>Author:Takafumi Noguchi
+linkedIn Dynamics 365 のフォームには、Web リソースを挿入することができます。Webリソースは、HTML、Javascript、画像ファイルや Silverlight アプリケーションを追加できるので、フォームで比較的柔軟にカスタマイズを行うことが可能です。
+Customer Engagement の Web リソース
+今回は、フォームに Javascript のコードを埋め込み、もし「電話」フィールドが空白の場合は、「Fax」を読み取り専用にしてみます。このくらい簡単なことであれば、業務ルールですぐできてしまうのですが、今回はテストということで、やってみます。
+フォームに javascript を追加しよう まずは、取引先企業のレコードを開いて、フォームの編集画面を開いてみます。
+フォームの編集画面は、「設定」－「システムのカスタマイズ」からも遷移できますが、このようにレコードを開いて、フォームを編集するほうが楽です。
+右上の「フォームのプロパティ」をクリックします。
+「イベント」タブの「フォーム ライブラリ」がフォーム上で追加されている Webリソース一覧です。ここに新たに Javascript を追加すると、フォームを開いた時（OnLoad）、保存時（OnSave）、フィールドの値を変更した時（OnChange）などをトリガーにスクリプトを実行することができるようになります。
+それでは、新規追加をしてみましょう。「フォーム ライブラリ」の「＋追加」ボタンをクリックします。
+今回は新しく、Webリソースを追加するので、「新規」をクリックします。
+「名前」や「表示名」を任意の値で入力して、「種類」を “スクリプト（JScript）” とします。そして「テキスト エディター」をクリックします。
+ここで、通常の javascript コードを入力するのですが、Dynamics 365 のフィールドに対して読み取り専用に設定するコントロールは、setDisabled を利用します。
+setDisabled (クライアント API 参照)
+今回は、以下のようにしてみました。
+function LockFaxNumber() { var Phone = Xrm.Page.getAttribute(&amp;ldquo;telephone1&amp;rdquo;).getValue(); //phone
+if(Phone == null &amp;amp;&amp;amp; Phone != &amp;ldquo;undefined&amp;rdquo;) { Xrm.Page.getControl(&amp;ldquo;fax&amp;rdquo;).setDisabled(true); } else{ Xrm.Page.getControl(&amp;ldquo;fax&amp;rdquo;).setDisabled(false); } console.log(&amp;ldquo;filed lock is done&amp;rdquo;); }</description></item><item><title>XRM ToolBox でサイトマップを非表示に設定</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/hide-setting-sitemap-by-xrmtoolbox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/dynamics365/customizing-dynamics-365/hide-setting-sitemap-by-xrmtoolbox/</guid><description>Author:Takafumi Noguchi
+linkedIn 今回は、XRM ToolBox というサードパーティー製のカスタマイズツールを使って、「設定」のサイトマップを管理者権限をもっているユーザーのみに表示する方法をご紹介します。
+重要事項： これからご紹介する XRM ToolBox は Japan Microsoft Dynamics 365 Team Blogでもご紹介されている Dynamics の開発ツールです。もし利用する場合は、十分な検証を行った上、自己責任でご利用ください。また、当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますので、ご了承ください。
+XRM ToolBox のダウンロード XRM ToolBox は .exe の実行ファイルで、インストールは不要です。ダウンロードして、.zip ファイルを解凍して使います。
+XRM ToolBox の公式ページ でダウンロードします。
+その後、.zip ファイルを解凍してください。フォルダ内に「XrmToolBox.exe」があるのでそれをダブルクリックで実行します。
+SiteMap Editor のインストール XRM ToolBox を開くと、仕様なのか最初に Plugin Store が開きます。これは一度クローズしてください。
+Dynamics 365 環境へ接続 Dynamics 365 環境にツールからアクセスします。「Connect」ボタンをクリックします。「New connection」をクリックして、アクセスする Dynamics 365 の URL を入力したら「Next」をクリックします。
+ここでアクセスするアカウント情報（※）を入力します。入力したら「Next」をクリックします。
+（※）ここで入力するアカウント情報について、Office 365 で多要素認証を設定しているとうまく動作しません。また、利用するアカウントは下図のようなシステム管理者（CAL が “管理”）のユーザーでもアクセス可能です。アクセスモードについては、CAL情報についてをご参照ください。
+正常に接続ができると下図のようなダイアログが表示されます。接続名を任意で入力して「Finish」をクリックします。
+Site Map Editor をインストール 「Tools」より「Plugin Store」をクリックします。「SiteMap Editor」を選択して「Install」をクリックします。</description></item><item><title>Dynamics 365 バッチでプロセスを起動させる</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/use-batch-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/dynamics365/customizing-dynamics-365/use-batch-process/</guid><description>Author:Takafumi Noguchi
+linkedIn 今回は Microsoft Labs のソリューションを使って、 Dynamics 365 のワークフローをバッチ処理で指定した時間に実行する手順をご紹介します。
+重要事項： これからご紹介する Change Tracking Solution をご自身の環境で利用される場合は、十分な検証を行った上、自己責任でご利用ください。また、当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますので、ご了承ください。
+ソリューションのインポート Dynamics 365 のワークフローは既定でバッチ処理を行うことができないのですが、Microsoft Labs が提供している 「Change Tracking Solution」をインポートすることで、バッチ処理が実現できます。
+Change Tracking Solution のインポート 「設定」から「App Store」を開きます。
+アプリ検索で、Change Tracking Solution と検索して「今すぐ入手する」をクリックします。
+必要な情報を入力して「続行」をクリックします。
+マーケットプレイスのページが開くので、インポートするインスタンスを選択して、 チェックをいれたら「同意」をクリックします。
+Change Tracking のインストールが始まるのでしばらくお待ちください。インストール完了となればOKです。
+ワークフローにバッチ処理を設定する それでは検証用のワークフローを作成します。ここでは、「イニシャルコミュニケーション」が “連絡済み” となった場合、「説明」に “詳細を記載” というメモを残すようなワークフローを1時間ごとに実行する方法を記載します。
+高度検索結果より Fetch XML を取得する バッチ処理はターゲットとなるレコードに対してのみ実行されるように設定されています。そのターゲットを指定する手段として Fetch XML が利用されるため、高度検索結果を使って Fetch XML を事前に準備しておきます。
+今回は「イニシャルコミュニケーション」に値が設定されたレコードだけにワークフローを実行するので、下図のようなフィルター条件としています。
+「Fetch XML のダウンロード」をクリックして Fetch XML をダウンロードしましょう。
+ワークフローを作成する 「設定」から「プロセス」でワークフローを作成します。
+Change Tracking Solution がインポートされると、ワークフローの左パネルに「Batch Processes」が表示されているのが確認できます。これがワークフローのバッチ処理を可能にします。</description></item><item><title>Dynamics 365 機能拡張 – Workflow Tools</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/dynamics-solution-workflow-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/dynamics365/customizing-dynamics-365/dynamics-solution-workflow-tools/</guid><description>Author:Takafumi Noguchi
+linkedIn Dynamics 365 ワークフローの機能を大きく拡張する Dynamics 365 Workflow Tools をご紹介します。以前、サードパーティ製のおすすめソリューションは何か でおススメしたソリューションの利用方法になります。
+重要事項： これからご紹介する Dynamics 365 Workflow Tools はサードパーティー製ソリューションです。もしご自身の環境で利用される場合は、十分な検証を行った上、自己責任でご利用ください。また、当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますので、ご了承ください。
+Dynamics 365 Workflow Tools について Dynamics 365 Workflow Tools は、Demian Raschovan 氏により開発された Dynamics のソリューションで、Dynamics 365 のワークフローの機能を大きく改善します。今回インポートするのは、バージョン 1.0.54.1 ですが、72 もの機能が追加されます。
+その中でも、特定のユーザーやチームへの共有設定や、２つのフィールドの四則演算、レコードIDの取得などの機能は便利で私の環境でもよく利用しています。
+Workflow Tools 機能一覧 (1.0.54.1) Dynamics 365 Workflow Tools の機能一覧になります。
+1: Force Calculate Rollup Field 31: Is Member Of Marketing List 61: Translate Text 2: Apply Routing Rules 32: Remove From All Marketing Lists 62: Currency Convert 3: Query Values are neat 63: Get Record ID 4: Share Record With Team 33: Numeric Functions 64: Retrieve User’s BU Default Team 5: Share Record With User 34: Email To Team 65 Get App Module ID 6: Unshare Record With Team 35: Set Process Stage 66 Get App Record Url 7: Unshare Record With User 36: Entity Mobile Deep Link 67 Is Member Of Team 8: Check If User is in Role 37: Send Email 68 Count Child Entity Record 9: Check If User is in Team 38: Geocode Address 69 Get Multi Select OptionSet 10: Add To Marketing List 39: Add User To Team 70 Map Multi Select OptionSet 11: Remove From Marketing List 40: Remove User From Team 71 Set Multi Select Option Set 12: Clone Children 41: Associate Entity 72 Delete Record Audit History 13: Clone Record 42: Goal Recalculate 14: Set Process 43: Get Initiating User 15: Rollup Functions 44: Encrypt Text 16: Entity Attachment To Email 45: Check Associate Entity 17: Pick From Queue 46: Set State 18: Queue Item Count 47: Update Child Records 19: Add Role To User 48: Disassociate Entity 20: Add Role To Team 49: Insert Option Value 21: Remove Role From User 50: Delete Option Value 22: Remove Role From Team 51: Sales Literature To Email 23: Set User Settings 52: Send Email From Template To Users In Role 24: String Functions 53: Send Email To Users In Role 25: Delete Record 54: Calculate Price 26: Entity Json Serializer 55: Execute Workflow By ID Thanks to Steve Mordue 27: Qualify Lead 56: JSON Parser 28: Add Marketing List To Campaign 57: Date Functions 29: Copy Marketing List Members 58: Calculate Agregate Date 30: Copy To Static List 59: OrgDBSetting Update 60: OrgDBSetting Retrieve 引用元： Dynamics 365 Workflow Tools (1.</description></item><item><title>Dynamics 365 のデータを Azure SQL へエクスポート</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/exporting-d365data-to-azuresql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/dynamics365/customizing-dynamics-365/exporting-d365data-to-azuresql/</guid><description>Author:Takafumi Noguchi
+linkedIn Dynamics 365 のデータを Data Export Service というアドオン サービスを使って、Azure SQL Server にエクスポートする方法をご紹介します。
+Dynamics 365 には監査履歴によるデータ変更の追跡や、インスタンスの日時バックアップによるインスタンスの復元などでデータリカバリーはできるものの、削除してしまったデータの復元については、XRM Toolboxを使って復元する以外の便利な方法がなかったので、Data Export Service は重宝しています。
+Data Export Service のセットアップ作業については公式ドキュメントのAzure SQL データベースでデータを複製に手順の記載がありますが、Key Vault URL 生成の手順が、ドキュメントだけを読んでも正しくできなかったので、調査した内容を加えて今回まとめることにしました。
+事前準備 Data Export Service のセットアップにあたり以下の準備が必要です。
+Azure SQL データベース Azure Key Vault サービス ローカルに SSMS （SQL Server Management Studio）のインストール （ここでは手順割愛） もし Azure アカウントを持っていない場合は、無償版を事前にセットアップしておいてください。 ※必要な権限については [データ エクスポート サービス] を使用するための前提条件をご確認ください。
+Azure SQL データベース サービス Azure ポータルへログインして、SQL データベースを作成します。
+「データベース名」を入力して「サーバー」を選択したら、「確認および作成」をクリックします。もしサーバーを作成していない場合は、新しいサーバーを作成します。
+ここで設定する「サーバー管理者ログイン」と「パスワード」は Azure SQL 接続時に必要は情報なのでメモしておきます。</description></item><item><title>Ribbon Workbench：フィールド値でボタンを表示・非表示にする</title><link>https://andaze.com/dynamics365/customizing-dynamics-365/ribbon-workbench-hide-button-with-field-value/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/dynamics365/customizing-dynamics-365/ribbon-workbench-hide-button-with-field-value/</guid><description>Author:Takafumi Noguchi
+linkedIn Ribbon Workbench を使って、ボタンの表示・非表示の設定をすることができます。
+ただ、単純に不要なボタンを非表示にするのであれば、セキュリティロールで権限を調整すればできます。 そこで、今回はフィールドの値により表示・非表示を変えるという設定を加えてみます。
+advance preparation カスタマイズを行う前に、事前準備をしましょう。
+Ribbon Workbench のインポート Ribbon Workbench は RIBBON WORKBENCHからダウンロードできます。
+ダウンロード先のメールアドレスを登録したら、メールに届くリンクからダウンロードしてください。 ※詳細手順は割愛します。
+引用元： RIBBON WORKBENCH
+Dynamics 365 の ソリューション からダウンロードした Ribbon Workbench をインポートしましょう。
+もしインポートが完了したら、上部にこのように表示されます。
+２つのオプションセットフィールドをつくる はい、いいえ の値によりボタンの表示・非表示を変えるので、 カスタムフィールドを１つ作成しておきます。
+営業案件のフォームにフィールドを配置しておきます。
+ボタンカスタマイズ用のソリューションをつくる ボタンをカスタマイズしたいエンティティの必要最低限の情報を含んだソリューションを作成します。
+Ribbon Workbench はかなり重いソリューションです。
+ボタンカスタマイズするソリューションに、エンティティを含みすぎると
+公開するときにサービス全体が低下するため、本番環境に実施する場合は注意が必要です。
+今回は、営業案件のフォームを１つだけ含んだソリューションを作成しました。
+既存のエンティティから 営業案件 を選び、 すべての資産を追加 からチェックを外した状態で 営業案件 のフォームだけ選択して 完了 としました。 必須コンポーネントは含みません。 作成したソリューションは以下の通り
+Lソリューションをロードする それでは、Ribbon Workbench で先ほど作成したソリューションをロードします。
+先ほどの上部のボタンをクリックします。
+そして、先ほどのソリューションを選択して OK します。
+ロードされたら、以下の画面になります。
+Home （ホーム画面のボタン）Subgrid（サブグリッド画面のボタン）、Form （フォーム画面のボタン）とエリアが分かれ Entity でどのエンティティのボタンをカスタマイズするか設定できます。</description></item></channel></rss>
