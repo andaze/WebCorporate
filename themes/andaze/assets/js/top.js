@@ -129,7 +129,9 @@ async function initKeyVisual() {
   
       // raycaster検知フラグ
       this.detection = false;
-  
+
+      // パーティクル拡散防止フラグ（初回表示バグ防止用）
+      this.stopDiffusion = false;
   
       // パーティクルの頂点座標
       this.particle_pos = new THREE.Vector2();
@@ -211,10 +213,9 @@ async function initKeyVisual() {
   
       // サイト表示後、拡散したパーティクルが集合する
       this.gather2D();
-  
-  
+
       window.setTimeout(() => {
-  
+            
         this.lightOn();
   
       }, this.fadein_times*this.interval_time + 1000);
@@ -225,6 +226,7 @@ async function initKeyVisual() {
         this.diffusionLoop();
   
       }, this.show_guide_time + 500);
+  
     }
   
     setRendere() {
@@ -551,7 +553,7 @@ async function initKeyVisual() {
           const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
   
           // ページ上部にいる場合アニメーションサイクルを生成
-          if (window.scrollY <= targetForStop && diffusion === null) {
+          if (window.scrollY <= targetForStop && diffusion === null && !this.stopDiffusion) {
             diffusion = setInterval(function() {
               this.autoDiffusion()
             }.bind(this), 1000);
@@ -581,12 +583,14 @@ async function initKeyVisual() {
             }
           });
   
-          // ウィンドウが再度アクティブとなった場合、アニメーションサイクルを再生成
+          // ウィンドウが再度アクティブ となった場合、アニメーションサイクルを再生成
           window.addEventListener('focus', () => {
             if (window.scrollY <= targetForStop && diffusion === null) {
-              diffusion = setInterval(function() {
-                this.autoDiffusion()
-              }.bind(this), 1000);
+              setTimeout(() => {
+                diffusion = setInterval(function() {
+                  this.autoDiffusion()
+                }.bind(this), 1000);
+              }, 3000)
             }
           });
         }
@@ -958,7 +962,19 @@ async function initKeyVisual() {
       // // 頂点の移動検知フラグの更新を許可
       this.mesh.geometry.attributes.flag.needsUpdate = true;
   
-      // console.log(this.camera.position)
+      // ウィンドウを開いた直後、ウィンドウが非アクティブとなった場合、拡散禁止
+      window.addEventListener('blur', () => {
+        if(this.stopDiffusion === false) {
+          this.stopDiffusion = true;
+        }
+      });
+
+      // ウィンドウが再度アクティブとなった場合、拡散許可
+      window.addEventListener('focus', () => {
+        if(this.stopDiffusion === true) {
+          this.stopDiffusion = false;
+        }
+      });
     }
   
     showGuide() {
