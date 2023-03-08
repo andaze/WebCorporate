@@ -1026,12 +1026,6 @@ async function initKeyVisual() {
         // ヘッダーの高さ
         this.header_height = document.getElementById("header_nav").clientHeight;
   
-        if(document.getElementById("top_main")) {
-          // トップページmainタグの高さを取得してfooterのmargin-topに設定
-          this.main_height = document.getElementById("top_main").clientHeight;
-          document.querySelector("footer").style.marginTop = this.main_height + "px";
-        }
-  
         // ブレイクポイントの設定
         this.width_break_point = 700;
         this.height_break_point = 864;
