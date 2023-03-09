@@ -140,7 +140,7 @@ async function initKeyVisual() {
       this.time = 0;
       this.move = 0;
       this.raycaster = new THREE.Raycaster();
-      this.mouse = new THREE.Vector2();
+      this.mouse = new THREE.Vector2(-1000, -1000);
       this.point = new THREE.Vector2();
       
     }
