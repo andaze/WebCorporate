@@ -13,7 +13,7 @@
 <div class="flex flex-col {{ $class }} lg:gap-10 mt-24">
     <div class="lg:w-1/2">
         <h3>{{ $title }}</h3>
-        <p>{{ $text }}</p>
+        <p>{{ $text | markdownify }}</p>
     </div>
     <div class="lg:w-1/2 h-80">
         {{ .Scratch.Set "class" "h-full w-full object-cover" }}
