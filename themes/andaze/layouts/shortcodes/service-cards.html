@@ -1,0 +1,7 @@
+{{ .Scratch.Set "section" "services" }}
+{{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+    <div class="mt-8 mb-12">
+        {{ partial "organism-section-cards-part.html" . }}
+    </div>
+{{ end }}
+{{ .Scratch.Delete "section" }}
