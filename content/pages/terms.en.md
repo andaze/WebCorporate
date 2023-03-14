@@ -3,6 +3,7 @@ title: Terms
 date: 2022-07-08T11:35:23.000+09:00
 weight: "0"
 footerTitileHidden: true
+url: "terms"
 
 ---
 #### Content usage conditions

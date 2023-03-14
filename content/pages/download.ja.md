@@ -4,6 +4,7 @@ date: 2022-11-28T14:23:24+09:00
 weight: 0
 isDownload: true
 footerTitileHidden: true
+url: "download"
 ---
 
 <div class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
