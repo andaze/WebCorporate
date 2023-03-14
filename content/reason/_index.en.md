@@ -45,3 +45,8 @@ We will produce results that exceed your expectations without exceeding your bud
     src="img/reason3.jpg"
 >}}
 
+## Services offered by Andaze
+
+From strategic planning to design, development, operation and maintenance, we have a team of professionals who know your business and technology inside and out. We continue to create and refine services that maximize our clients’ business value.
+
+{{< service-cards >}}
