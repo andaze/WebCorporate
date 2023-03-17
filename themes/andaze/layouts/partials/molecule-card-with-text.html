@@ -3,9 +3,13 @@
     {{ $class = "hidden" }}
 {{ end }}
 
-<div class="sm:h-auto bg-white shadow-xl bg-opacity-75 flex flex-col {{ $class }} min-h-[220px]">
+<div class="sm:h-auto bg-white shadow-xl bg-opacity-75 flex flex-col {{ $class }} min-h-[220px] p-8">
+    <div class="px-2 sm:px-0 text-center h-auto mb-2">
+        <span class="text-black pt-3 sm:pt-6 w-fit mx-auto font-bold text-lg block">{{ .Title }}</span>
+        <span class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold">{{ .Page.Params.titleEn }}</span>
+    </div>
     <div>
-        {{ .Scratch.Set "class" "w-full h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover" }}
+        {{ .Scratch.Set "class" "w-36 h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover mx-auto" }}
         {{ .Scratch.Set "format" "webp" }}
         {{ .Scratch.Set "hint" "smart" }}
         {{ if .Page.Params.cardImage }}
@@ -18,12 +22,8 @@
         {{ .Scratch.Delete "hint" }}
         {{ .Scratch.Delete "src" }}
         {{ .Scratch.Delete "type" }}
-        <div class="px-2 sm:px-0 text-center h-auto">
-            <span class="text-black pt-3 sm:pt-6 w-fit mx-auto font-bold text-xs sm:text-lg block">{{ .Title }}</span>
-            <span class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Page.Params.titleEn }}</span>
-        </div>
     </div>
-    <div class="p-2 sm:p-6 text-xs sm:text-base sm:h-auto">
+    <div class="p-2 sm:p-6 sm:h-auto">
         <p>{{ .Page.Params.topText }}</p>
     </div>
     <a href="{{ .Permalink }}" class="md:w-72 text-white hover:text-black border-gray-500 hover:bg-white bg-black w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mt-4 inline-flex justify-center mx-auto">View More</a>
