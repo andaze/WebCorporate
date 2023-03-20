@@ -13,7 +13,7 @@
 {{ $youtubeMovies  = getJSON "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCfjT9TH2TOy7QRp1X_Ibr4A&maxResults=50&order=date&type=video&key=AIzaSyCQdG7SoPSJVX-vhkkzhjSB6luh6a8Kyno" }}
 
 {{ if or (eq (.Scratch.Get "section") "news") (eq (.Scratch.Get "section") "casestudy") (eq (.Scratch.Get "section") "sustainability") }}
-    <div class="flex flex-col sm:flex-row px-4 sm:pl-2 md:pl-4">
+    <div class="flex flex-col sm:flex-row sm:pl-2 md:pl-4">
 
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
@@ -86,7 +86,7 @@
     <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12 md:hidden">
         {{ partial "atom-newtopic-sliderbutton.html" . }}
     </div>
-    <div id="youtubeList" class="flex flex-col sm:flex-row justify-between px-4 sm:pl-2 md:pl-4">
+    <div id="youtubeList" class="flex flex-col sm:flex-row justify-between sm:pl-2 md:pl-4">
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
                 {{ range $youtubeMovies.items }}
