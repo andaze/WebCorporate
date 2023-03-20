@@ -8,10 +8,10 @@
 <div>
     {{ if or (ne (.Scratch.Get "section") "recruit") (eq (.Scratch.Get "section") "ir") }}
         {{ partial "atom-irnews-heading.html" . }}
-        <div class="flex flex-row mt-5 mb-5 md:mb-12 lg:mb-12 {{ $class }}">
+        <div class="flex flex-row mt-5 mb-5 md:mb-6 lg:mb-12 {{ $class }}">
             {{ partial "atom-newtopic-sliderbutton.html" . }}
         </div>
-        <div class="hidden lg:block">
+        <div class="hidden md:block">
             {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>
     {{ end }}
