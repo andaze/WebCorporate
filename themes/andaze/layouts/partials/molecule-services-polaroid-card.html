@@ -1,14 +1,7 @@
-{{ $class := "" }}
-{{ if eq (.Lang) ("en") }}
-    {{ $class = "min-h-[184px] lg:h-44" }}
-{{ else }}
-    {{ $class = "min-h-[152px] lg:h-36" }}
-{{ end }}
-
-<a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border border-gray-600 w-full">
-    <div class="w-full h-fit overflow-hidden bg-gray-50">
+<a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border border-gray-600 w-full bg-gray-50">
+    <div class="w-full h-fit overflow-hidden">
         {{ partial "atom-service-img.html" . }}
-        <div class="text-gray-600 text-xs py-6 px-4 h-1/2 lg:min-h-0 {{ $class }}">
+        <div class="text-gray-600 text-xs lg:text-sm xl:text-xs py-6 px-4 lg:pb-12 lg:pt-8">
             {{ partial "atom-service-title.html" . }}
             <h3>{{ .Page.Params.subtitle }}</h3>
         </div>
