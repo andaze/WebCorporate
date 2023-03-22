@@ -60,19 +60,19 @@
                     (eq .snippet.title "持続可能なシステムを廉価につくる技術 ～サブスクの取捨選択とPaaSのススメ～") 
                 }}
                     <div class="sm:shrink-0 md:w-[47%] lg:w-1/3 lg:shrink">
-                        {{ .Scratch.Set "class" "cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnai" }}
-                        {{ .Scratch.Set "id" .id.videoId }}
-                        {{ .Scratch.Set "format" "webp" }}
-                        {{ .Scratch.Set "hint" "smart" }}
-                        {{ .Scratch.Set "src" .snippet.thumbnails.high.url }}
-                        {{ .Scratch.Set "type" "thumbnail-lg" }}
-                            {{ partial "atom-picture.html" . }}   
-                        {{ .Scratch.Delete "class" }}
-                        {{ .Scratch.Delete "id" }}
-                        {{ .Scratch.Delete "format" }}
-                        {{ .Scratch.Delete "hint" }}
-                        {{ .Scratch.Delete "src" }}
-                        {{ .Scratch.Delete "type" }}
+                        <div class="sm:shrink-0 md:w-[47%] lg:w-1/3 lg:shrink">
+                            {{ $params := dict
+                                "class" "cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnai"
+                                "id" .id.videoId
+                                "format" "webp"
+                                "hint" "smart"
+                                "src" .snippet.thumbnails.high.url
+                                "type" "thumbnail-lg"
+                            }}
+                            {{ partial "atom-picture2.html" $params }}
+                            <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+                        </div>
+                    
                         {{/*  <img loading="lazy" class="cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnail" src={{ .snippet.thumbnails.high.url }} id={{ .id.videoId }}>  */}}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
