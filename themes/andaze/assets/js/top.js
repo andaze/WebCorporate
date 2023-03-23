@@ -345,6 +345,15 @@ async function initKeyVisual() {
   
       // オブジェクトの作成
       this.mesh = new THREE.Points(this.geometry, this.material);
+
+      // ジオメトリの頂点座標の配列
+      this.attribute = this.mesh.geometry.attributes.position;
+      // パーティクルの座標配列
+      this.particlePositions = this.attribute.array;
+      // パーティクルの透明度の配列
+      this.particleAlpha = this.mesh.geometry.attributes.alpha.array;
+      // パーティクルの移動許可フラグの配列
+      this.particleFlag = this.mesh.geometry.attributes.flag.array;
   
       this.scene.add( this.mesh );
     }
@@ -413,16 +422,12 @@ async function initKeyVisual() {
     }
   
     fadeIn(sampling_time, interval_time) {
-  
-        // パーティクルの透明度の配列
-        const particleAlpha = this.mesh.geometry.attributes.alpha.array;
-        // パーティクルの移動許可フラグの配列
-        const particleFlag = this.mesh.geometry.attributes.flag.array;
+
   
         // 透明ではないパーティクルの透明度を下げて見えなくする
         for (let i=0; i < this.vertces; i++) {
-          if(particleAlpha[i] > 0) {
-            particleAlpha[i] = 0.5 ** 6;
+          if(this.particleAlpha[i] > 0) {
+            this.particleAlpha[i] = 0.5 ** 6;
           }
         }
         
@@ -430,19 +435,19 @@ async function initKeyVisual() {
         for (let i=0; i < sampling_time; i++) {
           for (let j=0; j < this.vertces; j++) {
             let random = (j + Math.floor(Math.random() * 2) + 1);
-            if(particleAlpha[random] > 0) {
-              particleAlpha[random] = 0.5 ** (i + 7);
+            if(this.particleAlpha[random] > 0) {
+              this.particleAlpha[random] = 0.5 ** (i + 7);
             }
           }
         }
   
         // パーティクルの全頂点をGSAPによりアニメーションさせる
         for (let i = 0; i < this.vertces; i++) {
-          let vertex = {x: particleAlpha[i], y: particleFlag[i]};
+          let vertex = {x: this.particleAlpha[i], y: this.particleFlag[i]};
   
           // 透明度の低いパーティクルから順番に出現させる
           for (let j = 0; j < sampling_time + 1; j++) {
-            if (particleAlpha[i] === 0.5 **  (j + 6)) {
+            if (this.particleAlpha[i] === 0.5 **  (j + 6)) {
   
               gsap.to(
                 vertex,
@@ -455,8 +460,8 @@ async function initKeyVisual() {
                   duration: (interval_time+1000) / 1000,
                   ease: "Power1.easeOut",
                   onUpdate: () => {
-                    particleAlpha[i] = vertex.x;
-                    particleFlag[i] = vertex.y;
+                    this.particleAlpha[i] = vertex.x;
+                    this.particleFlag[i] = vertex.y;
                   }
                 },
               )
@@ -468,21 +473,21 @@ async function initKeyVisual() {
   
     gather2D() {
   
-        // ジオメトリの頂点座標の配列
-        let attribute = this.mesh.geometry.attributes.position;
-        // パーティクルの座標配列
-        const particlePositions = this.mesh.geometry.attributes.position.array;
+        // // ジオメトリの頂点座標の配列
+        // let attribute = this.mesh.geometry.attributes.position;
+        // // パーティクルの座標配列
+        // const particlePositions = this.mesh.geometry.attributes.position.array;
   
         for (let i = 0; i < this.vertces; i++) {
-          particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-          particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+          this.particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+          this.particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
       
           // パーティクルの座標
-          this.particle_pos.x = attribute.getX(i)*(500/this.camera.position.z) - 8;
-          this.particle_pos.y = attribute.getY(i)*(500/this.camera.position.z) + 8
+          this.particle_pos.x = this.attribute.getX(i)*(500/this.camera.position.z) - 8;
+          this.particle_pos.y = this.attribute.getY(i)*(500/this.camera.position.z) + 8
       
           // オブジェクト頂点座標
-          let vertex_position = {x: attribute.getX(i), y: attribute.getY(i)};
+          let vertex_position = {x: this.attribute.getX(i), y: this.attribute.getY(i)};
         
           // パーティクル拡散のアニメーション
           gsap.to(
@@ -495,8 +500,8 @@ async function initKeyVisual() {
               duration: 3,
               ease: "Power1.easeOut",
               onUpdate: () => {
-                particlePositions[3*i] = vertex_position.x;
-                particlePositions[3*i+1] = vertex_position.y;
+                this.particlePositions[3*i] = vertex_position.x;
+                this.particlePositions[3*i+1] = vertex_position.y;
               },
             },
           )
@@ -588,19 +593,11 @@ async function initKeyVisual() {
       let random_slide_distance = new THREE.Vector2();
       // パーティクル拡散時の到達座標
       let destination = new THREE.Vector3();
-  
-  
-      // パーティクルの移動許可フラグの配列
-      const particleFlag = this.mesh.geometry.attributes.flag.array;
-      // パーティクルの座標配列
-      const particlePositions = this.mesh.geometry.attributes.position.array;
-  
-      
     
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/ja/") | (location.pathname === "/en/"))
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/"))
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
       ) {
         return;
       } else {
@@ -639,13 +636,10 @@ async function initKeyVisual() {
         
         
         for (let i = 0; i < this.vertces; i++) {
-  
-          // ジオメトリの頂点座標の配列
-          let attribute = this.mesh.geometry.attributes.position;
           
           // パーティクルの座標
-          let x = attribute.getX(i)*(500/this.camera.position.z) - 8;
-          let y = attribute.getY(i)*(500/this.camera.position.z) + 8;
+          let x = this.attribute.getX(i)*(500/this.camera.position.z) - 8;
+          let y = this.attribute.getY(i)*(500/this.camera.position.z) + 8;
           
           
   
@@ -664,24 +658,24 @@ async function initKeyVisual() {
           // 疑似スライド時間の作成
           let random_slide_time = randomNumbers(110, 80) * 0.001;
           
-          if (particleFlag[i] === 1) {
+          if (this.particleFlag[i] === 1) {
             
             // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
             if (distance < diameter) {
               
-              particleFlag[i] = 0;
+              this.particleFlag[i] = 0;
   
               // 減衰係数
               let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
     
               // パーティクル拡散時の到達座標
-              destination.x = particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-              destination.y = particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-              destination.z = particlePositions[3*i+2] + random(200, 0);
+              destination.x = this.particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
+              destination.y = this.particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
+              destination.z = this.particlePositions[3*i+2] + random(200, 0);
   
   
               // パーティクルの頂点座標
-              let vertex_params = {posX: attribute.getX(i), posY: attribute.getY(i), posZ: attribute.getZ(i), moveFlag: particleFlag[i]};
+              let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), posZ: this.attribute.getZ(i), moveFlag: this.particleFlag[i]};
   
               const particleTimeline = gsap.timeline();
   
@@ -700,10 +694,10 @@ async function initKeyVisual() {
                   yoyo: true,
                   ease: "Power1.easeOut",
                   onUpdate: () => {
-                    particlePositions[3*i] = vertex_params.posX;
-                    particlePositions[3*i+1] = vertex_params.posY;
-                    particlePositions[3*i+2] = vertex_params.posZ;
-                    particleFlag[i] = vertex_params.moveFlag;
+                    this.particlePositions[3*i] = vertex_params.posX;
+                    this.particlePositions[3*i+1] = vertex_params.posY;
+                    this.particlePositions[3*i+2] = vertex_params.posZ;
+                    this.particleFlag[i] = vertex_params.moveFlag;
                   }
                 },
               )
