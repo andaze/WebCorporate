@@ -473,11 +473,6 @@ async function initKeyVisual() {
   
     gather2D() {
   
-        // // ジオメトリの頂点座標の配列
-        // let attribute = this.mesh.geometry.attributes.position;
-        // // パーティクルの座標配列
-        // const particlePositions = this.mesh.geometry.attributes.position.array;
-  
         for (let i = 0; i < this.vertces; i++) {
           this.particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
           this.particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
