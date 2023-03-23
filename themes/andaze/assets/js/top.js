@@ -232,6 +232,7 @@ async function initKeyVisual() {
       // レンダラーの高さ
       this.renderer.setSize( this.width, this.height -  this.header_height);
       this.renderer.physicallyCorrectLights = true;
+      this.renderer.setClearColor();
   
       this.renderScene = new RenderPass( this.scene, this.camera );
   
@@ -345,6 +346,9 @@ async function initKeyVisual() {
   
       // オブジェクトの作成
       this.mesh = new THREE.Points(this.geometry, this.material);
+
+      // カリングを無効化する（フラスタムカリングを無効にする）
+      this.mesh.frustumCulled = false;
 
       // ジオメトリの頂点座標の配列
       this.attribute = this.mesh.geometry.attributes.position;
