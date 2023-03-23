@@ -596,8 +596,8 @@ async function initKeyVisual() {
     
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        // !((location.pathname === "/ja/") | (location.pathname === "/en/"))
-        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
+        !((location.pathname === "/ja/") | (location.pathname === "/en/"))
+        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
       ) {
         return;
       } else {
