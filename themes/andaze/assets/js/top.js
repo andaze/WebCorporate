@@ -154,8 +154,6 @@ async function initKeyVisual() {
           this.showGuide();
           this.setSize();
           this.resize();
-          // swupを使わないなら必要なし
-          // this.removeMesh();
         });
       } else {
         this.init();
@@ -164,8 +162,6 @@ async function initKeyVisual() {
         this.showGuide();
         this.setSize();
         this.resize();
-        // swupを使わないなら必要なし
-        // this.removeMesh();
       }
     }
   
@@ -407,13 +403,6 @@ async function initKeyVisual() {
       // 初回訪問時
       if (first_visit) {
   
-          // if (is_bottom) {
-  
-          //   // ロード画面を表示
-          //   loading_background.style.opacity = 1;
-        
-          // } 
-  
           // ロード画面を非表示
           loading_background.style.opacity = 0;
           loading_background.style.visibility = "invisible";
@@ -447,7 +436,7 @@ async function initKeyVisual() {
           }
         }
   
-        // パーティクルの全頂点をTween.jsによりアニメーションさせる
+        // パーティクルの全頂点をGSAPによりアニメーションさせる
         for (let i = 0; i < this.vertces; i++) {
           let vertex = {x: particleAlpha[i], y: particleFlag[i]};
   
@@ -1106,20 +1095,7 @@ async function initKeyVisual() {
         this.setSize();
       }.bind(this));
     }
-  
-    removeMesh() {
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          if(this.mesh) {
-            this.scene.remove( this.mesh );
-            this.geometry.dispose();
-            this.material.dispose();
-            this.renderer.dispose();
-            this.composer.removePass();
-          }
-        });
-      });
-    }
+
   
   }
 
