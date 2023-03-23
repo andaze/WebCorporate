@@ -284,41 +284,29 @@ async function initKeyVisual() {
         
       // ランダム値の生成
       const rand = [];
-      this.vertces = this.pixcel_img.position.length / 3;  // 頂点の数
-      for (let i = 0; i < this.vertces; i++) {
-        rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
-      }
-      const rands = new THREE.BufferAttribute(new Float32Array(rand), 2);
-  
       // オブジェクト移動許可フラグの生成
       const flag = [];
-      for (let i = 0; i < this.vertces; i++) {
-        flag.push(1);
-      }
-      const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
-  
+       // インタラクションに必要なパラメータの生成
       const speed = [];
-      for (let i = 0; i < this.vertces; i++) {
-        speed.push(random(-1000, 1000));
-      }
-      const speeds = new THREE.BufferAttribute(new Float32Array(speed), 1);
-  
       const offset = [];
-      for (let i = 0; i < this.vertces; i++) {
-        offset.push(random(0.4, 1));
-      }
-      const offsets = new THREE.BufferAttribute(new Float32Array(offset), 1);
-  
       const press = [];
-      for (let i = 0; i < this.vertces; i++) {
-        press.push(random(0.4, 1));
-      }
-      const presses = new THREE.BufferAttribute(new Float32Array(press), 1);
-  
       const direction = [];
+
+      this.vertces = this.pixcel_img.position.length / 3;  // 頂点の数
+
       for (let i = 0; i < this.vertces; i++) {
+        rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
+        flag.push(1);
+        speed.push(random(-1000, 1000));
+        offset.push(random(0.4, 1));
+        press.push(random(0.4, 1));
         direction.push(Math.random() > 0.5 ? 1 : -1);
       }
+      const rands = new THREE.BufferAttribute(new Float32Array(rand), 2);
+      const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
+      const speeds = new THREE.BufferAttribute(new Float32Array(speed), 1);
+      const offsets = new THREE.BufferAttribute(new Float32Array(offset), 1);
+      const presses = new THREE.BufferAttribute(new Float32Array(press), 1);
       const directions = new THREE.BufferAttribute(new Float32Array(direction), 1);
       
       // 各パラメータをジオメトリーに登録
@@ -448,7 +436,7 @@ async function initKeyVisual() {
             particleAlpha[i] = 0.5 ** 6;
           }
         }
-  
+        
         // 透過させたパーティクルをランダムに複数回サンプリングして透明度を下げていく
         for (let i=0; i < sampling_time; i++) {
           for (let j=0; j < this.vertces; j++) {
