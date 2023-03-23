@@ -1105,8 +1105,7 @@ async function initKeyVisual() {
   }
   
   function plusMinus() {
-    let plus_and_minus = [1, -1];
-    return plus_and_minus[Math.floor(Math.random() * plus_and_minus.length)];
+    return Math.random() < 0.5 ? 1 : -1;
   }
 
   function activate() {
