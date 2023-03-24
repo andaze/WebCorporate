@@ -9,11 +9,6 @@ initKeyVisual();
 async function initKeyVisual() {
   let surround;
   let sketch;
-
-    // 初回訪問判定フラグ
-  let first_visit = true;
-  
-  const links = document.querySelectorAll('a');
   
   // // ローディング画面の表示
   const loading_background = document.getElementById("loading");
@@ -146,23 +141,14 @@ async function initKeyVisual() {
     }
   
     callFunctions() {
-      if(first_visit) {
-        this.img.addEventListener('load', () => {
-          this.init();
-          this.mouseInteraction();
-          this.animate();
-          this.showGuide();
-          this.setSize();
-          this.resize();
-        });
-      } else {
+      this.img.addEventListener('load', () => {
         this.init();
         this.mouseInteraction();
         this.animate();
         this.showGuide();
         this.setSize();
         this.resize();
-      }
+      });
     }
   
     setImage() {
@@ -413,16 +399,11 @@ async function initKeyVisual() {
     }
   
     removeLoadingEnd() {
-      // 初回訪問時
-      if (first_visit) {
   
-          // ロード画面を非表示
-          loading_background.style.opacity = 0;
-          loading_background.style.visibility = "invisible";
-        
-          first_visit = !first_visit
-        
-        }
+        // ロード画面を非表示
+        loading_background.style.opacity = 0;
+        loading_background.style.visibility = "invisible";
+
     }
   
     fadeParticles(sampling_time) {
@@ -581,8 +562,8 @@ async function initKeyVisual() {
     
       // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
       if (
-        !((location.pathname === "/ja/") | (location.pathname === "/en/"))
-        // !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
+        // !((location.pathname === "/ja/") | (location.pathname === "/en/"))
+        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
       ) {
         return;
       } else {
@@ -1109,25 +1090,9 @@ async function initKeyVisual() {
         sketch.setImage();
     
         loading_background.style.opacity = 1;
-    
-        if (!first_visit) {
-    
-            window.setTimeout(() => {
-    
-                surround.callFunctions();
-    
-                loading_background.style.opacity = 0;
-                loading_background.style.visibility = "invisible";
-    
-                sketch.callFunctions();
-            }, 1000);
-        } else {
-            surround.callFunctions();
-            sketch.callFunctions();
-        }
-    } else {
-        surround = null;
-        sketch = null;
+
+        surround.callFunctions();
+        sketch.callFunctions();
     }
   }
 
