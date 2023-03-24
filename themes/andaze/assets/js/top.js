@@ -192,7 +192,7 @@ async function initKeyVisual() {
       this.removeLoadingEnd();
   
       // フェードイン実行（FadeIn関数）
-      this.fadeIn(this.fadein_times-1, this.interval_time);
+      this.fadeParticles(this.fadein_times-1);
   
       // フラグ反転
       window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
@@ -208,7 +208,7 @@ async function initKeyVisual() {
       
   
       // サイト表示後、拡散したパーティクルが集合する
-      this.gather2D();
+      this.gather2D(this.fadein_times-1, this.interval_time);
 
       window.setTimeout(() => {
             
@@ -425,32 +425,45 @@ async function initKeyVisual() {
         }
     }
   
-    fadeIn(sampling_time, interval_time) {
-
-  
-        // 透明ではないパーティクルの透明度を下げて見えなくする
-        for (let i=0; i < this.vertces; i++) {
-          if(this.particleAlpha[i] > 0) {
-            this.particleAlpha[i] = 0.5 ** 6;
-          }
-        }
+    fadeParticles(sampling_time) {
         
-        // 透過させたパーティクルをランダムに複数回サンプリングして透明度を下げていく
-        for (let i=0; i < sampling_time; i++) {
+        // パーティクルをランダムに複数回サンプリングして透明度を下げていく
+        for (let i=0; i < sampling_time+1; i++) {
           for (let j=0; j < this.vertces; j++) {
             let random = (j + Math.floor(Math.random() * 2) + 1);
             if(this.particleAlpha[random] > 0) {
-              this.particleAlpha[random] = 0.5 ** (i + 7);
+              this.particleAlpha[random] = 0.5 ** (i + 6);
             }
           }
         }
+
+    }
   
-        // パーティクルの全頂点をGSAPによりアニメーションさせる
+    gather2D(sampling_time, interval_time) {
+  
         for (let i = 0; i < this.vertces; i++) {
+
           let vertex = {x: this.particleAlpha[i], y: this.particleFlag[i]};
-  
+
+          this.particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
+          this.particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
+      
+          // パーティクルの座標
+          this.particle_pos.x = this.attribute.getX(i)*(500/this.camera.position.z) - 8;
+          this.particle_pos.y = this.attribute.getY(i)*(500/this.camera.position.z) + 8
+      
+          // オブジェクト頂点座標
+          let vertex_position = {x: this.attribute.getX(i), y: this.attribute.getY(i)};
+
           // 透明度の低いパーティクルから順番に出現させる
           for (let j = 0; j < sampling_time + 1; j++) {
+
+            let random = (j + Math.floor(Math.random() * 2) + 1);
+
+            if(this.particleAlpha[random] > 0) {
+              this.particleAlpha[random] = 0.5 ** (i + 6);
+            }
+            
             if (this.particleAlpha[i] === 0.5 **  (j + 6)) {
   
               gsap.to(
@@ -471,22 +484,6 @@ async function initKeyVisual() {
               )
             }
           }
-          
-        }  
-    }
-  
-    gather2D() {
-  
-        for (let i = 0; i < this.vertces; i++) {
-          this.particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-          this.particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-      
-          // パーティクルの座標
-          this.particle_pos.x = this.attribute.getX(i)*(500/this.camera.position.z) - 8;
-          this.particle_pos.y = this.attribute.getY(i)*(500/this.camera.position.z) + 8
-      
-          // オブジェクト頂点座標
-          let vertex_position = {x: this.attribute.getX(i), y: this.attribute.getY(i)};
         
           // パーティクル拡散のアニメーション
           gsap.to(
