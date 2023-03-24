@@ -574,8 +574,6 @@ async function initKeyVisual() {
       let random_pos = new THREE.Vector2();
       // 疑似クリック座標（自動拡散）
       let random_pushed_pos = new THREE.Vector2();
-      // 拡散方向決定用正負符号（自動拡散）
-      let random_direction = new THREE.Vector2();
       // 疑似スライド距離
       let random_slide_distance = new THREE.Vector2();
       // パーティクル拡散時の到達座標
@@ -590,76 +588,80 @@ async function initKeyVisual() {
       } else {
     
         // パーティクルが存在する座標範囲内を決定するための乱数生成
-        pos_range_plus.x = randomNumbers(375, 0);
-        pos_range_minus.x = -1 * randomNumbers(400, 0);
-        pos_range_plus.y = randomNumbers(410, 0);
-        pos_range_minus.y = -1 * randomNumbers(230, 0);
-    
+        pos_range_plus = {
+          x: randomNumbers(375, 0),
+          y: randomNumbers(410, 0)
+        }
+        pos_range_minus = {
+          x: -1 * randomNumbers(400, 0), 
+          y: -1 * randomNumbers(230, 0)
+        }
     
         // 疑似クリック・タップ座標値の生成
-        random_pos.x = [pos_range_plus.x, pos_range_minus.x];
-        random_pos.y = [pos_range_plus.y, pos_range_minus.y];
-        
-        random_pushed_pos.x = random_pos.x[Math.floor(Math.random() * random_pos.x.length)];
-        random_pushed_pos.y = random_pos.y[Math.floor(Math.random() * random_pos.y.length)];
+        random_pos = {
+          x: [pos_range_plus.x, pos_range_minus.x], 
+          y: [pos_range_plus.y, pos_range_minus.y]
+        }
+        random_pushed_pos = {
+          x: randomChoice(random_pos.x),
+          y: randomChoice(random_pos.y)
+        }
     
     
         // 疑似スライド距離の値を作成
-        random_slide_distance.x = randomNumbers(200, 5) * plusMinus();
-        random_slide_distance.y = randomNumbers(200, 5) * plusMinus();
-    
+        random_slide_distance = {
+          x: randomNumbers(200, 5) * plusMinus(), 
+          y: randomNumbers(200, 5) * plusMinus()
+        }
     
         // パーティクルが一度に拡散する対象範囲
         let diameter = 20;
         
         // パーティクル拡散距離方向を決定するための乱数生成
         let random_numbers = randomNumbers(200, 50);
-        let direction_coefs = [[Math.random(), Math.random()], [-1 * Math.random(), Math.random()], [Math.random(), -1 * Math.random()], [-1* Math.random(), -1 * Math.random()]]
-        let direction_coef = direction_coefs[Math.floor(Math.random() * direction_coefs.length)];
-    
+        let direction_coefs = [
+          [Math.random(), Math.random()], 
+          [-1 * Math.random(), Math.random()], 
+          [Math.random(), -1 * Math.random()], 
+          [-1* Math.random(), -1 * Math.random()]
+        ]
         // x, y方向のために2種類生成
-        let direction_coef_first = random_numbers * direction_coef[0];
-        let direction_coef_second = random_numbers * direction_coef[1];
+        let direction_coef = {
+          x: randomChoice(direction_coefs)[0] * random_numbers,
+          y: randomChoice(direction_coefs)[1] * random_numbers
+        }
+
         
         
         for (let i = 0; i < this.vertces; i++) {
           
           // パーティクルの座標
-          let x = this.attribute.getX(i)*(500/this.camera.position.z) - 8;
-          let y = this.attribute.getY(i)*(500/this.camera.position.z) + 8;
-          
-          
-  
+          let patricle_pos = {
+            x: this.attribute.getX(i)*(500/this.camera.position.z) - 8, 
+            y: this.attribute.getY(i)*(500/this.camera.position.z) + 8
+          }
+            
+
           // 疑似クリック・タップ座標からパーティクルまでの距離
-          let distance = Math.sqrt( Math.pow( x - random_pushed_pos.x, 2 ) + Math.pow( y - random_pushed_pos.y, 2 ) ) ;
+          let distance = Math.sqrt( Math.pow( patricle_pos.x - random_pushed_pos.x, 2 ) + Math.pow( patricle_pos.y - random_pushed_pos.y, 2 ) ) ;
           
-  
-          // パーティクルの拡散方向（上下左右の4通り）
-          let directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
-          let direction = directions[Math.floor(Math.random() * directions.length)];
-          
-          random_direction.x = direction[0];
-          random_direction.y = direction[1];
-          
-  
           // 疑似スライド時間の作成
           let random_slide_time = randomNumbers(110, 80) * 0.001;
           
-          if (this.particleFlag[i] === 1) {
-            
-            // スライド開始座標からパーティクルまでの距離が30より小さい場合、拡散対象に設定
-            if (distance < diameter) {
-              
+          // スライド開始座標からパーティクルまでの距離がdiameterより小さい場合、拡散対象に設定
+          if (this.particleFlag[i] === 1 & distance < diameter) {
+             
               this.particleFlag[i] = 0;
   
               // 減衰係数
               let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
     
               // パーティクル拡散時の到達座標
-              destination.x = this.particlePositions[3*i] + (direction_coef_first) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient));
-              destination.y = this.particlePositions[3*i+1] + (direction_coef_second)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient));
-              destination.z = this.particlePositions[3*i+2] + random(200, 0);
-  
+              destination = {
+                x: this.particlePositions[3*i] + (direction_coef.x) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient)),
+                y: this.particlePositions[3*i+1] + (direction_coef.y)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient)),
+                z: this.particlePositions[3*i+2] + random(200, 0)
+              }
   
               // パーティクルの頂点座標
               let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), posZ: this.attribute.getZ(i), moveFlag: this.particleFlag[i]};
@@ -773,7 +775,6 @@ async function initKeyVisual() {
                 this.moving_flag = !this.moving_flag
               }
   
-            }
           }
   
         }
@@ -1093,6 +1094,11 @@ async function initKeyVisual() {
   
   function plusMinus() {
     return Math.random() < 0.5 ? 1 : -1;
+  }
+
+  function randomChoice(list) {
+    // 配列からランダムに要素を選択
+    return list[Math.floor(Math.random() * list.length)]
   }
 
   function activate() {
