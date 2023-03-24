@@ -443,42 +443,27 @@ async function initKeyVisual() {
   
         for (let i = 0; i < this.vertces; i++) {
 
-          let vertex = {x: this.particleAlpha[i], y: this.particleFlag[i]};
-
-          this.particlePositions[3*i] = randomNumbers(600, 0) * plusMinus();
-          this.particlePositions[3*i+1] = randomNumbers(600, 0) * plusMinus();
-      
-          // パーティクルの座標
-          this.particle_pos.x = this.attribute.getX(i)*(500/this.camera.position.z) - 8;
-          this.particle_pos.y = this.attribute.getY(i)*(500/this.camera.position.z) + 8
-      
           // オブジェクト頂点座標
-          let vertex_position = {x: this.attribute.getX(i), y: this.attribute.getY(i)};
+          let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), alpha: this.particleAlpha[i], moveFlag: this.particleFlag[i]};
 
           // 透明度の低いパーティクルから順番に出現させる
           for (let j = 0; j < sampling_time + 1; j++) {
-
-            let random = (j + Math.floor(Math.random() * 2) + 1);
-
-            if(this.particleAlpha[random] > 0) {
-              this.particleAlpha[random] = 0.5 ** (i + 6);
-            }
             
             if (this.particleAlpha[i] === 0.5 **  (j + 6)) {
   
               gsap.to(
-                vertex,
+                vertex_params,
                 
                 //完了状態
                 {
-                  x: 1,
-                  y: 1,
+                  alpha: 1,
+                  moveFlag: 1,
                   delay: j * (interval_time / 1000),
                   duration: (interval_time+1000) / 1000,
                   ease: "Power1.easeOut",
                   onUpdate: () => {
-                    this.particleAlpha[i] = vertex.x;
-                    this.particleFlag[i] = vertex.y;
+                    this.particleAlpha[i] = vertex_params.alpha;
+                    this.particleFlag[i] = vertex_params.moveFlag;
                   }
                 },
               )
@@ -486,18 +471,24 @@ async function initKeyVisual() {
           }
         
           // パーティクル拡散のアニメーション
-          gsap.to(
-            vertex_position,
-            
+          gsap.fromTo(
+            vertex_params,
+
+            //初期状態
+            {
+              posX: randomNumbers(600, 0) * plusMinus(),
+              posY: randomNumbers(600, 0) * plusMinus(),
+            },
+
             //完了状態
             {
-              x: this.pixcel_img.position[3*i],
-              y: this.pixcel_img.position[3*i+1],
+              posX: this.pixcel_img.position[3*i],
+              posY: this.pixcel_img.position[3*i+1],
               duration: 3,
               ease: "Power1.easeOut",
               onUpdate: () => {
-                this.particlePositions[3*i] = vertex_position.x;
-                this.particlePositions[3*i+1] = vertex_position.y;
+                this.particlePositions[3*i] = vertex_params.posX;
+                this.particlePositions[3*i+1] = vertex_params.posY;
               },
             },
           )
