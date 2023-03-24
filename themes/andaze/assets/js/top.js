@@ -560,205 +560,197 @@ async function initKeyVisual() {
       // パーティクル拡散時の到達座標
       let destination = new THREE.Vector3();
     
-      // パスがトップページ以外の場合、タブが非アクティブの場合、アニメーション停止
-      if (
-        // !((location.pathname === "/ja/") | (location.pathname === "/en/"))
-        !((location.pathname === "/WebCorporate/ja/") | (location.pathname === "/WebCorporate/en/"))
-      ) {
-        return;
-      } else {
     
-        // パーティクルが存在する座標範囲内を決定するための乱数生成
-        pos_range_plus = {
-          x: randomNumbers(375, 0),
-          y: randomNumbers(410, 0)
-        }
-        pos_range_minus = {
-          x: -1 * randomNumbers(400, 0), 
-          y: -1 * randomNumbers(230, 0)
-        }
-    
-        // 疑似クリック・タップ座標値の生成
-        random_pos = {
-          x: [pos_range_plus.x, pos_range_minus.x], 
-          y: [pos_range_plus.y, pos_range_minus.y]
-        }
-        random_pushed_pos = {
-          x: randomChoice(random_pos.x),
-          y: randomChoice(random_pos.y)
-        }
-    
-    
-        // 疑似スライド距離の値を作成
-        random_slide_distance = {
-          x: randomNumbers(200, 5) * plusMinus(), 
-          y: randomNumbers(200, 5) * plusMinus()
-        }
-    
-        // パーティクルが一度に拡散する対象範囲
-        let diameter = 20;
-        
-        // パーティクル拡散距離方向を決定するための乱数生成
-        let random_numbers = randomNumbers(200, 50);
-        let direction_coefs = [
-          [Math.random(), Math.random()], 
-          [-1 * Math.random(), Math.random()], 
-          [Math.random(), -1 * Math.random()], 
-          [-1* Math.random(), -1 * Math.random()]
-        ]
-        // x, y方向のために2種類生成
-        let direction_coef = {
-          x: randomChoice(direction_coefs)[0] * random_numbers,
-          y: randomChoice(direction_coefs)[1] * random_numbers
-        }
+      // パーティクルが存在する座標範囲内を決定するための乱数生成
+      pos_range_plus = {
+        x: randomNumbers(375, 0),
+        y: randomNumbers(410, 0)
+      }
+      pos_range_minus = {
+        x: -1 * randomNumbers(400, 0), 
+        y: -1 * randomNumbers(230, 0)
+      }
+  
+      // 疑似クリック・タップ座標値の生成
+      random_pos = {
+        x: [pos_range_plus.x, pos_range_minus.x], 
+        y: [pos_range_plus.y, pos_range_minus.y]
+      }
+      random_pushed_pos = {
+        x: randomChoice(random_pos.x),
+        y: randomChoice(random_pos.y)
+      }
+  
+  
+      // 疑似スライド距離の値を作成
+      random_slide_distance = {
+        x: randomNumbers(200, 5) * plusMinus(), 
+        y: randomNumbers(200, 5) * plusMinus()
+      }
+  
+      // パーティクルが一度に拡散する対象範囲
+      let diameter = 20;
+      
+      // パーティクル拡散距離方向を決定するための乱数生成
+      let random_numbers = randomNumbers(200, 50);
+      let direction_coefs = [
+        [Math.random(), Math.random()], 
+        [-1 * Math.random(), Math.random()], 
+        [Math.random(), -1 * Math.random()], 
+        [-1* Math.random(), -1 * Math.random()]
+      ]
+      // x, y方向のために2種類生成
+      let direction_coef = {
+        x: randomChoice(direction_coefs)[0] * random_numbers,
+        y: randomChoice(direction_coefs)[1] * random_numbers
+      }
 
+      
+      
+      for (let i = 0; i < this.vertces; i++) {
         
-        
-        for (let i = 0; i < this.vertces; i++) {
+        // パーティクルの座標
+        let patricle_pos = {
+          x: this.attribute.getX(i)*(500/this.camera.position.z) - 8, 
+          y: this.attribute.getY(i)*(500/this.camera.position.z) + 8
+        }
           
-          // パーティクルの座標
-          let patricle_pos = {
-            x: this.attribute.getX(i)*(500/this.camera.position.z) - 8, 
-            y: this.attribute.getY(i)*(500/this.camera.position.z) + 8
-          }
+
+        // 疑似クリック・タップ座標からパーティクルまでの距離
+        let distance = Math.sqrt( Math.pow( patricle_pos.x - random_pushed_pos.x, 2 ) + Math.pow( patricle_pos.y - random_pushed_pos.y, 2 ) ) ;
+        
+        // 疑似スライド時間の作成
+        let random_slide_time = randomNumbers(110, 80) * 0.001;
+        
+        // スライド開始座標からパーティクルまでの距離がdiameterより小さい場合、拡散対象に設定
+        if (this.particleFlag[i] === 1 & distance < diameter) {
             
+            this.particleFlag[i] = 0;
 
-          // 疑似クリック・タップ座標からパーティクルまでの距離
-          let distance = Math.sqrt( Math.pow( patricle_pos.x - random_pushed_pos.x, 2 ) + Math.pow( patricle_pos.y - random_pushed_pos.y, 2 ) ) ;
-          
-          // 疑似スライド時間の作成
-          let random_slide_time = randomNumbers(110, 80) * 0.001;
-          
-          // スライド開始座標からパーティクルまでの距離がdiameterより小さい場合、拡散対象に設定
-          if (this.particleFlag[i] === 1 & distance < diameter) {
-             
-              this.particleFlag[i] = 0;
+            // 減衰係数
+            let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
   
-              // 減衰係数
-              let attenuation_coefficient = randomNumbers(300, 280) * randomNumbers(1500, 1000);
-    
-              // パーティクル拡散時の到達座標
-              destination = {
-                x: this.particlePositions[3*i] + (direction_coef.x) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient)),
-                y: this.particlePositions[3*i+1] + (direction_coef.y)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient)),
-                z: this.particlePositions[3*i+2] + random(200, 0)
-              }
-  
-              // パーティクルの頂点座標
-              let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), posZ: this.attribute.getZ(i), moveFlag: this.particleFlag[i]};
-  
-              const particleTimeline = gsap.timeline();
-  
-              // パーティクル拡散のアニメーション
-              particleTimeline.to(
-                vertex_params,
+            // パーティクル拡散時の到達座標
+            destination = {
+              x: this.particlePositions[3*i] + (direction_coef.x) + (random_slide_distance.x / (random_slide_time * attenuation_coefficient)),
+              y: this.particlePositions[3*i+1] + (direction_coef.y)  + (random_slide_distance.y / (random_slide_time * attenuation_coefficient)),
+              z: this.particlePositions[3*i+2] + random(200, 0)
+            }
+
+            // パーティクルの頂点座標
+            let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), posZ: this.attribute.getZ(i), moveFlag: this.particleFlag[i]};
+
+            const particleTimeline = gsap.timeline();
+
+            // パーティクル拡散のアニメーション
+            particleTimeline.to(
+              vertex_params,
+              
+              //完了状態
+              {
+                posX: destination.x,
+                posY: destination.y,
+                posZ: destination.z,
+                moveFlag: 0,
+                duration: (random_slide_time*attenuation_coefficient) / 1000,
+                repeat: 1,
+                yoyo: true,
+                ease: "Power1.easeOut",
+                onUpdate: () => {
+                  this.particlePositions[3*i] = vertex_params.posX;
+                  this.particlePositions[3*i+1] = vertex_params.posY;
+                  this.particlePositions[3*i+2] = vertex_params.posZ;
+                  this.particleFlag[i] = vertex_params.moveFlag;
+                }
+              },
+            )
+
+            // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
+            window.addEventListener('blur', () => {
+              particleTimeline.pause();
+            });
+
+            // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
+            window.addEventListener('focus', () => {
+              particleTimeline.resume();
+            });
+              
+
+
+            // オブジェクト移動（視点が極端に近づかないように制限）
+            if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
+              
+              const objectTimeline = gsap.timeline();
+
+              // オブジェクト回転のアニメーション
+              objectTimeline.to(
+                this.mesh.rotation,
                 
                 //完了状態
                 {
-                  posX: destination.x,
-                  posY: destination.y,
-                  posZ: destination.z,
-                  moveFlag: 0,
-                  duration: (random_slide_time*attenuation_coefficient) / 1000,
+                  x: destination.y / 1000 * (-1),
+                  y: destination.x / 1000 * -1,
+                  duration: 10,
                   repeat: 1,
-                  yoyo: true,
-                  ease: "Power1.easeOut",
-                  onUpdate: () => {
-                    this.particlePositions[3*i] = vertex_params.posX;
-                    this.particlePositions[3*i+1] = vertex_params.posY;
-                    this.particlePositions[3*i+2] = vertex_params.posZ;
-                    this.particleFlag[i] = vertex_params.moveFlag;
-                  }
+                  delay: 2,
+                  yoyo: true
                 },
               )
-  
-              // ウィンドウが非アクティブの場合、アニメーション停止（パーティクル）
-              window.addEventListener('blur', () => {
-                particleTimeline.pause();
-              });
-  
-              // ウィンドウがアクティブの場合、アニメーション再開（パーティクル）
-              window.addEventListener('focus', () => {
-                particleTimeline.resume();
-              });
+
+              // オブジェクト位置のアニメーション
+              objectTimeline.to(
+                this.mesh.position,
                 
-  
-  
-              // オブジェクト移動（視点が極端に近づかないように制限）
-              if (this.moving_flag & this.mesh.position.z + (2000 / (random_slide_time*500)) <= (this.camera.position.z * 0.3)) {
+                //完了状態
+                {
+                  x: destination.x / (random_slide_time*1000), 
+                  y: destination.y*(-1) / (random_slide_time*1000), 
+                  z: this.mesh.position.z + (2000 / (random_slide_time*500)),
+                  duration: 10,
+                  repeat: 1,
+                  delay: 2,
+                  yoyo: true
+                }, "<"
+              )
+              
+              // オブジェクト発光のアニメーション
+              objectTimeline.to(
+                this.bloomPass,
                 
-                const objectTimeline = gsap.timeline();
-  
-                // オブジェクト回転のアニメーション
-                objectTimeline.to(
-                  this.mesh.rotation,
-                  
-                  //完了状態
-                  {
-                    x: destination.y / 1000 * (-1),
-                    y: destination.x / 1000 * -1,
-                    duration: 10,
-                    repeat: 1,
-                    delay: 2,
-                    yoyo: true
+                //完了状態
+                {
+                  strength: 2.0, 
+                  radius: 0.5, 
+                  duration: 10,
+                  repeat: 1,
+                  delay: 2,
+                  yoyo: true,
+                  onComplete: () => {
+
+                    // アニメーション1ループ終了1~3秒後にのオブジェクトの移動を許可
+                    setTimeout(() => {
+                      this.moving_flag = !this.moving_flag;
+                    }, random(1000, 3000))
                   },
-                )
-  
-                // オブジェクト位置のアニメーション
-                objectTimeline.to(
-                  this.mesh.position,
-                  
-                  //完了状態
-                  {
-                    x: destination.x / (random_slide_time*1000), 
-                    y: destination.y*(-1) / (random_slide_time*1000), 
-                    z: this.mesh.position.z + (2000 / (random_slide_time*500)),
-                    duration: 10,
-                    repeat: 1,
-                    delay: 2,
-                    yoyo: true
-                  }, "<"
-                )
-                
-                // オブジェクト発光のアニメーション
-                objectTimeline.to(
-                  this.bloomPass,
-                  
-                  //完了状態
-                  {
-                    strength: 2.0, 
-                    radius: 0.5, 
-                    duration: 10,
-                    repeat: 1,
-                    delay: 2,
-                    yoyo: true,
-                    onComplete: () => {
-  
-                      // アニメーション1ループ終了1~3秒後にのオブジェクトの移動を許可
-                      setTimeout(() => {
-                        this.moving_flag = !this.moving_flag;
-                      }, random(1000, 3000))
-                    },
-                  }, "<"
-                )
-  
-                // ウィンドウがアクティブの場合、アニメーション停止（オブジェクト）
-                window.addEventListener('blur', () => {
-                  objectTimeline.pause();
-                });
-                
-                // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
-                window.addEventListener('focus', () => {
-                  objectTimeline.resume();
-                });
-                
-                // オブジェクトの重複移動を防止
-                this.moving_flag = !this.moving_flag
-              }
-  
-          }
-  
+                }, "<"
+              )
+
+              // ウィンドウがアクティブの場合、アニメーション停止（オブジェクト）
+              window.addEventListener('blur', () => {
+                objectTimeline.pause();
+              });
+              
+              // ウィンドウがアクティブの場合、アニメーション再開（オブジェクト）
+              window.addEventListener('focus', () => {
+                objectTimeline.resume();
+              });
+              
+              // オブジェクトの重複移動を防止
+              this.moving_flag = !this.moving_flag
+            }
+
         }
+
       }
   
     }
