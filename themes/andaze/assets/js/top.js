@@ -200,7 +200,7 @@ async function initKeyVisual() {
             
         this.lightOn();
   
-      }, this.fadein_times*this.interval_time + 1000);
+      }, this.fadein_times*this.interval_time + 3000);
   
       window.setTimeout(() => {
         
