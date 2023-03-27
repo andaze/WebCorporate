@@ -138,6 +138,7 @@ async function initKeyVisual() {
       this.mouse = new THREE.Vector2(-1000, -1000);
       this.point = new THREE.Vector2();
       
+      this.isMobile = (typeof window.ontouchstart !== "undefined");
     }
   
     callFunctions() {
@@ -156,12 +157,12 @@ async function initKeyVisual() {
       this.img = new Image();
   
       // 表示させる画像のパスを指定
-      if (typeof window.ontouchstart === "undefined") {
-        // PCの処理
-        this.img.src = "../img/logo_color.png";
-      } else {
+      if (this.isMobile) {
         // スマホの処理
         this.img.src = "../img/logo_color_small.png";
+      } else {
+        // PCの処理
+        this.img.src = "../img/logo_color.png";
       }
       this.img.crossOrigin = "anonymous";
     }
@@ -765,8 +766,52 @@ async function initKeyVisual() {
       // コンテンツ位置までスクロールしたら暗くする
       const dark_cover = document.getElementById('hidden_cover');
   
-      if (typeof window.ontouchstart === "undefined") {
+      if (this.isMobile) {
+
+        window.addEventListener('touchstart', (event) => {
     
+          this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
+          this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
+      
+          this.raycaster.setFromCamera( this.mouse, this.camera );
+      
+          let intersects = this.raycaster.intersectObjects( [target] );
+      
+          this.point.x = intersects[0].point.x;
+          this.point.y = intersects[0].point.y;
+  
+          if(dark_cover.style.opacity == 0) {
+            gsap.to(this.material.uniforms.mousePressed, {
+              duration: 0.3,
+              value: 1,
+              ease: "ease.out(1, 0.3)"
+            });
+          }
+        });
+    
+        window.addEventListener('touchend', (e) => {
+          gsap.to(this.material.uniforms.mousePressed, {
+            duration: 0.3,
+            value: 0,
+            ease: "ease.out(1, 0.3)"
+          });
+        });
+    
+        window.addEventListener('touchmove', (event) => {
+          this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
+          this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
+      
+          this.raycaster.setFromCamera( this.mouse, this.camera );
+      
+          let intersects = this.raycaster.intersectObjects( [target] );
+      
+          this.point.x = intersects[0].point.x;
+          this.point.y = intersects[0].point.y;
+      
+        }, false);
+        
+      } else {
+        
         window.addEventListener('mousemove', (event) => {
           this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
           this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -809,49 +854,6 @@ async function initKeyVisual() {
           });
         });
   
-      } else {
-  
-        window.addEventListener('touchstart', (event) => {
-    
-          this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
-          this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
-      
-          this.raycaster.setFromCamera( this.mouse, this.camera );
-      
-          let intersects = this.raycaster.intersectObjects( [target] );
-      
-          this.point.x = intersects[0].point.x;
-          this.point.y = intersects[0].point.y;
-  
-          if(dark_cover.style.opacity == 0) {
-            gsap.to(this.material.uniforms.mousePressed, {
-              duration: 0.3,
-              value: 1,
-              ease: "ease.out(1, 0.3)"
-            });
-          }
-        });
-    
-        window.addEventListener('touchend', (e) => {
-          gsap.to(this.material.uniforms.mousePressed, {
-            duration: 0.3,
-            value: 0,
-            ease: "ease.out(1, 0.3)"
-          });
-        });
-    
-        window.addEventListener('touchmove', (event) => {
-          this.mouse.x = ( event.changedTouches[0].clientX / this.resized_width ) * 2 - 1;
-          this.mouse.y = - ( event.changedTouches[0].clientY / this.resized_height ) * 2 + 1;
-      
-          this.raycaster.setFromCamera( this.mouse, this.camera );
-      
-          let intersects = this.raycaster.intersectObjects( [target] );
-      
-          this.point.x = intersects[0].point.x;
-          this.point.y = intersects[0].point.y;
-      
-        }, false);
       }
    
     }
@@ -962,9 +964,8 @@ async function initKeyVisual() {
         this.camera.aspect = this.width / (this.height -  this.header_height);
         this.camera.updateProjectionMatrix();
   
-        const isMobile = (typeof window.ontouchstart !== "undefined");
         // カメラ位置とパーティクルサイズをレスポンシブに調整
-        this.updateCameraAndUniforms(isMobile, this.width, this.height, this.camera, this.mesh, nav_block);
+        this.updateCameraAndUniforms(this.isMobile, this.width, this.height, this.camera, this.mesh, nav_block);
   
         // レンダラーのサイズを調整する
         this.renderer.setSize(this.width, this.height -  this.header_height);
