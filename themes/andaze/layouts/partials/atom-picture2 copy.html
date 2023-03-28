@@ -1,0 +1,39 @@
+{{/*  バックアップ  */}}
+
+{{/*  {{ $context := . }}
+{{ $class := default "w-full" "" }}
+{{ $id := default "" "" }}
+{{ $format := default "webp" "" }}
+{{ $hint := default "photo" "" }}
+{{ $src := default "75" "" }}
+{{ $type := default "thumbnail" "" }}
+
+{{ if isset . "context" }}
+    {{ $class = $context.class }}
+    {{ $id = $context.id }}
+    {{ $format = $context.format }}
+    {{ $hint = $context.hint }}
+    {{ $src = $context.src }}
+    {{ $type = $context.type }}
+
+{{ else }}
+    {{ $class = $context.Scratch.Get "class" }}
+    {{ $id = $context.Scratch.Get "id" }}
+    {{ $format = $context.Scratch.Get "format" }}
+    {{ $hint = $context.Scratch.Get "hint" }}
+    {{ $src = $context.Scratch.Get "src" }}
+    {{ $type = $context.Scratch.Get "type" }}
+{{ end }}  */}}
+
+{{ $context := . }}
+
+{{ $class := default "w-full" (or ($context.class) ($context.Scratch.Get "class")) }}
+{{ $id := default "" (or ($context.id) ($context.Scratch.Get "id")) }}
+{{ $format := default "webp" (or ($context.format) ($context.Scratch.Get "format")) }}
+{{ $hint := default "photo" (or ($context.hint) ($context.Scratch.Get "hint")) }}
+{{ $src := default "75" (or ($context.src) ($context.Scratch.Get "src")) }}
+{{ $type := default "thumbnail" (or ($context.type) ($context.Scratch.Get "type")) }}
+ 
+
+<p>Debug: {{ $class }} {{ $id }} {{ $src }}</p>
+
