@@ -19,7 +19,7 @@
 
 {{ $image := "" }}
 
-{{ if $src := (.Scratch.Get "src") }}
+{{ if $src := (or ($context.src) ($context.Scratch.Get "src")) }}
         {{ if (.Page.Resources.GetMatch $src) }}
                 {{ $image = .Page.Resources.GetMatch $src }}
         {{ else if (resources.GetMatch $src) }}
