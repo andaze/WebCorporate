@@ -46,7 +46,7 @@
 {{ $alt := default $image.Title (or ($context.alt) (.Scratch.Get "alt")) }}
 
 {{ $multiply_raito_value := 0 }}
-{{ $aspect_ratio := default "auto" (.Scratch.Get "aspect-ratio") }}
+{{ $aspect_ratio := default "auto" (or ($context.aspect_ratio) (.Scratch.Get "aspect-ratio")) }}
 {{ if ne "auto" $aspect_ratio }}
         {{ $raito_values := (split (humanize $aspect_ratio) " ") }}
         {{ $multiply_raito_value = div (float (index $raito_values 1)) (float (index $raito_values 0)) }}
