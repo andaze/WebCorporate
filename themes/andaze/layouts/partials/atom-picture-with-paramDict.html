@@ -19,21 +19,7 @@
 
 {{ $image := "" }}
 
-{{ if $src := ($context.Scratch.Get "src") }}
-        {{ if (.Page.Resources.GetMatch $src) }}
-                {{ $image = .Page.Resources.GetMatch $src }}
-        {{ else if (resources.GetMatch $src) }}
-                {{ $image = resources.GetMatch $src }}
-        {{ else }}
-                {{ with resources.GetRemote $src }}
-                        {{ with .Err }}
-                                {{ errorf "Not found src target files. %v" . }}
-                        {{ else }}
-                                {{ $image = . }}
-                        {{ end }}
-                {{ end }}
-        {{ end }}
-{{ else if $src := ($context.src) }}
+{{ if $src := ($context.src) }}
     {{ $image = (resources.GetRemote $src) }}
 {{ else }}
         {{ if hugo.IsProduction }}
@@ -43,23 +29,23 @@
         {{ end }}
 {{ end }}
 
-{{ $alt := default $image.Title (or ($context.alt) (.Scratch.Get "alt")) }}
+{{ $alt := default $image.Title $context.alt }}
 
 {{ $multiply_raito_value := 0 }}
-{{ $aspect_ratio := default "auto" (or ($context.aspect_ratio) (.Scratch.Get "aspect-ratio")) }}
+{{ $aspect_ratio := default "auto" $context.aspect_ratio }}
 {{ if ne "auto" $aspect_ratio }}
         {{ $raito_values := (split (humanize $aspect_ratio) " ") }}
         {{ $multiply_raito_value = div (float (index $raito_values 1)) (float (index $raito_values 0)) }}
 {{ end }}
 
-{{ $is_lazy := default true (or ($context.is_lazy) ($context.Scratch.Get "is-lazy")) }}
-{{ $anchor := default "Smart" (or ($context.anchor) ($context.Scratch.Get "anchor")) }}
-{{ $class := default "w-full" (or ($context.class) ($context.Scratch.Get "class")) }}
-{{ $id := default "" (or ($context.id) ($context.Scratch.Get "id")) }}
-{{ $format := default "webp" (or ($context.format) ($context.Scratch.Get "format")) }}
-{{ $hint := default "photo" (or ($context.hint) ($context.Scratch.Get "hint")) }}
-{{ $quolity := default "75" (or ($context.quolity) ($context.Scratch.Get "quolity")) }}
-{{ $type := default "thumbnail" (or ($context.type) ($context.Scratch.Get "type")) }}
+{{ $is_lazy := default true $context.is_lazy }}
+{{ $anchor := default "Smart" $context.anchor }}
+{{ $class := default "w-full" $context.class }}
+{{ $id := default "" $context.id }}
+{{ $format := default "webp" $context.format }}
+{{ $hint := default "photo" $context.hint }}
+{{ $quolity := default "75" $context.quolity }}
+{{ $type := default "thumbnail" $context.type }}
 
 {{ $img_scratch := newScratch }}
 {{ $img_sizes := newScratch }}
