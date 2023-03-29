@@ -218,6 +218,11 @@ export class SlideShow {
             },
             loop: true,
             loopAdditionalSlides: 1,
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+                loadPrevNextAmount: 1
+            },
         });
         this.youtubeSwiper.autoplay.stop();
 
