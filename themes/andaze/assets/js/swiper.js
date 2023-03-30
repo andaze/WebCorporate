@@ -231,14 +231,9 @@ export class SlideShow {
         });
 
         // youtubeSwiper上のサムネクリックしたら自動スライド停止（PCのみ）
-        if (typeof window.ontouchstart === "undefined") {
-            const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
-            thumbnails.forEach((thumbnail) => {
-                thumbnail.addEventListener('click', () => {
-                    this.youtubeSwiper.autoplay.stop();
-                });
-            });
-        }
+        this.youtubeSwiper.on('click', (swiper, e) => {
+            this.youtubeSwiper.autoplay.stop();
+          });
 
         // youtube-section上をマウスオーバーしたら自動スライド開始
         document.getElementById("youtube-section").addEventListener('mouseover', () => {
