@@ -114,15 +114,20 @@
                         (ne .snippet.title "持続可能なシステムを廉価につくる技術 ～サブスクの取捨選択とPaaSのススメ～") 
                     }}
                         <div class="swiper-slide">
-                            {{ $params := dict
-                                "class" "cursor-pointer h-[180px] w-full object-cover m-0 movie-thumbnai"
-                                "id" .id.videoId
-                                "format" "webp"
-                                "hint" "smart"
-                                "src" .snippet.thumbnails.high.url
-                                "type" "thumbnail-lg"
-                            }}
-                            {{ partial "atom-picture-with-paramDict.html" $params }}
+                            <div class="relative">
+                                {{ $params := dict
+                                    "class" "cursor-pointer h-[180px] w-full object-cover m-0 relative z-10 movie-thumbnai"
+                                    "id" .id.videoId
+                                    "format" "webp"
+                                    "hint" "smart"
+                                    "src" .snippet.thumbnails.high.url
+                                    "type" "thumbnail-lg"
+                                }}
+                                {{ partial "atom-picture-with-paramDict.html" $params }}
+                                <div class="flex justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0">
+                                    <div class="animate-spin h-10 w-10 border-4 border-blue-500 rounded-full border-t-transparent"></div>
+                                </div>
+                            </div>
                             <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                         </div>
                     {{ end }}
