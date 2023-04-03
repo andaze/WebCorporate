@@ -68,7 +68,7 @@
                             "src" .snippet.thumbnails.high.url
                             "type" "thumbnail-lg"
                         }}
-                        {{ partial "atom-picture-with-paramDict.html" $params }}
+                        {{ partial "atom-picture2.html" (dict "params" $params) }}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
@@ -89,7 +89,7 @@
                             "src" .snippet.thumbnails.high.url
                             "type" "thumbnail-lg"
                         }}
-                        {{ partial "atom-picture-with-paramDict.html" $params }}
+                        {{ partial "atom-picture2.html" (dict "params" $params) }}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
@@ -105,33 +105,25 @@
         <div #swiperRef="" class="swiper {{ $swiperName }} w-full">
             <div class="swiper-wrapper">
                 {{ range $youtubeMovies.items }}
-                    {{/*  #shortsの動画と固定表示の動画は表示しない  */}}
-                    {{ if and 
-                        (not (in .snippet.title "#shorts")) 
-                        (ne .snippet.title "Company guide from the president. - Andaze Ltd.") 
-                        (ne .snippet.title "アンダーズ株式会社　代表が説明する会社案内") 
-                        (ne .snippet.title "ジェネリックCRMのご紹介 ～限界なくお客様の要望を実現～") 
-                        (ne .snippet.title "持続可能なシステムを廉価につくる技術 ～サブスクの取捨選択とPaaSのススメ～") 
-                    }}
-                        <div class="swiper-slide">
-                            <div class="relative">
-                                {{ $params := dict
-                                    "class" "cursor-pointer h-[180px] w-full object-cover m-0 relative z-10 movie-thumbnail"
-                                    "id" .id.videoId
-                                    "format" "webp"
-                                    "hint" "smart"
-                                    "src" .snippet.thumbnails.high.url
-                                    "type" "thumbnail-lg"
-                                }}
-                                {{ partial "atom-picture-with-paramDict.html" $params }}
-                                <div class="flex justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0">
-                                    <div class="animate-spin h-10 w-10 border-4 border-blue-500 rounded-full border-t-transparent"></div>
-                                </div>
-                            </div>
-                            <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+                    <div class="swiper-slide">
+                        <div class="relative">
+                        {{ $params := dict
+                            "class" "cursor-pointer h-[180px] w-full object-cover m-0 relative z-10 movie-thumbnail"
+                            "id" .id.videoId
+                            "format" "webp"
+                            "hint" "smart"
+                            "src" .snippet.thumbnails.high.url
+                            "type" "thumbnail-lg"
+                        }}
+                        {{ partial "atom-picture2.html" (dict "params" $params) }}
+                        <div class="flex justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0">
+                            <div class="animate-spin h-10 w-10 border-4 border-blue-500 rounded-full border-t-transparent"></div>
                         </div>
+                        </div>
+                        <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
+                    </div>
                     {{ end }}
-                {{ end }}
+
             </div>
         </div>     
     </div>
@@ -142,5 +134,16 @@
 {{ else }}
     {{ partial "organism-section-contents.html" . }}
 {{ end }}
+
+{{ $params := dict
+    "class" "w-full"
+    "format" "webp"
+    "hint" "smart"
+    "quolity" "90"
+    "src" "img/headerLogo.png"
+    "is-lazy" false
+    "type" "thumbnail-lg"
+  }}
+  {{ partial "atom-picture2.html" (dict "params" $params) }}
 
 
