@@ -25,7 +25,8 @@ isDownload: true
 
   </div>
 
-  {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
+  {{< picture class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0" quolity="100" src="img/ebook.jpg" type="thumbnail-lg" >}}
+  
 </div>
 
 {{< download-button

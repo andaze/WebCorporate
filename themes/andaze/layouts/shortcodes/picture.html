@@ -8,26 +8,27 @@ Maximum usage
 
 */}}
 
-{{ .Scratch.Set "alt" (.Get "alt") }}
-{{ .Scratch.Set "anchor" (.Get "anchor") }}
-{{ .Scratch.Set "aspect-ratio" (.Get "aspect") }}
-{{ .Scratch.Set "class" (.Get "class") }}
-{{ .Scratch.Set "id" (.Get "id") }}
-{{ .Scratch.Set "format" (.Get "format") }}
-{{ .Scratch.Set "hint" (.Get "hint") }}
-{{ .Scratch.Set "quolity" (.Get "quolity") }}
-{{ .Scratch.Set "src" (.Get "src") }}
-{{ .Scratch.Set "type" (.Get "type") }}
+{{ $alt := .Get "alt" }}
+{{ $anchor := .Get "anchor" }}
+{{ $class := .Get "class" }}
+{{ $id := .Get "id" }}
+{{ $format := .Get "format" }}
+{{ $hint := .Get "hint" }}
+{{ $quolity := .Get "quolity" }}
+{{ $src := .Get "src" }}
+{{ $type := .Get "type" }}
 
-{{ partial "atom-picture.html" . }}    
 
-{{ .Scratch.Delete "alt" }}
-{{ .Scratch.Delete "anchor" }}
-{{ .Scratch.Delete "aspect-ratio" }}
-{{ .Scratch.Delete "class" }}
-{{ .Scratch.Delete "id" }}
-{{ .Scratch.Delete "format" }}
-{{ .Scratch.Delete "hint" }}
-{{ .Scratch.Delete "quolity" }}
-{{ .Scratch.Delete "src" }}
-{{ .Scratch.Delete "type" }}
+{{ $params := dict 
+    "alt" $alt 
+    "anchor" $anchor 
+    "class" $class 
+    "id" $id 
+    "format" $format 
+    "hint" $hint 
+    "quolity" $quolity 
+    "src" $src 
+    "type" $type 
+}}
+{{ partial "atom-picture.html" (dict "params" $params) }}
+
