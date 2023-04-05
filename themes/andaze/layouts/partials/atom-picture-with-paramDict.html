@@ -9,7 +9,7 @@
         {{ .Scratch.Set "class" "w-full" }}
         {{ .Scratch.Set "format" "webp" }}
         {{ .Scratch.Set "hint" "smart" }}
-        {{ .Scratch.Set "quolity" "90" }}
+        {{ .Scratch.Set "quality" "90" }}
         {{ .Scratch.Set "src" "https://example.com/foo.jpg" }}
         {{ .Scratch.Set "type" "full" }}
 
@@ -44,7 +44,7 @@
 {{ $id := default "" $context.id }}
 {{ $format := default "webp" $context.format }}
 {{ $hint := default "photo" $context.hint }}
-{{ $quolity := default "75" $context.quolity }}
+{{ $quality := default "75" $context.quality }}
 {{ $type := default "thumbnail" $context.type }}
 
 {{ $img_scratch := newScratch }}
@@ -198,8 +198,8 @@
 {{ if ne $multiply_raito_value 0 }}
 
         {{ range $index, $img_size := $img_sizes }}
-                {{ $img_1x_format := (printf "%dx%d %s q%s %s %s" (int (index $img_size "width")) (int (mul (index $img_size "width") $multiply_raito_value)) $format $quolity $anchor $hint) }}
-                {{ $img_2x_format := (printf "%dx%d %s q%s %s %s" (int (mul (index $img_size "width") 2)) (int (mul (mul (index $img_size "width") 2) $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_1x_format := (printf "%dx%d %s q%s %s %s" (int (index $img_size "width")) (int (mul (index $img_size "width") $multiply_raito_value)) $format $quality $anchor $hint) }}
+                {{ $img_2x_format := (printf "%dx%d %s q%s %s %s" (int (mul (index $img_size "width") 2)) (int (mul (mul (index $img_size "width") 2) $multiply_raito_value)) $format $quality $anchor $hint) }}
                 {{ $img_sizes_srcset.SetInMap (index $img_size "name") "1x" ($image.Fill $img_1x_format) }}
                 {{ $img_sizes_srcset.SetInMap (index $img_size "name") "2x" ($image.Fill $img_2x_format) }}
         {{ end }}
@@ -208,8 +208,8 @@
 {{ else }}
         
         {{ range $index, $img_size := $img_sizes }}
-                {{ $img_1x_format := (printf "%dx%d %s q%s %s %s" (int (index $img_size "width")) (int (mul (index $img_size "width") $multiply_raito_value)) $format $quolity $anchor $hint) }}
-                {{ $img_2x_format := (printf "%dx%d %s q%s %s %s" (int (mul (index $img_size "width") 2)) (int (mul (mul (index $img_size "width") 2) $multiply_raito_value)) $format $quolity $anchor $hint) }}
+                {{ $img_1x_format := (printf "%dx%d %s q%s %s %s" (int (index $img_size "width")) (int (mul (index $img_size "width") $multiply_raito_value)) $format $quality $anchor $hint) }}
+                {{ $img_2x_format := (printf "%dx%d %s q%s %s %s" (int (mul (index $img_size "width") 2)) (int (mul (mul (index $img_size "width") 2) $multiply_raito_value)) $format $quality $anchor $hint) }}
                 {{ $img_sizes_srcset.SetInMap (index $img_size "name") "1x" ($image.Resize $img_1x_format) }}
                 {{ $img_sizes_srcset.SetInMap (index $img_size "name") "2x" ($image.Resize $img_2x_format) }}
         {{ end }}

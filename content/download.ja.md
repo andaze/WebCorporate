@@ -26,7 +26,7 @@ isDownload: true
 
   </div>
 
-  {{< picture class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0" quolity="100" src="img/ebook.jpg" type="thumbnail-lg" >}}
+  {{< picture class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0" quality="100" src="img/ebook.jpg" type="thumbnail-lg" >}}
 
 
 </div>
