@@ -4,19 +4,13 @@
         {{ partial "organism-section-homepage-recruit.html" . }}
     </div>
 
-    {{ .Scratch.Set "class" "h-full w-full object-cover object-top" }}
-    {{ .Scratch.Set "format" "webp" }}
-    {{ .Scratch.Set "hint" "smart" }}
-    {{ .Scratch.Set "src" "img/recruit.jpg" }}
-    {{ .Scratch.Set "type" "full" }}
-    {{ .Scratch.Set "is-lazy" false }}
-
-    {{ partial "atom-picture.html" . }}
-
-    {{ .Scratch.Delete "class" }}
-    {{ .Scratch.Delete "format" }}
-    {{ .Scratch.Delete "hint" }}
-    {{ .Scratch.Delete "src" }}
-    {{ .Scratch.Delete "type" }}
-    {{ .Scratch.Delete "is-lazy" }}
+    {{ $params := dict
+        "class" "h-full w-full object-cover object-top"
+        "format" "webp"
+        "hint" "smart"
+        "src" "img/recruit.jpg"
+        "is-lazy" false
+        "type" "full"
+    }}
+    {{ partial "atom-picture.html" (dict "params" $params) }}
 </div>

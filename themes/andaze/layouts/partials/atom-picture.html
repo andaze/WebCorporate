@@ -16,46 +16,51 @@
 */}}
 
 {{ $image := "" }}
+{{ $src := .params.src }}
 
-{{ if $src := (.Scratch.Get "src") }}
+{{ if .params.remote }}
+        {{ if (resources.GetRemote $src) }}
+                {{ $image = (resources.GetRemote $src) }}
+        {{ else }}
+                {{ if hugo.IsProduction }}
+                        {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
+                {{ else }}
+                        {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
+                {{ end }}
+        {{ end }}
+{{ else }}
         {{ if (.Page.Resources.GetMatch $src) }}
                 {{ $image = .Page.Resources.GetMatch $src }}
         {{ else if (resources.GetMatch $src) }}
                 {{ $image = resources.GetMatch $src }}
         {{ else }}
-                {{ with resources.GetRemote $src }}
-                        {{ with .Err }}
-                                {{ errorf "Not found src target files. %v" . }}
-                        {{ else }}
-                                {{ $image = . }}
-                        {{ end }}
+                {{ if hugo.IsProduction }}
+                        {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
+                {{ else }}
+                        {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
                 {{ end }}
-        {{ end }}
-{{ else }}
-        {{ if hugo.IsProduction }}
-                {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
-        {{ else }}
-                {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
         {{ end }}
 {{ end }}
 
-{{ $alt := default $image.Title (.Scratch.Get "alt") }}
+
+
+{{ $alt := default $image.Title .params.alt }}
 
 {{ $multiply_raito_value := 0 }}
-{{ $aspect_ratio := default "auto" (.Scratch.Get "aspect-ratio") }}
+{{ $aspect_ratio := default "auto" .params.aspect_ratio }}
 {{ if ne "auto" $aspect_ratio }}
         {{ $raito_values := (split (humanize $aspect_ratio) " ") }}
         {{ $multiply_raito_value = div (float (index $raito_values 1)) (float (index $raito_values 0)) }}
 {{ end }}
 
-{{ $is_lazy := default true (.Scratch.Get "is-lazy") }}
-{{ $anchor := default "Smart" (.Scratch.Get "anchor") }}
-{{ $class := default "w-full" (.Scratch.Get "class") }}
-{{ $id := default "" (.Scratch.Get "id") }}
-{{ $format := default "webp" (.Scratch.Get "format") }}
-{{ $hint := default "photo" (.Scratch.Get "hint") }}
-{{ $quolity := default "75" (.Scratch.Get "quolity") }}
-{{ $type := default "thumbnail" (.Scratch.Get "type") }}
+{{ $is_lazy := default true .params.is_lazy }}
+{{ $anchor := default "Smart" .params.anchor }}
+{{ $class := default "w-full" .params.class }}
+{{ $id := default "" .params.id }}
+{{ $format := default "webp" .params.format }}
+{{ $hint := default "photo" .params.hint }}
+{{ $quolity := default "75" .params.quolity }}
+{{ $type := default "thumbnail" .params.type }}
 
 {{ $img_scratch := newScratch }}
 {{ $img_sizes := newScratch }}
@@ -263,3 +268,4 @@
         {{ end }}
 
 </picture>
+

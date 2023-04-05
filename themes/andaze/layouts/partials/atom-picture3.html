@@ -17,11 +17,22 @@
 
 {{ $image := "" }}
 {{ $src := .params.src }}
+{{ $page := .page }}
 
-{{ if .params.youtube }}
-        {{ $image = (resources.GetRemote $src) }}
+{{ if .params.remote }}
+        {{ if (resources.GetRemote $src) }}
+                {{ $image = (resources.GetRemote $src) }}
+        {{ else }}
+                {{ if hugo.IsProduction }}
+                        {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
+                {{ else }}
+                        {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
+                {{ end }}
+        {{ end }}
 {{ else }}
-        {{ if (resources.GetMatch $src) }}
+        {{ if ( $page.Resources.GetMatch (printf "%s" $src)) }}
+                {{ $image =  $page.Resources.GetMatch (printf "%s" $src) }}
+        {{ else if (resources.GetMatch $src) }}
                 {{ $image = resources.GetMatch $src }}
         {{ else }}
                 {{ if hugo.IsProduction }}

@@ -1,22 +1,18 @@
-{{ .Scratch.Set "class" "w-full" }}
-{{ .Scratch.Set "format" "webp" }}
-{{ .Scratch.Set "hint" "smart" }}
-{{ .Scratch.Set "quolity" "90" }}
-{{ .Scratch.Set "src" "img/headerLogo.png" }}
-{{ .Scratch.Set "is-lazy" false }}
+{{ $params := dict
+    "class" "w-full"
+    "format" "webp"
+    "hint" "smart"
+    "quolity" "90"
+    "src" "img/headerLogo.png"
+    "is-lazy" false
+}}
 
 {{ if eq (.Lang) ("en") }} 
 <a href="/en" class="flex items-center">
-    {{ partialCached "atom-picture.html" . }}
+    {{ partialCached "atom-picture.html" (dict "params" $params) }}
 </a>
 {{ else }}
 <a href="/ja" class="flex items-center">
-    {{ partialCached "atom-picture.html" . }}
+    {{ partialCached "atom-picture.html" (dict "params" $params) }}
 </a>
 {{ end }}
-
-{{ .Scratch.Delete "class" }}
-{{ .Scratch.Delete "format" }}
-{{ .Scratch.Delete "hint" }}
-{{ .Scratch.Delete "quolity" }}
-{{ .Scratch.Delete "src" }}

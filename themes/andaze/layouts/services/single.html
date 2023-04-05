@@ -22,19 +22,14 @@
                         {{ range .Pages }}
                             <div class="swiper-slide mb-10">
 
-                                {{ .Scratch.Set "class" "w-48 h-72 object-cover my-0 mx-auto" }}
-                                {{ .Scratch.Set "format" "webp" }}
-                                {{ .Scratch.Set "hint" "smart" }}
-                                {{ .Scratch.Set "quolity" "90" }}
-                                {{ if .Page.Params.image }}
-                                    {{ .Scratch.Set "src" .Page.Params.image }}
-                                {{ end }}
-                                    {{ partial "atom-picture.html" . }}
-                                {{ .Scratch.Delete "class" }}
-                                {{ .Scratch.Delete "format" }}
-                                {{ .Scratch.Delete "hint" }}
-                                {{ .Scratch.Delete "quolity" }}
-                                {{ .Scratch.Delete "src" }}
+                                {{ $params := dict
+                                    "class" "w-48 h-72 object-cover my-0 mx-auto"
+                                    "format" "webp"
+                                    "hint" "smart"
+                                    "quolity" "90"
+                                    "src" .Page.Params.image
+                                }}
+                                {{ partial "atom-picture.html" (dict "params" $params) }}
 
                                 <div class="flex flex-col mt-4 w-48 mx-auto">
                                     <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
@@ -67,19 +62,14 @@
                                     <div class="swiper-slide mb-10 shadow-xl">
                                         <a href="{{ .RelPermalink }}">
 
-                                            {{ .Scratch.Set "class" "w-full h-48 object-cover my-0" }}
-                                            {{ .Scratch.Set "format" "webp" }}
-                                            {{ .Scratch.Set "hint" "smart" }}
-                                            {{ .Scratch.Set "quolity" "90" }}
-                                            {{ if .Page.Params.cardImage }}
-                                                {{ .Scratch.Set "src" .Page.Params.cardImage }}
-                                            {{ end }}
-                                                {{ partial "atom-picture.html" . }}
-                                            {{ .Scratch.Delete "class" }}
-                                            {{ .Scratch.Delete "format" }}
-                                            {{ .Scratch.Delete "hint" }}
-                                            {{ .Scratch.Delete "quolity" }}
-                                            {{ .Scratch.Delete "src" }}
+                                            {{ $params := dict
+                                                "class" "w-full h-48 object-cover my-0"
+                                                "format" "webp"
+                                                "hint" "smart"
+                                                "quolity" "90"
+                                                "src" .Page.Params.cardImage
+                                            }}
+                                            {{ partial "atom-picture.html" (dict "params" $params) }}
             
                                             <div class="flex flex-col mt-2 w-48 p-4 mx-auto min-h-[118px] text-left">
                                                 <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>

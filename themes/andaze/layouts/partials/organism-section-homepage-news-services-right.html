@@ -67,9 +67,9 @@
                             "hint" "smart"
                             "src" .snippet.thumbnails.high.url
                             "type" "thumbnail-lg"
-                            "youtube" true
+                            "remote" true
                         }}
-                        {{ partial "atom-picture2.html" (dict "params" $params) }}
+                        {{ partial "atom-picture.html" (dict "params" $params) }}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
@@ -89,9 +89,9 @@
                             "hint" "smart"
                             "src" .snippet.thumbnails.high.url
                             "type" "thumbnail-lg"
-                            "youtube" true
+                            "remote" true
                         }}
-                        {{ partial "atom-picture2.html" (dict "params" $params) }}
+                        {{ partial "atom-picture.html" (dict "params" $params) }}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
@@ -116,9 +116,9 @@
                             "hint" "smart"
                             "src" .snippet.thumbnails.high.url
                             "type" "thumbnail-lg"
-                            "youtube" true
+                            "remote" true
                         }}
-                        {{ partial "atom-picture2.html" (dict "params" $params) }}
+                        {{ partial "atom-picture.html" (dict "params" $params) }}
                         <div class="flex justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0">
                             <div class="animate-spin h-10 w-10 border-4 border-blue-500 rounded-full border-t-transparent"></div>
                         </div>
@@ -137,16 +137,3 @@
 {{ else }}
     {{ partial "organism-section-contents.html" . }}
 {{ end }}
-
-{{ $params := dict
-    "class" "w-full"
-    "format" "webp"
-    "hint" "smart"
-    "quolity" "90"
-    "src" "img/headerLogo.png"
-    "is-lazy" false
-    "type" "thumbnail-lg"
-  }}
-  {{ partial "atom-picture2.html" (dict "params" $params) }}
-
-
