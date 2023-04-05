@@ -129,7 +129,9 @@ async function initKeyVisual() {
   
       // raycaster検知フラグ
       this.detection = false;
-  
+
+      // パーティクル拡散防止フラグ（初回表示バグ防止用）
+      this.stopDiffusion = false;
   
       // パーティクルの頂点座標
       this.particle_pos = new THREE.Vector2();
@@ -138,7 +140,7 @@ async function initKeyVisual() {
       this.time = 0;
       this.move = 0;
       this.raycaster = new THREE.Raycaster();
-      this.mouse = new THREE.Vector2();
+      this.mouse = new THREE.Vector2(-1000, -1000);
       this.point = new THREE.Vector2();
       
     }
@@ -211,64 +213,20 @@ async function initKeyVisual() {
   
       // サイト表示後、拡散したパーティクルが集合する
       this.gather2D();
-  
-  
+
       window.setTimeout(() => {
-  
+            
         this.lightOn();
   
       }, this.fadein_times*this.interval_time + 1000);
   
       window.setTimeout(() => {
-  
+        
         // ロードから一定時間経過後、自動でパーティクルを拡散（アニメーションサイクル生成）
-        let diffusion = null;
-  
-        if(document.getElementById("company_section")) {
-          const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
-  
-          // ページ上部にいる場合アニメーションサイクルを生成
-          if (window.scrollY <= targetForStop && diffusion === null) {
-            diffusion = setInterval(function() {
-              this.autoDiffusion()
-            }.bind(this), 1000);
-          }
-  
-  
-          // アニメーションサイクル破棄＆再生成（scroll, blur focus）
-  
-          window.addEventListener('scroll', () => {
-            if (window.scrollY > targetForStop && diffusion !== null) {
-              // ページ下部ではアニメーションサイクルを破棄
-              clearInterval(diffusion)
-              diffusion = null;
-            } else if (window.scrollY <= targetForStop && diffusion === null) {
-              // ページ上部ではアニメーションサイクルを再生成
-              diffusion = setInterval(function() {
-                this.autoDiffusion()
-              }.bind(this), 1000);
-            }
-          });
-  
-          // ウィンドウが非アクティブとなった場合、アニメーションサイクルを破棄
-          window.addEventListener('blur', () => {
-            if(diffusion !== null) {
-              clearInterval(diffusion)
-              diffusion = null;
-            }
-          });
-  
-          // ウィンドウが再度アクティブとなった場合、アニメーションサイクルを再生成
-          window.addEventListener('focus', () => {
-            if (window.scrollY <= targetForStop && diffusion === null) {
-              diffusion = setInterval(function() {
-                this.autoDiffusion()
-              }.bind(this), 1000);
-            }
-          });
-        }
+        this.diffusionLoop();
   
       }, this.show_guide_time + 500);
+  
     }
   
     setRendere() {
@@ -562,7 +520,7 @@ async function initKeyVisual() {
               onUpdate: () => {
                 particlePositions[3*i] = vertex_position.x;
                 particlePositions[3*i+1] = vertex_position.y;
-              }
+              },
             },
           )
         }
@@ -586,6 +544,56 @@ async function initKeyVisual() {
           duration: 3,
         },
       )
+    }
+
+    diffusionLoop() {
+        let diffusion = null;
+  
+        if(document.getElementById("company_section")) {
+          const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
+  
+          // ページ上部にいる場合アニメーションサイクルを生成
+          if (window.scrollY <= targetForStop && diffusion === null && !this.stopDiffusion) {
+            diffusion = setInterval(function() {
+              this.autoDiffusion()
+            }.bind(this), 1000);
+          }
+  
+  
+          // アニメーションサイクル破棄＆再生成（scroll, blur focus）
+  
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > targetForStop && diffusion !== null) {
+              // ページ下部ではアニメーションサイクルを破棄
+              clearInterval(diffusion)
+              diffusion = null;
+            } else if (window.scrollY <= targetForStop && diffusion === null) {
+              // ページ上部ではアニメーションサイクルを再生成
+              diffusion = setInterval(function() {
+                this.autoDiffusion()
+              }.bind(this), 1000);
+            }
+          });
+  
+          // ウィンドウが非アクティブとなった場合、アニメーションサイクルを破棄
+          window.addEventListener('blur', () => {
+            if(diffusion !== null) {
+              clearInterval(diffusion)
+              diffusion = null;
+            }
+          });
+  
+          // ウィンドウが再度アクティブ となった場合、アニメーションサイクルを再生成
+          window.addEventListener('focus', () => {
+            if (window.scrollY <= targetForStop && diffusion === null) {
+              setTimeout(() => {
+                diffusion = setInterval(function() {
+                  this.autoDiffusion()
+                }.bind(this), 1000);
+              }, 3000)
+            }
+          });
+        }
     }
   
     autoDiffusion() {
@@ -954,7 +962,19 @@ async function initKeyVisual() {
       // // 頂点の移動検知フラグの更新を許可
       this.mesh.geometry.attributes.flag.needsUpdate = true;
   
-      // console.log(this.camera.position)
+      // ウィンドウを開いた直後、ウィンドウが非アクティブとなった場合、拡散禁止
+      window.addEventListener('blur', () => {
+        if(this.stopDiffusion === false) {
+          this.stopDiffusion = true;
+        }
+      });
+
+      // ウィンドウが再度アクティブとなった場合、拡散許可
+      window.addEventListener('focus', () => {
+        if(this.stopDiffusion === true) {
+          this.stopDiffusion = false;
+        }
+      });
     }
   
     showGuide() {
@@ -1005,12 +1025,6 @@ async function initKeyVisual() {
   
         // ヘッダーの高さ
         this.header_height = document.getElementById("header_nav").clientHeight;
-  
-        if(document.getElementById("top_main")) {
-          // トップページmainタグの高さを取得してfooterのmargin-topに設定
-          this.main_height = document.getElementById("top_main").clientHeight;
-          document.querySelector("footer").style.marginTop = this.main_height + "px";
-        }
   
         // ブレイクポイントの設定
         this.width_break_point = 700;
