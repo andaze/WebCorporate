@@ -26,7 +26,7 @@
           "src" .Page.Params.cardImage
           "type" "thumbnail"
         }}
-        {{ partial "atom-picture.html" (dict "params" $params) }}
+        {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
         <div class="px-2 sm:px-0 text-center {{ $heightClass }} sm:h-auto">
             <h2 class="text-black pt-3 sm:pt-6 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Title }}</h2>
             <h2 class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Page.Params.titleEn }}</h2>

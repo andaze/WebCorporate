@@ -12,7 +12,7 @@
       "is-lazy" false
       "type" "thumbnail"
   }}
-  {{ partial "atom-picture.html" (dict "params" $params) }}
+  {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
     <div class="w-48 h-full mx-auto relative" id="anime_nav">
       <div class="h-6 w-6 top-0 left-3 bg-[url('../img/clicked.svg')] bg-cover absolute opacity-0" id="circle"></div>
     </div>

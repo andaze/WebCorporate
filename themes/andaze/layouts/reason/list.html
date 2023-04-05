@@ -44,7 +44,7 @@
                                         "is-lazy" false
                                         "type" "thumbnail-lg"
                                     }}
-                                    {{ partial "atom-picture.html" (dict "params" $params) }}
+                                    {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
                                 </div>
                             {{ end }}
                         </div>
@@ -72,7 +72,7 @@
                                     "is-lazy" false
                                     "type" "thumbnail-lg"
                                 }}
-                                {{ partial "atom-picture.html" (dict "params" $params) }}
+                                {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
                             </div>
                         </div>
 

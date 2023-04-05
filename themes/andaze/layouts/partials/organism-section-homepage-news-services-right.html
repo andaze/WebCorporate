@@ -69,7 +69,7 @@
                             "type" "thumbnail-lg"
                             "remote" true
                         }}
-                        {{ partial "atom-picture.html" (dict "params" $params) }}
+                        {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
@@ -91,7 +91,7 @@
                             "type" "thumbnail-lg"
                             "remote" true
                         }}
-                        {{ partial "atom-picture.html" (dict "params" $params) }}
+                        {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
                         <p class="font-bold pt-5 text-sm">{{ .snippet.title }}</p>
                     </div>
                 {{ end }}
@@ -118,7 +118,7 @@
                             "type" "thumbnail-lg"
                             "remote" true
                         }}
-                        {{ partial "atom-picture.html" (dict "params" $params) }}
+                        {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
                         <div class="flex justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0">
                             <div class="animate-spin h-10 w-10 border-4 border-blue-500 rounded-full border-t-transparent"></div>
                         </div>

@@ -29,7 +29,7 @@
                                     "quolity" "90"
                                     "src" .Page.Params.image
                                 }}
-                                {{ partial "atom-picture.html" (dict "params" $params) }}
+                                {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
 
                                 <div class="flex flex-col mt-4 w-48 mx-auto">
                                     <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
@@ -69,7 +69,7 @@
                                                 "quolity" "90"
                                                 "src" .Page.Params.cardImage
                                             }}
-                                            {{ partial "atom-picture.html" (dict "params" $params) }}
+                                            {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
             
                                             <div class="flex flex-col mt-2 w-48 p-4 mx-auto min-h-[118px] text-left">
                                                 <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
