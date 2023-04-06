@@ -1,10 +1,9 @@
-<div class="w-full h-96 lg:h-[34rem] relative">
-    <div class="absolute inset-0 bg-black opacity-30"></div>
-    <div class="absolute inset-y-16 lg:inset-y-40 w-full text-center">
+<div class="w-full h-96 lg:h-fit relative">
+    <div class="absolute top-1/2 -translate-y-1/2 w-full text-center z-10">
         {{ partial "organism-section-homepage-recruit.html" . }}
     </div>
 
-    {{ .Scratch.Set "class" "h-full w-full object-cover object-top" }}
+    {{ .Scratch.Set "class" "h-full w-full object-cover object-top filter brightness-[.60] relative z-0" }}
     {{ .Scratch.Set "format" "webp" }}
     {{ .Scratch.Set "hint" "smart" }}
     {{ .Scratch.Set "src" "img/recruit.jpg" }}
