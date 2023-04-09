@@ -31,7 +31,7 @@ footerTitileHidden: true
 </div>
 
 {{< download-button
-    class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] rounded-2xl font-bold select-none" btn-text="ダウンロード"
+    btn-class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] !rounded-2xl font-bold select-none py-3 px-8 cursor-pointer" btn-text="ダウンロード" btn-link="https://andaze.com/landing-pages/generic-dx/download/"
 >}}
 
 </div>
