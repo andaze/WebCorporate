@@ -19,9 +19,6 @@ async function init() {
         if (document.querySelector(".sustainabilitySwiper")) {
             swiper.createSustainabilitySwiper();
         }
-        if (document.querySelector(".professionalSwiper")) {
-            swiper.createProfessionalSwiper();
-        }
         if (document.querySelector(".solutionSwiper")) {
             swiper.createSolutionSwiper();
         }
