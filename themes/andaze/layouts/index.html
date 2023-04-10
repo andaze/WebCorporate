@@ -82,6 +82,7 @@
       {{ end }}
     </div>
     <div class="my-20 md:my-36">
+      {{ .Scratch.Set "section" "youtube" }}
       {{ .Scratch.Set "btn-class" "md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white" }}
       {{ .Scratch.Set "btn-link" "https://www.youtube.com/channel/UCfjT9TH2TOy7QRp1X_Ibr4A" }}
       {{ .Scratch.Set "btn-text" "YouTube" }}
@@ -89,6 +90,7 @@
       {{ .Scratch.Delete "btn-text" }}
       {{ .Scratch.Delete "btn-link" }}
       {{ .Scratch.Delete "btn-class" }}
+      {{ .Scratch.Delete "section" }}
     </div>
   </div>
 
