@@ -79,11 +79,6 @@
   </div>
 
   <div class="bg-black py-20 md:py-36">
-    {{ if .Site.GetPage "ir"}}  
-      {{ .Scratch.Set "section" "ir" }}
-      {{ partial "template-section-irnews.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
