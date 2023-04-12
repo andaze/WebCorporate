@@ -48,7 +48,7 @@ Languages:
           url: 'https://andaze.com/job/ja/'
           weight: 7
           post: <i class='fi-xwsuxl-external-link-solid ml-1'></i>
-          identifier: recruit
+          identifier: careers
         - name: お問い合わせ
           url: contact
           weight: 8
@@ -82,7 +82,7 @@ Languages:
         - name: Careers
           url: 'https://andaze.com/job/en/'
           weight: 7
-          identifier: recruit
+          identifier: careers
           post: <i class='fi-xwsuxl-external-link-solid ml-1'></i>
         - name: Contact
           url: contact

@@ -1,4 +1,4 @@
-{{ $class := "w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" }}
+{{ $class := "w-full border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" }}
 
 {{ $youtubeButtonText := "" }}
 {{ if eq (.Lang) ("en")}}
@@ -12,9 +12,9 @@
         <a href="{{ .Permalink }}" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white {{ $class }}">{{ .Title }}</a>
     {{ end }}
 
-{{ else if eq (.Scratch.Get "section") ("recruit") }}
+{{ else if eq (.Scratch.Get "section") ("careers") }}
     {{ with .Site.GetPage (.Scratch.Get "section") }}
-        {{ range where .Site.Menus.main "Identifier" "recruit" }}
+        {{ range where .Site.Menus.main "Identifier" "careers" }}
             <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer" class="md:w-72 bg-black text-white hover:text-black border-gray-50 hover:bg-white {{ $class }}">{{ .Name }}{{ .Post }}</a>
         {{ end }}
     {{ end }}
