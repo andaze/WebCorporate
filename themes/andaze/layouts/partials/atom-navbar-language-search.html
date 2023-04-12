@@ -1,8 +1,0 @@
-<div class="flex items-center md:order-2 mr-5 relative">
-    {{ range $.AllTranslations }}
-            <a class="text-white px-2" href="{{ .RelPermalink }}">{{ .Language.LanguageName }} </a>
-            {{ if eq (.Page.Lang) ("en") }}
-            <span class="text-white absolute left-1/2 -translate-x-1/2"> / </span>
-             {{end}}
-    {{ end }}
-</div>
