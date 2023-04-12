@@ -1,20 +1,15 @@
 import Swiper from 'swiper/bundle';
 
-let target;
-let targetPos;
-let targetHeight;
-
 export class SlideShow {
     constructor() {
         this.newsSwiper;
         this.casestudySwiper;
         this.sustainabilitySwiper;
-        this.professionalSwiper;
         this.youtubeSwiper;
     }
 
-    createNewsSwiper() {
-        this.newsSwiper = new Swiper(".newsSwiper", {
+    createSwiper(container, nextEl, prevEl, isAutoplay = false, isLoop = false, customOptions = {}) {
+        const baseOptions = {
             breakpoints: {
                 280: {
                     slidesPerView: 1,
@@ -28,203 +23,45 @@ export class SlideShow {
             },
             spaceBetween: 30,
             navigation: {
-                nextEl: ".newsNext",
-                prevEl: ".newsPrevious",
+                nextEl,
+                prevEl,
             },
-            // autoplay: {
-            //     delay: 2000,
-            //     disableOnInteraction: false,
-            // },
-            // loop: true,
-            // loopAdditionalSlides: 1,
-        });
-        this.newsSwiper.autoplay.stop();
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: isLoop,
+            loopAdditionalSlides: isLoop ? 1 : 0,
+        };
+
+        const options = { ...baseOptions, ...customOptions };
+
+        const swiper = new Swiper(container, options);
+
+        if (!isAutoplay) {
+            swiper.autoplay.stop();
+        }
+
         window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".newsSwiper", this.newsSwiper, 500);
+            this.handleAutoPlay(container, swiper, 500);
         });
+
+        return swiper;
+    }
+
+    createNewsSwiper() {
+        this.newsSwiper = this.createSwiper(".newsSwiper", ".newsNext", ".newsPrevious");
     }
 
     createCasestudySwiper() {
-        this.casestudySwiper = new Swiper(".casestudySwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                412: {
-                    slidesPerView: 2,
-                },
-                851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".casestudyNext",
-                prevEl: ".casestudyPrevious",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-        });
-        this.casestudySwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".casestudySwiper", this.casestudySwiper, 500);
-        });
+        this.casestudySwiper = this.createSwiper(".casestudySwiper", ".casestudyNext", ".casestudyPrevious", true, true);
     }
 
     createSustainabilitySwiper() {
-        this.sustainabilitySwiper = new Swiper(".sustainabilitySwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                412: {
-                    slidesPerView: 2,
-                },
-                851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".sustainabilityNext",
-                prevEl: ".sustainabilityPrevious",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-        });
-        this.sustainabilitySwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".sustainabilitySwiper", this.sustainabilitySwiper, 500);
-        });
-    }
-
-    createProfessionalSwiper() {
-        let bar = document.querySelector('.professionalProgressbar_in');
-        let speed = 5000;
-        this.professionalSwiper = new Swiper(".professionalSwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                500: {
-                    slidesPerView: 2,
-                },
-                1280: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            on: {
-                slideChangeTransitionStart: function () {
-                    bar.style.transitionDuration = '0s',
-                    bar.style.transform = 'scaleX(0)'
-                },
-                slideChangeTransitionEnd: function () {
-                    bar.style.transitionDuration = speed + 'ms',
-                    bar.style.transform = 'scaleX(1)'
-                },
-            },
-            navigation: {
-                nextEl: ".professionalNext",
-                prevEl: ".professionalPrevious",
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-            speed: 800,
-        });    
-        this.professionalSwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".professionalSwiper", this.professionalSwiper, 500);
-        });
-    }
-
-    createSolutionSwiper() {
-        let bar = document.querySelector('.solotionProgressbar_in');
-        let speed = 5000;
-        this.solutionSwiper = new Swiper(".solutionSwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                500: {
-                    slidesPerView: 2,
-                },
-                1280: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            on: {
-                slideChangeTransitionStart: function () {
-                    bar.style.transitionDuration = '0s',
-                    bar.style.transform = 'scaleX(0)'
-                },
-                slideChangeTransitionEnd: function () {
-                    bar.style.transitionDuration = speed + 'ms',
-                    bar.style.transform = 'scaleX(1)'
-                },
-            },
-            navigation: {
-                nextEl: ".solutionNext",
-                prevEl: ".solutionPrevious",
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-            speed: 800,
-        });    
-        this.solutionSwiper.autoplay.stop();
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".solutionSwiper", this.solutionSwiper, 500);
-        });
+        this.sustainabilitySwiper = this.createSwiper(".sustainabilitySwiper", ".sustainabilityNext", ".sustainabilityPrevious", true, true);
     }
 
     createYoutubeSwiper() {
-        this.youtubeSwiper = new Swiper(".youtubeSwiper", {
-            breakpoints: {
-                280: {
-                    slidesPerView: 1,
-                },
-                412: {
-                    slidesPerView: 2,
-                },
-                851: {
-                    slidesPerView: 3,
-                }
-            },
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".youtubeNext",
-                prevEl: ".youtubePrevious",
-            },
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            loopAdditionalSlides: 1,
-        });
-        this.youtubeSwiper.autoplay.stop();
-
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(".youtubeSwiper", this.youtubeSwiper, 800);
-        });
-
         // youtubeSwiper上のサムネクリックしたら自動スライド停止（PCのみ）
         if (typeof window.ontouchstart === "undefined") {
             const thumbnails = document.querySelectorAll('.movie-thumbnail.youtube-slide');
@@ -239,17 +76,59 @@ export class SlideShow {
         document.getElementById("youtube-section").addEventListener('mouseover', () => {
             this.youtubeSwiper.autoplay.start();
         });
+
+        this.youtubeSwiper = this.createSwiper(".youtubeSwiper", ".youtubeNext", ".youtubePrevious", true, true);
+    }
+
+    
+    createSolutionSwiper() {
+        const bar = document.querySelector('.solotionProgressbar_in');
+        const speed = 5000;
+        const customOptions = {
+            breakpoints: {
+                280: {
+                    slidesPerView: 1,
+                },
+                500: {
+                    slidesPerView: 2,
+                },
+                1280: {
+                    slidesPerView: 3,
+                }
+            },
+            on: {
+                slideChangeTransitionStart: function () {
+                    bar.style.transitionDuration = '0s';
+                    bar.style.transform = 'scaleX(0)';
+                },
+                slideChangeTransitionEnd: function () {
+                    bar.style.transitionDuration = speed + 'ms';
+                    bar.style.transform = 'scaleX(1)';
+                },
+            },
+            autoplay: {
+                delay: speed,
+            },
+            loop: true,
+            loopAdditionalSlides: 1,
+            speed: 800,
+        };
+
+        this.solutionSwiper = this.createSwiper(".solutionSwiper", ".solutionNext", ".solutionPrevious", true, true, customOptions);
     }
 
     handleAutoPlay(swiperElm, swiperName, offsetTop) {
-        this.scroll = window.pageYOffset ;
+        let scroll = window.pageYOffset;
+        let target;
+        let targetPos;
+        let targetHeight;
 
         if (document.querySelector(swiperElm)) {
             target = document.querySelector(swiperElm);
             targetPos = window.pageYOffset + target.getBoundingClientRect().top;
             targetHeight = target.clientWidth;
             
-            if ((this.scroll > targetPos - offsetTop) && (this.scroll < targetPos + targetHeight / 2)) {
+            if ((scroll > targetPos - offsetTop) && (scroll < targetPos + targetHeight / 2)) {
                 swiperName.autoplay.start();
             } else {
                 swiperName.autoplay.stop();
@@ -257,4 +136,3 @@ export class SlideShow {
         }
     }
 }
-

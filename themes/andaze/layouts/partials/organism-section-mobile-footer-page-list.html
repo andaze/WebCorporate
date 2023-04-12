@@ -4,8 +4,35 @@
   {{ $id:= $.Scratch.Get "index" }}
   {{ if .Page.Params.footerTitileHidden }}
   {{ else }}
-   {{ partial "molecule-section-mobile-footer-pagelist.html" (dict "context" . "id" $id) }}
-   {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+    {{ $detailPages:= .Pages }}
+    <div class="flex container mx-auto max-w-none py-5 border-b border-b-gray-600">
+      <div class="w-2/3 text-left">
+        {{ partial "atom-footer-page-title.html" (dict "pageLink" .Permalink "pageTitle" .Title ) }}
+      </div>
+      <div class="w-1/3 text-right">
+        {{ if gt (len $detailPages) (0) }}
+          {{ if .Params.footerHidden }}
+          {{ else }}
+            <a class="inline-block px-2 text-white font-medium text-xs transition duration-150 ease-in-out" data-bs-toggle="collapse" href="#collapseWithScrollbar_{{$id}}" role="button" aria-expanded="false" aria-controls="collapseWithScrollbar_{{$id}}">
+              <svg class="h-4 w-4 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <line x1="12" y1="5" x2="12" y2="19" />  <line x1="5" y1="12" x2="19" y2="12" /></svg>
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+    {{ if gt (len $detailPages) (0) }}
+      {{ if or (eq (.Title) ("News")) (eq (.Title) ("ニュース")) }}
+      {{ else }}
+        <div class="collapse mt-4" id="collapseWithScrollbar_{{$id}}">
+          <ul class="text-left pl-10 pb-5 border-b border-b-gray-600">
+            {{ range .Pages }}
+              {{ partial "atom-footer-page-list.html" . }}
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    {{ end }}
+    {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
   {{ end }}
 {{ end }}
 {{ end }}
