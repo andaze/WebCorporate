@@ -3,6 +3,7 @@ title: "Privacy Policy"
 date: 2022-07-08T11:03:37+09:00
 weight: 0
 footerTitileHidden: true
+url: "privacy-policy"
 ---
 
 Andaze Ltd promotes the protection of personal information by establishing a personal information protection policy as follows, establishing a mechanism for personal information protection, and making all employees aware of the importance of personal information protection and taking measures. I will do it.

@@ -2,6 +2,7 @@
 title: "情報セキュリティ方針"
 date: 2022-06-04T16:04:44+09:00
 weight: 9
+url: "security"
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="inline">情報セキュリティ基本方針</h1>
