@@ -3,24 +3,27 @@
     {{ $class = "hidden" }}
 {{ end }}
 
-<div class="sm:h-auto bg-white shadow-xl bg-opacity-75 flex flex-col {{ $class }}">
-    <div>
-        {{ .Scratch.Set "class" "w-full h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover" }}
-        {{ .Scratch.Set "format" "webp" }}
-        {{ .Scratch.Set "hint" "smart" }}
-        {{ if .Page.Params.cardImage }}
-            {{ .Scratch.Set "src" .Page.Params.cardImage }}
-        {{ end }}
-        {{ .Scratch.Set "type" "thumbnail" }}
-            {{ partial "atom-picture.html" . }}
-        {{ .Scratch.Delete "class" }}
-        {{ .Scratch.Delete "format" }}
-        {{ .Scratch.Delete "hint" }}
-        {{ .Scratch.Delete "src" }}
-        {{ .Scratch.Delete "type" }}
+
+<div class="sm:h-auto bg-white shadow-xl bg-opacity-90 flex flex-col {{ $class }}">
+    <div class="flex flex-col lg:flex-col-reverse gap-2">
         <div class="px-2 sm:px-0 text-center h-auto">
             <span class="text-black pt-3 sm:pt-6 w-fit mx-auto font-bold text-xs sm:text-lg block">{{ .Title }}</span>
             <span class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Page.Params.titleEn }}</span>
+        </div>
+        <div>
+            {{ .Scratch.Set "class" "w-full h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover" }}
+            {{ .Scratch.Set "format" "webp" }}
+            {{ .Scratch.Set "hint" "smart" }}
+            {{ if .Page.Params.cardImage }}
+                {{ .Scratch.Set "src" .Page.Params.cardImage }}
+            {{ end }}
+            {{ .Scratch.Set "type" "thumbnail" }}
+                {{ partial "atom-picture.html" . }}
+            {{ .Scratch.Delete "class" }}
+            {{ .Scratch.Delete "format" }}
+            {{ .Scratch.Delete "hint" }}
+            {{ .Scratch.Delete "src" }}
+            {{ .Scratch.Delete "type" }}
         </div>
     </div>
     <div class="p-2 sm:p-6 text-xs sm:text-base sm:h-auto">
