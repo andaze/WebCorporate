@@ -1,12 +1,12 @@
 {{ $class := "" }}
 {{ if .IsHome  }}
-  {{ $class = "lg:grid-cols-3 xl:grid-cols-4" }}
+  {{ $class = "xl:grid-cols-4" }}
 {{ else }}
-  {{ $class = "lg:grid-cols-5" }}
+  {{ $class = "xl:grid-cols-5" }}
 {{ end }}
 
 {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 {{ $class }} 2xl:grid-cols-6 gap-4 not-prose">
+<div class="grid grid-cols-2 sm:grid-cols-3 {{ $class }} 2xl:grid-cols-6 gap-4 not-prose">
     {{ range .Pages }}
     {{ partial "molecule-services-polaroid-card.html" . }}
     {{ end }}
