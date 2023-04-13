@@ -2,32 +2,39 @@
 {{ $default_class :="w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" }}
 {{ $additional_class := default "" (.Scratch.Get "btn-class") }}
 
-{{ with .Site.GetPage $section }}
+{{ if eq $section "" }}
 
-    {{ $link := default .Permalink (.Scratch.Get "btn-link") }}
-    {{ $text := default .Title (.Scratch.Get "btn-text") }}
+    {{ $link := default "" (.Scratch.Get "btn-link") }}
+    {{ $text := default "" (.Scratch.Get "btn-text") }}
+    
+    <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}" target="_blank" rel="noopener">{{ $text }}</a>
+    
+{{ else }}
 
-    {{ if eq $section "careers" }}
+    {{ with .Site.GetPage $section }}
 
-        {{ range where .Site.Menus.main "Identifier" "careers" }}
-            <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer" class="{{ $default_class }} {{ $additional_class }}">{{ .Name }}{{ .Post }}</a>
+        {{ $link := default .Permalink (.Scratch.Get "btn-link") }}
+        {{ $text := default .Title (.Scratch.Get "btn-text") }}
+
+        {{ if eq $section "careers" }}
+
+            {{ range where .Site.Menus.main "Identifier" "careers" }}
+                <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer" class="{{ $default_class }} {{ $additional_class }}">{{ .Name }}{{ .Post }}</a>
+            {{ end }}
+
+        {{ else }}
+
+            <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
+
         {{ end }}
 
     {{ else }}
 
-        <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
+        {{ $link := default "" (.Scratch.Get "btn-link") }}
+        {{ $text := default "" (.Scratch.Get "btn-text") }}
 
+        <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
+        
     {{ end }}
 
-{{ else }}
-
-    {{ $link := default "" (.Scratch.Get "btn-link") }}
-    {{ $text := default "" (.Scratch.Get "btn-text") }}
-
-    <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}" target="_blank" rel="noopener">{{ $text }}</a>
-
 {{ end }}
-
-{{ .Scratch.Delete "btn-text" }}
-{{ .Scratch.Delete "btn-link" }}
-{{ .Scratch.Delete "btn-class" }}
