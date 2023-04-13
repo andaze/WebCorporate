@@ -1,2 +1,12 @@
-{{ partial "molecule-white-transparent-top-title.html" . }}
-{{ partial "molecule-white-transparent-top-text.html" . }}
+<h2 class="font-extrabold">
+    <span class="text-4xl md:text-5xl lg:text-6xl">
+        {{ .Page.Params.topTitle  }}
+    </span>
+    <span class="block mt-2 lg:mt-4 text-sm md:text-base">
+        {{ .Page.Params.topSubtitle  }}
+    </span>
+</h2>
+<h3 class="text-xl lg:text-4xl font-bold mt-10 lg:mt-20 mb-6 lg:mb-10">{{ .Page.Params.topTextTitle }}</h3>
+<div class="mb-12 leading-8">
+    {{ .Page.Params.topTextContent }}
+</div>

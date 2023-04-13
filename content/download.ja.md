@@ -9,8 +9,8 @@ footerTitileHidden: true
 <div class="flex flex-col md:flex-row md:gap-8 lg:gap-0 max-w-screen-2xl mx-auto">
   <div class="md:w-2/3 lg:w-[560px]">
 
-  <h2 class="text-2xl md:text-4xl font-bold mb-4">無料PDFブック「PaaS」のススメ</h2>
-  <p class="text-lg font-bold">持続可能なシステムを「安くつくる」技術(2022年度版)</p>
+  <h2 class="text-3xl md:text-2xl lg:text-4xl font-bold mb-4">無料PDFブック「PaaS」のススメ</h2>
+  <p class="lg:text-lg font-bold">持続可能なシステムを「安くつくる」技術(2022年度版)</p>
   
   <P class="mt-12">安価で融通の利くシステム開発について探しているものの、どれもピンとこないと悩んでいませんか？本書は弊社がPaaSを使ってクライアント様の課題を解決し、IT投資を成功させてきたノウハウをご紹介しています。</p>
 
@@ -28,6 +28,6 @@ footerTitileHidden: true
   >}}
   </div>
 
-  {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
+  {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-full md:w-96 lg:w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
 </div>
 

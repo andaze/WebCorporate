@@ -19,9 +19,6 @@ async function init() {
         if (document.querySelector(".sustainabilitySwiper")) {
             swiper.createSustainabilitySwiper();
         }
-        if (document.querySelector(".professionalSwiper")) {
-            swiper.createProfessionalSwiper();
-        }
         if (document.querySelector(".solutionSwiper")) {
             swiper.createSolutionSwiper();
         }
@@ -31,7 +28,7 @@ async function init() {
     }
 
     if (document.getElementById("youtubeList")) {
-        const youtube = await new youtuberScript.handleYoutube();
+        const youtube = await youtuberScript.handleYoutube();
     }
     if (document.getElementById('random_video')) {
         const video = await videorScript.handleVideo();
