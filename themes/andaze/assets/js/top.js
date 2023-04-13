@@ -125,8 +125,8 @@ async function initKeyVisual() {
       // raycaster検知フラグ
       this.detection = false;
 
-      // パーティクル拡散防止フラグ（初回表示バグ防止用）
-      this.stopDiffusion = false;
+      // アニメーションフラグ
+      this.shouldAnimate = true;
   
       // パーティクルの頂点座標
       this.particle_pos = new THREE.Vector2();
@@ -504,7 +504,7 @@ async function initKeyVisual() {
           const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
   
           // ページ上部にいる場合アニメーションサイクルを生成
-          if (window.scrollY <= targetForStop && diffusion === null && !this.stopDiffusion) {
+          if (window.scrollY <= targetForStop && diffusion === null && this.shouldAnimate) {
             diffusion = setInterval(function() {
               this.autoDiffusion()
             }.bind(this), 1000);
@@ -845,14 +845,6 @@ async function initKeyVisual() {
       
         }, false);
   
-        // ウィンドウが非アクティブの場合、アニメーション停止
-        window.addEventListener('blur', () => {
-          gsap.to(this.material.uniforms.mousePressed, {
-            duration: 0.3,
-            value: 0,
-            ease: "ease.out(1, 0.3)"
-          });
-        });
   
       }
    
@@ -860,6 +852,9 @@ async function initKeyVisual() {
   
     animate() {
   
+      if (!this.shouldAnimate) {
+        return;
+      }
       this.time++;
       this.composer.setSize( window.innerWidth, window.innerHeight );
       this.composer.render();
@@ -898,15 +893,14 @@ async function initKeyVisual() {
   
       // ウィンドウを開いた直後、ウィンドウが非アクティブとなった場合、拡散禁止
       window.addEventListener('blur', () => {
-        if(this.stopDiffusion === false) {
-          this.stopDiffusion = true;
-        }
+        this.shouldAnimate = false;
       });
 
       // ウィンドウが再度アクティブとなった場合、拡散許可
       window.addEventListener('focus', () => {
-        if(this.stopDiffusion === true) {
-          this.stopDiffusion = false;
+        if (!this.shouldAnimate) {
+          this.shouldAnimate = true;
+          this.animate(); // タブがアクティブになったときにアニメーションを再開
         }
       });
     }
