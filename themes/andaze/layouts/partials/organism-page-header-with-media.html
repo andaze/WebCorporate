@@ -1,16 +1,23 @@
-{{ if .Page.Params.headerImage }}
-<div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
-    {{partial "molecule-section-header-image.html" . }}
-</div>
+{{ $class := "" }}
+{{ if .Page.Params.headerVideo }}
+    {{ $class = "" }}
 {{ else }}
-    {{ if .Page.Params.headerVideo }}
+    {{ $class = "pt-20" }}
+{{ end  }}
+
+{{ if and .Page.Params.headerImage (ne .Page.Params.headerImage.imageName "") }}
     <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
-        {{partial "molecule-section-header-video.html" . }}
+        {{partial "molecule-section-header-image.html" . }}
     </div>
+{{ else }}
+    {{ if and .Page.Params.headerVideo (ne .Page.Params.headerVideo.videoName "") }}
+        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
+            {{partial "molecule-section-header-video.html" . }}
+        </div>
     {{ end }}
 {{ end }}
-<div class="mx-auto px-5 lg:px-28 py-10 {{ if .Page.Params.headerVideo }} {{ else }} pt-20 {{ end  }}">
-    <div class="list-detail-container ">
+<div class="container mx-auto px-5 lg:px-28 py-10 {{ $class }}">
+    <div class="mx-auto lg:mx-0">
         {{ partial "breadcrumbs.html" . }}
     </div>
 </div>
