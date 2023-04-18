@@ -27,6 +27,11 @@ html.is-animating .transition-fade {
     font-size: 0.82rem;
   }
 }
+
+  .list-detail-container{
+    max-width: 970px;
+    margin: 0 auto;
+  }
   
   .arrow-item{
     position: relative;
