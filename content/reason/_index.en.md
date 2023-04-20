@@ -13,11 +13,9 @@ topTextContent: Andaze is a group of specialists working in various fields. Our 
 footerHidden: true
 ---
 
-# Why Choose Us
+## Working as one, we complete projects that give you a competitive advantage.
 
 {{< space height="h-10" >}}
-
-## Working as one, we complete projects that give you a competitive advantage.
 
 Andaze is chosen by our clients because we are responsible for all processes from strategy to operation and maintenance.  
 
@@ -65,31 +63,31 @@ From strategic planning to design, development, operation and maintenance, we ha
 In order to improve our organizational capabilities, we have acquired certifications, accreditations, and corporate licenses in various areas, including Microsoft.
 
 
-<div class="grid md:grid-cols-3 sm:grid-cols-2 md:gap-4 mt-10">
+<ul class="grid md:grid-cols-3 sm:grid-cols-2 md:gap-4 mt-10">
 
-<div class="flex flex-col justify-center">
+<li class="flex flex-col justify-center">
 {{< picture alt="Image Not Available" src="img/reason/certification/certification_1.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</div>
+</li>
 
-<div class="flex flex-col justify-center">
+<li class="flex flex-col justify-center">
 {{< picture alt="Image Not Available" src="img/reason/certification/certification_2.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</div>
+</li>
 
-<div class="flex flex-col justify-center">
+<li class="flex flex-col justify-center">
 {{< picture alt="Image Not Available" src="img/reason/certification/certification_3.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</div>
+</li>
 
-<div class="flex flex-col justify-center">
+<li class="flex flex-col justify-center">
 {{< picture alt="Image Not Available" src="img/reason/certification/certification_4.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</div>
+</li>
 
-<div class="flex flex-col justify-center">
+<li class="flex flex-col justify-center">
 {{< picture alt="Image Not Available" src="img/reason/certification/certification_5.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</div>
+</li>
 
-<div class="flex flex-col justify-center">
+<li class="flex flex-col justify-center">
 {{< picture alt="Image Not Available" src="img/reason/certification/certification_6.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</div>
+</li>
 
 
-</div>
+</ul>
