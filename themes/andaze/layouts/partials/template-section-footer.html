@@ -18,22 +18,26 @@
 
       <div class="p-4 text-center md:p-0 md:text-left">
         <hr class="opacity-25" />
-        <div class="grid grid-cols-1 gap-4 text-gray-500 lg:grid-cols-2">
-            <div
+        <nav class="grid grid-cols-1 gap-4 text-gray-500 lg:grid-cols-2">
+            <ul
                 class="lg-w-full mx-auto w-60 py-8 text-center md:w-72 md:w-full lg:text-left"
             >
-                {{ .Scratch.Set "kind" "privacy-policy" }}
-                {{ partial "atom-footer-policy-link.html" . }}
-                {{ .Scratch.Delete "kind" }}
-
-                {{ .Scratch.Set "kind" "terms" }}
-                {{ partial "atom-footer-policy-link.html" . }}
-                {{ .Scratch.Delete "kind" }}
-
-                {{ .Scratch.Set "kind" "sitemap" }}
-                {{ partial "atom-footer-policy-link.html" . }}
-                {{ .Scratch.Delete "kind" }}
-            </div>
+                <li class="inline-block">
+                  {{ .Scratch.Set "kind" "privacy-policy" }}
+                  {{ partial "atom-footer-policy-link.html" . }}
+                  {{ .Scratch.Delete "kind" }}
+                </li>
+                <li class="inline-block">
+                  {{ .Scratch.Set "kind" "terms" }}
+                  {{ partial "atom-footer-policy-link.html" . }}
+                  {{ .Scratch.Delete "kind" }}
+                </li>
+                <li class="inline-block">
+                  {{ .Scratch.Set "kind" "sitemap" }}
+                  {{ partial "atom-footer-policy-link.html" . }}
+                  {{ .Scratch.Delete "kind" }}
+                </li>
+            </ul>
             <div
                 class="lg-w-full mx-auto w-60 py-8 text-center md:w-72 md:w-full lg:text-right"
             >
@@ -42,7 +46,7 @@
                     {{ partial "atom/a-editurl.html" . }}
                 </p>
             </div>
-        </div>
+        </nav>
       </div>
     </div>
     
