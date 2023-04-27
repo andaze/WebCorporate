@@ -115,11 +115,16 @@
 </script>
 
 {{ $opts := "" }}
+{{ $opts2 := "" }}
 {{ if hugo.IsProduction }}
     {{ $opts = dict "targetPath" "top.js" "minify" true }}
+    {{ $opts2 = dict "targetPath" "worker.js" "minify" true }}
 {{ else }}
     {{ $opts = dict "targetPath" "top.js" "minify" false }}
+    {{ $opts2 = dict "targetPath" "worker.js" "minify" false }}
 {{ end }}
 {{ $built := resources.Get "js/top.js" | js.Build $opts }}
+{{ $built2 := resources.Get "js/worker.js" | js.Build $opts2 }}
+<script defer type="text/javascript" src="{{ $built2.RelPermalink }}"></script>
 <script defer type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 

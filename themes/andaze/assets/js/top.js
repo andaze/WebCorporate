@@ -87,7 +87,7 @@ async function initKeyVisual() {
   
   class Sketch {
     constructor() {
-  
+    
       // シーンの作成
       this.scene = new THREE.Scene();
   
@@ -139,14 +139,13 @@ async function initKeyVisual() {
       this.point = new THREE.Vector2();
       
       this.isMobile = (typeof window.ontouchstart !== "undefined");
+
+      this.worker = new Worker("../worker.js");
+      this.worker.addEventListener('message', (event) => this.handleWorkerMessage(event));
     }
   
     callFunctions() {
-      this.img.addEventListener('load', () => {
-        this.init();
-        this.animate();
-        this.setSize();
-      });
+      // this.setImaxge();
     }
   
     setImage() {
@@ -162,6 +161,45 @@ async function initKeyVisual() {
         this.img.src = "../img/logo_color.png";
       }
       this.img.crossOrigin = "anonymous";
+  
+      // console.log('setImage')
+      this.img.addEventListener('load', () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.img.width;
+        canvas.height = this.img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(this.img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      
+        this.worker.postMessage({
+          type: 'initImageData',
+          imageData: imageData,
+          width: this.img.width,
+          height: this.img.height,
+          ratio: 2.0
+        });
+      });
+    }
+
+    // Workerからのメッセージを処理する関数
+    handleWorkerMessage(event) {
+
+      const { type, imageData } = event.data;
+  
+      switch (type) {
+        case 'imageData':
+          // 画像データの変換が完了したら、処理を続行
+          this.pixcel_img = imageData;
+  
+          // init() 関数を呼び出す
+          this.init();
+          this.animate();
+          this.setSize();
+          break;
+  
+        default:
+          console.error('Unknown message type:', type);
+      }
     }
   
     init() {
@@ -205,9 +243,6 @@ async function initKeyVisual() {
     addObjects() {
       // ジオメトリーの作成
       this.geometry = new THREE.BufferGeometry();
-  
-      // 画像の変換（ImagePixel関数）
-      this.pixcel_img = this.ImagePixel(this.img, this.img.width, this.img.height, 2.0);
       
       // 変換後の画像の頂点座標情報抽出
       const position = new THREE.BufferAttribute(
@@ -285,57 +320,9 @@ async function initKeyVisual() {
       this.particleFlag = this.mesh.geometry.attributes.flag.array;
   
       this.scene.add( this.mesh );
+      // console.log(this.scene)
     }
   
-    ImagePixel(path, w, h, ratio) {
-  
-      // canvasの設定
-      this.ctx = this.canvas.getContext("2d");
-      this.canvas_width = w;
-      this.canvas_height = h;
-      this.canvas.width = this.canvas_width;
-      this.canvas.height = this.canvas_height;
-  
-      // 画像データの描画
-      this.ctx.drawImage(path, 0, 0);
-      this.data = this.ctx.getImageData(0, 0, this.canvas_width, this.canvas_height).data;
-      // 座標情報
-      this.position = [];
-      // 色情報
-      this.color = [];
-      // 透明度
-      this.alpha = [];
-  
-      for (let y = 0; y < this.canvas_height; y += ratio) {
-        for (let x = 0; x < this.canvas_width; x += ratio) {
-  
-          // 配列内の任意の[x、y]ピクセルの位置を取得
-          this.index = (y * this.canvas_width + x) * 4;
-  
-          // webglは原点が中心となり、xは右がプラス左がマイナス。yは上がプラス下がマイナス。
-          this.pX = x - this.canvas_width / 2;
-          this.pY = -(y - this.canvas_height / 2);
-          this.pZ = 0;
-  
-  
-          this.r = this.data[this.index + 0] / 255;
-          this.g = this.data[this.index + 1] / 255;
-          this.b = this.data[this.index + 2] / 255;
-  
-  
-          // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
-          this.a = this.data[this.index + 3] / 255;
-          
-          // 座標、色、透明度の値を配列に追加
-          if (this.a > 0.5) {
-            this.position.push(this.pX, this.pY, this.pZ), this.color.push(this.r, this.g, this.b), this.alpha.push(this.a);
-          }
-        }
-      }
-  
-      return { position: this.position, color: this.color, alpha: this.alpha };
-  
-    }
   
     animate() {
   
@@ -403,17 +390,20 @@ async function initKeyVisual() {
   await activate();
   
   function activate() {
-    if (document.querySelector('#webgl')) {
-    
-        surround = new Surround();
-        sketch = new Sketch();
-        sketch.setImage();
-    
-        loading_background.style.opacity = 0;
+    document.addEventListener('DOMContentLoaded', (event) => {
+      if (document.querySelector('#webgl')) {
 
-        surround.callFunctions();
-        sketch.callFunctions();
-    }
+          surround = new Surround();
+          sketch = new Sketch();
+    
+          sketch.setImage();
+      
+          loading_background.style.opacity = 0;
+    
+          surround.callFunctions();
+          sketch.callFunctions();
+        }
+    })
   }
 
 }
