@@ -193,9 +193,25 @@ async function initKeyVisual() {
   
           // init() 関数を呼び出す
           this.init();
-          this.animate();
-          this.setSize();
+          
           break;
+        
+          case 'generatedData':
+            // ランダムデータとフラグの処理をここで行う
+            const rand = new THREE.BufferAttribute(new Float32Array(event.data.rand), 2);
+            const flag = new THREE.BufferAttribute(new Float32Array(event.data.flag), 1);
+      
+            // ジオメトリーに "rand" と "flag" を登録
+            this.geometry.setAttribute("rand", rand);
+            this.geometry.setAttribute("flag", flag);
+            
+      
+            // パーティクルの移動許可フラグの配列
+            this.particleFlag = this.mesh.geometry.attributes.flag.array;
+
+            this.animate();
+            this.setSize();
+            break;
   
         default:
           console.error('Unknown message type:', type);
@@ -241,6 +257,7 @@ async function initKeyVisual() {
     }
   
     addObjects() {
+
       // ジオメトリーの作成
       this.geometry = new THREE.BufferGeometry();
       
@@ -249,7 +266,7 @@ async function initKeyVisual() {
         new Float32Array(this.pixcel_img.position),
         3
       );
-  
+
       // 変換後の画像の色情報抽出
       const color = new THREE.BufferAttribute(
         new Float32Array(this.pixcel_img.color),
@@ -262,27 +279,17 @@ async function initKeyVisual() {
         1
       );
         
-      // ランダム値の生成
-      const rand = [];
-      // オブジェクト移動許可フラグの生成
-      const flag = [];
-
+      // ランダム値とオブジェクト移動許可フラグの生成は worker.js で行う
       this.vertces = this.pixcel_img.position.length / 3;  // 頂点の数
+      this.worker.postMessage({
+        type: 'generateData',
+        vertces: this.vertces
+      });
 
-      for (let i = 0; i < this.vertces; i++) {
-        rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
-        flag.push(1);
-      }
-      const rands = new THREE.BufferAttribute(new Float32Array(rand), 2);
-      const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
-      
       // 各パラメータをジオメトリーに登録
       this.geometry.setAttribute("position", position);
       this.geometry.setAttribute("color", color);
       this.geometry.setAttribute("alpha", alpha);
-      this.geometry.setAttribute("rand", rands);
-      this.geometry.setAttribute("flag", flags);
-  
   
       // マテリアルの作成
       this.material = new THREE.RawShaderMaterial({
@@ -316,12 +323,12 @@ async function initKeyVisual() {
       this.particlePositions = this.attribute.array;
       // パーティクルの透明度の配列
       this.particleAlpha = this.mesh.geometry.attributes.alpha.array;
-      // パーティクルの移動許可フラグの配列
-      this.particleFlag = this.mesh.geometry.attributes.flag.array;
+     
   
       this.scene.add( this.mesh );
       // console.log(this.scene)
     }
+
   
   
     animate() {

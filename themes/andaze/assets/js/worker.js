@@ -1,13 +1,33 @@
 self.addEventListener('message', (event) => {
-  const { type, imageData, width, height, ratio } = event.data;
   console.log('Worker received message:', event.data);  // 受信メッセージのログ出力
+  const { type } = event.data;
 
   if (type === 'initImageData') {
+    const { imageData, width, height, ratio } = event.data;
     const processedImageData = ImagePixel(imageData, width, height, ratio);
     self.postMessage({ type: 'imageData', imageData: processedImageData });
     console.log('Worker sent message:', { type: 'imageData', imageData: processedImageData });  // 送信メッセージのログ出力
   }
+
+  if (type === 'generateData') {
+    const vertces = event.data.vertces;
+
+    const rand = [];
+    const flag = [];
+    for (let i = 0; i < vertces; i++) {
+      rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
+      flag.push(1);
+    }
+
+    // 生成したデータをメインスクリプトに返す
+    self.postMessage({
+      type: 'generatedData',
+      rand: rand,
+      flag: flag
+    });
+  }
 });
+
 
 function ImagePixel(imageData, w, h, ratio) {
   const offscreenCanvas = new OffscreenCanvas(w, h);
