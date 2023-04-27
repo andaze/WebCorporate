@@ -12,9 +12,7 @@ headerImage:
 
 {{< space height="h-10" >}}
 
-<p class="font-bold text-xl">
-Andaze was founded in 2016. The impetus for the company's founding came from my trip to India in 2011. What I experienced there, what I felt firsthand, and what I wondered about.... As a result of my search for what I could do and the pursuit of my ideals, Andaze was born.
-</p>
+**Andaze was founded in 2016. The impetus for the company's founding came from my trip to India in 2011. What I experienced there, what I felt firsthand, and what I wondered about.... As a result of my search for what I could do and the pursuit of my ideals, Andaze was born.**
 
 In recent years, sustainability has been positioned as an important factor in management strategy, and we have been working to provide our employees, who come from a variety of backgrounds including nationalities, with a diverse and personalized work style that allows them to work fully remotely, and to accelerate the business value generated from this work style. Our pioneering efforts are directly linked to sustainability.
 

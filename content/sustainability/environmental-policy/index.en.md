@@ -12,7 +12,7 @@ newsimg: environment-policy.jpg
 
 {{< space height="h-4" >}}
 
-### **We at Andaze have established the following Environmental Policy as a guideline to fulfill our responsibility toward the realization of a sustainable society.**
+**We at Andaze have established the following Environmental Policy as a guideline to fulfill our responsibility toward the realization of a sustainable society.**
 
 {{< space height="h-10" >}}
 
