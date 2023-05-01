@@ -125,6 +125,6 @@
 {{ end }}
 {{ $built := resources.Get "js/top.js" | js.Build $opts }}
 {{ $built2 := resources.Get "js/worker.js" | js.Build $opts2 }}
-<script defer type="text/javascript" src="{{ $built2.RelPermalink }}"></script>
-<script defer type="text/javascript" src="{{ $built.RelPermalink }}"></script>
+<script async type="text/javascript" src="{{ $built2.RelPermalink }}"></script>
+<script async type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 

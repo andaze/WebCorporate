@@ -12,18 +12,34 @@ self.addEventListener('message', (event) => {
   if (type === 'generateData') {
     const vertces = event.data.vertces;
 
+    // ランダム値の生成
     const rand = [];
+    // オブジェクト移動許可フラグの生成
     const flag = [];
+      // インタラクションに必要なパラメータの生成
+    const speed = [];
+    const offset = [];
+    const press = [];
+    const direction = [];
+
     for (let i = 0; i < vertces; i++) {
       rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
       flag.push(1);
+      speed.push(random(-1000, 1000));
+      offset.push(random(0.4, 1));
+      press.push(random(0.4, 1));
+      direction.push(Math.random() > 0.5 ? 1 : -1);
     }
 
     // 生成したデータをメインスクリプトに返す
     self.postMessage({
       type: 'generatedData',
       rand: rand,
-      flag: flag
+      flag: flag,
+      speed: speed,
+      offset: offset,
+      press: press,
+      direction: direction,
     });
   }
 });
@@ -73,4 +89,8 @@ function ImagePixel(imageData, w, h, ratio) {
   }
 
   return { position: position, color: color, alpha: alpha };
+}
+
+function random(a, b) {
+  return a + (b - a) * Math.random();
 }
