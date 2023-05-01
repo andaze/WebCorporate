@@ -87,7 +87,7 @@ async function initKeyVisual() {
   
   class Sketch {
     constructor() {
-  
+    
       // シーンの作成
       this.scene = new THREE.Scene();
   
@@ -139,17 +139,13 @@ async function initKeyVisual() {
       this.point = new THREE.Vector2();
       
       this.isMobile = (typeof window.ontouchstart !== "undefined");
+
+      this.worker = new Worker("../worker.js");
+      this.worker.addEventListener('message', (event) => this.handleWorkerMessage(event));
     }
   
     callFunctions() {
-      this.img.addEventListener('load', () => {
-        this.init();
-        this.mouseInteraction();
-        this.animate();
-        this.showGuide();
-        this.setSize();
-        this.resize();
-      });
+      // this.setImaxge();
     }
   
     setImage() {
@@ -165,6 +161,72 @@ async function initKeyVisual() {
         this.img.src = "../img/logo_color.png";
       }
       this.img.crossOrigin = "anonymous";
+  
+      // console.log('setImage')
+      this.img.addEventListener('load', () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.img.width;
+        canvas.height = this.img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(this.img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      
+        this.worker.postMessage({
+          type: 'initImageData',
+          imageData: imageData,
+          width: this.img.width,
+          height: this.img.height,
+          ratio: 2.0
+        });
+      });
+    }
+
+    // Workerからのメッセージを処理する関数
+    handleWorkerMessage(event) {
+
+      const { type, imageData } = event.data;
+  
+      switch (type) {
+        case 'imageData':
+          // 画像データの変換が完了したら、処理を続行
+          this.pixcel_img = imageData;
+  
+          // init() 関数を呼び出す
+          this.init();
+          
+          break;
+        
+          case 'generatedData':
+            // ランダムデータとフラグの処理をここで行う
+            const rands = new THREE.BufferAttribute(new Float32Array(event.data.rand), 2);
+            const flags = new THREE.BufferAttribute(new Float32Array(event.data.flag), 1);
+            const speeds = new THREE.BufferAttribute(new Float32Array(event.data.speed), 1);
+            const offsets = new THREE.BufferAttribute(new Float32Array(event.data.offset), 1);
+            const presses = new THREE.BufferAttribute(new Float32Array(event.data.press), 1);
+            const directions = new THREE.BufferAttribute(new Float32Array(event.data.direction), 1);
+      
+            // ジオメトリーに "rand" と "flag" を登録
+            this.geometry.setAttribute("rand", rands);
+            this.geometry.setAttribute("flag", flags);
+            this.geometry.setAttribute("aSpeed", speeds);
+            this.geometry.setAttribute("aOffset", offsets);
+            this.geometry.setAttribute("aPress", presses); 
+            this.geometry.setAttribute("aDirection", directions); 
+      
+            // パーティクルの移動許可フラグの配列
+            this.particleFlag = this.mesh.geometry.attributes.flag.array;
+
+            this.animate();
+            this.animateParticles();
+            this.mouseInteraction();
+            this.showGuide();
+            this.setSize();
+            this.resize();
+            break;
+  
+        default:
+          console.error('Unknown message type:', type);
+      }
     }
   
     init() {
@@ -173,14 +235,13 @@ async function initKeyVisual() {
   
       // オブジェクトをシーンに追加
       this.addObjects();
-  
-  
+
       // ローディング画面除去
       this.removeLoadingEnd();
-  
+
       // フェードイン実行（FadeIn関数）
       this.fadeParticles(this.fadein_times-1);
-  
+
       // フラグ反転
       window.setTimeout(function(){this.moving_flag = !this.moving_flag}.bind(this), this.fadein_times*this.interval_time);
       window.setTimeout(function(){
@@ -192,8 +253,9 @@ async function initKeyVisual() {
           }
         )
       }.bind(this), this.fadein_times*this.interval_time);
-      
-  
+    }
+
+    animateParticles() {
       // サイト表示後、拡散したパーティクルが集合する
       this.gather2D(this.fadein_times-1, this.interval_time);
 
@@ -202,14 +264,13 @@ async function initKeyVisual() {
         this.lightOn();
   
       }, this.fadein_times*this.interval_time + 3000);
-  
+
       window.setTimeout(() => {
         
         // ロードから一定時間経過後、自動でパーティクルを拡散（アニメーションサイクル生成）
         this.diffusionLoop();
   
       }, this.show_guide_time + 500);
-  
     }
   
     setRendere() {
@@ -242,18 +303,16 @@ async function initKeyVisual() {
     }
   
     addObjects() {
+
       // ジオメトリーの作成
       this.geometry = new THREE.BufferGeometry();
-  
-      // 画像の変換（ImagePixel関数）
-      this.pixcel_img = this.ImagePixel(this.img, this.img.width, this.img.height, 2.0);
       
       // 変換後の画像の頂点座標情報抽出
       const position = new THREE.BufferAttribute(
         new Float32Array(this.pixcel_img.position),
         3
       );
-  
+
       // 変換後の画像の色情報抽出
       const color = new THREE.BufferAttribute(
         new Float32Array(this.pixcel_img.color),
@@ -266,45 +325,17 @@ async function initKeyVisual() {
         1
       );
         
-      // ランダム値の生成
-      const rand = [];
-      // オブジェクト移動許可フラグの生成
-      const flag = [];
-       // インタラクションに必要なパラメータの生成
-      const speed = [];
-      const offset = [];
-      const press = [];
-      const direction = [];
-
+      // ランダム値とオブジェクト移動許可フラグの生成は worker.js で行う
       this.vertces = this.pixcel_img.position.length / 3;  // 頂点の数
+      this.worker.postMessage({
+        type: 'generateData',
+        vertces: this.vertces
+      });
 
-      for (let i = 0; i < this.vertces; i++) {
-        rand.push((Math.random() - 1.0) * 2.0, (Math.random() - 1.0) * 2.0);
-        flag.push(1);
-        speed.push(random(-1000, 1000));
-        offset.push(random(0.4, 1));
-        press.push(random(0.4, 1));
-        direction.push(Math.random() > 0.5 ? 1 : -1);
-      }
-      const rands = new THREE.BufferAttribute(new Float32Array(rand), 2);
-      const flags = new THREE.BufferAttribute(new Float32Array(flag), 1);
-      const speeds = new THREE.BufferAttribute(new Float32Array(speed), 1);
-      const offsets = new THREE.BufferAttribute(new Float32Array(offset), 1);
-      const presses = new THREE.BufferAttribute(new Float32Array(press), 1);
-      const directions = new THREE.BufferAttribute(new Float32Array(direction), 1);
-      
       // 各パラメータをジオメトリーに登録
       this.geometry.setAttribute("position", position);
       this.geometry.setAttribute("color", color);
       this.geometry.setAttribute("alpha", alpha);
-      this.geometry.setAttribute("rand", rands);
-      this.geometry.setAttribute("flag", flags);
-  
-      this.geometry.setAttribute("aSpeed", speeds);
-      this.geometry.setAttribute("aOffset", offsets);
-      this.geometry.setAttribute("aPress", presses); 
-      this.geometry.setAttribute("aDirection", directions); 
-  
   
       // マテリアルの作成
       this.material = new THREE.RawShaderMaterial({
@@ -343,141 +374,85 @@ async function initKeyVisual() {
       this.particlePositions = this.attribute.array;
       // パーティクルの透明度の配列
       this.particleAlpha = this.mesh.geometry.attributes.alpha.array;
-      // パーティクルの移動許可フラグの配列
-      this.particleFlag = this.mesh.geometry.attributes.flag.array;
   
       this.scene.add( this.mesh );
+      
     }
-  
-    ImagePixel(path, w, h, ratio) {
-  
-      // canvasの設定
-      this.ctx = this.canvas.getContext("2d");
-      this.canvas_width = w;
-      this.canvas_height = h;
-      this.canvas.width = this.canvas_width;
-      this.canvas.height = this.canvas_height;
-  
-      // 画像データの描画
-      this.ctx.drawImage(path, 0, 0);
-      this.data = this.ctx.getImageData(0, 0, this.canvas_width, this.canvas_height).data;
-      // 座標情報
-      this.position = [];
-      // 色情報
-      this.color = [];
-      // 透明度
-      this.alpha = [];
-  
-      for (let y = 0; y < this.canvas_height; y += ratio) {
-        for (let x = 0; x < this.canvas_width; x += ratio) {
-  
-          // 配列内の任意の[x、y]ピクセルの位置を取得
-          this.index = (y * this.canvas_width + x) * 4;
-  
-          // webglは原点が中心となり、xは右がプラス左がマイナス。yは上がプラス下がマイナス。
-          this.pX = x - this.canvas_width / 2;
-          this.pY = -(y - this.canvas_height / 2);
-          this.pZ = 0;
-  
-  
-          this.r = this.data[this.index + 0] / 255;
-          this.g = this.data[this.index + 1] / 255;
-          this.b = this.data[this.index + 2] / 255;
-  
-  
-          // webglでは透明度を0~1の範囲で表現するので、255で割って数値を0~1の範囲に変換
-          this.a = this.data[this.index + 3] / 255;
-          
-          // 座標、色、透明度の値を配列に追加
-          if (this.a > 0.5) {
-            this.position.push(this.pX, this.pY, this.pZ), this.color.push(this.r, this.g, this.b), this.alpha.push(this.a);
+
+    removeLoadingEnd() {
+      // ロード画面を非表示
+      loading_background.style.opacity = 0;
+      loading_background.style.visibility = "invisible";
+    }
+
+    fadeParticles(sampling_time) { 
+      // パーティクルをランダムに複数回サンプリングして透明度を下げていく
+      for (let i=0; i < sampling_time+1; i++) {
+        for (let j=0; j < this.vertces; j++) {
+          let random = (j + Math.floor(Math.random() * 2) + 1);
+          if(this.particleAlpha[random] > 0) {
+            this.particleAlpha[random] = 0.5 ** (i + 6);
           }
         }
       }
-  
-      return { position: this.position, color: this.color, alpha: this.alpha };
-  
     }
-  
-    removeLoadingEnd() {
-  
-        // ロード画面を非表示
-        loading_background.style.opacity = 0;
-        loading_background.style.visibility = "invisible";
 
-    }
-  
-    fadeParticles(sampling_time) {
-        
-        // パーティクルをランダムに複数回サンプリングして透明度を下げていく
-        for (let i=0; i < sampling_time+1; i++) {
-          for (let j=0; j < this.vertces; j++) {
-            let random = (j + Math.floor(Math.random() * 2) + 1);
-            if(this.particleAlpha[random] > 0) {
-              this.particleAlpha[random] = 0.5 ** (i + 6);
-            }
-          }
-        }
-
-    }
-  
     gather2D(sampling_time, interval_time) {
   
-        for (let i = 0; i < this.vertces; i++) {
+      for (let i = 0; i < this.vertces; i++) {
 
-          // オブジェクト頂点座標
-          let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), alpha: this.particleAlpha[i], moveFlag: this.particleFlag[i]};
+        // オブジェクト頂点座標
+        let vertex_params = {posX: this.attribute.getX(i), posY: this.attribute.getY(i), alpha: this.particleAlpha[i], moveFlag: this.particleFlag[i]};
 
-          // 透明度の低いパーティクルから順番に出現させる
-          for (let j = 0; j < sampling_time + 1; j++) {
-            
-            if (this.particleAlpha[i] === 0.5 **  (j + 6)) {
-  
-              gsap.to(
-                vertex_params,
-                
-                //完了状態
-                {
-                  alpha: 1,
-                  moveFlag: 1,
-                  delay: j * (interval_time / 1000),
-                  duration: (interval_time+1000) / 1000,
-                  ease: "Power1.easeOut",
-                  onUpdate: () => {
-                    this.particleAlpha[i] = vertex_params.alpha;
-                    this.particleFlag[i] = vertex_params.moveFlag;
-                  }
-                },
-              )
-            }
-          }
-        
-          // パーティクル拡散のアニメーション
-          gsap.fromTo(
-            vertex_params,
+        // 透明度の低いパーティクルから順番に出現させる
+        for (let j = 0; j < sampling_time + 1; j++) {
+          
+          if (this.particleAlpha[i] === 0.5 **  (j + 6)) {
 
-            //初期状態
-            {
-              posX: randomNumbers(600, 0) * plusMinus(),
-              posY: randomNumbers(600, 0) * plusMinus(),
-            },
-
-            //完了状態
-            {
-              posX: this.pixcel_img.position[3*i],
-              posY: this.pixcel_img.position[3*i+1],
-              duration: 3,
-              ease: "Power1.easeOut",
-              onUpdate: () => {
-                this.particlePositions[3*i] = vertex_params.posX;
-                this.particlePositions[3*i+1] = vertex_params.posY;
+            gsap.to(
+              vertex_params,
+              
+              //完了状態
+              {
+                alpha: 1,
+                moveFlag: 1,
+                delay: j * (interval_time / 1000),
+                duration: (interval_time+1000) / 1000,
+                ease: "Power1.easeOut",
+                onUpdate: () => {
+                  this.particleAlpha[i] = vertex_params.alpha;
+                  this.particleFlag[i] = vertex_params.moveFlag;
+                }
               },
-            },
-          )
+            )
+          }
         }
+      
+        // パーティクル拡散のアニメーション
+        gsap.fromTo(
+          vertex_params,
+
+          //初期状態
+          {
+            posX: randomNumbers(600, 0) * plusMinus(),
+            posY: randomNumbers(600, 0) * plusMinus(),
+          },
+
+          //完了状態
+          {
+            posX: this.pixcel_img.position[3*i],
+            posY: this.pixcel_img.position[3*i+1],
+            duration: 3,
+            ease: "Power1.easeOut",
+            onUpdate: () => {
+              this.particlePositions[3*i] = vertex_params.posX;
+              this.particlePositions[3*i+1] = vertex_params.posY;
+            },
+          },
+        )
+      }
     }
-  
-  
+
     lightOn() {
       gsap.fromTo(
         this.bloomPass,
@@ -756,6 +731,115 @@ async function initKeyVisual() {
   
     }
   
+  
+    animate() {
+  
+      if (!this.shouldAnimate) {
+        return;
+      }
+      this.time++;
+      this.composer.setSize( window.innerWidth, window.innerHeight );
+      this.composer.render();
+  
+      this.getDeltaTime = this.clock.getDelta();
+  
+      if (document.querySelector('#webgl')) {
+        // 画面の描画毎にanimate関数を呼び出す
+        requestAnimationFrame( this.animate.bind(this) );
+      }
+      
+      // パーティクル移動速度
+      window.setTimeout(() =>{
+        this.mesh.material.uniforms.u_time.value += (2.0 * this.getDeltaTime);
+        this.mesh.material.uniforms.mouse.value = this.point;
+        this.mesh.material.uniforms.time.value = this.time;
+        this.mesh.material.uniforms.move.value = this.move;
+        if (typeof window.ontouchstart === "undefined") {
+          this.mesh.material.uniforms.diffusionScale.value = 180.0;
+          this.mesh.material.uniforms.circleScale.value = 50.0;
+        } else {
+          this.mesh.material.uniforms.diffusionScale.value = 80.0;
+          this.mesh.material.uniforms.circleScale.value = 25.0;
+        }
+      }, this.fadein_times*this.interval_time)
+      
+      // // 頂点の透明度の更新を許可
+      this.mesh.geometry.attributes.alpha.needsUpdate = true;
+  
+      // // 頂点の座標の更新を許可
+      this.mesh.geometry.attributes.position.needsUpdate = true;
+  
+  
+      // // 頂点の移動検知フラグの更新を許可
+      this.mesh.geometry.attributes.flag.needsUpdate = true;
+  
+      // ウィンドウを開いた直後、ウィンドウが非アクティブとなった場合、拡散禁止
+      window.addEventListener('blur', () => {
+        this.shouldAnimate = false;
+      });
+
+      // ウィンドウが再度アクティブとなった場合、拡散許可
+      window.addEventListener('focus', () => {
+        if (!this.shouldAnimate) {
+          this.shouldAnimate = true;
+          this.animate(); // タブがアクティブになったときにアニメーションを再開
+        }
+      });
+    }
+
+  
+    setSize() {
+  
+        // ウィンドウサイズを取得
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+  
+        // ヘッダーの高さ
+        this.header_height = document.getElementById("header_nav").clientHeight;
+  
+        // カメラのアスペクト比を正す
+        this.camera.aspect = this.width / (this.height -  this.header_height);
+        this.camera.updateProjectionMatrix();
+  
+        // カメラ位置とパーティクルサイズをレスポンシブに調整
+        this.mesh.material.uniforms.u_value.value = (this.width + this.height) / 1000 - ((1200 + this.height) / this.width);
+        this.camera.position.z = this.mesh.material.uniforms.cameraZ.value = 400;
+  
+        // レンダラーのサイズを調整する
+        this.renderer.setSize(this.width, this.height -  this.header_height);
+  
+        // ウィンドウサイズ更新
+        this.resized_width = window.innerWidth;
+        this.resized_height = window.innerHeight;
+    }
+
+    resize() {
+      this.currentWidth = window.innerWidth;
+      this.currentHeight = window.innerHeight;
+      
+      window.addEventListener("resize", function() {
+    
+        if (this.currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
+    
+          // インタラクションガイドの位置を変更。
+          if (this.currentHeight < window.innerHeight) {
+            this.nav_block.style.bottom = (this.height*0.15 + 80) + 'px';
+          } else {
+            this.nav_block.style.bottom = this.height*0.15 + 'px';
+          }
+    
+          // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
+          return;
+        }
+        
+        // ウインドウ横幅が変わったのでリサイズと見なす。
+        // 横幅を更新
+        this.currentWidth = window.innerWidth;
+        this.setSize();
+      }.bind(this));
+    }
+
+
     mouseInteraction() {
       // マウスドラッグアニメーション
       let target = new THREE.Mesh(
@@ -849,62 +933,7 @@ async function initKeyVisual() {
       }
    
     }
-  
-    animate() {
-  
-      if (!this.shouldAnimate) {
-        return;
-      }
-      this.time++;
-      this.composer.setSize( window.innerWidth, window.innerHeight );
-      this.composer.render();
-  
-      this.getDeltaTime = this.clock.getDelta();
-  
-      if (document.querySelector('#webgl')) {
-        // 画面の描画毎にanimate関数を呼び出す
-        requestAnimationFrame( this.animate.bind(this) );
-      }
-      
-      // パーティクル移動速度
-      window.setTimeout(() =>{
-        this.mesh.material.uniforms.u_time.value += (2.0 * this.getDeltaTime);
-        this.mesh.material.uniforms.mouse.value = this.point;
-        this.mesh.material.uniforms.time.value = this.time;
-        this.mesh.material.uniforms.move.value = this.move;
-        if (typeof window.ontouchstart === "undefined") {
-          this.mesh.material.uniforms.diffusionScale.value = 180.0;
-          this.mesh.material.uniforms.circleScale.value = 50.0;
-        } else {
-          this.mesh.material.uniforms.diffusionScale.value = 80.0;
-          this.mesh.material.uniforms.circleScale.value = 25.0;
-        }
-      }, this.fadein_times*this.interval_time)
-      
-      // // 頂点の透明度の更新を許可
-      this.mesh.geometry.attributes.alpha.needsUpdate = true;
-  
-      // // 頂点の座標の更新を許可
-      this.mesh.geometry.attributes.position.needsUpdate = true;
-  
-  
-      // // 頂点の移動検知フラグの更新を許可
-      this.mesh.geometry.attributes.flag.needsUpdate = true;
-  
-      // ウィンドウを開いた直後、ウィンドウが非アクティブとなった場合、拡散禁止
-      window.addEventListener('blur', () => {
-        this.shouldAnimate = false;
-      });
 
-      // ウィンドウが再度アクティブとなった場合、拡散許可
-      window.addEventListener('focus', () => {
-        if (!this.shouldAnimate) {
-          this.shouldAnimate = true;
-          this.animate(); // タブがアクティブになったときにアニメーションを再開
-        }
-      });
-    }
-  
     showGuide() {
       this.nav_block = document.getElementById("nav_block");
       this.circle = document.getElementById("circle");
@@ -944,136 +973,39 @@ async function initKeyVisual() {
         this.nav_block.style.visibility = "visible";
       }, this.fadein_times*this.interval_time+5000);
     }
-  
-    setSize() {
-  
-        // ウィンドウサイズを取得
-        this.width = window.innerWidth;
-        this.height = window.innerHeight;
-  
-        // ヘッダーの高さ
-        this.header_height = document.getElementById("header_nav").clientHeight;
-  
-        // カメラのアスペクト比を正す
-        this.camera.aspect = this.width / (this.height -  this.header_height);
-        this.camera.updateProjectionMatrix();
-  
-        // カメラ位置とパーティクルサイズをレスポンシブに調整
-        this.updateCameraAndUniforms(this.isMobile, this.width, this.height, this.camera, this.mesh, nav_block);
-  
-        // レンダラーのサイズを調整する
-        this.renderer.setSize(this.width, this.height -  this.header_height);
-  
-        // ウィンドウサイズ更新
-        this.resized_width = window.innerWidth;
-        this.resized_height = window.innerHeight;
-    }
-
-    updateCameraAndUniforms(isMobile, width, height, camera, mesh, nav_block) {
-      const aspectRatio = width / height;
-
-      const getCameraZ = (factor) => {
-        return height / width * factor;
-      };
-
-      // パーティクルのサイズ調整
-      const updateUniforms = (factor, offset) => {
-        mesh.material.uniforms.u_value.value = (width + height) / factor - ((offset + height) / width);
-      };
-
-      // ブレイクポイントの設定
-      const width_break_point = 700;
-      const height_break_point = 864;
-      const width_break_point_sp = 1440;
-
-      // カメラ位置とパーティクルサイズをレスポンシブに調整
-      if (isMobile) {
-        if (width >= width_break_point_sp) {
-          if (width < height) {
-            camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(230);
-            updateUniforms(180, 1200);
-          } else {
-            if (aspectRatio > 1.85) {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(120);
-              updateUniforms(200, 2800);
-            } else {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(170);
-              updateUniforms(180, 2800);
-            }
-          }
-        } else {
-          if (width < height) {
-            camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(200);
-            updateUniforms(180, 1600);
-            nav_block.style.bottom = height * 0.15 + 'px';
-          } else {
-            if (aspectRatio > 1.8) {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(120);
-              updateUniforms(200, 3400);
-              nav_block.style.display = 'none';
-            } else {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(170);
-              updateUniforms(200, 2800);
-              nav_block.style.bottom = height * 0.15 + 'px';
-            }
-          }
-        }
-      } else {
-        if (width >= width_break_point) {
-          camera.position.z = mesh.material.uniforms.cameraZ.value = 400;
-          if (height <= height_break_point) {
-            updateUniforms(1000, 1200);
-          } else {
-            updateUniforms(600, 1200);
-          }
-        } else {
-          camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(400);
-          updateUniforms(1800, 1200);
-        }
-      }
-    }
-
-  
-    resize() {
-      this.currentWidth = window.innerWidth;
-      this.currentHeight = window.innerHeight;
-      
-      window.addEventListener("resize", function() {
-    
-        if (this.currentWidth == window.innerWidth & typeof window.ontouchstart != "undefined") {
-    
-          // インタラクションガイドの位置を変更。
-          if (this.currentHeight < window.innerHeight) {
-            this.nav_block.style.bottom = (this.height*0.15 + 80) + 'px';
-          } else {
-            this.nav_block.style.bottom = this.height*0.15 + 'px';
-          }
-    
-          // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。
-          return;
-        }
-        
-        // ウインドウ横幅が変わったのでリサイズと見なす。
-        // 横幅を更新
-        this.currentWidth = window.innerWidth;
-        this.setSize();
-      }.bind(this));
-    }
 
   
   }
+  
 
   await activate();
-
-  function randomNumbers(max, min) {
-    // 整数の乱数を生成する
-    return Math.floor( Math.random() * max + 1 - min ) + min;
-  }
   
+  function activate() {
+    document.addEventListener('DOMContentLoaded', (event) => {
+      if (document.querySelector('#webgl')) {
+
+          surround = new Surround();
+          sketch = new Sketch();
+    
+          sketch.setImage();
+      
+          loading_background.style.opacity = 1;
+    
+          surround.callFunctions();
+          sketch.callFunctions();
+        }
+    })
+  }
+
   function random(a, b) {
     return a + (b - a) * Math.random();
   }
   
+  function randomNumbers(max, min) {
+    // 整数の乱数を生成する
+    return Math.floor( Math.random() * max + 1 - min ) + min;
+  }
+    
   function plusMinus() {
     return Math.random() < 0.5 ? 1 : -1;
   }
@@ -1083,20 +1015,4 @@ async function initKeyVisual() {
     return list[Math.floor(Math.random() * list.length)]
   }
 
-  function activate() {
-    if (document.querySelector('#webgl')) {
-    
-        surround = new Surround();
-        sketch = new Sketch();
-        sketch.setImage();
-    
-        loading_background.style.opacity = 1;
-
-        surround.callFunctions();
-        sketch.callFunctions();
-    }
-  }
-
 }
-
-
