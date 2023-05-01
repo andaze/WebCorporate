@@ -1090,8 +1090,6 @@ async function initKeyVisual() {
         sketch = new Sketch();
         sketch.setImage();
     
-        loading_background.style.opacity = 1;
-
         surround.callFunctions();
         sketch.callFunctions();
     }
