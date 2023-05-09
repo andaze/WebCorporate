@@ -528,7 +528,7 @@ async function initKeyVisual() {
   
           // ウィンドウが非アクティブとなった場合、アニメーションサイクルを破棄
           window.addEventListener('blur', () => {
-            if(diffusion !== null) {
+            if(diffusion !== null && !this.shouldAnimate) {
               clearInterval(diffusion)
               diffusion = null;
             }
@@ -536,7 +536,7 @@ async function initKeyVisual() {
   
           // ウィンドウが再度アクティブ となった場合、アニメーションサイクルを再生成
           window.addEventListener('focus', () => {
-            if (window.scrollY <= targetForStop && diffusion === null) {
+            if (window.scrollY <= targetForStop && diffusion === null && this.shouldAnimate) {
               setTimeout(() => {
                 diffusion = setInterval(function() {
                   this.autoDiffusion()
@@ -548,6 +548,9 @@ async function initKeyVisual() {
     }
   
     autoDiffusion() {
+      if (!this.shouldAnimate) {
+        return
+      }
   
       // ランダム座標（自動拡散）
       let pos_range_plus = new THREE.Vector2();
