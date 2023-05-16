@@ -12,7 +12,7 @@ newsimg: nature.jpg
 
 {{< space height="h-4" >}}
 
-### **We at Andaze believe that it is important for people living on the earth to address environmental issues such as climate change. We are working to reduce our environmental impact with the aim of achieving a sustainable society.**
+**We at Andaze believe that it is important for people living on the earth to address environmental issues such as climate change. We are working to reduce our environmental impact with the aim of achieving a sustainable society.**
 
 {{< space height="h-10" >}}
 

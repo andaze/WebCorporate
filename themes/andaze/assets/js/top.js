@@ -58,16 +58,21 @@ async function initKeyVisual() {
         let key_visual_bottom = key_visual.getBoundingClientRect().bottom + window.pageYOffset;
         let target_top = key_visual_bottom - (window.innerHeight * 0.88);
         let target_bottom = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
+
+        // const header_nav = document.getElementById('header_nav');
     
         if (window.scrollY < target_top) {
           dark_cover.style.opacity = 0;
           dark_cover.style.visibility = "invisible";
+          // header_nav.classList.add("bg-opacity-20")
         } else if (window.scrollY <= target_bottom && window.scrollY > target_top) {
           dark_cover.style.opacity = .5;
           dark_cover.style.visibility = "visible";
+          // header_nav.classList.remove("bg-opacity-20")
         } else {
           dark_cover.style.opacity = 1;
           dark_cover.style.visibility = "visible";
+          // header_nav.classList.remove("bg-opacity-20")
         }
       }
     }
@@ -125,8 +130,8 @@ async function initKeyVisual() {
       // raycaster検知フラグ
       this.detection = false;
 
-      // パーティクル拡散防止フラグ（初回表示バグ防止用）
-      this.stopDiffusion = false;
+      // アニメーションフラグ
+      this.shouldAnimate = true;
   
       // パーティクルの頂点座標
       this.particle_pos = new THREE.Vector2();
@@ -217,7 +222,7 @@ async function initKeyVisual() {
       this.renderer = new THREE.WebGLRenderer();
   
       // レンダラーの高さ
-      this.renderer.setSize( this.width, this.height -  this.header_height);
+      this.renderer.setSize( this.width, this.height - this.header_height);
       this.renderer.physicallyCorrectLights = true;
       this.renderer.setClearColor();
   
@@ -504,7 +509,7 @@ async function initKeyVisual() {
           const targetForStop = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
   
           // ページ上部にいる場合アニメーションサイクルを生成
-          if (window.scrollY <= targetForStop && diffusion === null && !this.stopDiffusion) {
+          if (window.scrollY <= targetForStop && diffusion === null && this.shouldAnimate) {
             diffusion = setInterval(function() {
               this.autoDiffusion()
             }.bind(this), 1000);
@@ -528,7 +533,7 @@ async function initKeyVisual() {
   
           // ウィンドウが非アクティブとなった場合、アニメーションサイクルを破棄
           window.addEventListener('blur', () => {
-            if(diffusion !== null) {
+            if(diffusion !== null && !this.shouldAnimate) {
               clearInterval(diffusion)
               diffusion = null;
             }
@@ -536,7 +541,7 @@ async function initKeyVisual() {
   
           // ウィンドウが再度アクティブ となった場合、アニメーションサイクルを再生成
           window.addEventListener('focus', () => {
-            if (window.scrollY <= targetForStop && diffusion === null) {
+            if (window.scrollY <= targetForStop && diffusion === null && this.shouldAnimate) {
               setTimeout(() => {
                 diffusion = setInterval(function() {
                   this.autoDiffusion()
@@ -548,6 +553,9 @@ async function initKeyVisual() {
     }
   
     autoDiffusion() {
+      if (!this.shouldAnimate) {
+        return
+      }
   
       // ランダム座標（自動拡散）
       let pos_range_plus = new THREE.Vector2();
@@ -845,14 +853,6 @@ async function initKeyVisual() {
       
         }, false);
   
-        // ウィンドウが非アクティブの場合、アニメーション停止
-        window.addEventListener('blur', () => {
-          gsap.to(this.material.uniforms.mousePressed, {
-            duration: 0.3,
-            value: 0,
-            ease: "ease.out(1, 0.3)"
-          });
-        });
   
       }
    
@@ -860,6 +860,9 @@ async function initKeyVisual() {
   
     animate() {
   
+      if (!this.shouldAnimate) {
+        return;
+      }
       this.time++;
       this.composer.setSize( window.innerWidth, window.innerHeight );
       this.composer.render();
@@ -898,15 +901,14 @@ async function initKeyVisual() {
   
       // ウィンドウを開いた直後、ウィンドウが非アクティブとなった場合、拡散禁止
       window.addEventListener('blur', () => {
-        if(this.stopDiffusion === false) {
-          this.stopDiffusion = true;
-        }
+        this.shouldAnimate = false;
       });
 
       // ウィンドウが再度アクティブとなった場合、拡散許可
       window.addEventListener('focus', () => {
-        if(this.stopDiffusion === true) {
-          this.stopDiffusion = false;
+        if (!this.shouldAnimate) {
+          this.shouldAnimate = true;
+          this.animate(); // タブがアクティブになったときにアニメーションを再開
         }
       });
     }
@@ -961,14 +963,14 @@ async function initKeyVisual() {
         this.header_height = document.getElementById("header_nav").clientHeight;
   
         // カメラのアスペクト比を正す
-        this.camera.aspect = this.width / (this.height -  this.header_height);
+        this.camera.aspect = this.width / (this.height - this.header_height);
         this.camera.updateProjectionMatrix();
   
         // カメラ位置とパーティクルサイズをレスポンシブに調整
         this.updateCameraAndUniforms(this.isMobile, this.width, this.height, this.camera, this.mesh, nav_block);
   
         // レンダラーのサイズを調整する
-        this.renderer.setSize(this.width, this.height -  this.header_height);
+        this.renderer.setSize(this.width, this.height - this.header_height);
   
         // ウィンドウサイズ更新
         this.resized_width = window.innerWidth;
@@ -1018,7 +1020,7 @@ async function initKeyVisual() {
               updateUniforms(200, 3400);
               nav_block.style.display = 'none';
             } else {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(170);
+              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(330);
               updateUniforms(200, 2800);
               nav_block.style.bottom = height * 0.15 + 'px';
             }
@@ -1096,8 +1098,6 @@ async function initKeyVisual() {
         sketch = new Sketch();
         sketch.setImage();
     
-        loading_background.style.opacity = 1;
-
         surround.callFunctions();
         sketch.callFunctions();
     }
