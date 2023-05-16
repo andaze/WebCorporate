@@ -33,7 +33,7 @@ async function initKeyVisual() {
     }
   
     callFunctions() {
-      // this.setMainHeight();
+      this.setMainHeight();
       this.blackOut();
       this.ResponseToEvent();
     }
@@ -59,20 +59,20 @@ async function initKeyVisual() {
         let target_top = key_visual_bottom - (window.innerHeight * 0.88);
         let target_bottom = document.getElementById("company_section").getBoundingClientRect().bottom + window.pageYOffset;
 
-        const header_nav = document.getElementById('header_nav');
+        // const header_nav = document.getElementById('header_nav');
     
         if (window.scrollY < target_top) {
           dark_cover.style.opacity = 0;
           dark_cover.style.visibility = "invisible";
-          header_nav.classList.add("bg-opacity-20")
+          // header_nav.classList.add("bg-opacity-20")
         } else if (window.scrollY <= target_bottom && window.scrollY > target_top) {
           dark_cover.style.opacity = .5;
           dark_cover.style.visibility = "visible";
-          header_nav.classList.remove("bg-opacity-20")
+          // header_nav.classList.remove("bg-opacity-20")
         } else {
           dark_cover.style.opacity = 1;
           dark_cover.style.visibility = "visible";
-          header_nav.classList.remove("bg-opacity-20")
+          // header_nav.classList.remove("bg-opacity-20")
         }
       }
     }
@@ -84,7 +84,7 @@ async function initKeyVisual() {
       
       // リサイズ時の処理（3D表示以外の調整）
       window.addEventListener('resize', () => {
-        // this.setMainHeight();
+        this.setMainHeight();
         this.blackOut();
       });
     }
@@ -222,7 +222,7 @@ async function initKeyVisual() {
       this.renderer = new THREE.WebGLRenderer();
   
       // レンダラーの高さ
-      this.renderer.setSize( this.width, this.height +  this.header_height);
+      this.renderer.setSize( this.width, this.height - this.header_height);
       this.renderer.physicallyCorrectLights = true;
       this.renderer.setClearColor();
   
@@ -963,14 +963,14 @@ async function initKeyVisual() {
         this.header_height = document.getElementById("header_nav").clientHeight;
   
         // カメラのアスペクト比を正す
-        this.camera.aspect = this.width / (this.height +  this.header_height);
+        this.camera.aspect = this.width / (this.height - this.header_height);
         this.camera.updateProjectionMatrix();
   
         // カメラ位置とパーティクルサイズをレスポンシブに調整
         this.updateCameraAndUniforms(this.isMobile, this.width, this.height, this.camera, this.mesh, nav_block);
   
         // レンダラーのサイズを調整する
-        this.renderer.setSize(this.width, this.height +  this.header_height);
+        this.renderer.setSize(this.width, this.height - this.header_height);
   
         // ウィンドウサイズ更新
         this.resized_width = window.innerWidth;
@@ -998,44 +998,44 @@ async function initKeyVisual() {
       if (isMobile) {
         if (width >= width_break_point_sp) {
           if (width < height) {
-            camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(250);
+            camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(230);
             updateUniforms(180, 1200);
           } else {
             if (aspectRatio > 1.85) {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(140);
+              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(120);
               updateUniforms(200, 2800);
             } else {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(190);
+              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(170);
               updateUniforms(180, 2800);
             }
           }
         } else {
           if (width < height) {
-            camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(220);
+            camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(200);
             updateUniforms(180, 1600);
-            nav_block.style.bottom = height * 0.05 + 'px';
+            nav_block.style.bottom = height * 0.15 + 'px';
           } else {
             if (aspectRatio > 1.8) {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(140);
+              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(120);
               updateUniforms(200, 3400);
               nav_block.style.display = 'none';
             } else {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(350);
+              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(330);
               updateUniforms(200, 2800);
-              nav_block.style.bottom = height * 0.05 + 'px';
+              nav_block.style.bottom = height * 0.15 + 'px';
             }
           }
         }
       } else {
         if (width >= width_break_point) {
-          camera.position.z = mesh.material.uniforms.cameraZ.value = 420;
+          camera.position.z = mesh.material.uniforms.cameraZ.value = 400;
           if (height <= height_break_point) {
             updateUniforms(1000, 1200);
           } else {
             updateUniforms(600, 1200);
           }
         } else {
-          camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(420);
+          camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(400);
           updateUniforms(1800, 1200);
         }
       }
