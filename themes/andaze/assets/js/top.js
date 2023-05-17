@@ -110,7 +110,7 @@ async function initKeyVisual() {
   
       // カメラ位置設定
       this.camera.position.x = 0;
-      this.camera.position.y = 30;
+      this.camera.position.y = 50;
   
       // アニメーション速度の調整用
       this.clock = new THREE.Clock();
@@ -222,7 +222,7 @@ async function initKeyVisual() {
       this.renderer = new THREE.WebGLRenderer();
   
       // レンダラーの高さ
-      this.renderer.setSize( this.width, this.height + this.header_height);
+      this.renderer.setSize( this.width, this.height);
       this.renderer.physicallyCorrectLights = true;
       this.renderer.setClearColor();
   
@@ -963,14 +963,14 @@ async function initKeyVisual() {
         this.header_height = document.getElementById("header_nav").clientHeight;
   
         // カメラのアスペクト比を正す
-        this.camera.aspect = this.width / (this.height + this.header_height);
+        this.camera.aspect = this.width / (this.height);
         this.camera.updateProjectionMatrix();
   
         // カメラ位置とパーティクルサイズをレスポンシブに調整
         this.updateCameraAndUniforms(this.isMobile, this.width, this.height, this.camera, this.mesh, nav_block);
   
         // レンダラーのサイズを調整する
-        this.renderer.setSize(this.width, this.height + this.header_height);
+        this.renderer.setSize(this.width, this.height);
   
         // ウィンドウサイズ更新
         this.resized_width = window.innerWidth;
@@ -1015,14 +1015,14 @@ async function initKeyVisual() {
             updateUniforms(180, 1600);
             nav_block.style.bottom = height * 0.05 + 'px';
           } else {
+            nav_block.style.display = 'none';
+
             if (aspectRatio > 1.8) {
-              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(140);
+              camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(440);
               updateUniforms(200, 3400);
-              nav_block.style.display = 'none';
             } else {
               camera.position.z = mesh.material.uniforms.cameraZ.value = getCameraZ(350);
               updateUniforms(200, 2800);
-              nav_block.style.bottom = height * 0.05 + 'px';
             }
           }
         }
@@ -1052,9 +1052,9 @@ async function initKeyVisual() {
     
           // インタラクションガイドの位置を変更。
           if (this.currentHeight < window.innerHeight) {
-            this.nav_block.style.bottom = (this.height*0.15 + 80) + 'px';
+            this.nav_block.style.bottom = (this.height*0.05 + 80) + 'px';
           } else {
-            this.nav_block.style.bottom = this.height*0.15 + 'px';
+            this.nav_block.style.bottom = this.height*0.05 + 'px';
           }
     
           // ウインドウ横幅が変わっていないためレンダラーのリサイズはなし。

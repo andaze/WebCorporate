@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class="scroll-smooth">
+{{ $lang:= print site.Language }}
+<html lang="{{ $lang }}" class="scroll-smooth">
 {{- partial "head.html" . -}}
 
 {{ $class := "" }}
