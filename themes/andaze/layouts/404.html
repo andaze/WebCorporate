@@ -1,0 +1,28 @@
+
+{{- define "main" -}}
+
+    {{ $titleClass := "text-gray-700 font-bold border-b border-gray-800" }}
+    {{ $textClass := "text-gray-600" }}
+    {{ $linkClass := "text-blue-500 hover:underline" }}
+
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+        <div class="text-center flex flex-col gap-4">
+            <span class="text-6xl mb-12 font-bold">404 NOT FOUND</span>
+            {{ with .Site.GetPage "sitemap"}}
+                {{ if eq ( print site.Language) ("ja") }}
+                    <h2 class="{{ $titleClass }}">お探しのページが見つかりませんでした。</h2>
+                    <p class="{{ $textClass }}">
+                        申し訳ありません。お探しのページが見つかりませんでした。<br>
+                        ナビゲーションメニューを使用するか、<br><a href="{{ .Permalink }}" class="{{ $linkClass }}">サイトマップ</a>からお求めのページをお探しください。
+                    </p>
+                {{ else }}
+                    <h2 class="{{ $titleClass }}">Page not found</h2>
+                    <p class="{{ $textClass }}">
+                        Sorry, that page isn't on this site.<br>
+                        Please use the navigation menu, <br>or the <a href="{{ .Permalink }}" class="{{ $linkClass }}">sitemap</a> linked below, to find another page.
+                    </p>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+{{- end }}
