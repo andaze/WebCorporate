@@ -6,7 +6,7 @@ headerImage:
   imageName: information.jpg
   imageTitle: 情報セキュリティ基本方針
 newsimg: security.jpg
-
+description: "アンダーズ株式会社の情報セキュリティ基本方針をご覧いただけます。"
 ---
 # 情報セキュリティ基本方針
 

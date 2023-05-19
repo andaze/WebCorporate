@@ -6,7 +6,7 @@ headerImage:
   imageName: information.jpg
   imageTitle: Basic Policy on Information Security
 newsimg: security.jpg
-
+description: "You can view Andaze Ltd.'s Basic Policy on Information Security."
 ---
 # Basic Policy on Information Security
 

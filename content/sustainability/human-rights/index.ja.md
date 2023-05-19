@@ -6,7 +6,7 @@ headerImage:
   imageName: meeting.jpg
   imageTitle: 人権方針
 newsimg: human.jpg
-
+description: "アンダーズ株式会社の人権方針をご覧いただけます。"
 ---
 # 人権方針
 

@@ -6,7 +6,7 @@ newsimg: mina-arai.jpg
 headerImage:
   imageName: mina-arai.jpg
   imageTitle: Top Message
-
+description: "You can read a message about sustainability from Mina Arai, President and CEO of Andaze Ltd."
 ---
 # Top Message
 

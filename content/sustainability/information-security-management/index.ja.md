@@ -6,7 +6,7 @@ headerImage:
   imageName: corridor.jpg
   imageTitle: 情報セキュリティマネジメントシステム
 newsimg: internet.jpg
-
+description: "アンダーズ株式会社の情報セキュリティマネジメントシステムについてご覧いただけます。"
 ---
 # 情報セキュリティマネジメントシステム
 

@@ -6,7 +6,7 @@ headerImage:
   imageName: environment.jpg
   imageTitle: Environmental Policy
 newsimg: environment-policy.jpg
-
+description: "You can view the environmental policy of Andaze Ltd."
 ---
 # Environmental Policy
 

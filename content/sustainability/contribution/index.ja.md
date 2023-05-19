@@ -6,7 +6,7 @@ headerImage:
   imageName: gathering.jpg
   imageTitle: 企業理念に基づく社会貢献
 newsimg: globe.jpg
-
+description: "アンダーズ株式会社の企業理念に基づく社会貢献についてご覧いただけます。"
 ---
 # 企業理念に基づく社会貢献
 

@@ -6,7 +6,7 @@ headerImage:
   imageName: conversation.jpg
   imageTitle: Effective use of resources
 newsimg: nature.jpg
-
+description: "You can see Andaze Ltd.'s commitment to the effective use of resources."
 ---
 # Effective use of resources
 

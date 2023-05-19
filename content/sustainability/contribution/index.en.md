@@ -6,7 +6,7 @@ headerImage:
   imageName: gathering.jpg
   imageTitle: Contribution to society based on our corporate philosophy
 newsimg: globe.jpg
-
+description: "You can read about the social contribution based on the corporate philosophy of Andaze Ltd."
 ---
 # Contribution to society based on our corporate philosophy
 
