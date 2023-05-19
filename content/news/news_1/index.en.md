@@ -10,6 +10,7 @@ headerImage:
     imageTitle: ""
     imageDescription: ""
 shareLink: ""
+description: "Andaze Ltd.'s website underwent a major renewal in June 2022. With a new design and new contents, we aim to provide even more user-friendly and useful information. We look forward to your continued support."
 ---
 
 Thank you for visiting the website of Andaze Ltd.
