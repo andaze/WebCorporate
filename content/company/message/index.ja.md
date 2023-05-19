@@ -6,7 +6,7 @@ headerImage:
   imageName: mina-arai_new.png
   imageTitle: トップメッセージ
   imageDescription: アンダーズ株式会社   <br> 代表取締役社長    <br> 新井　美奈
-
+description: "アンダーズ株式会社代表取締役社長である新井美奈からのメッセージをご覧いただけます。"
 ---
 # トップメッセージ
 
