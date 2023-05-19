@@ -2,7 +2,7 @@
 title: Work Life Balance
 date: 2022-05-03T19:02:12+09:00
 weight: 8
-
+description: "You can view about work-life balance initiatives of Andaze Ltd."
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="inline">Andaze Ltd. Action Plan</h1>

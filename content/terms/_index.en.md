@@ -3,7 +3,7 @@ title: Terms
 date: 2022-07-08T11:35:23.000+09:00
 weight: "0"
 footerTitileHidden: true
-
+description: "You can view the Basic Terms and Conditions of Andaze Ltd."
 ---
 #### Content usage conditions
 
