@@ -10,7 +10,7 @@ headerImage:
 topText: A diverse team of highly skilled professionals.
 kind: service
 subtitle: A diverse team of highly skilled professionals
-
+description: "Andaze Ltd.'s Remote Time and Attendance Service allows you to monitor attendance and productivity while protecting the privacy of your remote employees. The service provides the ability to review and manage time and attendance status, analyze detailed data on labor productivity, and provide insights to help improve compliance."
 ---
 # Shared Team
 

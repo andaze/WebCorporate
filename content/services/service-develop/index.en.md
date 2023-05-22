@@ -11,7 +11,7 @@ topText: From service content planning to design, development, and operation, we
   the speedy launch of new business services with a sense of urgency.
 kind: service
 subtitle: Support from new business to expansion using existing systems
-
+description: "Andaze Ltd.'s new business system development services are flexible enough to adapt to change and make your new business a success. We employ agile development to quickly release the best functionality for your business. We also help you secure new sources of revenue and acquire new customers by effectively utilizing your existing data and offering it as a SaaS service. From the first step to the final system development, we will do our best to support your business."
 ---
 # New Business Service Development
 
