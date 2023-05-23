@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: NOSQL Database Development" for storing huge databases with data optimization
-
+description: "Andaze Ltd.'s solution AZURE COSMOS DATABASE provides 'NOSQL database development' to store huge databases by optimizing data. azure cosmos databases will help you to proceed with database optimization promptly. Please feel free to contact us if your company is having trouble storing large scale data."
 ---
 # AZURE COSMOS DATABASE
 

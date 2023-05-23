@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: Mobile Content Acceleration" to reduce the waiting time until a web page
   is displayed
-
+description: "Andaze Ltd. can perform 'mobile content acceleration' to reduce the waiting time for web pages to be displayed by AMP WEB. If your company's website is facing any issues, please feel free to contact us."
 ---
 # AMP WEB
 

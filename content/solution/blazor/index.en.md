@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: SPA application development" that can provide comfortable web expression
-
+description: "Andaze Ltd.'s solution BLAZOR WEB offers 'SPA application development' that can provide comfortable web expressions. We contribute to the improvement of your business value. Please feel free to contact us if your company would like to solve your management issues with IT tools."
 ---
 # BLAZOR WEB
 

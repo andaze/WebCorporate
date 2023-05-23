@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: ユーザーのサイト閲覧をより快適にする「双方向通信WEBサービス開発」
-
+description: "アンダーズ株式会社のソリューション「SIGNALR」では、ユーザーのサイト閲覧をより快適にする「双方向通信WEBサービス開発」をご提供します。双方向通信フレームワーク「SignalR」にて、スピード感を持って双方向通信のWEB開発を進めます。貴社の現状を理解したうえで企画を立案しますので、お気軽にご相談ください。"
 ---
 # SIGNALR
 

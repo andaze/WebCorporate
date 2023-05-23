@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: AI Machine Learning Development" for high prediction accuracy and improved
   business value
-
+description: "AMP WEB, Andaze Ltd.'s solution, can perform 'mobile content acceleration' to reduce the waiting time for web pages to be displayed, and the AMP framework will quickly build an AMP site. If your company's website is facing any issues, please feel free to contact us."
 ---
 # AZURE AI
 

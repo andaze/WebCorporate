@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: Big Data Analytics Development" for inexpensive and speedy analysis of exponentially
   growing data
-
+description: "Andaze Ltd's solution, AZURE TABLE STORAGE, provides 'Big Data Analysis Development' for inexpensive and speedy analysis of exponentially increasing data. We quickly build a database with our large-scale data storage Azure Table Storage. Please feel free to contact us if your company is having trouble handling big data."
 ---
 # AZURE TABLE STORAGE
 

@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: Static Website Development for fast page loading with secure security
-
+description: "Andaze Ltd.'s solution HUGO WEB provides website acceleration using the static site generator 'Hugo'. The 'Static Website Construction Service' using 'Hugo' not only speeds up your website but also makes it easier for users to use. Please contact Andaze for more information."
 ---
 # HUGO WEB
 
