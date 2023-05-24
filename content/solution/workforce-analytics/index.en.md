@@ -42,7 +42,7 @@ Andaze's Occupancy Management System is a service platform as workforce analysis
 
 {{< br >}}
 
-In keeping with our "Trust, but be sure*" philosophy, Andaz collects and analyzes daily work performance data in our Occupancy Management System to obtain employee work hours, technology usage, and productivity trends while ensuring data privacy and compliance.
+In keeping with our "Trust, but be sure*" philosophy, Andaze collects and analyzes daily work performance data in our Occupancy Management System to obtain employee work hours, technology usage, and productivity trends while ensuring data privacy and compliance.
 
 \*Former President Reagan of the United States of America said
 

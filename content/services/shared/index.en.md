@@ -1,5 +1,5 @@
 ---
-title: Shared Team
+title: Workforce Analytics
 date: 2022-02-23T17:03:34.000+09:00
 weight: "7"
 cardImage: shared.png
@@ -7,9 +7,9 @@ headerImage:
   imageName: shared.png
   imageTitle: ''
   imageDescription: ''
-topText: A diverse team of highly skilled professionals.
+topText: Remote attendance management tool to monitor employee attendance and productivity
 kind: service
-subtitle: A diverse team of highly skilled professionals
+subtitle: Remote attendance management tool to monitor employee attendance and productivity
 description: "Andaze Ltd.'s Remote Time and Attendance Service allows you to monitor attendance and productivity while protecting the privacy of your remote employees. The service provides the ability to review and manage time and attendance status, analyze detailed data on labor productivity, and provide insights to help improve compliance."
 ---
 # Shared Team
