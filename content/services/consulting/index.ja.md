@@ -9,7 +9,6 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 onTopPage: true
-topText: システム開発の実現可能性を確認し、投資判断をするための試作・実装・検証をご提供
 kind: service
 subtitle: システム開発の実現可能性を確認し、投資判断をするための試作・実装・検証をご提供
 description: "アンダーズ株式会社は、システム開発の実現可能性を確認し、投資判断をするための「試作・実装・検証」をご提供いたします。DXの成功の第一歩はPoC（概念実証）です。新システムの導入やセキュリティ構築を検討されている企業様のPoCを承っています。"

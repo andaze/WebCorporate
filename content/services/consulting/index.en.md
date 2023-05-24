@@ -8,8 +8,6 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 onTopPage: true
-topText: Provide prototyping, implementation, and verification to confirm feasibility of system development and make investment decisions
-  industries.
 kind: service
 subtitle: Provide prototyping, implementation, and verification to confirm feasibility of system development and make investment decisions
 description: "Andaze Ltd. provides 'Prototyping, Implementation, and Verification' to confirm the feasibility of system development and to make investment decisions The first step to success in DX is PoC (Proof of Concept). Andaze offers PoC services for companies considering the introduction of a new system or the establishment of security."

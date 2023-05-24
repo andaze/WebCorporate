@@ -8,7 +8,6 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 onTopPage: true
-topText: Support for companies wishing to "de-subscribe, de-cloud, and de-package" to improve ROI
 kind: service
 subtitle: Support for companies wishing to "de-subscribe, de-cloud, and de-package" to improve ROI
 description: "Andaze Ltd. supports companies that wish to 'de-subscribe, de-cloud, and de-package' from the perspectives of cost, security, and system operation. Our experts will propose the best solution for you, from the creation of the system to its operation."

@@ -8,7 +8,6 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 onTopPage: true
-topText: Static website development for faster website display and enhanced security
 kind: service
 subtitle: Static website development for faster website display and enhanced security
 description: "Andaze Ltd. provides website construction services using the static site generator 'Hugo' to speed up the display of websites and enhance security. We will deeply understand your current situation and propose improvement measures."

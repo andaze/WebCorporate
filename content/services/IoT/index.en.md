@@ -7,7 +7,6 @@ headerImage:
   imageName: IoT.png
   imageTitle: ''
   imageDescription: ''
-topText: Supporting data utilization that leads to business innovation and new business opportunities
 kind: service
 subtitle: Supporting data utilization that leads to business innovation and new business opportunities
 description: "Andaze Ltd. provides big data development services that lead to corporate profitability, from automatic collection of in-house data using various tools and devices to processing and analysis. Andaze has a wealth of experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze."
