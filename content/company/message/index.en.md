@@ -7,7 +7,7 @@ headerImage:
   imageTitle: Top Message
   imageDescription: Andaze Ltd.   <br> President and Representative Director   <br>
     Mina Arai
-
+description: "You can read a message from Mina Arai, President and CEO of Andaze Ltd."
 ---
 # Top Message
 

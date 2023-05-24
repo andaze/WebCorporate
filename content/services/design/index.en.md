@@ -13,7 +13,7 @@ topText: Our team of professionals with a deep understanding of business and exp
 kind: service
 subtitle: Supporting the development of products that are comfortable, pleasant, and
   easy to use
-
+description: "Andaze Ltd. provides website construction services using the static site generator 'Hugo' to speed up the display of websites and enhance security. We will deeply understand your current situation and propose improvement measures."
 ---
 # UI/UX Design
 

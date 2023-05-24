@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: UX-focused application development" that enhances the value of services
   through user satisfaction
-
+description: "Andaze Ltd.'s solution DEVEXPRESS provides 'UX-oriented application development' that enhances the value of services through user satisfaction. If your company is looking for business innovation through UX development, please feel free to contact our professionals."
 ---
 # DEVEXPRESS
 

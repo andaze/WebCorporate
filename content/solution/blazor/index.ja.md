@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: 快適なWEB表現をご提供できる「SPAアプリ開発」
-
+description: "アンダーズ株式会社のソリューション「BLAZOR WEB」では、快適なWEB表現をご提供できる「SPAアプリ開発」をご提供します。SPAフレームワーク「BLAZOR」によって、短期間でSPAを構築。貴社のビジネス価値向上に貢献します。経営課題をITツールで解決されたい企業様は、お気軽にご相談ください。"
 ---
 # BLAZOR WEB
 

@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: 静的サイトジェネレータ「Hugo」によるWebサイト高速化
-
+description: "アンダーズ株式会社のソリューション「静的Webサイト構築サービス」では、静的サイトジェネレータ「Hugo」によるWebサイト高速化をご提供します。「Hugo」を使った「静的Webサイト構築サービス」は、Webサイトの高速化だけでなく、ユーザーの快適な操作性も実現します。ぜひ、アンダーズにご相談ください。"
 ---
 # **静的Webサイト構築サービス**
 

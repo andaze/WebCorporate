@@ -11,7 +11,7 @@ topText: We support the implementation of cloud services that can be accessed wi
   more security and safety in accordance with the customer's business strategy.
 kind: service
 subtitle: Supporting the best cloud deployment for your digital strategy
-
+description: "Andaze Ltd. supports companies that wish to 'de-subscribe, de-cloud, and de-package' from the perspectives of cost, security, and system operation. Our experts will propose the best solution for you, from the creation of the system to its operation."
 ---
 # Cloud Computing
 

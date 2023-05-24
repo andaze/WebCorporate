@@ -2,6 +2,7 @@
 title: "Quality Policy"
 date: 2022-06-04T16:11:48+09:00
 weight: 10
+description: "You can view the quality policy of Andaze Ltd."
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="inline">Quality Policy</h1>

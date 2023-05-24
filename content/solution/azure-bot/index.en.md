@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: Chatbot Development" for 24-hour automated response to help increase customer
   satisfaction
-
+description: "Andaze Ltd.'s solution, AZURE BOT FRAMEWORK, provides 'chatbot development' with 24-hour automatic response to help increase customer satisfaction. We utilize Azure Bot Framework to promptly proceed with chatbot development. Please contact us so that we can understand your company's current situation and formulate a plan."
 ---
 # AZURE BOT FRAMEWORK
 

@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: 既存客の情報を正確に分析して販促につなげる「顧客管理CRM導入」
-
+description: "アンダーズ株式会社のソリューション「Dynamics365」では、既存客の情報を正確に分析して販促につなげる「顧客管理CRM導入」をご提供します。顧客関係管理システム Dynamics 365によって、速やかにシステムを開発。貴社のご要望やビジネスに合わせて、臨機応変にカスタマイズすることも可能です。"
 ---
 # Dynamics365
 

@@ -8,7 +8,7 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 subtitle: データの最適化で膨大なデータベースを格納する「NOSQLデータベース開発」
-
+description: "アンダーズ株式会社のソリューション「AZURE COSMOS DATABASE」では、データの最適化で膨大なデータベースを格納する「NOSQLデータベース開発」をご提供します。AZURE COSMOS DATABASEを活用して、速やかにデータベース最適化を進めます。大規模データの格納にお困りの企業様は、お気軽に当社へご相談ください。"
 ---
 # AZURE COSMOS DATABASE
 

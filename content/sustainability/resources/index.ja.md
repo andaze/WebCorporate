@@ -6,7 +6,7 @@ headerImage:
   imageName: conversation.jpg
   imageTitle: 資源の有効活用
 newsimg: nature.jpg
-
+description: "アンダーズ株式会社の資源の有効活用への取り組みをご覧いただけます。"
 ---
 # 資源の有効活用
 

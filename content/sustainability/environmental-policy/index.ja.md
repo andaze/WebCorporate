@@ -6,7 +6,7 @@ headerImage:
   imageName: environment.jpg
   imageTitle: 環境方針
 newsimg: environment-policy.jpg
-
+description: "アンダーズ株式会社の環境方針をご覧いただけます。"
 ---
 # 環境方針
 

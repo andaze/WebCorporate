@@ -6,6 +6,7 @@ headerVideo:
     videoName: "service"
     videoTitle: "ソリューション"
     videoDescription: ""
+description: "アンダーズ株式会社のソリューション紹介ページです。AZURE BOT FRAMEWORK、AZURE AI、その他のソリューション・サービスについてご覧いただけます。"
 ---
 
 # ソリューション一覧

@@ -6,7 +6,7 @@ headerImage:
   imageName: meeting.jpg
   imageTitle: Human Rights Policy
 newsimg: human.jpg
-
+description: "You can view the human rights policy of Andaze Ltd."
 ---
 # Human Rights Policy
 

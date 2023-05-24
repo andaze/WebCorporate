@@ -6,7 +6,7 @@ headerImage:
   imageName: corridor.jpg
   imageTitle: Information Security Management System
 newsimg: internet.jpg
-
+description: "You can read about Andaze Ltd's information security management system."
 ---
 # Information Security Management System
 

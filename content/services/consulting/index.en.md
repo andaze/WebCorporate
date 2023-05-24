@@ -12,7 +12,7 @@ topText: Based on our accumulated know-how, we develop DX strategies that incorp
   industries.
 kind: service
 subtitle: Experienced consultants with a high level of expertise
-
+description: "Andaze Ltd. provides 'Prototyping, Implementation, and Verification' to confirm the feasibility of system development and to make investment decisions The first step to success in DX is PoC (Proof of Concept). Andaze offers PoC services for companies considering the introduction of a new system or the establishment of security."
 ---
 # Consulting
 
