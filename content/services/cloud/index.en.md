@@ -7,6 +7,7 @@ headerImage:
   imageName: cloud.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: We support the implementation of cloud services that can be accessed with
   more security and safety in accordance with the customer's business strategy.
 kind: service

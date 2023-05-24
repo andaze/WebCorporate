@@ -8,6 +8,7 @@ headerImage:
   imageName: consulting.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: システム開発の実現可能性を確認し、投資判断をするための試作・実装・検証をご提供
 kind: service
 subtitle: システム開発の実現可能性を確認し、投資判断をするための試作・実装・検証をご提供

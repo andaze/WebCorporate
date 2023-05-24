@@ -8,6 +8,7 @@ headerImage:
   imageName: cloud.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: ROI改善のために「脱サブスク・脱クラウド・脱パッケージ」を希望される企業様をサポート
 kind: service
 subtitle: ROI改善のために「脱サブスク・脱クラウド・脱パッケージ」を希望される企業様をサポート

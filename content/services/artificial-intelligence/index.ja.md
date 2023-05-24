@@ -8,6 +8,7 @@ headerImage:
   imageName: ai.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: 課題解決や経営戦略の実現に貢献する、精度の高いAIソリューションをご提供
 kind: service
 subtitle: 課題解決や経営戦略の実現に貢献する、精度の高いAIソリューションをご提供

@@ -7,6 +7,7 @@ headerImage:
   imageName: service.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: From service content planning to design, development, and operation, we support
   the speedy launch of new business services with a sense of urgency.
 kind: service

@@ -7,6 +7,7 @@ headerImage:
   imageName: design.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: Our team of professionals with a deep understanding of business and expertise
   in UI and UX will work closely with you to develop products that are both easy to
   use and highly satisfying.

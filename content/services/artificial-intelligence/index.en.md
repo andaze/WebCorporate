@@ -7,6 +7,7 @@ headerImage:
   imageName: ai.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: We provide highly accurate AI solutions that solve business challenges and
   further enhance business value.
 kind: service

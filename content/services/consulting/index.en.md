@@ -7,6 +7,7 @@ headerImage:
   imageName: consulting.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: Based on our accumulated know-how, we develop DX strategies that incorporate
   superior technologies. We support the advanced digital shift required in various
   industries.

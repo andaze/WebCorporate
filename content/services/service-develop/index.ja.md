@@ -8,6 +8,7 @@ headerImage:
   imageName: service.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: 新規事業を成功に導く、変化に柔軟なスピード感あるシステム＆SaaS開発
 kind: service
 subtitle: 新規事業を成功に導く、変化に柔軟なスピード感あるシステム＆SaaS開発

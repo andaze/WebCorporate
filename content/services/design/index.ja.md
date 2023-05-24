@@ -8,6 +8,7 @@ headerImage:
   imageName: design.png
   imageTitle: ''
   imageDescription: ''
+onTopPage: true
 topText: Webサイトの表示高速化とセキュリティ強化を実現する、静的Webサイト開発
 kind: service
 subtitle: Webサイトの表示高速化とセキュリティ強化を実現する、静的Webサイト開発
