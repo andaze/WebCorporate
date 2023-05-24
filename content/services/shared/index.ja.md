@@ -3,9 +3,9 @@ title: リモート勤怠管理サービス
 titleEn: Workforce Analytics
 date: 2022-02-23T17:03:34.000+09:00
 weight: "7"
-cardImage: ''
+cardImage: workforce.png
 headerImage:
-  imageName: shared.png
+  imageName: workforce.png
   imageTitle: ''
   imageDescription: ''
 kind: service
