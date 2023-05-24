@@ -2,8 +2,9 @@
 title: IoT／ビッグデータ開発サービス
 date: 2023-01-09T00:00:00+09:00
 weight: ''
+cardImage: IoT.png
 headerImage:
-  imageName: ''
+  imageName: IoT.png
   imageTitle: ''
   imageDescription: ''
 topText: 業務改革や新たなビジネスチャンスにつながる、データ活用をご支援

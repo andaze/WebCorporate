@@ -2,8 +2,9 @@
 title: IoT/Big Data Development Services
 date: 2023-01-09T00:00:00+09:00
 weight: ''
+cardImage: IoT.png
 headerImage:
-  imageName: ''
+  imageName: IoT.png
   imageTitle: ''
   imageDescription: ''
 topText: Supporting data utilization that leads to business innovation and new business opportunities
