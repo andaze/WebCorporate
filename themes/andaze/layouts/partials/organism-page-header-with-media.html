@@ -6,12 +6,12 @@
 {{ end  }}
 
 {{ if and .Page.Params.headerImage (ne .Page.Params.headerImage.imageName "") }}
-    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
+    <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] md:h-[34rem] 2xl:h-full 2xl:aspect-[11/3]"">
         {{partial "molecule-section-header-image.html" . }}
     </div>
 {{ else }}
     {{ if and .Page.Params.headerVideo (ne .Page.Params.headerVideo.videoName "") }}
-        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] lg:h-[34rem]">
+        <div class="mt-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 md:h-[34rem] md:h-[34rem] 2xl:h-full 2xl:aspect-[11/3]"">
             {{partial "molecule-section-header-video.html" . }}
         </div>
     {{ end }}
