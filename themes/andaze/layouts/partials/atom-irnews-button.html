@@ -1,33 +1,40 @@
-{{ $class := "w-full border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" }}
+{{ $section := default "" (.Scratch.Get "section") }}
+{{ $default_class :="w-52 border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mb-2 inline-flex justify-center" }}
+{{ $additional_class := default "" (.Scratch.Get "btn-class") }}
 
-{{ $youtubeButtonText := "" }}
-{{ if eq (.Lang) ("en")}}
-    {{ $youtubeButtonText = "YouTube Channel" }}
+{{ if eq $section "" }}
+
+    {{ $link := default "" (.Scratch.Get "btn-link") }}
+    {{ $text := default "" (.Scratch.Get "btn-text") }}
+    
+    <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}" target="_blank" rel="noopener">{{ $text }}</a>
+    
 {{ else }}
-    {{ $youtubeButtonText = "YouTubeチャンネル" }}
-{{ end }}
 
-{{ if or (eq (.Scratch.Get "section") ("news")) (eq (.Scratch.Get "section") ("casestudy")) (eq (.Scratch.Get "section") ("sustainability")) }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-        <a href="{{ .Permalink }}" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white {{ $class }}">{{ .Title }}</a>
-    {{ end }}
+    {{ with .Site.GetPage $section }}
 
-{{ else if eq (.Scratch.Get "section") ("careers") }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-        {{ range where .Site.Menus.main "Identifier" "careers" }}
-            <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer" class="md:w-72 bg-black text-white hover:text-black border-gray-50 hover:bg-white {{ $class }}">{{ .Name }}{{ .Post }}</a>
+        {{ $link := default .Permalink (.Scratch.Get "btn-link") }}
+        {{ $text := default .Title (.Scratch.Get "btn-text") }}
+
+        {{ if eq $section "careers" }}
+
+            {{ range where .Site.Menus.main "Identifier" "careers" }}
+                <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer" class="{{ $default_class }} {{ $additional_class }}">{{ .Name }}{{ .Post }}</a>
+            {{ end }}
+
+        {{ else }}
+
+            <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
+
         {{ end }}
+
+    {{ else }}
+
+        {{ $link := default "" (.Scratch.Get "btn-link") }}
+        {{ $text := default "" (.Scratch.Get "btn-text") }}
+
+        <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
+        
     {{ end }}
-
-{{ else if eq (.Scratch.Get "section") ("solution") }}
-    {{ with .Site.GetPage (.Scratch.Get "section") }}
-        <a href="{{ .Permalink }}" class="md:w-44 text-white hover:text-black border-gray-500 hover:bg-white bg-black {{ $class }}">{{ .Title }}</a>
-    {{ end }}
-
-{{ else if eq (.Scratch.Get "section") ("youtube") }}
-    <a href="https://www.youtube.com/channel/UCfjT9TH2TOy7QRp1X_Ibr4A" class="md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white {{ $class }}" target="_blank" rel="noopener">{{ $youtubeButtonText }}</a>
-
-{{ else }}
-    <a href="{{ .Permalink }}" class="md:w-72 text-black hover:text-white border-gray-500 hover:bg-black bg-white {{ $class }}">{{ .Title }}</a>
 
 {{ end }}
