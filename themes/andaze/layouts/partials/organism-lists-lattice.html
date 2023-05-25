@@ -1,7 +1,7 @@
 {{ if (where .Site.RegularPages "Section" (.Scratch.Get "section") ) }}
 <div>
     <div class="text-left mb-8">
-        {{ partial "atom-services-listpage-title.html" . }}
+        <h2 class="font-bold text-lg md:text-2xl capitalize text-gray-700">{{ .Scratch.Get "section" }}</h2>
     </div>
     {{ partial "organism-section-contents.html" . }}
 </div>

@@ -5,10 +5,42 @@
   {{ $class = "xl:grid-cols-5" }}
 {{ end }}
 
+{{ $class_card := "" }}
+{{ if eq (.Lang) ("en") }}
+    {{ $class_card = "min-h-[184px] lg:h-44" }}
+{{ else }}
+    {{ $class_card = "min-h-[152px] lg:h-36" }}
+{{ end }}
+
 {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
 <div class="grid grid-cols-2 sm:grid-cols-3 {{ $class }} 2xl:grid-cols-6 gap-4 not-prose">
     {{ range .Pages }}
-    {{ partial "molecule-services-polaroid-card.html" . }}
+      <a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border border-gray-600 w-full">
+        <div class="w-full h-fit overflow-hidden bg-gray-50">
+            {{ .Scratch.Set "class" "object-cover w-full h-32 md:h-40" }}
+            {{ .Scratch.Set "format" "webp" }}
+            {{ .Scratch.Set "hint" "smart" }}
+            {{ if .Page.Params.cardImage }}
+                {{ .Scratch.Set "src" .Page.Params.cardImage }}
+            {{ end }}
+            {{ .Scratch.Set "type" "thumbnail" }}
+            {{ .Scratch.Set "is-lazy" false }}
+            
+            {{ partial "atom-picture.html" . }}
+            
+            {{ .Scratch.Delete "class" }}
+            {{ .Scratch.Delete "format" }}
+            {{ .Scratch.Delete "hint" }}
+            {{ .Scratch.Delete "src" }}
+            {{ .Scratch.Delete "type" }}
+            {{ .Scratch.Delete "is-lazy" }}
+
+            <div class="text-gray-600 text-xs py-6 px-4 h-1/2 lg:min-h-0 {{ $class_card }}">
+                <h2 class="pb-2 w-fit mx-auto font-bold text-left">{{ .Title }}</h2>
+                <h3>{{ .Page.Params.subtitle }}</h3>
+            </div>
+        </div>
+      </a>
     {{ end }}
 </div>
 {{ end }}

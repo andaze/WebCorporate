@@ -1,6 +1,20 @@
-    {{ if  .Page.Params.headerVideo.videoTitle }}
-        {{ partial "atom-video-header-title.html" . }}
-    {{ end }}
-    {{ if  .Page.Params.headerVideo.videoName }}
-        {{ partial "atom-header-video.html" . }}
-    {{ end }}
+{{ if .Page.Params.headerVideo.videoTitle }}
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full overflow-hidden bg-fixed">
+        <div class="pl-8 md:pl-44 pt-40 md:pt-64 text-xl text-justify">
+            <div class="relative h-20">
+            <h2 class="font-bold text-white text-2xl md:text-5xl mb-4">
+                {{ .Page.Params.headerVideo.videoTitle }}
+            </h2>
+            </div>
+            {{ if .Page.Params.headerVideo.videoDescription }}
+            <h6 class="font-500 text-white text-xs md:text-xl md:pl-6 mb-4">{{ .Page.Params.headerVideo.videoDescription | markdownify }}</h6>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+{{ if  .Page.Params.headerVideo.videoName }}
+    {{ $videoName:= printf "%s%s" (.Page.Params.headerVideo.videoName) ".mp4" }}
+    <video playsinline muted autoplay loop class="w-screen h-full object-cover">
+        <source src="/video/{{ $videoName }}">
+    </video>
+{{ end }}
