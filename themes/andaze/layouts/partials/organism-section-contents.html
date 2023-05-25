@@ -13,7 +13,7 @@
 {{ end }}
 
 {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
-<div class="grid grid-cols-2 sm:grid-cols-3 {{ $class }} 2xl:grid-cols-6 gap-4 not-prose">
+<div class="grid grid-cols-2 sm:grid-cols-3 {{ $class }} 2xl:grid-cols-5 gap-4 not-prose">
     {{ range .Pages }}
       <a href="{{ .RelPermalink }}" rel="noopener noreferrer" class="border border-gray-600 w-full">
         <div class="w-full h-fit overflow-hidden bg-gray-50">
