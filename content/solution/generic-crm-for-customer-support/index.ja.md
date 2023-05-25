@@ -2,11 +2,13 @@
 title: Generic CRM for Customer Support
 date: 2022-12-27T00:00:00+09:00
 weight: ''
+cardImage: dashboard.png
 headerImage:
-  imageName: ''
+  imageName: dashboard.png
   imageTitle: ''
   imageDescription: ''
-
+subtitle: オムニチャネル時代に対応した、スムーズなカスタマーサポートを提供
+description: アンダーズ株式会社のソリューション「ジェネリックCRM for カスタマーサポート」は、オムニチャネル時代に対応した、スムーズなカスタマーサポートをご提供します。顧客との関係性を深めるためのより効率的・効果的なカスタマーサポート用システムなら、ぜひアンダーズにご相談ください。
 ---
 # **ジェネリックCRM for カスタマーサポート（自社製品）**
 

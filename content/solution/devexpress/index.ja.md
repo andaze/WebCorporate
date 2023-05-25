@@ -1,18 +1,18 @@
 ---
 title: DEVEXPRESS
 date: 2022-02-23T17:03:34.000+09:00
-weight: "7"
+weight: 7
 cardImage: devexpress.jpg
 headerImage:
   imageName: devexpress.jpg
   imageTitle: ''
   imageDescription: ''
 subtitle: 使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発」
-
+description: アンダーズ株式会社のソリューション「DEVEXPRESS」では、使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発」をご提供します。「DevExpressフレームワーク」を活用し、ハイスピードでUX開発を進めます。UX開発によるビジネス革新をお考えの企業様は、お気軽に当社のプロフェッショナルにご相談ください。
 ---
 # DEVEXPRESS
 
-### 使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発
+### 使い手の満足感がサービスの価値を高める「UX重視型アプリケーション開発」
 
 {{< br >}}
 

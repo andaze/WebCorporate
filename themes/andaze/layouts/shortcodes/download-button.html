@@ -1,9 +1,11 @@
 <div class="w-full md:w-fit mx-auto md:ml-0 mt-12 text-center">
-    {{ .Scratch.Set "class" (.Get "class") }}
+    {{ .Scratch.Set "btn-class" (.Get "btn-class") }}
     {{ .Scratch.Set "btn-text" (.Get "btn-text") }}
+    {{ .Scratch.Set "btn-link" (.Get "btn-link") }}
 
-    {{ partial "atom-download-button.html" . }}
+    {{ partial "atom-irnews-button.html" . }}
 
+    {{ .Scratch.Delete "btn-link" }}
     {{ .Scratch.Delete "btn-text" }}
-    {{ .Scratch.Delete "class" }}
+    {{ .Scratch.Delete "btn-class" }}
 </div>

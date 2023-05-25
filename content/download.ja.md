@@ -31,3 +31,8 @@ footerTitileHidden: true
   {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-full md:w-96 lg:w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
 </div>
 
+{{< download-button
+    btn-class="bg-[#E01E58] hover:text-[#E01E58] hover:bg-white border border-[#E01E58] text-white text-[16px] lg:text-[20px] !rounded-2xl font-bold select-none py-3 px-8 cursor-pointer" btn-text="ダウンロード" btn-link="https://andaze.com/landing-pages/generic-dx/download/"
+>}}
+
+</div>

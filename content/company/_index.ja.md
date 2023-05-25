@@ -6,7 +6,7 @@ headerVideo:
     videoName: "company"
     videoTitle: "会社情報"
     videoDescription: ""
- 
+description: "アンダーズ株式会社の会社情報ページです。当社代表取締役社長からのメッセージ、会社概要、沿革、経営理念をご覧いただけます。"
 ---
 
 # 企業情報

@@ -1,7 +1,7 @@
 ---
 title: SIGNALR
 date: 2022-02-23T17:03:34.000+09:00
-weight: "6"
+weight: 6
 cardImage: signalr.jpg
 headerImage:
   imageName: signalr.jpg
@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: Interactive Communication Web Service Development" to make users' site browsing
   more comfortable
-
+description: Andaze Ltd.'s solution SIGNALR provides "interactive communication web service development" that makes users' site browsing more comfortable. We will proceed with interactive web development with a sense of speed using the "SignalR" interactive communication framework. Please feel free to consult with us as we will develop a plan based on an understanding of your company's current situation.
 ---
 # SIGNALR
 

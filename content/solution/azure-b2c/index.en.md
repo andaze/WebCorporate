@@ -1,7 +1,7 @@
 ---
 title: AZURE B2C
 date: 2022-02-23T17:03:34.000+09:00
-weight: "4"
+weight: 4
 cardImage: b2c.jpg
 headerImage:
   imageName: b2c.jpg
@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: Superior Subject Authentication Service to Protect Sensitive Information
   from Hackers
-
+description: Andaze Ltd.'s solution, AZURE B2C, provides a superior subject authentication service that protects sensitive information from hackers. We will promptly build a subject authentication service using our white label authentication solution. Please feel free to contact us if your company is interested in safe and secure "authentication".
 ---
 # AZURE B2C
 
