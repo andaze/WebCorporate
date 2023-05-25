@@ -1,7 +1,7 @@
 ---
 title: AI（Artificial Intelligence）
 date: 2022-02-23T17:03:34.000+09:00
-weight: "1"
+weight: 1
 cardImage: ai.png
 headerImage:
   imageName: ai.png
@@ -10,7 +10,7 @@ headerImage:
 onTopPage: true
 kind: service
 subtitle: Providing highly accurate AI solutions that help solve problems and realize business strategies
-description: "Andaze Ltd. provides highly accurate AI solutions that contribute to solving problems and realizing business strategies. From understanding the current situation to planning, Andaze's AI specialists, who are well versed in business and cutting-edge technologies, provide a one-stop service."
+description: Andaze Ltd. provides highly accurate AI solutions that contribute to solving problems and realizing business strategies. From understanding the current situation to planning, Andaze's AI specialists, who are well versed in business and cutting-edge technologies, provide a one-stop service.
 ---
 # AI (Artificial Intelligence)
 

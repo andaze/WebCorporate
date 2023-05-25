@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 kind: service
 subtitle: Remote attendance management tool to monitor employee attendance and productivity
-description: "Andaze Ltd.'s Remote Time and Attendance Service allows you to monitor attendance and productivity while protecting the privacy of your remote employees. The service provides the ability to review and manage time and attendance status, analyze detailed data on labor productivity, and provide insights to help improve compliance."
+description: Andaze Ltd.'s Remote Time and Attendance Service allows you to monitor attendance and productivity while protecting the privacy of your remote employees. The service provides the ability to review and manage time and attendance status, analyze detailed data on labor productivity, and provide insights to help improve compliance.
 ---
 # **Remote Time and Attendance Service**
 

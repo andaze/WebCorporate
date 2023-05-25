@@ -1,15 +1,15 @@
 ---
 title: DEVEXPRESS
 date: 2022-02-23T17:03:34.000+09:00
-weight: "7"
+weight: 7
 cardImage: devexpress.jpg
 headerImage:
   imageName: devexpress.jpg
   imageTitle: ''
   imageDescription: ''
-subtitle: UX-focused application development" that enhances the value of services
+subtitle: UX-focused application development that enhances the value of services
   through user satisfaction
-description: "Andaze Ltd.'s solution DEVEXPRESS provides 'UX-oriented application development' that enhances the value of services through user satisfaction. If your company is looking for business innovation through UX development, please feel free to contact our professionals."
+description: Andaze Ltd.'s solution DEVEXPRESS provides "UX-oriented application development" that enhances the value of services through user satisfaction. If your company is looking for business innovation through UX development, please feel free to contact our professionals.
 ---
 # DEVEXPRESS
 

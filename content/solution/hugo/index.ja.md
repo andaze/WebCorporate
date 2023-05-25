@@ -1,7 +1,7 @@
 ---
 title: HUGO WEB
 date: 2022-02-23T17:03:34.000+09:00
-weight: "9"
+weight: 9
 cardImage: hugo.png
 headerImage:
   imageName: hugo.png

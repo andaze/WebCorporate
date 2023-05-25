@@ -1,14 +1,14 @@
 ---
 title: AZURE BOT FRAMEWORK
 date: 2022-02-23T17:03:34.000+09:00
-weight: "1"
+weight: 1
 cardImage: bot.jpg
 headerImage:
   imageName: bot.jpg
   imageTitle: ''
   imageDescription: ''
 subtitle: 24時間自動応答で、顧客満足度アップに貢献する「チャットボット開発」
-description: "アンダーズ株式会社のソリューション「AZURE BOT FRAMEWORK」では、24時間自動応答で、顧客満足度アップに貢献する「チャットボット開発」をご提供します。当社ではAzure Bot Frameworkを活用して、速やかにチャットボット開発を進めます。貴社の現状を理解させていただき、企画の立案をいたしますので、当社へご相談ください。"
+description: アンダーズ株式会社のソリューション「AZURE BOT FRAMEWORK」では、24時間自動応答で、顧客満足度アップに貢献する「チャットボット開発」をご提供します。当社ではAzure Bot Frameworkを活用して、速やかにチャットボット開発を進めます。貴社の現状を理解させていただき、企画の立案をいたしますので、当社へご相談ください。
 ---
 # AZURE BOT FRAMEWORK
 
