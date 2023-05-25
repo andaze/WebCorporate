@@ -2,10 +2,12 @@
 title: Workforce Analytics
 date: 2022-12-27T00:00:00+09:00
 weight: ''
+cardImage: workforce.png
 headerImage:
-  imageName: ''
+  imageName: workforce.png
   imageTitle: ''
   imageDescription: ''
+subtitle: Workforce "Analysis" tool to increase productivity of companies promoting remote work.
 description: "Andaze Ltd.'s solution 'Occupancy Management System' provides a 'workforce analysis (workforce analysis)' tool to increase the productivity of remote work promotion companies. The 'Occupancy Management System,' which can be customized to fit your company's policies and organization, is ideal for workforce management and workforce analysis for remote work promotion companies."
 ---
 # **Workforce Analytics**

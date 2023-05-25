@@ -2,10 +2,12 @@
 title: Generic CRM for Sales
 date: 2022-12-27T00:00:00+09:00
 weight: ''
+cardImage: generic.png
 headerImage:
-  imageName: ''
+  imageName: generic.png
   imageTitle: ''
   imageDescription: ''
+subtitle: 顧客情報、担当者の行動を管理し、データに基づいた営業活動を支援
 description: "アンダーズ株式会社のソリューション「ジェネリックCRM for セールス」は、顧客情報や営業担当者の行動を管理し、営業活動を支援するためのモジュールです。多くの機能をローコードで開発することが可能です。ドラッグ＆ドロップで業務アプリケーションの作成や、繰り返し行う業務の自動化ができます。"
 ---
 # **ジェネリックCRM for セールス（自社製品）**
