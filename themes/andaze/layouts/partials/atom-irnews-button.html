@@ -33,7 +33,7 @@
         {{ $link := default "" (.Scratch.Get "btn-link") }}
         {{ $text := default "" (.Scratch.Get "btn-text") }}
 
-        <a href="{{ $link }}" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
+        <a href="{{ $link }}" target="_blank" rel="noopener noreferrer" class="{{ $default_class }} {{ $additional_class }}">{{ $text }}</a>
         
     {{ end }}
 
