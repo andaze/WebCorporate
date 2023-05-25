@@ -1,7 +1,7 @@
 ---
 title: Dynamics365
 date: 2022-02-23T17:03:34.000+09:00
-weight: "3"
+weight: 3
 cardImage: dynamics365.jpg
 headerImage:
   imageName: dynamics365.jpg
@@ -9,7 +9,7 @@ headerImage:
   imageDescription: ''
 subtitle: Introduction of Customer Relationship Management CRM" for accurate analysis
   of information on existing customers for sales promotion.
-description: "Dynamics 365, a solution from Andaze Ltd., provides a customer relationship management CRM implementation that accurately analyzes information on existing customers for sales promotion. Customer Relationship Management System Dynamics 365 allows us to quickly develop the system. We can also customize the system flexibly according to your company's requirements and business."
+description: Dynamics 365, a solution from Andaze Ltd., provides a customer relationship management CRM implementation that accurately analyzes information on existing customers for sales promotion. Customer Relationship Management System Dynamics 365 allows us to quickly develop the system. We can also customize the system flexibly according to your company's requirements and business.
 ---
 # Dynamics365
 

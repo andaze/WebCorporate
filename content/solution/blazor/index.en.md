@@ -1,14 +1,14 @@
 ---
 title: BLAZOR WEB
 date: 2022-02-23T17:03:34.000+09:00
-weight: "5"
+weight: 5
 cardImage: blazor.jpg
 headerImage:
   imageName: blazor.jpg
   imageTitle: ''
   imageDescription: ''
-subtitle: SPA application development" that can provide comfortable web expression
-description: "Andaze Ltd.'s solution BLAZOR WEB offers 'SPA application development' that can provide comfortable web expressions. We contribute to the improvement of your business value. Please feel free to contact us if your company would like to solve your management issues with IT tools."
+subtitle: SPA application development that can provide comfortable web expression
+description: Andaze Ltd.'s solution BLAZOR WEB offers "SPA application development" that can provide comfortable web expressions. We contribute to the improvement of your business value. Please feel free to contact us if your company would like to solve your management issues with IT tools.
 ---
 # BLAZOR WEB
 

@@ -1,15 +1,15 @@
 ---
 title: AZURE TABLE STORAGE
 date: 2022-02-23T17:03:34.000+09:00
-weight: "11"
+weight: 11
 cardImage: storage.jpg
 headerImage:
   imageName: storage.jpg
   imageTitle: ''
   imageDescription: ''
-subtitle: Big Data Analytics Development" for inexpensive and speedy analysis of exponentially
+subtitle: Big Data Analytics Development for inexpensive and speedy analysis of exponentially
   growing data
-description: "Andaze Ltd's solution, AZURE TABLE STORAGE, provides 'Big Data Analysis Development' for inexpensive and speedy analysis of exponentially increasing data. We quickly build a database with our large-scale data storage Azure Table Storage. Please feel free to contact us if your company is having trouble handling big data."
+description: Andaze Ltd's solution, AZURE TABLE STORAGE, provides 'Big Data Analysis Development' for inexpensive and speedy analysis of exponentially increasing data. We quickly build a database with our large-scale data storage Azure Table Storage. Please feel free to contact us if your company is having trouble handling big data.
 ---
 # AZURE TABLE STORAGE
 

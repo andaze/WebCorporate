@@ -1,14 +1,14 @@
 ---
 title: AZURE TABLE STORAGE
 date: 2022-02-23T17:03:34.000+09:00
-weight: "11"
+weight: 11
 cardImage: storage.jpg
 headerImage:
   imageName: storage.jpg
   imageTitle: ''
   imageDescription: ''
 subtitle: 指数関数的に増加するデータを安価でスピーディーに解析できる「ビッグデータ分析開発」
-description: "アンダーズ株式会社のソリューション「AZURE TABLE STORAGE」では、指数関数的に増加するデータを安価でスピーディーに解析できる「ビッグデータ分析開発」をご提供します。大規模データストレージ Azure Table Storageにて、速やかにデータベースを構築します。ビッグデータの取り扱いにお悩みの企業様は、お気軽に当社へご相談ください。"
+description: アンダーズ株式会社のソリューション「AZURE TABLE STORAGE」では、指数関数的に増加するデータを安価でスピーディーに解析できる「ビッグデータ分析開発」をご提供します。大規模データストレージ Azure Table Storageにて、速やかにデータベースを構築します。ビッグデータの取り扱いにお悩みの企業様は、お気軽に当社へご相談ください。
 ---
 # AZURE TABLE STORAGE
 

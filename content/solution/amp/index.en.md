@@ -1,15 +1,15 @@
 ---
 title: AMP WEB
 date: 2022-02-23T17:03:34.000+09:00
-weight: "8"
+weight: 8
 cardImage: amp.jpg
 headerImage:
   imageName: amp.jpg
   imageTitle: ''
   imageDescription: ''
-subtitle: Mobile Content Acceleration" to reduce the waiting time until a web page
+subtitle: Mobile Content Acceleration to reduce the waiting time until a web page
   is displayed
-description: "Andaze Ltd. can perform 'mobile content acceleration' to reduce the waiting time for web pages to be displayed by AMP WEB. If your company's website is facing any issues, please feel free to contact us."
+description: Andaze Ltd. can perform "mobile content acceleration" to reduce the waiting time for web pages to be displayed by AMP WEB. If your company's website is facing any issues, please feel free to contact us.
 ---
 # AMP WEB
 

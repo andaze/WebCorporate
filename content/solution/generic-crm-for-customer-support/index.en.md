@@ -2,11 +2,13 @@
 title: Generic CRM for Customer Support
 date: 2022-12-27T00:00:00+09:00
 weight: ''
+cardImage: dashboard.png
 headerImage:
-  imageName: ''
+  imageName: dashboard.png
   imageTitle: ''
   imageDescription: ''
-description: "Andaze Ltd.'s solution Generic CRM for Customer Support provides smooth customer support for the omni-channel era. For a more efficient and effective customer support system to deepen relationships with your customers, please contact Andaze."
+subtitle: Providing smooth customer support for the omni-channel era
+description: Andaze Ltd.'s solution Generic CRM for Customer Support provides smooth customer support for the omni-channel era. For a more efficient and effective customer support system to deepen relationships with your customers, please contact Andaze.
 ---
 # **Generic CRM for Customer Support (in-house product)**
 

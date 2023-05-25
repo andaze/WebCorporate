@@ -2,11 +2,14 @@
 title: IoT/Big Data Development Services
 date: 2023-01-09T00:00:00+09:00
 weight: ''
+cardImage: IoT.png
 headerImage:
-  imageName: ''
+  imageName: IoT.png
   imageTitle: ''
   imageDescription: ''
-description: "Andaze Ltd. provides big data development services that lead to corporate profitability, from automatic collection of in-house data using various tools and devices to processing and analysis. Andaze has a wealth of experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze."
+kind: service
+subtitle: Supporting data utilization that leads to business innovation and new business opportunities
+description: Andaze Ltd. provides big data development services that lead to corporate profitability, from automatic collection of in-house data using various tools and devices to processing and analysis. Andaze has a wealth of experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze.
 ---
 # **IoT/Big Data Development Services**
 
@@ -16,7 +19,7 @@ description: "Andaze Ltd. provides big data development services that lead to co
 
 With the promotion of DX, an increasing number of companies are seeking to "successfully link the large amount of data (Big Data) they possess to their business". This data is useful in understanding the current situation and making accurate judgments based on it, without relying on human experience and intuition. By referring to predictive analysis of big data and linking it to operational reforms and the creation of new businesses, we will realize the establishment of DX and a shift to "data-driven management," in which management is conducted while making use of data.
 
-Andaze provides big data development services that lead to corporate profitability, from the automatic collection of internal data using various tools and devices to processing and analysis. The results of this analysis can lead to explosive effects, such as improved productivity and quality control. Andaz has extensive experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze.
+Andaze provides big data development services that lead to corporate profitability, from the automatic collection of internal data using various tools and devices to processing and analysis. The results of this analysis can lead to explosive effects, such as improved productivity and quality control. Andaze has extensive experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze.
 
 ##### ●Efficient data collection methods
 

@@ -7,51 +7,88 @@ headerImage:
   imageName: cloud.png
   imageTitle: ''
   imageDescription: ''
-topText: We support the implementation of cloud services that can be accessed with
-  more security and safety in accordance with the customer's business strategy.
+onTopPage: true
 kind: service
-subtitle: Supporting the best cloud deployment for your digital strategy
-description: "Andaze Ltd. supports companies that wish to 'de-subscribe, de-cloud, and de-package' from the perspectives of cost, security, and system operation. Our experts will propose the best solution for you, from the creation of the system to its operation."
+subtitle: Support for companies wishing to "de-subscribe, de-cloud, and de-package" to improve ROI
+description: Andaze Ltd. supports companies that wish to "de-subscribe, de-cloud, and de-package" from the perspectives of cost, security, and system operation. Our experts will propose the best solution for you, from the creation of the system to its operation.
 ---
-# Cloud Computing
+# **Support services for de-subscription, de-clouding, and de-packaging**.
 
 {{< space height="h-10" >}}
 
-### Supporting the best cloud deployment for your digital strategy
+### Support for "de-subscription, de-cloud, and de-packaging" in terms of cost, security, and system operation
 
-Cloud computing is essential for DX. In addition, the adoption of the most appropriate cloud service is required depending on the customer's business challenges and system environment. Andaze will develop a detailed migration roadmap in accordance with the customer's industry, company size, and requirements. We not only realize the migration of existing systems to the cloud, but also provide access to them under safer and more secure security, which will be a driving force to promote the transformation of your company in the wake of digitalization.
+Cloud services (SaaS), which have become indispensable for businesses, offer a variety of advantages, such as improved efficiency in operations and management. In addition, companies are moving away from SaaS, moving away from cloud computing, and moving away from package services. Furthermore, due to the limitations of system operations, an increasing number of companies are re-evaluating the advantages of their in-house "on-premise" systems and viewing their operations in a positive light.
+
+Andaze will support such companies that wish to "move away from subsquare systems, cloud computing, and packages. Andaze will listen to your concerns about cost, security, performance, and other factors, as well as customization, in order to promote the optimal "de-subscription, de-cloud, and de-packaging (de-SaaS)" for your company.
+
+{{< space height="h-10" >}}
+
+##### **● General de-clouding vs. Andaze de-clouding**
+
+**General de-clouding**
+
+Migrating a SaaS built system to on-premise
+
+Migrating systems from on-premise to SaaS and back to on-premise again
+
+**Anders de-clouding**.
+
+・Convert to a form of "hybrid cloud" by making decisions on an application-by-application basis
+
+Andaze's de-subscription, de-cloud, and de-packaging is done by making decisions on a workload (application) by workload basis. Rather than moving everything to on-premise, we will consider cost, security, customization, system integration, and other factors, and flexibly respond by keeping necessary SaaS, and moving systems that require unique customization or high security requirements to on-premise. However, on-premise is not a conventional type of cloud, but a "private cloud (resource exclusive cloud)" in which resources in the PaaS are used exclusively by one company, and a "hybrid cloud" is built and operated by combining SaaS, a public cloud, and on-premise cloud, a private cloud. The "hybrid cloud" is a combination of a public cloud (SaaS) and a private cloud (on-premise cloud).
+
+{{< space height="h-10" >}}
+
+##### ●De-subscription, de-cloud, and de-packaging using "hybrid cloud"
+
+In the on-premise cloud within PaaS, a new system will be built with a workload design that allows movement between on-premise and SaaS, sensitive data from existing core systems will be linked, and only the necessary SaaS will continue to be used.
+
+##### ●Example of "Depackaging" needs
+
+Company location: Tokyo / 350 employees / manufacturer  
+ We used to use a major sales management system. However, because it was a packaged product, there were many specifications that did not match our business practices, making our operations inefficient. Therefore, we decided to revamp the system with full-scratch development optimized for our unique business.
+
+Since this was a replacement of a system that was fundamental to the company, several companies with particular strengths in upstream processes such as requirements definition were considered as candidates. After consulting with several companies, we decided to request Andaze K.K. because of their shared team structure and the proposals we received.
+
+During the development period, we received requests from our employees on site one after another that could not be realized with the previous package product. We continue to rely on Andaze for maintenance.
 
 {{< space height="h-20" >}}
 
-## Why Choose Andaze?
+## Why Andaze?
 
 {{< space height="h-6" >}}
 
-#### (1)	Extensive experience and deep business understanding of cloud solutions
+#### (1) We have extensive experience and deep business understanding of cloud solutions and "de-subscription/de-cloud/de-packaging".
 
-* ・Our strength lies in our advanced technological capabilities and extensive know-how cultivated through cloud solutions for various industries.
-* ・We go beyond cloud migration to help you further expand your business by taking advantage of the unique characteristics of cloud computing.
-* ・We have obtained ISO27001 advanced security management system (ISMS) certification to maintain and improve the balance of confidentiality, integrity and availability of information.
+Our strength lies in our advanced technical capabilities and extensive know-how cultivated through cloud/de-cloud solutions in a variety of industries.
 
-{{< space height="h-6" >}}
+We are not limited to migration to/from the cloud, but also contribute to operational efficiency, cost reduction, and further expansion of business by taking advantage of the unique characteristics of DX.
 
-#### (2) In-house complete one-stop service
-
-* ・Andaze is responsible for providing services from strategic planning to cloud design, construction, and post-operation. There is no process that is thrown entirely to group companies or subcontractors.
-* ・Development members specializing in cloud technology provide services to meet the needs of the market, not only in terms of functionality and performance, but also within a reasonable cost range.
-* ・We build a strong partnership where you can consult with us on anything regarding DX promotion using the cloud.
+We have acquired the ISO27001 advanced security management system (ISMS) to maintain and improve the confidentiality, integrity, and availability of information in a well-balanced manner.
 
 {{< space height="h-6" >}}
 
-#### (3) Provide the products you need, in the quantities you need, at the timing you need them
+#### (2) In-house, one-stop service
 
-* ・Experts specializing in promoting cloud computing will propose the best form for customers, from the creation of mechanisms to operational aspects.
-* ・We build the infrastructure necessary for DX utilization, such as AI services, data analysis, and APIs that make full use of advanced technologies.
-* ・We adopt "DevOps*", a development method that significantly shortens development time.
-* ・We provide support such as support for operational audits at the ideal timing according to the customer's requirements.
+Andaze is responsible for providing services from strategic planning to hybrid cloud design, construction, and post-operation. There is no process that is thrown to group companies or subcontractors.
 
-{{< space height="h-2" >}}
+Our expert development members provide functions and performance that meet your needs at a reasonable cost.
 
-<font color="gray">*DevOps is a software development method in which development and operations work together</font>
+We build a strong partnership where you can consult with us about anything related to DX promotion.
+
+{{< space height="h-6" >}}
+
+#### (3) Provide the products you need, in the quantities you need, when you need them
+
+Our experts provide the best solutions for our clients, from the creation of systems to the operational aspects.
+
+We build the foundation necessary for DX utilization, including AI services, data analysis, and APIs that make full use of advanced technologies.
+
+We adopt DevOps*, a development method that significantly shortens development time.
+
+We provide support for operational audits at the ideal timing upon request.
+
+* DevOps* is a software development method in which development and operations work together.
 
 {{< space height="h-28" >}}

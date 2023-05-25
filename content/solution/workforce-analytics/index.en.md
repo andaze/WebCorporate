@@ -2,11 +2,13 @@
 title: Workforce Analytics
 date: 2022-12-27T00:00:00+09:00
 weight: ''
+cardImage: workforce.png
 headerImage:
-  imageName: ''
+  imageName: workforce.png
   imageTitle: ''
   imageDescription: ''
-description: "Andaze Ltd.'s solution 'Occupancy Management System' provides a 'workforce analysis (workforce analysis)' tool to increase the productivity of remote work promotion companies. The 'Occupancy Management System,' which can be customized to fit your company's policies and organization, is ideal for workforce management and workforce analysis for remote work promotion companies."
+subtitle: Workforce Analysis tool to increase productivity of companies promoting remote work.
+description: Andaze Ltd.'s solution "Occupancy Management System" provides a "workforce analysis (workforce analysis)" tool to increase the productivity of remote work promotion companies. The "Occupancy Management System", which can be customized to fit your company's policies and organization, is ideal for workforce management and workforce analysis for remote work promotion companies.
 ---
 # **Workforce Analytics**
 
@@ -42,7 +44,7 @@ Andaze's Occupancy Management System is a service platform as workforce analysis
 
 {{< br >}}
 
-In keeping with our "Trust, but be sure*" philosophy, Andaz collects and analyzes daily work performance data in our Occupancy Management System to obtain employee work hours, technology usage, and productivity trends while ensuring data privacy and compliance.
+In keeping with our "Trust, but be sure*" philosophy, Andaze collects and analyzes daily work performance data in our Occupancy Management System to obtain employee work hours, technology usage, and productivity trends while ensuring data privacy and compliance.
 
 \*Former President Reagan of the United States of America said
 

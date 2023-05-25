@@ -9,8 +9,7 @@ headerImage:
   imageDescription: ''
 kind: service
 subtitle: Total support from recruiting to hiring and training
-topText: Total support from recruiting to hiring and training
-description: "Andaze Ltd. offers a total recruitment service that provides support for recruiting, hiring, and training. we support strategic recruiting activities by analyzing market trends and information obtained through our professional knowledge and collaboration with agents and partner companies, which we have cultivated by supporting more than 200 companies in their recruitment activities. We support strategic recruiting activities."
+description: Andaze Ltd. offers a total recruitment service that provides support for recruiting, hiring, and training. we support strategic recruiting activities by analyzing market trends and information obtained through our professional knowledge and collaboration with agents and partner companies, which we have cultivated by supporting more than 200 companies in their recruitment activities. We support strategic recruiting activities.
 ---
 # Recruitment Agency Services
 

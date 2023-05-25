@@ -2,11 +2,13 @@
 title: Generic CRM for Sales
 date: 2022-12-27T00:00:00+09:00
 weight: ''
+cardImage: generic.png
 headerImage:
-  imageName: ''
+  imageName: generic.png
   imageTitle: ''
   imageDescription: ''
-description: "Andaze Ltd.'s solution Generic CRM for Sales is a module to support sales activities by managing customer information and sales representative actions. Many functions can be developed in low code. You can create business applications and automate repetitive tasks by drag-and-drop."
+subtitle: Manage customer information and representative actions to support data-driven sales activities
+description: Andaze Ltd.'s solution Generic CRM for Sales is a module to support sales activities by managing customer information and sales representative actions. Many functions can be developed in low code. You can create business applications and automate repetitive tasks by drag-and-drop.
 ---
 # **Generic CRM for Sales (in-house product)**
 
