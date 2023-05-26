@@ -6,4 +6,5 @@ headerVideo:
     videoName: "sustainability"
     videoTitle: "サステナビリティ"
     videoDescription: ""
+description: "アンダーズ株式会社のサステナビリティページです。当社代表取締役社長からのメッセージや、持続可能な社会、デジタル技術が浸透したより良い暮らしの実現に向けた取り組みについてご覧いただけます。"
 ---

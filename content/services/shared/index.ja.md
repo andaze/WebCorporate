@@ -3,15 +3,14 @@ title: リモート勤怠管理サービス
 titleEn: Workforce Analytics
 date: 2022-02-23T17:03:34.000+09:00
 weight: "7"
-cardImage: ''
+cardImage: workforce.png
 headerImage:
-  imageName: shared.png
+  imageName: workforce.png
   imageTitle: ''
   imageDescription: ''
-topText: 従業員の勤怠状況と生産性をモニタリングするリモート勤怠管理ツール
 kind: service
 subtitle: 従業員の勤怠状況と生産性をモニタリングするリモート勤怠管理ツール
-
+description: アンダーズ株式会社のリモート勤怠管理サービスは、リモートワーク従業員のプライバシーを保護しながら、勤怠状況と生産性をモニタリングすることができます。勤怠状況の確認と管理、労働生産性に関する詳細なデータ分析、コンプライアンスの向上に役立つ洞察を行うサービスを提供しています。
 ---
 # **リモート勤怠管理サービス**
 

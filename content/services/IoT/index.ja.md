@@ -2,11 +2,14 @@
 title: IoT／ビッグデータ開発サービス
 date: 2023-01-09T00:00:00+09:00
 weight: ''
+cardImage: IoT.png
 headerImage:
-  imageName: ''
+  imageName: IoT.png
   imageTitle: ''
   imageDescription: ''
-
+kind: service
+subtitle: 業務改革や新たなビジネスチャンスにつながる、データ活用をご支援
+description: アンダーズ株式会社では、さまざまなツールやデバイスを使った社内データの自動収集から、加工・分析まで、企業の収益につながるビッグデータ開発サービスをご提供します。企業の大きな資産になる可能性を秘めているビッグデータ開発は、IoTの活用経験も豊富なアンダーズにお任せください。
 ---
 # **IoT／ビッグデータ開発サービス**
 

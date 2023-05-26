@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class="scroll-smooth">
+{{ $lang:= print site.Language }}
+<html lang="{{ $lang }}" class="scroll-smooth">
 {{- partial "head.html" . -}}
 
 {{ $class := "" }}
@@ -15,11 +16,6 @@
 <body
   class="{{ $class }} prose-p:leading-[1.75] prose-p:mb-[1.25em] prose-headings:mt-1 prose-headings:mb-6 prose-headings:font-bold prose-strong:font-bold prose-em:italicprose-headings:!leading-[1.175] prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base">
   {{- partial "header.html" . -}}
-
-  <!-- ローディング画面 -->
-  <div id="loading" class="fixed z-40 flex justify-center w-full h-full bg-black opacity-0 pointer-events-none">
-    <div class="absolute z-10 w-6 h-6 bg-white rounded-full animate-ping inset-1/2" id="loading_icon"></div>
-  </div>
 
   <div class="transition-fade">
     {{- block "main" . }}{{- end }}

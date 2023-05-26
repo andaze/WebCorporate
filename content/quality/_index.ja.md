@@ -2,6 +2,7 @@
 title: "品質方針"
 date: 2022-06-04T16:11:55+09:00
 weight: 10
+description: "アンダーズ株式会社の品質方針をご覧いただけます。"
 ---
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="inline">品質方針</h1>

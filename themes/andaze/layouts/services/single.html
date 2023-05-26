@@ -57,7 +57,9 @@
                     </div>
                 {{ end }}
                 <div class="mt-14 text-center">
+                    {{ .Scratch.Set "btn-class" "md:w-44 text-white hover:text-black border-gray-500 hover:bg-white bg-black" }}
                     {{ partial "molecule-section-irnews-buttongroup.html" . }}
+                    {{ .Scratch.Delete "btn-class" }}
                 </div>
                 {{ .Scratch.Delete "section" }}
             {{ end }}

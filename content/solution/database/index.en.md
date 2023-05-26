@@ -1,14 +1,14 @@
 ---
 title: AZURE COSMOS DATABASE
 date: 2022-02-23T17:03:34.000+09:00
-weight: "10"
+weight: 10
 cardImage: database.jpg
 headerImage:
   imageName: database.jpg
   imageTitle: ''
   imageDescription: ''
-subtitle: NOSQL Database Development" for storing huge databases with data optimization
-
+subtitle: NOSQL Database Development for storing huge databases with data optimization
+description: Andaze Ltd.'s solution AZURE COSMOS DATABASE provides "NOSQL database development" to store huge databases by optimizing data. azure cosmos databases will help you to proceed with database optimization promptly. Please feel free to contact us if your company is having trouble storing large scale data.
 ---
 # AZURE COSMOS DATABASE
 

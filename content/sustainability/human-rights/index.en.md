@@ -6,13 +6,13 @@ headerImage:
   imageName: meeting.jpg
   imageTitle: Human Rights Policy
 newsimg: human.jpg
-
+description: "You can view the human rights policy of Andaze Ltd."
 ---
 # Human Rights Policy
 
 {{< space height="h-8" >}}
 
-### **Andaze's management philosophy is "Bringing innovation to Japan through global and superior technology. Andaze's management philosophy is to "Bring innovation to Japan through global and superior technology. Based on this philosophy, we will make company-wide efforts to respect the human rights of all people involved in our business activities.**
+**Andaze's management philosophy is "Bringing innovation to Japan through global and superior technology. Andaze's management philosophy is to "Bring innovation to Japan through global and superior technology. Based on this philosophy, we will make company-wide efforts to respect the human rights of all people involved in our business activities.**
 
 {{< space height="h-10" >}}
 

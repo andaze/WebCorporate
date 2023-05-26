@@ -1,14 +1,14 @@
 ---
 title: AZURE AI
 date: 2022-02-23T17:03:34.000+09:00
-weight: "2"
+weight: 2
 cardImage: ai.jpg
 headerImage:
   imageName: ai.jpg
   imageTitle: ''
   imageDescription: ''
 subtitle: 高い予測精度で、ビジネス価値向上につながる「AI機械学習開発」
-
+description: アンダーズ株式会社のソリューション「AZURE AI」では、高い予測精度でビジネス価値向上につながる「AI機械学習開発」をご提供します。オープンソースの AI 開発フレームワーク ML.NETを用い、短期間で機械学習をモデリングします。貴社が抱える経営課題の解決をテクノロジーでサポートさせていただきます。
 ---
 # AZURE AI
 

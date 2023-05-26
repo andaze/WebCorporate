@@ -1,9 +1,4 @@
-{{ $class := "" }}
-{{ if eq .Page.Params.cardImage ("recruit.png") }}
-    {{ $class = "hidden" }}
-{{ end }}
-
-<article class="sm:h-auto bg-white shadow-xl bg-opacity-90 flex flex-col {{ $class }} min-h-[220px] p-8 flex justify-between flex-col gap-2">
+<article class="sm:h-auto bg-white shadow-xl bg-opacity-90 flex flex-col min-h-[220px] p-8 flex justify-between flex-col gap-2">
     <div class="flex flex-col lg:flex-col-reverse gap-2">
         <div class="px-2 sm:px-0 text-center h-auto mb-2 lg:min-h-[80px]">
             <h3 class="text-black w-fit mx-auto font-bold text-lg block">{{ .Title }}</h3>
@@ -25,6 +20,6 @@
             {{ .Scratch.Delete "type" }}
         </div>
     </div>
-    <p>{{ .Page.Params.topText }}</p>
+    <p>{{ .Page.Params.subtitle }}</p>
     <a href="{{ .Permalink }}" class="w-full text-white hover:text-black border-gray-500 hover:bg-white bg-black border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mt-4 inline-flex justify-center mx-auto">View More</a>
 </article>
