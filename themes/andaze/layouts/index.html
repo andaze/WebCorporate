@@ -12,7 +12,7 @@
       </h1>
     </div>
 
-    <div class="mt-52 mb-72 bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black w-5/6">
+    <section class="mt-52 mb-72 bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black w-5/6">
       {{ if .Site.GetPage "reason"}}
           {{ .Scratch.Set "section" "reason" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
@@ -29,9 +29,9 @@
           {{ .Scratch.Delete "section" }}
 
       {{ end }}
-    </div>
+    </section>
 
-    <div class="bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black">
+    <section class="bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black">
       {{ if .Site.GetPage "services"}}
           {{ .Scratch.Set "section" "services" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
@@ -49,7 +49,7 @@
           {{ .Scratch.Delete "section" }}
           
       {{ end }}
-    </div>
+    </section>
 
 
   </div>
@@ -71,7 +71,7 @@
     {{ .Scratch.Delete "is-lazy" }}
   </div>
 
-  <div class="bg-white overflow-hidden">
+  <section class="bg-white overflow-hidden">
     <div class="my-20 md:my-36">
       {{ if .Site.GetPage "news"}}
         {{ .Scratch.Set "section" "news" }}
@@ -92,9 +92,9 @@
       {{ .Scratch.Delete "btn-class" }}
       {{ .Scratch.Delete "section" }}
     </div>
-  </div>
+  </section>
 
-  <div class="bg-black py-20 md:py-36">
+  <section class="bg-black py-20 md:py-36">
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
@@ -114,7 +114,7 @@
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-  </div>
+  </section>
 
   {{ if .Site.GetPage "casestudy"}}
     {{ .Scratch.Set "section" "casestudy" }}
@@ -124,7 +124,7 @@
     {{ .Scratch.Delete "section" }}
   {{ end }}
   
-  <div class="bg-white overflow-hidden">
+  <section class="bg-white overflow-hidden">
     <div class="my-20 md:my-36">
       {{ if .Site.GetPage "sustainability"}}
         {{ .Scratch.Set "section" "sustainability" }}
@@ -134,18 +134,19 @@
         {{ .Scratch.Delete "section" }}
       {{ end }}
     </div>
-  </div>
+  </section>
 
   {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
-    <div class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
+    <section class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
       {{ .Content }}
-    </div>
+    </section>
   {{ end }}
 
   {{ if .Site.GetPage "careers"}}
     {{ .Scratch.Set "section" "careers" }}
     
     {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+
       <div class="w-full h-96 lg:h-[34rem] 2xl:h-full 2xl:aspect-[11/3] relative">
         <div class="absolute top-1/2 -translate-y-1/2 w-full text-center z-10">
           
@@ -177,7 +178,7 @@
         {{ .Scratch.Delete "src" }}
         {{ .Scratch.Delete "type" }}
         {{ .Scratch.Delete "is-lazy" }}
-      </div>
+      </section>
     {{ end }}
 
     {{ .Scratch.Delete "section" }}

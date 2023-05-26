@@ -7,6 +7,7 @@ footerTitileHidden: true
 ---
 
 <div class="flex flex-col md:flex-row md:gap-8 lg:gap-0 max-w-screen-2xl mx-auto">
+
   <div class="md:w-2/3 lg:w-[560px]">
 
   <h2 class="text-3xl md:text-2xl lg:text-4xl font-bold mb-4">無料PDFブック「PaaS」のススメ</h2>
@@ -30,3 +31,4 @@ footerTitileHidden: true
 
   {{< picture alt="Image Not Available" src="img/ebook.jpg" type="content" quolity="100" class="w-full md:w-96 lg:w-80 mx-auto lg:mr-0 lg:ml-28 mt-14 md:mt-0">}}
 </div>
+
