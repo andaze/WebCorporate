@@ -6,7 +6,7 @@
 {{ end }}
 
 {{ range .Pages }}
-  <li>
+  <li class="list-none">
     <a href="{{ .Permalink }}" class="w-full h-full">
         <div class="{{ $height }} hover:text-white border border-gray-200 hover:!bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-bold text-2xl pt-8 pl-8 px-5 py-2.5 text-left mr-2 mb-2">
             {{ partial "atom-company-detailpage-title.html" . }}
