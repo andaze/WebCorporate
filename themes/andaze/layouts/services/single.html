@@ -68,8 +68,10 @@
     </div>
 
     {{/*  ebook  */}}
-    {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
-        {{ .Content }}
-    {{ end }}
+    <section class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
+        {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
+            {{ .Content }}
+        {{ end }}
+    </section>
     
 {{ end }}
