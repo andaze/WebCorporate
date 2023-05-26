@@ -38,9 +38,7 @@ export class SlideShow {
 
         const swiper = new Swiper(container, options);
 
-        if (!isAutoplay) {
-            swiper.autoplay.stop();
-        }
+        swiper.autoplay.stop();
 
         window.addEventListener('scroll', () => {
             this.handleAutoPlay(container, swiper, 500);
