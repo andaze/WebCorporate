@@ -2,7 +2,7 @@
 title: Management Philosophy
 date: 2022-02-23T17:03:34.000+09:00
 weight: "4"
-
+description: "You can view the management philosophy of Andaze Ltd. Learn about our Corporate Philosophy, 5DNA Code of Conduct, and Andaze Philosophy."
 ---
 # Management Philosophy
 

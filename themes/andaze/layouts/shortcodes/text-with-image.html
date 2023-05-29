@@ -1,0 +1,11 @@
+{{ .Scratch.Set "title" (.Get "title") }}
+{{ .Scratch.Set "text" (.Get "text") }}
+{{ .Scratch.Set "src" (.Get "src") }}
+{{ .Scratch.Set "reverse" (.Get "reverse") }}
+
+{{ partial "molecule-text-with-image.html" . }}
+
+{{ .Scratch.Delete "reverse" }}
+{{ .Scratch.Delete "src" }}
+{{ .Scratch.Delete "text" }}
+{{ .Scratch.Delete "title" }}

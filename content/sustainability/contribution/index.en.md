@@ -6,13 +6,13 @@ headerImage:
   imageName: gathering.jpg
   imageTitle: Contribution to society based on our corporate philosophy
 newsimg: globe.jpg
-
+description: "You can read about the social contribution based on the corporate philosophy of Andaze Ltd."
 ---
 # Contribution to society based on our corporate philosophy
 
 {{< space height="h-4" >}}
 
-### **Andaze is committed to "Bringing innovation to Japan through global and superior technology. We at Andaze are committed to promoting sustainable initiatives for our business partners, the people we serve, and society as a whole based on our corporate philosophy of "Bringing Innovation to Japan through Global Excellence.**
+**Andaze is committed to "Bringing innovation to Japan through global and superior technology. We at Andaze are committed to promoting sustainable initiatives for our business partners, the people we serve, and society as a whole based on our corporate philosophy of "Bringing Innovation to Japan through Global Excellence.**
 
 {{< space height="h-10" >}}
 

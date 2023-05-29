@@ -1,14 +1,14 @@
 ---
 title: HUGO WEB
 date: 2022-02-23T17:03:34.000+09:00
-weight: "9"
+weight: 9
 cardImage: hugo.png
 headerImage:
   imageName: hugo.png
   imageTitle: ''
   imageDescription: ''
 subtitle: 静的サイトジェネレータ「Hugo」によるWebサイト高速化
-
+description: "アンダーズ株式会社のソリューション「静的Webサイト構築サービス」では、静的サイトジェネレータ「Hugo」によるWebサイト高速化をご提供します。「Hugo」を使った「静的Webサイト構築サービス」は、Webサイトの高速化だけでなく、ユーザーの快適な操作性も実現します。ぜひ、アンダーズにご相談ください。"
 ---
 # **静的Webサイト構築サービス**
 

@@ -1,9 +1,0 @@
-{{ $params := dict
-    "class" "object-cover border w-full h-40"
-    "format" "webp"
-    "hint" "smart"
-    "src" .Page.Params.Newsimg
-    "is-lazy" false
-    "type" "thumbnail"
-}}
-{{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}

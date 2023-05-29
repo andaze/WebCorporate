@@ -1,14 +1,14 @@
 ---
 title: AMP WEB
 date: 2022-02-23T17:03:34.000+09:00
-weight: "8"
+weight: 8
 cardImage: amp.jpg
 headerImage:
   imageName: amp.jpg
   imageTitle: ''
   imageDescription: ''
 subtitle: WEBページが表示されるまでの待ち時間を短縮する「モバイルコンテンツ高速化」
-
+description: アンダーズ株式会社のソリューション「AMP WEB」では、WEBページが表示されるまでの待ち時間を短縮する「モバイルコンテンツ高速化」を実行することが可能です。AMPフレームワークによって、速やかにAMP サイトを構築します。貴社のWEBサイトが抱えている課題がありましたら、お気軽にご相談ください。
 ---
 # AMP WEB
 

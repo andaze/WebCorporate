@@ -1,10 +1,22 @@
-<div class="grid lg:grid-cols-5 md:grid-cols-4 p-5">
+<ul class="grid lg:grid-cols-5 md:grid-cols-4 p-5">
     {{ with .Site.GetPage "/" }}
         {{ range .Sections.ByWeight }}
             {{ if .Page.Params.footerTitileHidden }}
             {{ else }}
-                {{ partial "molecule-section-footer-pagelist.html" . }}
+                {{ $pageTitle := strings.TrimRight "\\//" .File.Dir }}
+                <li class="mr-8 mb-14 text-left leading-5">
+                    {{ partial "atom-footer-page-title.html" (dict "pageLink" .Permalink "pageTitle" .Title ) }}
+                    {{ if .Page.Params.footerHidden }}
+                    {{ else }}
+                        <ul class="list-none mb-0 mt-2">
+                            {{ $section := site.GetPage $pageTitle }}
+                            {{ range $section.Pages }}
+                                {{ partial "atom-footer-page-list.html" . }}
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </li>
             {{ end }}
         {{ end }}
     {{ end }}
-</div>
+</ul>

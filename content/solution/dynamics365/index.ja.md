@@ -1,14 +1,14 @@
 ---
 title: Dynamics365
 date: 2022-02-23T17:03:34.000+09:00
-weight: "3"
+weight: 3
 cardImage: dynamics365.jpg
 headerImage:
   imageName: dynamics365.jpg
   imageTitle: ''
   imageDescription: ''
 subtitle: 既存客の情報を正確に分析して販促につなげる「顧客管理CRM導入」
-
+description: アンダーズ株式会社のソリューション「Dynamics365」では、既存客の情報を正確に分析して販促につなげる「顧客管理CRM導入」をご提供します。顧客関係管理システム Dynamics 365によって、速やかにシステムを開発。貴社のご要望やビジネスに合わせて、臨機応変にカスタマイズすることも可能です。
 ---
 # Dynamics365
 

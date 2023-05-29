@@ -6,9 +6,9 @@
         {{ partial "breadcrumbs.html" . }}
     </div>
     <div class="p-5 container lg:px-28 mx-auto mb-20 md:mb-24 flex">
-        <div class="hidden md:block md:w-1/3 ">
+        <aside class="hidden md:block md:w-1/3 ">
         {{ partial "molecule-section-detailpage-sidebar.html" . }}
-        </div>
+        </aside>
         <div class="md:w-2/3 bg-white max-w-none w-full">
             {{ .Content }}
 
@@ -72,7 +72,7 @@
                                             {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
             
                                             <div class="flex flex-col mt-2 w-48 p-4 mx-auto min-h-[118px] text-left">
-                                                <p class="font-bold mt-0 mb-2 text-lg">{{ .Title }}</p>
+                                                <p class="font-bold mt-0 mb-2">{{ .Title }}</p>
                                             </div>
                                         </a>
     
@@ -90,7 +90,9 @@
                     </div>
                 {{ end }}
                 <div class="mt-14 text-center">
+                    {{ .Scratch.Set "btn-class" "md:w-44 text-white hover:text-black border-gray-500 hover:bg-white bg-black" }}
                     {{ partial "molecule-section-irnews-buttongroup.html" . }}
+                    {{ .Scratch.Delete "btn-class" }}
                 </div>
                 {{ .Scratch.Delete "section" }}
             {{ end }}
@@ -99,8 +101,10 @@
     </div>
 
     {{/*  ebook  */}}
-    {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
-        {{ .Content }}
-    {{ end }}
+    <section class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
+        {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
+            {{ .Content }}
+        {{ end }}
+    </section>
     
 {{ end }}

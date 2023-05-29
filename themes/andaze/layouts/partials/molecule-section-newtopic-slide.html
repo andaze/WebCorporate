@@ -1,10 +1,30 @@
-<div class="swiper-slide">
+<article class="swiper-slide">
     <a href="{{ .Permalink }}">
-        {{ partial "atom-newtopic-slide-image.html" . }}
-        {{ partial "atom-newtopic-slide-title.html" . }}
-        {{ partial "atom-newtopic-slide-newstitle.html" . }}
+
+        {{ .Scratch.Set "class" "object-cover border w-full h-40" }}
+        {{ .Scratch.Set "format" "webp" }}
+        {{ .Scratch.Set "hint" "smart" }}
+        {{ if .Page.Params.Newsimg }}
+            {{ .Scratch.Set "src" .Page.Params.Newsimg }}
+        {{ end }}
+        {{ .Scratch.Set "type" "thumbnail" }}
+        {{ .Scratch.Set "is-lazy" false }}
+        
+        {{ partial "atom-picture.html" . }}
+        
+        {{ .Scratch.Delete "class" }}
+        {{ .Scratch.Delete "format" }}
+        {{ .Scratch.Delete "hint" }}
+        {{ .Scratch.Delete "src" }}
+        {{ .Scratch.Delete "type" }}
+        {{ .Scratch.Delete "is-lazy" }}
+        
+        <div class="text-sm font-bold pt-5">{{ .Title }} </div>
+
+       <div class="text-sm font-bold">{{ .Params.newstitle }}</div>
+
         {{ if eq (.Scratch.Get "section") "news" }}
-            {{ partial "atom-newtopic-slide-date.html" . }}
+            <div class="text-sm text-gray-500 mt-4">{{ .Page.Params.Date.Format "2006.01.02" }}</div>
         {{ end }}
     </a>
-</div>
+</article>

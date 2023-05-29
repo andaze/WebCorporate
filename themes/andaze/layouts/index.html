@@ -3,7 +3,7 @@
   {{- partial "top.html" . -}}
 </div>
 
-<main class="absolute z-10 w-full" id="top_main">
+<main class="relative z-10 w-full" id="top_main">
   <div class="pb-72 container mx-auto text-white" id="company_section">
 
     <div class="pl-4 pr-12 md:pl-10 md:pr-20 lg:pl-16 lg:pr-72">
@@ -12,39 +12,48 @@
       </h1>
     </div>
 
-    <div class="mt-52 mb-72 bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black w-5/6">
+    <section class="mt-52 mb-72 bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black w-5/6">
       {{ if .Site.GetPage "reason"}}
           {{ .Scratch.Set "section" "reason" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
             {{ partial "organism-section-white-transparent-top.html" .}}
-            {{ .Scratch.Set "backgroundTheme" "long" }}
-              <div class="text-center sm:text-left">
-                {{ partial "atom-irnews-button.html" .}}
-              </div>
-            {{ .Scratch.Delete "backgroundTheme"}}
           {{ end }}
           {{ .Scratch.Delete "section" }}
-      {{ end }}
-    </div>
 
-    <div class="bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black">
+          {{ .Scratch.Set "section" "reason" }}
+          {{ .Scratch.Set "btn-class" "md:w-72 text-black hover:text-white border-gray-500 hover:bg-black bg-white" }}
+          <div class="text-center sm:text-left">
+            {{ partial "atom-irnews-button.html" .}}
+          </div>
+          {{ .Scratch.Delete "btn-class" }}
+          {{ .Scratch.Delete "section" }}
+
+      {{ end }}
+    </section>
+
+    <section class="bg-white bg-opacity-75 px-4 py-10 md:p-10 lg:p-20 text-black">
       {{ if .Site.GetPage "services"}}
           {{ .Scratch.Set "section" "services" }}
           {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
             {{ partial "organism-section-white-transparent-top.html" .}}
             {{ partial "organism-section-cards-part.html" . }}
-            {{ .Scratch.Set "backgroundTheme" "long" }}
-              <div class="text-center sm:text-left">
-                {{ partial "atom-irnews-button.html" .}}
-              </div>
-            {{ .Scratch.Delete "backgroundTheme"}}
           {{ end }}
           {{ .Scratch.Delete "section" }}
+
+          {{ .Scratch.Set "section" "services" }}
+          {{ .Scratch.Set "btn-class" "md:w-72 text-black hover:text-white border-gray-500 hover:bg-black bg-white" }}
+          <div class="text-center sm:text-left">
+            {{ partial "atom-irnews-button.html" .}}
+          </div>
+          {{ .Scratch.Delete "btn-class" }}
+          {{ .Scratch.Delete "section" }}
+          
       {{ end }}
-    </div>
+    </section>
 
 
   </div>
+
   <div class="w-full h-96 lg:h-[34rem]">
     {{ $params := dict
       "class" "h-full w-full object-cover object-right"
@@ -57,67 +66,116 @@
     {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
   </div>
 
-  <div class="bg-white overflow-hidden">
+  <section class="bg-white overflow-hidden">
     <div class="my-20 md:my-36">
       {{ if .Site.GetPage "news"}}
         {{ .Scratch.Set "section" "news" }}
+        {{ .Scratch.Set "btn-class" "md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white" }}
         {{ partial "template-section.html" . }}
+        {{ .Scratch.Delete "btn-class" }}
         {{ .Scratch.Delete "section" }}
       {{ end }}
     </div>
     <div class="my-20 md:my-36">
       {{ .Scratch.Set "section" "youtube" }}
+      {{ .Scratch.Set "btn-class" "md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white" }}
+      {{ .Scratch.Set "btn-link" "https://www.youtube.com/channel/UCfjT9TH2TOy7QRp1X_Ibr4A" }}
+      {{ .Scratch.Set "btn-text" "YouTube" }}
       {{ partial "template-section.html" . }}
+      {{ .Scratch.Delete "btn-text" }}
+      {{ .Scratch.Delete "btn-link" }}
+      {{ .Scratch.Delete "btn-class" }}
       {{ .Scratch.Delete "section" }}
     </div>
-  </div>
+  </section>
 
-  <div class="bg-black py-20 md:py-36">
-    {{ if .Site.GetPage "ir"}}  
-      {{ .Scratch.Set "section" "ir" }}
-      {{ partial "template-section-irnews.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
+  <section class="bg-black py-20 md:py-36">
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
+      {{ .Scratch.Set "btn-class" "md:w-44 text-white hover:text-black border-gray-500 hover:bg-white bg-black" }}
       {{ partial "template-section.html" . }}
+      {{ .Scratch.Delete "btn-class" }}
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
     {{ if .Site.GetPage "solution"}}
       {{ .Scratch.Set "section" "solution" }}
+      {{ .Scratch.Set "btn-class" "md:w-44 text-white hover:text-black border-gray-500 hover:bg-white bg-black" }}
         <div class="flex justify-center lg:hidden mt-5">
           {{ partial "molecule-section-irnews-buttongroup.html" . }}
         </div>
+      {{ .Scratch.Delete "btn-class" }}
       {{ .Scratch.Delete "section" }}
     {{ end }}
 
-  </div>
+  </section>
 
-    {{ if .Site.GetPage "casestudy"}}
-      {{ .Scratch.Set "section" "casestudy" }}
-      {{ partial "template-section.html" . }}
-      {{ .Scratch.Delete "section" }}
-    {{ end }}
+  {{ if .Site.GetPage "casestudy"}}
+    {{ .Scratch.Set "section" "casestudy" }}
+    {{ .Scratch.Set "btn-class" "md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white" }}
+    {{ partial "template-section.html" . }}
+    {{ .Scratch.Delete "btn-class" }}
+    {{ .Scratch.Delete "section" }}
+  {{ end }}
   
-  <div class="bg-white overflow-hidden">
+  <section class="bg-white overflow-hidden">
     <div class="my-20 md:my-36">
       {{ if .Site.GetPage "sustainability"}}
         {{ .Scratch.Set "section" "sustainability" }}
+        {{ .Scratch.Set "btn-class" "md:w-44 text-black hover:text-white border-gray-800 hover:bg-black bg-white" }}
         {{ partial "template-section.html" . }}
+        {{ .Scratch.Delete "btn-class" }}
         {{ .Scratch.Delete "section" }}
       {{ end }}
     </div>
-  </div>
+  </section>
 
   {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
-    {{ .Content }}
+    <section class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
+      {{ .Content }}
+    </section>
   {{ end }}
 
-  {{ if .Site.GetPage "recruit"}}
+  {{ if .Site.GetPage "careers"}}
     {{ .Scratch.Set "section" "careers" }}
-    {{ partial "template-section-recruit.html" . }}
+    
+    {{ with .Site.GetPage "section" (.Scratch.Get "section") }}
+
+      <div class="w-full h-96 lg:h-[34rem] 2xl:h-full 2xl:aspect-[11/3] relative">
+        <div class="absolute top-1/2 -translate-y-1/2 w-full text-center z-10">
+          
+          <h2 class="text-2xl md:text-3xl mb-5 font-bold uppercase text-white" >{{ $.Scratch.Get "section" }}</h2>
+
+          <p class="text-white text-sm md:text-lg lg:text-lg mt-4 md:mt-6 lg:mt-6 w-72 md:w-[35rem] mx-auto">{{ .Page.Params.text }}</p>
+
+          <div class="mt-5 px-4">
+              {{ .Scratch.Set "section" "careers" }}
+              {{ .Scratch.Set "btn-class" "md:w-72 bg-black text-white hover:text-black border-gray-50 hover:bg-white" }}
+              {{ partial "molecule-section-irnews-buttongroup.html" . }}
+              {{ .Scratch.Delete "btn-class" }}
+              {{ .Scratch.Delete "section" }}
+          </div>
+        </div>
+    
+        {{ .Scratch.Set "class" "h-full w-full object-cover object-top filter brightness-[.60] relative z-0" }}
+        {{ .Scratch.Set "format" "webp" }}
+        {{ .Scratch.Set "hint" "smart" }}
+        {{ .Scratch.Set "src" "img/recruit.jpg" }}
+        {{ .Scratch.Set "type" "full" }}
+        {{ .Scratch.Set "is-lazy" false }}
+    
+        {{ partial "atom-picture.html" . }}
+    
+        {{ .Scratch.Delete "class" }}
+        {{ .Scratch.Delete "format" }}
+        {{ .Scratch.Delete "hint" }}
+        {{ .Scratch.Delete "src" }}
+        {{ .Scratch.Delete "type" }}
+        {{ .Scratch.Delete "is-lazy" }}
+      </section>
+    {{ end }}
+
     {{ .Scratch.Delete "section" }}
   {{ end }}
 

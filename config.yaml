@@ -23,6 +23,7 @@ Languages:
   ja:
     languageName: JP
     title: アンダーズ株式会社
+    keywords: アンダーズ, Andaze
     weight: 1
     languageCode: ja-JP
     topCatchCopy: 経営視点でDXを加速させるプロ集団
@@ -48,13 +49,14 @@ Languages:
           url: 'https://andaze.com/job/ja/'
           weight: 7
           post: <i class='fi-xwsuxl-external-link-solid ml-1'></i>
-          identifier: recruit
+          identifier: careers
         - name: お問い合わせ
           url: contact
           weight: 8
   en:
     languageName: EN
     title: Andaze Ltd.
+    keywords: andaze, Andaze
     weight: 2
     languageCode: en-us
     topCatchCopy: A group of professionals who accelerate DX from a management perspective
@@ -82,7 +84,7 @@ Languages:
         - name: Careers
           url: 'https://andaze.com/job/en/'
           weight: 7
-          identifier: recruit
+          identifier: careers
           post: <i class='fi-xwsuxl-external-link-solid ml-1'></i>
         - name: Contact
           url: contact

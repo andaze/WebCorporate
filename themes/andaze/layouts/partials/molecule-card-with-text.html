@@ -32,7 +32,6 @@
             <h2 class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Page.Params.titleEn }}</h2>
         </div>
     </div>
-    <div class="p-2 sm:p-6 text-xs sm:text-base {{ $textHeightClass }} sm:h-auto">
-        <p>{{ .Page.Params.topText }}</p>
-    </div>
-</div>
+    <p>{{ .Page.Params.subtitle }}</p>
+    <a href="{{ .Permalink }}" class="w-full text-white hover:text-black border-gray-500 hover:bg-white bg-black border focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-sm text-sm py-4 text-center mx-auto mt-4 inline-flex justify-center mx-auto">View More</a>
+</article>
