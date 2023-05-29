@@ -4,30 +4,31 @@ Minimum Usage
 {{< picture >}}
 
 Maximum usage
-{{< picture alt="" anchor="" aspect="" class="" format="" hint="" quolity="" src="" type="" >}}
+{{< picture alt="" anchor="" aspect="" class="" format="" hint="" quality="" src="" type="" >}}
 
 */}}
 
-{{ .Scratch.Set "alt" (.Get "alt") }}
-{{ .Scratch.Set "anchor" (.Get "anchor") }}
-{{ .Scratch.Set "aspect-ratio" (.Get "aspect") }}
-{{ .Scratch.Set "class" (.Get "class") }}
-{{ .Scratch.Set "id" (.Get "id") }}
-{{ .Scratch.Set "format" (.Get "format") }}
-{{ .Scratch.Set "hint" (.Get "hint") }}
-{{ .Scratch.Set "quolity" (.Get "quolity") }}
-{{ .Scratch.Set "src" (.Get "src") }}
-{{ .Scratch.Set "type" (.Get "type") }}
+{{ $alt := .Get "alt" }}
+{{ $anchor := .Get "anchor" }}
+{{ $class := .Get "class" }}
+{{ $id := .Get "id" }}
+{{ $format := .Get "format" }}
+{{ $hint := .Get "hint" }}
+{{ $quality := .Get "quality" }}
+{{ $src := .Get "src" }}
+{{ $type := .Get "type" }}
 
-{{ partial "atom-picture.html" . }}    
 
-{{ .Scratch.Delete "alt" }}
-{{ .Scratch.Delete "anchor" }}
-{{ .Scratch.Delete "aspect-ratio" }}
-{{ .Scratch.Delete "class" }}
-{{ .Scratch.Delete "id" }}
-{{ .Scratch.Delete "format" }}
-{{ .Scratch.Delete "hint" }}
-{{ .Scratch.Delete "quolity" }}
-{{ .Scratch.Delete "src" }}
-{{ .Scratch.Delete "type" }}
+{{ $params := dict 
+    "alt" $alt 
+    "anchor" $anchor 
+    "class" $class 
+    "id" $id 
+    "format" $format 
+    "hint" $hint 
+    "quality" $quality 
+    "src" $src 
+    "type" $type 
+}}
+{{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
+

@@ -1,23 +1,35 @@
-<article class="sm:h-auto bg-white shadow-xl bg-opacity-90 flex flex-col min-h-[220px] p-8 flex justify-between flex-col gap-2">
-    <div class="flex flex-col lg:flex-col-reverse gap-2">
-        <div class="px-2 sm:px-0 text-center h-auto mb-2 lg:min-h-[80px]">
-            <h3 class="text-black w-fit mx-auto font-bold text-lg block">{{ .Title }}</h3>
-            <span class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold">{{ .Page.Params.titleEn }}</span>
-        </div>
-        <div>
-            {{ .Scratch.Set "class" "w-36 sm:w-full h-32 sm:h-48 sm:px-6 object-cover mx-auto" }}
-            {{ .Scratch.Set "format" "webp" }}
-            {{ .Scratch.Set "hint" "smart" }}
-            {{ if .Page.Params.cardImage }}
-                {{ .Scratch.Set "src" .Page.Params.cardImage }}
-            {{ end }}
-            {{ .Scratch.Set "type" "thumbnail" }}
-                {{ partial "atom-picture.html" . }}
-            {{ .Scratch.Delete "class" }}
-            {{ .Scratch.Delete "format" }}
-            {{ .Scratch.Delete "hint" }}
-            {{ .Scratch.Delete "src" }}
-            {{ .Scratch.Delete "type" }}
+{{ $class := "" }}
+{{ if eq .Page.Params.cardImage ("recruit.png") }}
+    {{ $class = "hidden" }}
+{{ end }}
+
+{{ $heightClass := "" }}
+{{ if eq ( print site.Language) ("ja") }}
+  {{ $heightClass = "h-16" }}
+{{ else }}
+  {{ $heightClass = "h-12" }}
+{{ end }}
+
+{{ $textHeightClass := "" }}
+{{ if eq ( print site.Language) ("ja") }}
+  {{ $textHeightClass = "h-32" }}
+{{ else }}
+  {{ $textHeightClass = "h-44" }}
+{{ end }}
+
+<div class="sm:h-auto bg-white shadow-xl bg-opacity-50 flex flex-col {{ $class }}">
+    <div>
+         {{ $params := dict
+          "class" "w-full h-32 sm:h-52 pt-2 sm:pt-6 px-2 sm:px-6 object-cover"
+          "format" "webp"
+          "hint" "smart"
+          "src" .Page.Params.cardImage
+          "type" "thumbnail"
+        }}
+        {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
+        <div class="px-2 sm:px-0 text-center {{ $heightClass }} sm:h-auto">
+            <h2 class="text-black pt-3 sm:pt-6 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Title }}</h2>
+            <h2 class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold text-xs sm:text-lg">{{ .Page.Params.titleEn }}</h2>
         </div>
     </div>
     <p>{{ .Page.Params.subtitle }}</p>

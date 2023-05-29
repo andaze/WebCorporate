@@ -3,68 +3,49 @@
         The behavior can be changed by scratch in templates that use or call this template.
         ----------
 
-        {{ $params := dict
-                "alt" "Foo Bar Baz"
-                "anchor"
-                "class" "w-full
-                "id" "Foo Bar Baz"
-                "format" "webp"
-                "hint" "smart"
-                "quality" "90"
-                "src" "https://example.com/foo.jpg"
-                "type" "full"
-        }}
-        {{ partial "atom-picture.html" (dict "params" $params "page" .Page) }}
+        {{ .Scratch.Set "alt" "Foo Bar Baz" }}
+        {{ .Scratch.Set "anchor" }}
+        {{ .Scratch.Set "aspect-ratio" "4/3" }}
+        {{ .Scratch.Set "class" "w-full" }}
+        {{ .Scratch.Set "format" "webp" }}
+        {{ .Scratch.Set "hint" "smart" }}
+        {{ .Scratch.Set "quality" "90" }}
+        {{ .Scratch.Set "src" "https://example.com/foo.jpg" }}
+        {{ .Scratch.Set "type" "full" }}
 
 */}}
 
-{{ $image := "" }}
-{{ $src := .params.src }}
-{{ $page := .page }}
+{{ $context := . }}
 
-{{ if .params.remote }}
-        {{ if (resources.GetRemote $src) }}
-                {{ $image = (resources.GetRemote $src) }}
-        {{ else }}
-                {{ if hugo.IsProduction }}
-                        {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
-                {{ else }}
-                        {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
-                {{ end }}
-        {{ end }}
+{{ $image := "" }}
+
+{{ if $src := ($context.src) }}
+    {{ $image = (resources.GetRemote $src) }}
 {{ else }}
-        {{ if ( $page.Resources.GetMatch (printf "%s" $src)) }}
-                {{ $image =  $page.Resources.GetMatch (printf "%s" $src) }}
-        {{ else if (resources.GetMatch $src) }}
-                {{ $image = resources.GetMatch $src }}
+        {{ if hugo.IsProduction }}
+                {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
         {{ else }}
-                {{ if hugo.IsProduction }}
-                        {{ $image = (resources.GetRemote (printf "https://picsum.photos/1920/1080?random=%s" now.UnixNano)) }}
-                {{ else }}
-                        {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
-                {{ end }}
+                {{ $image = (resources.GetRemote "https://picsum.photos/1920/1080") }}
         {{ end }}
 {{ end }}
 
-
-
-{{ $alt := default $image.Title .params.alt }}
+{{ $alt := default $image.Title $context.alt }}
 
 {{ $multiply_raito_value := 0 }}
-{{ $aspect_ratio := default "auto" .params.aspect_ratio }}
+{{ $aspect_ratio := default "auto" $context.aspect_ratio }}
 {{ if ne "auto" $aspect_ratio }}
         {{ $raito_values := (split (humanize $aspect_ratio) " ") }}
         {{ $multiply_raito_value = div (float (index $raito_values 1)) (float (index $raito_values 0)) }}
 {{ end }}
 
-{{ $is_lazy := default true .params.is_lazy }}
-{{ $anchor := default "Smart" .params.anchor }}
-{{ $class := default "w-full" .params.class }}
-{{ $id := default "" .params.id }}
-{{ $format := default "webp" .params.format }}
-{{ $hint := default "photo" .params.hint }}
-{{ $quality := default "75" .params.quality }}
-{{ $type := default "thumbnail" .params.type }}
+{{ $is_lazy := default true $context.is_lazy }}
+{{ $anchor := default "Smart" $context.anchor }}
+{{ $class := default "w-full" $context.class }}
+{{ $id := default "" $context.id }}
+{{ $format := default "webp" $context.format }}
+{{ $hint := default "photo" $context.hint }}
+{{ $quality := default "75" $context.quality }}
+{{ $type := default "thumbnail" $context.type }}
 
 {{ $img_scratch := newScratch }}
 {{ $img_sizes := newScratch }}
@@ -272,4 +253,3 @@
         {{ end }}
 
 </picture>
-
