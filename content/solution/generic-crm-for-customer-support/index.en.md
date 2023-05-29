@@ -14,17 +14,17 @@ description: Andaze Ltd.'s solution Generic CRM for Customer Support provides sm
 
 ### Providing smooth customer support for the omni-channel era
 
-{{< space height="h-10" >}}
+
 
 This solution provides smooth customer support for customers accessing from various channels. It has a wide range of functions such as response history management, solution sharing, and document management. Customers can be served by operators via phone, chat, and SMS, as well as by AI-based virtual operators and chatbots that respond to customers in real time. It also has a function to help customers solve problems on their own by analyzing past inquiry data and knowledge prepared in advance through machine learning and automatically responding to them, thereby supporting more efficient customer service operations. Generic CRM for Customer Support," which consistently provides appropriate responses no matter what channel customers initiate communication through, is an effective means of deepening relationships with customers in the omni-channel era.
 
-{{< br >}}
+
 
 ##### ●What is Omni-Channel?
 
 Omni-channel refers to "a strategy to strengthen the approach to customers by linking multiple points of contact (channels) between a company and its customers. Regardless of the means by which the customer contacts the company, the conversation history and background information are transferred across channels, allowing the interaction to continue without stress, benefiting both the company and the customer. In addition, customer information is integrated within the company's own applications, allowing the company to provide personalized, high-quality support to each individual customer.
 
-{{< br >}}
+
 
 ##### ●What is Generic CRM for Customer Support?
 
@@ -42,7 +42,7 @@ Generic CRM for Customer Support" has the following features.
 
 ・By using machine learning to quickly retrieve necessary information, the burden on customer support staff can be significantly reduced and customer service operations can be made more efficient.
 
-{{< br >}}
+
 
 ##### ●Main Functions
 
@@ -86,6 +86,6 @@ This is for the support manager to grasp the status of the team's response at a 
 
 Problems caused by customers or support personnel, for example, can be logged, updated, tracked, followed up, and resolved. This allows us to find solutions to similar problems.
 
-{{< space height="h-10" >}}
+
 
 Andaze provides "Generic CRM for Customer Support" as a touch point between your company and your customers. All response histories are automatically stored in Generic CRM, and by integrating with other modules, a synergistic effect can be generated. For a more efficient and effective customer support system, please contact Andaze.

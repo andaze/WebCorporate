@@ -20,14 +20,14 @@ Otsuka Warehouse Co.,Ltd. delivers not only food products, beverages, pharmaceut
 
 Therefore, we decided to centralize the management of inquiries by including a "multi-chat function" within CARGO TRACKS. By digitizing internal and external communications, all interactions are stored as logs, and we have introduced a groundbreaking attempt to link Teams and LINE to create a system that allows easy confirmation and replies from PCs and smartphones. In addition, since the date, time, period, and the person in charge are also known, the aim was to prevent omissions of replies and the absence of the person in charge.
 
-{{< br >}}
+
 
 ## Background of Application
 When we first decided to introduce CARGO TRACKS, we envisioned it as a dedicated "delivery visualization" system. However, in the process of creating the requirement definition, Andaze's development team realized that business communication by phone or email was complicated, and there was a risk of missing important communications and "said-or-not-said" situations. In addition, the fact that some staff members, such as drivers in the car, had limited means of easily contacting the company, was also affecting responses to inquiries.
 
 Therefore, we suggested that a system that could collectively manage interactions on the Web by adding a multi-chat function and record them as logs might be necessary. At the time, Otsuka Warehouse Co.,Ltd. had already begun using Teams as a communication tool within the company, and the timing was right for them to experience the convenience of the multi-chat function. The company realized that a UI that could be easily written from a smartphone application or PC, which all internal and external personnel use on a daily basis, would be an important mechanism for Otsuka Warehouse Co.,Ltd. to meet its needs.
 
-{{< br >}}
+
 
 ## Results obtained
 (1) It would take a lot of time and effort to get all delivery drivers who only use their smartphones to download a new chat application, and some drivers would find it difficult to master the functions. Therefore, Andaze pioneered the integration of LINE and Teams. Otsuka Warehouse Co.,Ltd. and manufacturer representatives communicate with each other on CARGO TRACKS and Teams, while drivers can now check and reply to messages using LINE, which was originally included in their smartphones. This groundbreaking linkage has led to improved convenience in that people active in their respective fields can easily communicate with each other anytime, anywhere.
@@ -42,7 +42,7 @@ By consolidating inquiries into chat, the burden on the office is eliminated. Te
 
 ![ Image is not Available !](case_3-2.png)
 
-{{< br >}}
+
 
 ## Customer Information
 Otsuka Warehouse Co.,Ltd.

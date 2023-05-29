@@ -14,7 +14,7 @@ description: Andaze Ltd. supports companies that wish to "de-subscribe, de-cloud
 ---
 # **Support services for de-subscription, de-clouding, and de-packaging**.
 
-{{< space height="h-10" >}}
+
 
 ### Support for "de-subscription, de-cloud, and de-packaging" in terms of cost, security, and system operation
 
@@ -22,7 +22,7 @@ Cloud services (SaaS), which have become indispensable for businesses, offer a v
 
 Andaze will support such companies that wish to "move away from subsquare systems, cloud computing, and packages. Andaze will listen to your concerns about cost, security, performance, and other factors, as well as customization, in order to promote the optimal "de-subscription, de-cloud, and de-packaging (de-SaaS)" for your company.
 
-{{< space height="h-10" >}}
+
 
 ##### **● General de-clouding vs. Andaze de-clouding**
 
@@ -38,7 +38,7 @@ Migrating systems from on-premise to SaaS and back to on-premise again
 
 Andaze's de-subscription, de-cloud, and de-packaging is done by making decisions on a workload (application) by workload basis. Rather than moving everything to on-premise, we will consider cost, security, customization, system integration, and other factors, and flexibly respond by keeping necessary SaaS, and moving systems that require unique customization or high security requirements to on-premise. However, on-premise is not a conventional type of cloud, but a "private cloud (resource exclusive cloud)" in which resources in the PaaS are used exclusively by one company, and a "hybrid cloud" is built and operated by combining SaaS, a public cloud, and on-premise cloud, a private cloud. The "hybrid cloud" is a combination of a public cloud (SaaS) and a private cloud (on-premise cloud).
 
-{{< space height="h-10" >}}
+
 
 ##### ●De-subscription, de-cloud, and de-packaging using "hybrid cloud"
 
@@ -53,11 +53,11 @@ Since this was a replacement of a system that was fundamental to the company, se
 
 During the development period, we received requests from our employees on site one after another that could not be realized with the previous package product. We continue to rely on Andaze for maintenance.
 
-{{< space height="h-20" >}}
+
 
 ## Why Andaze?
 
-{{< space height="h-6" >}}
+
 
 #### (1) We have extensive experience and deep business understanding of cloud solutions and "de-subscription/de-cloud/de-packaging".
 
@@ -67,7 +67,7 @@ We are not limited to migration to/from the cloud, but also contribute to operat
 
 We have acquired the ISO27001 advanced security management system (ISMS) to maintain and improve the confidentiality, integrity, and availability of information in a well-balanced manner.
 
-{{< space height="h-6" >}}
+
 
 #### (2) In-house, one-stop service
 
@@ -77,7 +77,7 @@ Our expert development members provide functions and performance that meet your 
 
 We build a strong partnership where you can consult with us about anything related to DX promotion.
 
-{{< space height="h-6" >}}
+
 
 #### (3) Provide the products you need, in the quantities you need, when you need them
 
@@ -91,4 +91,4 @@ We provide support for operational audits at the ideal timing upon request.
 
 * DevOps* is a software development method in which development and operations work together.
 
-{{< space height="h-28" >}}
+

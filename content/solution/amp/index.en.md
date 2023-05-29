@@ -15,7 +15,7 @@ description: Andaze Ltd. can perform "mobile content acceleration" to reduce the
 
 ### Mobile Content Acceleration" to reduce the waiting time until a web page is displayed
 
-{{< br >}}
+
 
 ## Overview
 
@@ -23,7 +23,7 @@ AMP (Accelerated Mobile Pages, commonly known as amp) is a standard jointly laun
 
 AMP enables search engines to read information on web pages ahead of time and direct links from search results to them, so that data can be displayed without having to jump to the page each time. Users will spend more time on the site because they will not have to wait as long and will get a much better impression of the site.
 
-{{< br >}}
+
 
 ## Effect of introduction
 
@@ -51,7 +51,7 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 > Exhibit: "NetShop Managers Forum - The value of "one second" in EC site performance. Display speed that meets user expectations.
 
-{{< br >}}
+
 
 ## Suggested Industries
 
@@ -59,13 +59,13 @@ AMP enables search engines to read information on web pages ahead of time and di
 * ・Manufacturing (e.g., EC sites)
 * ・Landing pages for advertisements (LP)
 
-{{< br >}}
+
 
 ## Product Image
 
 Andaze will promptly build your AMP site with our AMP framework. If your website is facing any issues, please feel free to contact us.
 
-{{< br >}}
+
 
 ## Case Study
 

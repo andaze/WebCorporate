@@ -7,7 +7,7 @@ description: "アンダーズ株式会社の会社概要をご覧いただけま
 
 <h1>会社概要</h1>
 
-{{< space height="h-8" >}}
+
 
 <table>
 

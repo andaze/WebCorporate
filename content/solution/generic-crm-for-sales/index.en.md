@@ -14,13 +14,13 @@ description: Andaze Ltd.'s solution Generic CRM for Sales is a module to support
 
 ### Manage customer information and representative actions to support data-driven sales activities
 
-{{< space height="h-10" >}}
+
 
 As the name "generic" suggests, Andaze's "Generic CRM" was developed as a generic version of CRM from the U.S. Generic CRM for Sales is a module to support sales activities by managing customer information and sales representatives' actions.
 
 By preparing the system infrastructure necessary to improve customer engagement, which indicates the connection and trust between a company and its customers, we support efficient and effective sales activities based on data.
 
-{{< br >}}
+
 
 ##### ●What is Generic CRM for Sales?
 
@@ -32,7 +32,7 @@ By preparing the system infrastructure necessary to improve customer engagement,
 
 ・By linking with BI tools to visualize sales activities in the form of graphs and reports, we will prevent the attribution of deals and promote sales activities that lead to results for the entire team.
 
-{{< br >}}
+
 
 ##### ●Main Functions
 
@@ -68,7 +68,7 @@ Lists the progress status and sales forecasts for business negotiations that are
 
 Generate and validate quotes from ongoing business negotiations. The same quote can also be used to quickly generate invoices to ensure a successful transaction. Invoices can also be sent via email.
 
-{{< br >}}
+
 
 ##### ●Generic CRM for Sales Usage Scenes and Functions
 
@@ -92,7 +92,7 @@ You can search for customers for appointments and check the history of the most 
 
 When the business meeting is over, the results are reported. The system is multi-device compatible, so you can enter the results of business meetings on your smartphone or tablet when you are out of the office. The entered business meeting results are shared with all parties involved.
 
-{{< space height="h-10" >}}
+
 
 Generic CRM for Sales can be expanded by linking with other generic CRM systems, leading to more advanced data analysis, decisions, and actions.
 

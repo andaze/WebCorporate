@@ -14,13 +14,13 @@ description: Andaze Ltd.'s solution "Occupancy Management System" provides a "wo
 
 ### Workforce "Analysis" tool to increase productivity of companies promoting remote work.
 
-{{< space height="h-10" >}}
+
 
 Andaze's Occupancy Management System is a service platform as workforce analysis software that visualizes employee work performance, which is difficult to see due to remote work and other factors, and analyzes digital activity data to provide hints for improving work styles. With this tool, we will improve business processes and increase organizational and individual productivity and employee engagement* while uncovering issues and problems faced on a daily basis.
 
 \*To build a good relationship between the company and its employees so that they can grow while mutually influencing and strengthening each other's bonds.
 
-{{< br >}}
+
 
 ##### Increasing corporate concerns since the Corona disaster
 
@@ -42,17 +42,17 @@ Andaze's Occupancy Management System is a service platform as workforce analysis
 
 ・Subordinates' overtime work has been approved as applied for with no objective work status in sight.
 
-{{< br >}}
+
 
 In keeping with our "Trust, but be sure*" philosophy, Andaze collects and analyzes daily work performance data in our Occupancy Management System to obtain employee work hours, technology usage, and productivity trends while ensuring data privacy and compliance.
 
 \*Former President Reagan of the United States of America said
 
-{{< br >}}
+
 
 ##### ●Functions of the "Occupancy Management System" as a solution
 
-{{< br >}}
+
 
 ###### **【Basic functions】**
 
@@ -64,7 +64,7 @@ Automatic acquisition of daily start/end times eliminates the hassle of recordin
 
 You can quickly see what your employees are doing right now. You can detect active/passive status, applications used, URLs of websites visited, mouse and keyboard movements, and the duration of each activity. The information to be retrieved and displayed is customized to each company's compliance needs.
 
-{{< br >}}
+
 
 **【Productivity analysis and evaluation】**
 
@@ -80,7 +80,7 @@ Evaluate the total time spent on productive and unproductive activities. The sys
 
 Easily drill down to see details on application usage and productivity analysis. Also understand burnout, engagement, and issues affecting work efficiency.
 
-{{< br >}}
+
 
 ###### 【Data Security & Privacy】
 
@@ -92,7 +92,7 @@ A multi-layered data security & privacy approach ensures the confidentiality and
 
 ・Limit the number of users who can access information by configuring a number of role-based access controls.
 
-{{< br >}}
+
 
 ###### 【Compliance & Risk Management】
 
@@ -106,16 +106,16 @@ A multi-layered data security & privacy approach ensures the confidentiality and
 
 ・If compliance risks are discovered, only that activity is captured.
 
-{{< br >}}
+
 
 ###### 【SaaS】
 
 Reduce licensing costs and streamline business processes by identifying applications with redundant functionality, used or unassigned licenses, and infrequently used users.
 
-{{< space height="h-10" >}}
+
 
 According to one study, employees who feel "constantly monitored" in their work are more likely to leave their jobs and less likely to be motivated to do their best. An "Occupancy Management System" is not about "monitoring," but about making digital work visible to increase productivity and help employees achieve healthier, more rewarding work and lives, and a better work-life balance.
 
-{{< br >}}
+
 
 The Occupancy Management System, which can be customized to fit your company's policies and organization, is ideal for employee management and occupancy analysis for remote work promotion companies. Please contact Andaze for more information.

@@ -7,7 +7,7 @@ description: "You can view the company profile of Andaze Ltd."
 
 <h1>About Us</h1>
 
-{{< space height="h-8" >}}
+
 
 <table>
 

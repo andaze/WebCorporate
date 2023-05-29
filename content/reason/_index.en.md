@@ -16,7 +16,7 @@ description: "Discover why our clients choose  Andaze Ltd. We are fully committe
 
 ## Working as one, we complete projects that give you a competitive advantage.
 
-{{< space height="h-10" >}}
+
 
 Andaze is chosen by our clients because we are responsible for all processes from strategy to operation and maintenance.  
 
@@ -28,7 +28,7 @@ We are able to lead and complete projects at a speed that only a venture company
 
 We will produce results that exceed your expectations without exceeding your budget.  
 
-{{< space height="h-20" >}}
+
 
 {{< text-with-image 
     title="We take responsibility for the entire process and are fully committed to the success of your business."
@@ -49,7 +49,7 @@ We will produce results that exceed your expectations without exceeding your bud
     src="img/reason/reason3.jpg"
 >}}
 
-{{< space height="h-20" >}}
+
 
 ## Services offered by Andaze
 
@@ -57,7 +57,7 @@ From strategic planning to design, development, operation and maintenance, we ha
 
 {{< service-cards >}}
 
-{{< space height="h-20" >}}
+
 
 ## Certification, Accreditation, Corporate Licensure, (Member Organization/Partner)
 

@@ -15,7 +15,7 @@ description: Andaze Ltd.'s solution DEVEXPRESS provides "UX-oriented application
 
 ### UX-focused application development" that enhances the value of services through user satisfaction
 
-{{< br >}}
+
 
 ## Overview
 
@@ -23,7 +23,7 @@ Satisfaction and pleasure obtained through services and products. Such value tha
 
 Therefore, efforts to invest in UX are attracting attention as a means of differentiation and increasing business value. At Andaze, we offer one-stop services from UX strategy planning to system development. We propose DX that enriches the customer experience.
 
-{{< br >}}
+
 
 ## Effects of Introduction
 
@@ -32,7 +32,7 @@ Therefore, efforts to invest in UX are attracting attention as a means of differ
 * ・ Potential needs of users are brought out.
 * ・ Increased value of services and products
 
-{{< br >}}
+
 
 ## Suggested Industries
 
@@ -41,13 +41,13 @@ Therefore, efforts to invest in UX are attracting attention as a means of differ
 * ・ Information and telecommunications
 * ・ Distribution
 
-{{< br >}}
+
 
 ## Product Image
 
 Andaze utilizes the DevExpress Framework to accelerate UX development. ChoiceAwards" in 2021, where we were named best in class in 20 development categories. If you are looking to innovate your business through UX development, please feel free to contact our professionals.
 
-{{< br >}}
+
 
 ## Case Study
 

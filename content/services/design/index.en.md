@@ -14,7 +14,7 @@ description: Andaze Ltd. provides website construction services using the static
 ---
 # **Static website building service (website acceleration)**
 
-{{< space height="h-10" >}}
+
 
 ### "Static website development" to speed up website display and enhance security.
 
@@ -56,7 +56,7 @@ Static sites (HTML) have a simple structure that is less server-intensive and, c
 
 Multi-platform Hugo is available, allowing you to run Hugo on a variety of operating systems (even iOS and Android); with Hugo you can generate sites in a variety of fast PC/mobile environments.
 
-{{< space height="h-6" >}}
+
 
 ##### ●Sites and pages suitable for static websites
 
@@ -74,11 +74,11 @@ Multi-platform Hugo is available, allowing you to run Hugo on a variety of opera
 
 Item	|　Static Web Sites（Hugo） |	Dynamic Web Sites（WordPress）<br> Production/Update |	△／× |	〇 <br> Displays different information depending on conditions | 	× |	◎ <br> Page display speed |	◎ |	△ <br> Burden on servers |	〇 |	△ <br> Security |	◎ |	△ <br> Cost performance |	◎ |	△～○<br>  Backup |	◎ |	△ <br> Data Driven |	× |	◎ <br> Infrastructure |	◎	| △ <br> Content update | File unit | Record unit <br> Design | Free | Depends on the theme <br> Upgrade | Optional | Continuous and vulnerable
 
-{{< space height="h-20" >}}
+
 
 ## 導入事例
 
-{{< space height="h-6" >}}
+
 
 ##### **Site: Andaze corporate site**
 
@@ -91,4 +91,3 @@ Item	|　Static Web Sites（Hugo） |	Dynamic Web Sites（WordPress）<br> Produ
 
 Andaze will quickly build a static website using our static site generator "Hugo". Please feel free to contact us for a consultation so that we can gain a deeper understanding of your current situation and suggest ways to improve it.
 
-{{< space height="h-28" >}}

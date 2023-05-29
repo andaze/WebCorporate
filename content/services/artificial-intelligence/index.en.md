@@ -14,24 +14,24 @@ description: Andaze Ltd. provides highly accurate AI solutions that contribute t
 ---
 # AI (Artificial Intelligence)
 
-{{< space height="h-10" >}}
+
 
 ### Providing highly accurate AI solutions that further enhance business value
 
 Andaze's AI solutions, based on our strength of abundant knowledge and advanced technology, are highly accurate and contribute significantly to business efficiency. Our shared team, which is involved from consulting to development and operation, achieves high-level AI development. We further enhance the quality of our solutions by repeatedly improving them through design illustrations and prototypes that are easy to visualize.
 
-{{< space height="h-20" >}}
+
 
 ## Why Choose Andeze?
 
-{{< space height="h-6" >}}
+
 
 #### (1) Specialized AI experts help you expand your business
 
 * ・Based on the know-how cultivated over many years in the AI and forecasting domains, our specialized AI team contributes not only to proof of concept, but also to further business expansion and profitability.
 * ・Andaze, which has been responsible for practical application of AI in various industries, provides a shared team of specialists in various fields.
 
-{{< space height="h-6" >}}
+
 
 #### (2) Advanced AI development cultivated on the frontlines of new business
 
@@ -39,7 +39,7 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 * ・We employ the open source AI development framework ML.NET to model machine learning with speed.
 * ・As a Microsoft-certified Gold Partner, we will meet the expectations of customers who are considering AI implementation by staying close to their latent needs and providing immediate support.
 
-{{< space height="h-6" >}}
+
 
 #### (3) Providing one-stop AI solutions
 
@@ -47,4 +47,3 @@ Andaze's AI solutions, based on our strength of abundant knowledge and advanced 
 * ・We can design AI algorithms that are ahead of the times in a short period of time.
 * ・From understanding the current situation to planning, Andaze's AI specialists, who are well versed in business and cutting-edge technologies, provide one-stop service.
 
-{{< space height="h-28" >}}

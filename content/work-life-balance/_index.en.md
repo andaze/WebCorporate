@@ -36,7 +36,7 @@ description: "You can view about work-life balance initiatives of Andaze Ltd."
 </tr>
 </table>
 
-{{< space height="h-8" >}}
+
 
 <p style="border: 1px solid black; padding-left: 10px">Initiatives: Aim to increase the rate of employees taking annual paid leave so that they can work in a more balanced manner to achieve a better work-life balance. (Aim for a 70% acquisition rate of at least 6 days per year) </p>
 

@@ -14,7 +14,7 @@ description: Andaze Ltd.'s solution AZURE COSMOS DATABASE provides "NOSQL databa
 
 ### NOSQL Database Development" for storing huge databases with data optimization
 
-{{< br >}}
+
 
 ## Overview
 
@@ -24,7 +24,7 @@ The database called RDBMS used until now had a normalized internal data structur
 
 On the other hand, a database called NOSQL can be designed to retrieve the necessary information in a single shot. Furthermore, by adding more servers, the system can flexibly handle increases in data volume and traffic.
 
-{{< br >}}
+
 
 ## Effects of Introduction
 
@@ -32,7 +32,7 @@ On the other hand, a database called NOSQL can be designed to retrieve the neces
 * ・Store data without defining data types
 * ・Easily increase performance by adding more servers.
 
-{{< br >}}
+
 
 ## Suggested Industries
 
@@ -43,13 +43,13 @@ On the other hand, a database called NOSQL can be designed to retrieve the neces
 * ・Consumer electronics
 * ・Financial Services
 
-{{< br >}}
+
 
 ## Product Image
 
 Andaze will promptly proceed with database optimization by utilizing AZURE COSMOS DATABASE. Please feel free to contact us if your company is having trouble storing large scale data.
 
-{{< br >}}
+
 
 ## Case Study
 

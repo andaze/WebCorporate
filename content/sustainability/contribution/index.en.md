@@ -10,11 +10,11 @@ description: "You can read about the social contribution based on the corporate 
 ---
 # Contribution to society based on our corporate philosophy
 
-{{< space height="h-4" >}}
+
 
 **Andaze is committed to "Bringing innovation to Japan through global and superior technology. We at Andaze are committed to promoting sustainable initiatives for our business partners, the people we serve, and society as a whole based on our corporate philosophy of "Bringing Innovation to Japan through Global Excellence.**
 
-{{< space height="h-10" >}}
+
 
 ## Diversity and Inclusion
 
@@ -25,7 +25,7 @@ We value human resources above all else. There is no discrimination or distincti
 * ・Various training and classes to improve communication skills in Japanese
 * ・Training programs in Japan
 
-{{< space height="h-10" >}}
+
 
 ## How to Work
 
@@ -36,7 +36,7 @@ It is the company's responsibility to focus on the job fulfillment and stable li
 * ・Introduced a full-flex system with 8 hours of core time. Provide an environment where employees can work while valuing their "individuality" without giving up due to location or circumstances.
 * ・Childcare and nursing care support systems that do not discriminate on the basis of gender, etc.
 
-{{< space height="h-10" >}}
+
 
 ## Employee Health and Safety
 

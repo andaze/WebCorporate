@@ -14,17 +14,17 @@ description: Andaze Ltd. provides "Prototyping, Implementation, and Verification
 ---
 # Consulting
 
-{{< space height="h-10" >}}
+
 
 ### Experienced consultants with a high level of expertise
 
 DX enables our clients to transform all aspects of their corporate activities for the better. Andaze's shared team of highly specialized digital consultants provides a comprehensive range of services, from strategy development and implementation to customer support, to help you design a digital strategy that works for you.
 
-{{< space height="h-20" >}}
+
 
 ## Why choose Andaze?
 
-{{< space height="h-6" >}}
+
 
 #### (1) We understand your business challenges and needs, and create effective solutions
 
@@ -32,7 +32,7 @@ DX enables our clients to transform all aspects of their corporate activities fo
 * ・Experts with extensive consulting experience in a variety of industries help clients formulate strategies and implement corporate reforms from a management perspective.
 * ・We become a strong partner for customers who are struggling with digitalization and IT strategies, and can consult with us on anything.
 
-{{< space height="h-6" >}}
+
 
 #### (2) Support for organizational reforms from a management perspective using advanced technology
 
@@ -40,11 +40,10 @@ DX enables our clients to transform all aspects of their corporate activities fo
 * ・Work with development members to implement scoping decisions and planning to achieve project goals and meet long-term needs.
 * ・We support organizational reform through highly effective systems consulting.
 
-{{< space height="h-6" >}}
+
 
 #### (3) The team that handled the consulting work begins development and operations
 
 * ・Our shared team, which has abundant experience in launching new businesses and possesses both the conceptualization and execution skills required for system construction, provides one-stop, integrated support from strategy to development and operation.
 * ・Long-term partnerships are established even after operation. We will propose improvements while responding to changes in circumstances and fee-backs.
 
-{{< space height="h-28" >}}

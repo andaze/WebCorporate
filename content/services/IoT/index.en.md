@@ -13,7 +13,7 @@ description: Andaze Ltd. provides big data development services that lead to cor
 ---
 # **IoT/Big Data Development Services**
 
-{{< space height="h-10" >}}
+
 
 ### Supporting data utilization that leads to business innovation and new business opportunities
 
@@ -47,11 +47,11 @@ The first layer of data is matched, merged, filtered, and cleansed (at a moderat
 
 The third layer is to process the data to a level that meets business requirements and can be read and visualized by BI tools. Processed data is at a level that can be used as-is for BI analysis, reporting, presentations, etc. In addition, the data is normalized with a proxy key so that the business department can perform self-service data aggregation.
 
-{{< space height="h-20" >}}
+
 
 ## Examples of IoT/Big Data development Andaze has worked on
 
-{{< space height="h-6" >}}
+
 
 The manufacturing and logistics industries are increasingly adopting IoT, and big data is being actively utilized. For example, sensors are used to monitor the status of people and goods and take early countermeasures when anomalies are detected.
 
@@ -65,4 +65,3 @@ The manufacturing and logistics industries are increasingly adopting IoT, and bi
 
 AI (Artificial Intelligence)," "Machine Learning" and "Deep Learning," which are often mentioned in conjunction with Big Data, are also Andaze's areas of expertise. Please contact us for more information.
 
-{{< space height="h-28" >}}

@@ -14,7 +14,7 @@ description: Andaze Ltd.'s new business system development services are flexible
 ---
 # **New Business System Development Services (SaaS Development)**
 
-{{< space height="h-10" >}}
+
 
 ### Flexible and speedy system development that leads new businesses to success.
 
@@ -126,11 +126,11 @@ By publicizing and advertising the SaaS service, we make more users aware of the
 
 Support and maintenance*** Maintain and improve the quality of the service by troubleshooting and other activities based on user feedback.
 
-{{< space height="h-20" >}}
+
 
 ## Why Choose Andaze?
 
-{{< space height="h-6" >}}
+
 
 #### (1) System development capabilities that can handle everything from expansion of existing systems to entry into new businesses.
 
@@ -142,7 +142,7 @@ We can start up a new system in a short period of time by using shared cloud ser
 
 We also support PoC.
 
-{{< space height="h-6" >}}
+
 
 #### (2) Service design capability that captures trends and customer/market needs
 
@@ -154,7 +154,7 @@ Our first priority is to lead new business projects to success by making proposa
 
 We not only develop systems that lead new businesses to success, but also propose business models and systems that can be synergistic with existing businesses.
 
-{{< space height="h-6" >}}
+
 
 #### (3) Business design support by specialized experts
 
@@ -170,4 +170,4 @@ We can also provide support such as business audits.
 
 Our ultimate goal is to make your business profitable. We also offer post-operational improvement proposals and quality enhancement to achieve this.
 
-{{< space height="h-28" >}}
+

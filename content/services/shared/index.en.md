@@ -13,7 +13,7 @@ description: Andaze Ltd.'s Remote Time and Attendance Service allows you to moni
 ---
 # **Remote Time and Attendance Service**
 
-{{< space height="h-10" >}}
+
 
 ### Monitoring attendance and productivity while protecting the privacy of remote employees
 
@@ -69,7 +69,7 @@ Set productivity, focus, and collaboration time (email, chat, meetings, etc.) go
 
 The Remote Time and Attendance Service can be customized according to company policy and organization."
 
-{{< space height="h-6" >}}
+
 
 **Companies that are interested in the following are encouraged to contact us. **
 
@@ -79,4 +79,4 @@ Companies that want to shorten working hours while maintaining productivity, and
 
 Companies that want to offer their employees diverse work options, such as regional work and shorter work hours.
 
-{{< space height="h-28" >}}
+
