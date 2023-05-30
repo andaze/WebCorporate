@@ -14,6 +14,8 @@ footerHidden: true
 description: "Discover why our clients choose  Andaze Ltd. We are fully committed to being your technology partner for your business success, taking responsibility for the entire process from strategic planning to operations and maintenance."
 ---
 
+# Why Choose Us
+
 ## Working as one, we complete projects that give you a competitive advantage.
 
 
