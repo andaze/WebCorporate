@@ -12,7 +12,7 @@ description: Andaze Ltd.'s solution HUGO WEB provides website acceleration using
 ---
 # HUGO WEB
 
-### Static Website Development for fast page loading with secure security
+## Static Website Development for fast page loading with secure security
 
 
 
@@ -24,15 +24,15 @@ You want to increase the display speed of your web pages, or you want to have a 
 
 ## Effects of Introduction
 
-#### (1) Security
+### (1) Security
 
 Most CMS (Content Management System = a system that allows web content to be updated without specialized knowledge) are regularly upgraded. If the changes in version upgrades are small, it will not be a major problem, but if they are major updates, you need to be careful. Sometimes, the site may become inconsistent with the installed plug-ins and extensions, causing problems with the site. Problems such as a sudden collapse of the page layout or malfunctioning of the contact form are possible.
 
-#### (2) Realization of high-speed site production
+### (2) Realization of high-speed site production
 
 Problems such as "slow page loading speed" are difficult to avoid due to the mechanism of the CMS to dynamically generate pages. Also, if you are putting up a website for the time being, this will not be a problem. However, if you want to aim for branding and SEO through your website, we recommend that you create a site that is as fast as possible to improve the number of site visitors and the abandonment rate as much as possible.
 
-#### (3) Easy to maintain
+### (3) Easy to maintain
 
 When a CMS is implemented, "regular maintenance" costs must be anticipated, as compatibility checks, bug fixes, backups, and server-side update support are required when CMS versions are upgraded. There is a wild notion of "no version upgrades," but this is problematic because it leaves security holes open. Static sites are simpler on the server side, and maintenance and system expansion are relatively easy.
 
@@ -73,14 +73,14 @@ Andaze will quickly build a static website with our static site generator HUGO. 
 
 ## Case Study
 
-##### **Site**:
+### **Site**:
 
 Andaze corporate site
 
-##### **Problem**:
+### **Problem**:
 
 We used to build our website using various systems such as FrontPage, IBM Home Page Builder, DreamWeaver, and so on. Later, when we adopted WordPress, problems occurred due to version upgrades of the main body and plug-ins. We were also worried about the security vulnerability, which was worrying us.
 
-##### **Solution**:
+### **Solution**:
 
 If the site does not require a database, "Static Site Generator" is sufficient. However, with the release of Azure Static Web Apps, we decided to move to a static code generator and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. We then discovered and selected a static site generator called "Hugo" developed in the Google Go language. As a result, the time and mental burden on the site management staff was reduced, and productivity in content creation increased. Performance: Entering the URL of any of our corporate sites in PageSpeed Insights, we can see that it is performing well by Google.

@@ -13,7 +13,7 @@ description: Andaze Ltd's solution, AZURE TABLE STORAGE, provides 'Big Data Anal
 ---
 # AZURE TABLE STORAGE
 
-### Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data
+## Big Data Analytics Development" for inexpensive and speedy analysis of exponentially growing data
 
 
 
@@ -54,14 +54,14 @@ Andaze quickly builds databases with large-scale data storage Azure Table Storag
 
 ## Case Study
 
-##### **Industry**:
+### **Industry**:
 
 Human resource services
 
-##### **Ploblem**:
+### **Ploblem**:
 
 Extract necessary information from the huge amount of data sent from IoT terminals
 
-##### **Solution**:
+### **Solution**:
 
 Store raw data from IoT terminals into a large database, Azure Table Storage; aggregate and process human resource data by periodically launching Azure Function to create Json data optimized for display format. The data was then stored in Azure COSMOS DATABASE, which can store flexible data. Necessary information can now be quickly accessed from the inquiry screen.

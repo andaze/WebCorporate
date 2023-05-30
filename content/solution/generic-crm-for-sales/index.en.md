@@ -12,7 +12,7 @@ description: Andaze Ltd.'s solution Generic CRM for Sales is a module to support
 ---
 # **Generic CRM for Sales (in-house product)**
 
-### Manage customer information and representative actions to support data-driven sales activities
+## Manage customer information and representative actions to support data-driven sales activities
 
 
 
@@ -22,7 +22,7 @@ By preparing the system infrastructure necessary to improve customer engagement,
 
 
 
-##### ●What is Generic CRM for Sales?
+## ●What is Generic CRM for Sales?
 
 ・Part of the "Generic CRM" functionality, this system is designed to support sales.
 
@@ -34,7 +34,7 @@ By preparing the system infrastructure necessary to improve customer engagement,
 
 
 
-##### ●Main Functions
+## ●Main Functions
 
 **・Customer Management**
 
@@ -70,7 +70,7 @@ Generate and validate quotes from ongoing business negotiations. The same quote 
 
 
 
-##### ●Generic CRM for Sales Usage Scenes and Functions
+## ●Generic CRM for Sales Usage Scenes and Functions
 
 **・Checking the status of forecasting and the most recent tasks**
 
