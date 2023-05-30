@@ -20,7 +20,7 @@ description: Andaze Ltd. provides "Prototyping, Implementation, and Verification
 
 The first step to successful DX is PoC, which stands for "Proof of Concept", to find the feasibility of system development, to actually conduct small-scale prototyping and implementation, and to verify the results with the finished product in order to make a decision on whether or not to make an IT investment. The shortest way to achieve the project is to analyze the results verified in the PoC carefully and continue to demonstrate the effectiveness and verify defects in the production environment.
 
-Andaz offers PoC services for companies considering the introduction of a new system or the establishment of security. when developing IoT or AI, we often invest a large amount of money utilizing unprecedented measures and technologies, and if the results are not obtained after full-scale development, the loss will be significant. Therefore, we can first create a simplified version of the system and conduct a small-scale verification to see if it is feasible at an early stage and if it can generate effects commensurate with the investment amount. We can also produce prototypes and prototypes of systems for which the idea and technical feasibility have already been determined, so please do not hesitate to contact us.
+Andaze offers PoC services for companies considering the introduction of a new system or the establishment of security. when developing IoT or AI, we often invest a large amount of money utilizing unprecedented measures and technologies, and if the results are not obtained after full-scale development, the loss will be significant. Therefore, we can first create a simplified version of the system and conduct a small-scale verification to see if it is feasible at an early stage and if it can generate effects commensurate with the investment amount. We can also produce prototypes and prototypes of systems for which the idea and technical feasibility have already been determined, so please do not hesitate to contact us.
 
 ### Advantages of PoC, prototyping, and prototype production for system development
 
@@ -68,9 +68,9 @@ Evaluation will be conducted based on the data obtained from the PoC. We will id
 
 ### (1) Expert team including AI experts will verify the effectiveness of the new system.
 
-Andaz, which has been in charge of system development for various industries and companies, provides PoC services based on our know-how cultivated in big data and AI development through our shared team of specialists in each field.
+Andaze, which has been in charge of system development for various industries and companies, provides PoC services based on our know-how cultivated in big data and AI development through our shared team of specialists in each field.
 
-Andaz's shared team of specialists in each field provides PoC services based on our expertise in big data and AI development. To avoid "PoC fatigue," in which repeated PoCs fail to lead to production development, we propose feasible PoCs that are cost-effective and justify the investment, based on a preliminary discussion of your issues, goals, and technologies to be applied.
+Andaze's shared team of specialists in each field provides PoC services based on our expertise in big data and AI development. To avoid "PoC fatigue," in which repeated PoCs fail to lead to production development, we propose feasible PoCs that are cost-effective and justify the investment, based on a preliminary discussion of your issues, goals, and technologies to be applied.
 
 As a Microsoft certified Gold Partner, we are able to meet your potential needs and expectations.
 
@@ -78,7 +78,7 @@ As a Microsoft certified Gold Partner, we are able to meet your potential needs 
 
 ### (2) Advanced AI development cultivated at the forefront of new business
 
-Andaz is a leading provider of advanced AI development services in the field of new business. Therefore, Andaz has acquired ISO27001 information security management system. We will proceed with pre-implementation verification by concluding a formal PoC contract.
+Andaze is a leading provider of advanced AI development services in the field of new business. Therefore, Andaze has acquired ISO27001 information security management system. We will proceed with pre-implementation verification by concluding a formal PoC contract.
 
 ・The AI development project will adopt the open source AI development framework ML.NET for speedy machine learning modeling.
 
@@ -86,6 +86,6 @@ Andaz is a leading provider of advanced AI development services in the field of 
 
 ### (3) One-stop PoC service
 
-Andaz's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop services, from interviews to accurately understand the client's needs, to proposals on issues, technologies to be introduced, and cost-effectiveness.
+Andaze's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop services, from interviews to accurately understand the client's needs, to proposals on issues, technologies to be introduced, and cost-effectiveness.
 
-Andaz's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop service from the hearing to the proposal of issues, technologies to be introduced, and cost-effectiveness.
+Andaze's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop service from the hearing to the proposal of issues, technologies to be introduced, and cost-effectiveness.
