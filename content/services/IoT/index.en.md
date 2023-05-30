@@ -15,23 +15,23 @@ description: Andaze Ltd. provides big data development services that lead to cor
 
 
 
-### Supporting data utilization that leads to business innovation and new business opportunities
+## Supporting data utilization that leads to business innovation and new business opportunities
 
 With the promotion of DX, an increasing number of companies are seeking to "successfully link the large amount of data (Big Data) they possess to their business". This data is useful in understanding the current situation and making accurate judgments based on it, without relying on human experience and intuition. By referring to predictive analysis of big data and linking it to operational reforms and the creation of new businesses, we will realize the establishment of DX and a shift to "data-driven management," in which management is conducted while making use of data.
 
 Andaze provides big data development services that lead to corporate profitability, from the automatic collection of internal data using various tools and devices to processing and analysis. The results of this analysis can lead to explosive effects, such as improved productivity and quality control. Andaze has extensive experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze.
 
-##### ●Efficient data collection methods
+### ●Efficient data collection methods
 
 There are many ways to collect data, but choosing a less labor-intensive method will help establish system use. For example, the automatic acquisition of data from POS, IoT, and MtoM (a system in which machines are directly networked and exchange data with each other, such as sensors, GPS, and communication devices) is very effective and does not require human intervention.
 
-##### ●Structured, semi-structured, and unstructured data
+### ●Structured, semi-structured, and unstructured data
 
 There are three types of data that make up big data: "structured data" in tabular form with rows and columns, "semi-structured data" in tabular form with certain regularity in content, and "unstructured data" with no regularity in content. Unstructured data" and "semi-structured data" make up the bulk of big data, and large storage capacity is required to capture and utilize them regardless of data format or volume. Andaze will build an inexpensive data lake in the cloud, accumulate large volumes of data, and process them into data suitable for analysis.
 
 ![](/2.png)
 
-##### ●"Three-tier data processing design" to process data for analysis
+### ●"Three-tier data processing design" to process data for analysis
 
 At Andaze, a wide variety of raw data collected in the data lake is processed using the "three-layer data processing design" (medallion architecture) that has been the focus of much attention recently. By processing in the order of first layer, second layer, and third layer, the structure and granularity of the data becomes more purposeful.
 

@@ -16,27 +16,27 @@ description: Andaze Ltd.'s new business system development services are flexible
 
 
 
-### Flexible and speedy system development that leads new businesses to success.
+## Flexible and speedy system development that leads new businesses to success.
 
 A new business is a project with a large "don't know until you try it" element. If the system is developed using the waterfall method, in which all necessary functions are determined in the initial requirements definition before proceeding with development, rework will occur every time a modification to the requirements or design occurs, costing a great deal of time and money. For system development to succeed in a new business with a high degree of uncertainty, it is important to quickly create a small system, quickly turn the cycle of improvement around, and improve the accuracy of the system.
 
 Andaze employs agile development, releasing necessary functions (including SaaS) in a short span of time. If the client company has existing data, we determine what the minimum necessary functions are to verify the hypothesis of the new business, and build them in order of priority. We can conduct a PoC and then develop the system in production, so please contact us for more information.
 
-##### ●Anders' Style: Key Points for New Business System Development
+### ●Anders' Style: Key Points for New Business System Development
 
 In new business system development, rather than "carefully preparing to avoid rework," we believe that "hypothetical miscalculations and changes in circumstances are bound to occur at some point," and work on projects with a system that can flexibly respond to changes in initially determined requirements and designs.
 
 Since agile development involves building from the highest priority functions in a short period of time, we can release a highly accurate system relatively quickly by completing core functions first and verifying them over time.
 
-##### ・ Shorten the time it takes to release a new system
+#### ・ Shorten the time it takes to release a new system
 
 Develop quickly because releasing a system after spending a great deal of time and money on development can result in significant losses and make new business difficult if it no longer meets the needs of the market and customers.
 
-##### ・Develop necessary functions in a short span of time
+#### ・Develop necessary functions in a short span of time
 
 We keep man-hours and costs down by developing the minimum necessary functions in a short span of time, and we remain flexible enough to change the course of the system as circumstances change and to add functions as requested.
 
-##### ・Rapidly verify and improve whether the system you have created is needed.
+#### ・Rapidly verify and improve whether the system you have created is needed.
 
 We will reflect the results of verification by actually having users use the system and quickly make improvements. By repeating this process and releasing a system with high practicality and accuracy, we will contribute to the success of your new business.
 
@@ -48,7 +48,7 @@ An increasing number of companies are considering the provision of SaaS services
 
 ***
 
-##### ・Benefits of starting a SaaS service business
+#### ・Benefits of starting a SaaS service business
 
 New businesses that provide information held by companies as SaaS services have the following 10 advantages.  
   
@@ -94,7 +94,7 @@ By providing information owned by the company, the business model can be diversi
 
 ***
 
-##### ・Procedure for developing SaaS services
+#### ・Procedure for developing SaaS services
 
 The development of SaaS services generally follows these steps To ensure the success of your SaaS service, Andaze provides **☆**.  
   
@@ -132,7 +132,7 @@ Support and maintenance*** Maintain and improve the quality of the service by tr
 
 
 
-#### (1) System development capabilities that can handle everything from expansion of existing systems to entry into new businesses.
+### (1) System development capabilities that can handle everything from expansion of existing systems to entry into new businesses.
 
 We excel in system development that brings out the infinite possibilities of DX, from the digitization of analog information to new businesses that create new business models by analyzing internal company data.
 
@@ -144,7 +144,7 @@ We also support PoC.
 
 
 
-#### (2) Service design capability that captures trends and customer/market needs
+### (2) Service design capability that captures trends and customer/market needs
 
 We are able to quickly identify trends and support the development of new businesses that are at the forefront of these trends.
 
@@ -156,7 +156,7 @@ We not only develop systems that lead new businesses to success, but also propos
 
 
 
-#### (3) Business design support by specialized experts
+### (3) Business design support by specialized experts
 
 Our shared team, with more than 20 years of experience, provides one-stop service from strategic planning to implementation, operation, and maintenance of services utilizing superior technologies.
 

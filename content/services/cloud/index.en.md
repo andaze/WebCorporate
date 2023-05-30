@@ -16,7 +16,7 @@ description: Andaze Ltd. supports companies that wish to "de-subscribe, de-cloud
 
 
 
-### Support for "de-subscription, de-cloud, and de-packaging" in terms of cost, security, and system operation
+## Support for "de-subscription, de-cloud, and de-packaging" in terms of cost, security, and system operation
 
 Cloud services (SaaS), which have become indispensable for businesses, offer a variety of advantages, such as improved efficiency in operations and management. In addition, companies are moving away from SaaS, moving away from cloud computing, and moving away from package services. Furthermore, due to the limitations of system operations, an increasing number of companies are re-evaluating the advantages of their in-house "on-premise" systems and viewing their operations in a positive light.
 
@@ -24,7 +24,7 @@ Andaze will support such companies that wish to "move away from subsquare system
 
 
 
-##### **● General de-clouding vs. Andaze de-clouding**
+### **● General de-clouding vs. Andaze de-clouding**
 
 **General de-clouding**
 
@@ -40,11 +40,11 @@ Andaze's de-subscription, de-cloud, and de-packaging is done by making decisions
 
 
 
-##### ●De-subscription, de-cloud, and de-packaging using "hybrid cloud"
+#### ●De-subscription, de-cloud, and de-packaging using "hybrid cloud"
 
 In the on-premise cloud within PaaS, a new system will be built with a workload design that allows movement between on-premise and SaaS, sensitive data from existing core systems will be linked, and only the necessary SaaS will continue to be used.
 
-##### ●Example of "Depackaging" needs
+#### ●Example of "Depackaging" needs
 
 Company location: Tokyo / 350 employees / manufacturer  
  We used to use a major sales management system. However, because it was a packaged product, there were many specifications that did not match our business practices, making our operations inefficient. Therefore, we decided to revamp the system with full-scratch development optimized for our unique business.
@@ -59,7 +59,7 @@ During the development period, we received requests from our employees on site o
 
 
 
-#### (1) We have extensive experience and deep business understanding of cloud solutions and "de-subscription/de-cloud/de-packaging".
+### (1) We have extensive experience and deep business understanding of cloud solutions and "de-subscription/de-cloud/de-packaging".
 
 Our strength lies in our advanced technical capabilities and extensive know-how cultivated through cloud/de-cloud solutions in a variety of industries.
 
@@ -69,7 +69,7 @@ We have acquired the ISO27001 advanced security management system (ISMS) to main
 
 
 
-#### (2) In-house, one-stop service
+### (2) In-house, one-stop service
 
 Andaze is responsible for providing services from strategic planning to hybrid cloud design, construction, and post-operation. There is no process that is thrown to group companies or subcontractors.
 
@@ -79,7 +79,7 @@ We build a strong partnership where you can consult with us about anything relat
 
 
 
-#### (3) Provide the products you need, in the quantities you need, when you need them
+### (3) Provide the products you need, in the quantities you need, when you need them
 
 Our experts provide the best solutions for our clients, from the creation of systems to the operational aspects.
 

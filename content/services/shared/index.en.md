@@ -15,17 +15,17 @@ description: Andaze Ltd.'s Remote Time and Attendance Service allows you to moni
 
 
 
-### Monitoring attendance and productivity while protecting the privacy of remote employees
+## Monitoring attendance and productivity while protecting the privacy of remote employees
 
 The spread of the new coronavirus outbreak has prompted an increasing number of companies to allow their employees to work remotely. Even now that the outbreak has subsided, the trend toward allowing various work styles without requiring employees to work in the office is accelerating. On the other hand, many executives and managers say, "I trust my employees and subordinates, but I don't know how they work remotely," or "I am worried about the risk of compliance violations. Against this backdrop, Andaz offers a "Remote Attendance Management Service" that manages employee attendance and monitors productivity.
 
-##### ● Not a "monitoring tool" but a "confirmation tool" based on trust
+### ● Not a "monitoring tool" but a "confirmation tool" based on trust
 
 Andaz's "Remote Attendance Management Service" is a service for companies that was developed to collect PC usage data to analyze how employees are working and to get hints on how to improve more efficient work styles.
 
 The service does not monitor employees' PCs by accessing their cameras or recording video of their screens, but only checks and manages attendance status, analyzes detailed data on labor productivity, and provides insights to help improve compliance.
 
-##### ●What the Remote Attendance Management Service will achieve
+### ●What the Remote Attendance Management Service will achieve
 
 **Data collection and aggregation**.
 
