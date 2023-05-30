@@ -10,7 +10,7 @@ headerImage:
 subtitle: Manage customer information and representative actions to support data-driven sales activities
 description: Andaze Ltd.'s solution Generic CRM for Sales is a module to support sales activities by managing customer information and sales representative actions. Many functions can be developed in low code. You can create business applications and automate repetitive tasks by drag-and-drop.
 ---
-# **Generic CRM for Sales (in-house product)**
+# Generic CRM for Sales (in-house product)
 
 ## Manage customer information and representative actions to support data-driven sales activities
 
@@ -36,35 +36,35 @@ By preparing the system infrastructure necessary to improve customer engagement,
 
 ## ●Main Functions
 
-**・Customer Management**
+### ・Customer Management
 
 The customer's company and contact person information, as well as a record of past communications and individual case information, are all displayed on a single screen, providing an immediate overview of all information about the customer.
 
-**・Business management**
+### ・Business management
 
 This section manages the progress of current business negotiations, the knowledge and information required by customers, and the content of proposals to be made. The information and knowledge gained from business negotiations are important to utilize in future sales activities and negotiations, and all e-mails and call records sent and received for business negotiations are centrally managed here.
 
-**・Data Management**
+### ・Data Management
 
 Centralized management of presentations and documents related to business negotiations so that anyone involved in the negotiations can refer to them.
 
-**・Competitive Management**
+### ・Competitive Management
 
 It is essential for sales representatives to understand the strengths and weaknesses of their competitors. Share detailed information about your competitors with your team so that they always have access to the most up-to-date information.
 
-**・Lead Management**
+### ・Lead Management
 
 We manage our own customer lists as "leads. In the pre-deal stage, we use this list to plan and execute e-mail marketing, various campaigns, etc., leading to business negotiations.
 
-**・Process management**
+### ・Process management
 
 The system manages the schedule and content of business meetings. The system manages the priorities and progress of business meetings and the next actions to be taken, which helps shorten the sales cycle and reduce the burden on the person in charge.
 
-**・Dashboard**
+### ・Dashboard
 
 Lists the progress status and sales forecasts for business negotiations that are currently being handled. Tables and graphs visualize data for efficient analysis and understanding.
 
-**・Process management from negotiation to quotation to delivery**
+### ・Process management from negotiation to quotation to delivery
 
 Generate and validate quotes from ongoing business negotiations. The same quote can also be used to quickly generate invoices to ensure a successful transaction. Invoices can also be sent via email.
 
@@ -72,23 +72,23 @@ Generate and validate quotes from ongoing business negotiations. The same quote 
 
 ## ●Generic CRM for Sales Usage Scenes and Functions
 
-**・Checking the status of forecasting and the most recent tasks**
+### ・Checking the status of forecasting and the most recent tasks
 
 The "Dashboard" allows you to check at a glance the status of upcoming and actual business meetings, ongoing business meetings, and daily sales activities. Multiple dashboards can be created.
 
-**・Standardization of sales activities**
+### ・Standardization of sales activities
 
 By defining a standard process for sales of commercial products (products and services), we know when and how to conduct sales activities to customers and what to interview them about.
 
-**・Review customer negotiation history**
+### ・Review customer negotiation history
 
 You can search for customers for appointments and check the history of the most recent correspondence. You can quickly grasp what kind of communication is being made from other departments, etc., in chronological order.
 
-**・Share business meeting results**
+### ・Share business meeting results
 
-商談が終わったら、結果を報告します。マルチデバイス対応なので、外出先から商談結果をスマホやタブレットで入力できます。入力した商談結果は関係者に共有されます。
+When the business meeting is over, the results are reported. The system is multi-device compatible, so you can enter the results of business meetings on your smartphone or tablet when you are out of the office. The entered business meeting results are shared with all parties involved.
 
-**・Make a sales forecast**
+### ・Make a sales forecast
 
 When the business meeting is over, the results are reported. The system is multi-device compatible, so you can enter the results of business meetings on your smartphone or tablet when you are out of the office. The entered business meeting results are shared with all parties involved.
 

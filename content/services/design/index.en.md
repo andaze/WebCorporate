@@ -26,33 +26,33 @@ Andaze is developing "static websites" using "Hugo", a static website generator 
 
 Hugo, a static website generator, outputs static HTML and only publishes the HTML file when it is accessed by a user, so the same information is immediately displayed on the website no matter when or where it is viewed by anyone. The main advantages of a static website are as follows.
 
-**(1) Faster page display speed**.
+#### (1) Faster page display speed
 
 Since there is no "dynamic" page generation process to change the content of a Web page, the page does not consume server resources and loads quickly. The short display time reduces stress on the user and reduces website abandonment.
 
-**(2) Highly secure**.
+#### (2) Highly secure
 
 Static sites (HTML) do not use databases and consist only of static pages, so there are no plug-ins or malicious code to execute, which makes them less risky than dynamic sites (WordPress). With simple security measures in place, advanced measures are basically unnecessary.
 
-##### More information about security
+### More information about security
 
-**・No management screen**
+#### ・No management screen
 
 Hugo does not have an administration screen, so there is no risk of hijacking from the administration screen.
 
-**・No plugins**
+#### ・No plugins
 
 Plug-ins for dynamic websites (WordPress) are useful features that facilitate the addition of functionality, but they are often a security vulnerability. Moreover, since each plugin is created and released by a different developer, not all of them are checked by the company. Since Hugo does not have that vulnerable plugin, the security risk is low.
 
-**・No malicious code execution**
+#### ・No malicious code execution
 
 Dynamic site generation using languages such as PHP, which is used to extend the functionality of a web server and dynamically generate web pages, carries the risk of malicious code being executed due to its mechanism, but Hugo does not use PHP, thus reducing the risk.
 
-**・No server management required**
+#### ・No server management required
 
 Static sites (HTML) have a simple structure that is less server-intensive and, compared to dynamic sites, is more resistant to mass access. Also, they are very easy to manage, requiring only a delivery server and no backups or maintenance if a cloud service is used.
 
-**・ Made in Go language**
+#### ・ Made in Go language
 
 Multi-platform Hugo is available, allowing you to run Hugo on a variety of operating systems (even iOS and Android); with Hugo you can generate sites in a variety of fast PC/mobile environments.
 
@@ -76,18 +76,21 @@ Item	|　Static Web Sites（Hugo） |	Dynamic Web Sites（WordPress）<br> Produ
 
 
 
-## 導入事例
+## Case study
 
 
 
-### **Site: Andaze corporate site**
+### Site: Andaze corporate site
 
-**Issues** We used to build our website using various systems such as FrontPage, IBM Home Page Builder and DreamWeaver. Later, when we adopted WordPress, problems occurred due to version upgrades of the mainframe and plug-ins. We were also worried about the security vulnerability, which was worrying us.
+#### Issues:
+ We used to build our website using various systems such as FrontPage, IBM Home Page Builder and DreamWeaver. Later, when we adopted WordPress, problems occurred due to version upgrades of the mainframe and plug-ins. We were also worried about the security vulnerability, which was worrying us.
 
-**Solutin** Deciding that a "static website" would be sufficient for a site that did not require a database, we decided to migrate to Azure Static Web Apps when it was released, and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. They then discovered and selected Hugo, a static site generator developed in the Google Go language. As a result, the time and mental burden on the site operations staff was reduced, and productivity in content creation increased.
+#### Solution: 
+Deciding that a "static website" would be sufficient for a site that did not require a database, we decided to migrate to Azure Static Web Apps when it was released, and carefully searched for a tool with a "simple development environment," "quick to build," and "easy to manage. They then discovered and selected Hugo, a static site generator developed in the Google Go language. As a result, the time and mental burden on the site operations staff was reduced, and productivity in content creation increased.
 
 
-**Performance** Enter the URL of any of our corporate sites in PageSpeed Insights and you will see that it is performing well by Google.
+#### Performance:
+Enter the URL of any of our corporate sites in PageSpeed Insights and you will see that it is performing well by Google.
 
 Andaze will quickly build a static website using our static site generator "Hugo". Please feel free to contact us for a consultation so that we can gain a deeper understanding of your current situation and suggest ways to improve it.
 

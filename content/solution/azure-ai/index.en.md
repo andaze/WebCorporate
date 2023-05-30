@@ -13,7 +13,7 @@ description: AMP WEB, Andaze Ltd.'s solution, can perform "mobile content accele
 ---
 # AZURE AI
 
-## AI Machine Learning Development" for high prediction accuracy and improved business value
+## "AI Machine Learning Development" for high prediction accuracy and improved business value
 
 
 
@@ -54,14 +54,14 @@ At Andaze, we use the open source AI development framework ML.NET to model machi
 
 ## Case Study
 
-### **Industry**:
+### Industry:
 
 Securities industry
 
-### **Ploblem**:
+### Ploblem:
 
 To calculate an original fair value of stock price
 
-### **Solution**:
+### Solution:
 
 Financial information of listed companies, including past data, was obtained from EDINET and used as teacher data. Then, basic statistics and clustering were applied to analyze the correlation between characteristics and stock prices at a coarse granularity, and a desk model was created. We then created a provisional model based on multiple regression and quantification, and worked to improve the primary accuracy of the model through the use of features and their transformations. After receiving a certain evaluation from the field in terms of both theory and accuracy, we selected algorithms for production modeling, and finally created models for each cluster. We succeeded in creating a fair value calculation from a unique perspective, which is now being used for investment decisions.

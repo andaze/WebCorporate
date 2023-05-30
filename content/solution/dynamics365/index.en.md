@@ -13,7 +13,7 @@ description: Dynamics 365, a solution from Andaze Ltd., provides a customer rela
 ---
 # Dynamics365
 
-## Introduction of Customer Relationship Management CRM" for accurate analysis of information on existing customers for sales promotion.
+## "Introduction of Customer Relationship Management CRM" for accurate analysis of information on existing customers for sales promotion.
 
 
 
@@ -50,19 +50,19 @@ Customer Relationship Management CRM centrally manages a large amount of informa
 
 ## Case Study
 
-### **Industry**:
+### Industry:
 
 Medium-sized service company
 
-### **Number of licenses**:
+### Number of licenses:
 
 700
 
-### **Request**:
+### Request:
 
 Currently using Salesforce. Lack of cost to optimize CRM due to high license fee budget ratio is an issue.
 
-### **Solution**:
+### Solution:
 
 The company was concerned about license fees and governor restrictions; since Office 365 E3 was already in place, Dynamics 365 was proposed. For data migration, we set up a real-time data migration pipeline from Salesforce and set up a 3-month parallel operation period. During this period, data registration from Salesforce and data reference on the Dynamics365 side were possible, and the two CRMs were operated in parallel using the same data. The migration to Dynamics365 was executed. A smooth transition was achieved.
 

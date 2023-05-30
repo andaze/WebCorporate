@@ -13,7 +13,7 @@ description: "You can read a message from Mina Arai, President and CEO of Andaze
 
 
 
-<h2 class="!text-[1.1rem]"> As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.</h2>
+**As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.**
 
 Andaze is a venture company created by spin-outs of leading professionals in various fields ranging from technology development to consulting.
 

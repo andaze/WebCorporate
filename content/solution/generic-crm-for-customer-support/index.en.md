@@ -10,7 +10,7 @@ headerImage:
 subtitle: Providing smooth customer support for the omni-channel era
 description: Andaze Ltd.'s solution Generic CRM for Customer Support provides smooth customer support for the omni-channel era. For a more efficient and effective customer support system to deepen relationships with your customers, please contact Andaze.
 ---
-# **Generic CRM for Customer Support (in-house product)**
+# Generic CRM for Customer Support (in-house product)
 
 ## Providing smooth customer support for the omni-channel era
 
@@ -46,43 +46,43 @@ Generic CRM for Customer Support" has the following features.
 
 ## ●Main Functions
 
-**・Omni-channel functionality**
+### ・Omni-channel functionality
 
 Whether the customer chooses to call, email, message, or SNS, we will provide prompt service on that channel. When a channel is shifted, the response can be continued smoothly.
 
-**・Support Case Management**
+### ・Support Case Management
 
 Customer inquiries are managed as "support cases. The registration of cases can be done in various ways, such as by the person in charge of the case entering the information, or by automatic creation from e-mails received from the customer.
 
-**・Routing function**
+### ・Routing function
 
 Support cases can be automatically assigned to specific teams or correspondents according to specified criteria. It is also possible to change the team or contact person for different products or services.
 
-**・Interactive Service Hub**
+### ・Interactive Service Hub
 
 We provide a dedicated "Interactive Service Hub" screen for support staff to efficiently respond to customers. Information necessary for customer service can be instantly referenced, and response status is updated as needed.
 
-**・Productivity Tools**
+### ・Productivity Tools
 
 AI-based productivity tools to help resolve issues quickly. Virtual operators, chat, and other tools encourage customers to resolve issues on their own, improving productivity in support operations.
 
-**・Knowledge Management**
+### ・Knowledge Management
 
 Prepare and manage high-quality, information-rich knowledge resources to respond immediately to customer inquiries. This allows for faster problem resolution and reduced mean time to resolution.
 
-**・Queue management**
+### ・Queue management
 
 If a problem arises that cannot be handled by the primary response staff, the problem is automatically passed on to a specialized department. Records of past interactions are linked as they are, allowing even complex support cases to be resolved quickly.
 
-**・SLA (Service Level Agreement) Timer**
+### ・SLA (Service Level Agreement) Timer
 
 Automatically measures the time from inquiry to response and alerts the support manager according to the situation. It is designed to help teams achieve their service goals and prescribed service levels.
 
-**・Dashboard**
+### ・Dashboard
 
 This is for the support manager to grasp the status of the team's response at a glance. This enables them to determine which cases need to be handled on a priority basis and the workload of each person in charge, so that they can issue appropriate instructions.
 
-**・Case management**
+### ・Case management
 
 Problems caused by customers or support personnel, for example, can be logged, updated, tracked, followed up, and resolved. This allows us to find solutions to similar problems.
 

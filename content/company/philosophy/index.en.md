@@ -27,7 +27,7 @@ and we share a common philosophy.
 
 ## Corporate Slogan Corporate Philosophy
 
-<font class="font-bold text-xl">Bringing innovation to Japan through global and superior technology.</font>
+**Bringing innovation to Japan through global and superior technology.**
 
 
 

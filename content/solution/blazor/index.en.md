@@ -12,7 +12,7 @@ description: Andaze Ltd.'s solution BLAZOR WEB offers "SPA application developme
 ---
 # BLAZOR WEB
 
-## SPA application development" that can provide comfortable web expression
+## "SPA application development" that can provide comfortable web expression
 
 
 
@@ -57,14 +57,14 @@ Andaze can build SPAs in a short period of time with our SPA framework "BLAZOR".
 
 ## Case Study
 
-### **Industry**:
+### Industry:
 
 Recruitment service industry
 
-### **Problem**:
+### Problem:
 
 The response time of the B2B human resource information system was poor, and users were requesting improvements.
 
-### **Solution**:
+### Solution:
 
 When aggregating personnel data, the company required instantaneous data display and comparison while freely changing search conditions. We selected an SPA architecture and created a prototype using the Blazor-Client model in WebAssembly, but found that there was a development productivity problem during debugging. We decided to operate with the Blazor-Server model for the time being and migrate to Blazor-Client when the time was right. While we are now safely enjoying the benefits of the new technology, we expect further performance improvements at the next time.

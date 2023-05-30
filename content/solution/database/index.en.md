@@ -12,7 +12,7 @@ description: Andaze Ltd.'s solution AZURE COSMOS DATABASE provides "NOSQL databa
 ---
 # AZURE COSMOS DATABASE
 
-## NOSQL Database Development" for storing huge databases with data optimization
+## "NOSQL Database Development" for storing huge databases with data optimization
 
 
 
@@ -53,14 +53,14 @@ Andaze will promptly proceed with database optimization by utilizing AZURE COSMO
 
 ## Case Study
 
-### **Industry**:
+### Industry:
 
 Automobile manufacturing industry
 
-### **Problem**:
+### Problem:
 
 The company is having trouble processing the huge amount of data sent from IoT terminals
 
-### **Solution**:
+### Solution:
 
 Store raw data from IoT terminals into a large database, Azure Table Storage. For querying from the system, periodic invocation of Azure Function aggregates and processes the data to create Json data optimized for display format. Then, by storing the data in AZURE COSMOS DATABASE, which can store flexible data, we improved the system so that the necessary information can be viewed from the inquiry screen almost instantly.

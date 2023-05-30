@@ -13,7 +13,7 @@ description: Andaze Ltd.'s solution DEVEXPRESS provides "UX-oriented application
 ---
 # DEVEXPRESS
 
-## UX-focused application development" that enhances the value of services through user satisfaction
+## "UX-focused application development" that enhances the value of services through user satisfaction
 
 
 
@@ -51,14 +51,14 @@ Andaze utilizes the DevExpress Framework to accelerate UX development. ChoiceAwa
 
 ## Case Study
 
-### **Industry**:
+### Industry:
 
 Major food manufacturer
 
-### **Ploblem**:
+### Ploblem:
 
 To achieve high usability and responsiveness while allowing users to search and group nearly 1 million internal data items by any criteria.
 
-### **Solution**:
+### Solution:
 
 Selected DevExpress UI kit. The system was designed to allow users to select and display the necessary data in about 0.2 seconds in a background query. This was a fresh experience for the user and was highly appreciated by the person in charge.

@@ -1,7 +1,7 @@
 ---
 title: Cloud
 date: 2022-02-23T17:03:34.000+09:00
-weight: "2"
+weight: 2
 cardImage: cloud.png
 headerImage:
   imageName: cloud.png
@@ -12,7 +12,7 @@ kind: service
 subtitle: Support for companies wishing to "de-subscribe, de-cloud, and de-package" to improve ROI
 description: Andaze Ltd. supports companies that wish to "de-subscribe, de-cloud, and de-package" from the perspectives of cost, security, and system operation. Our experts will propose the best solution for you, from the creation of the system to its operation.
 ---
-# **Support services for de-subscription, de-clouding, and de-packaging**.
+# Support services for de-subscription, de-clouding, and de-packaging
 
 
 
@@ -24,15 +24,15 @@ Andaze will support such companies that wish to "move away from subsquare system
 
 
 
-### **● General de-clouding vs. Andaze de-clouding**
+### ● General de-clouding vs. Andaze de-clouding
 
-**General de-clouding**
+#### General de-clouding
 
-Migrating a SaaS built system to on-premise
+・Migrating a SaaS built system to on-premise
 
-Migrating systems from on-premise to SaaS and back to on-premise again
+・Migrating systems from on-premise to SaaS and back to on-premise again
 
-**Anders de-clouding**.
+#### Andaze de-clouding
 
 ・Convert to a form of "hybrid cloud" by making decisions on an application-by-application basis
 
@@ -40,11 +40,11 @@ Andaze's de-subscription, de-cloud, and de-packaging is done by making decisions
 
 
 
-#### ●De-subscription, de-cloud, and de-packaging using "hybrid cloud"
+### ●De-subscription, de-cloud, and de-packaging using "hybrid cloud"
 
 In the on-premise cloud within PaaS, a new system will be built with a workload design that allows movement between on-premise and SaaS, sensitive data from existing core systems will be linked, and only the necessary SaaS will continue to be used.
 
-#### ●Example of "Depackaging" needs
+### ●Example of "Depackaging" needs
 
 Company location: Tokyo / 350 employees / manufacturer  
  We used to use a major sales management system. However, because it was a packaged product, there were many specifications that did not match our business practices, making our operations inefficient. Therefore, we decided to revamp the system with full-scratch development optimized for our unique business.
@@ -61,33 +61,33 @@ During the development period, we received requests from our employees on site o
 
 ### (1) We have extensive experience and deep business understanding of cloud solutions and "de-subscription/de-cloud/de-packaging".
 
-Our strength lies in our advanced technical capabilities and extensive know-how cultivated through cloud/de-cloud solutions in a variety of industries.
+・Our strength lies in our advanced technical capabilities and extensive know-how cultivated through cloud/de-cloud solutions in a variety of industries.
 
-We are not limited to migration to/from the cloud, but also contribute to operational efficiency, cost reduction, and further expansion of business by taking advantage of the unique characteristics of DX.
+・We are not limited to migration to/from the cloud, but also contribute to operational efficiency, cost reduction, and further expansion of business by taking advantage of the unique characteristics of DX.
 
-We have acquired the ISO27001 advanced security management system (ISMS) to maintain and improve the confidentiality, integrity, and availability of information in a well-balanced manner.
+・We have acquired the ISO27001 advanced security management system (ISMS) to maintain and improve the confidentiality, integrity, and availability of information in a well-balanced manner.
 
 
 
 ### (2) In-house, one-stop service
 
-Andaze is responsible for providing services from strategic planning to hybrid cloud design, construction, and post-operation. There is no process that is thrown to group companies or subcontractors.
+・Andaze is responsible for providing services from strategic planning to hybrid cloud design, construction, and post-operation. There is no process that is thrown to group companies or subcontractors.
 
-Our expert development members provide functions and performance that meet your needs at a reasonable cost.
+・Our expert development members provide functions and performance that meet your needs at a reasonable cost.
 
-We build a strong partnership where you can consult with us about anything related to DX promotion.
+・We build a strong partnership where you can consult with us about anything related to DX promotion.
 
 
 
 ### (3) Provide the products you need, in the quantities you need, when you need them
 
-Our experts provide the best solutions for our clients, from the creation of systems to the operational aspects.
+・Our experts provide the best solutions for our clients, from the creation of systems to the operational aspects.
 
-We build the foundation necessary for DX utilization, including AI services, data analysis, and APIs that make full use of advanced technologies.
+・We build the foundation necessary for DX utilization, including AI services, data analysis, and APIs that make full use of advanced technologies.
 
-We adopt DevOps*, a development method that significantly shortens development time.
+・We adopt DevOps*, a development method that significantly shortens development time.
 
-We provide support for operational audits at the ideal timing upon request.
+・We provide support for operational audits at the ideal timing upon request.
 
 * DevOps* is a software development method in which development and operations work together.
 

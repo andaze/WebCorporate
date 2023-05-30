@@ -11,7 +11,7 @@ kind: service
 subtitle: Supporting data utilization that leads to business innovation and new business opportunities
 description: Andaze Ltd. provides big data development services that lead to corporate profitability, from automatic collection of in-house data using various tools and devices to processing and analysis. Andaze has a wealth of experience in IoT applications, so you can trust your big data development, which has the potential to become a major corporate asset, to Andaze.
 ---
-# **IoT/Big Data Development Services**
+# IoT/Big Data Development Services
 
 
 
@@ -35,15 +35,15 @@ There are three types of data that make up big data: "structured data" in tabula
 
 At Andaze, a wide variety of raw data collected in the data lake is processed using the "three-layer data processing design" (medallion architecture) that has been the focus of much attention recently. By processing in the order of first layer, second layer, and third layer, the structure and granularity of the data becomes more purposeful.
 
-**・The first layer "stores" the raw data**
+#### ・The first layer "stores" the raw data
 
 The first layer is unprocessed raw data, where data collected by various means is stored as is (in native data format), regardless of requirements. The mixture of structured and unstructured data and the large data volume require low-cost, scalable storage. Since the data in the first layer is not cleansed, it cannot be used as is.
 
-**・Perform "minimal data processing" at the second layer**
+#### ・Perform "minimal data processing" at the second layer
 
 The first layer of data is matched, merged, filtered, and cleansed (at a moderate level) into conformant data with well-formed strings, numbers, dates, etc. Key business entities and transactional data can be extracted, allowing for self-service analysis by business departments and making it a suitable data source for AI.
 
-**・The third layer is "data processing for the purpose"**
+#### ・The third layer is "data processing for the purpose"
 
 The third layer is to process the data to a level that meets business requirements and can be read and visualized by BI tools. Processed data is at a level that can be used as-is for BI analysis, reporting, presentations, etc. In addition, the data is normalized with a proxy key so that the business department can perform self-service data aggregation.
 

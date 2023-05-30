@@ -1,7 +1,7 @@
 ---
 title: Recruitment agency services
 date: 2022-02-23T17:03:34.000+09:00
-weight: "5"
+weight: 5
 cardImage: recruit.png
 headerImage:
   imageName: recruit.png
@@ -19,7 +19,7 @@ description: Andaze Ltd. offers a total recruitment service that provides suppor
 
 Andaze utilizes AI to select the most effective media and methods among diversifying recruitment methods. We also provide a series of HR services on behalf of our clients, from consulting to recruitment planning, job posting, scheduling, and post-hire training, etc. We support strategic recruitment activities by analyzing market trends and information obtained through our professional knowledge cultivated by supporting more than 200 companies in their recruitment, and through collaboration with various agencies and partner companies. We support strategic recruiting activities.
 
-We provide strategic recruiting support by analyzing information and market trends obtained through collaboration with our agents and partner companies.
+**We provide strategic recruiting support by analyzing information and market trends obtained through collaboration with our agents and partner companies.**
 
 * ・Recruitment is time-consuming and not targeted to the right candidates.
 * ・Recruitment is time-consuming and you cannot concentrate on other tasks.
@@ -137,15 +137,15 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 
 ### (1) Case 1
 
-#### **Industry**: 
+#### Industry: 
 
 Manufacturing
 
-#### **Ploblem**: 
+#### Ploblem: 
 
 To reduce the cost of recruiting nationwide and for multiple positions
 
-#### **Solution**: 
+#### Solution: 
 
 To respond to spot vacancies and increases in staff from various departments, we used advertisements and referrals on a case-by-case basis, which was time-consuming and labor-intensive. Since there are always positions available, we set up an in-house recruiting site optimized for Indeed and Google Job Search so that we could immediately begin recruiting. By doing so, it became possible to flexibly recruit according to internal needs and reduce mismatches by consolidating the information to be conveyed. The company was able to reduce the cost of introductions and advertisements, and the site itself became an asset to the company.
 
@@ -153,15 +153,15 @@ To respond to spot vacancies and increases in staff from various departments, we
 
 ### (2) Case 2
 
-#### **Industry**: 
+#### Industry: 
 
 Outsourcing (construction)
 
-#### **Ploblem**: 
+#### Ploblem: 
 
 To solve manpower shortage in recruiting
 
-#### **Solution**: 
+#### Solution: 
 
 Because the company recruits nationwide for a wide range of targets, from inexperienced to qualified candidates, it was constantly posting job openings on major media outlets. The company was unable to make effective use of the scout mail and recommendation functions of each media outlet, and had its hands full with responding to applicants and coordinating schedules. By providing proxy services for sending scout e-mails, the number of applicants was increased by approximately 18%. In addition, the company began to take on some of the tasks such as schedule adjustment and revision of drafts on a case-by-case basis.
 

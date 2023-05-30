@@ -10,9 +10,9 @@ headerImage:
 subtitle: Workforce Analysis tool to increase productivity of companies promoting remote work.
 description: Andaze Ltd.'s solution "Occupancy Management System" provides a "workforce analysis (workforce analysis)" tool to increase the productivity of remote work promotion companies. The "Occupancy Management System", which can be customized to fit your company's policies and organization, is ideal for workforce management and workforce analysis for remote work promotion companies.
 ---
-# **Workforce Analytics**
+# Workforce Analytics
 
-### Workforce "Analysis" tool to increase productivity of companies promoting remote work.
+## Workforce "Analysis" tool to increase productivity of companies promoting remote work.
 
 
 
@@ -22,21 +22,21 @@ Andaze's Occupancy Management System is a service platform as workforce analysis
 
 
 
-##### Increasing corporate concerns since the Corona disaster
+## Increasing corporate concerns since the Corona disaster
 
-**Human Resources Department**
+### Human Resources Department
 
 ・Remote work system has been introduced, but it is difficult to see and evaluate how telecommuting employees work.
 
 ・We are also having trouble getting qualitative responses from business unit managers regarding their evaluations.
 
-**Information System Division**
+### Information System Division
 
 ・We want to analyze employee utilization status, but we cannot extract the necessary data and the analysis is not going well.
 
 ・I am concerned about the extent to which I can obtain employee availability data from a privacy perspective.
 
-**Business unit management**
+### Business unit management
 
 ・Remote work is difficult to manage because telecommuting employees cannot see if they are overworking or slacking off.
 
@@ -50,39 +50,39 @@ In keeping with our "Trust, but be sure*" philosophy, Andaze collects and analyz
 
 
 
-##### ●Functions of the "Occupancy Management System" as a solution
+## ●Functions of the "Occupancy Management System" as a solution
 
 
 
-###### **【Basic functions】**
+### 【Basic functions】
 
-**・Digital Time Management**
+#### ・Digital Time Management
 
 Automatic acquisition of daily start/end times eliminates the hassle of recording arrival and departure times. Working hours and availability can be checked on a daily, weekly, or monthly basis.
 
-**・Real-time activity analysis**
+#### ・Real-time activity analysis
 
 You can quickly see what your employees are doing right now. You can detect active/passive status, applications used, URLs of websites visited, mouse and keyboard movements, and the duration of each activity. The information to be retrieved and displayed is customized to each company's compliance needs.
 
 
 
-**【Productivity analysis and evaluation】**
+### 【Productivity analysis and evaluation】
 
-**・Productivity analysis and problem identification**
+#### ・Productivity analysis and problem identification
 
 Analyze utilization and productivity by team, role, and job function. Compare the work of remote work teams and office teams to identify any issues that are hindering operations and productivity.
 
-**・Assessing Productivity Levels**
+#### ・Assessing Productivity Levels
 
 Evaluate the total time spent on productive and unproductive activities. The system sets the applications to be used for each department or job, and evaluates productivity as high when work is performed using these applications during the PC usage time. It is also possible to detect the amount of time spent concentrating on work.
 
-**・Productivity Report**
+#### ・Productivity Report
 
 Easily drill down to see details on application usage and productivity analysis. Also understand burnout, engagement, and issues affecting work efficiency.
 
 
 
-###### 【Data Security & Privacy】
+### 【Data Security & Privacy】
 
 A multi-layered data security & privacy approach ensures the confidentiality and integrity of all data collected. Data is collected and communicated using multiple encrypted collection protocols and mutual authentication.
 
@@ -94,7 +94,7 @@ A multi-layered data security & privacy approach ensures the confidentiality and
 
 
 
-###### 【Compliance & Risk Management】
+### 【Compliance & Risk Management】
 
 ・Notification is sent as soon as a security vulnerability is detected.
 
@@ -108,7 +108,7 @@ A multi-layered data security & privacy approach ensures the confidentiality and
 
 
 
-###### 【SaaS】
+### 【SaaS】
 
 Reduce licensing costs and streamline business processes by identifying applications with redundant functionality, used or unassigned licenses, and infrequently used users.
 

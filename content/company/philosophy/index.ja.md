@@ -23,7 +23,7 @@ description: "アンダーズ株式会社の経営理念をご覧いただけま
 
 ## Corporate Slogan 企業理念
 
-<font class="font-bold text-xl">グローバルかつ優れた技術で、日本にイノベーションを。</font>
+**グローバルかつ優れた技術で、日本にイノベーションを。**
 
 
 

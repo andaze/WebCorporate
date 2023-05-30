@@ -13,7 +13,7 @@ description: Andaze Ltd.'s solution, AZURE BOT FRAMEWORK, provides "chatbot deve
 ---
 # AZURE BOT FRAMEWORK
 
-## Chatbot Development" for 24-hour automated response to help increase customer satisfaction
+## "Chatbot Development" for 24-hour automated response to help increase customer satisfaction
 
 
 
@@ -62,14 +62,14 @@ We can quickly develop chatbots using the Azure Bot Framework. Please contact us
 
 ## Case Study
 
-### **Industry**:
+### Industry:
 
 Securities
 
-### **Ploblem**:
+### Ploblem:
 
 Reduce frequent internal inquiries to the IT department
 
-### **Solution**:
+### Solution:
 
 Since the company was already using Office 365 E3 internally, we set up an inquiry bot with Bot Framework and Q&A Maker and made it available through Microsoft Teams. For atypical questions, the conversation was shifted from bot to human with the Handoff feature. After applying the solution, the majority of telephone inquiries were eliminated.
