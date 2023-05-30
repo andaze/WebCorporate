@@ -5,9 +5,9 @@ weight: "0"
 footerTitileHidden: true
 description: "You can view the Basic Terms and Conditions of Andaze Ltd."
 ---
-#### Content usage conditions
+# Content usage conditions
 
-##### Andaze Ltd corporate site and related sites (hereinafter referred to as “this site”) are operated by Andaze Ltd. (hereinafter referred to as “the Company”) or its agent. In using this site, it is assumed that you have agreed to the following conditions of use.
+## Andaze Ltd corporate site and related sites (hereinafter referred to as “this site”) are operated by Andaze Ltd. (hereinafter referred to as “the Company”) or its agent. In using this site, it is assumed that you have agreed to the following conditions of use.
 
 
 

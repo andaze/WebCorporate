@@ -7,13 +7,13 @@ description: "You can view about work-life balance initiatives of Andaze Ltd."
 <div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
 <h1 class="inline">Andaze Ltd. Action Plan</h1>
 
-<p class="mt-16">We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life. </p>
+## We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life. 
 
-1.Action plan period: May 1, 2022 - April 30, 2024 (2 years)
+### 1.Action plan period: May 1, 2022 - April 30, 2024 (2 years)
 
-2.Goal: Support employment that enables both childcare and career advancement after maternity leave (at least 1 person)
+### 2.Goal: Support employment that enables both childcare and career advancement after maternity leave (at least 1 person)
 
-3.Description of Initiatives and Period of Implementation
+### 3.Description of Initiatives and Period of Implementation
 
 <p style="border: 1px solid black; padding-left: 10px">Initiatives: Provide shorter working hours and a flexible work environment for employees after maternity leave. </p>
 
