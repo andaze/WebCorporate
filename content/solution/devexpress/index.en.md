@@ -13,9 +13,9 @@ description: Andaze Ltd.'s solution DEVEXPRESS provides "UX-oriented application
 ---
 # DEVEXPRESS
 
-### UX-focused application development" that enhances the value of services through user satisfaction
+## "UX-focused application development" that enhances the value of services through user satisfaction
 
-{{< br >}}
+
 
 ## Overview
 
@@ -23,42 +23,42 @@ Satisfaction and pleasure obtained through services and products. Such value tha
 
 Therefore, efforts to invest in UX are attracting attention as a means of differentiation and increasing business value. At Andaze, we offer one-stop services from UX strategy planning to system development. We propose DX that enriches the customer experience.
 
-{{< br >}}
+
 
 ## Effects of Introduction
 
-* ・ Accurate understanding of user habits and issues
-* ・ Create new experiences that have never existed before
-* ・ Potential needs of users are brought out.
-* ・ Increased value of services and products
+*  Accurate understanding of user habits and issues
+*  Create new experiences that have never existed before
+*  Potential needs of users are brought out.
+*  Increased value of services and products
 
-{{< br >}}
+
 
 ## Suggested Industries
 
-* ・ Manufacturing
-* ・ Financial Services
-* ・ Information and telecommunications
-* ・ Distribution
+*  Manufacturing
+*  Financial Services
+*  Information and telecommunications
+*  Distribution
 
-{{< br >}}
+
 
 ## Product Image
 
 Andaze utilizes the DevExpress Framework to accelerate UX development. ChoiceAwards" in 2021, where we were named best in class in 20 development categories. If you are looking to innovate your business through UX development, please feel free to contact our professionals.
 
-{{< br >}}
+
 
 ## Case Study
 
-##### **Industry**:
+### Industry:
 
 Major food manufacturer
 
-##### **Ploblem**:
+### Ploblem:
 
 To achieve high usability and responsiveness while allowing users to search and group nearly 1 million internal data items by any criteria.
 
-##### **Solution**:
+### Solution:
 
 Selected DevExpress UI kit. The system was designed to allow users to select and display the necessary data in about 0.2 seconds in a background query. This was a fresh experience for the user and was highly appreciated by the person in charge.

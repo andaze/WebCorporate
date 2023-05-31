@@ -3,12 +3,9 @@
         {{ partial "breadcrumbs.html" . }}
     </div>
 
-    <div class="pt-5 mb-44 px-5 lg:px-64 container mx-auto ">
-        <div class="bg-white max-w-none pb-4">
-            <span class="text-4xl font-bold">{{ .Page.Title }}</span>
-        </div>
-        <div class="max-w-none pt-5">
-            {{ .Content }}
-        </div>
+    <div class="pt-5 mb-44 px-5 lg:px-64 container mx-auto">
+        {{ .Scratch.Set "containerClass" "max-w-none pt-10" }}
+        {{ partial "article.html" . }}
+        {{ .Scratch.Delete "containerClass" }}
     </div>
 {{ end }} 

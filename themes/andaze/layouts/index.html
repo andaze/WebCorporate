@@ -138,7 +138,9 @@
 
   {{ range (where .Site.RegularPages ".Params.isDownload" "eq" true) }}
     <section class="md:mx-0 py-20 md:py-36 px-4 md:pr-0 md:pl-12 lg:pl-28 bg-[#f0f0f0]">
-      {{ .Content }}
+      {{ .Scratch.Set "containerClass" "flex flex-col md:flex-row md:gap-8 lg:gap-0 max-w-screen-2xl mx-auto prose-h2:!mt-0 prose-h2:!text-3xl prose-h2:font-bold prose-ul:!my-6" }}
+      {{ partial "article.html" . }}
+      {{ .Scratch.Delete "containerClass" }}
     </section>
   {{ end }}
 

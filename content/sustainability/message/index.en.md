@@ -10,7 +10,7 @@ description: "You can read a message about sustainability from Mina Arai, Presid
 ---
 # Top Message
 
-{{< space height="h-10" >}}
+
 
 **Andaze was founded in 2016. The impetus for the company's founding came from my trip to India in 2011. What I experienced there, what I felt firsthand, and what I wondered about.... As a result of my search for what I could do and the pursuit of my ideals, Andaze was born.**
 

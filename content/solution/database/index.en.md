@@ -12,9 +12,9 @@ description: Andaze Ltd.'s solution AZURE COSMOS DATABASE provides "NOSQL databa
 ---
 # AZURE COSMOS DATABASE
 
-### NOSQL Database Development" for storing huge databases with data optimization
+## "NOSQL Database Development" for storing huge databases with data optimization
 
-{{< br >}}
+
 
 ## Overview
 
@@ -24,43 +24,43 @@ The database called RDBMS used until now had a normalized internal data structur
 
 On the other hand, a database called NOSQL can be designed to retrieve the necessary information in a single shot. Furthermore, by adding more servers, the system can flexibly handle increases in data volume and traffic.
 
-{{< br >}}
+
 
 ## Effects of Introduction
 
-* ・Data can be stored in a format optimized for the application.
-* ・Store data without defining data types
-* ・Easily increase performance by adding more servers.
+* Data can be stored in a format optimized for the application.
+* Store data without defining data types
+* Easily increase performance by adding more servers.
 
-{{< br >}}
+
 
 ## Suggested Industries
 
-* ・Gaming
-* ・Distribution
-* ・Telecommunications
-* ・Automotive
-* ・Consumer electronics
-* ・Financial Services
+* Gaming
+* Distribution
+* Telecommunications
+* Automotive
+* Consumer electronics
+* Financial Services
 
-{{< br >}}
+
 
 ## Product Image
 
 Andaze will promptly proceed with database optimization by utilizing AZURE COSMOS DATABASE. Please feel free to contact us if your company is having trouble storing large scale data.
 
-{{< br >}}
+
 
 ## Case Study
 
-##### **Industry**:
+### Industry:
 
 Automobile manufacturing industry
 
-##### **Problem**:
+### Problem:
 
 The company is having trouble processing the huge amount of data sent from IoT terminals
 
-##### **Solution**:
+### Solution:
 
 Store raw data from IoT terminals into a large database, Azure Table Storage. For querying from the system, periodic invocation of Azure Function aggregates and processes the data to create Json data optimized for display format. Then, by storing the data in AZURE COSMOS DATABASE, which can store flexible data, we improved the system so that the necessary information can be viewed from the inquiry screen almost instantly.

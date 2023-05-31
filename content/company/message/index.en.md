@@ -11,9 +11,9 @@ description: "You can read a message from Mina Arai, President and CEO of Andaze
 ---
 # Top Message
 
-{{< space height="h-4" >}}
 
-<h2 class="!text-[1.1rem]"> As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.</h2>
+
+**As a true technology supporter who also understands business strategy, we contribute to transformation through the use of digital technology.**
 
 Andaze is a venture company created by spin-outs of leading professionals in various fields ranging from technology development to consulting.
 
@@ -32,7 +32,7 @@ We are able to provide services that meet the needs of our clients, including th
 
 If you have any of these management issues or problems, please contact Andaze.
 
-{{< space height="h-4" >}}
+
 
 **Andaze Ltd.**  
 **President and Representative Director**  

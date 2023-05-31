@@ -4,35 +4,23 @@ date: 2022-06-04T16:11:48+09:00
 weight: 10
 description: "You can view the quality policy of Andaze Ltd."
 ---
-<div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
-<h1 class="inline">Quality Policy</h1>
+# Quality Policy
 
-<div class="mt-16 mb-8">
-<h2>1.Basic Philosophy</h2>
+## 1.Basic Philosophy
 
 We believe that the services we provide will ideally contribute to the further development of society, and to realize this ideal, we will constantly strive to stabilize and improve quality through joint thought, discussion, and implementation.
-</div>
 
-<div class="mt-8 mb-32">
-<h2>2.Quality Policy</h2>
+## 2.Quality Policy
 
-1. (1) To achieve this quality policy, we will set quality targets and conduct activities to achieve them.
+1. To achieve this quality policy, we will set quality targets and conduct activities to achieve them.
 
-2. (2) We shall aim to improve customer satisfaction, conform to requirements, and continuously improve the effectiveness of our quality management system.
+2. We shall aim to improve customer satisfaction, conform to requirements, and continuously improve the effectiveness of our quality management system.
 
-3. (3) All of our employees shall be aware of their respective roles and responsibilities regarding quality management and shall carry them out together.
+3. All of our employees shall be aware of their respective roles and responsibilities regarding quality management and shall carry them out together.
 
-4. (4) This quality policy shall be made publicly available externally through our website.
-</div>
+4. This quality policy shall be made publicly available externally through our website.
 
-<div class="text-right">
 
-January 27, 2021
-
-Andaze Ltd.
-
-Representative Director
-
-Mina Arai
-</div>
-</div>
+{{< text-right 
+    text="January 27, 2021<br>Andaze Ltd.<br>President and Representative Director<br>Mina Arai" 
+>}}

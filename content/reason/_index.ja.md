@@ -14,9 +14,11 @@ footerHidden: true
 description: "アンダーズ株式会社がお客様から選ばれる理由をご紹介します。私たちは、戦略立案から運用保守まですべてのプロセスに責任を持ち、お客様のビジネス成功のためにテクノロジーパートナーとしてフルコミットします。"
 ---
 
+# 選ばれる理由
+
 ## 一枚岩となって、競争優位をもたらすプロジェクトを完遂。
 
-{{< space height="h-10" >}}
+
 
 アンダーズがお客様に選ばれる理由。  
 
@@ -32,7 +34,7 @@ description: "アンダーズ株式会社がお客様から選ばれる理由を
 
 ご予算を超過することなく、期待以上の成果を生み出します。  
 
-{{< space height="h-20" >}}
+
 
 {{< text-with-image 
     title="全プロセスに責任を持ち、ビジネスの成功にフルコミット。"
@@ -53,7 +55,7 @@ description: "アンダーズ株式会社がお客様から選ばれる理由を
     src="img/reason/reason3.jpg"
 >}}
 
-{{< space height="h-20" >}}
+
 
 ## アンダーズが提供するサービス
 
@@ -65,31 +67,13 @@ description: "アンダーズ株式会社がお客様から選ばれる理由を
 
 組織的な能力向上のため、マイクロソフトをはじめとする各領域の認証や認定、法人免許などを取得しています。
 
-<ul class="grid md:grid-cols-3 sm:grid-cols-2 md:gap-4 mt-10">
+{{< certification-wrapper >}}
 
-<li class="flex flex-col justify-center">
-{{< picture alt="Image Not Available" src="img/reason/certification/certification_1.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</li>
+{{< certification-item src="img/reason/certification/certification_1.png" >}}
+{{< certification-item src="img/reason/certification/certification_2.png" >}}
+{{< certification-item src="img/reason/certification/certification_3.png" >}}
+{{< certification-item src="img/reason/certification/certification_4.png" >}}
+{{< certification-item src="img/reason/certification/certification_5.png" >}}
+{{< certification-item src="img/reason/certification/certification_6.png" >}}
 
-<li class="flex flex-col justify-center">
-{{< picture alt="Image Not Available" src="img/reason/certification/certification_2.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</li>
-
-<li class="flex flex-col justify-center">
-{{< picture alt="Image Not Available" src="img/reason/certification/certification_3.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</li>
-
-<li class="flex flex-col justify-center">
-{{< picture alt="Image Not Available" src="img/reason/certification/certification_4.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</li>
-
-<li class="flex flex-col justify-center">
-{{< picture alt="Image Not Available" src="img/reason/certification/certification_5.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</li>
-
-<li class="flex flex-col justify-center">
-{{< picture alt="Image Not Available" src="img/reason/certification/certification_6.png" type="content" quolity="100" class="w-auto h-20 mx-auto my-6 md:h-32 object-cover">}}
-</li>
-
-
-</ul>
+{{< /certification-wrapper >}}

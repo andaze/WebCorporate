@@ -3,8 +3,8 @@
         {{ partial "breadcrumbs.html" . }}
     </div>
     <div class="container mx-auto px-5 lg:px-40 mb-24">
-        <div class="max-w-none pt-5">
-            {{ .Content }}
-        </div>
+        {{ .Scratch.Set "containerClass" "max-w-none pt-10" }}
+        {{ partial "article.html" . }}
+        {{ .Scratch.Delete "containerClass" }}
     </div>
 {{ end }}

@@ -12,38 +12,38 @@ description: Andaze Ltd.'s solution BLAZOR WEB offers "SPA application developme
 ---
 # BLAZOR WEB
 
-### SPA application development" that can provide comfortable web expression
+## "SPA application development" that can provide comfortable web expression
 
-{{< br >}}
+
 
 ## Overview
 
 SPA (Single Page Application) is a system in which contents are switched one after another on a single web page. The next content can be displayed without having to click on a link and reload the page. Andaze provides comfortable web expressions that run crisply, not to mention improved visuals and usability. This leads to increased user satisfaction.
 
-{{< br >}}
+
 
 ## Effects of Introduction
 
-* ・Users can have a fresh experience that they have not had with conventional web pages.
-* ・High-speed page display and function switching
-* ・Smartphone applications can be replaced.
-* ・Improved display speed and performance because parts of the page that do not need to be changed remain unchanged.
-* ・More advanced expression on web pages
+* Users can have a fresh experience that they have not had with conventional web pages.
+* High-speed page display and function switching
+* Smartphone applications can be replaced.
+* Improved display speed and performance because parts of the page that do not need to be changed remain unchanged.
+* More advanced expression on web pages
 
-{{< br >}}
+
 
 ## Suggested Industries
 
-* ・Banking
-* ・Securities
-* ・Insurance
-* ・Construction
-* ・Public Sector
-* ・Construction Manufacturing
-* ・Retail
-* ・Retail Distribution
+* Banking
+* Securities
+* Insurance
+* Construction
+* Public Sector
+* Construction Manufacturing
+* Retail
+* Retail Distribution
 
-{{< br >}}
+
 
 ## Product Image
 
@@ -53,18 +53,18 @@ Andaze can build SPAs in a short period of time with our SPA framework "BLAZOR".
 
 <font color="gray">*Native application...An application that is installed and used via an application store.</font>
 
-{{< br >}}
+
 
 ## Case Study
 
-##### **Industry**:
+### Industry:
 
 Recruitment service industry
 
-##### **Problem**:
+### Problem:
 
 The response time of the B2B human resource information system was poor, and users were requesting improvements.
 
-##### **Solution**:
+### Solution:
 
 When aggregating personnel data, the company required instantaneous data display and comparison while freely changing search conditions. We selected an SPA architecture and created a prototype using the Blazor-Client model in WebAssembly, but found that there was a development productivity problem during debugging. We decided to operate with the Blazor-Server model for the time being and migrate to Blazor-Client when the time was right. While we are now safely enjoying the benefits of the new technology, we expect further performance improvements at the next time.

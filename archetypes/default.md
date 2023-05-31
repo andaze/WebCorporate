@@ -13,19 +13,19 @@ menu:
 
 # タイトル (h1、下スペース h-10: 2.5rem)
 
-{{< space height="h-10" >}}
+
 
 ## 見出し2 (h2、下スペース h-20: 5rem)
 テキスト
 
-{{< space height="h-20" >}}
+
 
 ### 見出し3 (h3、下スペース h-6: 1.5rem)
 改行（テキストの後に半角スペース2つ + Enter）  
 ssssssss  
 xxxxxxxxxxx
 
-{{< space height="h-6" >}}
+
 
 
 
