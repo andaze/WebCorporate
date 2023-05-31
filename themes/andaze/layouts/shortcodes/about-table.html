@@ -1,0 +1,11 @@
+<table class="w-full">
+  <tbody>
+    {{ $currentLang := .Site.Language.Lang }}
+    {{ range $index, $item := index .Site.Data $currentLang "about" }}
+    <tr class="flex items-center p-8 border-0 {{ if eq (mod $index 2) 0 }}bg-gray-50{{ end }}">
+      <th class="w-1/3 font-bold !m-0">{{ $item.title | markdownify }}</th>
+      <td class="w-2/3 p-0">{{ $item.text | markdownify }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
