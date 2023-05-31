@@ -13,7 +13,9 @@
             {{ if .Page.Params.shareLink }}
                 {{ partial "molecule-section-share-social-media-link.html" . }}
             {{ end }}
-            {{ .Content }}
+            {{ .Scratch.Set "containerClass" "" }}
+            {{ partial "article.html" . }}
+            {{ .Scratch.Delete "containerClass" }}
         </div>
     </div>
 {{ end }}
