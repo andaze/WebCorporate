@@ -1,0 +1,13 @@
+<li class="flex flex-col justify-center">
+    {{ .Scratch.Set "class" "w-auto h-20 mx-auto my-6 md:h-32 object-cover" }}
+    {{ .Scratch.Set "quolity" "100" }}
+    {{ .Scratch.Set "src" (.Get "src") }}
+    {{ .Scratch.Set "type" "content" }}
+
+    {{ partial "atom-picture.html" . }}    
+
+    {{ .Scratch.Delete "class" }}
+    {{ .Scratch.Delete "quolity" }}
+    {{ .Scratch.Delete "src" }}
+    {{ .Scratch.Delete "type" }}
+</li>
