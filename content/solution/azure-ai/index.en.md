@@ -25,24 +25,24 @@ In recent years, with the spread of smartphones and IoT, a large amount of data 
 
 ## Effect of introduction
 
-* ・Increased efficiency in inspection and picking operations
-* ・Unmanned cash registers prevent human error and congestion, and make effective use of human resources.
-* ・Eliminate overstock through sales forecasting
-* ・Avoid dangerous driving and contribute to the reduction of traffic accidents
-* ・Increased profit margins through land and property price assessments
-* ・Automated preparation of reports and other paperwork to achieve a paperless office.
+* Increased efficiency in inspection and picking operations
+* Unmanned cash registers prevent human error and congestion, and make effective use of human resources.
+* Eliminate overstock through sales forecasting
+* Avoid dangerous driving and contribute to the reduction of traffic accidents
+* Increased profit margins through land and property price assessments
+* Automated preparation of reports and other paperwork to achieve a paperless office.
 
 
 
 ## Suggested Industries
 
-* ・Automotive
-* ・Logistics
-* ・Finance
-* ・Real estate
-* ・Home Appliances
-* ・Manufacturing
-* ・Retail (food supermarket)
+* Automotive
+* Logistics
+* Finance
+* Real estate
+* Home Appliances
+* Manufacturing
+* Retail (food supermarket)
 
 
 

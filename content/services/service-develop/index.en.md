@@ -106,15 +106,15 @@ We generate ideas for SaaS services to offer, review them, and select the ones t
 
 Research customer needs and competitor SaaS services to see how the idea-stage solution differs from existing ones and what the market demand is.
 
-##### 3. Prototyping*
+##### 3. Prototyping ☆
 
 Based on the idea, we create specifications for the service and actually create a prototype (prototype), which is repeatedly tested and reviewed by the customer.
 
-##### 4. development and testing*
+##### 4. development and testing ☆
 
 Select the technology stack required for development and actually develop the SaaS service based on the prototype. Problems and improvements are verified and corrected through testing.
 
-##### 5. Release*
+##### 5. Release ☆
 
 We release the SaaS service (application) that has passed testing and is complete, and start interacting with users.
 
@@ -122,7 +122,7 @@ We release the SaaS service (application) that has passed testing and is complet
 
 By publicizing and advertising the SaaS service, we make more users aware of the SaaS service and generate revenue by getting them to continue using it.
 
-##### 7. support and maintenance*
+##### 7. support and maintenance ☆
 
 Maintain and improve the quality of the service by troubleshooting and other activities based on user feedback.
 
@@ -134,40 +134,40 @@ Maintain and improve the quality of the service by troubleshooting and other act
 
 ### (1) System development capabilities that can handle everything from expansion of existing systems to entry into new businesses.
 
-・We excel in system development that brings out the infinite possibilities of DX, from the digitization of analog information to new businesses that create new business models by analyzing internal company data.
+* We excel in system development that brings out the infinite possibilities of DX, from the digitization of analog information to new businesses that create new business models by analyzing internal company data.
 
-・Our experienced consultants and engineers, who are familiar not only with IT technology but also with business, clarify the contents to be systemized from a business perspective, and then design and develop the system.
+* Our experienced consultants and engineers, who are familiar not only with IT technology but also with business, clarify the contents to be systemized from a business perspective, and then design and develop the system.
 
-・We can start up a new system in a short period of time by using shared cloud services and libraries.
+* We can start up a new system in a short period of time by using shared cloud services and libraries.
 
-・We also support PoC.
+* We also support PoC.
 
 
 
 ### (2) Service design capability that captures trends and customer/market needs
 
-・We are able to quickly identify trends and support the development of new businesses that are at the forefront of these trends.
+* We are able to quickly identify trends and support the development of new businesses that are at the forefront of these trends.
 
-・If there is a difference between the hypothesis set in the project and the actual customer/market needs, we will quickly modify or add functions in response to the difference.
+* If there is a difference between the hypothesis set in the project and the actual customer/market needs, we will quickly modify or add functions in response to the difference.
 
-・Our first priority is to lead new business projects to success by making proposals, rather than simply being a hands-on worker.
+* Our first priority is to lead new business projects to success by making proposals, rather than simply being a hands-on worker.
 
-・We not only develop systems that lead new businesses to success, but also propose business models and systems that can be synergistic with existing businesses.
+* We not only develop systems that lead new businesses to success, but also propose business models and systems that can be synergistic with existing businesses.
 
 
 
 ### (3) Business design support by specialized experts
 
-・Our shared team, with more than 20 years of experience, provides one-stop service from strategic planning to implementation, operation, and maintenance of services utilizing superior technologies.
+* Our shared team, with more than 20 years of experience, provides one-stop service from strategic planning to implementation, operation, and maintenance of services utilizing superior technologies.
 
-・We support our clients' new business development objectively, neutrally, and within a feasible cost range.
+* We support our clients' new business development objectively, neutrally, and within a feasible cost range.
 
-・We provide business design support by specialized experts for each business.
+* We provide business design support by specialized experts for each business.
 
-・We are your strategic partner for everything from new business to business expansion.
+* We are your strategic partner for everything from new business to business expansion.
 
-・We can also provide support such as business audits.
+* We can also provide support such as business audits.
 
-・Our ultimate goal is to make your business profitable. We also offer post-operational improvement proposals and quality enhancement to achieve this.
+* Our ultimate goal is to make your business profitable. We also offer post-operational improvement proposals and quality enhancement to achieve this.
 
 

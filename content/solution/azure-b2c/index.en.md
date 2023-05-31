@@ -37,14 +37,14 @@ Integrates with the latest applications and pre-existing software; single sign-o
 
 ## Suggested Industries
 
-* ・Banking
-* ・Securities
-* ・Insurance
-* ・Construction
-* ・Public Sector
-* ・Construction Manufacturing
-* ・Retail
-* ・Retail Distribution
+* Banking
+* Securities
+* Insurance
+* Construction
+* Public Sector
+* Construction Manufacturing
+* Retail
+* Retail Distribution
 
 
 

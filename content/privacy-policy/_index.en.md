@@ -23,9 +23,9 @@ When you make an inquiry from this website, we may ask you to register your pers
 **Prohibition of disclosure and provision of personal information to third parties**  
 We will properly manage personal information entrusted to us by our customers and will not disclose personal information to a third party unless any of the following cases apply.
 
-- ・With customer’s consent
-- ・When we disclose to a contractor that we outsource to provide the service that the customer desires
-- ・When it is necessary to disclose according to law
+* With customer’s consent
+* When we disclose to a contractor that we outsource to provide the service that the customer desires
+* When it is necessary to disclose according to law
 
 
 

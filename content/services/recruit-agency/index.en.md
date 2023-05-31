@@ -21,12 +21,12 @@ Andaze utilizes AI to select the most effective media and methods among diversif
 
 **We provide strategic recruiting support by analyzing information and market trends obtained through collaboration with our agents and partner companies.**
 
-* ・Recruitment is time-consuming and not targeted to the right candidates.
-* ・Recruitment is time-consuming and you cannot concentrate on other tasks.
-* ・Want to conduct recruitment activities remotely.
-* ・Want to reduce the cost of recruiting
-* ・Want to recruit people for multiple positions
-* ・Want to hire experienced people who are ready to work immediately
+* Recruitment is time-consuming and not targeted to the right candidates.
+* Recruitment is time-consuming and you cannot concentrate on other tasks.
+* Want to conduct recruitment activities remotely.
+* Want to reduce the cost of recruiting
+* Want to recruit people for multiple positions
+* Want to hire experienced people who are ready to work immediately
 
 
 
@@ -80,14 +80,14 @@ We can start as early as the next day and ensure stable operations. Since the se
 
 Examples of use
 
-* ・Planning recruitment
-* ・Creating job advertisements
-* ・Sharing of human resources database
-* ・Providing recruiting know-how
-* ・Send out scout e-mails on behalf of the company
-* ・Coordination of interview scheduling
-* ・Updating job postings on the company's recruiting website
-* ・Communicating with job seekers, such as notifying them of acceptance or rejection
+* Planning recruitment
+* Creating job advertisements
+* Sharing of human resources database
+* Providing recruiting know-how
+* Send out scout e-mails on behalf of the company
+* Coordination of interview scheduling
+* Updating job postings on the company's recruiting website
+* Communicating with job seekers, such as notifying them of acceptance or rejection
 
 
 
@@ -105,28 +105,28 @@ After successful recruitment, we start training the new employees. At Andaze, ed
 
 ### (7) We also offer the following services
 
-* ・Production of recruitment websites
-* ・Production of videos, advertisements, and cartoons
-* ・Support for exhibiting at events
-* ・Production of novelty goods
+* Production of recruitment websites
+* Production of videos, advertisements, and cartoons
+* Support for exhibiting at events
+* Production of novelty goods
 
 
 
 ## Effects of the introduction
 
-* ・Secure the desired human resources
-* ・Reduce recruiting costs
-* ・Enables safe and speedy recruiting activities
-* ・Reduce the burden on the human resources department
-* ・Improvement of skills after hiring
+* Secure the desired human resources
+* Reduce recruiting costs
+* Enables safe and speedy recruiting activities
+* Reduce the burden on the human resources department
+* Improvement of skills after hiring
 
 
 
 ## Recommended industries and sectors
 
-* ・All industries suffering from a shortage of human resources
-* ・All industries that are planning to build a job site
-* ・All industries that want to strengthen their HR departments  
+* All industries suffering from a shortage of human resources
+* All industries that are planning to build a job site
+* All industries that want to strengthen their HR departments  
   etc.
 
 

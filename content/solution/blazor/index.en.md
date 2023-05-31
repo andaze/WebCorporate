@@ -24,24 +24,24 @@ SPA (Single Page Application) is a system in which contents are switched one aft
 
 ## Effects of Introduction
 
-* ・Users can have a fresh experience that they have not had with conventional web pages.
-* ・High-speed page display and function switching
-* ・Smartphone applications can be replaced.
-* ・Improved display speed and performance because parts of the page that do not need to be changed remain unchanged.
-* ・More advanced expression on web pages
+* Users can have a fresh experience that they have not had with conventional web pages.
+* High-speed page display and function switching
+* Smartphone applications can be replaced.
+* Improved display speed and performance because parts of the page that do not need to be changed remain unchanged.
+* More advanced expression on web pages
 
 
 
 ## Suggested Industries
 
-* ・Banking
-* ・Securities
-* ・Insurance
-* ・Construction
-* ・Public Sector
-* ・Construction Manufacturing
-* ・Retail
-* ・Retail Distribution
+* Banking
+* Securities
+* Insurance
+* Construction
+* Public Sector
+* Construction Manufacturing
+* Retail
+* Retail Distribution
 
 
 

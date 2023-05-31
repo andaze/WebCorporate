@@ -60,11 +60,11 @@ Multi-platform Hugo is available, allowing you to run Hugo on a variety of opera
 
 ### ●Sites and pages suitable for static websites
 
-・ Corporate websites for each industry
+* Corporate websites for each industry
 
-・ Job offer web pages for various industries
+* Job offer web pages for various industries
 
-・ Landing pages (LP) for corporate advertisements, etc.
+* Landing pages (LP) for corporate advertisements, etc.
 
 ### ●Advantages and disadvantages of dynamic/static websites
 

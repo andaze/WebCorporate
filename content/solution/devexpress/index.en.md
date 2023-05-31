@@ -27,19 +27,19 @@ Therefore, efforts to invest in UX are attracting attention as a means of differ
 
 ## Effects of Introduction
 
-* ・ Accurate understanding of user habits and issues
-* ・ Create new experiences that have never existed before
-* ・ Potential needs of users are brought out.
-* ・ Increased value of services and products
+*  Accurate understanding of user habits and issues
+*  Create new experiences that have never existed before
+*  Potential needs of users are brought out.
+*  Increased value of services and products
 
 
 
 ## Suggested Industries
 
-* ・ Manufacturing
-* ・ Financial Services
-* ・ Information and telecommunications
-* ・ Distribution
+*  Manufacturing
+*  Financial Services
+*  Information and telecommunications
+*  Distribution
 
 
 

@@ -27,30 +27,30 @@ A chatbot is an "automatic conversation system" that combines "chat" and "robot.
 
 ### (1) User side
 
-* ・Users can easily make inquiries 24 hours a day.
-* ・Quick replies, so questions can be resolved in a short time.
-* ・Increased knowledge of products and services, resulting in higher customer satisfaction
-* ・Customers can be served online without having to visit a storefront.
+* Users can easily make inquiries 24 hours a day.
+* Quick replies, so questions can be resolved in a short time.
+* Increased knowledge of products and services, resulting in higher customer satisfaction
+* Customers can be served online without having to visit a storefront.
 
 ### (2) Company side
 
-* ・Streamlines the workload and personnel costs of the customer support department
-* ・Reduction of burden and labor cost for customer support department
-* ・Inquiry records are useful for business improvement
-* ・The accuracy of responses increases as the chatbot learns more.
-* ・Increase in sales by increasing the number of customer contacts
+* Streamlines the workload and personnel costs of the customer support department
+* Reduction of burden and labor cost for customer support department
+* Inquiry records are useful for business improvement
+* The accuracy of responses increases as the chatbot learns more.
+* Increase in sales by increasing the number of customer contacts
 
 
 
 ## Suggested Industries
 
-* ・Distribution
-* ・Securities
-* ・Fashion, Cosmetics
-* ・Apparel
-* ・Food
-* ・Home appliances
-* ・Banking
+* Distribution
+* Securities
+* Fashion, Cosmetics
+* Apparel
+* Food
+* Home appliances
+* Banking
 
 
 

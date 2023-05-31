@@ -68,24 +68,24 @@ Evaluation will be conducted based on the data obtained from the PoC. We will id
 
 ### (1) Expert team including AI experts will verify the effectiveness of the new system.
 
-・Andaze, which has been in charge of system development for various industries and companies, provides PoC services based on our know-how cultivated in big data and AI development through our shared team of specialists in each field.
+* Andaze, which has been in charge of system development for various industries and companies, provides PoC services based on our know-how cultivated in big data and AI development through our shared team of specialists in each field.
 
-・Andaze's shared team of specialists in each field provides PoC services based on our expertise in big data and AI development. To avoid "PoC fatigue," in which repeated PoCs fail to lead to production development, we propose feasible PoCs that are cost-effective and justify the investment, based on a preliminary discussion of your issues, goals, and technologies to be applied.
+* Andaze's shared team of specialists in each field provides PoC services based on our expertise in big data and AI development. To avoid "PoC fatigue," in which repeated PoCs fail to lead to production development, we propose feasible PoCs that are cost-effective and justify the investment, based on a preliminary discussion of your issues, goals, and technologies to be applied.
 
-・As a Microsoft certified Gold Partner, we are able to meet your potential needs and expectations.
+* As a Microsoft certified Gold Partner, we are able to meet your potential needs and expectations.
 
 
 
 ### (2) Advanced AI development cultivated at the forefront of new business
 
-・Andaze is a leading provider of advanced AI development services in the field of new business. Therefore, Andaze has acquired ISO27001 information security management system. We will proceed with pre-implementation verification by concluding a formal PoC contract.
+* Andaze is a leading provider of advanced AI development services in the field of new business. Therefore, Andaze has acquired ISO27001 information security management system. We will proceed with pre-implementation verification by concluding a formal PoC contract.
 
-・The AI development project will adopt the open source AI development framework ML.NET for speedy machine learning modeling.
+* The AI development project will adopt the open source AI development framework ML.NET for speedy machine learning modeling.
 
 
 
 ### (3) One-stop PoC service
 
-・Andaze's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop services, from interviews to accurately understand the client's needs, to proposals on issues, technologies to be introduced, and cost-effectiveness.
+* Andaze's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop services, from interviews to accurately understand the client's needs, to proposals on issues, technologies to be introduced, and cost-effectiveness.
 
-・Andaze's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop service from the hearing to the proposal of issues, technologies to be introduced, and cost-effectiveness.
+* Andaze's AI specialists, who are well versed in business and cutting-edge technologies, will provide one-stop service from the hearing to the proposal of issues, technologies to be introduced, and cost-effectiveness.

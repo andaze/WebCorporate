@@ -16,12 +16,12 @@ description: "You can view Andaze Ltd.'s Basic Policy on Information Security."
 
 
 
-(1) We shall establish an information security management system and make company-wide efforts to properly manage information assets.
+1. We shall establish an information security management system and make company-wide efforts to properly manage information assets.
 
-(2) We shall comply with laws, national guidelines, and other regulations concerning information security, as well as contractual security obligations.
+2. We shall comply with laws, national guidelines, and other regulations concerning information security, as well as contractual security obligations.
 
-(3) We shall continuously provide the necessary education and training to ensure information security measures.
+3. We shall continuously provide the necessary education and training to ensure information security measures.
 
-(4) We shall take preventive measures to prevent unauthorized intrusion, leakage, falsification, loss, or theft of the company's information assets. In the unlikely event of a problem, we shall strive for early detection, early investigation, and prevention of recurrence.
+4. We shall take preventive measures to prevent unauthorized intrusion, leakage, falsification, loss, or theft of the company's information assets. In the unlikely event of a problem, we shall strive for early detection, early investigation, and prevention of recurrence.
 
-(5) We will periodically review the above activities and strive for improvement.
+5. We will periodically review the above activities and strive for improvement.

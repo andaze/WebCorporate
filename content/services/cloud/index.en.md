@@ -28,13 +28,13 @@ Andaze will support such companies that wish to "move away from subsquare system
 
 #### General de-clouding
 
-・Migrating a SaaS built system to on-premise
+* Migrating a SaaS built system to on-premise
 
-・Migrating systems from on-premise to SaaS and back to on-premise again
+* Migrating systems from on-premise to SaaS and back to on-premise again
 
 #### Andaze de-clouding
 
-・Convert to a form of "hybrid cloud" by making decisions on an application-by-application basis
+* Convert to a form of "hybrid cloud" by making decisions on an application-by-application basis
 
 Andaze's de-subscription, de-cloud, and de-packaging is done by making decisions on a workload (application) by workload basis. Rather than moving everything to on-premise, we will consider cost, security, customization, system integration, and other factors, and flexibly respond by keeping necessary SaaS, and moving systems that require unique customization or high security requirements to on-premise. However, on-premise is not a conventional type of cloud, but a "private cloud (resource exclusive cloud)" in which resources in the PaaS are used exclusively by one company, and a "hybrid cloud" is built and operated by combining SaaS, a public cloud, and on-premise cloud, a private cloud. The "hybrid cloud" is a combination of a public cloud (SaaS) and a private cloud (on-premise cloud).
 
@@ -61,34 +61,34 @@ During the development period, we received requests from our employees on site o
 
 ### (1) We have extensive experience and deep business understanding of cloud solutions and "de-subscription/de-cloud/de-packaging".
 
-・Our strength lies in our advanced technical capabilities and extensive know-how cultivated through cloud/de-cloud solutions in a variety of industries.
+* Our strength lies in our advanced technical capabilities and extensive know-how cultivated through cloud/de-cloud solutions in a variety of industries.
 
-・We are not limited to migration to/from the cloud, but also contribute to operational efficiency, cost reduction, and further expansion of business by taking advantage of the unique characteristics of DX.
+* We are not limited to migration to/from the cloud, but also contribute to operational efficiency, cost reduction, and further expansion of business by taking advantage of the unique characteristics of DX.
 
-・We have acquired the ISO27001 advanced security management system (ISMS) to maintain and improve the confidentiality, integrity, and availability of information in a well-balanced manner.
+* We have acquired the ISO27001 advanced security management system (ISMS) to maintain and improve the confidentiality, integrity, and availability of information in a well-balanced manner.
 
 
 
 ### (2) In-house, one-stop service
 
-・Andaze is responsible for providing services from strategic planning to hybrid cloud design, construction, and post-operation. There is no process that is thrown to group companies or subcontractors.
+* Andaze is responsible for providing services from strategic planning to hybrid cloud design, construction, and post-operation. There is no process that is thrown to group companies or subcontractors.
 
-・Our expert development members provide functions and performance that meet your needs at a reasonable cost.
+* Our expert development members provide functions and performance that meet your needs at a reasonable cost.
 
-・We build a strong partnership where you can consult with us about anything related to DX promotion.
+* We build a strong partnership where you can consult with us about anything related to DX promotion.
 
 
 
 ### (3) Provide the products you need, in the quantities you need, when you need them
 
-・Our experts provide the best solutions for our clients, from the creation of systems to the operational aspects.
+* Our experts provide the best solutions for our clients, from the creation of systems to the operational aspects.
 
-・We build the foundation necessary for DX utilization, including AI services, data analysis, and APIs that make full use of advanced technologies.
+* We build the foundation necessary for DX utilization, including AI services, data analysis, and APIs that make full use of advanced technologies.
 
-・We adopt DevOps*, a development method that significantly shortens development time.
+* We adopt DevOps*, a development method that significantly shortens development time.
 
-・We provide support for operational audits at the ideal timing upon request.
+* We provide support for operational audits at the ideal timing upon request.
 
-* DevOps* is a software development method in which development and operations work together.
+*DevOps is a software development method in which development and operations work together.
 
 

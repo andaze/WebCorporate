@@ -55,13 +55,13 @@ The third layer is to process the data to a level that meets business requiremen
 
 The manufacturing and logistics industries are increasingly adopting IoT, and big data is being actively utilized. For example, sensors are used to monitor the status of people and goods and take early countermeasures when anomalies are detected.
 
-・Construction of internal information aggregation infrastructure (data lake, three-tiered database)
+* Construction of internal information aggregation infrastructure (data lake, three-tiered database)
 
-・Vehicle Location Information Management System
+* Vehicle Location Information Management System
 
-・Detection system for defective products, scratches and dents on containers in the manufacturing industry
+* Detection system for defective products, scratches and dents on containers in the manufacturing industry
 
-・AI-OCR-based character identification and detection system for packing boxes, etc.
+* AI-OCR-based character identification and detection system for packing boxes, etc.
 
 AI (Artificial Intelligence)," "Machine Learning" and "Deep Learning," which are often mentioned in conjunction with Big Data, are also Andaze's areas of expertise. Please contact us for more information.
 

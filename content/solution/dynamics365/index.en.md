@@ -25,20 +25,20 @@ CRM (Customer Relationship Management) is an IT tool that has been introduced in
 
 ## Effect of introduction
 
-* ・Better understanding of existing customers
-* ・Increase repeat business of existing customers
-* ・Acquisition of new customers
-* ・Increase in cost-per-customer
+* Better understanding of existing customers
+* Increase repeat business of existing customers
+* Acquisition of new customers
+* Increase in cost-per-customer
 
 
 
 ## Suggested Industries
 
-* ・Wholesale and retail
-* ・Automotive
-* ・Information and Communication
-* ・Real estate
-* ・Manufacturing
+* Wholesale and retail
+* Automotive
+* Information and Communication
+* Real estate
+* Manufacturing
 
 
 

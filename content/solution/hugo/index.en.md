@@ -48,15 +48,15 @@ By default, it creates sitemap (sitemapxml). it is said that sitemap creation an
 
 ## ● Detailed features of Hugo
 
-(1) No database is used, and all contents are managed in local files.
+1. No database is used, and all contents are managed in local files.
 
-(2) Articles are written in HTML or Markdown format. It is saved under a directory following certain rules, and when the "hugo" command is executed, HTML files for individual pages, index pages, etc. are generated.
+2. Articles are written in HTML or Markdown format. It is saved under a directory following certain rules, and when the "hugo" command is executed, HTML files for individual pages, index pages, etc. are generated.
 
-(3) It is implemented by utilizing Go language features. For example, the template mechanism for outputting HTML, etc. uses the Go language template function ("html/template" and "text/template") as is, and the module mechanism for extending functions also uses the Go language. In addition, module management functions are built into Hugo, and modules can be added and updates can be performed using only the hugo command.
+3. It is implemented by utilizing Go language features. For example, the template mechanism for outputting HTML, etc. uses the Go language template function ("html/template" and "text/template") as is, and the module mechanism for extending functions also uses the Go language. In addition, module management functions are built into Hugo, and modules can be added and updates can be performed using only the hugo command.
 
-(4) Many "themes" are already published and can be installed immediately via Git. Themes are available on the "Hugo Themes" site, which has over 200 themes available. Each Git repository is publicly available and can be used by simply cloning the repository and adding settings.
+4. Many "themes" are already published and can be installed immediately via Git. Themes are available on the "Hugo Themes" site, which has over 200 themes available. Each Git repository is publicly available and can be used by simply cloning the repository and adding settings.
 
-(5) As the name "Website Building Framework" suggests, it can be used for a wide range of purposes. It is possible to build not only a corporate introduction site with few contents or a blog-like website to which contents are added regularly, but also a photo-centered album-like site, a software explanation site for developers, a documentation site, etc. (You can use the Git repository to manage its official website or (Manage official websites, documentation sites, etc. in Git repository).
+5. As the name "Website Building Framework" suggests, it can be used for a wide range of purposes. It is possible to build not only a corporate introduction site with few contents or a blog-like website to which contents are added regularly, but also a photo-centered album-like site, a software explanation site for developers, a documentation site, etc. (You can use the Git repository to manage its official website or (Manage official websites, documentation sites, etc. in Git repository).
 
 
 

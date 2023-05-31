@@ -27,11 +27,11 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 ## Effect of introduction
 
-* ・Reduce the time users spend waiting for pages to be displayed.
-* ・Increased site traffic and revenue
-* ・Increased probability of articles being read
-* ・Prevent site abandonment rate information
-* ・Stress-free for users
+* Reduce the time users spend waiting for pages to be displayed.
+* Increased site traffic and revenue
+* Increased probability of articles being read
+* Prevent site abandonment rate information
+* Stress-free for users
 
 > Relationship between display speed and site return rate
 
@@ -55,9 +55,9 @@ AMP enables search engines to read information on web pages ahead of time and di
 
 ## Suggested Industries
 
-* ・Information and telecommunications
-* ・Manufacturing (e.g., EC sites)
-* ・Landing pages for advertisements (LP)
+* Information and telecommunications
+* Manufacturing (e.g., EC sites)
+* Landing pages for advertisements (LP)
 
 
 

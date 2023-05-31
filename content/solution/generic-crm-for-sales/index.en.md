@@ -24,13 +24,13 @@ By preparing the system infrastructure necessary to improve customer engagement,
 
 ## ●What is Generic CRM for Sales?
 
-・Part of the "Generic CRM" functionality, this system is designed to support sales.
+* Part of the "Generic CRM" functionality, this system is designed to support sales.
 
-・By managing and analyzing customer information, we can accurately understand the needs of each customer and optimize our approach, thereby increasing customer engagement and order rates.
+* By managing and analyzing customer information, we can accurately understand the needs of each customer and optimize our approach, thereby increasing customer engagement and order rates.
 
-・With excellent functions such as AI-based analysis and forecasting functions and communication tools, it speeds up business negotiations, streamlines sales activities, and reduces the workload of the person in charge.
+* With excellent functions such as AI-based analysis and forecasting functions and communication tools, it speeds up business negotiations, streamlines sales activities, and reduces the workload of the person in charge.
 
-・By linking with BI tools to visualize sales activities in the form of graphs and reports, we will prevent the attribution of deals and promote sales activities that lead to results for the entire team.
+* By linking with BI tools to visualize sales activities in the form of graphs and reports, we will prevent the attribution of deals and promote sales activities that lead to results for the entire team.
 
 
 

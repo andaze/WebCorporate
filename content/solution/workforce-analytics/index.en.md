@@ -26,21 +26,21 @@ Andaze's Occupancy Management System is a service platform as workforce analysis
 
 ### Human Resources Department
 
-・Remote work system has been introduced, but it is difficult to see and evaluate how telecommuting employees work.
+* Remote work system has been introduced, but it is difficult to see and evaluate how telecommuting employees work.
 
-・We are also having trouble getting qualitative responses from business unit managers regarding their evaluations.
+* We are also having trouble getting qualitative responses from business unit managers regarding their evaluations.
 
 ### Information System Division
 
-・We want to analyze employee utilization status, but we cannot extract the necessary data and the analysis is not going well.
+* We want to analyze employee utilization status, but we cannot extract the necessary data and the analysis is not going well.
 
-・I am concerned about the extent to which I can obtain employee availability data from a privacy perspective.
+* I am concerned about the extent to which I can obtain employee availability data from a privacy perspective.
 
 ### Business unit management
 
-・Remote work is difficult to manage because telecommuting employees cannot see if they are overworking or slacking off.
+* Remote work is difficult to manage because telecommuting employees cannot see if they are overworking or slacking off.
 
-・Subordinates' overtime work has been approved as applied for with no objective work status in sight.
+* Subordinates' overtime work has been approved as applied for with no objective work status in sight.
 
 
 
@@ -68,7 +68,7 @@ You can quickly see what your employees are doing right now. You can detect acti
 
 ### 【Productivity analysis and evaluation】
 
-#### ・Productivity analysis and problem identification
+#### Productivity analysis and problem identification
 
 Analyze utilization and productivity by team, role, and job function. Compare the work of remote work teams and office teams to identify any issues that are hindering operations and productivity.
 
@@ -86,25 +86,25 @@ Easily drill down to see details on application usage and productivity analysis.
 
 A multi-layered data security & privacy approach ensures the confidentiality and integrity of all data collected. Data is collected and communicated using multiple encrypted collection protocols and mutual authentication.
 
-・Data is immediately encrypted and stored using AES-256 encryption.
+* Data is immediately encrypted and stored using AES-256 encryption.
 
-・Single sign-on (SSO) and multi-factor authentication (MFA) are used to protect and prevent the leakage of sensitive and personal data.
+* Single sign-on (SSO) and multi-factor authentication (MFA) are used to protect and prevent the leakage of sensitive and personal data.
 
-・Limit the number of users who can access information by configuring a number of role-based access controls.
+* Limit the number of users who can access information by configuring a number of role-based access controls.
 
 
 
 ### 【Compliance & Risk Management】
 
-・Notification is sent as soon as a security vulnerability is detected.
+* Notification is sent as soon as a security vulnerability is detected.
 
-・Detection of external hard disks and USBs, as well as unauthorized file sharing, to control and protect the use of sensitive data.
+* Detection of external hard disks and USBs, as well as unauthorized file sharing, to control and protect the use of sensitive data.
 
-・If you try to access a blocked domain, you will be alerted.
+* If you try to access a blocked domain, you will be alerted.
 
-・It also tracks activities such as user deletion and agent removal from the PC.
+* It also tracks activities such as user deletion and agent removal from the PC.
 
-・If compliance risks are discovered, only that activity is captured.
+* If compliance risks are discovered, only that activity is captured.
 
 
 

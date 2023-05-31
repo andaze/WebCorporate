@@ -27,20 +27,20 @@ In order to store and process such large and varied data, problems of capacity, 
 
 ## Effects of Introduction
 
-* ・ Large volumes of data can be handled at low cost.
-* ・ Normalized data and duplicated data can be stored, and readability is improved.
-* ・ Maximizes system performance when combined with normalized data
+* Large volumes of data can be handled at low cost.
+* Normalized data and duplicated data can be stored, and readability is improved.
+* Maximizes system performance when combined with normalized data
 
 
 
 ## Suggested Industries
 
-* ・ Distribution
-* ・ Information and telecommunications
-* ・ Automotive
-* ・ Advertising
-* ・ Home Appliances
-* ・ Financial Services
+* Distribution
+* Information and telecommunications
+* Automotive
+* Advertising
+* Home Appliances
+* Financial Services
 
 
 

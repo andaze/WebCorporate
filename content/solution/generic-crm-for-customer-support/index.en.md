@@ -30,17 +30,17 @@ Omni-channel refers to "a strategy to strengthen the approach to customers by li
 
 Generic CRM for Customer Support" has the following features.
 
-・Omni-channel allows you to instantly connect and interact with customers who access your company through a variety of channels, including phone, email, messaging, and chat.
+* Omni-channel allows you to instantly connect and interact with customers who access your company through a variety of channels, including phone, email, messaging, and chat.
 
-・Centralized management of customer inquiries, from receipt to assignment of personnel, response, and resolution.
+* Centralized management of customer inquiries, from receipt to assignment of personnel, response, and resolution.
 
-・All of the various channels and the customer background information derived from them can be consolidated in one place, allowing you to see the information you need, when you need it, regardless of the channel you are using (allowing you to move seamlessly from one channel to another).
+* All of the various channels and the customer background information derived from them can be consolidated in one place, allowing you to see the information you need, when you need it, regardless of the channel you are using (allowing you to move seamlessly from one channel to another).
 
-・Because interactions can proceed based on an understanding of the customer's basic information and previously obtained background information, time to problem resolution is reduced, leading to reduced customer churn and increased revenues. It also improves customer satisfaction by providing personalized support.
+* Because interactions can proceed based on an understanding of the customer's basic information and previously obtained background information, time to problem resolution is reduced, leading to reduced customer churn and increased revenues. It also improves customer satisfaction by providing personalized support.
 
-・Based on the accumulation of inquiry data and pre-prepared knowledge, anyone can respond appropriately, reducing variation in the quality of customer service and the cost of training new employees.
+* Based on the accumulation of inquiry data and pre-prepared knowledge, anyone can respond appropriately, reducing variation in the quality of customer service and the cost of training new employees.
 
-・By using machine learning to quickly retrieve necessary information, the burden on customer support staff can be significantly reduced and customer service operations can be made more efficient.
+* By using machine learning to quickly retrieve necessary information, the burden on customer support staff can be significantly reduced and customer service operations can be made more efficient.
 
 
 

@@ -28,20 +28,20 @@ On the other hand, a database called NOSQL can be designed to retrieve the neces
 
 ## Effects of Introduction
 
-* ・Data can be stored in a format optimized for the application.
-* ・Store data without defining data types
-* ・Easily increase performance by adding more servers.
+* Data can be stored in a format optimized for the application.
+* Store data without defining data types
+* Easily increase performance by adding more servers.
 
 
 
 ## Suggested Industries
 
-* ・Gaming
-* ・Distribution
-* ・Telecommunications
-* ・Automotive
-* ・Consumer electronics
-* ・Financial Services
+* Gaming
+* Distribution
+* Telecommunications
+* Automotive
+* Consumer electronics
+* Financial Services
 
 
 
