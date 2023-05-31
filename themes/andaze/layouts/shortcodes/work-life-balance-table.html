@@ -1,0 +1,12 @@
+{{ $dataFileName := .Get "data" }}
+<table class="w-full">
+  <tbody>
+    {{ $currentLang := .Site.Language.Lang }}
+    {{ range $index, $item := index .Site.Data $currentLang $dataFileName }}
+    <tr>
+      <td width="10%" class="align-top">{{ $item.key | markdownify }}</td>
+      <td width="90%">{{ $item.value | markdownify }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>

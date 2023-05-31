@@ -16,35 +16,8 @@ description: "You can view about work-life balance initiatives of Andaze Ltd."
 
 {{< border-box text="Initiatives: Provide shorter working hours and a flexible work environment for employees after maternity leave." >}}
 
-<table>
-<tr>
-  <td width="10%">May 2022</td>
-  <td width="90%">Consideration of an environment in which employees on maternity leave can easily continue working, such as shorter working hours and work locations. </td>
-</tr>
-<tr>
-  <td width="10%">June 2022</td>
-  <td width="90%">Started a system of shorter working hours after maternity leave.</td>
-</tr>
-<tr>
-  <td width="10%"></td>
-  <td width="90%">Provide flexible work location options that allow employees to work from home or bring their children to work due to unavoidable circumstances, making effective use of office facilities.</td>
-</tr>
-<tr>
-  <td width="10%">February 2023　</td>
-  <td width="90%">Interview eligible employees about the system. Periodic follow-up. </td>
-</tr>
-</table>
-
+{{< work-life-balance-table data="work-life-balance1" >}}
 
 {{< border-box text="Initiatives: Aim to increase the rate of employees taking annual paid leave so that they can work in a more balanced manner to achieve a better work-life balance. (Aim for a 70% acquisition rate of at least 6 days per year)" >}}
 
-<table>
-<tr>
-  <td width="10%">May 2022</td>
-  <td width="90%">Survey the annual paid leave utilization rate and encourage employees to take it. </td>
-</tr>
-<tr>
-  <td width="10%">May 2023</td>
-  <td width="90%">Aim for an 80% vacation usage rate of at least 6 days per year. Survey the annual paid leave utilization rate and encourage employees to take their annual paid leave so that the percentage will increase year by year. </td>
-</tr>
-</table>
+{{< work-life-balance-table data="work-life-balance2" >}}
