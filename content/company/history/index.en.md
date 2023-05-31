@@ -6,4 +6,4 @@ description: "You can view the history of Andaze Ltd."
 ---
 # History
 
-{{< history-table >}}
+{{< company-table >}}

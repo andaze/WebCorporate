@@ -1,46 +1,46 @@
-- title: 会社名
-  text: アンダーズ株式会社
+- key: 会社名
+  value: アンダーズ株式会社
 
-- title: 英文社名
-  text: Andaze Ltd.
+- key: 英文社名
+  value: Andaze Ltd.
 
-- title: 所在地
-  text: |
-    **本社**  
+- key: 所在地
+  value: |
+    【本社】  
     〒 102-0083  
     東京都千代田区麹町 2-10-3 エキスパートオフィス 1F  
 
-    **開発拠点**  
+    【開発拠点】  
     〒 102-0083  
     東京都千代田区麹町2-5-1 半蔵門PREX South 2F
 
-- title: 設立
-  text: 2016年 4月 決算期 3月
+- key: 設立
+  value: 2016年 4月 決算期 3月
 
-- title: 資本金
-  text: 20,000,000 円
+- key: 資本金
+  value: 20,000,000 円
 
-- title: 代表者
-  text: 新井 美奈
+- key: 代表者
+  value: 新井 美奈
 
-- title: 取引銀行
-  text: |
+- key: 取引銀行
+  value: |
     - 三井住友銀行 日比谷支店
     - ジャパンネット銀行 本店営業部
 
-- title: 認定規格
-  text: |
+- key: 認定規格
+  value: |
     - 情報セキュリティマネジメントシステム（ISO27001）
     - 品質マネジメントシステム（ISO9001）
 
-- title: 電話番号
-  text: 03-3230-0401
+- key: 電話番号
+  value: 03-3230-0401
 
-- title: ウェブサイト
-  text: "[https://andaze.com](https://andaze.com)"
+- key: ウェブサイト
+  value: "[https://andaze.com](https://andaze.com)"
 
-- title: 事業内容
-  text: |
+- key: 事業内容
+  value: |
     1. 各種企業に対する経営情報システムの診断、指導並びにコンサルティング
     2. 業務改善及びIT戦略に関するコンサルティング
     3. 情報通信事業への投資並びにこれらの企業の合併、提携、営業権の譲渡に関するコンサルティング

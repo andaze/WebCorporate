@@ -6,4 +6,4 @@ description: "アンダーズ株式会社の沿革をご覧いただけます。
 ---
 # 沿革
 
-{{< history-table >}}
+{{< company-table >}}

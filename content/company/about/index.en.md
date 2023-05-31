@@ -7,4 +7,4 @@ description: "You can view the company profile of Andaze Ltd."
 
 # About Us
 
-{{< about-table >}}
+{{< company-table >}}

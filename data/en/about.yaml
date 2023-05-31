@@ -1,41 +1,41 @@
-- title: Company Name
-  text: Andaze Ltd.
+- key: Company Name
+  value: Andaze Ltd.
 
-- title: Location
-  text: |
-    **Head office**  
+- key: Location
+  value: |
+    [Head office]  
     10-3, Kojimachi 2-chome, Chiyoda-ku, Tokyo  
 
-    **Development base**  
+    [Development base]  
     WeWork Hanzomon PREXSouth, 5-1, Kojimachi 2-chome, Chiyoda-ku, Tokyo
 
-- title: Established
-  text: April 2016, Fiscal year March
+- key: Established
+  value: April 2016, Fiscal year March
 
-- title: Capital
-  text: 20,000,000 Yen
+- key: Capital
+  value: 20,000,000 Yen
 
-- title: Representative
-  text: Mina Arai
+- key: Representative
+  value: Mina Arai
 
-- title: Bank
-  text: |
+- key: Bank
+  value: |
     - Sumitomo Mitsui Banking Corporation, Hibiya Branch
     - The Japan Net Bank, Limited, Head Office Sales Department
 
-- title: Approved Standards
-  text: |
+- key: Approved Standards
+  value: |
     - Information Security Management System (ISO27001)
     - Quality Management System (ISO9001)
 
-- title: Phone number
-  text: 03-3230-0401
+- key: Phone number
+  value: 03-3230-0401
 
-- title: Website
-  text: "[https://andaze.com](https://andaze.com)"
+- key: Website
+  value: "[https://andaze.com](https://andaze.com)"
 
-- title: Business
-  text: |
+- key: Business
+  value: |
     1. Diagnosis, guidance, and consulting of management information systems for various companies
     2. Consulting on business improvement and IT strategy
     3. Investment in information and telecommunications businesses and consulting on mergers, alliances, and transfers of business rights of these companies

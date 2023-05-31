@@ -7,4 +7,4 @@ description: "アンダーズ株式会社の会社概要をご覧いただけま
 
 # 会社概要
 
-{{< about-table >}}
+{{< company-table >}}
