@@ -8,13 +8,13 @@ description: "You can view about work-life balance initiatives of Andaze Ltd."
 
 **We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life.**
 
-1. **Action plan period: May 1, 2022 - April 30, 2024 (2 years)**
+1. Action plan period: May 1, 2022 - April 30, 2024 (2 years)
 
-2. **Goal: Support employment that enables both childcare and career advancement after maternity leave (at least 1 person)**
+2. Goal: Support employment that enables both childcare and career advancement after maternity leave (at least 1 person)
 
-3. **Description of Initiatives and Period of Implementation**
+3. Description of Initiatives and Period of Implementation
 
-<p style="border: 1px solid black; padding-left: 10px">Initiatives: Provide shorter working hours and a flexible work environment for employees after maternity leave. </p>
+{{< border-box text="Initiatives: Provide shorter working hours and a flexible work environment for employees after maternity leave." >}}
 
 <table>
 <tr>
@@ -36,8 +36,7 @@ description: "You can view about work-life balance initiatives of Andaze Ltd."
 </table>
 
 
-
-<p style="border: 1px solid black; padding-left: 10px">Initiatives: Aim to increase the rate of employees taking annual paid leave so that they can work in a more balanced manner to achieve a better work-life balance. (Aim for a 70% acquisition rate of at least 6 days per year) </p>
+{{< border-box text="Initiatives: Aim to increase the rate of employees taking annual paid leave so that they can work in a more balanced manner to achieve a better work-life balance. (Aim for a 70% acquisition rate of at least 6 days per year)" >}}
 
 <table>
 <tr>

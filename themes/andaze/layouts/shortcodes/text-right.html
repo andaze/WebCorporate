@@ -1,0 +1,3 @@
+{{ $text := .Get "text" }}
+<p class="text-right">{{ $text | markdownify }}</p>
+{{ .Scratch.Delete "text" }}

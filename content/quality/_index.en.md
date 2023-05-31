@@ -21,7 +21,4 @@ We believe that the services we provide will ideally contribute to the further d
 4. This quality policy shall be made publicly available externally through our website.
 
 
-January 27, 2021  
-Andaze Ltd.  
-Representative Director  
-Mina Arai
+{{< text-right text="January 27, 2021<br>Andaze Ltd.<br>President and Representative Director<br>Mina Arai" >}}
