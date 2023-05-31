@@ -34,21 +34,21 @@ AMP enables search engines to read information on web pages ahead of time and di
 * Stress-free for users
 
 > Relationship between display speed and site return rate
-
+>
 > When the display speed drops from 1 second to 3 seconds, the rate of return visits increases by 32%. When the display speed drops from 1 second to 5 seconds, the rate of return visits increases by 90%. When the display speed drops from 1 second to 6 seconds, the direct return rate increases by 106%. When the display speed drops from 1 second to 10 seconds, the return rate rises by 123%.
-
+>
 > Exhibit: "Google - Find out how you stack up to new industry benchmarks for mobile page speed"
-
+>
 > Display speed of 3 seconds or less is acceptable
-
+>
 > We found that 57% of users become numb and give up visiting if the display speed of a web page exceeds 3 seconds.
-
+>
 > Exhibit: "Mynavi 3 seconds is acceptable - Why website performance matters"
 
 > Also affects conversion rates
-
+>
 > For page access via mobile, the conversion rate is maximized when the display speed is 3 seconds. As display time increased, the conversion rate decreased, and was halved at 7 seconds.
-
+>
 > Exhibit: "NetShop Managers Forum - The value of "one second" in EC site performance. Display speed that meets user expectations.
 
 

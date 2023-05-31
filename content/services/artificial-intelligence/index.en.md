@@ -62,7 +62,7 @@ Andaze, which has a long history of utilizing big data in conjunction with the d
 
 ### (2) Advanced AI development cultivated at the forefront of new business
 
-(2) Advanced AI development cultivated on the frontlines of new businesses Therefore, Andaze has acquired ISO27001 information security management system. We provide an environment that achieves ideal performance.
+* AI implementation in business is a form of handling large amounts of data. Therefore, Andaz has acquired ISO27001 information security management system. We provide an environment that achieves ideal performance.
 
 * We adopt the open source AI development framework ML.NET for speedy machine learning modeling.
 
