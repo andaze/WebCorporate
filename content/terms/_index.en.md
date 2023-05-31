@@ -5,23 +5,24 @@ weight: "0"
 footerTitileHidden: true
 description: "You can view the Basic Terms and Conditions of Andaze Ltd."
 ---
-# Content usage conditions
+# Terms
+## Content usage conditions
 
-## Andaze Ltd corporate site and related sites (hereinafter referred to as “this site”) are operated by Andaze Ltd. (hereinafter referred to as “the Company”) or its agent. In using this site, it is assumed that you have agreed to the following conditions of use.
+Andaze Ltd corporate site and related sites (hereinafter referred to as “this site”) are operated by Andaze Ltd. (hereinafter referred to as “the Company”) or its agent. In using this site, it is assumed that you have agreed to the following conditions of use.
 
 
 
-**Change of terms of use**  
+### Change of terms of use  
 We may change the usage conditions of this site without notice and suspend the operation of all or part of the website.
 
 
 
-**Copyright**  
+### Copyright  
 The copyright of the works posted on this site belongs to the Company, except for contributions based on the contract with the Company. It is prohibited to use (including duplication, modification, uploading, posting, transmitting, distributing, license, selling, publishing, etc.) the copyrighted works published on this site, except with the prior consent of our document. I will.
 
 
 
-**Prohibited matter**  
+### Prohibited matter  
 The following acts are prohibited even when using with the prior consent of our document or when using the information posted on this site by private use or any other method explicitly recognized by law To do.
 
 1. Actions that infringe or may infringe property or privacy of a third party or our company.
@@ -36,7 +37,7 @@ The following acts are prohibited even when using with the prior consent of our 
 
 
 
-**Disclaimer regarding information**  
+### Disclaimer regarding information  
 The Company pays close attention to the information posted on this site. However, we do not guarantee the accuracy, completeness, usefulness, safety, or the purpose of use of the information posted. In addition, this information is subject to change or discontinuation of publication without notice, and we shall not be liable even if the user suffers damage due to this.
 
 1. Service interruptions, delays, etc. may occur due to failures, stoppages, power outages, natural disasters, maintenance work, or other reasons for the server, network equipment, lines, etc. on this site. In this case, we shall not be responsible to the user.
@@ -44,10 +45,10 @@ The Company pays close attention to the information posted on this site. However
 
 
 
-**Link to this site**  
+### Link to this site  
 As a general rule, links to this site are free. However, please link after agreeing to the following.
 
-1. Please do not link from any of the following websites.
+**Please do not link from any of the following websites.**
 
 * Websites that contain content that violates public order and morals
 * Websites that contain content that slanders, slanders or threatens the Company or a third party
@@ -61,18 +62,18 @@ As a general rule, links to this site are free. However, please link after agree
 
 
 
-**Our exemption from linking**  
+### Our exemption from linking  
 The contents of websites of third parties other than our company einafter referred to as “link sites”) that link to or from this site are managed by their respective responsibilities. We are not responsible for the contents of linked sites or for any damages caused by using them.
 
 
 
-**Regarding trademarks**  
+### Regarding trademarks  
 Trade names, trademarks and marks of our company, our affiliated companies, or other companies used on this site are protected by the Trademark Law, Unfair Competition Prevention Law and other laws. These cannot be used without the explicit permission of the Company and each right holder.
 
 
 
-**Contact**  
+### Contact  
 If you have any comments or questions about this site or our company, please contact us from the “Contact Us” page.
 
-**Law compliance and court of jurisdiction**  
+Law compliance and court of jurisdiction  
 The use of this site and the interpretation and application of these Terms of Use shall be governed by the laws of Japan. The Tokyo District Court shall be the exclusive court of first instance for all disputes related to the use of this site.

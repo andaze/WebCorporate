@@ -4,10 +4,9 @@ date: 2022-05-03T19:02:12+09:00
 weight: 8
 description: "You can view about work-life balance initiatives of Andaze Ltd."
 ---
-<div amp-fx="fade-in" data-duration="500ms" class='container' style="padding: 25px">
-<h1 class="inline">Andaze Ltd. Action Plan</h1>
+# Andaze Ltd. Action Plan
 
-## We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life. 
+**We will formulate an action plan in order to be a company that can provide backup for child rearing, taking into consideration the need to balance work and family life.**
 
 1. **Action plan period: May 1, 2022 - April 30, 2024 (2 years)**
 
@@ -50,4 +49,3 @@ description: "You can view about work-life balance initiatives of Andaze Ltd."
   <td width="90%">Aim for an 80% vacation usage rate of at least 6 days per year. Survey the annual paid leave utilization rate and encourage employees to take their annual paid leave so that the percentage will increase year by year. </td>
 </tr>
 </table>
-</div>

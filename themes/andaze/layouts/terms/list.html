@@ -4,10 +4,7 @@
     </div>
 
     <div class="container px-5 pt-5 mx-auto mb-44 lg:px-64 ">
-        <div class="pb-4 bg-white max-w-none">
-            <span class="text-4xl font-bold">{{ .Page.Title }}</span>
-        </div>
-        {{ .Scratch.Set "containerClass" "pt-5 max-w-none" }}
+        {{ .Scratch.Set "containerClass" "pt-10 max-w-none" }}
         {{ partial "article.html" . }}
         {{ .Scratch.Delete "containerClass" }}
     </div>
