@@ -18,4 +18,6 @@ Andaze Ltd. aims first and foremost to satisfy not only our customers but also a
 
 4. Delegate responsibility and authority to the management representative in order to implement, maintain, and improve the management system.  
  
-{{< text-right text="January 27, 2021<br>Andaze Ltd.<br>President and Representative Director<br>Mina Arai" >}}
+{{< text-right 
+    text="January 27, 2021<br>Andaze Ltd.<br>President and Representative Director<br>Mina Arai" 
+>}}
