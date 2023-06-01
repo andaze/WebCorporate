@@ -69,4 +69,4 @@ description: "アンダーズ株式会社の個人情報保護方針をご覧い
 
 〒 102-0083 東京都千代田区麹町 2-10-3 エキスパートオフィス 1F  
 アンダーズ株式会社 管理本部  
-E-mail：admin@andaze.com
+E-mail：contact@andaze.com

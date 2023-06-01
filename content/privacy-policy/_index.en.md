@@ -50,4 +50,4 @@ For inquiries regarding our handling of personal information, please contact the
 
 Expert Office 1F  
 2-10-3 Kojimachi, Chiyoda-ku, Tokyo 102-0083 Andaze Ltd.  
-E-mail: admin@andaze.com
+E-mail: contact@andaze.com
