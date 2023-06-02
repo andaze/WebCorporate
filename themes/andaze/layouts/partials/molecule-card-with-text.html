@@ -5,7 +5,7 @@
             <span class="text-gray-500 pt-1 sm:pt-2 w-fit mx-auto font-bold">{{ .Page.Params.titleEn }}</span>
         </div>
         <div>
-            {{ .Scratch.Set "class" "w-36 sm:w-full h-32 sm:h-48 sm:px-6 object-cover mx-auto" }}
+            {{ .Scratch.Set "class" "w-32 sm:w-48 h-32 sm:h-36 object-contain mx-auto my-6" }}
             {{ .Scratch.Set "format" "webp" }}
             {{ .Scratch.Set "hint" "smart" }}
             {{ if .Page.Params.cardImage }}
