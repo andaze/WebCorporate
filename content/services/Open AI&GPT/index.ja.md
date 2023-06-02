@@ -2,9 +2,9 @@
 title: Open AI／GPTで知的労働をシステム化
 date: 2023-01-09T00:00:00+09:00
 weight: ''
-cardImage: GPT3.png
+cardImage: GPT.png
 headerImage:
-  imageName: GPT3.png
+  imageName: GPT.png
   imageTitle: ''
   imageDescription: ''
 kind: service
