@@ -8,7 +8,7 @@ export class SlideShow {
         this.youtubeSwiper;
     }
 
-    createSwiper(container, nextEl, prevEl, isAutoplay = false, isLoop = false, customOptions = {}) {
+    createSwiper(container, nextEl, prevEl, isAutoplay = false, isLoop = false, customOptions = {}, shouldHandleAutoplay = true) {
         const baseOptions = {
             breakpoints: {
                 280: {
@@ -38,14 +38,14 @@ export class SlideShow {
 
         const swiper = new Swiper(container, options);
 
-        if (!isAutoplay) {
+        if (shouldHandleAutoplay) {
             swiper.autoplay.stop();
+        
+            window.addEventListener('scroll', () => {
+                this.handleAutoPlay(container, swiper, 500);
+            });
         }
-
-        window.addEventListener('scroll', () => {
-            this.handleAutoPlay(container, swiper, 500);
-        });
-
+    
         return swiper;
     }
 
@@ -114,7 +114,7 @@ export class SlideShow {
             speed: 800,
         };
 
-        this.solutionSwiper = this.createSwiper(".solutionSwiper", ".solutionNext", ".solutionPrevious", true, true, customOptions);
+        this.solutionSwiper = this.createSwiper(".solutionSwiper", ".solutionNext", ".solutionPrevious", true, true, customOptions, false);
     }
 
     handleAutoPlay(swiperElm, swiperName, offsetTop) {
