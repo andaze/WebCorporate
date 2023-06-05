@@ -293,6 +293,13 @@ AI-OCRによる梱包箱などの文字の識別・検出システム
 （4） ファインチューニング： GPTモデルをお客様企業へ最適化します。独自の知識をモデル学習に加えます
 （5） 知的労働の資産化： 「どの部署が」「どのような」質問をしているか把握し、システムの改善に役立たせます
 （一部の）知的労働の横展開ができる 知的労働が複製可能になることで量を展開できます。従業員は「エースとして尖る」か「AIをマネジメントする能力を持つ」の2択と言われています
+GPTの影響をうける領域（知的労働の代替） 教育、介護、アート・音楽、金融政策、人事、政治、研究開発、医療など多くの領域がGPTの影響を受ける可能性があります</description></item><item><title>Open AI／GPTで知的労働をシステム化</title><link>https://andaze.com/ja/services/open-ai-gpt/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0900</pubDate><guid>https://andaze.com/ja/services/open-ai-gpt/</guid><description>Open AI／GPTで知的労働をシステム化 パブリックGPTを使い続ける危険性 従業員が安全にGPTを利用できるよう、システム化する企業が増えています。ソリューションのポイントを5つ示します。
+（1） 企業情報を守る： パブリックサービスを利用しない。情報が漏洩し、再学習等に利用される可能性があります
+（2） 領域外の回答を除外： 業種や職種などドメインを限定します。無関係な領域の情報を排除します
+（3） ソースを明示： GPT回答の、根拠となったウェブページを示します（将来リリース）
+（4） ファインチューニング： GPTモデルをお客様企業へ最適化します。独自の知識をモデル学習に加えます
+（5） 知的労働の資産化： 「どの部署が」「どのような」質問をしているか把握し、システムの改善に役立たせます
+（一部の）知的労働の横展開ができる 知的労働が複製可能になることで量を展開できます。従業員は「エースとして尖る」か「AIをマネジメントする能力を持つ」の2択と言われています
 GPTの影響をうける領域（知的労働の代替） 教育、介護、アート・音楽、金融政策、人事、政治、研究開発、医療など多くの領域がGPTの影響を受ける可能性があります</description></item><item><title>Generic CRM for Customer Support</title><link>https://andaze.com/ja/solution/generic-crm-for-customer-support/</link><pubDate>Tue, 27 Dec 2022 00:00:00 +0900</pubDate><guid>https://andaze.com/ja/solution/generic-crm-for-customer-support/</guid><description>ジェネリックCRM for カスタマーサポート（自社製品） オムニチャネル時代に対応した、スムーズなカスタマーサポートを提供 さまざまなチャネルからアクセスしてくる顧客に対して、スムーズなカスタマーサポートを提供するソリューションです。対応履歴の管理や解決方法の共有、ドキュメント管理など幅広い機能を備えています。顧客にはオペレーターが電話、チャット、SMSなどを使って対応するほか、AIを活用した仮想オペレーターやチャットボットが、リアルタイムに回答します。また、事前に用意した過去の問い合わせデータやナレッジを機械学習で分析させ、自動応答することで、顧客の自力解決を支援し、顧客対応業務の効率化をサポートする機能もあります。顧客がどのようなチャネルでコミュニケーションを始めても、一貫して適切な対応を行う「ジェネリックCRM for カスタマーサポート」は、オムニチャネル時代に顧客との関係性を深めるための有効な手段となります。
 ●オムニチャネルとは オムニチャネルは「企業と顧客の複数の接点（チャネル）を連携させ、顧客へのアプローチを強化する戦略」のことです。顧客がどのような手段で問い合わせしてきても、会話履歴や背景情報がチャネルを跨いで引き継がれ、やり取りをストレスなく継続できるので、企業と顧客の両方がメリットを得られます。また顧客情報が自社アプリケーション内で統合されるため、1人ひとりの顧客に合わせた、質の高いサポートを提供できるようになります。
 ●ジェネリックCRM for カスタマーサポートとは 「ジェネリックCRM for カスタマーサポート」には以下のような特長があります。
@@ -411,4 +418,4 @@ SaaSで構築したシステムを従来型のオンプレミス（自社内に�
 PoCは小さく、細かく、丁寧に行う必要があります。いきなり全体を行おうとすると、既存システムとのデータ連携などに問題が発生したり、価値を理解していない他部署との間に障壁が生まれたりして、プロジェクトが失敗する恐れがあるからです。小さく、少しずつ実証・検証を積み重ねていくことで、最終的なゴールに繋げていきましょう。</description></item><item><title>Download</title><link>https://andaze.com/ja/download/</link><pubDate>Mon, 28 Nov 2022 14:23:24 +0900</pubDate><guid>https://andaze.com/ja/download/</guid><description> 無料PDFブック「PaaS」のススメ 持続可能なシステムを「安くつくる」技術(2022年度版)
 安価で融通の利くシステム開発について探しているものの、どれもピンとこないと悩んでいませんか？本書は弊社がPaaSを使ってクライアント様の課題を解決し、IT投資を成功させてきたノウハウをご紹介しています。
 SaaSのライセンス料を削減し、高度なデータ活用にたどり着く方法 投資対効果が上がるPaaSデータベースの調達法 ビジネスの変化に追従できるサステナブルなDXとは PaaSを使った持続可能なシステムの作り方と、事前に知っておいていただきたい知識などを100ページ超にわたって詳細に解説しています。ぜひ、貴社のDX化にご活用ください。
-ダウンロード</description></item><item><title/><link>https://andaze.com/ja/blogs/seo/effective-seo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/ja/blogs/seo/effective-seo/</guid><description>SEO テストです</description></item><item><title/><link>https://andaze.com/ja/services/hugo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/ja/services/hugo/</guid><description/></item><item><title/><link>https://andaze.com/ja/services/open-ai-gpt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/ja/services/open-ai-gpt/</guid><description/></item></channel></rss>
+ダウンロード</description></item><item><title/><link>https://andaze.com/ja/blogs/seo/effective-seo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/ja/blogs/seo/effective-seo/</guid><description>SEO テストです</description></item><item><title/><link>https://andaze.com/ja/services/hugo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andaze.com/ja/services/hugo/</guid><description/></item></channel></rss>
