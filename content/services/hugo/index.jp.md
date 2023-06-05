@@ -3,9 +3,9 @@ title: HUGO／静的ウェブサイト移行、セキュリティと保守性の
 titleEn: AI（Artificial Intelligence)
 date: 2022-02-23T17:03:34.000+09:00
 weight: 1
-cardImage: Hugo.png
+cardImage: hugo.png
 headerImage:
-  imageName: Hugo.png
+  imageName: hugo.png
   imageTitle: ''
   imageDescription: ''
 onTopPage: true
