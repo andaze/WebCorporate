@@ -54,7 +54,7 @@ Azure Static Web Serviceは、Microsoft Azureによる静的ウェブサイト�
 
 ### CMSからAzure Static Web Serviceへ移行する手順
 
-移行するための手順は以下の通りです
+移行するための手順は以下の通りです。
 
 **（1） 静的コンテンツの生成：** 動的なWebサイトから静的なコンテンツを生成するためのツールを使用します。本サービスではHugoを利用します
 
