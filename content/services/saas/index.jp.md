@@ -15,7 +15,7 @@ description: アンダーズ株式会社は、新しいビジネスの立ち上�
 ---
 # 新規事業向けマルチテナントSaaSサービス開発
 
-![](saas.png)
+![](/saas.png)
 
 
 
@@ -103,7 +103,7 @@ SaaSサービスを提供するにあたり、収益を生み出すためのビ�
 
 ## SaaSサービス事業開発 × Microsoft Azure
 
-![](msa.png)
+![](/msa.png)
 
 Microsoft AzureはSaaSサービスの開発に必要な設備と環境を提供します。Azureには新規事業を成功に導く、様々な機能やサービスがあります。
 
