@@ -35,6 +35,7 @@ description: アンダーズ株式会社は、基幹システム／ERPの拡張�
 基幹システム拡張サービスは、Microsoft Azureの機能を活用し、機能とコストの問題を改善します。
 
 ### 大量データの処理
+
 **モバイル端末やIoTによって日々増大するデータを、Azure拡張サービスでスムーズに処理します。**
 * 原始データは、保管料の安いデータレイク上に保管
 * ビルトインのパイプラインデータ処理による高速なデータ処理
@@ -43,6 +44,7 @@ description: アンダーズ株式会社は、基幹システム／ERPの拡張�
 使用するAzure機能：Azure Data Factory、Azure Storage 、Azure SQL Database Elastic Pool 、Azure AppService Plan
 
 ### 制限のない機能追加
+
 **AzureのPaaSサービスを使えば、サービスによる機能拡張制限を受けずに必要な機能をオーダーメイドで追加することができます。貴社の競争優位性と、跳躍的な事業推進をサポートします。**
 * アプリ作成：マイページ、特注UI、高速な画面遷移、カスタム認証
 * コミュニケーション：Teams、LINE、Slack、SMSとの接続
@@ -51,6 +53,7 @@ description: アンダーズ株式会社は、基幹システム／ERPの拡張�
 使用するAzure機能：Azure Bot Service、Azure Cognitive Services、Azure Machine Learning
 
 ### ライセンス料の最適化
+
 **本サービスはAzureのPaaS機能を利用するため、一般的なSaaSと比較してトータルコストが下がることが期待されます。**
 * 一般的に、データ容量・処理性能の比がSaaSと比べて安価
 * データをネイティブ形式で安価に蓄積できるため、要件定義の工程と費用を節約
