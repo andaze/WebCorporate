@@ -61,6 +61,7 @@ Dynamics/Salesforce拡張サービスは、Microsoft Azureの機能を活用し�
 * ビルトインのパイプラインデータ処理による高速なデータ処理
 * メダリオンアーキテクチャによるセルフBI、ビジネスレポーティングに最適なデータ生成
 * 柔軟な見える化によって、業務現場や経営者は、データに基づいた意思決定を行うことが可能となる
+
 使用するAzure機能：Azure Data Factory、Azure Storage 、Azure SQL Database Elastic Pool 、Azure AppService Plan
 
 ### 制限のない機能追加
@@ -69,6 +70,7 @@ Dynamics/Salesforce拡張サービスは、Microsoft Azureの機能を活用し�
 * コミュニケーション：Teams、LINE、Slack、SMSとの接続
 * 人の認知機能代替：音声、言語、視覚、決定
 * AI：回帰、分類、予測、時系列分析
+
 使用するAzure機能：Azure Bot Service、Azure Cognitive Services、Azure Machine Learning
 
 ### ライセンス料の最適化
@@ -76,6 +78,7 @@ Dynamics/Salesforce拡張サービスは、Microsoft Azureの機能を活用し�
 * 一般的に、データ容量・処理性能の比がSaaSと比べて安価
 * データをネイティブ形式で安価に蓄積できるため、要件定義の工程と費用を節約
 * 各種ツールとSQLでネイティブに接続可能であり、データ処理量やスピードに制限が少ない
+
 使用するAzure機能：Azure Storage 、Azure SQL Database Elastic Pool 、Azure AppService Plan
 
 
