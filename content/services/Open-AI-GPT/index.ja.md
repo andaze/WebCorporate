@@ -13,8 +13,6 @@ description: アンダーズ株式会社では、Open AI/GPTを活用して知�
 ---
 # Open AI／GPTで知的労働をシステム化
 
-![](/GPT.png)
-
 
 
 ## パブリックGPTを使い続ける危険性
