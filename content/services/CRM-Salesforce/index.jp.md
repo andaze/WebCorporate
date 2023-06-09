@@ -15,7 +15,6 @@ description: アンダーズ株式会社は、最適なCRM/Salesforceの外部�
 ---
 # CRM／Salesforceの外部拡張、機能とコストを最適化
 
-![](/sf.png)
 
 
 ## なぜDynamics/SalesforceのAzure拡張が必要なのか?
