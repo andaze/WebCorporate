@@ -16,7 +16,6 @@ description: Andaze Ltd. supports companies that wish to "de-subscribe, de-cloud
 
 
 
-
 ## Support for "de-subscription, de-cloud, and de-packaging" in terms of cost, security, and system operation
 
 Cloud services (SaaS), which have become indispensable for businesses, offer a variety of advantages, such as improved efficiency in operations and management. In addition, companies are moving away from SaaS, moving away from cloud computing, and moving away from package services. Furthermore, due to the limitations of system operations, an increasing number of companies are re-evaluating the advantages of their in-house "on-premise" systems and viewing their operations in a positive light.
