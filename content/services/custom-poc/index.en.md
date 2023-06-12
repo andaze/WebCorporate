@@ -2,9 +2,9 @@
 title: Consulting
 date: 2022-02-23T17:03:34.000+09:00
 weight: 3
-cardImage: consulting.png
+cardImage: poc.png
 headerImage:
-  imageName: consulting.png
+  imageName: poc.png
   imageTitle: ''
   imageDescription: ''
 onTopPage: true
