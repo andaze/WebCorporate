@@ -17,7 +17,7 @@ description: 世界最先端の AI モデルを利用して、最先端のアプ
 
 
 
-## Azure OpenAI 開発サービス概要
+## ●Azure OpenAI 開発サービス概要
 
 Azure OpenAI 開発サービスは、Microsoft Azureのクラウド上でOpenAIの言語モデルを使用して、最先端のアプリケーションを開発するためのサービスです。GPT-3、Codex、Embeddingsモデルといった強力な言語モデルをREST APIとして使用できます。Azure OpenAIの先進的な技術を利用することで、自然言語処理や画像生成などのタスクを簡単に実行することができます。
 
@@ -42,7 +42,6 @@ Azure OpenAIは、音声処理にも対応しており、Speech to TextやText t
 ## ●Azure OpenAIを商用利用する5つのメリット
 
 Azure OpenAI開発サービスの商用利用により、最先端の自然言語・音声処理技術を活用し、ビジネスプロセスの自動化や顧客体験の向上を実現。競争優位性の獲得や市場拡大を促進できます。
-
 
 ### Merit1：ビジネスプロセスの自動化
 
