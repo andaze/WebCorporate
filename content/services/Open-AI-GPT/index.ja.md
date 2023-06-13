@@ -1,5 +1,5 @@
 ---
-title: Open AI／GPTで知的労働をシステム化
+title: OpenAI/GPTで知的労働のシステム化
 date: 2023-01-09T00:00:00+09:00
 weight: ''
 cardImage: GPT.png
@@ -8,10 +8,10 @@ headerImage:
   imageTitle: ''
   imageDescription: ''
 kind: service
-subtitle: 革新的なOpen AI/GPTを活用して知的労働を効率化し、システム開発の進化を実現
+subtitle: 革新的なOpenAI/GPTを活用して知的労働を効率化し、システム開発の進化を実現
 description: アンダーズ株式会社では、Open AI/GPTを活用して知的労働をシステム化し、効率性と品質を向上させます。AIによる自動化と自然言語処理の能力を活かし、プロジェクトの生産性を向上させ、お客様のニーズに迅速かつ柔軟に対応します。企業の大きな資産になる可能性を秘めているOpen AI/GPTは、活用経験も豊富なアンダーズにお任せください。
 ---
-# Open AI／GPTで知的労働をシステム化
+# OpenAI/GPTで知的労働のシステム化
 
 
 
