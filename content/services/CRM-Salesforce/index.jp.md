@@ -1,5 +1,5 @@
 ---
-title: CRM／Salesforceの外部拡張、機能とコストを最適化
+title: Salesforce外部拡張、機能とライセンスを最適化
 titleEn: CRM/Salesforce
 date: 2022-02-23T17:03:34.000+09:00
 weight: 1
@@ -13,7 +13,7 @@ kind: service
 subtitle: Salesforceの機能を最大限に活用し、CRMシステムを外部拡張。ビジネスニーズに合わせた最適な機能とコストのご提供
 description: アンダーズ株式会社は、最適なCRM/Salesforceの外部拡張を通じて、機能とコストのバランスを取りながら、お客様のビジネスニーズに応えます。効果的な顧客管理を実現しましょう。
 ---
-# CRM／Salesforceの外部拡張、機能とコストを最適化
+# Salesforce外部拡張、機能とライセンスを最適化
 
 
 
