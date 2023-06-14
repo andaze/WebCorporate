@@ -9,10 +9,10 @@
     {{ $text = "[ What the documents reveal ]" }}
 {{ end }}
 
-<div class="w-screen h-96 md:h-[34rem] 2xl:h-full 2xl:aspect-[11/3] object-cover bg-[#651665] flex justify-center flex-col">
+<div class="w-screen lg:h-96 lg:h-[34rem] 2xl:h-full 2xl:aspect-[11/3] object-cover bg-[#651665] flex justify-center flex-col py-10 lg:py-0">
 
-    <div class="flex w-4/5 max-w-6xl mx-auto gap-12">
-        {{ .Scratch.Set "class" "w-52 h-auto lg:w-96" }}
+    <div class="flex flex-col md:flex-row w-11/12 lg:w-4/5 max-w-6xl mx-auto gap-12">
+        {{ .Scratch.Set "class" "md:w-52 h-auto lg:w-96" }}
         {{ .Scratch.Set "format" "webp" }}
         {{ .Scratch.Set "hint" "smart" }}
         {{ .Scratch.Set "src" .Page.Params.cardImage }}
@@ -28,11 +28,11 @@
         {{ .Scratch.Delete "type" }}
         {{ .Scratch.Delete "is-lazy" }}
     
-        <div class="text-left text-white prose-h1:text-3xl prose-h2:font-normal">
+        <div class="text-left text-white prose-h1:text-xl prose-h1:lg:text-3xl prose-h2:font-normal">
             {{ range $h1s }}
                 {{ . | safeHTML }}
             {{ end }}
-            <div class="mt-4 text-xl">
+            <div class="mt-4 text-lg lg:text-xl">
                 <span>{{ $text }}</span>
                 <ul class="ml-8 mt-2">
                     {{ range $h2s }}
