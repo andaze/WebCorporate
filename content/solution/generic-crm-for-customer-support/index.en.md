@@ -20,13 +20,13 @@ This solution provides smooth customer support for customers accessing from vari
 
 
 
-## ●What is Omni-Channel?
+## What is Omni-Channel?
 
 Omni-channel refers to "a strategy to strengthen the approach to customers by linking multiple points of contact (channels) between a company and its customers. Regardless of the means by which the customer contacts the company, the conversation history and background information are transferred across channels, allowing the interaction to continue without stress, benefiting both the company and the customer. In addition, customer information is integrated within the company's own applications, allowing the company to provide personalized, high-quality support to each individual customer.
 
 
 
-## ●What is Generic CRM for Customer Support?
+## What is Generic CRM for Customer Support?
 
 Generic CRM for Customer Support" has the following features.
 
@@ -44,7 +44,7 @@ Generic CRM for Customer Support" has the following features.
 
 
 
-## ●Main Functions
+## Main Functions
 
 ### ・Omni-channel functionality
 

@@ -22,7 +22,7 @@ However, for sites with infrequent updates or a small number of pages, it is muc
 
 
 
-## ● Advantages of "Hugo
+## Advantages of "Hugo
 
 ### (1) Fast site building
 
@@ -46,7 +46,7 @@ By default, it creates sitemap (sitemapxml). it is said that sitemap creation an
 
 
 
-## ● Detailed features of Hugo
+## Detailed features of Hugo
 
 1. No database is used, and all contents are managed in local files.
 
@@ -60,7 +60,7 @@ By default, it creates sitemap (sitemapxml). it is said that sitemap creation an
 
 
 
-## ●We recommend using the static website generator "Hugo" to speed up your website.
+## We recommend using the static website generator "Hugo" to speed up your website.
 
 Static website building services can speed up site display and improve web performance without spending time and money, and without changing content or services.
 

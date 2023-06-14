@@ -22,7 +22,7 @@ HugoはGo言語で実装された「Webサイト構築フレームワーク」�
 
 
 
-## ●「Hugo」のメリット
+## 「Hugo」のメリット
 
 ### (1) サイト構築が高速
 
@@ -46,7 +46,7 @@ Netlify、GitHub Pages、GitLab Pages、AWS Amplify Console、Azure Static Web A
 
 
 
-## ●Hugoの詳細な特徴
+## Hugoの詳細な特徴
 
 1. データベースを使用せず、コンテンツをすべてローカル上のファイルで管理します。
 
@@ -60,7 +60,7 @@ Netlify、GitHub Pages、GitLab Pages、AWS Amplify Console、Azure Static Web A
 
 
 
-## ●静的サイトジェネレータ「Hugo」によるWebサイト高速化がおすすめ
+## 静的サイトジェネレータ「Hugo」によるWebサイト高速化がおすすめ
 
 静的Webサイト構築サービスは手間やコストをかけることなく、コンテンツの中身やサービスを変えることなく、サイトの表示高速化・Webパフォーマンスの改善を実現します。
 
