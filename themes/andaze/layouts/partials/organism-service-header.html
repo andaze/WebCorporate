@@ -1,4 +1,5 @@
 {{ $content := .Content | safeHTML }}
+{{ $h1s := findRE "<h1 id=\".*\">.*</h1>" $content }}
 {{ $h2s := findRE "<h2 id=\".*\">.*</h2>" $content }}
 
 {{ $text := "" }}
@@ -27,8 +28,10 @@
         {{ .Scratch.Delete "type" }}
         {{ .Scratch.Delete "is-lazy" }}
     
-        <div class="text-left text-white prose-h2:font-normal">
-            <h1 class="text-3xl">{{ .Title }}</h1>
+        <div class="text-left text-white prose-h1:text-3xl prose-h2:font-normal">
+            {{ range $h1s }}
+                {{ . | safeHTML }}
+            {{ end }}
             <div class="mt-4 text-xl">
                 <span>{{ $text }}</span>
                 <ul class="ml-8 mt-2">
