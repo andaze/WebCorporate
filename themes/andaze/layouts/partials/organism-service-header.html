@@ -9,7 +9,7 @@
     {{ $text = "[ What the documents reveal ]" }}
 {{ end }}
 
-<div class="w-screen lg:h-96 lg:h-[34rem] 2xl:h-full 2xl:aspect-[11/3] object-cover bg-[#651665] flex justify-center flex-col py-10 lg:py-0">
+<div class="w-screen lg:h-[34rem] 2xl:aspect-[11/3] object-cover bg-[#651665] flex justify-center flex-col py-10 lg:py-0">
 
     <div class="flex flex-col md:flex-row w-11/12 lg:w-4/5 max-w-6xl mx-auto gap-12">
         {{ .Scratch.Set "class" "md:w-52 md:h-52 lg:w-96 lg:h-72 object-contain" }}
@@ -34,9 +34,9 @@
             {{ end }}
             <div class="mt-4 text-lg lg:text-xl">
                 <span>{{ $text }}</span>
-                <ul class="ml-8 mt-2">
+                <ul class="mt-2">
                     {{ range $h2s }}
-                        <li class="list-disc">
+                        <li>
                             {{ . | safeHTML }}
                         </li>
                     {{ end }}
