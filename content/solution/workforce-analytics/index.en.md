@@ -50,7 +50,7 @@ In keeping with our "Trust, but be sure*" philosophy, Andaze collects and analyz
 
 
 
-## ●Functions of the "Occupancy Management System" as a solution
+## Functions of the "Occupancy Management System" as a solution
 
 
 

@@ -1,0 +1,47 @@
+{{ $content := .Content | safeHTML }}
+{{ $h1s := findRE "<h1 id=\".*\">.*</h1>" $content }}
+{{ $h2s := findRE "<h2 id=\".*\">.*</h2>" $content }}
+
+{{ $text := "" }}
+{{ if eq ( print site.Language) ("ja") }}
+    {{ $text = "【資料で分かること】" }}
+{{ else }}
+    {{ $text = "[ What the documents reveal ]" }}
+{{ end }}
+
+<div class="w-screen lg:h-[34rem] 2xl:aspect-[11/3] object-cover bg-[#651665] flex justify-center flex-col py-10 lg:py-0">
+
+    <div class="flex flex-col md:flex-row w-11/12 lg:w-4/5 max-w-6xl mx-auto gap-12">
+        {{ .Scratch.Set "class" "md:w-52 md:h-52 lg:w-96 lg:h-72 object-contain" }}
+        {{ .Scratch.Set "format" "webp" }}
+        {{ .Scratch.Set "hint" "smart" }}
+        {{ .Scratch.Set "src" .Page.Params.cardImage }}
+        {{ .Scratch.Set "type" "full" }}
+        {{ .Scratch.Set "is-lazy" false }}
+        
+        {{ partial "atom-picture.html" . }}
+        
+        {{ .Scratch.Delete "class" }}
+        {{ .Scratch.Delete "format" }}
+        {{ .Scratch.Delete "hint" }}
+        {{ .Scratch.Delete "src" }}
+        {{ .Scratch.Delete "type" }}
+        {{ .Scratch.Delete "is-lazy" }}
+    
+        <div class="text-left text-white prose-h1:text-xl prose-h1:lg:text-3xl prose-h2:font-normal">
+            {{ range $h1s }}
+                {{ . | safeHTML }}
+            {{ end }}
+            <div class="mt-4 text-lg lg:text-xl">
+                <span>{{ $text }}</span>
+                <ul class="mt-2">
+                    {{ range $h2s }}
+                        <li>
+                            {{ . | safeHTML }}
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
