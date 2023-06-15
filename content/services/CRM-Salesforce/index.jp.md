@@ -10,14 +10,9 @@ headerImage:
   imageDescription: ''
 onTopPage: true
 kind: service
-subtitle: Salesforceの機能を最大限に活用し、CRMシステムを外部拡張。ビジネスニーズに合わせた最適な機能とコストのご提供
-description: アンダーズ株式会社は、最適なCRM/Salesforceの外部拡張を通じて、機能とコストのバランスを取りながら、お客様のビジネスニーズに応えます。効果的な顧客管理を実現しましょう。
+description: Salesforceの機能を最大限に活用し、CRMシステムを外部拡張。ビジネスニーズに合わせた最適な機能とコストのご提供
 ---
-# Salesforce外部拡張、機能とライセンスを最適化
-
-
-
-## ●なぜDynamics/SalesforceのAzure拡張が必要なのか?
+## なぜDynamics/SalesforceのAzure拡張が必要なのか?
 
 Dynamics/SalesforceとAzureの機能を併用することで、機能・データ保管において費用対効果の高いスマートソリューションが実現可能となり、データの収集・加工・保管における時間と費用の問題を改善し、データの見える化について柔軟な選択肢を持つことができます。
 
@@ -26,7 +21,7 @@ Dynamics/SalesforceとAzureの機能を併用することで、機能・デー�
 
 
 
-## ●CMSから静的ウェブサイト(HUGO)へ移行する5つのメリット
+## CMSから静的ウェブサイト(HUGO)へ移行する5つのメリット
 
 静的ウェブサイトへ移行することで、高速な読み込み速度や改修のしやすさ、セキュリティの向上など、多くのメリットがあります。CMSから移行することで、よりスムーズなサイト運用と改善を実現します。また、スカラブルな構造により、検索エンジンのランキングも向上する可能性があります。
 
@@ -47,7 +42,7 @@ Dynamics/SalesforceとAzureの機能を併用することで、機能・デー�
 
 
 
-## ●Dynamics/Salesforce拡張サービス × Microsoft Azure
+## Dynamics/Salesforce拡張サービス × Microsoft Azure
 
 ![](/msa.png)
 
@@ -95,7 +90,7 @@ Dynamics/Salesforce拡張サービスは、Microsoft Azureの機能を活用し�
 
 
 
-## ●アンダーズが選ばれる3つの理由
+## アンダーズが選ばれる3つの理由
 
 ![](/reason.png)
 
@@ -127,7 +122,7 @@ Dynamics/Salesforce拡張サービスは、Microsoft Azureの機能を活用し�
 
 
 
-## ●シェアードチーム®について
+## シェアードチーム®について
 
 正社員を雇うこともできますが、最近はシェアードチーム®︎を選択する企業が増えています。シェアードチーム®という選択があることで、企業様は、より柔軟な雇用形態を採用できるようになり、業務効率が飛躍的に上がります。
 
@@ -149,13 +144,13 @@ Dynamics/Salesforce拡張サービスは、Microsoft Azureの機能を活用し�
 
 
 
-## ●アーキテクチャサンプル（大規模）
+## アーキテクチャサンプル（大規模）
 
 ![](/big.png)
 
 
 
-## ●アーキテクチャサンプル（小規模）
+## アーキテクチャサンプル（小規模）
 
 ![](/small.png)
 
