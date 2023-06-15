@@ -10,11 +10,7 @@ headerImage:
 subtitle: 顧客情報、担当者の行動を管理し、データに基づいた営業活動を支援
 description: アンダーズ株式会社のソリューション「Generic CRM/ERP/Portal」は、顧客情報や営業担当者の行動を管理し、営業活動を支援するためのモジュールです。多くの機能をローコードで開発することが可能です。ドラッグ＆ドロップで業務アプリケーションの作成や、繰り返し行う業務の自動化ができます。
 ---
-# Generic CRM/ERP/Portal（自社製品）
-
 ## 顧客情報、担当者の行動を管理し、データに基づいた営業活動を支援
-
-
 
 アンダーズが提供する「Generic CRM/ERP/Portal」は「ジェネリック」の名前の通り、米国発CRMの後発品として開発された製品で、「Generic CRM/ERP/Portal」は顧客情報や営業担当者の行動を管理し、営業活動を支援するためのモジュールです。
 
@@ -22,7 +18,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●Generic CRM/ERP/Portalとは
+## Generic CRM/ERP/Portalとは
 
 ![](/crm1.png)
 
@@ -36,7 +32,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●Generic CRM/ERP/Portalの位置づけ
+## Generic CRM/ERP/Portalの位置づけ
 
 カスタム性の高いPaaS（Generic CRM/ERP/Portal）を上手く使うと、SaaS（ローコード/ノーコード）のライセンス料が節約できます。
 
@@ -44,7 +40,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●Generic CRM/ERP/Portalの主な機能
+## Generic CRM/ERP/Portalの主な機能
 
 ### ・顧客管理
 
@@ -80,7 +76,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●Generic CRM/ERP/Portalの利用シーンと機能
+## Generic CRM/ERP/Portalの利用シーンと機能
 
 ### ・予実状況・直近のタスクを確認
 
@@ -104,7 +100,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●スクラッチ開発 vs Generic CRM/ERP/Portal
+## スクラッチ開発 vs Generic CRM/ERP/Portal
 
 技術依存を減らせば、エンジニアの人数を最適化できます。
 
@@ -112,7 +108,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●日本特有のスクラッチ市場にも対応
+## 日本特有のスクラッチ市場にも対応
 
 アプリケーションを自由に設計して独自性をアピールできます。
 
@@ -120,7 +116,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●Generic CRM/ERP/Portalで削減できる開発工程
+## Generic CRM/ERP/Portalで削減できる開発工程
 
 ジェネリックならではの短納期を実現します。
 
@@ -128,7 +124,7 @@ description: アンダーズ株式会社のソリューション「Generic CRM/E
 
 
 
-## ●外部接続について
+## 外部接続について
 
 Azure Data Factoryコネクターを経由して、運用中のシステムと共存が可能です。
 
@@ -136,7 +132,7 @@ Azure Data Factoryコネクターを経由して、運用中のシステムと�
 
 
 
-## ●ガバナンス確保について
+## ガバナンス確保について
 
 PaaSによるシステム構築により、データベースのホワイトボックス化を実現し、ベンダーロックインの原因を削減します
 
@@ -144,7 +140,7 @@ PaaSによるシステム構築により、データベースのホワイトボ�
 
 
 
-## ●Generic CRM/ERP/Portalの活用事例
+## Generic CRM/ERP/Portalの活用事例
 
 点在する情報を集約、IoTを加えて、現場意思決定のスピードアップ、精度向上に貢献します。
 
@@ -152,7 +148,7 @@ PaaSによるシステム構築により、データベースのホワイトボ�
 
 
 
-## ●Generic CRM/ERP/Portaデモ
+## Generic CRM/ERP/Portaデモ
 
 今すぐサンプルをご確認いただけます。
 
@@ -160,7 +156,7 @@ PaaSによるシステム構築により、データベースのホワイトボ�
 
 
 
-## ●無料PDFブック「PaaSのススメ」
+## 無料PDFブック「PaaSのススメ」
 
 持続可能なシステムを「安くつくる」技術（2022年度版）
 
