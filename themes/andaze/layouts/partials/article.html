@@ -3,5 +3,6 @@
 {{ $containerClass := .Scratch.Get "containerClass" }}
 
 <div class="{{ $containerClass }} {{ $articleClass }}">
+    <h1>{{ .Title }}</h1>
     {{ .Content }}
 </div>
