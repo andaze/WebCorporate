@@ -3,9 +3,5 @@
 {{ $containerClass := .Scratch.Get "containerClass" }}
 
 <div class="{{ $containerClass }} {{ $articleClass }}">
-    {{ if or (eq .Section "services") (eq .Section "solution") }}
-        <h1>{{ .Title }}</h1>
-    {{ end }}
-
     {{ .Content }}
 </div>
