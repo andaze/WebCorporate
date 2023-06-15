@@ -11,7 +11,7 @@
         {{ partial "molecule-section-detailpage-sidebar.html" . }}
         </aside>
         <div class="md:w-2/3 bg-white max-w-none w-full">
-            {{ .Scratch.Set "containerClass" "" }}
+            {{ .Scratch.Set "containerClass" "prose-h2:border-b-4 prose-h2:border-black prose-h2:pb-2" }}
             {{ partial "article.html" . }}
             {{ .Scratch.Delete "containerClass" }}
 
