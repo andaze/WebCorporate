@@ -2,9 +2,9 @@
 title: Generic CRM/ERP/Portal
 date: 2022-12-27T00:00:00+09:00
 weight: ''
-cardImage: generic.png
+cardImage: portal.png
 headerImage:
-  imageName: generic.png
+  imageName: portal.png
   imageTitle: ''
   imageDescription: ''
 description: 顧客情報、担当者の行動を管理し、データに基づいた営業活動を支援
