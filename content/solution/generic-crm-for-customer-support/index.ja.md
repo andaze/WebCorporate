@@ -2,9 +2,9 @@
 title: Generic CRM for Customer Support
 date: 2022-12-27T00:00:00+09:00
 weight: ''
-cardImage: dashboard.png
+cardImage: CS.png
 headerImage:
-  imageName: dashboard.png
+  imageName: CS.png
   imageTitle: ''
   imageDescription: ''
 description: オムニチャネル時代に対応した、スムーズなカスタマーサポートを提供
