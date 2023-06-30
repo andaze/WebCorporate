@@ -75,5 +75,6 @@ description: "アンダーズ株式会社がお客様から選ばれる理由を
 {{< certification-item src="img/reason/certification/certification_4.png" >}}
 {{< certification-item src="img/reason/certification/certification_5.png" >}}
 {{< certification-item src="img/reason/certification/certification_6.png" >}}
+{{< certification-item src="img/reason/certification/certification_7.png" >}}
 
 {{< /certification-wrapper >}}

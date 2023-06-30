@@ -74,5 +74,6 @@ In order to improve our organizational capabilities, we have acquired certificat
 {{< certification-item src="img/reason/certification/certification_4.png" >}}
 {{< certification-item src="img/reason/certification/certification_5.png" >}}
 {{< certification-item src="img/reason/certification/certification_6.png" >}}
+{{< certification-item src="img/reason/certification/certification_7.png" >}}
 
 {{< /certification-wrapper >}}
