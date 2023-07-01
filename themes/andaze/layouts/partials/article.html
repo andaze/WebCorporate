@@ -2,6 +2,6 @@
 
 {{ $containerClass := .Scratch.Get "containerClass" }}
 
-<div class="{{ $containerClass }} {{ $articleClass }}">
+<div id="editable_article" class="{{ $containerClass }} {{ $articleClass }}">
     {{ .Content }}
 </div>
