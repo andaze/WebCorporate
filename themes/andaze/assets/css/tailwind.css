@@ -67,13 +67,13 @@ html.is-animating .transition-fade {
   }
 }
 
-#editable_article table {
+.editable_article table {
   font-size: 12px;
   border-collapse: collapse;
   margin-bottom: 12px;
 }
 
-#editable_article th {
+.editable_article th {
   background-color: #641664;
   color: white;
   text-align: center;
@@ -81,18 +81,18 @@ html.is-animating .transition-fade {
   border: 1px solid black;
 }
 
-#editable_article td {
+.editable_article td {
   border: 1px solid black;
   padding: 0.5rem;
   width: 42%;
 }
 
-#editable_article td:first-of-type {
+.editable_article td:first-of-type {
   color: #641664;
   font-weight: bold;
   width: 16%;
 }
 
-#editable_article tr {
+.editable_article tr {
   background-color: white;
 }
