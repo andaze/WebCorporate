@@ -1,16 +1,13 @@
-{{ $siteId := default (default false .Site.Params.forestryIo.siteId) .Page.Params.forestryIo.siteId }}
-{{ $sidebarEditPath := default (default false .Site.Params.sidebarEditPath) .Page.Params.sidebarEditPath }}
-{{ $geekdocFilePath := false }}
+{{ $username := .Site.Params.github.username }}
+{{ $repo := .Site.Params.github.repo }}
+{{ $branch := default "main" .Site.Params.github.branch }}
+{{ $filepath := "" }}
 {{ if .File }}
-  {{ $geekdocFilePath = (default (path.Join (default "content" .Site.Params.contentDir) .File.Path) .Page.Params.GeekdocFilePath) }}
-  {{ $geekdocFilePath = replaceRE `[/\.]` "-" $geekdocFilePath }}
-  {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.sidebarEditPath $geekdocFilePath) }}
-  {{ $geekdocFilePath = (path.Join .Site.Params.forestryIo.siteId $geekdocFilePath) }}
-  {{ $geekdocFilePath = (printf "%s%s" ("https://app.forestry.io/sites/" | safeURL) $geekdocFilePath) }}
-{{ end }}
-
-{{ if $geekdocFilePath }}
-  <a href="{{$geekdocFilePath }}" rel="noopener" target="_blank">
+  {{ $filepath = .File.Path }}
+  {{ $filepath = replace $filepath "\\" "/" }}
+  {{ $editPath := (printf "https://github.com/%s/%s/edit/%s/content/%s" $username $repo $branch $filepath) }}
+  <a href="{{$editPath }}" rel="noopener" target="_blank">
     {{ .Title }} を編集する 
   </a>
 {{ end }}
+

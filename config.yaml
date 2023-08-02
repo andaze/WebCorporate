@@ -97,6 +97,10 @@ params:
     baseUrl: "https://app.forestry.io/sites"
     siteId: "ly8ghrslvcgofg"
     sidebarEditPath: "#/pages"
+  github:
+    username: "andaze"
+    repo: "WebCorporate"
+    branch: "main"
 
 markup:
   goldmark:
