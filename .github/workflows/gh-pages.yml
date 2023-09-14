@@ -36,20 +36,20 @@ jobs:
         env:
           HUGO_BASEURL: "https://andaze.com"
 
-      - name: Build WebJobs
-        run: cd hugo-jobs && hugo --gc --minify && mv -f public ../public/job
-        env:
-          HUGO_BASEURL: "https://andaze.com/job"
+      # - name: Build WebJobs
+      #   run: cd hugo-jobs && hugo --gc --minify && mv -f public ../public/job
+      #   env:
+      #     HUGO_BASEURL: "https://andaze.com/job"
 
       - name: Build d365blog
         run: cd d365blog && hugo --gc --minify --config config/config.toml,config/config_prod.toml && mv -f public ../public/dynamics365
         env:
           HUGO_BASEURL: "https://andaze.com/dynamics365"
 
-      - name: Build landing-page
-        run: cd landing-page && npm install && hugo --gc --minify && mv -f public ../public/paas-no-susume
-        env:
-          HUGO_ENVIRONMENT: production
+      # - name: Build landing-page
+      #   run: cd landing-page && npm install && hugo --gc --minify && mv -f public ../public/paas-no-susume
+      #   env:
+      #     HUGO_ENVIRONMENT: production
 
       - name: Build LandingPages
         run: cd LandingPages && npm install && hugo --gc --minify && mv -f public ../public/landing-pages
