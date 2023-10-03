@@ -1,15 +1,15 @@
-# [submodule "hugo-jobs"]
-# 	path = hugo-jobs
-# 	url = https://github.com/andaze/hugo-jobs.git
-# 	branch = master
+[submodule "hugo-jobs"]
+	path = hugo-jobs
+	url = https://github.com/andaze/hugo-jobs.git
+	branch = master
 [submodule "d365blog"]
 	path = d365blog
 	url = https://github.com/andaze/d365blog.git
 	branch = master
-# [submodule "landing-page"]
-# 	path = landing-page
-# 	url = https://github.com/andaze/PaaS-no-SuSuMe.git
-# 	branch = main
+[submodule "landing-page"]
+	path = landing-page
+	url = https://github.com/andaze/PaaS-no-SuSuMe.git
+	branch = main
 [submodule "LandingPages"]
 	path = LandingPages
 	url = https://github.com/andaze/LandingPages.git
