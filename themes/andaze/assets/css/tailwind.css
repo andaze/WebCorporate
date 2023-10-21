@@ -79,19 +79,28 @@ html.is-animating .transition-fade {
   text-align: center;
   padding: 0.5rem;
   border: 1px solid black;
+  white-space: nowrap;
 }
 
 .editable_article td {
   border: 1px solid black;
   padding: 0.5rem;
-  width: 42%;
+  min-width: 70px;
 }
 
 .editable_article td:first-of-type {
   color: #641664;
   font-weight: bold;
-  width: 16%;
+  white-space: nowrap;
 }
+
+@media screen and (max-width: 768px) {
+  .editable_article th,
+  .editable_article td:first-of-type {
+    white-space: inherit;
+  }
+}
+
 
 .editable_article tr {
   background-color: white;
