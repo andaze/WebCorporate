@@ -3,7 +3,7 @@ title: 人権方針
 date: 2022-05-03T19:02:12.000+09:00
 weight: "2"
 headerImage:
-  imageName: meeting.jpg
+  imageName: hrp.jpg
   imageTitle: 人権方針
 newsimg: human.jpg
 description: "アンダーズ株式会社の人権方針をご覧いただけます。"

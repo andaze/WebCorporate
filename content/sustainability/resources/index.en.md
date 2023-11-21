@@ -3,7 +3,7 @@ title: Effective use of resources
 date: 2022-05-03T19:02:12.000+09:00
 weight: "4"
 headerImage:
-  imageName: conversation.jpg
+  imageName: effective.jpg
   imageTitle: Effective use of resources
 newsimg: nature.jpg
 description: "You can see Andaze Ltd.'s commitment to the effective use of resources."

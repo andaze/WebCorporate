@@ -3,7 +3,7 @@ title: 資源の有効活用
 date: 2022-05-03T19:02:12.000+09:00
 weight: "4"
 headerImage:
-  imageName: conversation.jpg
+  imageName: effective.jpg
   imageTitle: 資源の有効活用
 newsimg: nature.jpg
 description: "アンダーズ株式会社の資源の有効活用への取り組みをご覧いただけます。"
