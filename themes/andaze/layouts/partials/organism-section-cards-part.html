@@ -1,6 +1,5 @@
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-10 pb-20">
     {{ $filteredPages := where .Pages.Reverse "Params.cardImage" "!=" nil }}
-    {{ $filteredPages = where $filteredPages "Params.titleEn" "!=" nil }}
     {{ range first 6 $filteredPages }}
         {{ partial "molecule-card-with-text.html" . }}
     {{ end }}
