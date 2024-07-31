@@ -6,7 +6,7 @@ newsimg: mina-arai.jpg
 headerImage:
   imageName: mina-arai.jpg
   imageTitle: トップメッセージ
-description: "サステナビリティについて、アンダーズ株式会社代表取締役社長である新井美奈からのメッセージをご覧いただけます。"
+description: "サステナビリティについて、アンダーズ株式会社代表取締役社長からのメッセージをご覧いただけます。"
 ---
 # トップメッセージ
 
