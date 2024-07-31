@@ -31,9 +31,3 @@ We have built long-term partnerships based on a deep relationship of trust.
 We are able to provide services that meet the needs of our clients, including those that expect to expand their services ahead of their competitors, want support for DX promotion from the strategic stage, and want to successfully launch a new business.
 
 If you have any of these management issues or problems, please contact Andaze.
-
-
-
-**Andaze Ltd.**  
-**President and Representative Director**  
-**Mina Arai**
