@@ -10,7 +10,12 @@ headerImage:
 onTopPage: true
 kind: service
 subtitle: Providing highly accurate AI solutions that help solve problems and realize business strategies
-description: Andaze Ltd. provides highly accurate AI solutions that contribute to solving problems and realizing business strategies. From understanding the current situation to planning, Andaze's AI specialists, who are well versed in business and cutting-edge technologies, provide a one-stop service.
+description: |
+  - Azure Open AI
+  - Image Recognition / Computer Vision
+  - Natural Language Processing
+  - Anomaly Detection
+  - Predictive Analytics
 ---
 # AI (Artificial Intelligence) Development Services
 
